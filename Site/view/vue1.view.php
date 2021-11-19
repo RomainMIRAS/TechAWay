@@ -20,8 +20,8 @@
         <li> <a href="authentification.view.php">Redirection 3</a> </li>
       </ul>
 
-      <button type="button"><a href="authentification.view.php">Login</a></button>
-      <button type="button" name="action" value="convertir"><a href="logauthentificationin.view.php">Sign Up</a></button>
+      <button type="button" name="action" value="login"><a href="authentification.ctrl.php">Se connecter</a></button>
+      <button type="button" name="action" value="signup"><a href="authentificationin.ctrl.php">S'inscrire</a></button>
     </header>
 
     <!-------------------------------------- Main du Site -------------------------------------->
@@ -38,6 +38,7 @@
           <img src="../view/design/logo.png">
         </div>
 
+	  </section>
       <section class="contenuAcceuil2">
         <div>
           <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus augue sed purus venenatis, ut pharetra elit dignissim. Fusce vel ex ornare, vulputate dui non, blandit arcu. Aenean laoreet, nibh tempor aliquam hendrerit, dui mi efficitur diam, sit amet porttitor diam dolor ac odio. Donec non ullamcorper mauris. Quisque elementum tortor quis augue elementum iaculis. Vivamus sit amet ultricies ligula. Nam fringilla quam id orci aliquam imperdiet. Phasellus eget vehicula neque. Vestibulum hendrerit metus quis ex viverra, vitae pretium sem tincidunt. Phasellus in nisi sed dui efficitur eleifend vel ac orci. Nam commodo ipsum at facilisis tempus. Sed interdum est vitae odio tempus feugiat. Etiam viverra iaculis dictum. Suspendisse eget ex et neque scelerisque lobortis. Ut dignissim interdum orci.  </p>
@@ -63,9 +64,9 @@
     <!---------------------------------------- Footer du site ---------------------------------------->
     <footer>
         <ul>
-          <li> <a href="authentification.view.php">Lien footer 1</a> </li>
-          <li> <a href="authentification.view.php">Lien footer 2</a> </li>
-          <li> <a href="authentification.view.php">Lien footer 3</a> </li>
+          <li> <a href="authentification.ctrl.php">Lien footer 1</a> </li>
+          <li> <a href="authentification.ctrl.php">Lien footer 2</a> </li>
+          <li> <a href="authentification.ctrl.php">Lien footer 3</a> </li>
         </ul>
     </footer>
 
