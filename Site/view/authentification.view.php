@@ -11,6 +11,7 @@
     <!-------------------------------------- Header du site --------------------------------------->
     <header>
       <h1>Tech A Way</h1>
+      <nav>
 
       <img src="../view/design/logo.png">
 
@@ -20,25 +21,32 @@
         <li> <a href="authentification.view.php">Redirection 3</a> </li>
       </ul>
 
-      <button type="button" name="action" value="login"><a href="authentification.view.php">Se connecter</a></button>
-      <button type="button" name="action" value="signup"><a href="authentificationin.view.php">S'inscrire</a></button>
+
+      <div class="authentification">
+        <button type="button" name="action" value="login"><a href="authentification.ctrl.php">Se connecter</a></button>
+        <button type="button" name="action" value="signup"><a href="authentification.ctrl.php">S'inscrire</a></button>
+      </div>
+
+    </nav>
+
     </header>
 
     <!-------------------------------------- Main du Site -------------------------------------->
     <main>
 
     <section class="formulaireConnection">
-        <form>
-            <h1> Connexion à votre compte </h1>
-            <label > Nom d'utilisateur :</label>
-            <input id="in" type="char" name="username" value="<?=$username?>">
-            <br></br>
-            <label > Mot de passe :</label>
-            <input id="in" type="char" name="password" value="<?=$password?>">
+      <form class="" action="authentification.ctrl.php" method="get">
+          <h1>Connexion</h1>
+          <output class="w3-pale-red"><?=$erreur?></output>
+          <label for="username">Nom d'utilisateur</label>
+          <input id="username" type="text" name="username" placeholder="Entrer votre nom d'utilisateur" required>
+          <label for="password">Mot de passe</label>
+          <input id="password" type="password" name="password" placeholder="Mot de passe" required>
+          <input type="submit" id='submit' value='LOGIN' >
 
-        </form>
+      </form>
     </section>
-
+    
     </main>
 
     <!---------------------------------------- Footer du site ---------------------------------------->

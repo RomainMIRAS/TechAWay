@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="fr" dir="ltr">
   <head>
     <meta charset="utf-8">
@@ -11,6 +10,7 @@
     <!-------------------------------------- Header du site --------------------------------------->
     <header>
       <h1>Tech A Way</h1>
+      <nav>
 
       <img src="../view/design/logo.png">
 
@@ -20,8 +20,14 @@
         <li> <a href="authentification.view.php">Redirection 3</a> </li>
       </ul>
 
-      <button type="button" name="action" value="login"><a href="authentification.ctrl.php">Se connecter</a></button>
-      <button type="button" name="action" value="signup"><a href="authentificationin.ctrl.php">S'inscrire</a></button>
+
+      <div class="authentification">
+        <button type="button" name="action" value="login"><a href="authentification.ctrl.php">Se connecter</a></button>
+        <button type="button" name="action" value="signup"><a href="authentification.ctrl.php">S'inscrire</a></button>
+      </div>
+
+    </nav>
+
     </header>
 
     <!-------------------------------------- Main du Site -------------------------------------->
@@ -37,6 +43,8 @@
         <div>
           <img src="../view/design/logo.png">
         </div>
+      </section>
+
 
 	  </section>
       <section class="contenuAcceuil2">
@@ -46,8 +54,9 @@
       </section>
 
       <section class="listePartenaires">
-        <div >
           <h1> Nos Partenaires </h1>
+          <div>
+
           <div> <img class="ImagePartenaire"  src="../view/design/logo.png"> </div>
           <div> <img class="ImagePartenaire"  src="../view/design/logo.png"> </div>
           <div> <img class="ImagePartenaire"  src="../view/design/logo.png"></div>

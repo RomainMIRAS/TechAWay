@@ -1,94 +1,80 @@
 /* Styles du template */
 
 /**************************************************************
-* Partie ?
+* Partie Header
 **************************************************************/
 /* A remplir */
 
-body {
-    background-color: white;
-  }
-  
-h1 {
-    text-align: center;
-    background-color: yellow;
-  }
-
-.header1 {
-    margin-top: -22px;
-    margin-left: 40px;
+header h1{
+  background-color: yellow;
+  text-align: center;
 }
-  
-.loginButton {
-    text-align: right;
-    background-color: blue;
-    border-radius: 10px;
-    border: 0;
-    line-height: 2.5;
-    padding: 0 20px;
-    font-size: 1rem;
-    text-align: center;
-    color: #fff;
-    text-shadow: 1px 1px 1px #000;
-
-    background-image: linear-gradient(to top left,
-                                      rgba(0, 0, 0, .2),
-                                      rgba(0, 0, 0, .2) 30%,
-                                      rgba(0, 0, 0, 0));
-    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
-                inset -2px -2px 3px rgba(0, 0, 0, .6);
-  }
-
-  .loginButton:active {
-    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
-                inset 2px 2px 3px rgba(0, 0, 0, .6);
+header nav{
+  display: flex;
+  height: 100px;
+}
+header ul{
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0px;
+  margin: 10px;
 }
 
-.loginButton:hover {
-    background-color: rgb(0, 174, 255);
+header ul li{
+  padding: 10px;
+  margin: 10px;
+
 }
 
-.signupButton {
-    margin-left: 0px;
-    background-color: blue;
-    border-radius: 10px;
-    border: 0;
-    line-height: 2.5;
-    padding: 0 20px;
-    font-size: 1rem;
-    text-align: center;
-    color: #fff;
-    text-shadow: 1px 1px 1px #000;
+header .authentification{
+  display: flex;
+  text-align: right;
+}
+/**************************************************************
+* Partie Main
+**************************************************************/
 
-    background-image: linear-gradient(to top left,
-                                      rgba(0, 0, 0, .2),
-                                      rgba(0, 0, 0, .2) 30%,
-                                      rgba(0, 0, 0, 0));
-    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
-                inset -2px -2px 3px rgba(0, 0, 0, .6);
-  }
-
-.signupButton:active {
-    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
-                inset 2px 2px 3px rgba(0, 0, 0, .6);
+main{
+  padding: 30px;
 }
 
-.signupButton:hover {
-    background-color: rgb(0, 174, 255);
+.contenuAcceuil1{
+  display:  flex;
+  margin: 20px;
+  padding: 10px;
+  border: 4mm ridge rgba(170, 50, 220, .6);
 }
 
-.logo {
-    width: 60px;
-    height: 40px;
+.contenuAcceuil2{
+  border: 4mm ridge rgba(170, 50, 220, .6);
+  margin: 20px;
+  padding: 10px;
 }
 
-.barNav {
-    list-style:none;
+.listePartenaires{
+  border: 4mm ridge rgba(170, 50, 220, .6);
+  margin: 20px;
+  padding: 10px;
 }
 
-.collectionAcceuil.div {
-    display: none;
-    white-space: nowrap;
-    overflow: hidden;
-    
+.listePartenaires div{
+  display: flex;
+}
+
+
+/**************************************************************
+* Partie Footer
+**************************************************************/
+footer ul{
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 0px;
+}
+
+footer ul li{
+  padding: 10px;
+  margin: 10px;
+
 }
