@@ -23,5 +23,5 @@ $view = new View();
 // A Faire
 
 // Charge la vue
-$view->display("accueil.view.php")
+$view->display("acceuil.view.php")
 ?>
