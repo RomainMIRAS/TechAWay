@@ -1,1 +1,1 @@
-<?php shell_exec( 'cd <repo-directory>; git reset --hard origin/<dev/prod>; git clean -d -f; git pull https://gitlab-ci-token:<Access-Token>@gitlab.com/<your-repo-url>.git <dev/prod>' ); ?>
+<?php shell_exec( 'cd <repo-directory>; git reset --hard origin/<dev/prod>; git clean -d -f; git pull https://gitlab-ci-token:1RvndTUhC99jCkU1ZQb7@gricad-gitlab.univ-grenoble-alpes.fr/iut2-info-stud/2021-s3/m3301/team-13/rendus.git.git <dev/prod>' ); ?>
