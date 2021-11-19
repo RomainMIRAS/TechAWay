@@ -7,7 +7,7 @@
 include_once(__DIR__."/../framework/view.class.php");
 
 // Inclusion du modèle
-include_once(__DIR__."/../model/DAO.class.php");
+//include_once(__DIR__."/../model/DAO.class.php");
 
 
 ////////////////////////////////////////////////////////////////////////////

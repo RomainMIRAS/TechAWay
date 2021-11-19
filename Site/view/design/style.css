@@ -81,3 +81,14 @@ h1 {
     width: 60px;
     height: 40px;
 }
+
+.barNav {
+    list-style:none;
+}
+
+.collectionAcceuil.div {
+    display: none;
+    white-space: nowrap;
+    overflow: hidden;
+    
+}
