@@ -27,4 +27,4 @@ Il est vivement déconseillé de modifier le fichier `.gitattributes`.
 
 Le dossier `.gitlab` contient la configuration spécifique à GitLab.
 
-//3t3t
+//3t
