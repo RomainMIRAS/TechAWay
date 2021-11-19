@@ -4,3 +4,80 @@
 * Partie ?
 **************************************************************/
 /* A remplir */
+
+body {
+    background-color: white;
+  }
+  
+h1 {
+    text-align: center;
+    background-color: yellow;
+  }
+
+.header1 {
+    margin-top: -22px;
+    margin-left: 40px;
+}
+  
+.loginButton {
+    text-align: right;
+    background-color: blue;
+    border-radius: 10px;
+    border: 0;
+    line-height: 2.5;
+    padding: 0 20px;
+    font-size: 1rem;
+    text-align: center;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+
+    background-image: linear-gradient(to top left,
+                                      rgba(0, 0, 0, .2),
+                                      rgba(0, 0, 0, .2) 30%,
+                                      rgba(0, 0, 0, 0));
+    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
+                inset -2px -2px 3px rgba(0, 0, 0, .6);
+  }
+
+  .loginButton:active {
+    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
+                inset 2px 2px 3px rgba(0, 0, 0, .6);
+}
+
+.loginButton:hover {
+    background-color: rgb(0, 174, 255);
+}
+
+.signupButton {
+    margin-left: 0px;
+    background-color: blue;
+    border-radius: 10px;
+    border: 0;
+    line-height: 2.5;
+    padding: 0 20px;
+    font-size: 1rem;
+    text-align: center;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+
+    background-image: linear-gradient(to top left,
+                                      rgba(0, 0, 0, .2),
+                                      rgba(0, 0, 0, .2) 30%,
+                                      rgba(0, 0, 0, 0));
+    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
+                inset -2px -2px 3px rgba(0, 0, 0, .6);
+  }
+
+.signupButton:active {
+    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
+                inset 2px 2px 3px rgba(0, 0, 0, .6);
+}
+
+.signupButton:hover {
+    background-color: rgb(0, 174, 255);
+}
+
+.logo {
+    width: 60px;
+    height: 40px;
+}
