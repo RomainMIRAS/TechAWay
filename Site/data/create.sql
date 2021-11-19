@@ -1,3 +1,4 @@
+-- Données d'un candidat (chercheur d'emploi)
 CREATE TABLE CANDIDAT (
 	idCandidat INTEGER PRIMARY KEY,
 	nom TEXT,
@@ -8,6 +9,7 @@ CREATE TABLE CANDIDAT (
 	lienCV TEXT
 );
 
+-- Données d'un coach
 CREATE TABLE COACH (
 	idCoach INTEGER PRIMARY KEY,
 	adresseMail TEXT,
@@ -15,6 +17,7 @@ CREATE TABLE COACH (
 	prenom TEXT
 );
 
+-- Données d'un client (entreprise)
 CREATE TABLE CLIENT (
 	idClient INTEGER PRIMARY KEY,
 	nomClient TEXT,
@@ -23,24 +26,28 @@ CREATE TABLE CLIENT (
 	telephone TEXT
 );
 
+-- Caractéristiques d'une offre d'emploi
 CREATE TABLE OFFRE (
 	idOffre INTEGER PRIMARY KEY,
 	nomOffre TEXT,
 	dateOffre DATE
 );
 
+-- Caractéristiques du login d'un candidat ou d'un coach
 CREATE TABLE LOGIN (
 	idLogin INTEGER PRIMARY KEY,
 	adresseMail TEXT,
 	password TEXT
 );
 
+-- Caractéristiques d'un message entre un candidat et son coach
 CREATE TABLE Message (
 	idMessage INTEGER PRIMARY KEY,
 	message TEXT,
-	dateEnvoi TEXT
+	dateEnvoi DATE
 );
 
+-- Details d'une offre d'emploi
 CREATE TABLE DetailOffre (
 	idDetailOffre INTEGER PRIMARY KEY,
 	travEtranger TEXT,
@@ -50,6 +57,7 @@ CREATE TABLE DetailOffre (
 	typpeEntreprise TEXT
 );
 
+-- Competence requise par une offre d'emploi
 CREATE TABLE CompetenceRequise (
 	idCompetanceRequise INTEGER PRIMARY KEY,
 	nvEtude TEXT,
@@ -57,6 +65,7 @@ CREATE TABLE CompetenceRequise (
 	langageRequis TEXT
 );
 
+-- Preferences du candidat (chercheur d'emploi)
 CREATE TABLE Preference (
 	idPreference INTEGER PRIMARY KEY,
 	secteurPref TEXT,
@@ -65,6 +74,7 @@ CREATE TABLE Preference (
 	tyeEntreprisePref TEXT
 );
 
+-- Competences acquises par le candidat (chercheur d'emploi)
 CREATE TABLE CompetenceAcquise (
 	idCompetenceAcquise INTEGER PRIMARY KEY,
 	nvEtude TEXT,
