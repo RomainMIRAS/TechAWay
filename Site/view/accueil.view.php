@@ -7,7 +7,6 @@
     <title>Tech A Way</title>
   </head>
   <body>
-
     <!-------------------------------------- Header du site --------------------------------------->
     <header>
       <h1>Tech A Way</h1>
