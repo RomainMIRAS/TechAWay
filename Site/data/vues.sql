@@ -1,0 +1,5 @@
+---------------------------------------------------------------
+-- Vue VActivitesFutures
+-- Toutes les informations sur les activités dont la date de départ est ultérieure à la date du jour
+-- Vue ordonnée sur la date de départ
+---------------------------------------------------------------
