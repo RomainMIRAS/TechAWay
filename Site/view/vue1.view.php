@@ -15,13 +15,13 @@
       <img src="../view/design/logo.png">
 
       <ul>
-        <li> <a href="login.view.php">Redirection 1</a> </li>
-        <li> <a href="login.view.php">Redirection 2</a> </li>
-        <li> <a href="login.view.php">Redirection 3</a> </li>
+        <li> <a href="authentification.view.php">Redirection 1</a> </li>
+        <li> <a href="authentification.view.php">Redirection 2</a> </li>
+        <li> <a href="authentification.view.php">Redirection 3</a> </li>
       </ul>
 
-      <button type="button"><a href="login.view.php">Login</a></button>
-      <button type="button"><a href="login.view.php">Sign Up</a></button>
+      <button type="button"><a href="authentification.view.php">Login</a></button>
+      <button type="button" name="action" value="convertir"><a href="logauthentificationin.view.php">Sign Up</a></button>
     </header>
 
     <!-------------------------------------- Main du Site -------------------------------------->
@@ -63,9 +63,9 @@
     <!---------------------------------------- Footer du site ---------------------------------------->
     <footer>
         <ul>
-          <li> <a href="login.view.php">Lien footer 1</a> </li>
-          <li> <a href="login.view.php">Lien footer 2</a> </li>
-          <li> <a href="login.view.php">Lien footer 3</a> </li>
+          <li> <a href="authentification.view.php">Lien footer 1</a> </li>
+          <li> <a href="authentification.view.php">Lien footer 2</a> </li>
+          <li> <a href="authentification.view.php">Lien footer 3</a> </li>
         </ul>
     </footer>
 
