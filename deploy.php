@@ -62,6 +62,7 @@ flush();
 $commands = array(
         'echo $PWD',
         'whoami',
+        'git reset --hard HEAD',
         'git pull --force',
         'git status',
         'git submodule sync',
