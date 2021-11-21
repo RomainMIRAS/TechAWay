@@ -3,7 +3,7 @@
 
 
 try{
-  $dbconn3 = pg_connect("dbname=testdao user=test password=test");
+  $dbconn3 = pg_connect("dbname=testdao user=testdao password=testdao");
   $req = $dao->pg_query($dbconn3,"SELECT * FROM article");
 
   
