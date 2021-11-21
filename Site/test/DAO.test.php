@@ -4,7 +4,7 @@
 
 try{
   $dbconn3 = pg_connect("host=localhost port=5432 dbname=testdao user=testdao password=test");//138.68.96.182
-  $req = $dao->pg_query($dbconn3,"SELECT * FROM article");
+  $req = pg_query($dbconn3,"SELECT * FROM article");
 
   
   $f = pg_fetch_all($req);
