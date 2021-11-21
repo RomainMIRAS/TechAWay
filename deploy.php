@@ -62,7 +62,6 @@ flush();
 $commands = array(
         'echo $PWD',
         'whoami',
-        'cd /var/www/html/',
         'git reset --hard HEAD',
         'git pull',
         'git status',
