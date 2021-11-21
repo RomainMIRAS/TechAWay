@@ -25,8 +25,4 @@ Les deux fichiers `.gitattributes` et `.gitignore` sont liés à la configuratio
 Vous pouvez modifier le fichier `.gitignore` en fonction des technologies utilisées et de l'organisation du dépôt choisie.<br>
 Il est vivement déconseillé de modifier le fichier `.gitattributes`.
 
-Le dossier `.gitlab` contient la configuration spécifique à GitLab.4
-
-
-
-aa
+Le dossier `.gitlab` contient la configuration spécifique à GitLab.
