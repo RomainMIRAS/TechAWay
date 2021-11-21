@@ -13,7 +13,7 @@ class DAO {
     $this->db = new PDO('sqlite:/users/info/etu-s3/delmedir/public_html/TP3/data/Jukebox_DB/Jukebox_DB/data/music.db');
   }
 
-  //Accès à un client
+  /* //Accès à un client
   function getClient(int $idClient) : Client {
     try {
       $r = $this->db->query("SELECT * FROM Client WHERE idClient=$idClient");
@@ -92,6 +92,6 @@ function getOffre(int $idOffre) : Offre {
       die("PDO Error :".$e->getMessage());
     }
     return $offre;
-  }
+  } */
 }
 ?>
