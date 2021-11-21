@@ -1,5 +1,5 @@
 <?php
-require_once(__DIR__.'/../model/DAO.class.php');
+//require_once(__DIR__.'/../model/DAO.class.php');
 
 
 try{
@@ -10,7 +10,7 @@ try{
   $f = pg_fetch_all($req);
 
   var_dump($f);
-  
+
 }catch (Exception $e) {
   print("\n*** Erreur ***\n");
   print("Erreur : ".$e->getMessage()."\n");
