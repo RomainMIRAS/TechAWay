@@ -10,10 +10,11 @@ class DAO {
   // Constructeur chargé d'ouvrir la BD
   function __construct() {
     $database = 'sqlite:'.dirname(__FILE__).'/../data/tech.db';
-    $this->db = new PDO('sqlite:/users/info/etu-s3/delmedir/public_html/TP3/data/Jukebox_DB/Jukebox_DB/data/music.db');
+    // a changer
+    $this->db = pg_connect("host=localhost port=5432 dbname=testdao user=testdao password=test");//138.68.96.182
   }
-
-  /* //Accès à un client
+/* 
+  //Accès à un client
   function getClient(int $idClient) : Client {
     try {
       $r = $this->db->query("SELECT * FROM Client WHERE idClient=$idClient");

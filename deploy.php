@@ -64,7 +64,7 @@ $commands = array(
         'whoami',
         'cd /var/www/html/',
         'git reset --hard HEAD',
-        'git pull --force',
+        'git pull',
         'git status',
         'git submodule sync',
         'git submodule update',
