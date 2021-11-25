@@ -7,7 +7,27 @@
   </head>
   <body>
     <!-------------------------------------- Header du site --------------------------------------->
-    <?php require('header.php');  ?>
+    <header>
+      <h1>Tech A Way</h1>
+      <nav>
+
+      <img src="../view/design/logo.png">
+
+      <ul>
+        <li> <a href="authentification.view.php">Redirection 1</a> </li>
+        <li> <a href="authentification.view.php">Redirection 2</a> </li>
+        <li> <a href="authentification.view.php">Redirection 3</a> </li>
+      </ul>
+
+
+      <div class="authentification">
+        <button type="button" name="action" value="login"><a href="authentification.ctrl.php">Se connecter</a></button>
+        <button type="button" name="action" value="signup"><a href="authentification.ctrl.php">S'inscrire</a></button>
+      </div>
+
+    </nav>
+
+    </header>
 
     <!-------------------------------------- Main du Site -------------------------------------->
     <main>
@@ -50,7 +70,13 @@
     </section>
 
     <!---------------------------------------- Footer du site ---------------------------------------->
-    <?php require('footer.php');  ?>
+    <footer>
+        <ul>
+          <li> <a href="authentification.ctrl.php">Lien footer 1</a> </li>
+          <li> <a href="authentification.ctrl.php">Lien footer 2</a> </li>
+          <li> <a href="authentification.ctrl.php">Lien footer 3</a> </li>
+        </ul>
+    </footer>
 
 
   </body>

@@ -1,6 +1,6 @@
 -- Données d'un utilisateur (candidat ou coach)
 CREATE TABLE UTILISATEUR (
-	idUtilisateur INTEGER PRIMARY KEY, -- numéro unique de l'utilisateur
+	idUtilisateur INTEGER PRIMARY KEY, -- numéro unique de l'utilisateu
 	nom TEXT, -- nom de l'utilisateur
 	prenom TEXT, -- prenom de l'utilisateur
 	age INTEGER, -- age de l'utilisateur
