@@ -8,12 +8,11 @@
   <body>
 
     <!-------------------------------------- Header du site --------------------------------------->
-
+    <?php require('header.php');  ?>
 
     <!-------------------------------------- Main du Site -------------------------------------->
     <main>
 
-      <?php require('header.php');  ?>
 
       <section class="contenuAcceuil1">
         <div >
