@@ -13,7 +13,7 @@ class Utilisateur {
 
 
   // Contructeur
-  function __construct(string $nom='', string $prenom='', string $mail='', int $password='') {
+  function __construct(string $nom, string $prenom, string $mail, int $password) {
     $this->nom = $nom;
     $this->prenom = $prenom;
     $this->mail = $mail;

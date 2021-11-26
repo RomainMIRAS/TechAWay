@@ -1,7 +1,7 @@
 <?php
 
-// Description d'un client  
-class Client {
+// Description d'un entreprise  
+class Entreprise {
   private int $id;              //Identifiant du client
   private string $nom;          //Nom
   private string $adresse;      //Adresse du client
@@ -9,7 +9,7 @@ class Client {
   private string $mail;         //Mail
 
   // Contructeur
-  function __construct(int $id=0, string $nom='', string $adresse='', string $telephone='', string $mail='') {
+  function __construct(int $id=, string $nom, string $adresse, string $telephone, string $mail) {
     $this->idClient = $id;
     $this->nom = $nom;
     $this->adresse = $adresse;

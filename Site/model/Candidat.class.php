@@ -9,7 +9,7 @@ class Candidat {
   private Competence $competenceAcquis; //Les compétence du candidat
 
   // Contructeur
-  function __construct(string $nom='', string $prenom='', string $mail='', string $password='', string $lienCV) {
+  function __construct(string $nom, string $prenom, string $mail, string $password, string $lienCV="Non-renseigné") {
     parent::__construct($nom, $prenom, $mail, $password);
     $this->lienCV = $lienCV;
   }

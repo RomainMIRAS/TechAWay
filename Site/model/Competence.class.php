@@ -5,12 +5,11 @@
 class Competence {
   private int $id;                      //Identifiant compétence
   private string $nvEtude;              //Niveau étude
-    private string $langeParle;         //Lange parlé
-    private string $langageAcquis;      //Langage informatique parlé
-
+  private string $langeParle;           //Lange parlé
+  private string $langageAcquis;        //Langage informatique parlé
 
   // Contructeur
-  function __construct(string $nvEtude='', string $langeParle='', string $langageAcquis='') {
+  function __construct(string $nvEtude, string $langeParle, string $langageAcquis) {
     $this->nvEtude = $nvEtude;
     $this->langeParle = $langeParle;
     $this->langageAcquis = $langageAcquis;
