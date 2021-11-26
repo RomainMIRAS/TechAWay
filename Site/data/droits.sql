@@ -6,3 +6,4 @@ REVOKE ALL PRIVILEGES ON DATABASE techAWayDB FROM PUBLIC; -- supprimer tous les 
 CREATE USER defaultUser WITH password 'default'; -- l'utilisateur par defaut de la page
 
 GRANT CONNECT ON DATABASE techAWayDB TO defaultUser;
+GRANT SELECT ON DATABASE techAWayDB TO defaultUser;
