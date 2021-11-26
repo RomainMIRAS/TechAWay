@@ -1,6 +1,6 @@
 <?php
 
-// Description d'un livre  
+// Description d'un utilisateur  
 class Utilisateur {
   private int $id;              //Identifiant
   private string $nom;          //Nom

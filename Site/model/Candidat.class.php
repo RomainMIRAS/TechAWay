@@ -1,6 +1,6 @@
 <?php
 
-// Description d'un livre  
+// Description d'un candidat  
 class Candidat {
   private string $adresse;      //Adresse du candidat
   private string $lienCV;       //lienCV

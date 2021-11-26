@@ -1,6 +1,6 @@
 <?php
 
-// Description d'un livre  
+// Description d'un Coach  
 class Coach extends Utilisateur {
   private string lienPhoto;
 
