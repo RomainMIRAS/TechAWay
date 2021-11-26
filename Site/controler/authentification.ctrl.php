@@ -44,7 +44,7 @@ if ($confirmation == "oui" && $action == "login"){
     $erreur = "Champ obligatoire manquant !";
   } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)){
     $erreur = "Email non valide !";
-  } else if (){  //Fonction si email pas dans asso au mdp
+  } else if (true){  //Fonction si email pas dans asso au mdp
 
   }
 }
