@@ -1,6 +1,6 @@
 <?php
 
-// Description d'un livre  
+// Description d'un utilisateur  
 class Utilisateur {
   private int $id;              //Identifiant
   private string $nom;          //Nom
@@ -11,12 +11,11 @@ class Utilisateur {
   private int $age;             //Age
   private string $dateCreation  //Date création utilisateur
 
+
   // Contructeur
-  function __construct(string $nom='', string $prenom='', string $mail='', int $password='') {
-    //$this->id = $id;
+  function __construct(string $nom, string $prenom, string $mail, int $password) {
     $this->nom = $nom;
     $this->prenom = $prenom;
-    //$this->age = $age;
     $this->mail = $mail;
     $this->password = $password;
   }

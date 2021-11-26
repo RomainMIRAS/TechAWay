@@ -1,34 +1,16 @@
 <?php
 
-// Description d'un livre  
-class Coach {
-  private int $id;              //Identifiant du coach
-  private string $nom;          //Nom
-  private string $prenom;       //Prenom
-  private string $mail;         //Mail
+// Description d'un Coach  
+class Coach extends Utilisateur {
+  private string lienPhoto;
 
   // Contructeur
-  function __construct(int $id=0, string $nom='', string $prenom='', string $mail='') {
-    $this->idClient = $id;
-    $this->nom = $nom;
-    $this->prenom = $prenom;
-    $this->mail = $mail;
+  function __construct(string $nom, string $prenom, string $mail, string $password) {
+    parent::__construct($nom, $prenom, $mail, $password);
   }
 
-  function getId() : int {
-    return $this->idClient;
-  }
-
-  function getNom() : string {
-    return $this->nom;
-  }
-
-  function getPrenom() : string {
-    return $this->prenom;
-  }
-
-  function getMail() : string {
-    return $this->lienCV;
+  function getLienPhoto() : string {
+    return $this->lienPhoto;
   }
 
 }
