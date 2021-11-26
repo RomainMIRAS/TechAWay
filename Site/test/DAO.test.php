@@ -3,7 +3,7 @@
 
 
 try{
-  $dbconn3 = pg_connect("host=localhost port=5432 dbname=testdao user=testdao password=test");//138.68.96.182
+  $dbconn3 = pg_connect("host=localhost port=5432 dbname=bases3d23 user=users3d23 password=p23");//138.68.96.182
   $req = pg_query($dbconn3,"SELECT * FROM article");
 
   
