@@ -44,7 +44,7 @@ function getEmails() : array {
 	}
 	return $listeMail;
 }
-
+/* 
 function verifEmailMdp(string $mail, string $pass) : array {
 	try {
 	$req = pg_query($this->db,"SELECT * FROM UTILISATEUR where adresseMail=$mail AND password=$pass");
@@ -69,7 +69,7 @@ function verifEmailMdp(string $mail, string $pass) : array {
 	}
 	return $liste;
 }
-/* 
+
 
 //Accès à un client
 function getEntreprise(int $idEntreprise) : Client {
