@@ -33,11 +33,43 @@ try {
   }
   print("OK\n");
 
-} catch (Exception $e) {
+
+//Test de la récupération d'un coach
+  print("Accès à un coach : ");
+  $expected = new Livre(1,"Slan",1940,1);
+  $value = $dao->readLivre(1);
+  if ( $value != $expected) {
+    print("\n");
+    var_dump($value);
+    print("Attendu : \n");
+    var_dump($expected);
+    throw new Exception("Lecture du livre No 1 incorrect");
+  }
+  print("OK\n");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  } catch (Exception $e) {
   print("\n*** Erreur ***\n");
   print("Erreur : ".$e->getMessage()."\n");
 }
-
 
 
 
