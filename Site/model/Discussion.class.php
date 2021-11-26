@@ -4,10 +4,11 @@
 
 // Description d'une discussion  
 class Discussion {
-  private int $id;                     //id de la discussion
-  private string $dateDiscussion        //date de la Discussion
-  private Candidat $correspondant1      //Candidat de la discussion
-  private Coach $correspondant2         //Coach de la discussion
+  private int $id;                      //id de la discussion
+  private string $dateDiscussion;       //date de la Discussion
+  private Candidat $correspondant1;     //Candidat de la discussion
+  private Coach $correspondant2;        //Coach de la discussion
+  private Message $messages;
 
   // Contructeur
   function __construct(Candidat $correspodant1, Coach $correspodant2) {
