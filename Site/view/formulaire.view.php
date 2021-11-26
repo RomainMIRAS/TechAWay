@@ -73,6 +73,58 @@
               </form>
           </section>
 
+
+      <?php elseif ($etape == "preferences"): ?>
+          <section class="preferences">
+            <form class="form" action="formulaire.ctrl.php" method="post">
+              <h1>Formulaire</h1>
+              <!-- Saisie des preferences du candidat -->
+
+              <label for="travEtranger">Travail à l'etranger</label>
+              <input type="radio" name="travEtranger" value="oui">
+              <label for="oui">Oui</label>
+              <input type="radio" name="travEtranger" value="non">
+              <label for="oui">Non</label>
+
+
+              <label for="typeContrat">Type de contrat</label>
+              <select name="typeContrat" >
+                  <option value="">--Veuillez choisir une option--</option>
+                  <option value="cdi">CDI</option>
+                  <option value="cdd">CDD</option>
+              </select>
+
+              <label for="secteur">Secteur de travail</label>
+              <select name="secteur" >
+                  <option value="">--Veuillez choisir une option--</option>
+                  <option value="cdi">Secteur 1</option>
+                  <option value="cdd">Secteur 2</option>
+              </select>
+
+              <label for="poste">Poste</label>
+              <select name="poste" >
+                  <option value="">--Veuillez choisir une option--</option>
+                  <option value="cdi">Poste 1</option>
+                  <option value="cdd">Poste 2</option>
+              </select>
+
+              <label for="typeEntreprise">Type d'entreprise</label>
+              <select name="typeEntreprise" >
+                  <option value="">--Veuillez choisir une option--</option>
+                  <option value="cdi">Start-Up</option>
+                  <option value="cdd">Multinational</option>
+              </select>
+
+              <label for="langueParle">Langues parlé</label>
+              <input id="langueParle" type="text" name="langueParle" placeholder="ex : francais, anglais" required>
+              <label for="nvEtude">Niveau d'etudes</label>
+              <input id="nvEtude" type="text" name="nvEtude" placeholder="Format : Bac+3" required>
+              <form action ="formulaire.ctrl.php" method="post">
+              <button type="submit" value="formulaire">Precedent</button>
+              <input type="submit" name ="etape" value='Envoyer' >
+              </form>
+          </section>
+
       <?php endif; ?>
 
 
