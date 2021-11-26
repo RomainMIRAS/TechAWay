@@ -1,7 +1,7 @@
 <?php
-require_once(__DIR__.'/Client.class.php');
+/* require_once(__DIR__.'/Client.class.php');
 require_once(__DIR__.'/Candidat.class.php');
-require_once(__DIR__.'/Offre.class.php');
+require_once(__DIR__.'/Offre.class.php'); */
 
 // Le Data Access Objet
 class DAO {

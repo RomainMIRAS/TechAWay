@@ -7,3 +7,7 @@ CREATE USER defaultUser WITH password 'default'; -- l'utilisateur par defaut de 
 
 GRANT CONNECT ON DATABASE techAWayDB TO defaultUser;
 GRANT SELECT ON UTILISATEUR TO defaultUser;
+
+
+
+GRANT ALL PRIVILEGES ON DATABASE techAWayDB to defaultUser;
