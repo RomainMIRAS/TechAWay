@@ -26,7 +26,7 @@
         <section class="formulaire">
             <form class="form" action="formulaire.ctrl.php" method="get">
               <h1>Formulaire</h1>
-              <!-- Saisie des information du candidat -->
+              <!-- Saisie des informations du candidat -->
               <label for="nom">Nom</label>
               <input id="nom" type="text" name="nom" placeholder="Entrer votre nom" required>
               <label for="prenom">Prenom</label>
