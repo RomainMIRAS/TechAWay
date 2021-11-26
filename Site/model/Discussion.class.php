@@ -8,7 +8,7 @@ class Discussion {
   private string $dateDiscussion;       //date de la Discussion
   private Candidat $correspondant1;     //Candidat de la discussion
   private Coach $correspondant2;        //Coach de la discussion
-  private Message $messages;
+  private array $messages;              //Liste des messages envoyer dans la discussion
 
   // Contructeur
   function __construct(Candidat $correspodant1, Coach $correspodant2) {
