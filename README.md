@@ -26,3 +26,4 @@ Vous pouvez modifier le fichier `.gitignore` en fonction des technologies utilis
 Il est vivement déconseillé de modifier le fichier `.gitattributes`.
 
 Le dossier `.gitlab` contient la configuration spécifique à GitLab.
+test
