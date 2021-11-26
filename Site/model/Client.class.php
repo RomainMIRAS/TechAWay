@@ -1,6 +1,6 @@
 <?php
 
-// Description d'un livre  
+// Description d'un client  
 class Client {
   private int $id;              //Identifiant du client
   private string $nom;          //Nom
