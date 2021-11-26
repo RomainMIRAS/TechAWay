@@ -1,7 +1,7 @@
 <?php
-require_once(__DIR__.'/Client.class.php');
+/* require_once(__DIR__.'/Client.class.php');
 require_once(__DIR__.'/Candidat.class.php');
-require_once(__DIR__.'/Offre.class.php');
+require_once(__DIR__.'/Offre.class.php'); */
 
 // Le Data Access Objet
 class DAO {
@@ -10,7 +10,7 @@ private $db;
 // Constructeur chargé d'ouvrir la BD
 function __construct() {
 	try{
-	$this->db = pg_connect("host=localhost port=5432 dbname=techAWayDB user=defaultUser password=default");//138.68.96.182
+	$this->db = pg_connect("host=localhost port=5432 dbname=techawaydb user=pagman password=pagman");//138.68.96.182
 	
 	}catch (Exception $e) {
 	print("\n*** Erreur ***\n");
@@ -23,13 +23,13 @@ function getEmails() : array {
 	try {
 	$req = pg_query($this->db,"SELECT adresseMail FROM UTILISATEUR");
 	// Affiche en clair l'erreur PDO si la requête ne peut pas s'exécuter
-	if ($r == false) {
+	/* if ($req == false) {
 		var_dump($this->db->pg_result_error());
 		exit(1);
-	}
+	} */
 
 	$table = pg_fetch_all($req);
-	var_dump($f);
+	var_dump($table);
 	$listeMail = array();
 	foreach ($table as $mail) {
 		array_push($listeMail,$mail);
