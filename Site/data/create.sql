@@ -1,6 +1,6 @@
 -- Données d'un utilisateur (candidat ou coach)
 CREATE TABLE UTILISATEUR (
-	idUtilisateur SERIAL UNIQUE INTEGER NOT NULL PRIMARY KEY, -- identifiant unique de l'utilisateur
+	idUtilisateur SERIAL INTEGER NOT NULL PRIMARY KEY, -- identifiant unique de l'utilisateur
 	adresseMail VARCHAR(30) UNIQUE NOT NULL CHECK (adresseMail in '%@%.%'), -- adresse email de l'utilisateur, chaine qui comprend le caractère ‘@’ et ‘.’
 	password VARCHAR(30) NOT NULL CHECK (password > 8), -- mot de passe de l'utilisateur qui doit être suppérieur à 8 caractères
 	nom VARCHAR(30) NULL, -- nom de l'utilisateur
