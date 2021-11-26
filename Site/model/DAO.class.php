@@ -10,7 +10,7 @@ private $db;
 // Constructeur chargé d'ouvrir la BD
 function __construct() {
 	try{
-	$this->db = pg_connect("host=localhost port=5432 dbname=techawaydb user=defaultUser password=default");//138.68.96.182
+	$this->db = pg_connect("host=localhost port=5432 dbname=techawaydb user=defaultuser password=default");//138.68.96.182
 	
 	}catch (Exception $e) {
 	print("\n*** Erreur ***\n");
@@ -23,10 +23,10 @@ function getEmails() : array {
 	try {
 	$req = pg_query($this->db,"SELECT adresseMail FROM UTILISATEUR");
 	// Affiche en clair l'erreur PDO si la requête ne peut pas s'exécuter
-	if ($req == false) {
+	/* if ($req == false) {
 		var_dump($this->db->pg_result_error());
 		exit(1);
-	}
+	} */
 
 	$table = pg_fetch_all($req);
 	var_dump($table);
