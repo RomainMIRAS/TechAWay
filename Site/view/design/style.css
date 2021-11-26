@@ -16,12 +16,12 @@ body {
 **************************************************************/
 
 nav {
-  padding-left: 5px;
-  padding-right: 5px;
+  padding: 10px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  align-items: center;
 }
 
 ul {
@@ -29,6 +29,7 @@ ul {
   align-items: center;
   padding: 0;
   margin: 0;
+  height: max-content;
 }
 
 ul li {
@@ -42,34 +43,59 @@ ul li a {
   color: black;
 }
 
+ul:nth-child(1) li:nth-child(1), ul:nth-child(2) li {
+  padding: 0;
+}
+
 #logo {
   width: 75px;
+  padding: 0;
+  margin-right: 10px;
+  transition: all .2s ease-in-out;
+}
+
+#logo:hover {
+  transform: scale(1.05);
 }
 
 /**************************************************************
 * Partie Main
 **************************************************************/
 
-main{
-  padding: 30px;
+section {
+  display: flex;
+  padding: 10px;
 }
 
-.contenuAcceuil1{
-  display:  flex;
-  margin: 20px;
-  padding: 10px;
-  border: 4mm ridge rgba(170, 50, 220, .6);
+section h1 {
+  color: #0036d9;
+  font-size: 42px;
+}
+
+#section-accueil{
+  justify-content: center;
+  align-items: center;
+}
+
+#section-accueil button{
+  margin-left: 0;
+  margin-right: 5px;
+  border-radius: 5px;
+}
+
+#section-accueil h4 {
+  margin-bottom: 10px;
+}
+
+#section-accueil div:nth-child(1) {
+  width: 500px;
 }
 
 .contenuAcceuil2{
-  border: 4mm ridge rgba(170, 50, 220, .6);
-  margin: 20px;
   padding: 10px;
 }
 
 .listePartenaires{
-  border: 4mm ridge rgba(170, 50, 220, .6);
-  margin: 20px;
   padding: 10px;
 }
 
@@ -136,17 +162,19 @@ output{
 
 /* Boutton Confirmation*/
 button {
-    background-color: #53af57;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
+    background-color: transparent;
+    color: #0036d9;
+    border: 2px solid #0036d9;
+    border-radius: 50px;
+    transition: all .2s ease-in-out;
     cursor: pointer;
-    width: 100%;
-    border: 1px solid transparent;
+    padding: 5px 15px;
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 5px;
 }
+
 button:hover {
-    background-color: white;
-    color: #53af57;
-    border: 1px solid #53af57;
+  background-color: #0036d9;
+  color: white;
 }

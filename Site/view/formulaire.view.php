@@ -3,8 +3,12 @@
 <html lang="fr" dir="ltr">
   <head>
     <meta charset="utf-8">
+
     <!-- TITLE -->
     <title>Tech A Way</title>
+
+    <!-- ICON -->
+    <link rel="icon" href="../view/design/logo.png">
 
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="../view/design/style.css">
