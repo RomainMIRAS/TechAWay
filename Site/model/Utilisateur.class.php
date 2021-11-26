@@ -11,12 +11,11 @@ class Utilisateur {
   private int $age;             //Age
   private string $dateCreation  //Date création utilisateur
 
+
   // Contructeur
   function __construct(string $nom='', string $prenom='', string $mail='', int $password='') {
-    //$this->id = $id;
     $this->nom = $nom;
     $this->prenom = $prenom;
-    //$this->age = $age;
     $this->mail = $mail;
     $this->password = $password;
   }
