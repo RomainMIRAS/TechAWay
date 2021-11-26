@@ -44,7 +44,11 @@ if ($confirmation == "oui" && $action == "login"){
     $erreur = "Champ obligatoire manquant !";
   } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)){ // Mot de passe identique
     $erreur = "Email non valide !";
+<<<<<<< HEAD
+  } else if (true){  //Fonction si email pas dans asso au mdp
+=======
   } else if (false){  //Fonction si email pas dans asso au mdp
+>>>>>>> f2dd7358ff00fdcc4c86abaa48e5d3d0a188800a
 
   }
 }

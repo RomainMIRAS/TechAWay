@@ -20,16 +20,16 @@ try{
 try {
   $dao = new DAO(); // Instancie l'objet DAO
 
-  //Test de la récupération d'un client
-  print("Accès à un client : ");
-  $expected = new Client(1,'IBM','17 avenue de Europe 92275 Bois-Colombes','0476624800', 'ibm@ibm.com');
-  $value = $dao->getClient(1);
+  //Test de la récupération d'un candidat
+  print("Accès à un candidat : ");
+  $expected = new Candidat(1,'IBM','17 avenue de Europe 92275 Bois-Colombes','0476624800', 'ibm@ibm.com');
+  $value = $dao->getCandidat(1);
   if ( $value != $expected) {
     print("\n");
     var_dump($value);
-    print("Attendu : \n");
+    print("\nAttendu : \n");
     var_dump($expected);
-    throw new Exception("Lecture du client N°1 incorrecte");
+    throw new Exception("Lecture du candidat N°1 incorrecte");
   }
   print("OK\n");
 
