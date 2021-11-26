@@ -2,32 +2,23 @@
 <html lang="fr" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="../view/design/style.css">
+
+    <!-- TITLE -->
     <title>Tech A Way</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="../view/design/style.css">
+
+    <!-- GOOGLE FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"> 
+    
   </head>
   <body>
-    <!-------------------------------------- Header du site --------------------------------------->
-    <header>
-      <h1>Tech A Way</h1>
-      <nav>
 
-      <img src="../view/design/logo.png">
-
-      <ul>
-        <li> <a href="authentification.view.php">Redirection 1</a> </li>
-        <li> <a href="authentification.view.php">Redirection 2</a> </li>
-        <li> <a href="authentification.view.php">Redirection 3</a> </li>
-      </ul>
-
-
-      <div class="authentification">
-        <button type="button" name="action" value="login"><a href="authentification.ctrl.php">Se connecter</a></button>
-        <button type="button" name="action" value="signup"><a href="authentification.ctrl.php">S'inscrire</a></button>
-      </div>
-
-    </nav>
-
-    </header>
+    <!-- NAVIGATION ---------------------------------------------------------------------------->
+    <?php include_once('../view/design/navigation.php'); ?>
 
     <!-------------------------------------- Main du Site -------------------------------------->
     <main>
@@ -69,14 +60,8 @@
       </form>
     </section>
 
-    <!---------------------------------------- Footer du site ---------------------------------------->
-    <footer>
-        <ul>
-          <li> <a href="authentification.ctrl.php">Lien footer 1</a> </li>
-          <li> <a href="authentification.ctrl.php">Lien footer 2</a> </li>
-          <li> <a href="authentification.ctrl.php">Lien footer 3</a> </li>
-        </ul>
-    </footer>
+    <!-- FOOTER ---------------------------------------------------------------------------->
+    <?php include_once('../view/design/footer.php'); ?>
 
 
   </body>

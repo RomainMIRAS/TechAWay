@@ -7,7 +7,7 @@
 include_once(__DIR__."/../framework/view.class.php");
 
 // Inclusion du modèle
-include_once(__DIR__."/../model/DAO.class.php");
+//include_once(__DIR__."/../model/DAO.class.php");
 
 $dao = new DAO();
 // Déclaration
@@ -45,7 +45,7 @@ if ($confirmation == "oui" && $action == "login"){
     $erreur = "Champ obligatoire manquant !";
   } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)){ // Mot de passe identique
     $erreur = "Email non valide !";
-  } else if (true){  //Fonction si email pas dans asso au mdp
+  } else if (false){  //Fonction si email pas dans asso au mdp
 
   }
 }
