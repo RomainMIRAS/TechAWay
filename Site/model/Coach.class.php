@@ -2,15 +2,21 @@
 
 // Description d'un Coach  
 class Coach extends Utilisateur {
-  private string lienPhoto;
+  private string $lienPhoto;    //Lien photo du coach
+  private array $discussions;   //Discussion auquelle le coach participe
 
   // Contructeur
-  function __construct(string $nom, string $prenom, string $mail, string $password) {
-    parent::__construct($nom, $prenom, $mail, $password);
+  function __construct(string $nom, string $prenom, string $mail, string $password, string $telephone='', string $lienPhoto='') {
+    parent::__construct($nom, $prenom, $mail, $password, $telephone);
+    $this->lienPhoto = $lienPhoto;
   }
 
   function getLienPhoto() : string {
     return $this->lienPhoto;
+  }
+
+  function getDiscussions() : array {
+    return $this->discussions;
   }
 
 }
