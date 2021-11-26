@@ -5,8 +5,8 @@
 class Competence {
   private int $id;                      //Identifiant compétence
   private string $nvEtude;              //Niveau étude
-  private string $langeParle;           //Lange parlé
-  private string $langageAcquis;        //Langage informatique parlé
+  private array $langeParle;            //Lange parlé
+  private array $langageAcquis;         //Langage informatique parlé
 
   // Contructeur
   function __construct(string $nvEtude, string $langeParle, string $langageAcquis) {
