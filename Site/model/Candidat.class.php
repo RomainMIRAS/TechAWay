@@ -1,53 +1,45 @@
 <?php
 
-// Description d'un livre  
-class Candidat {
-  private int $id;              //Identifiant du candidat
-  private string $nom;          //Nom
-  private string $prenom;       //Prenom
-  private int $age;             //Age
-  private string $adresse;      //Adresse du candidat
-  private string $telephone;    //Telephone
-  private string $lienCV;       //lienCV
+// Description d'un candidat  
+class Candidat extends Utilisateur {
+  private string $pays;                 //pays du candidat
+  private string $ville;                //ville du candidat
+  private string $lienCV;               //lien CV
+  private string $lienLM;               //lien lettre de motivation
+  private string $etape;                //Etape du recrutement
+  private Competence $competenceAcquis; //Les compétence du candidat
+  private Renseignement $preference     //Préférence concernant les offres
 
   // Contructeur
-  function __construct(int $id=0, string $nom='', string $prenom='', int $age=0, string $adresse='', string $telephone='', string $lienCV='') {
-    $this->id = $id;
-    $this->nom = $nom;
-    $this->prenom = $prenom;
-    $this->age = $age;
-    $this->adresse = $adresse;
-    $this->telephone = $telephone;
+  function __construct(string $nom, string $prenom, string $mail, string $password, string $lienCV='') {
+    parent::__construct($nom, $prenom, $mail, $password);
     $this->lienCV = $lienCV;
-  }
-
-  function getId() : int {
-    return $this->id;
-  }
-
-  function getNom() : string {
-    return $this->nom;
-  }
-
-  function getPrenom() : string {
-    return $this->prenom;
-  }
-
-  function getAge() : int {
-    return $this->age;
   }
 
   function getAdresse() : string {
     return $this->adresse;
   }
 
-  function getTelephone() : string {
-    return $this->telephone;
-  }
-
-  function getLienCV() : string {
+  function getLienCv() : string {
     return $this->lienCV;
   }
+
+  function getEtape() : string {
+    return $this->etape;
+  }
+
+  function getLienLM() : string {
+    return $this->lienLM;
+  }
+
+  function getCompetenceAcquis() : Competence {
+    return $this->competenceAcquis;
+  }
+
+  function getRenseignement() : Renseignement {
+    return $this->preference;
+  }
+
 
 }
 

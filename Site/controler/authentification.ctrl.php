@@ -15,6 +15,14 @@ if (isset($_GET['nom'])) {
   $nom = $_GET['nom'];
 }
 
+$username = (isset($_POST['username'])) ? $_POST['username']:"";
+$password = (isset($_POST['password'])) ? $_POST['password']:"";
+$checkpassword = (isset($_POST['checkpassword'])) ? $_POST['checkpassword']:"";
+
+
+//Set le type d'action (SignUp ou Login). Par défaut login
+$action = (isset($_POST['action'])) ? $_POST['action']:"login";
+
 $pass = '';
 if (isset($_GET['pass'])) {
   $pass = $_GET['pass'];
@@ -49,8 +57,10 @@ if ($username != '' && $password != '') {
   }
 }*/// else {
   $view->assign('erreur','');
-  $view->display("authentification.view.php");
 //}
+$view->assign('action',$action);
+$view->display("authentification.view.php");
+
 
 // Fin du code à ajouter ]]
 

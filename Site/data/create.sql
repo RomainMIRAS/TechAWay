@@ -1,5 +1,6 @@
 -- Données d'un utilisateur (candidat ou coach)
 CREATE TABLE UTILISATEUR (
+<<<<<<< HEAD
 	idUtilisateur INTEGER NOT NULL PRIMARY KEY, -- numéro unique de l'utilisateur
 	adresseMail VARCHAR(30) NOT NULL CHECK (adresseMail in '%@%.%'), -- adresse email de l'utilisateur, chaine qui comprend le caractère ‘@’ et ‘.’
 	password VARCHAR NOT NULL CHECK (password > 8), -- mot de passe de l'utilisateur qui doit être suppérieur à 8 caractères
@@ -8,6 +9,16 @@ CREATE TABLE UTILISATEUR (
 	age INTEGER NOT NULL, -- age de l'utilisateur
 	telephone VARCHAR(13) NOT NULL, --numéro de téléphone de l'utilisateur
 	dateCreation DATE NOT NULL -- date de création du compte
+=======
+	idUtilisateur INTEGER PRIMARY KEY, -- numéro unique de l'utilisateu
+	nom TEXT, -- nom de l'utilisateur
+	prenom TEXT, -- prenom de l'utilisateur
+	age INTEGER, -- age de l'utilisateur
+	telephone TEXT, --numéro de téléphone de l'utilisateur
+	adresseMail TEXT, -- adresse email de l'utilisateur
+	password TEXT, -- mot de passe de l'utilisateur
+	dateCreation DATE -- date de création du compte
+>>>>>>> f9d1bf9d35c87017d158051c0d92f38940bacac9
 );
 
 -- Données d'un client (entreprise)
