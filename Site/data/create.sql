@@ -5,7 +5,7 @@ CREATE TABLE UTILISATEUR (
 	password VARCHAR NOT NULL CHECK (password > 8), -- mot de passe de l'utilisateur qui doit être suppérieur à 8 caractères
 	nom VARCHAR(30) NULL, -- nom de l'utilisateur
 	prenom VARCHAR(30) NULL, -- prenom de l'utilisateur
-	age INTEGER  NULL, -- age de l'utilisateur
+	age INTEGER NULL, -- age de l'utilisateur
 	telephone VARCHAR(13) NULL, --numéro de téléphone de l'utilisateur
 	dateCreation DATE NOT NULL -- date de création du compte
 );
@@ -13,7 +13,7 @@ CREATE TABLE UTILISATEUR (
 -- Données d'un client (entreprise)
 CREATE TABLE ENTREPRISE (
 	idEntreprise INTEGER NOT NULL PRIMARY KEY, -- numéro unique de l'entreprise
-	nomEntreprise VARCHAR(30), -- nom de l'entreprise
+	nomEntreprise VARCHAR(30) NOT NULL, -- nom de l'entreprise
 	mailEntreprise VARCHAR(30) NOT NULL CHECK (mailEntreprise in '%@%.%'), -- adresse email de l'entreprise,  chaine qui comprend le caractère ‘@’ et ‘.’
 	telephone VARCHAR(13) NOT NULL, -- numéro de téléphone de l'enreprise
 	adressePostale VARCHAR NOT NULL, -- adresse postale de l'entreprise
@@ -24,24 +24,24 @@ CREATE TABLE COMPETENCES(
 	idCompetence INTEGER NOT NULL PRIMARY KEY, -- numero unique des compétences
 	nvEtude VARCHAR NOT NULL, -- niveau d'études
 	langueParle VARCHAR NOT NULL, -- langues parlées
-	langagesAcquis TEXT NOT NULL -- Langages informatiques maitrisés
+	langagesAcquis VARCHAR NOT NULL -- Langages informatiques maitrisés
 );
 
 -- Renseignements du candidat (chercheur d'emploi)
 CREATE TABLE RENSEIGNEMENT (
 	idRenseignement INTEGER NOT NULL PRIMARY KEY, -- numéro du renseignement
 	travEtranger BOOLEAN NOT NULL DEFAULT false, -- localisation du travail
-	secteur VARCHAR DEFAULT NULL, -- secteur de l'offre
-	typeContrat VARCHAR DEFAULT NULL, -- type de contrat en jeu
-	poste VARCHAR DEFAULT NULL, -- poste proposé par l'offre
-	tyeEntreprise VARCHAR DEFAULT NULL -- type d'entreprise
+	secteur VARCHAR NULL, -- secteur de l'offre
+	typeContrat VARCHAR NULL, -- type de contrat en jeu
+	poste VARCHAR NULL, -- poste proposé par l'offre
+	tyeEntreprise VARCHAR NULL -- type d'entreprise
 );
 
 -- Données d'un candidat
 CREATE TABLE CANDIDAT (
 	idCandidat INTEGER NOT NULL PRIMARY KEY, -- numéro unique du candidat
-	lienCV VARCHAR DEFAULT NULL, -- lien vers le CV du candidat
-	lienLettreMotivation VARCHAR DEFAULT NULL,
+	lienCV VARCHAR NULL, -- lien vers le CV du candidat
+	lienLettreMotivation VARCHAR NULL,
 	etape INTEGER CHECK (0 <= etape AND etape >= 4) DEFAULT 0, -- étape du recrutement du candidat
 	pays VARCHAR NULL,
 	ville VARCHAR NULL,
