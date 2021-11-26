@@ -82,6 +82,11 @@ footer ul li{
 /**************************************************************
 * Partie authentification
 **************************************************************/
+
+output{
+  color: red;
+}
+
 .authen button {
   font-size: 20px;
 }
@@ -100,7 +105,7 @@ footer ul li{
 }
 
 /* Full-width inputs */
-.authen input[type=text], input[type=password] {
+.authen input[type=text], input[type=password]{
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -109,8 +114,8 @@ footer ul li{
     box-sizing: border-box;
 }
 
-/* Set a style for all buttons */
-.authen input[type=submit] {
+/* Boutton Confirmation*/
+button{
     background-color: #53af57;
     color: white;
     padding: 14px 20px;
@@ -119,7 +124,7 @@ footer ul li{
     cursor: pointer;
     width: 100%;
 }
-.authen input[type=submit]:hover {
+button:hover {
     background-color: white;
     color: #53af57;
     border: 1px solid #53af57;
