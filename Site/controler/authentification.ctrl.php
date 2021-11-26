@@ -7,7 +7,7 @@
 include_once(__DIR__."/../framework/view.class.php");
 
 // Inclusion du modèle
-//include_once(__DIR__."/../model/DAO.class.php");
+include_once(__DIR__."/../model/DAO.class.php");
 
 // Déclaration
 $email = (isset($_POST['email'])) ? $_POST['email']:"";
@@ -26,25 +26,25 @@ $action = (isset($_POST['action'])) ? $_POST['action']:"login";
 
 //Gestion sign up
 if ($confirmation == "oui" && $action == "signup"){
-  if (strlen($password) <= 8){
+  if (strlen($password) <= 8){ //Test Mdp > 8 caract
     $erreur = "Mot de passe doit avoir au minimum 8 caractères";
-  } else if($password != $checkpassword){
+  } else if($password != $checkpassword){ // Mot de passe identique
     $erreur = "Les mots de passes doivent être identiques !";
-  } else if (in_array($email,$arrayName)){
+  } else if (in_array($email,$dao->getEmails())){ // Si email déja enregistrée
     $erreur = "Email déjà enregistrée !";
-  } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)){
+  } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)){ // Si email valide
     $erreur = "Email non valide !";
-  } else if ($email == "" || $password == ""){
+  } else if ($email == "" || $password == ""){ // Champ remplie
     $erreur = "Champ obligatoire manquant !";
   }
 }
 
 if ($confirmation == "oui" && $action == "login"){
-  if ($email == "" || $password == ""){
+  if ($email == "" || $password == ""){ // Champ remplie
     $erreur = "Champ obligatoire manquant !";
-  } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)){
+  } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)){ // Mot de passe identique
     $erreur = "Email non valide !";
-  } else if (){  //Fonction si email pas dans asso au mdp
+  } else if (false){  //Fonction si email pas dans asso au mdp
 
   }
 }
@@ -56,7 +56,7 @@ if ($confirmation == "oui" && $action == "login"){
 // Inscription
 if ($erreur == "" && $confirmation == "oui"){
   if ($action == "signup") {
-    
+
   }
 }
 
