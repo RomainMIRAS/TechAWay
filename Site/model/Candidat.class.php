@@ -9,11 +9,13 @@ class Candidat extends Utilisateur {
   private string $etape;                //Etape du recrutement
   private Competence $competenceAcquis; //Les compétence du candidat
   private Renseignement $preference     //Préférence concernant les offres
+  private array $discussions;           //discussions auquelle participe le candidat
 
   // Contructeur
-  function __construct(string $nom, string $prenom, string $mail, string $password, string $lienCV='') {
-    parent::__construct($nom, $prenom, $mail, $password);
+  function __construct(string $nom, string $prenom, string $mail, string $password, string $telephone='', string $lienCV='', string $lienLM='') {
+    parent::__construct($nom, $prenom, $mail, $password, $telephone);
     $this->lienCV = $lienCV;
+    $this->lienLM = $lienLM;
   }
 
   function getAdresse() : string {

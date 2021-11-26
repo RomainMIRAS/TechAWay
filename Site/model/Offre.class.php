@@ -3,7 +3,7 @@
 
 // Description d'une offre  
 class Offre {
-  private int $idOffre;                     //Adresse du candidat
+  private int $id;                     //Adresse du candidat
   private string $nomOffre;                 //lien CV
   private string $dateOffre;                //lien lettre de motivation
   private Renseignement $detailOffre;       //detail de l'offres

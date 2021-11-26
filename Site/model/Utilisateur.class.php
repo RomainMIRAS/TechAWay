@@ -11,13 +11,13 @@ class Utilisateur {
   private int $age;             //Age
   private string $dateCreation  //Date création utilisateur
 
-
   // Contructeur
-  function __construct(string $nom, string $prenom, string $mail, int $password) {
+  function __construct(string $nom, string $prenom, string $mail, int $password, string $telephone='') {
     $this->nom = $nom;
     $this->prenom = $prenom;
     $this->mail = $mail;
     $this->password = $password;
+    $this->telephone = $telephone;
   }
 
   function getId() : int {
