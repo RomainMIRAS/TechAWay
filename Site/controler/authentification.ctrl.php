@@ -19,7 +19,7 @@ $erreur = "";
 
 //Set le type d'action (SignUp ou Login). Par défaut login
 $action = (isset($_POST['action'])) ? $_POST['action']:"login";
-$arrayName = array('adressemail' => "adresse-candidat@gmail.com");
+$emails = $dao->getEmails();
 
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -33,7 +33,7 @@ if ($confirmation == "oui" && $action == "signup"){
     $erreur = "Mot de passe doit avoir au minimum 8 caractères";
   } else if($password != $checkpassword){ // Mot de passe identique
     $erreur = "Les mots de passes doivent être identiques !";
-  } else if (in_array($email,$dao.getEmails())){ // Si email déja enregistrée
+  } else if (in_array($email,$emails)){ // Si email déja enregistrée
     $erreur = "Adresse email déjà utilisé !";
   } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)){ // Si email valide
     $erreur = "Email non valide !";
