@@ -6,7 +6,7 @@ try{
   $db = new DAO();
 
   $liste = $db->getEmails();
-  var_dump($liste);
+  echo '<pre>' . var_export($liste, true) . '</pre>';
   echo "</br>";
   $test = $db->createUtilisateur("testing2@gmail.com","PASSWORD");
 
@@ -26,7 +26,7 @@ try{
 
   $liste = $db->getEmails();
 
-  var_dump($liste);
+  echo '<pre>' . var_export($liste, true) . '</pre>';
   echo "</br>";
 }catch (Exception $e) {
   print("\n*** Erreur ***\n");
