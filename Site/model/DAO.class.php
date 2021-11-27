@@ -50,10 +50,10 @@ function createUtilisateur(string $mail, string $pass) { //returns boolean
 
 	
 	if(pg_query($this->db, $r)){
-		return TRUE;
+		return 1;
 	} else{
 		throw new Exception("ERROR: Could not able to execute $r. \n" . pg_errormessage($this->db) . "\n");
-		return FALSE;
+		return 0;
 	}
 	// Tests d'erreurs
 	} catch (Exception $e) {
