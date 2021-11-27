@@ -1,5 +1,5 @@
 -- Données d'un utilisateur (candidat ou coach)
-CREATE TABLE UTILISATEUR (
+CREATE TABLE IF NOT EXISTS UTILISATEUR (
 	idUtilisateur SERIAL NOT NULL PRIMARY KEY, -- identifiant unique de l'utilisateur
 	adresseMail VARCHAR(30) UNIQUE NOT NULL CHECK (adresseMail like '%@%.%'), -- adresse email de l'utilisateur, chaine qui comprend le caractère ‘@’ et ‘.’
 	password VARCHAR(30) NOT NULL, --CHECK (password > 8), -- mot de passe de l'utilisateur qui doit être suppérieur à 8 caractères
@@ -11,7 +11,7 @@ CREATE TABLE UTILISATEUR (
 );
 
 -- Données d'un coach
-CREATE TABLE COACH (
+CREATE TABLE IF NOT EXISTS COACH (
 	idCoach SERIAL NOT NULL PRIMARY KEY, -- identifiant unique du coach
 	lienPhoto VARCHAR(30) NOT NULL, -- lien vers la photo de profile du coach
 	FOREIGN KEY(idCoach) REFERENCES	UTILISATEUR(idUtilisateur) -- un coach est un utilisateur
@@ -19,7 +19,7 @@ CREATE TABLE COACH (
 
 
 -- Competences
-CREATE TABLE COMPETENCE(
+CREATE TABLE IF NOT EXISTS COMPETENCE(
 	idCompetence SERIAL NOT NULL PRIMARY KEY, -- identifiant unique des compétences
 	nvEtude VARCHAR(30) NOT NULL, -- niveau d'études
 	langueParle VARCHAR(30) NOT NULL, -- langues parlées
@@ -27,7 +27,7 @@ CREATE TABLE COMPETENCE(
 );
 
 -- Renseignements du candidat (chercheur d'emploi)
-CREATE TABLE RENSEIGNEMENT (
+CREATE TABLE IF NOT EXISTS RENSEIGNEMENT (
 	idRenseignement SERIAL NOT NULL PRIMARY KEY, -- idenifiant unique du renseignement
 	travEtranger BOOLEAN NOT NULL DEFAULT FALSE, -- localisation du travail
 	secteur VARCHAR(30) NULL, -- secteur de l'offre
@@ -37,7 +37,7 @@ CREATE TABLE RENSEIGNEMENT (
 );
 
 -- Données d'un candidat
-CREATE TABLE CANDIDAT (
+CREATE TABLE IF NOT EXISTS CANDIDAT (
 	idCandidat INTEGER NOT NULL PRIMARY KEY, -- identifiant unique du candidat
 	lienCV VARCHAR(30) NULL, -- lien vers le CV du candidat
 	lienLettreMotivation VARCHAR(30) NULL, -- lien vers la lettre de motivation du candidat
@@ -52,7 +52,7 @@ CREATE TABLE CANDIDAT (
 );
 
 -- Données d'un client (entreprise)
-CREATE TABLE ENTREPRISE (
+CREATE TABLE IF NOT EXISTS ENTREPRISE (
 	idEntreprise SERIAL NOT NULL PRIMARY KEY, -- identifiant unique de l'entreprise
 	nomEntreprise VARCHAR(30) NOT NULL, -- nom de l'entreprise
 	mailEntreprise VARCHAR(30) NOT NULL CHECK (mailEntreprise like '%@%.%'), -- adresse email de l'entreprise,  chaine qui comprend le caractère ‘@’ et ‘.’
@@ -63,7 +63,7 @@ CREATE TABLE ENTREPRISE (
 
 
 -- Caractéristiques d'une offre d'emploi
-CREATE TABLE OFFRE (
+CREATE TABLE IF NOT EXISTS OFFRE (
 	idOffre SERIAL NOT NULL PRIMARY KEY, -- identifiant unique de l'offre
 	nomOffre VARCHAR(30) NOT NULL, -- nom de l'offre
 	dateOffre DATE, -- date de publication de l'offre
@@ -76,7 +76,7 @@ CREATE TABLE OFFRE (
 );
 
 --
-CREATE TABLE POSTULE(
+CREATE TABLE IF NOT EXISTS POSTULE(
 	idCandidat INTEGER NOT NULL, -- candidat qui postule
 	idOffre INTEGER NOT NULL, -- l'offre à laquelle il postule
 	datePostule DATE NOT NULL, -- date à laquelle le candidat postule à l'offre
@@ -86,7 +86,7 @@ CREATE TABLE POSTULE(
 );
 
 -- Caractéristiques d'une discussion entre un candidat et son coach
-CREATE TABLE DISCUSSION (
+CREATE TABLE IF NOT EXISTS DISCUSSION (
 		idDiscussion INTEGER NOT NULL PRIMARY KEY, -- numéro d'identification de la discussion
 		idCoach INTEGER NOT NULL, -- identifiant du coach qui discute
 		idCandidat INTEGER NOT NULL, -- identifiant du candidat qui discute
@@ -96,7 +96,7 @@ CREATE TABLE DISCUSSION (
 );
 
 -- Caractéristiques d'un message dans une discussion
-CREATE TABLE MESSAGE (
+CREATE TABLE IF NOT EXISTS MESSAGE (
 	idMessage INTEGER NOT NULL PRIMARY KEY, -- numéro unique du message
 	idDiscussion INTEGER NOT NULL, --discussion dans laquelle est le message
 	contenuMessage VARCHAR(30) NOT NULL, -- contenu du message

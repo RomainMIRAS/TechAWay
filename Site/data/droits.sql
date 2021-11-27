@@ -8,6 +8,7 @@ CREATE USER pagman WITH password 'pagman'; -- l'utilisateur par defaut de la pag
 GRANT CONNECT ON DATABASE techAWayDB TO pagman;
 GRANT SELECT ON UTILISATEUR TO pagman;
 GRANT INSERT ON UTILISATEUR TO pagman;
+GRANT USAGE ON SEQUENCE utilisateur_idutilisateur_seq to pagman ;
 
 
 GRANT ALL PRIVILEGES ON DATABASE techAWayDB to pagman;
