@@ -11,7 +11,7 @@ try{
   $db->createUtilisateur("testing@gmail.com","PASSWORD");
 
   $liste = $db->getEmails();
-  echo "</br>";
+
   var_dump($liste);
   echo "</br>";
 }catch (Exception $e) {
