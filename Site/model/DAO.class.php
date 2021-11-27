@@ -13,8 +13,7 @@ function __construct() {
 	$this->db = pg_connect("host=localhost port=5432 dbname=techawaydb user=pagman password=pagman");//138.68.96.182
 	
 	}catch (Exception $e) {
-	print("\n*** Erreur ***\n");
-	print("Erreur : ".$e->getMessage()."\n");
+		die("PSQL ERROR :".$e->getMessage());
 	}
 
 }
@@ -56,7 +55,7 @@ function createUtilisateur(string $mail, string $pass) { //returns boolean
 	}
 	// Tests d'erreurs
 	} catch (Exception $e) {
-
+		die("PSQL ERROR createUtilisateur : ".$e->getMessage());
 	}
 	return false;
 
@@ -72,10 +71,9 @@ function verifierLogin(string $mail, string $pass) { //returns boolean
 
 	return $res;
 
-
 	// Tests d'erreurs
 	} catch (Exception $e) {
-
+		die("PSQL ERROR verifierLogin : ".$e->getMessage());
 	}
 	return false;
 
