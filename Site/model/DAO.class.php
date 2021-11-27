@@ -30,7 +30,7 @@ function getEmails() : array {
 
 	$table = pg_fetch_all($req);
 
-	var_dump($table[0]);
+	var_dump($table[0]['adresseMail']);
 	$listeMail = array();
 	foreach ($table as $mail) {
 		array_push($listeMail,$mail);
