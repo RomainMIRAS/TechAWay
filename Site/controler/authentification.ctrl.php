@@ -31,7 +31,7 @@ if ($confirmation == "oui" && $action == "signup"){
   } else if($password != $checkpassword){ // Mot de passe identique
     $erreur = "Les mots de passes doivent être identiques !";
   } else if (in_array($email,array_values($dao->getEmails()))){ // Si email déja enregistrée
-    $erreur = "Email déjà enregistrée !";
+    $erreur = $email;
   } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)){ // Si email valide
     $erreur = "Email non valide !";
   } else if ($email == "" || $password == ""){ // Champ remplie
