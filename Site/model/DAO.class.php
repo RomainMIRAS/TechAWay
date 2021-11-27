@@ -49,7 +49,7 @@ function createUtilisateur(string $mail, string $pass) { //returns boolean
 	$r = "INSERT INTO utilisateur VALUES(DEFAULT,'". $mail ."','". $pass ."',NULL,NULL,NULL,NULL,now());";
 
 	
-	if(pg_query($this->db, $r)){
+	if(@pg_query($this->db, $r)){
 		return true;
 	} else{
 		throw new Exception("ERROR: Could not able to execute $r. \n" . pg_errormessage($this->db) . "\n");
