@@ -22,10 +22,6 @@ function getEmails() : array {
 	try {
 	$req = pg_query($this->db,"SELECT adresseMail FROM UTILISATEUR");
 	// Affiche en clair l'erreur PDO si la requête ne peut pas s'exécuter
-	/* if ($req == false) {
-		var_dump($this->db->pg_result_error());
-		exit(1);
-	} */
 
 	$table = pg_fetch_all($req);
 
