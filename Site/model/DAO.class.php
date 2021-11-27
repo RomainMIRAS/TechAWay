@@ -62,33 +62,8 @@ function createUtilisateur(string $mail, string $pass) { //returns boolean
 
 }
 
+
 /* 
-function verifEmailMdp(string $mail, string $pass) : array {
-	try {
-	$req = pg_query($this->db,"SELECT * FROM UTILISATEUR where adresseMail=$mail AND password=$pass");
-	// Affiche en clair l'erreur PDO si la requête ne peut pas s'exécuter
-	if ($r == false) {
-		var_dump($this->db->pg_result_error());
-		exit(1);
-	}
-
-	$table = pg_fetch_all($req);
-	$listeMail = array();
-	foreach ($table as $mail) {
-		array_push($listeMail,$mail);
-	};
-
-	// Tests d'erreurs
-	if (count($table) == 0) {
-		throw new Exception("Aucun Email trouvee\n");
-	}
-	} catch (PDOException $e) {
-	die("PDO Error :".$e->getMessage());
-	}
-	return $liste;
-}
-
-
 //Accès à un client
 function getEntreprise(int $idEntreprise) : Client {
 	try {
