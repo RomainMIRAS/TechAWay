@@ -18,7 +18,7 @@ try{
 
   $testLogin = $db->verifierLogin("testing2@gmail.com","PASSWORD");
 
-  if ($test){
+  if ($testLogin){
     echo "</br>Login Correcte</br>";
   }else{
     echo "</br>Login incorrecte</br>";
