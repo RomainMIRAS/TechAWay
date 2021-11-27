@@ -19,19 +19,22 @@ $erreur = "";
 
 //Set le type d'action (SignUp ou Login). Par défaut login
 $action = (isset($_POST['action'])) ? $_POST['action']:"login";
+$emails = $dao->getEmails();
+
 
 ///////////////////////////////////////////////////////////////////////////////
 // Partie Gestion des erreurs
 ///////////////////////////////////////////////////////////////////////////////
 
 //Gestion sign up
+
 if ($confirmation == "oui" && $action == "signup"){
   if (strlen($password) <= 8){ //Test Mdp > 8 caract
     $erreur = "Mot de passe doit avoir au minimum 8 caractères";
   } else if($password != $checkpassword){ // Mot de passe identique
     $erreur = "Les mots de passes doivent être identiques !";
-  } else if (in_array($email,array_values($dao->getEmails()))){ // Si email déja enregistrée
-    $erreur = $email;
+  } else if (in_array($email,$emails)){ // Si email déja enregistrée
+    $erreur = "Adresse email déjà utilisé !";
   } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)){ // Si email valide
     $erreur = "Email non valide !";
   } else if ($email == "" || $password == ""){ // Champ remplie
