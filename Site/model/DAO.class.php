@@ -39,11 +39,30 @@ function getEmails() : array {
 	if (count($table) == 0) {
 		throw new Exception("Aucun Email trouvee\n");
 	}
-	} catch (PDOException $e) {
-	die("PDO Error :".$e->getMessage());
+	} catch (Exception $e) {
+	die("PSQL ERROR :".$e->getMessage());
 	}
 	return $listeMail;
 }
+
+function createUtilisateur(string $mail, string $pass) { //returns boolean
+	try {
+	$r = "INSERT INTO utilisateur VALUES(DEFAULT,'{$mail}','{$pass}',NULL,NULL,NULL,NULL,now());";
+
+	
+	if(pg_query($this->db, $r)){
+		return TRUE;
+	} else{
+		echo "ERROR: Could not able to execute $r. " . pg_errormessage($this->db);
+		return FALSE;
+	}
+	// Tests d'erreurs
+	} catch (Exception $e) {
+	die("PSQL ERROR :".$e->getMessage());
+	}
+
+}
+
 /* 
 function verifEmailMdp(string $mail, string $pass) : array {
 	try {
