@@ -19,7 +19,7 @@ $erreur = "";
 
 //Set le type d'action (SignUp ou Login). Par défaut login
 $action = (isset($_POST['action'])) ? $_POST['action']:"login";
-$arrayName = array('adressemail' => , "adresse-candidat@gmail.com");
+$arrayName = array('adressemail' => "adresse-candidat@gmail.com");
 //array_values($dao->getEmails()
 
 
