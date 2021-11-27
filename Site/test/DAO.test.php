@@ -6,11 +6,12 @@ try{
   $db = new DAO();
 
   $liste = $db->getEmails();
+  var_dump($liste);
   echo "</br>";
   $db->createUtilisateur("testing@gmail.com","PASSWORD");
 
   $liste = $db->getEmails();
-  echo "</br>";
+
   var_dump($liste);
   echo "</br>";
 }catch (Exception $e) {
