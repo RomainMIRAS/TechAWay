@@ -10,7 +10,11 @@ try{
   echo "</br>";
   $test = $db->createUtilisateur("testing@gmail.com","PASSWORD");
 
-  echo "</br>$test </br>";
+  if ($test){
+    echo "</br>Utilisateur Cree :</br>";
+  }else{
+    echo "</br>Erreur Utilisateur existe deja</br>";
+  }
 
   $liste = $db->getEmails();
 
