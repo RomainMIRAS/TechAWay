@@ -18,7 +18,11 @@ try{
 
   $testLogin = $db->verifierLogin("testing2@gmail.com","PASSWORD");
 
-  var_dump($test);
+  if ($test){
+    echo "</br>Login Correcte</br>";
+  }else{
+    echo "</br>Login incorrecte</br>";
+  }
 
   $liste = $db->getEmails();
 
