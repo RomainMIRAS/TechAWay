@@ -16,6 +16,10 @@ try{
     echo "</br>Erreur Utilisateur existe deja</br>";
   }
 
+  $testLogin = $db->verifierLogin("testing2@gmail.com","PASSWORD");
+
+  var_dump($test);
+
   $liste = $db->getEmails();
 
   var_dump($liste);

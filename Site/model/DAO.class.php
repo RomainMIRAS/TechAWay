@@ -62,6 +62,25 @@ function createUtilisateur(string $mail, string $pass) { //returns boolean
 
 }
 
+function verifierLogin(string $mail, string $pass) { //returns boolean
+	try {
+	$r = "SELECT EXISTS(SELECT * FROM utilisateur where adressemail=$mail AND password=$pass)";
+
+	$q = pg_query($this->db, $r);
+
+	$res = pg_fetch_all($q);
+
+	return $res;
+
+
+	// Tests d'erreurs
+	} catch (Exception $e) {
+
+	}
+	return false;
+
+}
+
 
 /* 
 //Accès à un client
