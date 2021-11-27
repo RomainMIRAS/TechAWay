@@ -5,9 +5,9 @@ REVOKE ALL PRIVILEGES ON DATABASE techAWayDB FROM PUBLIC; -- supprimer tous les 
 
 CREATE USER pagman WITH password 'pagman'; -- l'utilisateur par defaut de la page
 
-GRANT CONNECT ON DATABASE techAWayDB TO defaultUser;
-GRANT SELECT ON UTILISATEUR TO defaultUser;
+GRANT CONNECT ON DATABASE techAWayDB TO pagman;
+GRANT SELECT ON UTILISATEUR TO pagman;
+GRANT INSERT ON UTILISATEUR TO pagman;
 
 
-
-GRANT ALL PRIVILEGES ON DATABASE techAWayDB to defaultUser;
+GRANT ALL PRIVILEGES ON DATABASE techAWayDB to pagman;
