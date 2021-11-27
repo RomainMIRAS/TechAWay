@@ -47,7 +47,7 @@ function getEmails() : array {
 
 function createUtilisateur(string $mail, string $pass) { //returns boolean
 	try {
-	$r = "INSERT INTO utilisateur VALUES(DEFAULT,'{$mail}','{$pass}',NULL,NULL,NULL,NULL,now());";
+	$r = "INSERT INTO utilisateur VALUES(DEFAULT,'". $mail ."','". $pass ."',NULL,NULL,NULL,NULL,now());";
 
 	
 	if(pg_query($this->db, $r)){
