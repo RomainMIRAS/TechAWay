@@ -29,12 +29,10 @@ function getEmails() : array {
 	} */
 
 	$table = pg_fetch_all($req);
-	var_dump($table);
 	$listeMail = array();
 	foreach ($table as $mail) {
 		array_push($listeMail,$mail);
 	};
-
 	// Tests d'erreurs
 	if (count($table) == 0) {
 		throw new Exception("Aucun Email trouvee\n");
@@ -42,6 +40,7 @@ function getEmails() : array {
 	} catch (Exception $e) {
 		die("PSQL ERROR :".$e->getMessage());
 	}
+	var_dump($listeMail);
 	return $listeMail;
 }
 
