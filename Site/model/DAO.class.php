@@ -52,7 +52,7 @@ function createUtilisateur(string $mail, string $pass) { //returns boolean
 	if(pg_query($this->db, $r)){
 		return TRUE;
 	} else{
-		throw "ERROR: Could not able to execute $r. \n" . pg_errormessage($this->db) . "\n";
+		throw new Exception("ERROR: Could not able to execute $r. \n" . pg_errormessage($this->db) . "\n");
 		return FALSE;
 	}
 	// Tests d'erreurs
