@@ -53,12 +53,12 @@ function createUtilisateur(string $mail, string $pass) { //returns boolean
 		return 1;
 	} else{
 		throw new Exception("ERROR: Could not able to execute $r. \n" . pg_errormessage($this->db) . "\n");
-		return 0;
 	}
 	// Tests d'erreurs
 	} catch (Exception $e) {
-		return False;
+		
 	}
+	return 0;
 
 }
 
