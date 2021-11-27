@@ -56,7 +56,7 @@ function createUtilisateur(string $mail, string $pass) { //returns boolean
 	}
 	// Tests d'erreurs
 	} catch (Exception $e) {
-
+			
 	}
 	return FALSE;
 
