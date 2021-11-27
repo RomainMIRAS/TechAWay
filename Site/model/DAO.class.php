@@ -64,7 +64,7 @@ function createUtilisateur(string $mail, string $pass) { //returns boolean
 
 function verifierLogin(string $mail, string $pass) { //returns boolean
 	try {
-	$r = "SELECT EXISTS(SELECT * FROM utilisateur where adressemail=$mail AND password=$pass)";
+	$r = "SELECT EXISTS(SELECT * FROM utilisateur where adressemail='$mail' AND password='$pass')";
 
 	$q = pg_query($this->db, $r);
 
