@@ -8,7 +8,9 @@ try{
   $liste = $db->getEmails();
   var_dump($liste);
   echo "</br>";
-  $db->createUtilisateur("testing@gmail.com","PASSWORD");
+  $test = $db->createUtilisateur("testing@gmail.com","PASSWORD");
+
+  echo "</br>$test </br>";
 
   $liste = $db->getEmails();
 
