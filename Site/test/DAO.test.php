@@ -7,7 +7,6 @@ try{
 
   $liste = $db->getEmails();
   echo '<pre>' . var_export($liste, true) . '</pre>';
-  echo "</br>";
   $test = $db->createUtilisateur("testing2@gmail.com","PASSWORD");
 
   if ($test){
