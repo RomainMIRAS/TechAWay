@@ -40,10 +40,15 @@ ul li {
 ul li a {
   display: inline-block;
   text-decoration: none;
+  color: rgba(0, 0, 0, 0.30);
+  transition: all .2s ease-in-out;
+}
+
+ul li a:hover {
   color: black;
 }
 
-ul:nth-child(1) li:nth-child(1), ul:nth-child(2) li {
+nav ul:nth-child(1) li:nth-child(1), nav ul:nth-child(2) li {
   padding: 0;
 }
 
@@ -56,6 +61,7 @@ ul:nth-child(1) li:nth-child(1), ul:nth-child(2) li {
 
 #logo:hover {
   transform: scale(1.05);
+  transform: rotateZ(5deg);
 }
 
 /**************************************************************
@@ -64,7 +70,6 @@ ul:nth-child(1) li:nth-child(1), ul:nth-child(2) li {
 
 section {
   display: flex;
-  padding: 10px;
 }
 
 section h1 {
@@ -91,43 +96,56 @@ section h1 {
   width: 500px;
 }
 
-.contenuAcceuil2{
-  padding: 10px;
-}
-
-.listePartenaires{
-  padding: 10px;
-}
-
-.listePartenaires div{
-  display: flex;
-}
-
-
-/**************************************************************
-* Partie Footer
-**************************************************************/
-footer ul{
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  padding: 0px;
-}
-
-footer ul li{
-  padding: 10px;
-  margin: 10px;
-
-}
-
-/**************************************************************
-* Partie authentification
-**************************************************************/
-
 form {
   display: flex;
   flex-direction: row;
 }
+
+/**************************************************************
+* SVG
+**************************************************************/
+
+#svg1 svg{
+	width: 800px;
+  height: 600px;
+	text-align: center;
+}
+
+#svg2 svg{
+	width: 800px;
+  height: 600px;
+	text-align: center;
+}
+
+
+/**************************************************************
+* FOOTER
+**************************************************************/
+
+footer {
+  padding: 10px;
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+  font-size: 12px;
+}
+
+footer ul{
+  justify-content: center;
+}
+
+footer ul li {
+  list-style: none;
+  padding: 10px 5px;
+}
+
+footer ul li a:hover {
+  color: black;
+  text-decoration: underline;
+}
+
+/**************************************************************
+* LOG
+**************************************************************/
+
 
 output{
   color: red;
@@ -141,37 +159,55 @@ output{
   display: none;
 }
 
-/* Bordered form */
-.authen {
-    width:100%;
-    padding: 30px;
-    border: 1px solid #f1f1f1;
-    background: #fff;
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+#section-log {
+  justify-content: center;
+  align-items: center;
 }
 
-/* Full-width inputs */
-.authen input[type=text], input[type=password]{
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
+.log {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  padding-bottom: 126px;
 }
 
-/* Boutton Confirmation*/
+.log h2 {
+  color: #0036d9;
+}
+
+.log input[type=text], input[type=password]{
+  padding: 12px 20px;
+  margin: 10px 0;
+  border: 1px solid #B9B8D8;
+  outline: none;
+  border-radius: 5px;
+}
+
+.log button {
+  width: 100%;
+  border-radius: 50px;
+  transition: all .2s ease-in-out;
+  margin: 0;
+  margin-top: 9px;
+  padding: 5px 0;
+}
+
+.log button:hover {
+  border-radius: 5px;
+}
+
 button {
-    background-color: transparent;
-    color: #0036d9;
-    border: 2px solid #0036d9;
-    border-radius: 50px;
-    transition: all .2s ease-in-out;
-    cursor: pointer;
-    padding: 5px 15px;
-    font-size: 18px;
-    font-weight: 500;
-    margin-left: 5px;
+  background-color: transparent;
+  color: #0036d9;
+  border: 2px solid #0036d9;
+  border-radius: 50px;
+  transition: all .2s ease-in-out;
+  cursor: pointer;
+  padding: 5px 15px;
+  font-size: 18px;
+  font-weight: 500;
+  margin-left: 5px;
 }
 
 button:hover {
