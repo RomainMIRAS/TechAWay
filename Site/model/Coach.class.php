@@ -1,12 +1,12 @@
 <?php
 
-// Description d'un Coach  
+// Description d'un Coach
 class Coach extends Utilisateur {
   private string $lienPhoto;    //Lien photo du coach
   private array $discussions;   //Discussion auquelle le coach participe
 
   // Contructeur
-  function __construct(string $nom, string $prenom, string $mail, string $password, string $telephone='', string $lienPhoto='') {
+  function __construct(string $mail, string $password,string $nom='', string $prenom='', string $telephone='', string $lienPhoto='') {
     parent::__construct($nom, $prenom, $mail, $password, $telephone);
     $this->lienPhoto = $lienPhoto;
   }

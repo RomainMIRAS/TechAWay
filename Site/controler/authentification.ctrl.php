@@ -8,6 +8,8 @@ include_once(__DIR__."/../framework/view.class.php");
 
 // Inclusion du modèle
 include_once(__DIR__."/../model/DAO.class.php");
+include_once(__DIR__."/../model/Candidat.class.php");
+
 
 $dao = new DAO();
 // Déclaration
@@ -59,7 +61,14 @@ if ($erreur == "" && $confirmation == "oui"){
   if ($action == "signup") {
 
   } else if ($action == "login"){
-    $erreur = "Vous êtes connecté avec email $email et mdp $password";
+    // $erreur = "Vous êtes connecté avec email $email et mdp $password";
+    // session_start();
+    // $candidat = new Candidat($email,$password);
+    //
+    // $_SESSION['jeu'] = $candidat;
+    // // Ferme la session
+    // session_write_close();
+    header('Location: '.$main.ctrl.php);
   }
 }
 

@@ -1,6 +1,6 @@
 <?php
 
-// Description d'un candidat  
+// Description d'un candidat
 class Candidat extends Utilisateur {
   private string $pays;                 //pays du candidat
   private string $ville;                //ville du candidat
@@ -12,7 +12,7 @@ class Candidat extends Utilisateur {
   private array $discussions;           //discussions auquelle participe le candidat
 
   // Contructeur
-  function __construct(string $nom, string $prenom, string $mail, string $password, string $telephone='', string $lienCV='', string $lienLM='') {
+  function __construct(string $mail, string $password,string $nom='', string $prenom='', string $telephone='', string $lienCV='', string $lienLM='') {
     parent::__construct($nom, $prenom, $mail, $password, $telephone);
     $this->lienCV = $lienCV;
     $this->lienLM = $lienLM;
