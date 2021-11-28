@@ -20,6 +20,9 @@ try{
   echo "</br>Verification de Login : testing2@gmail.com:PASSWORD  :";
   $testLogin = $db->verifierLogin("testing2@gmail.com","PASSWORD");
 
+  echo "</br>Verification de Login : testing2333@gmail.com:PASSWORD  :";
+  $testLogin = $db->verifierLogin("testing2333@gmail.com","PASSWORD");
+
   if ($testLogin){
     echo "</br>Login Correcte</br>";
   }else{
