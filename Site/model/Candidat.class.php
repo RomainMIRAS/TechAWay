@@ -8,7 +8,7 @@ class Candidat extends Utilisateur {
   private string $lienLM;               //lien lettre de motivation
   private string $etape;                //Etape du recrutement
   private Competence $competenceAcquis; //Les compétence du candidat
-  private Renseignement $preference     //Préférence concernant les offres
+  private Renseignement $preference;     //Préférence concernant les offres
   private array $discussions;           //discussions auquelle participe le candidat
 
   // Contructeur
