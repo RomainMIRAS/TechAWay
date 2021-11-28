@@ -68,7 +68,7 @@ if ($erreur == "" && $confirmation == "oui"){
     // $_SESSION['jeu'] = $candidat;
     // // Ferme la session
     // session_write_close();
-    header('Location: '.$main.ctrl.php);
+    header('Location: main.ctrl.php');
   }
 }
 
