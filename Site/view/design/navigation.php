@@ -8,6 +8,7 @@ if (isset($_SESSION['login'])){
   $islog = false;
 }
 session_write_close();
+include_once(__DIR__."/../model/Candidat.class.php");
 
  ?>
 
@@ -27,7 +28,7 @@ session_write_close();
         <li><button type="submit" name="action" value="login">Se connecter</button></li>
       </form>
       <?php else: ?>
-        <p>Vous êtes connecté avec <?= $candidat->getMail()?></p>
+        <p>Vous êtes connecté avec <?= $candidat->getMail();?></p>
       <?php endif; ?>
     </ul>
 </nav>
