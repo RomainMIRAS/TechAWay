@@ -60,14 +60,14 @@ if ($confirmation == "oui" && $action == "login"){
 if ($erreur == "" && $confirmation == "oui"){
   if ($action == "signup") {
 
-  } else if ($action == "login"){
-    // $erreur = "Vous êtes connecté avec email $email et mdp $password";
-    // session_start();
-    // $candidat = new Candidat($email,$password);
-    //
-    // $_SESSION['jeu'] = $candidat;
-    // // Ferme la session
-    // session_write_close();
+  } else if ($action == "login"){ // Connexion réussi
+    //$erreur = "Vous êtes connecté avec email $email et mdp $password";
+    session_start();
+    $candidat = new Candidat($email,$password);
+
+    $_SESSION['login'] = $candidat;
+    // Ferme la session
+    session_write_close();
     header('Location: main.ctrl.php');
   }
 }
