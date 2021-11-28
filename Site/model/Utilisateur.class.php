@@ -9,7 +9,7 @@ class Utilisateur {
   private string $password;     //Mot de passe
   private string $telephone;    //Telephone
   private int $age;             //Age
-  private string $dateCreation  //Date création utilisateur
+  private string $dateCreation;  //Date création utilisateur
 
   // Contructeur
   function __construct(string $mail, string $password,string $nom ='', string $prenom='', string $telephone='') {
