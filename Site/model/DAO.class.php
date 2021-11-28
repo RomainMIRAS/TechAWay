@@ -64,7 +64,11 @@ function verifierLogin(string $mail, string $pass) { //returns boolean
 
 	$res = pg_fetch_all($q);
 
-	return $res[0];
+	if($res[0]['exists'] == 't'){
+		return true;
+	}else{
+		return false;
+	}
 
 	// Tests d'erreurs
 	} catch (Exception $e) {
