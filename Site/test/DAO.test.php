@@ -19,7 +19,7 @@ try{
 
   echo "</br>Verification de Login : testing2@gmail.com:PASSWORD  :";
   $testLogin = $db->verifierLogin("testing2@gmail.com","PASSWORD");
-
+  var_dump($testLogin);
   echo "</br>Verification de Login : testing2333@gmail.com:PASSWORD  :";
   $testLogin = $db->verifierLogin("testing2333@gmail.com","PASSWORD");
   var_dump($testLogin);
