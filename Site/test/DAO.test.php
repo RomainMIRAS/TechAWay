@@ -17,12 +17,16 @@ try{
     echo "</br>Erreur Utilisateur existe deja</br>";
   }
 
-  echo "</br>Verification de Login : testing2@gmail.com:PASSWORD  :";
+  echo "</br>Verification de Login : testing2@gmail.com:PASSWORD  : (doit etre correcte)";
   $testLogin = $db->verifierLogin("testing2@gmail.com","PASSWORD");
-  var_dump($testLogin);
-  echo "</br>Verification de Login : testing2333@gmail.com:PASSWORD  :";
+  if ($testLogin){
+    echo "</br>Login Correcte</br>";
+  }else{
+    echo "</br>Login incorrecte</br>";
+  }
+
+  echo "</br>Verification de Login : testing2333@gmail.com:PASSWORD  : (doit etre incorrecte)";
   $testLogin = $db->verifierLogin("testing2333@gmail.com","PASSWORD");
-  var_dump($testLogin);
   if ($testLogin){
     echo "</br>Login Correcte</br>";
   }else{
