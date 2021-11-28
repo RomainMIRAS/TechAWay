@@ -1,7 +1,12 @@
 <?php
 
 session_start();
-$islog = isset($_SESSION['login']);
+if (isset($_SESSION['login'])){
+  $islog = true;
+  $candidat = $_SESSION['login'];
+} else {
+  $islog = false;
+}
 session_write_close();
 
  ?>
@@ -13,14 +18,16 @@ session_write_close();
         <li><a href="#">Trouver un job</a></li>
         <li><a href="#">Nous rejoindre</a></li>
     </ul>
-    <?php if ($islog): ?>
-    <ul>
 
+    <ul>
+      <?php if (!$islog): ?>
 
       <form action="../controler/authentification.ctrl.php" method="post">
         <li><button type="submit" name="action" value="signup">S'inscrire</button></li>
         <li><button type="submit" name="action" value="login">Se connecter</button></li>
       </form>
+      <?php else: ?>
+        <p>Vous êtes connecté avec <?= $candidat->getMail()?></p>
+      <?php endif; ?>
     </ul>
-    <?php endif; ?>
 </nav>
