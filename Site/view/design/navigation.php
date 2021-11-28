@@ -8,7 +8,7 @@ if (isset($_SESSION['login'])){
   $islog = false;
 }
 session_write_close();
-include_once(__DIR__."/../..model/Candidat.class.php");
+include_once(__DIR__."/../../model/Candidat.class.php");
 
  ?>
 
