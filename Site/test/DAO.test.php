@@ -41,8 +41,8 @@ try{
     echo "</br>Login incorrecte</br>";
   }
 
-  echo "</br>getCoach(adressemail) : adresse-candidat2@gmail.com  : (doit retourner type Coach)";
-  $testLogin = $db->getCoach("adresse-candidat2@gmail.com");
+  echo "</br>getCoach(adressemail) : adresse-candidat@gmail.com  : (doit retourner type Coach)";
+  $testLogin = $db->getCoach("adresse-candidat@gmail.com");
   if ($testLogin){
     echo '<pre>' . var_export($testLogin, true) . '</pre>';
   }else{

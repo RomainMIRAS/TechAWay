@@ -88,16 +88,16 @@ function getCoach(string $mail) {
 	
 		$coachbf = pg_fetch_all($req);
 
-		var_dump($coachbf);
 
 		if (empty($coachbf)) {
 			return false;
 		}else{
 
-			$req = pg_query($this->db,"SELECT * FROM coach WHERE id=". (int) $coachbf[0]['idUtilisateur'] ."");
+			$req = pg_query($this->db,"SELECT * FROM coach WHERE idcoach=". intVal($coachbf[0]['idutilisateur']) ."");
 
 
 			$coachUti = pg_fetch_all($req);
+
 
 			$coach = new Coach(
 				$coachbf[0]['adressemail'],
