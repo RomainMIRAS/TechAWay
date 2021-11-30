@@ -50,7 +50,7 @@ try{
   }
 
 
-  echo "</br> Liste de Mail :";
+  echo "</br></br> Liste de Mail :";
   $liste = $db->getEmails();
 
   echo '<pre>' . var_export($liste, true) . '</pre>';
