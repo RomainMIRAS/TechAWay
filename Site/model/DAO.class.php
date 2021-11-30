@@ -149,14 +149,27 @@ function getCandidat(string $mail) {
 		}
 		return $coach;
 }
-/*
+
 function getCoachOuCandidat(string $mail) {
 
+	try {
+		$res = $this->db->getCandidat($mail);
+		if ($res){
+			return $res;
+		}
 
+		$res = $this->db->getCoach($mail);
+		if ($res){
+			return $res;
+		}else{
+			return false;
+		}
 
-
+	} catch (Exception $e) {
+		die("PSQL ERROR :".$e->getMessage());
+	}
 }
- */
+
 
 
 /* 
