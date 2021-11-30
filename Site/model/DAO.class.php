@@ -3,6 +3,9 @@
 require_once(__DIR__.'/Candidat.class.php');
 require_once(__DIR__.'/Offre.class.php'); */
 
+require_once(__DIR__.'/Candidat.class.php');
+require_once(__DIR__.'/Coach.class.php');
+
 // Le Data Access Objet
 class DAO {
 private $db;
@@ -77,6 +80,54 @@ function verifierLogin(string $mail, string $pass) { //returns boolean
 	return false;
 
 }
+
+function getCoach(string $mail) {
+	try {
+		$req = pg_query($this->db,"SELECT * from utilisateur where idutilisateur in (Select idCoach from coach) AND adressemail='$mail'");
+		// Affiche en clair l'erreur PDO si la requête ne peut pas s'exécuter
+	
+		$coachbf = pg_fetch_all($req);
+
+		var_dump($coachbf);
+
+		if (empty($coachbf)) {
+			return false;
+		}else{
+
+			$req = pg_query($this->db,"SELECT * FROM coach WHERE id=". (int) $coachbf[0]['idUtilisateur'] ."");
+
+
+			$coachUti = pg_fetch_all($req);
+
+			$coach = new Coach(
+				$coachbf[0]['adressemail'],
+				$coachbf[0]['password'],
+				$coachbf[0]['nom'],
+				$coachbf[0]['prenom'],
+				$coachbf[0]['telephone'],
+				$coachUti[0]['lienphoto']
+			);
+		}
+
+		
+		// Tests d'erreurs
+		} catch (Exception $e) {
+			die("PSQL ERROR :".$e->getMessage());
+		}
+		return $coach;
+}
+/* 
+function getCandidat(string $mail) {
+
+}
+
+function getCoachOuCandidat(string $mail) {
+
+
+
+
+}
+ */
 
 
 /* 
