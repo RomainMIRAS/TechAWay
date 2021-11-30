@@ -10,5 +10,7 @@ GRANT SELECT ON UTILISATEUR TO pagman;
 GRANT INSERT ON UTILISATEUR TO pagman;
 GRANT USAGE ON SEQUENCE utilisateur_idutilisateur_seq to pagman ;
 
+--droits admin a romian
+grant all ON ALL TABLES IN SCHEMA utilisateur to romain ;
 
 GRANT ALL PRIVILEGES ON DATABASE techAWayDB to pagman;
