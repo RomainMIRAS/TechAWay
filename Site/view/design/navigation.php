@@ -41,7 +41,7 @@ session_start();
         <script>
           $(document).ready(function(){
             $("#btn-compte").click(function(){
-              $("#div-essai").toggle();
+              $("#menu-drop").toggle();
             });
           }); 
         </script>
