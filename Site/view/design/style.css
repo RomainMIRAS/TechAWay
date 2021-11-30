@@ -123,8 +123,12 @@ form {
 * MENU COMPTE
 **************************************************************/
 
-#menu-compte {
-  display: flex;
+#menu-drop {
+  position: absolute;
+  border: 1px solid black;
+}
+
+#menu-drop ul {
   flex-direction: column;
 }
 

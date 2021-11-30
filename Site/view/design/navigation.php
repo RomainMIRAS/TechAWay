@@ -28,16 +28,14 @@ session_start();
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-        <div id="menu-compte">
-          <button id="btn-compte">Compte</button>
-          <div id="div-essai">
-            <ul>
-              <li><?=$_SESSION['utilisateur']->getMail()?></li>
-              <form action="../controler/main.ctrl.php" method="post">
-                <li><button type="submit" name="logout" value="true">Déconnexion</button></li>
-              </form>
-            </ul>
-          </div>
+        <button id="btn-compte">Compte</button>
+        <div id="menu-drop">
+          <ul>
+            <li><?=$_SESSION['utilisateur']->getMail()?></li>
+            <form action="../controler/main.ctrl.php" method="post">
+              <li><button type="submit" name="logout" value="true">Déconnexion</button></li>
+            </form>
+          </ul>
         </div>
 
         <script>
