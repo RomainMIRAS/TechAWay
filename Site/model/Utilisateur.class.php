@@ -1,7 +1,7 @@
 <?php
 
 // Description d'un utilisateur
-class Utilisateur {
+abstract class Utilisateur {
   private int $id;              //Identifiant
   private string $nom;          //Nom
   private string $prenom;       //Prenom

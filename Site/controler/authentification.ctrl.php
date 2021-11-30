@@ -70,18 +70,24 @@ if ($confirmation == "oui" && $action == "login"){
 
 if ($erreur == "" && $confirmation == "oui"){
   if ($action == "signup") {// Inscription Possible de Candidat
-    //A COMPLETER
+    $dao->createUtilisateur($email, $password);
+    seConnecter($email,$password);
   } else if ($action == "login"){ // Connexion réussi
     //$erreur = "Vous êtes connecté avec email $email et mdp $password";
-    session_start();
-    // A testé si Candidat ou Coach ( Pour l'instant toujours Candidat)
-    $utilisateur = new Candidat($email,$password);
-
-    $_SESSION['utilisateur'] = $utilisateur;
-    // Ferme la session
-    session_write_close();
-    header('Location: main.ctrl.php');
+    seConnecter($email,$password);
   }
+}
+
+//Permet d'executer toute les actions de connection
+function seConnecter($email,$password){
+  session_start();
+  // A testé si Candidat ou Coach ( Pour l'instant toujours Candidat)
+  $utilisateur = new Candidat($email,$password);
+
+  $_SESSION['utilisateur'] = $utilisateur;
+  // Ferme la session
+  session_write_close();
+  header('Location: main.ctrl.php');
 }
 
 ///////////////////////////////////////////////////////////////////////////////
