@@ -125,11 +125,19 @@ form {
 
 #menu-drop {
   position: absolute;
-  border: 1px solid black;
+  border: 1px solid rgba(0, 0, 0, 0.30);
+  border-radius: 15px;
+  top: 20%;
+  right: 1%;
 }
 
-#menu-drop ul {
-  flex-direction: column;
+#menu-drop ul li {
+  border-bottom: 1px solid;
+  padding: 10px;
+}
+
+#menu-drop ul li button {
+  border: none;
 }
 
 
