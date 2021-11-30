@@ -17,17 +17,35 @@ session_start();
 
     <ul>
 
-      <?php if (!isset($_SESSION['utilisateur'])): //Si pas connecté?>
+      
 
+      <?php if (!isset($_SESSION['utilisateur'])): //Si pas connecté?>
       <form action="../controler/authentification.ctrl.php" method="post">
         <li><button type="submit" name="action" value="signup">S'inscrire</button></li>
         <li><button type="submit" name="action" value="login">S'identifier</button></li>
       </form>
       <?php else: ?>
-        <li><button>Compte</button></li>
-        <form action="../controler/main.ctrl.php" method="post">
-          <li><button type="submit" name="logout" value="true">Déconnexion</button></li>
-        </form>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <button id="btn-compte">Compte</button>
+        <div id="div-essai">
+          <ul>
+            <li><?=$_SESSION['utilisateur']->getMail()?></li>
+            <form action="../controler/main.ctrl.php" method="post">
+              <li><button type="submit" name="logout" value="true">Déconnexion</button></li>
+            </form>
+          </ul>
+        </div>
+
+        <script>
+          $(document).ready(function(){
+            $("#btn-compte").click(function(){
+              $("#div-essai").toggle();
+            });
+          }); 
+        </script>
+
       <?php endif; ?>
     </ul>
 </nav>
