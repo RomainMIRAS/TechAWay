@@ -1,17 +1,15 @@
 <?php
+//include_once(__DIR__."/../../model/Utilisateur.class.php");
+//include_once(__DIR__."/../../model/Candidat.class.php");
+//include_once(__DIR__."/../../model/Coach.class.php");
 
 session_start();
-if (isset($_SESSION['login'])){
+if (isset($_SESSION['utilisateur'])){
   $islog = true;
-  //$candidat = $_SESSION['login'];
+  //$utilisateur = $_SESSION['utilisateur'];
 } else {
   $islog = false;
 }
-
-//include_once(__DIR__."/../../model/Candidat.class.php");
-
-session_write_close();
-
  ?>
 
 <nav>
@@ -30,7 +28,9 @@ session_write_close();
         <li><button type="submit" name="action" value="login">Se connecter</button></li>
       </form>
       <?php else: ?>
-        <p>Vous êtes connecté !</p>
+        <form action="../controler/main.ctrl.php" method="post">
+          <li><button type="submit" name="logout" value="true">Logout</button></li>
+        </form>
       <?php endif; ?>
     </ul>
 </nav>

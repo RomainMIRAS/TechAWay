@@ -65,7 +65,7 @@ if ($erreur == "" && $confirmation == "oui"){
     session_start();
     $candidat = new Candidat($email,$password);
 
-    $_SESSION['login'] = $candidat;
+    $_SESSION['utilisateur'] = $candidat;
     // Ferme la session
     session_write_close();
     header('Location: main.ctrl.php');
