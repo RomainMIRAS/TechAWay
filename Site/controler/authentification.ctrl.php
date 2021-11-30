@@ -41,25 +41,25 @@ $action = (isset($_POST['action'])) ? $_POST['action']:"login";
 
 if ($confirmation == "oui" && $action == "signup"){
   if (strlen($password) <= 8){ //Test Mdp > 8 caract
-    $erreur = "Mot de passe doit avoir au minimum 8 caractères";
+    $erreur = "Un mot de passe doit contenir au minimum 8 caractères.";
   } else if($password != $checkpassword){ // Mot de passe identique
-    $erreur = "Les mots de passes doivent être identiques !";
+    $erreur = "Les mots de passes entrés doivent être identiques.";
   } else if (in_array($email,$dao->getEmails())){ // Si email déja enregistrée
-    $erreur = "Adresse email déjà utilisé !";
+    $erreur = "Cette adresse mail est déjà utilisé.";
   } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)){ // Si email valide
-    $erreur = "Email non valide !";
+    $erreur = "Adresse mail non valide.";
   } else if ($email == "" || $password == ""){ // Champ remplie
-    $erreur = "Champ obligatoire manquant !";
+    $erreur = "Champ obligatoire manquant.";
   }
 }
 
 if ($confirmation == "oui" && $action == "login"){
   if ($email == "" || $password == ""){ // Champ remplie
-    $erreur = "Champ obligatoire manquant !";
+    $erreur = "Champ(s) obligatoire(s) manquant(s).";
   } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)){ // Mot de passe identique
-    $erreur = "Email non valide !";
+    $erreur = "Adresse mail non valide.";
   }   else if (!$dao->verifierLogin($email,$password)){  //Fonction si email pas dans asso au mdp
-    $erreur = "Aucun email associé à ce mot de passe !";
+    $erreur = "Aucune adresse mail n'est associée à ce mot de passe.";
   }
 }
 

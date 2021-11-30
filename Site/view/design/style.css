@@ -9,6 +9,8 @@ body {
   padding: 0;
   font-family: 'Raleway', sans-serif;
   font-weight: 500;
+  overflow-x: hidden;
+  height: 100%;
 }
 
 /**************************************************************
@@ -20,7 +22,7 @@ nav {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.30);
   align-items: center;
 }
 
@@ -40,7 +42,7 @@ ul li {
 ul li a {
   display: inline-block;
   text-decoration: none;
-  color: rgba(0, 0, 0, 0.30);
+  color: rgba(0, 0, 0, 0.50);
   transition: all .2s ease-in-out;
 }
 
@@ -124,8 +126,11 @@ form {
 
 footer {
   padding: 10px;
-  border-top: 1px solid rgba(0, 0, 0, 0.15);
+  border-top: 1px solid rgba(0, 0, 0, 0.30);
   font-size: 12px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 
 footer ul{
@@ -146,9 +151,10 @@ footer ul li a:hover {
 * LOG
 **************************************************************/
 
-
 output{
   color: red;
+  font-size: 14px;
+  text-align: center;
 }
 
 .authen button {
@@ -169,7 +175,6 @@ output{
   display: flex;
   flex-direction: column;
   padding: 30px;
-  padding-bottom: 126px;
 }
 
 .log h2 {
