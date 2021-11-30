@@ -46,7 +46,7 @@ try{
   if ($testLogin){
     echo '<pre>' . var_export($testLogin, true) . '</pre>';
   }else{
-    echo "False ";
+    echo "</br>False ";
   }
 
   $liste = $db->getEmails();

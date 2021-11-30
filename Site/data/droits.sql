@@ -6,9 +6,16 @@ REVOKE ALL PRIVILEGES ON DATABASE techAWayDB FROM PUBLIC; -- supprimer tous les 
 CREATE USER pagman WITH password 'pagman'; -- l'utilisateur par defaut de la page
 
 GRANT CONNECT ON DATABASE techAWayDB TO pagman;
+
+
+--TABLE UTILISATEUR
 GRANT SELECT ON UTILISATEUR TO pagman;
 GRANT INSERT ON UTILISATEUR TO pagman;
 GRANT USAGE ON SEQUENCE utilisateur_idutilisateur_seq to pagman ;
+
+--TABLE COACH
+GRANT SELECT ON coach TO pagman;
+GRANT USAGE ON SEQUENCE coach_idcoach_seq to pagman ;
 
 --droits admin a romian
 grant all ON ALL TABLES IN SCHEMA utilisateur to romain ;
