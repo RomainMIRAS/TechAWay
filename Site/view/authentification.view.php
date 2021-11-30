@@ -2,7 +2,9 @@
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
   <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- TITLE -->
     <title>Tech A Way</title>
@@ -35,13 +37,13 @@
         <!-- Si l'utilisateur clique sur "Se connecter" -->
         <?php if ($action == "login"): ?>
 
-          <form class="log" action="authentification.ctrl.php" method="post">
-            <h1>Connexion</h1>
-            <output class="w3-pale-red"><?=$erreur?></output>
+          <form class="log" action="authentification.ctrl.php" method="post" style="padding-bottom: 193px;">
+            <h1>S'identifier</h1>
             <label for="email">Adresse E-mail</label>
             <input id="email" type="text" name="email" placeholder="Entrez votre adresse e-mail" required>
             <label for="password">Mot de passe</label>
             <input id="password" type="password" name="password" placeholder="Mot de passe" required>
+            <output><?=$erreur?></output>
             <button type="submit" name="confirmation" value="oui">Confirmation</button>
             <input type="hidden" name="action" value="<?= $action ?>">
           </form>
@@ -49,15 +51,15 @@
         <!-- Si l'utilisateur clique sur "S'inscrire" -->
         <?php elseif ($action == "signup"): ?>
 
-          <form class="log" action="authentification.ctrl.php" method="post">
+          <form class="log" action="authentification.ctrl.php" method="post" style="padding-bottom: 114px;">
             <h1>S'inscrire</h1>
-            <output class="w3-pale-red"><?=$erreur?></output>
             <label for="email">Adresse E-mail</label>
             <input id="email" type="text" name="email" placeholder="Entrez votre adresse e-mail" required>
             <label for="password">Mot de passe</label>
             <input id="password" type="password" name="password" placeholder="Mot de passe" required>
             <label for="checkpassword">Confirmation du mot de passe</label>
             <input id="checkpassword" type="password" name="checkpassword" placeholder="Mot de passe" required>
+            <output><?=$erreur?></output>
             <button type="submit" name="confirmation" value="oui">Confirmation</button>
             <input type="hidden" name="action" value="<?= $action ?>">
           </form>

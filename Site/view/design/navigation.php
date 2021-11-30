@@ -21,11 +21,12 @@ session_start();
 
       <form action="../controler/authentification.ctrl.php" method="post">
         <li><button type="submit" name="action" value="signup">S'inscrire</button></li>
-        <li><button type="submit" name="action" value="login">Se connecter</button></li>
+        <li><button type="submit" name="action" value="login">S'identifier</button></li>
       </form>
       <?php else: ?>
+        <li><button>Compte</button></li>
         <form action="../controler/main.ctrl.php" method="post">
-          <li><button type="submit" name="logout" value="true">Logout</button></li>
+          <li><button type="submit" name="logout" value="true">Déconnexion</button></li>
         </form>
       <?php endif; ?>
     </ul>
