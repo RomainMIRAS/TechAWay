@@ -84,7 +84,6 @@ function verifierLogin(string $mail, string $pass) { //returns boolean
 function getCoach(string $mail) {
 	try {
 		$req = pg_query($this->db,"SELECT * from utilisateur where idutilisateur in (Select idCoach from coach) AND adressemail='$mail'");
-		// Affiche en clair l'erreur PDO si la requête ne peut pas s'exécuter
 	
 		$coachbf = pg_fetch_all($req);
 
@@ -116,11 +115,41 @@ function getCoach(string $mail) {
 		}
 		return $coach;
 }
-/* 
+
 function getCandidat(string $mail) {
+	try {
+		$req = pg_query($this->db,"SELECT * from utilisateur where idutilisateur in (Select idcandidat from candidat) AND adressemail='$mail'");
+	
+		$candidatbf = pg_fetch_all($req);
 
+
+		if (empty($candidatbf)) {
+			return false;
+		}else{
+
+			$req = pg_query($this->db,"SELECT * FROM candidat WHERE idcandidat=". intVal($candidatbf[0]['idutilisateur']) ."");
+
+
+			$candidatUti = pg_fetch_all($req);
+
+
+			$coach = new Coach(
+				$candidatbf[0]['adressemail'],
+				$candidatbf[0]['password'],
+				$candidatbf[0]['nom'],
+				$candidatbf[0]['prenom'],
+				$candidatbf[0]['telephone'],
+				$candidatUti[0]['lienphoto']
+			);
+		}
+		
+		// Tests d'erreurs
+		} catch (Exception $e) {
+			die("PSQL ERROR :".$e->getMessage());
+		}
+		return $coach;
 }
-
+/*
 function getCoachOuCandidat(string $mail) {
 
 
