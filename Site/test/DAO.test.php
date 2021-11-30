@@ -50,6 +50,15 @@ try{
   }
 
 
+  echo "</br>getCoachOuCandidat(adressemail) : adresse-candidat@gmail.com  : (doit retourner type Coach)";
+  $testLogin = $db->getCoachOuCandidat("adresse-candidat@gmail.com");
+  if ($testLogin){
+    echo '<pre>' . var_export($testLogin, true) . '</pre>';
+  }else{
+    echo "</br>False ";
+  }
+
+
   echo "</br></br> Liste de Mail :";
   $liste = $db->getEmails();
 

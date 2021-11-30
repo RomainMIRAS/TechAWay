@@ -153,12 +153,12 @@ function getCandidat(string $mail) {
 function getCoachOuCandidat(string $mail) {
 
 	try {
-		$res = $this->db->getCandidat($mail);
+		$res = $this->getCandidat($mail);
 		if ($res){
 			return $res;
 		}
 
-		$res = $this->db->getCoach($mail);
+		$res = $this->getCoach($mail);
 		if ($res){
 			return $res;
 		}else{
