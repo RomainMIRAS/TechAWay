@@ -1,7 +1,18 @@
  <?php
 //
+///////////////////////////////////////////////////////////////////////////////
+// Protection Contre Erreurs
+///////////////////////////////////////////////////////////////////////////////
 
-// Partie principale
+// Si déja connecté => Ne pas afficher cette page :D !
+session_start();
+if (isset($_SESSION['utilisateur'])) header('Location: main.ctrl.php');
+session_write_close();
+
+
+///////////////////////////////////////////////////////////////////////////////
+// Declaration
+///////////////////////////////////////////////////////////////////////////////
 
 // Inclusion du framework
 include_once(__DIR__."/../framework/view.class.php");
@@ -47,25 +58,26 @@ if ($confirmation == "oui" && $action == "login"){
     $erreur = "Champ obligatoire manquant !";
   } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)){ // Mot de passe identique
     $erreur = "Email non valide !";
-  } else if (!$dao->verifierLogin($email,$password)){  //Fonction si email pas dans asso au mdp
-    $erreur = "Aucun email associé à ce mot de passe !";
-  }
+  } //else if (!$dao->verifierLogin($email,$password)){  //Fonction si email pas dans asso au mdp
+    //$erreur = "Aucun email associé à ce mot de passe !";
+  //}
 }
 
 ///////////////////////////////////////////////////////////////////////////////
 // Partie Modéle
 ///////////////////////////////////////////////////////////////////////////////
 
-// Inscription
-if ($erreur == "" && $confirmation == "oui"){
-  if ($action == "signup") {
 
+if ($erreur == "" && $confirmation == "oui"){
+  if ($action == "signup") {// Inscription Possible de Candidat
+    //A COMPLETER
   } else if ($action == "login"){ // Connexion réussi
     //$erreur = "Vous êtes connecté avec email $email et mdp $password";
     session_start();
-    $candidat = new Candidat($email,$password);
+    // A testé si Candidat ou Coach ( Pour l'instant toujours Candidat)
+    $utilisateur = new Candidat($email,$password);
 
-    $_SESSION['utilisateur'] = $candidat;
+    $_SESSION['utilisateur'] = $utilisateur;
     // Ferme la session
     session_write_close();
     header('Location: main.ctrl.php');

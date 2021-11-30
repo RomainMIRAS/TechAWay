@@ -1,15 +1,10 @@
 <?php
-//include_once(__DIR__."/../../model/Utilisateur.class.php");
-//include_once(__DIR__."/../../model/Candidat.class.php");
+include_once(__DIR__."/../../model/Utilisateur.class.php");
+include_once(__DIR__."/../../model/Candidat.class.php");
 //include_once(__DIR__."/../../model/Coach.class.php");
 
 session_start();
-if (isset($_SESSION['utilisateur'])){
-  $islog = true;
-  //$utilisateur = $_SESSION['utilisateur'];
-} else {
-  $islog = false;
-}
+//$_SESSION['utilisateur']->getMail() (Pour avoir le mail utilisé !!!)
  ?>
 
 <nav>
@@ -21,7 +16,8 @@ if (isset($_SESSION['utilisateur'])){
     </ul>
 
     <ul>
-      <?php if (!$islog): ?>
+
+      <?php if (!isset($_SESSION['utilisateur'])): //Si pas connecté?>
 
       <form action="../controler/authentification.ctrl.php" method="post">
         <li><button type="submit" name="action" value="signup">S'inscrire</button></li>

@@ -14,7 +14,7 @@ class Candidat extends Utilisateur {
 
   // Contructeur
   function __construct(string $mail, string $password,string $nom='', string $prenom='', string $telephone='', string $lienCV='', string $lienLM='') {
-    parent::__construct($nom, $prenom, $mail, $password, $telephone);
+    parent::__construct($mail, $password, $nom, $prenom, $telephone);
     $this->lienCV = $lienCV;
     $this->lienLM = $lienLM;
   }

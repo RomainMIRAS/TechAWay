@@ -16,6 +16,7 @@ include_once(__DIR__."/../framework/view.class.php");
 
 // Destruction de Session
 if (isset($_POST['logout'])){
+  session_start();
   session_destroy();
 }
 
