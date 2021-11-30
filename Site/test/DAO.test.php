@@ -8,8 +8,8 @@ try{
   $liste = $db->getEmails();
   echo '<pre>' . var_export($liste, true) . '</pre>';
 
-  echo "Creation d'utilisateur : testing2@gmail.com:PASSWORD  :";
-  $test = $db->createUtilisateur("testing2@gmail.com","PASSWORD");
+  echo "Creation d'utilisateur : adresse-candidat@gmail.com:motdepassecandidat  :";
+  $test = $db->createUtilisateur("adresse-candidat@gmail.com","motdepassecandidat");
 
   if ($test){
     echo "</br>Utilisateur Cree :</br>";
@@ -17,16 +17,24 @@ try{
     echo "</br>Erreur Utilisateur existe deja</br>";
   }
 
-  echo "</br>Verification de Login : testing2@gmail.com:PASSWORD  : (doit etre correcte)";
-  $testLogin = $db->verifierLogin("testing2@gmail.com","PASSWORD");
+  echo "</br>Verification de Login : adresse-candidat@gmail.com:motdepassecandidat  : (doit etre correcte)";
+  $testLogin = $db->verifierLogin("adresse-candidat@gmail.com","motdepassecandidat");
   if ($testLogin){
     echo "</br>Login Correcte</br>";
   }else{
     echo "</br>Login incorrecte</br>";
   }
 
-  echo "</br>Verification de Login : testing2333@gmail.com:PASSWORD  : (doit etre incorrecte)";
-  $testLogin = $db->verifierLogin("testing2333@gmail.com","PASSWORD");
+  echo "</br>Verification de Login : adresse-candidat@gmail.com:motdepassecandidat2  : (doit etre incorrecte mdp different)";
+  $testLogin = $db->verifierLogin("adresse-candidat@gmail.com","motdepassecandidat2");
+  if ($testLogin){
+    echo "</br>Login Correcte</br>";
+  }else{
+    echo "</br>Login incorrecte</br>";
+  }
+
+  echo "</br>Verification de Login : adresse-candidat2@gmail.com:motdepassecandidat  : (doit etre incorrecte email inexistant)";
+  $testLogin = $db->verifierLogin("adresse-candidat2@gmail.com","motdepassecandidat");
   if ($testLogin){
     echo "</br>Login Correcte</br>";
   }else{
