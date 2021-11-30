@@ -25,17 +25,19 @@ session_start();
         <li><button type="submit" name="action" value="login">S'identifier</button></li>
       </form>
       <?php else: ?>
-        
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-        <button id="btn-compte">Compte</button>
-        <div id="div-essai">
-          <ul>
-            <li><?=$_SESSION['utilisateur']->getMail()?></li>
-            <form action="../controler/main.ctrl.php" method="post">
-              <li><button type="submit" name="logout" value="true">Déconnexion</button></li>
-            </form>
-          </ul>
+        <div id="menu-compte">
+          <button id="btn-compte">Compte</button>
+          <div id="div-essai">
+            <ul>
+              <li><?=$_SESSION['utilisateur']->getMail()?></li>
+              <form action="../controler/main.ctrl.php" method="post">
+                <li><button type="submit" name="logout" value="true">Déconnexion</button></li>
+              </form>
+            </ul>
+          </div>
         </div>
 
         <script>
