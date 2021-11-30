@@ -58,9 +58,9 @@ if ($confirmation == "oui" && $action == "login"){
     $erreur = "Champ obligatoire manquant !";
   } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)){ // Mot de passe identique
     $erreur = "Email non valide !";
-  } //else if (!$dao->verifierLogin($email,$password)){  //Fonction si email pas dans asso au mdp
-    //$erreur = "Aucun email associé à ce mot de passe !";
-  //}
+  }   else if (!$dao->verifierLogin($email,$password)){  //Fonction si email pas dans asso au mdp
+    $erreur = "Aucun email associé à ce mot de passe !";
+  }
 }
 
 ///////////////////////////////////////////////////////////////////////////////
