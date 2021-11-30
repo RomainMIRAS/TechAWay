@@ -49,6 +49,12 @@ try{
     echo "</br>False ";
   }
 
+  echo "</br></br>";
+
+  $coach = new Coach("mail@com","mdp","nompass","prenompass","07070707","urldud");
+
+  echo '<pre>' . var_export($coach, true) . '</pre>';
+
   $liste = $db->getEmails();
 
   echo '<pre>' . var_export($liste, true) . '</pre>';
