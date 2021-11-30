@@ -17,6 +17,8 @@ GRANT USAGE ON SEQUENCE utilisateur_idutilisateur_seq to pagman ;
 GRANT SELECT ON coach TO pagman;
 GRANT USAGE ON SEQUENCE coach_idcoach_seq to pagman ;
 
+--TABLE CANDIDAT
+
 --droits admin a romian
 grant all ON ALL TABLES IN SCHEMA utilisateur to romain ;
 
