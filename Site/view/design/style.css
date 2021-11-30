@@ -131,8 +131,12 @@ form {
   right: 1%;
 }
 
+#menu-drop ul {
+  flex-direction: column;
+}
+
 #menu-drop ul li {
-  border-bottom: 1px solid;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.30);
   padding: 10px;
 }
 
