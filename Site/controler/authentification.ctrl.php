@@ -39,7 +39,7 @@ function seConnecter($email,$password){
   // A testé si Candidat ou Coach ( Pour l'instant toujours Candidat)
   $utilisateur = new Candidat($email,$password);
 
-  $_SESSION['utilisateur'] = $utilisateur;
+  $_SESSION['utilisateur'] = $dao->getCoachOuCandidat($email);
   // Ferme la session
   session_write_close();
   header('Location: main.ctrl.php');
