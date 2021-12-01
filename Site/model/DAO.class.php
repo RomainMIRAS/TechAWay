@@ -10,6 +10,8 @@ require_once(__DIR__.'/Coach.class.php');
 class DAO {
 private $db;
 
+private static $instance = null;
+
 // Constructeur chargé d'ouvrir la BD
 function __construct() {
 	try{
@@ -20,6 +22,16 @@ function __construct() {
 	}
 
 }
+
+// Méthode statique pour acceder au singleton
+public static function get() : DAO {
+	// Si l'objet n'a pas encore été crée, le crée
+	if(is_null(self::$instance)) {
+		self::$instance = new DAO();
+	}
+	return self::$instance;
+}
+
 
 function getEmails() : array {
 	try {
