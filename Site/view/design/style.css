@@ -148,8 +148,13 @@ form {
   border-bottom: none;
 }
 
-#menu-drop ul li button {
+#btn-logout {
   border: none;
+}
+
+#btn-logout:hover {
+  background-color: transparent;
+  text-decoration: underline;
 }
 
 

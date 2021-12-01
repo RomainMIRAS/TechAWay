@@ -34,7 +34,7 @@ session_start();
             <li><?= get_class($_SESSION['utilisateur']) ?></li>
             <li><?=$_SESSION['utilisateur']->getMail()?></li>
             <form action="../controler/main.ctrl.php" method="post">
-              <li><button type="submit" name="logout" value="true">Déconnexion</button></li>
+              <li><button id="btn-logout" type="submit" name="logout" value="true">Déconnexion</button></li>
             </form>
           </ul>
         </div>
