@@ -129,6 +129,7 @@ form {
   border-radius: 15px;
   top: 20%;
   right: 1%;
+  width: 250px;
 }
 
 #menu-drop ul {
@@ -136,11 +137,15 @@ form {
 }
 
 #menu-drop ul li {
-  padding: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  width: 100%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.30);
 }
 
-#menu-drop ul li:nth-child(1) {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.30);
+#menu-drop ul li:last-child {
+  border-bottom: none;
 }
 
 #menu-drop ul li button {
