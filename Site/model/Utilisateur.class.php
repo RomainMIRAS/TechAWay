@@ -21,9 +21,9 @@ abstract class Utilisateur {
     $this->age = $age;
   }
 
-  function getId() : int {
+  /* function getId() : int {
     return $this->id;
-  }
+  } */
 
   function getNom() : string {
     return $this->nom;
