@@ -18,8 +18,8 @@ class Candidat extends Utilisateur {
     parent::__construct($mail, $password, $nom, $prenom, $age,$telephone);
     $this->lienCV = $lienCV;
     $this->lienLM = $lienLM;
-    $this->pays = null;
-    $this->ville = null;
+    $this->pays = '';
+    $this->ville = '';
     $this->etape = '';
     $this->competenceAcquis = null;
     $this->preference = null;
