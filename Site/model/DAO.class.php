@@ -145,13 +145,16 @@ function getCandidat(string $mail) {
 
 			$candidatUti = pg_fetch_all($req);
 
+			$age = $candidatbf[0]['age'];
+
 			$coach = new Coach(
 				$candidatbf[0]['adressemail'],
 				$candidatbf[0]['password'],
 				$candidatbf[0]['nom'],
 				$candidatbf[0]['prenom'],
 				$candidatbf[0]['telephone'],
-				$candidatUti[0]['lienphoto']
+				intVal($age),
+				$candidatUti[0]['lienPhoto'],
 			);
 		}
 		
