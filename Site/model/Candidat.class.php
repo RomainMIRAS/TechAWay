@@ -13,6 +13,7 @@ class Candidat extends Utilisateur {
   private array $discussions;           //discussions auquelle participe le candidat
 
   // Contructeur
+  // Revoir Constructeur
   function __construct(string $mail, string $password,string $nom='', string $prenom='', string $telephone='', string $lienCV='', string $lienLM='') {
     parent::__construct($mail, $password, $nom, $prenom, $telephone);
     $this->lienCV = $lienCV;

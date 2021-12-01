@@ -33,6 +33,19 @@ $erreur = "";
 //Set le type d'action (SignUp ou Login). Par défaut login
 $action = (isset($_POST['action'])) ? $_POST['action']:"login";
 
+//Permet d'executer toute les actions de connection
+function seConnecter($email,$password){
+  session_start();
+  // A testé si Candidat ou Coach ( Pour l'instant toujours Candidat)
+  $utilisateur = new Candidat($email,$password);
+
+  $_SESSION['utilisateur'] = $utilisateur;
+  // Ferme la session
+  session_write_close();
+  header('Location: main.ctrl.php');
+}
+
+
 ///////////////////////////////////////////////////////////////////////////////
 // Partie Gestion des erreurs
 ///////////////////////////////////////////////////////////////////////////////
@@ -76,18 +89,6 @@ if ($erreur == "" && $confirmation == "oui"){
     //$erreur = "Vous êtes connecté avec email $email et mdp $password";
     seConnecter($email,$password);
   }
-}
-
-//Permet d'executer toute les actions de connection
-function seConnecter($email,$password){
-  session_start();
-  // A testé si Candidat ou Coach ( Pour l'instant toujours Candidat)
-  $utilisateur = new Candidat($email,$password);
-
-  $_SESSION['utilisateur'] = $utilisateur;
-  // Ferme la session
-  session_write_close();
-  header('Location: main.ctrl.php');
 }
 
 ///////////////////////////////////////////////////////////////////////////////
