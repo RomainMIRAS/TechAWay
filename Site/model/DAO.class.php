@@ -147,14 +147,15 @@ function getCandidat(string $mail) {
 
 			$age = $candidatbf[0]['age'];
 
-			$coach = new Coach(
+			$coach = new Candidat(
 				$candidatbf[0]['adressemail'],
 				$candidatbf[0]['password'],
 				$candidatbf[0]['nom'],
 				$candidatbf[0]['prenom'],
-				$candidatbf[0]['telephone'],
 				intVal($age),
-				$candidatUti[0]['lienPhoto'],
+				$candidatbf[0]['telephone'],
+				$candidatUti[0]['liencv'],
+				$candidatUti[0]['lienlettremotivation']
 			);
 		}
 		
