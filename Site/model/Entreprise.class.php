@@ -15,6 +15,7 @@ class Entreprise {
     $this->adresse = $adresse;
     $this->telephone = $telephone;
     $this->mail = $mail;
+    $this->offres = null;
   }
 
   function getId() : int {
