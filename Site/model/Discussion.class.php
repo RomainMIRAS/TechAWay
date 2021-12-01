@@ -14,6 +14,7 @@ class Discussion {
   function __construct(Candidat $correspodant1, Coach $correspodant2) {
     $this->correspondant1 = $correspondant1;
     $this->correspondant2 = $correspondant2;
+    $this->messages = null;
   }
 
   function getId() : int {

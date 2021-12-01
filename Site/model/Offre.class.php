@@ -12,10 +12,12 @@ class Offre {
   private Entreprise $entreprise;           //L'entreprise à l'initiative de l'offre
 
   // Contructeur
-  function __construct(string $nomOffre, string $dateOffre, Entreprise $entreprise) {
+  function __construct(string $nomOffre, Entreprise $entreprise) {
     $this->nomOffre = $nomOffre;
-    $this->dateOffre = $dateOffre;
     $this->entreprise = $entreprise;
+    $this->detailOffre = null;
+    $this->competenceRecherche = null;
+    $this->candidats = null;
   }
 
   function getId() : int {
