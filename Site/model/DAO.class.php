@@ -110,7 +110,9 @@ function getCoach(string $mail) {
 			$coachUti = pg_fetch_all($req);
 
 			$age = $coachbf[0]['age'];
-
+			echo "*******************************";
+			echo '<pre>' . var_export($coachUti, true) . '</pre>';
+			echo "*******************************";
 			$coach = new Coach(
 				$coachbf[0]['adressemail'],
 				$coachbf[0]['password'],
