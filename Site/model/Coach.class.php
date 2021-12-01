@@ -7,7 +7,7 @@ class Coach extends Utilisateur {
 
   // Contructeur
   function __construct(string $mail, string $password,string $nom='', string $prenom='', string $telephone='', int $age=0, string $lienPhoto='') {
-    parent::__construct($mail, $password, $nom, $prenom, $telephone, $age);
+    parent::__construct($mail, $password, $nom, $prenom, $age, $telephone);
     $this->lienPhoto = $lienPhoto;
     //$this->discussions = null;
   }
