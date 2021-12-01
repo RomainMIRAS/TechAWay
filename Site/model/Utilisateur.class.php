@@ -1,11 +1,10 @@
 <?php
 
 // Description d'un utilisateur
-abstract class Utilisateur {
-  //private int $id;              //Identifiant
+abstract class Utilisateur {        
   private string $nom;          //Nom
   private string $prenom;       //Prenom
-  private string $mail;         //Mail
+  private string $mail;         //Mail Clee primaire
   private string $password;     //Mot de passe
   private string $telephone;    //Telephone
   private int $age;             //Age
@@ -20,11 +19,6 @@ abstract class Utilisateur {
     $this->telephone = $telephone;
     $this->age = $age;
   }
-
-  /* function getId() : int {
-    return $this->id;
-  } */
-
   function getNom() : string {
     return $this->nom;
   }

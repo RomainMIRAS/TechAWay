@@ -116,8 +116,8 @@ function getCoach(string $mail) {
 				$coachbf[0]['password'],
 				$coachbf[0]['nom'],
 				$coachbf[0]['prenom'],
-				$coachbf[0]['telephone'],
 				intVal($age),
+				$coachbf[0]['telephone'],
 				$coachUti[0]['lienphoto']
 			);
 		}
