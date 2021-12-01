@@ -14,10 +14,16 @@ class Candidat extends Utilisateur {
 
   // Contructeur
   // Revoir Constructeur
-  function __construct(string $mail, string $password,string $nom='', string $prenom='', string $telephone='', string $lienCV='', string $lienLM='') {
-    parent::__construct($mail, $password, $nom, $prenom, $telephone);
+  function __construct(string $mail, string $password,string $nom='', string $prenom='', int $age=0, string $telephone='', string $lienCV='', string $lienLM='') {
+    parent::__construct($mail, $password, $nom, $prenom, $telephone, $age);
     $this->lienCV = $lienCV;
     $this->lienLM = $lienLM;
+    $this->pays = null;
+    $this->ville = null;
+    $this->etape = '';
+    $this->competenceAcquis = null;
+    $this->preference = null;
+    $this->discussions = null;
   }
 
   function getAdresse() : string {
