@@ -129,9 +129,7 @@ function getCandidat(string $mail) {
 
 			$req = pg_query($this->db,"SELECT * FROM candidat WHERE idcandidat=". intVal($candidatbf[0]['idutilisateur']) ."");
 
-
 			$candidatUti = pg_fetch_all($req);
-
 
 			$coach = new Coach(
 				$candidatbf[0]['adressemail'],
@@ -150,7 +148,7 @@ function getCandidat(string $mail) {
 		return $coach;
 }
 
-function getCoachOuCandidat(string $mail) {
+function getCoachOuCandidat(string $mail, string $pass) {
 
 	try {
 		$res = $this->getCandidat($mail);
@@ -162,9 +160,9 @@ function getCoachOuCandidat(string $mail) {
 		if ($res){
 			return $res;
 		}else{
-			return false;
+			return new Candidat($mail, $pass,'', '', 0, '','','');
 		}
-
+		
 	} catch (Exception $e) {
 		die("PSQL ERROR :".$e->getMessage());
 	}
