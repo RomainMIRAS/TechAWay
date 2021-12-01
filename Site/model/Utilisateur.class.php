@@ -2,7 +2,7 @@
 
 // Description d'un utilisateur
 abstract class Utilisateur {
-  private int $id;              //Identifiant
+  //private int $id;              //Identifiant
   private string $nom;          //Nom
   private string $prenom;       //Prenom
   private string $mail;         //Mail
