@@ -109,6 +109,7 @@ function getCoach(string $mail) {
 
 			$coachUti = pg_fetch_all($req);
 
+			$age = $coachbf[0]['age'];
 
 			$coach = new Coach(
 				$coachbf[0]['adressemail'],
@@ -116,7 +117,7 @@ function getCoach(string $mail) {
 				$coachbf[0]['nom'],
 				$coachbf[0]['prenom'],
 				$coachbf[0]['telephone'],
-				intVal($coachbf[0]['age']),
+				intVal($age),
 				$coachUti[0]['lienPhoto'],
 			);
 		}
