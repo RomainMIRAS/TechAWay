@@ -59,7 +59,7 @@ try{
   }
 
 
-  echo "</br>getCoachOuCandidat(adressemail) : adresse-candidat@gmail.com  : (doit retourner type Coach)";
+  echo "</br>getCoachOuCandidat(adressemail) : adresse-coach@gmail.com  : (doit retourner type Coach)";
   $testLogin = $db->getCoachOuCandidat("adresse-coach@gmail.com","motdepassecoach");
   if ($testLogin){
     echo '<pre>' . var_export($testLogin, true) . '</pre>';
