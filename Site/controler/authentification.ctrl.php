@@ -22,7 +22,7 @@ include_once(__DIR__."/../model/DAO.class.php");
 include_once(__DIR__."/../model/Candidat.class.php");
 
 
-$dao = new DAO();
+global $dao = new DAO();
 // Déclaration
 $email = (isset($_POST['email'])) ? $_POST['email']:"";
 $password = (isset($_POST['password'])) ? $_POST['password']:"";
