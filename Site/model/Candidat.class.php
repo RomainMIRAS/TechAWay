@@ -21,7 +21,9 @@ class Candidat extends Utilisateur {
     $this->pays = '';
     $this->ville = '';
     $this->etape = '';
-    $this->discussions = null;
+    /* $this->competenceAcquis = null;
+    $this->preference = null;
+    $this->discussions = null; */
   }
 
   function getAdresse() : string {
