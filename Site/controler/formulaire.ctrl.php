@@ -7,13 +7,13 @@ include_once(__DIR__."/../framework/view.class.php");
 
 
 $nom = '';
-if (isset($_GET['nom'])) {
-  $nom = $_GET['nom'];
+if (isset($_POST['nom'])) {
+  $nom = $_POST['nom'];
 }
 $pays = array('Allemagne','Autriche','Andorre','Belgique','Boznie_Herzegovine','Bulgarie','Chypre','Croatie','Danemark','Espagne','Estonie','Finlande','France','Gibraltar','Grece','Hongrie','Irlande','Islande','italie','Lettonie','Liechtenstein','Lituanie','Luxembourg','Malte','Monaco','Norvege','Pays Bas','Pays de Galle','Pologne','Portugal','Republique_Tcheque','Roumanie','Royaume_Uni','Russie','Slovaquie','Slovenie','Suede','Suisse','Ukraine','Vatican');
 
-$action = (isset($_GET['action'])) ? $_GET['action']: 'formulaire';
-$etape = (isset($_GET['etape'])) ? $_GET['etape']: 'base';
+$action = (isset($_POST['action'])) ? $_POST['action']: 'formulaire';
+$etape = (isset($_POST['etape'])) ? $_POST['etape']: 'base';
 
 
 ///////////////////////////////////////////////////////////////////////////////
