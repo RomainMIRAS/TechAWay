@@ -209,18 +209,17 @@ output{
   align-items: center;
 }
 
-.log {
+.form {
   width: 500px;
   display: flex;
   flex-direction: column;
-  padding: 30px;
 }
 
-.log h2 {
+.form h2 {
   color: #0036d9;
 }
 
-.log input[type=text], input[type=password]{
+.form input, select {
   padding: 12px 20px;
   margin: 10px 0;
   border: 1px solid #B9B8D8;
@@ -228,7 +227,11 @@ output{
   border-radius: 5px;
 }
 
-.log button {
+select {
+  background-color: transparent;
+}
+
+.form button {
   width: 100%;
   border-radius: 50px;
   transition: all .2s ease-in-out;
@@ -237,7 +240,7 @@ output{
   padding: 5px 0;
 }
 
-.log button:hover {
+.form button:hover {
   border-radius: 5px;
 }
 
@@ -263,7 +266,8 @@ button:hover {
 * FORMULAIRE
 **************************************************************/
 
-#section-formulaire form {
+#section-formulaire {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
 }
+
