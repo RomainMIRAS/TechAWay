@@ -67,7 +67,7 @@ nav ul:nth-child(1) li:nth-child(1), nav ul:nth-child(2) li {
 }
 
 /**************************************************************
-* Partie Main
+* MAIN
 **************************************************************/
 
 section {
@@ -257,4 +257,13 @@ button {
 button:hover {
   background-color: #0036d9;
   color: white;
+}
+
+/**************************************************************
+* FORMULAIRE
+**************************************************************/
+
+#section-formulaire form {
+  display: flex;
+  flex-direction: column;
 }

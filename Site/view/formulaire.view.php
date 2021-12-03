@@ -29,19 +29,12 @@
     <!-- NAVIGATION ---------------------------------------------------------------------------->
     <?php include_once('../view/design/navigation.php'); ?>
 
-    <!-------------------------------------- Main du Site -------------------------------------->
+    <!-- MAIN ---------------------------------------------------------------------------------->
     <main>
 
+      <?php if ($etape == "base"): ?> <!-- Si le candidat est à la première étape -->
 
-
-
-
-
-      <!-- Section du formulaire -->
-
-
-      <?php if ($etape == "base"): ?>
-        <section class="formulaire">
+        <section id="section-formulaire">
             <form class="form" action="formulaire.ctrl.php" method="post">
               <h1>Formulaire</h1>
               <!-- Saisie des informations du candidat -->
