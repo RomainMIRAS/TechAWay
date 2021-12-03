@@ -26,13 +26,22 @@ session_start();
       </form>
       <?php else: ?>
 
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
         <button id="btn-compte">Compte</button>
+        
         <div id="menu-drop">
           <ul>
+          
             <li><?= get_class($_SESSION['utilisateur']) ?></li>
-            <li><?=$_SESSION['utilisateur']->getMail()?></li>
+
+            <?php if (is_a($_SESSION['utilisateur'],"Candidat")) : ?>
+              <li><a href="../controler/formulaire.ctrl.php">Mon Recrutement</a></li>
+
+            <?php endif; ?>
+
+            <li></li>
             <form action="../controler/main.ctrl.php" method="post">
               <li><button id="btn-logout" type="submit" name="logout" value="true">Déconnexion</button></li>
             </form>
