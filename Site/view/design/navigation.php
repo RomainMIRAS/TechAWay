@@ -40,8 +40,6 @@ session_start();
               <li><a href="../controler/formulaire.ctrl.php">Mon Recrutement</a></li>
 
             <?php endif; ?>
-
-            <li></li>
             <form action="../controler/main.ctrl.php" method="post">
               <li><button id="btn-logout" type="submit" name="logout" value="true">Déconnexion</button></li>
             </form>
