@@ -10,7 +10,7 @@ $nom = '';
 if (isset($_POST['nom'])) {
   $nom = $_POST['nom'];
 }
-$pays = array('Allemagne','Autriche','Andorre','Belgique','Boznie_Herzegovine','Bulgarie','Chypre','Croatie','Danemark','Espagne','Estonie','Finlande','France','Gibraltar','Grece','Hongrie','Irlande','Islande','italie','Lettonie','Liechtenstein','Lituanie','Luxembourg','Malte','Monaco','Norvege','Pays Bas','Pays de Galle','Pologne','Portugal','Republique_Tcheque','Roumanie','Royaume_Uni','Russie','Slovaquie','Slovenie','Suede','Suisse','Ukraine','Vatican');
+$pays = array('Allemagne','Autriche','Andorre','Belgique','Boznie Herzegovine','Bulgarie','Chypre','Croatie','Danemark','Espagne','Estonie','Finlande','France','Gibraltar','Grece','Hongrie','Irlande','Islande','italie','Lettonie','Liechtenstein','Lituanie','Luxembourg','Malte','Monaco','Norvege','Pays Bas','Pays de Galle','Pologne','Portugal','Republique Tcheque','Roumanie','Royaume Uni','Russie','Slovaquie','Slovenie','Suede','Suisse','Ukraine','Vatican');
 
 $action = (isset($_POST['action'])) ? $_POST['action']: 'formulaire';
 $etape = (isset($_POST['etape'])) ? $_POST['etape']: 'base';
