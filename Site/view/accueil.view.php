@@ -9,7 +9,7 @@
     <title>Tech A Way</title>
 
     <!-- ICON -->
-    <link rel="icon" href="../view/design/logo.png">
+    <link rel="icon" href="../view/design/img/logo-nav-bar.png">
 
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="../view/design/style.css">

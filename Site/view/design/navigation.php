@@ -16,7 +16,7 @@ session_start();
     </ul>
 
     <ul>
-      
+
       <?php if (!isset($_SESSION['utilisateur'])): //Si pas connecté?>
       <form action="../controler/authentification.ctrl.php" method="post">
         <li><button type="submit" name="action" value="signup">S'inscrire</button></li>
@@ -41,7 +41,6 @@ session_start();
             </div>
             <form action="../controler/main.ctrl.php" method="post">
               <li><button id="btn-logout" type="submit" name="logout" value="true"><i class="fa fa-sign-out" aria-hidden="true"></i> Déconnexion</button></li>
-
             </form>
           </ul>
         </div>

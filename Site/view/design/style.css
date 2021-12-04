@@ -247,10 +247,6 @@ select {
   padding: 5px 0;
 }
 
-.form button:hover {
-  border-radius: 5px;
-}
-
 button {
   background-color: transparent;
   color: var(--color-blue1);
