@@ -82,7 +82,7 @@ function verifierLogin(string $mail, string $pass) { //returns boolean
 
 	$res = pg_fetch_row($q);
 
-	if(password_verify($this->password,$res['password'])){
+	if(password_verify($pass,$res['password'])){
 		return true;
 	}else{
 		return false;
