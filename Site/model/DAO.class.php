@@ -59,7 +59,7 @@ function createUtilisateur(string $mail, string $pass) { //returns boolean
 
 		$hashedPw = password_hash($pass,PASSWORD_ARGON2I);
 		
-		$r = "INSERT INTO utilisateur VALUES(DEFAULT,'". $mail ."','". $hashedPw ."',NULL,NULL,NULL,NULL,now());";
+		$r = "INSERT INTO utilisateur VALUES(DEFAULT,'". $mail ."','". $hashedPw ."','','','','',now());";
 
 		$res = @pg_query($this->db, $r);
 
