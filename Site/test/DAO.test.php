@@ -5,30 +5,12 @@ require_once(__DIR__.'/../model/DAO.class.php');
 try{
   $db = DAO::get();
 
-
-  $test = "Mot de Passe";
-
-  $hashed_pw = password_hash($test,PASSWORD_ARGON2I);
-
-  $mdpFake = "fake";
-  
-  if (password_verify($mdpFake,$hashed_pw)){
-    echo "</br>Good password</br>";
-  }else{
-    echo "</br>Incorrect password</br>";
-  }
-  if (password_verify($test,$hashed_pw)){
-    echo "</br>Good password</br>";
-  }else{
-    echo "</br>Incorrect password</br>";
-  }
-
-  echo $hashed_pw;
-
+  //Test de la methode getEmails de DAO
   $liste = $db->getEmails();
   echo '<pre>' . var_export($liste, true) . '</pre>';
 
-  echo "Creation d'utilisateur : adresse-candidat@gmail.com:motdepassecandidat  :";
+  //Test de Creation d'utilisateur;
+  echo "Creation d'utilisateur : adresse-candidat@gmail.com:motdepassecandidat:  (doit retourner un erreur car il existe deja)";
   $test = $db->createUtilisateur("adresse-candidat@gmail.com","motdepassecandidat");
 
   if ($test){
@@ -37,6 +19,7 @@ try{
     echo "</br>Erreur Utilisateur existe deja</br>";
   }
 
+  //Test de la methode VeriferLogin, C'est qui permet de se Login.
   echo "</br>Verification de Login : adresse-candidat@gmail.com:motdepassecandidat  : (doit etre correcte)";
   $testLogin = $db->verifierLogin("adresse-candidat@gmail.com","motdepassecandidat");
   if ($testLogin){
@@ -45,7 +28,7 @@ try{
     echo "</br>Login incorrecte</br>";
   }
 
-  echo "</br>Verification de Login : adresse-candidat@gmail.com:motdepassecandidat2  : (doit etre incorrecte mdp different)";
+  echo "</br>Verification de Login : adresse-candidat@gmail.com:motdepassecandidat2  : (doit etre incorrecte car mdp different)";
   $testLogin = $db->verifierLogin("adresse-candidat@gmail.com","motdepassecandidat2");
   if ($testLogin){
     echo "</br>Login Correcte</br>";
@@ -53,7 +36,7 @@ try{
     echo "</br>Login incorrecte</br>";
   }
 
-  echo "</br>Verification de Login : adresse-candidat2@gmail.com:motdepassecandidat  : (doit etre incorrecte email inexistant)";
+  echo "</br>Verification de Login : adresse-candidat2@gmail.com:motdepassecandidat  : (doit etre incorrecte car email inexistant)";
   $testLogin = $db->verifierLogin("adresse-candidat2@gmail.com","motdepassecandidat");
   if ($testLogin){
     echo "</br>Login Correcte</br>";
@@ -61,6 +44,8 @@ try{
     echo "</br>Login incorrecte</br>";
   }
 
+  
+  //verification de la methode getCoach() il return un Coach s'il existe, faux sinon
   echo "</br>getCoach(adressemail) : adresse-coach@gmail.com  : (doit retourner type Coach)";
   $testLogin = $db->getCoach("adresse-coach@gmail.com");
   if ($testLogin){
@@ -68,7 +53,7 @@ try{
   }else{
     echo "</br>False ";
   }
-
+  //verification de la methode getCandidat() il return un Candidat s'il existe, faux sinon
   echo "</br>getCandidat(adressemail) : adresse-candidat@gmail.com  : (doit retourner type Candidat)";
   $testLogin = $db->getCandidat("adresse-candidat@gmail.com");
   if ($testLogin){
@@ -77,7 +62,7 @@ try{
     echo "</br>False ";
   }
 
-
+  //Test de fonction getCoachOuCandidat qu il return un coach ou candidat dependant de son type automatiquement
   echo "</br>getCoachOuCandidat(adressemail) : adresse-candidat@gmail.com  : (doit retourner type Candidat)";
   $testLogin = $db->getCoachOuCandidat("adresse-candidat@gmail.com","motdepassecandidat");
   if ($testLogin){
@@ -97,6 +82,7 @@ try{
   
 
 
+  //Un echo de getEmails
   echo "</br></br> Liste de Mail :";
   $liste = $db->getEmails();
 
