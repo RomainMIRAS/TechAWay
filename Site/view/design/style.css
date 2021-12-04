@@ -42,7 +42,7 @@ ul {
   display: flex;
   align-items: center;
   padding: 0;
-  margin: 5px 5em 5px 5em;
+  margin: 0;
   height: max-content;
 }
 
@@ -64,6 +64,9 @@ ul li a:hover {
 
 nav ul:nth-child(1) li:nth-child(1), nav ul:nth-child(2) li {
   padding: 0;
+}
+nav>ul{
+  margin: 5px 5em 5px 5em;
 }
 
 #logo {
