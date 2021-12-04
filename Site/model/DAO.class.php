@@ -82,6 +82,8 @@ function verifierLogin(string $mail, string $pass) { //returns boolean
 
 	$res = pg_fetch_row($q);
 
+	var_dump($res);
+
 	if(password_verify($pass,$res['password'])){
 		return true;
 	}else{
