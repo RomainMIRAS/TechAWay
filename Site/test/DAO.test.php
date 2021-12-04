@@ -5,6 +5,14 @@ require_once(__DIR__.'/../model/DAO.class.php');
 try{
   $db = DAO::get();
 
+
+  $test = "Mot de Passe";
+
+  $hashed_pw = password_hash($test,PASSWORD_ARGON2I);
+
+
+  echo '<pre>' . var_export($hashed_pw, true) . '</pre>';
+
   $liste = $db->getEmails();
   echo '<pre>' . var_export($liste, true) . '</pre>';
 
