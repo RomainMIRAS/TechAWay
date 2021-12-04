@@ -25,8 +25,6 @@ session_start();
         <li><button type="submit" name="action" value="login">S'identifier</button></li>
       </form>
       <?php else: ?>
-
-<<<<<<< HEAD
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
         <button id="btn-compte">Compte</button>
@@ -35,7 +33,10 @@ session_start();
             <li><?=$_SESSION['utilisateur']->getMail()?></li>
             <form action="../controler/main.ctrl.php" method="post">
               <li><button type="submit" name="logout" value="true">Déconnexion</button></li>
-=======
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <button id="btn-compte">Compte</button>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
@@ -52,7 +53,7 @@ session_start();
             <?php endif; ?>
             <form action="../controler/main.ctrl.php" method="post">
               <li><button id="btn-logout" type="submit" name="logout" value="true">Déconnexion</button></li>
->>>>>>> parent of d42f7f7 (un peu de css)
+
             </form>
           </ul>
         </div>
