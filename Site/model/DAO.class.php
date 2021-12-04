@@ -57,9 +57,9 @@ function getEmails() : array {
 function createUtilisateur(string $mail, string $pass) { //returns boolean
 	try {
 
-		//$hashedPw = password_hash($pass,PASSWORD_ARGON2I);
+		$hashedPw = password_hash($pass,PASSWORD_ARGON2I);
 		
-		$r = "INSERT INTO utilisateur VALUES(DEFAULT,'". $mail ."','". $pass ."',NULL,NULL,NULL,NULL,now());";
+		$r = "INSERT INTO utilisateur VALUES(DEFAULT,'". $mail ."','". $hashedPw ."',NULL,NULL,NULL,NULL,now());";
 
 		$res = @pg_query($this->db, $r);
 
@@ -76,6 +76,20 @@ function createUtilisateur(string $mail, string $pass) { //returns boolean
 
 function verifierLogin(string $mail, string $pass) { //returns boolean
 	try {
+	$r = "SELECT password FROM utilisateur where adressemail='$mail'";
+
+	$q = pg_query($this->db, $r);
+
+	$res = pg_fetch_row($q);
+
+	if(password_verify($this->password,$res['password'])){
+		return true;
+	}else{
+		return false;
+	}
+
+
+/* 
 	$r = "SELECT EXISTS(SELECT * FROM utilisateur where adressemail='$mail' AND password='$pass')";
 
 	$q = pg_query($this->db, $r);
@@ -86,7 +100,8 @@ function verifierLogin(string $mail, string $pass) { //returns boolean
 		return true;
 	}else{
 		return false;
-	}
+	} */
+
 
 	// Tests d'erreurs
 	} catch (Exception $e) {
