@@ -142,7 +142,7 @@ form {
 
 #menu-drop {
   position: absolute;
-  border: 1px solid rgba(0, 0, 0, 0.30);
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
   border-radius: 15px;
   top: 13%;
   right: 1%;
@@ -160,7 +160,16 @@ form {
   padding-bottom: 10px;
   text-align: center;
   width: 100%;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.30);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+#menu-part2 {
+  width: 100%;
+}
+
+#menu-part2 li {
+  float: left;
+  
 }
 
 #menu-drop ul li:last-child {
