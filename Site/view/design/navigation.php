@@ -6,9 +6,6 @@ include_once(__DIR__."/../../model/Coach.class.php");
 session_start();
 //$_SESSION['utilisateur']->getMail() (Pour avoir le mail utilisé !!!)
  ?>
-<?php
-var_dump($_SESSION['utilisateur']);
-?>
 <nav>
     <ul>
         <li><a href="main.ctrl.php"><img id="logo" src="../view/design/img/logo.png" ></a></li>
