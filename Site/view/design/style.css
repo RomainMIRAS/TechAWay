@@ -34,7 +34,7 @@ nav {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.30);
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
   align-items: center;
 }
 
@@ -84,8 +84,7 @@ nav ul:nth-child(1) li:nth-child(1), nav ul:nth-child(2) li {
 
 main {
   height: 100%;
-  padding-right: 10px;
-  padding-left: 10px;
+  padding: 20px;
 }
 
 section {
@@ -145,9 +144,11 @@ form {
   position: absolute;
   border: 1px solid rgba(0, 0, 0, 0.30);
   border-radius: 15px;
-  top: 20%;
+  top: 13%;
   right: 1%;
   width: 250px;
+  background-color: var(--color-white);
+  display: none;
 }
 
 #menu-drop ul {
@@ -164,6 +165,11 @@ form {
 
 #menu-drop ul li:last-child {
   border-bottom: none;
+}
+
+#menu-drop ul li button {
+  padding: 0;
+  margin: 0;
 }
 
 #btn-logout {
