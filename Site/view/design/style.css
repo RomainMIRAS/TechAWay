@@ -1,16 +1,24 @@
-/* Styles du template */
+:root {
+  --color-blue1: #0036d9;
+  --color-white: white;
+
+  --font-raleway: 'Raleway';
+}
 
 /**************************************************************
-* BODY
+* HTML & BODY
 **************************************************************/
+
+html {
+  height: 100vh;
+}
 
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Raleway', sans-serif;
+  font-family: var(--font-raleway);
   font-weight: 500;
-  overflow-x: hidden;
-  height: 100%;
+  height: 100vh;
 }
 
 /**************************************************************
@@ -18,7 +26,10 @@ body {
 **************************************************************/
 
 nav {
-  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -70,12 +81,18 @@ nav ul:nth-child(1) li:nth-child(1), nav ul:nth-child(2) li {
 * MAIN
 **************************************************************/
 
+main {
+  padding-right: 20px;
+  padding-left: 20px;
+  position: relative;
+}
+
 section {
   display: flex;
 }
 
 section h1 {
-  color: #0036d9;
+  color: var(--color-blue1);
   font-size: 42px;
 }
 
@@ -155,7 +172,7 @@ form {
 #btn-logout:hover {
   background-color: transparent;
   text-decoration: underline;
-  color: #0036d9;
+  color: var(--color-blue1);
 }
 
 
@@ -164,12 +181,11 @@ form {
 **************************************************************/
 
 footer {
-  padding: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   border-top: 1px solid rgba(0, 0, 0, 0.30);
   font-size: 12px;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
+  background-color: var(--color-white);
 }
 
 footer ul{
@@ -216,7 +232,7 @@ output{
 }
 
 .form h2 {
-  color: #0036d9;
+  color: var(--color-blue1);
 }
 
 .form input, select {
@@ -246,8 +262,8 @@ select {
 
 button {
   background-color: transparent;
-  color: #0036d9;
-  border: 2px solid #0036d9;
+  color: var(--color-blue1);
+  border: 2px solid var(--color-blue1);
   border-radius: 50px;
   transition: all .2s ease-in-out;
   cursor: pointer;
@@ -258,8 +274,8 @@ button {
 }
 
 button:hover {
-  background-color: #0036d9;
-  color: white;
+  background-color: var(--color-blue1);
+  color: var(--color-white);
 }
 
 /**************************************************************
