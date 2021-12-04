@@ -1,24 +1,16 @@
-:root {
-  --color-blue1: #0036d9;
-  --color-white: white;
-
-  --font-raleway: 'Raleway';
-}
+/* Styles du template */
 
 /**************************************************************
-* HTML & BODY
+* BODY
 **************************************************************/
-
-html {
-  height: 100vh;
-}
 
 body {
   margin: 0;
   padding: 0;
-  font-family: var(--font-raleway);
+  font-family: 'Raleway', sans-serif;
   font-weight: 500;
-  height: 100vh;
+  overflow-x: hidden;
+  height: 100%;
 }
 
 /**************************************************************
@@ -26,10 +18,7 @@ body {
 **************************************************************/
 
 nav {
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding: 10px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -81,18 +70,12 @@ nav ul:nth-child(1) li:nth-child(1), nav ul:nth-child(2) li {
 * MAIN
 **************************************************************/
 
-main {
-  padding-right: 20px;
-  padding-left: 20px;
-  position: relative;
-}
-
 section {
   display: flex;
 }
 
 section h1 {
-  color: var(--color-blue1);
+  color: #0036d9;
   font-size: 42px;
 }
 
@@ -172,7 +155,7 @@ form {
 #btn-logout:hover {
   background-color: transparent;
   text-decoration: underline;
-  color: var(--color-blue1);
+  color: #0036d9;
 }
 
 
@@ -181,11 +164,12 @@ form {
 **************************************************************/
 
 footer {
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding: 10px;
   border-top: 1px solid rgba(0, 0, 0, 0.30);
   font-size: 12px;
-  background-color: var(--color-white);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 
 footer ul{
@@ -232,7 +216,7 @@ output{
 }
 
 .form h2 {
-  color: var(--color-blue1);
+  color: #0036d9;
 }
 
 .form input, select {
@@ -262,8 +246,8 @@ select {
 
 button {
   background-color: transparent;
-  color: var(--color-blue1);
-  border: 2px solid var(--color-blue1);
+  color: #0036d9;
+  border: 2px solid #0036d9;
   border-radius: 50px;
   transition: all .2s ease-in-out;
   cursor: pointer;
@@ -274,8 +258,8 @@ button {
 }
 
 button:hover {
-  background-color: var(--color-blue1);
-  color: var(--color-white);
+  background-color: #0036d9;
+  color: white;
 }
 
 /**************************************************************
