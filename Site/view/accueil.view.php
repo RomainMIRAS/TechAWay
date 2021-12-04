@@ -31,34 +31,6 @@
     <!-- MAIN ---------------------------------------------------------------------------------->
     <main>
 
-      <?php if (isset($_SESSION['utilisateur'])): // si l'utilisateur est connecté ?>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        
-        <div id="menu-drop">
-          <ul>
-          
-            <li><?= get_class($_SESSION['utilisateur']) ?></li>
-
-            <?php if (is_a($_SESSION['utilisateur'],"Candidat")) : ?>
-              <li><a href="../controler/formulaire.ctrl.php">Mon Recrutement</a></li>
-
-            <?php endif; ?>
-            <form action="../controler/main.ctrl.php" method="post">
-              <li><button id="btn-logout" type="submit" name="logout" value="true">Déconnexion</button></li>
-            </form>
-          </ul>
-        </div>
-
-        <script>
-          $(document).ready(function(){
-            $("#btn-compte").click(function(){
-              $("#menu-drop").toggle();
-            });
-          });
-        </script>
-
-      <?php endif; ?>
-
       <section id="section-accueil"> <!-- section Accueil -->
         <div>
           <h1>Découvrez Tech A Way</h1>
