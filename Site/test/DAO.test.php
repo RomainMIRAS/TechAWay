@@ -11,7 +11,7 @@ try{
   $hashed_pw = password_hash($test,PASSWORD_ARGON2I);
 
 
-  echo '<pre>' . var_export($hashed_pw, true) . '</pre>';
+  echo $hashed_pw;
 
   $liste = $db->getEmails();
   echo '<pre>' . var_export($liste, true) . '</pre>';
