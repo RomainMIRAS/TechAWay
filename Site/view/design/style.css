@@ -42,7 +42,7 @@ ul {
   display: flex;
   align-items: center;
   padding: 0;
-  margin: 0;
+  margin: 5px 5em 5px 5em;
   height: max-content;
 }
 

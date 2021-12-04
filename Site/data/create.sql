@@ -2,7 +2,8 @@
 CREATE TABLE IF NOT EXISTS UTILISATEUR (
 	idUtilisateur SERIAL NOT NULL PRIMARY KEY, -- identifiant unique de l'utilisateur
 	adresseMail VARCHAR(30) UNIQUE NOT NULL CHECK (adresseMail like '%@%.%'), -- adresse email de l'utilisateur, chaine qui comprend le caractère ‘@’ et ‘.’
-	password VARCHAR(30) NOT NULL, --CHECK (password > 8), -- mot de passe de l'utilisateur qui doit être suppérieur à 8 caractères
+	-- password a ete alter a VARCHAR(255) pour le hachage
+	password VARCHAR(30) NOT NULL, -- mot de passe de l'utilisateur qui doit être suppérieur à 8 caractères.  
 	nom VARCHAR(30) NULL, -- nom de l'utilisateur
 	prenom VARCHAR(30) NULL, -- prenom de l'utilisateur
 	age INTEGER NULL, -- age de l'utilisateur
