@@ -1,7 +1,7 @@
 <?php
 include_once(__DIR__."/../../model/Utilisateur.class.php");
 include_once(__DIR__."/../../model/Candidat.class.php");
-//include_once(__DIR__."/../../model/Coach.class.php");
+include_once(__DIR__."/../../model/Coach.class.php");
 
 session_start();
 //$_SESSION['utilisateur']->getMail() (Pour avoir le mail utilisé !!!)
