@@ -6,7 +6,7 @@ insert into utilisateur values(DEFAULT,'adresse-candidat@gmail.com', 'motdepasse
 insert into competence values(DEFAULT,'bac+3', 'français, anglais', 'java, c, c++, python');
 insert into renseignement values(DEFAULT,false, 'programmation', 'CDI', 'développeur', 'Start-up');
 
-insert into candidat values(428, NULL, NULL, 1, 'france', 'grenoble', 1, 1);
+insert into candidat values(966, '', '', 1, 'france', 'grenoble', 1, 1);
 
 insert into coach values(968,'');
 
