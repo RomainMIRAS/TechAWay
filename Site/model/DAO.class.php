@@ -125,8 +125,6 @@ function getCoach(string $mail) {
 
 			$req = pg_query($this->db,"SELECT * FROM coach WHERE idcoach=". intVal($coachbf[0]['idutilisateur']) ."");
 
-			var_dump($coachbf[0]['password']);
-
 			$coachUti = pg_fetch_all($req);
 
 			$age = $coachbf[0]['age'];
