@@ -1,7 +1,7 @@
-  <?php
+<?php
 include_once(__DIR__."/../../model/Utilisateur.class.php");
 include_once(__DIR__."/../../model/Candidat.class.php");
-include_once(__DIR__."/../../model/Coach.class.php");
+//include_once(__DIR__."/../../model/Coach.class.php");
 
 session_start();
 //$_SESSION['utilisateur']->getMail() (Pour avoir le mail utilisé !!!)
@@ -17,8 +17,6 @@ session_start();
 
     <ul>
 
-
-
       <?php if (!isset($_SESSION['utilisateur'])): //Si pas connecté?>
       <form action="../controler/authentification.ctrl.php" method="post">
         <li><button type="submit" name="action" value="signup">S'inscrire</button></li>
@@ -31,10 +29,9 @@ session_start();
         <button id="btn-compte">Compte</button>
         <div id="menu-drop">
           <ul>
-            <li><?= get_class($_SESSION['utilisateur']) ?></li>
             <li><?=$_SESSION['utilisateur']->getMail()?></li>
             <form action="../controler/main.ctrl.php" method="post">
-              <li><button id="btn-logout" type="submit" name="logout" value="true">Déconnexion</button></li>
+              <li><button type="submit" name="logout" value="true">Déconnexion</button></li>
             </form>
           </ul>
         </div>
@@ -44,7 +41,7 @@ session_start();
             $("#btn-compte").click(function(){
               $("#menu-drop").toggle();
             });
-          });
+          }); 
         </script>
 
       <?php endif; ?>

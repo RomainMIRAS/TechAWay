@@ -37,7 +37,7 @@
         <!-- Si l'utilisateur clique sur "Se connecter" -->
         <?php if ($action == "login"): ?>
 
-          <form class="log" action="authentification.ctrl.php" method="post" style="padding-bottom: 193px;">
+          <form class="form" action="authentification.ctrl.php" method="post" style="padding-bottom: 193px;">
             <h1>S'identifier</h1>
             <label for="email">Adresse E-mail</label>
             <input id="email" type="text" name="email" placeholder="Entrez votre adresse e-mail" required>
@@ -51,7 +51,7 @@
         <!-- Si l'utilisateur clique sur "S'inscrire" -->
         <?php elseif ($action == "signup"): ?>
 
-          <form class="log" action="authentification.ctrl.php" method="post" style="padding-bottom: 114px;">
+          <form class="form" action="authentification.ctrl.php" method="post" style="padding-bottom: 114px;">
             <h1>S'inscrire</h1>
             <label for="email">Adresse E-mail</label>
             <input id="email" type="text" name="email" placeholder="Entrez votre adresse e-mail" required>

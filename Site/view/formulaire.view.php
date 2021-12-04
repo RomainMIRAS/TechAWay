@@ -29,43 +29,40 @@
     <!-- NAVIGATION ---------------------------------------------------------------------------->
     <?php include_once('../view/design/navigation.php'); ?>
 
-    <!-------------------------------------- Main du Site -------------------------------------->
+    <!-- MAIN ---------------------------------------------------------------------------------->
     <main>
 
+      <?php if ($etape == "base"): ?> <!-- Si le candidat est à la première étape -->
 
-
-
-
-
-      <!-- Section du formulaire -->
-
-
-      <?php if ($etape == "base"): ?>
-        <section class="formulaire">
+        <section id="section-formulaire">
             <form class="form" action="formulaire.ctrl.php" method="post">
               <h1>Formulaire</h1>
               <!-- Saisie des informations du candidat -->
               <label for="nom">Nom</label>
-              <input id="nom" type="text" name="nom" placeholder="Entrer votre nom" required>
-              <label for="prenom">Prenom</label>
-              <input id="prenom" type="text" name="prenom" placeholder="Entrer votre prenom" required>
+              <input id="nom" type="text" name="nom" placeholder="Entrez votre nom" required>
+              <label for="prenom">Prénom</label>
+              <input id="prenom" type="text" name="prenom" placeholder="Entrez votre prénom" required>
               <label for="age">Date de naissance</label>
-              <input id="age" type="date" name="age" placeholder="Renseigner votre date de naissance" required>
-              <label for="tel">Telephone</label>
+              <input id="age" type="date" name="age" required>
+              <label for="tel">Téléphone</label>
               <!-- type tel -> seul les chiffres sont autorisé -->
-              <input id="tel" type="tel" name="tel" required>
+              <input id="tel" type="tel" name="tel" placeholder="+33 6 01 02 03 04" required>
 
 
               <!-- Section du pays parmis la liste des pays europeens -->
               <label for="pays">Pays</label>
               <select name="pays">
                   <?php foreach ($pays as $key): ?>
-                    <option value="<?php echo"$key" ?>"><?php echo"$key" ?> </option>
+                    <?php if ($key=="France"): ?>
+                      <option value="<?php echo"$key" ?>" selected><?php echo"$key" ?></option>
+                    <?php else: ?>
+                      <option value="<?php echo"$key" ?>"><?php echo"$key" ?></option>
+                    <?php endif; ?>
                   <?php endforeach; ?>
               </select>
 
               <label for="ville">Ville</label>
-              <input id="ville" type="text" name="ville" placeholder="Entrer votre ville" required>
+              <input id="ville" type="text" name="ville" required>
 
 
               <button type="submit" name="etape" value="competences">Suivant</button>
