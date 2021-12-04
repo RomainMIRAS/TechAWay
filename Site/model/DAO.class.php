@@ -56,13 +56,16 @@ function getEmails() : array {
 
 function createUtilisateur(string $mail, string $pass) { //returns boolean
 	try {
-	$r = "INSERT INTO utilisateur VALUES(DEFAULT,'". $mail ."','". $pass ."',NULL,NULL,NULL,NULL,now());";
 
-	$res = @pg_query($this->db, $r);
+		//$hashedPw = password_hash($pass,PASSWORD_ARGON2I);
+		
+		$r = "INSERT INTO utilisateur VALUES(DEFAULT,'". $mail ."','". $pass ."',NULL,NULL,NULL,NULL,now());";
 
-	if($res){
-		return true;
-	}
+		$res = @pg_query($this->db, $r);
+
+		if($res){
+			return true;
+		}
 	// Tests d'erreurs
 	} catch (Exception $e) {
 		die("PSQL ERROR createUtilisateur : ".$e->getMessage());
