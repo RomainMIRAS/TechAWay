@@ -77,7 +77,7 @@ nav>ul{
 }
 
 #logo:hover {
-  transform: scale(1.05);
+  transform: scale(-1.05);
   transform: rotateZ(5deg);
 }
 
@@ -171,8 +171,7 @@ form {
 }
 
 #menu-part2 li {
-  float: left;
-  
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 #menu-drop ul li:last-child {

@@ -12,13 +12,11 @@ session_start();
         <li><a href="main.ctrl.php"><img id="logo" src="../view/design/img/logo.png" ></a></li>
         <li><a href="#">Recruter</a></li>
         <li><a href="#">Trouver un job</a></li>
-        <li><a href="#">Nous rejoindre</a></li>
+        <li><a href="#">Parrainer</a></li>
     </ul>
 
     <ul>
-
-
-
+      
       <?php if (!isset($_SESSION['utilisateur'])): //Si pas connecté?>
       <form action="../controler/authentification.ctrl.php" method="post">
         <li><button type="submit" name="action" value="signup">S'inscrire</button></li>
