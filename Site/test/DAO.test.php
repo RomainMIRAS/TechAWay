@@ -17,6 +17,11 @@ try{
   }else{
     echo "</br>Incorrect password</br>";
   }
+  if (password_verify($test,$hashed_pw)){
+    echo "</br>Good password</br>";
+  }else{
+    echo "</br>Incorrect password</br>";
+  }
 
   echo $hashed_pw;
 
