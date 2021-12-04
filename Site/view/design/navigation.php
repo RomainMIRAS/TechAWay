@@ -30,7 +30,7 @@ session_start();
         <div id="menu-drop">
           <ul>
           
-            <li><?= get_class($_SESSION['utilisateur']) ?></li>
+            <li><?= get_parent_class($_SESSION['utilisateur']) ?></li>
 
             <div id="menu-part2">
               <?php if (is_a($_SESSION['utilisateur'],"Candidat")) : ?>
