@@ -84,7 +84,7 @@ function verifierLogin(string $mail, string $pass) { //returns boolean
 
 	var_dump($res);
 
-	if(password_verify($pass,$res['password'])){
+	if(password_verify($pass,$res[0])){
 		return true;
 	}else{
 		return false;
