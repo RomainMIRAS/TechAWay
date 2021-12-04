@@ -8,5 +8,6 @@ insert into renseignement values(DEFAULT,false, 'programmation', 'CDI', 'dévelo
 
 insert into candidat values(428, NULL, NULL, 1, 'france', 'grenoble', 1, 1);
 
+insert into coach values(936,'');
 
 insert into utilisateur values(DEFAULT,'Candidat2@gmail.com', 'candidat2', 'Jean', 'Paul', 23, '06 11 22 55 44', now());
