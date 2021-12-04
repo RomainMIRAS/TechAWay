@@ -36,13 +36,13 @@ session_start();
 
             <div id="menu-part2">
               <?php if (is_a($_SESSION['utilisateur'],"Candidat")) : ?>
-                <li><a href="#"><i class="fa fa-user"></i>Mon profil</a></li>
-                <li><a href="#"><i class="fa fa-pencil-square-o"></i>Editez mon profil</a></li>
-                <li><a href="../controler/formulaire.ctrl.php">Mon Recrutement</a></li>
+                <li><a href="#"><i class="fa fa-user"></i> Mon profil</a></li>
+                <li><a href="#"><i class="fa fa-pencil-square-o"></i> Editer mon profil</a></li>
+                <li><a href="../controler/formulaire.ctrl.php"><i class="fa fa-level-up" aria-hidden="true"></i> Mon Recrutement</a></li>
               <?php endif; ?>
             </div>
             <form action="../controler/main.ctrl.php" method="post">
-              <li><button id="btn-logout" type="submit" name="logout" value="true"><i class="fa fa-sign-out" aria-hidden="true"></i>Déconnexion</button></li>
+              <li><button id="btn-logout" type="submit" name="logout" value="true"><i class="fa fa-sign-out" aria-hidden="true"></i> Déconnexion</button></li>
 
             </form>
           </ul>

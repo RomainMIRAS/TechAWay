@@ -164,7 +164,12 @@ form {
 }
 
 #menu-part2 {
+  width: 100%;
+}
+
+#menu-part2 li {
   float: left;
+  
 }
 
 #menu-drop ul li:last-child {
