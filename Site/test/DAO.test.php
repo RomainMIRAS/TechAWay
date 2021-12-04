@@ -10,6 +10,13 @@ try{
 
   $hashed_pw = password_hash($test,PASSWORD_ARGON2I);
 
+  $mdpFake = "fake";
+  
+  if (password_verify($mdpFake,$hashed_pw)){
+    echo "</br>Good password</br>";
+  }else{
+    echo "</br>Incorrect password</br>";
+  }
 
   echo $hashed_pw;
 
