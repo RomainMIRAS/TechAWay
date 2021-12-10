@@ -19,6 +19,15 @@ try{
     echo "</br>Erreur Utilisateur existe deja</br>";
   }
 
+  echo "Creation d'utilisateur : adresse-candidat@gmail.com:motdepassecandidat:  (doit retourner un erreur car il existe deja)";
+  $test = $db->createUtilisateur("adresse-candidat2@gmail.com","motdepassecandidat");
+
+  if ($test){
+    echo "</br>Utilisateur Cree :</br>";
+  }else{
+    echo "</br>Erreur Utilisateur existe deja</br>";
+  }
+
   //Test de la methode VeriferLogin, C'est qui permet de se Login.
   echo "</br>Verification de Login : adresse-candidat@gmail.com:motdepassecandidat  : (doit etre correcte)";
   $testLogin = $db->verifierLogin("adresse-candidat@gmail.com","motdepassecandidat");

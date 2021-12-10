@@ -63,7 +63,6 @@ function createUtilisateur(string $mail, string $pass) { //returns boolean
 		$sel = "(SELECT idUtilisateur from utilisateur where adressemail='". $mail ."')";
 
 		$r = "
-		set transaction isolation level Repeatable Read;
 		INSERT INTO utilisateur VALUES(DEFAULT,'". $mail ."','". $hashedPw ."','','',0,'',now());
 		INSERT INTO competence values($sel,NULL,NULL,NULL);
 		INSERT INTO renseignement values($sel,NULL,NULL,NULL);
@@ -86,7 +85,6 @@ function createUtilisateur(string $mail, string $pass) { //returns boolean
 function verifierLogin(string $mail, string $pass) { //returns boolean
 	try {
 	$r = "
-	set transaction isolation level Repeatable Read;
 	SELECT password FROM utilisateur where adressemail='$mail';";
 
 	$q = pg_query($this->db, $r);
