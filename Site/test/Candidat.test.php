@@ -18,12 +18,13 @@ try {
 
   //Test de la récupération d'un candidat
   print("Accès à un candidat : ");
-  $expected = new Candidat('adresse-candidat@gmail.com', 'motdepassecandidat'); // Candidat attendue
+  $hashedPw = password_hash($pass,'motdepassecandidat');
+  $expected = new Candidat('adresse-candidat@gmail.com', $hashedPw); // Candidat attendue
 
 //function __construct(string $mail, string $password,string $nom='', string $prenom='', int $age=0, string $telephone='', string $lienCV='', string $lienLM='') {
 
   $value = $dao->getCandidat('adresse-candidat@gmail.com'); // On prend le candidat d'id 966
-  if ( $value != $expected) { //On compare le candidat récuperé et celui attendue
+  if ($value != $expected) { //On compare le candidat récuperé et celui attendue
     print("\n");
     var_dump($value);
     print("\nAttendu : \n");
@@ -31,9 +32,6 @@ try {
     throw new Exception("Lecture du candidat N°966 incorrecte");
   }
   print("OK\n");
-
-
-
 
 
   } catch (Exception $e) {
