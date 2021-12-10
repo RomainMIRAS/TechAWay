@@ -190,7 +190,7 @@ form {
   background-color: transparent;
   text-decoration: underline;
   color: var(--color-blue1);
-}
+}imgRecrutement
 
 /**************************************************************
 * LOG
@@ -204,9 +204,6 @@ output{
 
 .authen button {
   font-size: 20px;
-}
-
-.hidden {
   display: none;
 }
 
@@ -270,6 +267,20 @@ button:hover {
 
 #section-formulaire {
   display: flex;
+  justify-content: center;
+}
+
+
+/**************************************************************
+* Recruter
+**************************************************************/
+#case{
+  display: block;
+  
+}
+
+#case1{
+  display:flex;
   justify-content: center;
 }
 
