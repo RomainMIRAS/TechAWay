@@ -17,7 +17,7 @@ try {
 
 
   //Test de la récupération d'un candidat
-  print("Accès à un candidat : ");
+  print("Accès à un candidat : <br>");
   $expected = new Candidat('adresse-candidat@gmail.com', 'motdepassecandidat'); // Candidat attendue
 
 //function __construct(string $mail, string $password,string $nom='', string $prenom='', int $age=0, string $telephone='', string $lienCV='', string $lienLM='') {
@@ -31,28 +31,28 @@ if ($expected->getPays() == $value->getPays()) {
     if ($expected->getLienCv() == $value->getLienCv()) {
       printf("LienCv OK <br>");
       if ($expected->getEtape() == $value->getEtape()) {
-        printf("Etape OK");
+        printf("Etape OK <br>");
         if ($expected->getLienLM() == $value->getLienLM()) {
-          printf("LienLM OK");
+          printf("LienLM OK <br>");
           /*if ($expected->getCompetenceAcquis() == $value->getCompetenceAcquis()) {
-            printf("CompetenceAcquis OK");
+            printf("CompetenceAcquis OK <br>");
             if ($expected->getRenseignement() == $value->getRenseignement()) {
-              printf("Renseignement OK");
+              printf("Renseignement OK <br>");
               if ($expected->getDiscussions() == $value->getDiscussions()) {
-                printf("Discussions OK");*/
+                printf("Discussions OK <br>");*/
                 if ($expected->getNom() == $value->getNom()) {
-                  printf("Nom OK");
+                  printf("Nom OK <br>");
                   if ($expected->getPrenom() == $value->getPrenom()) {
-                    printf("Prenom OK");
+                    printf("Prenom OK <br>");
                     if ($expected->getMail() == $value->getMail()) {
-                      printf("Mail OK");
+                      printf("Mail OK <br>");
                       if ($expected->getTelephone() == $value->getTelephone()) {
-                        printf("Telephone OK");
+                        printf("Telephone OK <br>");
                         if ($expected->getAge() == $value->getAge()) {
-                          printf("Age OK");
+                          printf("Age OK <br>");
                           if ($expected->getDateCreation() == $value->getDateCreation()) {
-                            printf("DateCreation OK");
-                            printf("Tout OK");
+                            printf("DateCreation OK <br>");
+                            printf("Tout OK <br>");
                           } else {
                             printf("DateCreation not OK, otenue : %s; attendu : %s", $expected->getDateCreation(), $value->getDateCreation());
                             throw new Exception("Lecture DateCreation du candidat N°966 incorrecte");
