@@ -46,6 +46,26 @@ class Renseignement {
   }
 
 
+  function setTravEtranger(boolean $travEtranger) : void {
+    $this->travEtranger = $travEtranger;
+  }
+
+  function setSecteur(string $secteur) : void {
+    $this->secteur = $secteur;
+  }
+
+  function setTypeContrat(string $typeContrat) : void {
+    $this->typeContrat = $typeContrat;
+  }
+
+  function setPoste(string $poste) : void {
+    $this->poste = $poste;
+  }
+
+  function setTypeEntreprise(string $typeEntreprise) : void {
+    $this->typeEntreprise = $typeEntreprise;
+  }
+
 }
 
 

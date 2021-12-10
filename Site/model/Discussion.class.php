@@ -33,6 +33,29 @@ class Discussion {
     return $this->correspondant2;
   }
 
+
+
+
+  function setDateDiscussion(string $dateDiscussion) : void {
+    $this->dateDiscussion = $dateDiscussion;
+  }
+
+  function setCorrespondant1(Candidat $correspondant1) : void {
+    $this->correspondant1 = $correspondant1;
+  }
+
+  function setCorrespondant2(Coach $correspondant2) : void {
+    $this->correspondant2 = $correspondant2;
+  }
+
+  function setMessages(array $messages) : void {
+    $this->messages = $messages;
+  }
+
+  function addMessage(Message $message) : void {
+    array_push($this->messages,$message);
+  }
+
 }
 
 

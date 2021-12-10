@@ -29,6 +29,22 @@ class Message {
     return $this->discussion;
   }
 
+
+
+
+  function setContenuMessage(string $contenuMessage) : void {
+    $this->contenuMessage = $contenuMessage;
+  }
+
+  function setDateMessage(string $dateMessage) : void {
+    $this->dateMessage = $dateMessage;
+  }
+
+  function setDiscussion(Discussion $discussion) : void {
+    $this->discussion = $discussion;
+  }
+
+
 }
 
 

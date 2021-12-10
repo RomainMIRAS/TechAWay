@@ -31,6 +31,21 @@ class Competence {
   function getLangageAcquis() : array {
     return $this->langageAcquis;
   }
+
+
+
+  function setNvEtude(string $nvEtude) : void {
+    $this->nvEtude = $nvEtude;
+  }
+
+  function setLangeParle(string $langeParle) : void {
+    $this->langeParle = $langeParle;
+  }
+
+  function setLangageAcquis(string $langageAcquis) : void {
+    $this->langageAcquis = $langageAcquis;
+  }
+
 }
 
 

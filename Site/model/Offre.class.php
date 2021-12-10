@@ -49,6 +49,36 @@ class Offre {
   }
 
 
+
+  function setNomOffre(string $nomOffre) : void {
+    $this->nomOffre = $nomOffre;
+  }
+
+  function setDateOffre(string $dateOffre) : void {
+    $this->dateOffre = $dateOffre;
+  }
+
+  function setDetailOffre(Renseignement $detailOffre) : void {
+    $this->detailOffre = $detailOffre;
+  }
+
+  function setCompetenceRecherche(Competence $competenceRecherche) : void {
+    $this->competenceRecherche = $competenceRecherche;
+  }
+
+  function setEntreprise(Entreprise $entreprise) : void {
+    $this->entreprise = $entreprise;
+  }
+
+  function setCandidats(array $candidats) : void {
+    $this->candidats = $candidats;
+  }
+
+  function addCandidats(Candidat $candidat) : void {
+    array_push($this->candidats,$candidat);
+  }
+
+
 }
 
 

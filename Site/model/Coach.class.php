@@ -20,6 +20,20 @@ class Coach extends Utilisateur {
     return $this->discussions;
   }
 
+
+
+  function setLienPhoto(string $lienPhoto) : void {
+    $this->lienPhoto = $lienPhoto;
+  }
+
+    function setDiscussions(array $discussions) : void {
+    $this->discussions = $discussions;
+  }
+
+  function addDiscussions(Discussions $discussion) : void {
+    array_push($this->discussions,$discussion);
+  }
+
 }
 
 
