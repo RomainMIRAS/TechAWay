@@ -1,6 +1,6 @@
 <?php
 
-include_once(__DIR__."/../framework/view.class.php");
+include_once(__DIR__."../../framework/view.class.php");
 
 
 //-------------------Affectation des variables
