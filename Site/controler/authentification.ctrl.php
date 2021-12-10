@@ -18,7 +18,7 @@ session_write_close();
 include_once(__DIR__."/../framework/view.class.php");
 
 // Inclusion du modèle
-include_once(__DIR__."/../model/DAO.class.php");
+include_once(__DIR__."/../model/DAO.class.php"); // Singleton
 include_once(__DIR__."/../model/Candidat.class.php");
 
 // Déclaration
@@ -49,7 +49,7 @@ function seConnecter($email,$password){
 //Gestion sign up
 
 if ($confirmation == "oui" && $action == "signup"){
-  if (strlen($password) <= 8){ //Test Mdp > 8 caract
+  if (strlen($password) < 8){ //Test Mdp >= 8 caract
     $erreur = "Un mot de passe doit contenir au minimum 8 caractères.";
   } else if($password != $checkpassword){ // Mot de passe identique
     $erreur = "Les mots de passes entrés doivent être identiques.";
