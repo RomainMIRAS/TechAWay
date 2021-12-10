@@ -85,15 +85,11 @@ function createUtilisateur(string $mail, string $pass) { //returns boolean
 
 }
 
-
-
-
-
 function verifierLogin(string $mail, string $pass) { //returns boolean
 	try {
 	$r = "SELECT password FROM utilisateur where adressemail='$mail'";
 
-	$q = pg_query($this->db, $r);
+	$q = @pg_query($this->db, $r);
 
 	$res = pg_fetch_row($q);
 
