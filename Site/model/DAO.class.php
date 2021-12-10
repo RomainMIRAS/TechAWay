@@ -77,9 +77,9 @@ function createUtilisateur(string $mail, string $pass) { //returns boolean
 function createCompetence($nvEtude, $langueParle,$langagesAcquis){
 	try {
 		
-		$r = "INSERT INTO competence VALUES(DEFAULT,'". $nvEtude ."','". $langueParle .",'". $langagesAcquis ."');";
+		$r = "INSERT INTO competence VALUES(DEFAULT,'". $nvEtude ."','". $langueParle ."','". $langagesAcquis ."');";
 
-		$res = @pg_query($this->db, $r);
+		$res = pg_query($this->db, $r);
 
 		if($res){
 			return true;
