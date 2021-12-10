@@ -79,7 +79,7 @@ function createCompetence($nvEtude, $langueParle,$langagesAcquis){
 		
 		$r = "INSERT INTO competence VALUES(DEFAULT,'". $nvEtude ."','". $langueParle .",'". $langagesAcquis ."');";
 
-		$res = @pg_query($this->db, $r);
+		$res = pg_query($this->db, $r);
 
 		if($res){
 			return true;
