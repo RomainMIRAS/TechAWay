@@ -4,7 +4,7 @@ require_once(__DIR__.'/../model/DAO.class.php');
 
 try{
   $db = DAO::get();
-
+  
   //Test de la methode getEmails de DAO
   $liste = $db->getEmails();
   echo '<pre>' . var_export($liste, true) . '</pre>';
@@ -12,6 +12,15 @@ try{
   //Test de Creation d'utilisateur;
   echo "Creation d'utilisateur : adresse-candidat@gmail.com:motdepassecandidat:  (doit retourner un erreur car il existe deja)";
   $test = $db->createUtilisateur("adresse-candidat@gmail.com","motdepassecandidat");
+
+  if ($test){
+    echo "</br>Utilisateur Cree :</br>";
+  }else{
+    echo "</br>Erreur Utilisateur existe deja</br>";
+  }
+
+  echo "Creation d'utilisateur : adresse-candidat@gmail.com:motdepassecandidat:  (doit retourner un erreur car il existe deja)";
+  $test = $db->createUtilisateur("adresse-candidat2@gmail.com","motdepassecandidat");
 
   if ($test){
     echo "</br>Utilisateur Cree :</br>";
@@ -72,7 +81,7 @@ try{
   }
 
 
-  echo "</br>createCompetence('IUT 2', 'Anglais,Francais,Russian' , 'C++,Java,Css,HTML,Javascript') : adresse-coach@gmail.com  : (doit retourner type Coach)";
+  echo "</br>createCompetence('IUT 2', 'Anglais,Francais,Russian' , 'C++,Java,Css,HTML,Javascript') : (doit retourner true)";
   $testLogin = $db->createCompetence("IUT 2", "Anglais,Francais,Russian" , "C++,Java,Css,HTML,Javascript");
   if ($testLogin){
     echo '<pre>' . var_export($testLogin, true) . '</pre>';

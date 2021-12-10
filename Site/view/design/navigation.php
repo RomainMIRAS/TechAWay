@@ -18,13 +18,15 @@ session_start();
 
       <?php if (!isset($_SESSION['utilisateur'])): //Si pas connecté?>
       <form action="../controler/authentification.ctrl.php" method="post">
-        <li><button type="submit" name="action" value="signup">S'inscrire</button></li>
-        <li><button type="submit" name="action" value="login">S'identifier</button></li>
+        <li><button id="signup" type="submit" name="action" value="signup">S'inscrire</button></li>
+        <li><button id="login" type="submit" name="action" value="login">S'identifier</button></li>
       </form>
       <?php else: ?>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-        <button id="btn-compte">Compte</button>
+        
+
+        <div id="btn-compte"><i class="fa fa-user" aria-hidden="true"></i></div>
 
         <div id="menu-drop">
           <ul>

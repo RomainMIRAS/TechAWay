@@ -55,11 +55,19 @@ function getEmails() : array {
 }
 
 function createUtilisateur(string $mail, string $pass) { //returns boolean
+	//Cree un utilisateur Candidat par defaut avant de rensegnier le formulaire
 	try {
 
 		$hashedPw = password_hash($pass,PASSWORD_ARGON2I);
-		
-		$r = "INSERT INTO utilisateur VALUES(DEFAULT,'". $mail ."','". $hashedPw ."','','',0,'',now());";
+
+		$sel = "(SELECT idUtilisateur from utilisateur where adressemail='". $mail ."')";
+
+		$r = "
+		INSERT INTO utilisateur VALUES(DEFAULT,'". $mail ."','". $hashedPw ."','','',0,'',now());
+		INSERT INTO competence values($sel,NULL,NULL,NULL);
+		INSERT INTO renseignement values($sel,NULL,NULL,NULL);
+		INSERT INTO candidat values($sel,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+		";
 
 		$res = @pg_query($this->db, $r);
 
@@ -72,63 +80,12 @@ function createUtilisateur(string $mail, string $pass) { //returns boolean
 	}
 	return false;
 
-}
-
-function createCompetence($nvEtude, $langueParle,$langagesAcquis){
-	try {
-		
-		$r = "INSERT INTO competence VALUES(DEFAULT,'". $nvEtude ."','". $langueParle ."','". $langagesAcquis ."');";
-
-		$res = pg_query($this->db, $r);
-
-		if($res){
-			return true;
-		}
-	// Tests d'erreurs
-	} catch (Exception $e) {
-		die("PSQL ERROR createCompetence : ".$e->getMessage());
-	}
-	return false;
-}
-function createRenseignement($travEtranger, $secteur,$typeContrat,$poste,$tyeEntreprise){
-	try {
-		
-		$r = "INSERT INTO competence VALUES(DEFAULT,'". $travEtranger ."','". $secteur .",'". $poste ."','". $tyeEntreprise ."');";
-
-		$res = @pg_query($this->db, $r);
-
-		if($res){
-			return true;
-		}
-	// Tests d'erreurs
-	} catch (Exception $e) {
-		die("PSQL ERROR createCompetence : ".$e->getMessage());
-	}
-	return false;
-}
-
-function createCandidat(string $mail, string $pass) { //returns boolean
-	try {
-		$r = "SELECT idutilisateur FROM utilisateur where adressemail='$mail'";
-		$res = @pg_query($this->db, $r);
-
-		$r = "INSERT INTO utilisateur VALUES($res[0],'". $mail ."','". $hashedPw ."','','',0,'',now());";
-
-		$res = @pg_query($this->db, $r);
-
-		if($res){
-			return true;
-		}
-	// Tests d'erreurs
-	} catch (Exception $e) {
-		die("PSQL ERROR createUtilisateur : ".$e->getMessage());
-	}
-	return false;
 }
 
 function verifierLogin(string $mail, string $pass) { //returns boolean
 	try {
-	$r = "SELECT password FROM utilisateur where adressemail='$mail'";
+	$r = "
+	SELECT password FROM utilisateur where adressemail='$mail';";
 
 	$q = pg_query($this->db, $r);
 

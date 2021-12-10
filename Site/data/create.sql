@@ -18,19 +18,18 @@ CREATE TABLE IF NOT EXISTS COACH (
 	FOREIGN KEY(idCoach) REFERENCES	UTILISATEUR(idUtilisateur) -- un coach est un utilisateur
 );
 
-
 -- Competences
 CREATE TABLE IF NOT EXISTS COMPETENCE(
-	idCompetence SERIAL NOT NULL PRIMARY KEY, -- identifiant unique des compétences
-	nvEtude VARCHAR(30) NOT NULL, -- niveau d'études
-	langueParle VARCHAR(30) NOT NULL, -- langues parlées
-	langagesAcquis VARCHAR(30) NOT NULL -- Langages informatiques maitrisés
+	idCompetence INTEGER NOT NULL PRIMARY KEY, -- identifiant unique des compétences
+	nvEtude VARCHAR(30) NULL, -- niveau d'études
+	langueParle VARCHAR(30) NULL, -- langues parlées
+	langagesAcquis VARCHAR(30) NULL -- Langages informatiques maitrisés
 );
 
 -- Renseignements du candidat (chercheur d'emploi)
 CREATE TABLE IF NOT EXISTS RENSEIGNEMENT (
-	idRenseignement SERIAL NOT NULL PRIMARY KEY, -- idenifiant unique du renseignement
-	travEtranger BOOLEAN NOT NULL DEFAULT FALSE, -- localisation du travail
+	idRenseignement INTEGER NOT NULL PRIMARY KEY, -- idenifiant unique du renseignement
+	travEtranger BOOLEAN NULL DEFAULT FALSE, -- localisation du travail
 	secteur VARCHAR(30) NULL, -- secteur de l'offre
 	typeContrat VARCHAR(30) NULL, -- type de contrat en jeu
 	poste VARCHAR(30) NULL, -- poste proposé par l'offre
