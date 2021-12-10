@@ -34,19 +34,19 @@
 
       <?php if ($etape == "base"): ?> <!-- Si le candidat est à la première étape -->
 
-        <section id="section-formulaire">
+        <section class="section-formulaire">
             <form class="form" action="formulaire.ctrl.php" method="post">
               <h1>Formulaire</h1>
               <!-- Saisie des informations du candidat -->
               <label for="nom">Nom</label>
-              <input id="nom" type="text" name="nom" placeholder="Entrez votre nom" required>
+              <input id="nom" type="text" name="nom" placeholder="Entrez votre nom" >
               <label for="prenom">Prénom</label>
-              <input id="prenom" type="text" name="prenom" placeholder="Entrez votre prénom" required>
+              <input id="prenom" type="text" name="prenom" placeholder="Entrez votre prénom" >
               <label for="age">Date de naissance</label>
-              <input id="age" type="date" name="age" required>
+              <input id="age" type="date" name="age" >
               <label for="tel">Téléphone</label>
               <!-- type tel -> seul les chiffres sont autorisé -->
-              <input id="tel" type="tel" name="tel" placeholder="+33 6 01 02 03 04" required>
+              <input id="tel" type="tel" name="tel" placeholder="+33 6 01 02 03 04" >
 
 
               <!-- Section du pays parmis la liste des pays europeens -->
@@ -62,7 +62,7 @@
               </select>
 
               <label for="ville">Ville</label>
-              <input id="ville" type="text" name="ville" required>
+              <input id="ville" type="text" name="ville" >
 
 
               <button type="submit" name="etape" value="competences">Suivant</button>
@@ -72,25 +72,25 @@
 
 
       <?php elseif ($etape == "competences"): ?>
-          <section class="competences">
+          <section class="section-formulaire">
             <form class="form" action="formulaire.ctrl.php" method="post">
               <h1>Formulaire</h1>
               <!-- Saisie des competences du candidat -->
               <label for="nvEtude">Niveau d'etudes</label>
-              <input id="nvEtude" type="text" name="nvEtude" placeholder="Format : Bac+3" required>
+              <input id="nvEtude" type="text" name="nvEtude" placeholder="Format : Bac+3" >
               <label for="langueParle">Langues parlé</label>
-              <input id="langueParle" type="text" name="langueParle" placeholder="ex : francais, anglais" required>
-              <label for="nvEtude">Niveau d'etudes</label>
-              <input id="nvEtude" type="text" name="nvEtude" placeholder="Format : Bac+3" required>
+              <input id="langueParle" type="text" name="langueParle" placeholder="ex : francais, anglais" >
+              <label for="languageAquis">Niveau d'etudes</label>
+              <input id="languageAquis" type="text" name="languageAquis" placeholder="Select" >
               <form action ="formulaire.ctrl.php" method="post">
               <button type="submit" value="formulaire">Precedent</button>
-              <input type="submit" name ="etape" value='Envoyer' >
+              <button type="submit" name="etape" value="preferences">Suivant</button>
               </form>
           </section>
 
 
       <?php elseif ($etape == "preferences"): ?>
-          <section class="preferences">
+          <section class="section-formulaire">
             <form class="form" action="formulaire.ctrl.php" method="post">
               <h1>Formulaire</h1>
               <!-- Saisie des preferences du candidat -->
@@ -100,6 +100,7 @@
               <label for="oui">Oui</label>
               <input type="radio" name="travEtranger" value="non">
               <label for="oui">Non</label>
+              <output><?=$erreur?></output>
 
 
               <label for="typeContrat">Type de contrat</label>
@@ -128,15 +129,11 @@
                   <option value="">--Veuillez choisir une option--</option>
                   <option value="cdi">Start-Up</option>
                   <option value="cdd">Multinational</option>
-              </select>
+              </select>main
 
-              <label for="langueParle">Langues parlé</label>
-              <input id="langueParle" type="text" name="langueParle" placeholder="ex : francais, anglais" required>
-              <label for="nvEtude">Niveau d'etudes</label>
-              <input id="nvEtude" type="text" name="nvEtude" placeholder="Format : Bac+3" required>
               <form action ="formulaire.ctrl.php" method="post">
               <button type="submit" value="formulaire">Precedent</button>
-              <input type="submit" name ="etape" value='Envoyer' >
+              <button type="submit" name="etape" value="envoyer">Envoyer</button>
               </form>
           </section>
 

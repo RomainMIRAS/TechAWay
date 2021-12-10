@@ -268,7 +268,7 @@ button:hover {
 * FORMULAIRE
 **************************************************************/
 
-#section-formulaire {
+.section-formulaire {
   display: flex;
   justify-content: center;
 }
