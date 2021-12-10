@@ -31,10 +31,10 @@
     <!-- MAIN ---------------------------------------------------------------------------------->
     <main>
 
-      <section id="section-accueil"> <!-- section Accueil -->
+      <section class="section-accueil" id="section-accueil-1"> <!-- section Accueil -->
         <div>
           <h1>Découvrez Tech A Way</h1>
-          <p>Tech a Way est un cabinet de recrutement spécialisé dans le domaine de la tech en full remote et partout en Europe</p>
+          <p>Tech a Way est un cabinet de recrutement spécialisé dans le domaine de la tech en full remote et partout en Europe.</p>
           <h2>Commencez l'aventure</h2>
           <h4>Vous-êtes ?</h4>
           <form action="../controler/authentification.ctrl.php" method="post">

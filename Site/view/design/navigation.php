@@ -18,24 +18,24 @@ session_start();
 
       <?php if (!isset($_SESSION['utilisateur'])): //Si pas connecté?>
       <form action="../controler/authentification.ctrl.php" method="post">
-        <li><button type="submit" name="action" value="signup">S'inscrire</button></li>
-        <li><button type="submit" name="action" value="login">S'identifier</button></li>
+        <li><button id="signup" type="submit" name="action" value="signup">S'inscrire</button></li>
+        <li><button id="login" type="submit" name="action" value="login">S'identifier</button></li>
       </form>
       <?php else: ?>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-        <button id="btn-compte">Compte</button>
-        
+        <button id="btn-compte"><i class="fa fa-user" aria-hidden="true"></i></button>
+
         <div id="menu-drop">
           <ul>
-          
+
             <li><?= get_class($_SESSION['utilisateur']) ?></li>
 
             <div id="menu-part2">
               <?php if (is_a($_SESSION['utilisateur'],"Candidat")) : ?>
                 <li><a href="#"><i class="fa fa-user"></i> Mon profil</a></li>
                 <li><a href="#"><i class="fa fa-pencil-square-o"></i> Editer mon profil</a></li>
-                <li><a href="../controler/formulaire.ctrl.php"><i class="fa fa-level-up" aria-hidden="true"></i> Mon Recrutement</a></li>
+                <li><a href="../controler/recrutement-candidat.ctrl.php"><i class="fa fa-level-up" aria-hidden="true"></i> Mon Recrutement</a></li>
               <?php endif; ?>
             </div>
             <form action="../controler/main.ctrl.php" method="post">
@@ -49,7 +49,7 @@ session_start();
             $("#btn-compte").click(function(){
               $("#menu-drop").toggle();
             });
-          }); 
+          });
         </script>
 
       <?php endif; ?>

@@ -55,11 +55,22 @@ function getEmails() : array {
 }
 
 function createUtilisateur(string $mail, string $pass) { //returns boolean
+	//Cree un utilisateur Candidat par defaut avant de rensegnier le formulaire
 	try {
 
 		$hashedPw = password_hash($pass,PASSWORD_ARGON2I);
-		
-		$r = "INSERT INTO utilisateur VALUES(DEFAULT,'". $mail ."','". $hashedPw ."','','',0,'',now());";
+
+		$sel = "(SELECT idUtilisateur from utilisateur where adressemail='". $mail ."')";
+
+		$r = "
+		BEGIN;
+		set transaction isolation level Repeatable Read;
+		INSERT INTO utilisateur VALUES(DEFAULT,'". $mail ."','". $hashedPw ."','','',0,'',now());
+		INSERT INTO competence values($sel,NULL,NULL,NULL);
+		INSERT INTO renseignement values($sel,NULL,NULL,NULL);
+		INSERT INTO candidat values($sel,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+		COMMIT;
+		";
 
 		$res = @pg_query($this->db, $r);
 

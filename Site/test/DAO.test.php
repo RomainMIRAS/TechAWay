@@ -72,6 +72,14 @@ try{
   }
 
 
+  echo "</br>createCompetence('IUT 2', 'Anglais,Francais,Russian' , 'C++,Java,Css,HTML,Javascript') : (doit retourner true)";
+  $testLogin = $db->createCompetence("IUT 2", "Anglais,Francais,Russian" , "C++,Java,Css,HTML,Javascript");
+  if ($testLogin){
+    echo '<pre>' . var_export($testLogin, true) . '</pre>';
+  }else{
+    echo "</br>False ";
+  }
+
   echo "</br>getCoachOuCandidat(adressemail) : adresse-coach@gmail.com  : (doit retourner type Coach)";
   $testLogin = $db->getCoachOuCandidat("adresse-coach@gmail.com","motdepassecoach");
   if ($testLogin){
