@@ -24,7 +24,9 @@ session_start();
       <?php else: ?>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-        <button id="btn-compte"><i class="fa fa-user" aria-hidden="true"></i></button>
+        
+
+        <div id="btn-compte"><i class="fa fa-user" aria-hidden="true"></i></div>
 
         <div id="menu-drop">
           <ul>
