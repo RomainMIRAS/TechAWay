@@ -74,6 +74,58 @@ function createUtilisateur(string $mail, string $pass) { //returns boolean
 
 }
 
+function createCompetence($nvEtude, $langueParle,$langagesAcquis){
+	try {
+		
+		$r = "INSERT INTO competence VALUES(DEFAULT,'". $nvEtude ."','". $langueParle .",'". $langagesAcquis ."');";
+
+		$res = @pg_query($this->db, $r);
+
+		if($res){
+			return true;
+		}
+	// Tests d'erreurs
+	} catch (Exception $e) {
+		die("PSQL ERROR createCompetence : ".$e->getMessage());
+	}
+	return false;
+}
+function createRenseignement($travEtranger, $secteur,$typeContrat,$poste,$tyeEntreprise){
+	try {
+		
+		$r = "INSERT INTO competence VALUES(DEFAULT,'". $travEtranger ."','". $secteur .",'". $poste ."','". $tyeEntreprise ."');";
+
+		$res = @pg_query($this->db, $r);
+
+		if($res){
+			return true;
+		}
+	// Tests d'erreurs
+	} catch (Exception $e) {
+		die("PSQL ERROR createCompetence : ".$e->getMessage());
+	}
+	return false;
+}
+
+function createCandidat(string $mail, string $pass) { //returns boolean
+	try {
+		$r = "SELECT idutilisateur FROM utilisateur where adressemail='$mail'";
+		$res = @pg_query($this->db, $r);
+
+		$r = "INSERT INTO utilisateur VALUES($res[0],'". $mail ."','". $hashedPw ."','','',0,'',now());";
+
+		$res = @pg_query($this->db, $r);
+
+		if($res){
+			return true;
+		}
+	// Tests d'erreurs
+	} catch (Exception $e) {
+		die("PSQL ERROR createUtilisateur : ".$e->getMessage());
+	}
+	return false;
+}
+
 function verifierLogin(string $mail, string $pass) { //returns boolean
 	try {
 	$r = "SELECT password FROM utilisateur where adressemail='$mail'";
