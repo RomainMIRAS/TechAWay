@@ -19,6 +19,9 @@ try {
   //Test de la récupération d'un candidat
   print("Accès à un candidat : ");
   $hashedPw = password_hash('motdepassecandidat', PASSWORD_ARGON2I);
+  printf("aaabbb %s", $hashedPw);
+  $hashedPw = password_hash('motdepassecandidat', PASSWORD_ARGON2I);
+  printf("aaabbb %s", $hashedPw);
   $expected = new Candidat('adresse-candidat@gmail.com', $hashedPw); // Candidat attendue
 
 //function __construct(string $mail, string $password,string $nom='', string $prenom='', int $age=0, string $telephone='', string $lienCV='', string $lienLM='') {
