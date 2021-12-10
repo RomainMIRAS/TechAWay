@@ -50,7 +50,13 @@ if ($expected->getPays() == $value->getPays()) {
                         printf("Telephone OK <br>");
                         if ($expected->getAge() == $value->getAge()) {
                           printf("Age OK <br>");
-                          printf("Tout OK <br>");
+                          if ($dao->verifierLogin('adresse-candidat@gmail.com', 'motdepassecandidat')) {
+                            printf("Mot de passe OK <br>");
+                            printf("Tout OK <br>");
+                          } else {
+                            printf("Age not OK, otenue : %s; attendu : %s", $expected->getAge(), $value->getAge());
+                            throw new Exception("Lecture Age du candidat N°966 incorrecte");
+                          }
                         } else {
                           printf("Age not OK, otenue : %s; attendu : %s", $expected->getAge(), $value->getAge());
                           throw new Exception("Lecture Age du candidat N°966 incorrecte");
