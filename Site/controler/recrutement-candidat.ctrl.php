@@ -1,7 +1,7 @@
 <?php
 
 include_once(__DIR__."/../framework/view.class.php");
-include_once(__DIR__."/../model/Candidat.class.php")
+include_once(__DIR__."/../model/Candidat.class.php");
 
 // Ce controleur permet de sélectionner le bon controleur à utiliser selon
 // L'état du recrutement du candidat
