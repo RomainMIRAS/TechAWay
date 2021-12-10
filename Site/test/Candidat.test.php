@@ -21,7 +21,7 @@ try {
 
 //function __construct(string $mail, string $password,string $nom='', string $prenom='', int $age=0, string $telephone='', string $lienCV='', string $lienLM='') {
 
-  $value = $dao->getCandidat(966); // On prend le candidat d'id 966
+  $value = $dao->getCandidat('adresse-candidat@gmail.com'); // On prend le candidat d'id 966
   if ( $value != $expected) { //On compare le candidat récuperé et celui attendue
     print("\n");
     var_dump($value);
