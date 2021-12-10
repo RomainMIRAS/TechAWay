@@ -18,7 +18,7 @@ try {
 
   //Test de la récupération d'un candidat
   print("Accès à un candidat : ");
-  $expected = new Candidat('adresse-candidat@gmail.com'); // Candidat attendue
+  $expected = new Candidat('adresse-candidat@gmail.com', 'aaaaaaaa'); // Candidat attendue
 
 //function __construct(string $mail, string $password,string $nom='', string $prenom='', int $age=0, string $telephone='', string $lienCV='', string $lienLM='') {
 
