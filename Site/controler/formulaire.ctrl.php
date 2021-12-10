@@ -13,19 +13,20 @@ $nom = (isset($_POST['nom'])) ? $_POST['nom']:"";
 $prenom = (isset($_POST['prenom'])) ? $_POST['prenom']:"";  
 $age = (isset($_POST['age'])) ? $_POST['age']:"";  
 $tel = (isset($_POST['tel'])) ? $_POST['tel']:""; 
+$etape = (isset($_POST['etape'])) ? $_POST['etape']:"non";
 
 $nvEtude = (isset($_POST['nvEtude'])) ? $_POST['nvEtude']:"";  //Affectation du niveau d'etude
 $langueParle = (isset($_POST['langueParle'])) ? $_POST['langueParle']:"";  //Affectation de la langue parlé
 $languageAquis = (isset($_POST['languageAquis'])) ? $_POST['languageAquis']:"";  //Affectation des languages aquis
 
 
-$travEtranger = (isset($_POST['travEtranger'])) ? $_POST['travEtranger']:""; 
+$travEtranger = (isset($_POST['travEtranger'])) ? $_POST['travEtranger']:"";
 $typeContrat = (isset($_POST['typeContrat'])) ? $_POST['typeContrat']:"";
 $secteur = (isset($_POST['secteur'])) ? $_POST['secteur']:"";
 $poste = (isset($_POST['poste'])) ? $_POST['poste']:"";
 $typeEntreprise = (isset($_POST['typeEntreprise'])) ? $_POST['typeEntreprise']:"";
 
-$erreur = "";
+
 
 /*
 $nom = '';
@@ -34,12 +35,14 @@ if (isset($_POST['nom'])) {
 }
 */
 
+$erreur = "";
+
 $pays = array('Allemagne','Autriche','Andorre','Belgique','Boznie Herzegovine','Bulgarie','Chypre','Croatie','Danemark','Espagne','Estonie','Finlande','France','Gibraltar','Grece','Hongrie','Irlande','Islande','italie','Lettonie','Liechtenstein','Lituanie','Luxembourg','Malte','Monaco','Norvege','Pays Bas','Pays de Galle','Pologne','Portugal','Republique Tcheque','Roumanie','Royaume Uni','Russie','Slovaquie','Slovenie','Suede','Suisse','Ukraine','Vatican');
 
 $action = (isset($_POST['action'])) ? $_POST['action']: 'formulaire';
-$etape = (isset($_POST['etape'])) ? $_POST['etape']: 'base';
 
-
+  $etape = (isset($_POST['etape'])) ? $_POST['etape']: 'base';
+$today = date("m-d-Y");
 
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -48,7 +51,7 @@ $etape = (isset($_POST['etape'])) ? $_POST['etape']: 'base';
 
 // Si le boutton enclenché est "envoyer" alors on passe une serie de test de validité des info
 
-if($etape== "competence")  
+if($action== "suivant" && $etape == "base")  
 {
   // Si niveau d'etude vide alors --> erreur 
   if($nom == "") 
@@ -61,7 +64,7 @@ if($etape== "competence")
     $erreur = "Le prenom doit etre rempli";
   }
   // Si age incorrect
-  else if($age == "" && is_numeric($age))
+  else if($age == "" && $age < $today)
   {
     $erreur = "L'age doit etre rempli et correct";
   }
@@ -69,17 +72,19 @@ if($etape== "competence")
   {
     $erreur = "Le telephone doit etre rempli et correct";
   }
-
+  else{
+    $etape = (isset($_POST['etape'])) ? $_POST['etape']: 'base';
+  }
 }
 
 
 // Gestion des erreur de competences
-if($etape== "preferences")  
+if($action== "suivant" && $etape == "competences")  
 {
   // Si niveau d'etude vide alors --> erreur 
-  if($nvEtude == "") 
+  if($nvEtude == "")
   {
-    $erreur = "Le niveau d'etude doit etre rempli";
+    $erreur = "Veuillez entrer votre niveau d'etude";
   }
   // Si aucune langue selectionné
   else if($langueParle == "" )
@@ -123,6 +128,15 @@ if($etape== "envoyer")
 
 }
 
+// Gestion suivant
+if ($erreur == "" && $action == "suivant"){
+  $etape = ($etape == "base") ? "competences": "preferences";
+}
+
+//Gestion précédent
+if ($action == "precedent"){
+  $etape = ($etape == "competences") ? "base": "competences";
+}
 
 ///////////////////////////////////////////////////////////////////////////////
 // Partie Modéle

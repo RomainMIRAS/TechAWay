@@ -64,8 +64,9 @@
               <label for="ville">Ville</label>
               <input id="ville" type="text" name="ville" >
 
-
-              <button type="submit" name="etape" value="competences">Suivant</button>
+              <output><?=$erreur?></output>
+              <button type="submit" name="action" value="suivant">Confirmation</button>
+              <input type="hidden" name="etape" value="base">
               </form>
           </section>
 
@@ -83,8 +84,10 @@
               <label for="languageAquis">Niveau d'etudes</label>
               <input id="languageAquis" type="text" name="languageAquis" placeholder="Select" >
               <form action ="formulaire.ctrl.php" method="post">
-              <button type="submit" value="formulaire">Precedent</button>
-              <button type="submit" name="etape" value="preferences">Suivant</button>
+              <output><?=$erreur?></output>
+              <button type="submit" name="action" value="precedent">Precedent</button>
+              <button type="submit" name="action" value="suivant">Suivant</button>
+              <input type="hidden" name="etape" value="competences">
               </form>
           </section>
 
@@ -100,7 +103,7 @@
               <label for="oui">Oui</label>
               <input type="radio" name="travEtranger" value="non">
               <label for="oui">Non</label>
-              <output><?=$erreur?></output>
+              
 
 
               <label for="typeContrat">Type de contrat</label>
@@ -121,7 +124,7 @@
               <select name="poste" >
                   <option value="">--Veuillez choisir une option--</option>
                   <option value="cdi">Poste 1</option>
-                  <option value="cdd">Poste 2</option>
+                  <option value="cdd">Poste 2</option>prefer
               </select>
 
               <label for="typeEntreprise">Type d'entreprise</label>
@@ -129,11 +132,12 @@
                   <option value="">--Veuillez choisir une option--</option>
                   <option value="cdi">Start-Up</option>
                   <option value="cdd">Multinational</option>
-              </select>main
-
+              </select>
+              <output><?=$erreur?></output>
               <form action ="formulaire.ctrl.php" method="post">
-              <button type="submit" value="formulaire">Precedent</button>
-              <button type="submit" name="etape" value="envoyer">Envoyer</button>
+              <button type="submit" name="action" value="precedent">Precedent</button>
+              <button type="submit" name="action" value="confirmation">Envoyer</button>
+              <input type="hidden" name="etape" value="preferences">
               </form>
           </section>
 
