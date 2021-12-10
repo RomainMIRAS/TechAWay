@@ -13,6 +13,10 @@ GRANT SELECT ON UTILISATEUR TO pagman;
 GRANT INSERT ON UTILISATEUR TO pagman;
 GRANT USAGE ON SEQUENCE utilisateur_idutilisateur_seq to pagman ;
 
+GRANT SELECT ON COMPETENCE TO pagman;
+GRANT INSERT ON COMPETENCE TO pagman;
+GRANT USAGE ON SEQUENCE competence_idcompetence_seq to pagman ;
+
 --TABLE COACH
 GRANT SELECT ON coach TO pagman;
 GRANT USAGE ON SEQUENCE coach_idcoach_seq to pagman ;
