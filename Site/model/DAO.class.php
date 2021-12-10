@@ -86,10 +86,8 @@ function createUtilisateur(string $mail, string $pass) { //returns boolean
 function verifierLogin(string $mail, string $pass) { //returns boolean
 	try {
 	$r = "
-	BEGIN;
 	set transaction isolation level Repeatable Read;
-	SELECT password FROM utilisateur where adressemail='$mail';
-	COMMIT;";
+	SELECT password FROM utilisateur where adressemail='$mail';";
 
 	$q = pg_query($this->db, $r);
 
