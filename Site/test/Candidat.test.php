@@ -20,11 +20,12 @@ try{
 try {
   $dao = new DAO(); // Instancie l'objet DAO
 
+
   //Test de la récupération d'un candidat
   print("Accès à un candidat : ");
-  $expected = new Candidat(1,'IBM','17 avenue de Europe 92275 Bois-Colombes','0476624800', 'ibm@ibm.com');
-  $value = $dao->getCandidat(1);
-  if ( $value != $expected) {
+  $expected = new Candidat('IBM','17 avenue de Europe 92275 Bois-Colombes','0476624800', 'ibm@ibm.com'); // Candidat attendue
+  $value = $dao->getCandidat(1); // On prend le candidat d'id 1
+  if ( $value != $expected) { //On compare le candidat récuperé et celui attendue
     print("\n");
     var_dump($value);
     print("\nAttendu : \n");
@@ -32,35 +33,6 @@ try {
     throw new Exception("Lecture du candidat N°1 incorrecte");
   }
   print("OK\n");
-
-
-//Test de la récupération d'un coach
-  print("Accès à un coach : ");
-  $expected = new Livre(1,"Slan",1940,1);
-  $value = $dao->readLivre(1);
-  if ( $value != $expected) {
-    print("\n");
-    var_dump($value);
-    print("Attendu : \n");
-    var_dump($expected);
-    throw new Exception("Lecture du livre No 1 incorrect");
-  }
-  print("OK\n");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
