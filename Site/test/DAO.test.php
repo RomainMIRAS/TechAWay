@@ -72,7 +72,7 @@ try{
   }
 
 
-  echo "</br>createCompetence('IUT 2', 'Anglais,Francais,Russian' , 'C++,Java,Css,HTML,Javascript') : adresse-coach@gmail.com  : (doit retourner type Coach)";
+  echo "</br>createCompetence('IUT 2', 'Anglais,Francais,Russian' , 'C++,Java,Css,HTML,Javascript') : (doit retourner true)";
   $testLogin = $db->createCompetence("IUT 2", "Anglais,Francais,Russian" , "C++,Java,Css,HTML,Javascript");
   if ($testLogin){
     echo '<pre>' . var_export($testLogin, true) . '</pre>';
