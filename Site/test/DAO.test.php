@@ -4,7 +4,7 @@ require_once(__DIR__.'/../model/DAO.class.php');
 
 try{
   $db = DAO::get();
-  echo "PAGMAFKGVNSADKGA<br/>";
+  
   //Test de la methode getEmails de DAO
   $liste = $db->getEmails();
   echo '<pre>' . var_export($liste, true) . '</pre>';
