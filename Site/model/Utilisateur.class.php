@@ -7,8 +7,8 @@ abstract class Utilisateur {
   private string $mail;         //Mail Clee primaire
   private string $password;     //Mot de passe
   private string $telephone;    //Telephone
-  private int $age;             //Age
-  private string $dateCreation;  //Date création utilisateur
+  private int $age;             //Age*
+  private string $dateCreation; //Date de création
 
   // Contructeur
   function __construct(string $mail, string $password,string $nom ='', string $prenom='', int $age = 0, string $telephone='') {

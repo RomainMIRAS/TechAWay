@@ -50,13 +50,7 @@ if ($expected->getPays() == $value->getPays()) {
                         printf("Telephone OK <br>");
                         if ($expected->getAge() == $value->getAge()) {
                           printf("Age OK <br>");
-                          if ($expected->getDateCreation() == $value->getDateCreation()) {
-                            printf("DateCreation OK <br>");
-                            printf("Tout OK <br>");
-                          } else {
-                            printf("DateCreation not OK, otenue : %s; attendu : %s", $expected->getDateCreation(), $value->getDateCreation());
-                            throw new Exception("Lecture DateCreation du candidat N°966 incorrecte");
-                          }
+                          printf("Tout OK <br>");
                         } else {
                           printf("Age not OK, otenue : %s; attendu : %s", $expected->getAge(), $value->getAge());
                           throw new Exception("Lecture Age du candidat N°966 incorrecte");
