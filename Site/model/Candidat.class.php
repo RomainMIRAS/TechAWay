@@ -26,8 +26,12 @@ class Candidat extends Utilisateur {
     $this->discussions = null; */
   }
 
-  function getAdresse() : string {
-    return $this->adresse;
+  function getPays() : string {
+    return $this->pays;
+  }
+
+  function getVille() : string {
+    return $this->ville;
   }
 
   function getLienCv() : string {
@@ -48,6 +52,10 @@ class Candidat extends Utilisateur {
 
   function getRenseignement() : Renseignement {
     return $this->preference;
+  }
+
+  function getDiscussions() : array {
+    return $this->discussions;
   }
 
 
