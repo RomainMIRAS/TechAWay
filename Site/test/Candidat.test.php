@@ -25,11 +25,11 @@ try {
   $value = $dao->getCandidat('adresse-candidat@gmail.com'); // On prend le candidat d'id 966
 
 if ($expected->getPays() == $value->getPays()) {
-  printf("Pays OK /n");
+  printf("Pays OK <br>");
   if ($expected->getVille() == $value->getVille()) {
-    printf("Ville OK \n");
+    printf("Ville OK <br>");
     if ($expected->getLienCv() == $value->getLienCv()) {
-      printf("LienCv OK");
+      printf("LienCv OK <br>");
       if ($expected->getEtape() == $value->getEtape()) {
         printf("Etape OK");
         if ($expected->getLienLM() == $value->getLienLM()) {
