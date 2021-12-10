@@ -66,7 +66,7 @@ function createUtilisateur(string $mail, string $pass) { //returns boolean
 		INSERT INTO utilisateur VALUES(DEFAULT,'". $mail ."','". $hashedPw ."','','',0,'',now());
 		INSERT INTO competence values($sel,NULL,NULL,NULL);
 		INSERT INTO renseignement values($sel,NULL,NULL,NULL);
-		INSERT INTO candidat values($sel,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+		INSERT INTO candidat values($sel,'','',0,'','',$sel,$sel);
 		";
 
 		$res = @pg_query($this->db, $r);
