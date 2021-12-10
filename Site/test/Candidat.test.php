@@ -50,7 +50,7 @@ if ($expected->getPays() == $value->getPays()) {
                         printf("Telephone OK <br>");
                         if ($expected->getAge() == $value->getAge()) {
                           printf("Age OK <br>");
-                          if (DAO::verifierLogin('adresse-candidat@gmail.com', 'motdepassecandidat')) {
+                          if ($dao->verifierLogin('adresse-candidat@gmail.com', 'motdepassecandidat')) {
                             printf("Mot de passe OK <br>");
                             printf("Tout OK <br>");
                           } else {
