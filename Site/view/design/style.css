@@ -193,19 +193,8 @@ svg {
   flex-direction: column;
 }
 
-#menu-drop ul li {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  text-align: center;
-  width: 100%;
-}
-
 #menu-part1, #menu-part2 {
   width: 100%;
-}
-
-#menu-part1 li {
-  padding: 0;
 }
 
 #menu-part2 li {
