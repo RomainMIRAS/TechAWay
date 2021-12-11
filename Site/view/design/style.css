@@ -198,15 +198,14 @@ svg {
   padding-bottom: 10px;
   text-align: center;
   width: 100%;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
-#menu-part2 {
+#menu-part1, #menu-part2 {
   width: 100%;
 }
 
 #menu-part2 li {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 #menu-drop ul li:last-child {
