@@ -26,7 +26,9 @@ session_start();
 
         
 
-        <div id="btn-compte"><img src="../../view/design/img/profil.jpg" alt=""></div>
+        <div id="btn-compte"><i class="fa fa-user" aria-hidden="true"></i></div>
+
+        <img src="../../view/design/img/profil.jpg" alt="">
 
         <div id="menu-drop">
           <ul>
@@ -39,10 +41,10 @@ session_start();
                 <li><a href="#"><i class="fa fa-pencil-square-o"></i> Editer mon profil</a></li>
                 <li><a href="../controler/recrutement-candidat.ctrl.php"><i class="fa fa-level-up" aria-hidden="true"></i> Mon Recrutement</a></li>
               <?php endif; ?>
+              <form action="../controler/main.ctrl.php" method="post">
+                <li><button id="btn-logout" type="submit" name="logout" value="true"><i class="fa fa-sign-out" aria-hidden="true"></i> Déconnexion</button></li>
+              </form>
             </div>
-            <form action="../controler/main.ctrl.php" method="post">
-              <li><button id="btn-logout" type="submit" name="logout" value="true"><i class="fa fa-sign-out" aria-hidden="true"></i> Déconnexion</button></li>
-            </form>
           </ul>
         </div>
 
