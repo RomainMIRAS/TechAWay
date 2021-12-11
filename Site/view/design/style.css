@@ -217,6 +217,19 @@ svg {
   margin: 0;
 }
 
+#user-type {
+  font-size: 15px;
+  padding-bottom: 5px;
+  color: var(--color-black);
+}
+
+#user-type {
+  font-size: 13px;
+  font-variant: small-caps;
+  padding-top: 0;
+  color: #B9B8D8;
+}
+
 #btn-logout {
   border: none;
 }
