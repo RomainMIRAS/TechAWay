@@ -33,7 +33,10 @@ session_start();
         <div id="menu-drop">
           <ul>
 
-            <li><?= get_class($_SESSION['utilisateur']) ?></li>
+            <div id="menu-part1">
+              <li id="user-mail"><?= $_SESSION['utilisateur']->getMail() ?></li>
+              <li id="user-type"><?= get_class($_SESSION['utilisateur']) ?></li>
+            </div>
 
             <div id="menu-part2">
               <?php if (is_a($_SESSION['utilisateur'],"Candidat")) : ?>
@@ -45,6 +48,7 @@ session_start();
                 <li><button id="btn-logout" type="submit" name="logout" value="true"><i class="fa fa-sign-out" aria-hidden="true"></i> Déconnexion</button></li>
               </form>
             </div>
+            
           </ul>
         </div>
 
