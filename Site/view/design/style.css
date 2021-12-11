@@ -81,20 +81,23 @@ nav>ul{
 }
 
 #btn-compte {
-  border-radius: 50px;
-  border: 2px solid black;
-  padding: 10px;
-  width: 20px;
-  height: 20px;
+  height: 50px;
+  width: 50px;
   display: flex;
   justify-content: center;
-  align-items: center;
+  border-radius: 100%;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
 }
 
-#btn-compte i {
-  padding: 0;
-  margin: 0;
-  transform: scale(1.4);
+#btn-compte img {
+  border-radius: 100%;
+  transition: all .2s ease-in-out;
+}
+
+#btn-compte:hover img {
+  transform: scale(1.05);
 }
 
 /**************************************************************

@@ -26,7 +26,7 @@ session_start();
 
         
 
-        <div id="btn-compte"><i class="fa fa-user" aria-hidden="true"></i></div>
+        <div id="btn-compte"><img src="../design/img/profil.jpg" alt=""></div>
 
         <div id="menu-drop">
           <ul>
