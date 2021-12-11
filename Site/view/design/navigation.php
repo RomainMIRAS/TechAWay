@@ -9,22 +9,22 @@ session_start();
 <nav>
     <ul>
         <li><a href="main.ctrl.php"><img id="logo" src="../view/design/img/logo.png" ></a></li>
-        <li><a href="#">Recruter</a></li>
-        <li><a href="#">Trouver un job</a></li>
-        <li><a href="parrainer.ctrl.php">Parrainer</a></li>
+        <div>
+          <li><a href="#">Recruter</a></li>
+          <li><a href="#">Trouver un job</a></li>
+          <li><a href="parrainer.ctrl.php">Parrainer</a></li>
+        </div>
     </ul>
 
     <ul>
 
       <?php if (!isset($_SESSION['utilisateur'])): //Si pas connecté?>
-      <form action="../controler/authentification.ctrl.php" method="post">
+      <form action="../controler/authentification.ctrl.php" method="post" id="nav-log">
         <li><button id="signup" type="submit" name="action" value="signup">S'inscrire</button></li>
         <li><button id="login" type="submit" name="action" value="login">S'identifier</button></li>
       </form>
       <?php else: ?>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-        
 
         <div id="btn-compte"><i class="fa fa-user" aria-hidden="true"></i></div>
 

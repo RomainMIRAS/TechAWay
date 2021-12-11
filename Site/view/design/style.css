@@ -46,6 +46,10 @@ ul {
   height: max-content;
 }
 
+nav ul:nth-child(1) div li {
+  display: inline-block;
+}
+
 ul li {
   list-style: none;
   padding: 10px 5px;
@@ -117,6 +121,10 @@ main {
   padding: 20px;
   display: flex;
   flex-direction: column;
+}
+
+h1 {
+  margin-top: 0;
 }
 
 section {
@@ -385,4 +393,55 @@ footer ul li {
 footer ul li a:hover {
   color: var(--color-black);
   text-decoration: underline;
+}
+
+/**************************************************************
+* RESPONSIVE
+**************************************************************/
+
+@media only screen and (max-width: 600px) {
+
+  body, html, main {
+    min-height: 100%;
+  }
+
+  nav {
+    flex-direction: column;
+  }
+
+  nav ul:nth-child(1) {
+    flex-direction: column;
+  }
+
+  #nav-log {
+    display: none;
+  }
+
+  nav>ul {
+    margin: 0;
+  }
+
+  svg {
+    width: 400px;
+    height: 300px;
+  }
+
+  section {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  #section-accueil-1 div:nth-child(1) {
+    width: auto;
+    text-align: center;
+  }
+
+  .form {
+    width: auto;
+  }
+
+  #section-accueil-1 div:first-child form {
+    justify-content: center;
+  }
+
 }
