@@ -8,10 +8,10 @@ session_start();
  ?>
 <nav>
     <ul>
-        <li><a href="main.ctrl.php"><img id="logo" src="../view/design/img/logo.png" ></a></li>
+        <li><a href="../../controler/main.ctrl.php"><img id="logo" src="../view/design/img/logo.png" ></a></li>
         <li><a href="#">Recruter</a></li>
         <li><a href="#">Trouver un job</a></li>
-        <li><a href="#">Parrainer</a></li>
+        <li><a href="../../controler/parrainer.ctrl.php">Parrainer</a></li>
     </ul>
 
     <ul>
@@ -48,7 +48,7 @@ session_start();
                 <li><button id="btn-logout" type="submit" name="logout" value="true"><i class="fa fa-sign-out" aria-hidden="true"></i> Déconnexion</button></li>
               </form>
             </div>
-            
+
           </ul>
         </div>
 
