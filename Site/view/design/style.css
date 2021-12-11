@@ -326,6 +326,33 @@ button:hover {
 }
 
 /**************************************************************
+* PARRAINER
+**************************************************************/
+
+#section-parrainer form {
+  width: 510px;
+}
+
+#coord-can-par {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+#coord-can-par h3 {
+  text-align: center;
+}
+
+#coord-candidat {
+  border-right: 2px solid var(--color-blue1);
+  padding-right: 10px;
+}
+
+#coord-parrain {
+  margin-left: 10px;
+}
+
+/**************************************************************
 * FORMULAIRE
 **************************************************************/
 
