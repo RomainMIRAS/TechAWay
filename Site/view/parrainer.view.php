@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr" dir="ltr" style="height: 100vh;">
+<html lang="fr" dir="ltr">
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,13 +23,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       
   </head>
-  <body style="height: 100vh;">
+  <body>
 
     <!-- NAVIGATION ---------------------------------------------------------------------------->
     <?php include_once('../view/design/navigation.php'); ?>
 
     <!-- MAIN ---------------------------------------------------------------------------------->
-    <main style="max-height: 100vh;">
+    <main>
           <section class="section-accueil" id="section-parrainer">
 
             <form class="form" action="parrainer.ctrl.php" method="post">
@@ -44,8 +44,11 @@
 
               <div id="coord-can-par">
                 <!-- Saisie des infos du candidat -->
+
+                <button id="btn-parrainer-can">Candidat</button>
+                <button id="btn-parrainer-par">Parrain</button>
+
                 <div id="coord-candidat">
-                  <h3>Candidat</h3>
                   <label for="nomCandidat">Nom / Prénom</label>
                   <input id="nomCandidat" type="text" name="nomCandidat" placeholder="Nom et prénom du candidat" >
                   <label for="mailCandidat">Adresse mail</label>
@@ -56,8 +59,8 @@
                 </div>
 
                 <!-- Saisie des infos du parrain -->
-                <div id="coord-parrain">
-                  <h3>Parrain</h3>
+                <div id="coord-parrain" style="display:none">
+                  
                   <label for="nomParrain">Nom / Prénom</label>
                   <input id="nomParrain" type="text" name="nomParrain" placeholder="Nom et prénom du parrain">
                   <label for="mailParrain">Adresse mail</label>
@@ -68,6 +71,19 @@
                 </div>
               </div>
 
+              <script src=""></script>
+              <script>
+                $(document).ready(function(){
+                  $("#btn-parrain-can").click(function(){
+                    $("#coord-parrain").hide();
+                    $("#coord-candidat").show();
+                  });
+                  $("#btn-parrain-par").click(function(){
+                    $("#coord-candidat").hide();
+                    $("#coord-parrain").show();
+                  });
+                });
+              </script>
               <form action ="formulaire.ctrl.php" method="post">
               <button type="submit" name="etape" value="preferences">Envoyer</button>
               </form>
