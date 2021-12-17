@@ -16,7 +16,7 @@ private static $instance = null;
 function __construct() {
 	try{
 	$this->db = pg_connect("host=localhost port=5432 dbname=techawaydb user=pagman password=pagman");//138.68.96.182
-	
+
 	}catch (Exception $e) {
 		die("PSQL ERROR :".$e->getMessage());
 	}
@@ -99,7 +99,7 @@ function verifierLogin(string $mail, string $pass) { //returns boolean
 	}
 
 
-/* 
+/*
 	$r = "SELECT EXISTS(SELECT * FROM utilisateur where adressemail='$mail' AND password='$pass')";
 
 	$q = pg_query($this->db, $r);
@@ -124,7 +124,7 @@ function verifierLogin(string $mail, string $pass) { //returns boolean
 function getCoach(string $mail) {
 	try {
 		$req = pg_query($this->db,"SELECT * from utilisateur where idutilisateur in (Select idCoach from coach) AND adressemail='$mail'");
-	
+
 		$coachbf = pg_fetch_all($req);
 
 
@@ -148,7 +148,7 @@ function getCoach(string $mail) {
 			);
 		}
 
-		
+
 		// Tests d'erreurs
 		} catch (Exception $e) {
 			die("PSQL ERROR :".$e->getMessage());
@@ -159,7 +159,7 @@ function getCoach(string $mail) {
 function getCandidat(string $mail) {
 	try {
 		$req = pg_query($this->db,"SELECT * from utilisateur where idutilisateur in (Select idcandidat from candidat) AND adressemail='$mail'");
-	
+
 		$candidatbf = pg_fetch_all($req);
 
 
@@ -184,7 +184,7 @@ function getCandidat(string $mail) {
 				$candidatUti[0]['lienlettremotivation']
 			);
 		}
-		
+
 		// Tests d'erreurs
 		} catch (Exception $e) {
 			die("PSQL ERROR :".$e->getMessage());
@@ -206,7 +206,7 @@ function getCoachOuCandidat(string $mail, string $pass) {
 		}else{
 			return new Candidat($mail, $pass,'','',0,'','','');
 		}
-		
+
 	} catch (Exception $e) {
 		die("PSQL ERROR :".$e->getMessage());
 	}
@@ -214,7 +214,7 @@ function getCoachOuCandidat(string $mail, string $pass) {
 
 
 
-/* 
+/*
 //Accès à un client
 function getEntreprise(int $idEntreprise) : Client {
 	try {
@@ -225,14 +225,14 @@ function getEntreprise(int $idEntreprise) : Client {
 		exit(1);
 	}
 	$table = pg_fetch_all($req);
-	var_dump($f); 
+	var_dump($f);
 	$client = new Client();
 
 	while ($data = pg_fetch_object($req)) {
 		echo $data->author . " (";
 		echo $data->year . "): ";
 		echo $data->title . "<br />";
-	} 
+	}
 
 	// Tests d'erreurs
 	if (count($table) == 0) {
@@ -304,5 +304,5 @@ function getOffre(int $idOffre) : Offre {
 	}
 	return $offre;
 }*/
-} 
+}
 ?>
