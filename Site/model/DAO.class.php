@@ -197,12 +197,12 @@ function getCoachOuCandidat(string $mail, string $pass) {
 
 function getId($adressemail): int{
 	try {
-		$req = pg_query($this->db,"SELECT idutilisateur FROM UTILISATEUR where adressemail='{$adressemail}'");
+		$req = pg_query($this->db,"SELECT idutilisateur FROM utilisateur where adressemail='{$adressemail}'");
 		// Affiche en clair l'erreur PDO si la requête ne peut pas s'exécuter
 
 		$table = pg_fetch_all($req);
-		var_dump($req);
-		$id = intval($req['idutilisateur']);
+		var_dump($table);
+		$id = intval($table['idutilisateur']);
 		// Tests d'erreurs
 	if (count($table) == 0) {
 		throw new Exception("Aucun Email trouvee\n");
