@@ -19,7 +19,7 @@ try {
 
   //Test de la récupération d'un compétence
   print("Accès à un compétence : <br>");
-  string $nvEtude, array $langeParle, array $langageAcquis
+  
   $expected = new Competence('IUT 2', 'Anglais, Francais, Russian', 'C++,Java,Css,HTML,Javascript'); // competence attendue
   $value = $dao->getCompetence(4); // On prend la competence d'id 4
 
