@@ -1,6 +1,7 @@
 
 <?php
 require_once(__DIR__.'/../model/DAO.class.php');
+require_once(__DIR__.'/../model/Competence.class.php');
 
 try{
   $db = DAO::get();//138.68.96.182
@@ -19,8 +20,8 @@ try {
 
   //Test de la récupération d'un compétence
   print("Accès à un compétence : <br>");
-  string $nvEtude, array $langeParle, array $langageAcquis
-  $expected = new Competence('IUT 2', 'Anglais, Francais, Russian', 'C++,Java,Css,HTML,Javascript'); // competence attendue
+  
+  $expected = new Competence('IUT 2', ['Anglais', 'Francais', 'Russian'], ['C++','Java','Css','HTML','Javascript']); // competence attendue
   $value = $dao->getCompetence(4); // On prend la competence d'id 4
 
 
