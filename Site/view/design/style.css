@@ -295,15 +295,33 @@ button:hover {
 /**************************************************************
 * Recruter
 **************************************************************/
-#case{
-  display: block;
+#section1{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
   
 }
 
-#case1{
+#article1{
   display:flex;
   justify-content: center;
+  align-items: center;
+  background-color:#7094FF;
 }
+#article2{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  background-color:#FCD873;
+}
+
+
+#section2{
+  justify-content: center;
+  background-color: #7094FF;
+}
+
+
 
 /**************************************************************
 * FOOTER

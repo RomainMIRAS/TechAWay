@@ -29,16 +29,16 @@
     <?php include_once('../view/design/navigation.php'); ?>
 
     <!-- MAIN ---------------------------------------------------------------------------------->
-    <main>
+    <main id = "mainRecruter">
 
-      <section id="case"> <!-- section Accueil -->
+      <section id="section1"> <!-- section Accueil -->
         <div>
           <h1>Découvrez Tech A Way</h1>
           <p>Tech a Way est un cabinet de recrutement spécialisé dans le domaine de la tech en full remote et partout en Europe</p>
           <h2>L'expertise du recrutment dans le domaine de la tech avec des recuteur qui vous accompagne jusqu'à l'embauche</h2>
         </div>
 
-        <article id = "case1">
+        <article id = "article1">
         <div id="svg1">
           <?php include_once("../view/design/svg/p5.svg") ?>
         </div>
@@ -52,7 +52,7 @@
 
         </article>
         
-        <article id = "case1">
+        <article id = "article2">
         <div>
           <h2>Candidater avec NOUS</h2>
           <ul>
@@ -69,19 +69,17 @@
         </div>
         </article>
         
+</section>
 
-
-
-      </section>
-      
+      <section id = "section2" >
       <form class="form" action="authentification.ctrl.php" method="post" style="padding-bottom: 193px;">
             <h1>DES BESOINS EN RECRUTEMENT TECH ? ÉCHANGE AVEC NOUS !</h1>
-            <label for="email">Adresse E-mail</label>
-            <input id="email" type="text" name="email" placeholder="Entrez votre adresse e-mail" required>
             <label for="nom">Nom</label>
             <input id="nom" type="text" name="nom" placeholder="Nom" required>
             <label for="prenom">Prenom</label>
             <input id="prenom" type="text" name="prenom" placeholder="om" required>
+            <label for="email">Adresse E-mail</label>
+            <input id="email" type="text" name="email" placeholder="Entrez votre adresse e-mail" required>
             <label for="nomEntreprise">Nom de l'entreprise</label>
             <input id="postactu" type="text" name="postactu" placeholder="Votre Poste Actuel" required>
             
