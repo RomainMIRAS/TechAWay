@@ -242,6 +242,8 @@ function getRenseignement($adressemail): Competence{
 
 		$renseignement = pg_fetch_all($req);
 
+		echo '<pre>' . var_export($renseignement, true) . '</pre>';
+
 		$rens = new Competence(
 			intval($renseignement[0]['idrenseignement']),
 			$renseignement[0]['travetranger'],
