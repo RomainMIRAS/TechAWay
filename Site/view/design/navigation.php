@@ -57,13 +57,7 @@ session_start();
             var nb_click = 0;
 
             $("#btn-compte img").click(function(){
-              nb_click+=1;
-              if ((nb_click % 2)==0) {
-                $("#menu-drop").show(200);
-              } else {
-                $("#menu-drop").hide(200);
-              }
-
+              $("#menu-drop").toggle();
             });
           });
         </script>
