@@ -41,7 +41,7 @@ try {
                             printf("Mot de passe OK <br>");
                             printf("Tout OK <br>");
                           } else {
-                            printf("Age not OK, otenue : %s; attendu : %s", $expected->getAge(), $value->getAge());
+                            printf("Adresse mail not OK, otenue : %s; attendu : %s", $expected->getAge(), $value->getAge());
                             throw new Exception("Lecture Age du coach N°966 incorrecte");
                           }
                         } else {

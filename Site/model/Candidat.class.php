@@ -57,6 +57,43 @@ class Candidat extends Utilisateur {
   function getDiscussions() : array {
     return $this->discussions;
   }
+ 
+
+  function setPays(string $pays) : void {
+    $this->pays = $pays;
+  }
+
+  function setVille(string $ville) : void {
+    $this->ville = $ville;
+  }
+
+  function setLienCV(string $lienCV) : void {
+    $this->lienCV = $lienCV;
+  }
+
+  function setLienLM(string $lienLM) : void {
+    $this->lienLM = $lienLM;
+  }
+
+  function setEtape(string $etape) : void {
+    $this->etape = $etape;
+  }
+
+  function setCompetenceAcquis(Competence $competenceAcquis) : void {
+    $this->competenceAcquis = $competenceAcquis;
+  }
+
+  function setPreference(Renseignement $preference) : void {
+    $this->preference = $preference;
+  }
+
+  function setDiscussions(array $discussions) : void {
+    $this->discussions = $discussions;
+  }
+
+  function addDiscussions(Discussions $discussions) : void {
+    array_push($this->discussions,$discussions);
+  }
 
 
 }

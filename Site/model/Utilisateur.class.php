@@ -47,6 +47,36 @@ abstract class Utilisateur {
     return $this->dateCreation;
   }
 
+
+
+
+  function setNom(string $nom) : void {
+    $this->nom = $nom;
+  }
+
+  function setPrenom(string $prenom) : void {
+    $this->prenom = $prenom;
+  }
+
+  function setMail(string $mail) : void {
+    $this->mail = $mail;
+  }
+
+  function setPassword(string $password) : void {
+    $this->password = $password;
+  }
+
+  function setTelephone(string $telpehone) : void {
+    $this->telpehone = $telpehone;
+  }
+
+  function setAge(int $age) : void {
+    $this->age = $age;
+  }
+
+  function setDateCreation(string $dateCreation) : void {
+    $this->dateCreation = $dateCreation;
+  }
 }
 
 

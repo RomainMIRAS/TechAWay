@@ -12,7 +12,7 @@
 **************************************************************/
 
 html {
-  height: 100vh;
+  min-height: 100%;
 }
 
 body {
@@ -20,7 +20,7 @@ body {
   padding: 0;
   font-family: var(--font-raleway);
   font-weight: 500;
-  height: 100vh;
+  min-height: 100%;
   display: flex;
   flex-direction: column;
 }
@@ -46,6 +46,10 @@ ul {
   height: max-content;
 }
 
+nav ul:nth-child(1) div li {
+  display: inline-block;
+}
+
 ul li {
   list-style: none;
   padding: 10px 5px;
@@ -66,7 +70,7 @@ nav ul:nth-child(1) li:nth-child(1), nav ul:nth-child(2) li {
   padding: 0;
 }
 nav>ul{
-  margin: 5px 5em 5px 5em;
+  margin: 5px 6em 5px 6em;
 }
 
 #logo {
@@ -81,7 +85,31 @@ nav>ul{
 }
 
 #btn-compte {
-  border-radius: 50px;
+  border: 2px solid var(--color-blue1);
+  align-items: center;
+  /**/
+  height: 50px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  border-radius: 100%;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+#btn-compte i {
+  color: var(--color-blue1);
+  transform: scale(1.9);
+}
+
+#btn-compte img {
+  border-radius: 100%;
+  transition: all .2s ease-in-out;
+}*/
+
+#btn-compte:hover img {
+  transform: scale(1.05);
 }
 
 /**************************************************************
@@ -93,6 +121,11 @@ main {
   padding: 20px;
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
+}
+
+h1 {
+  margin-top: 0;
 }
 
 section {
@@ -158,8 +191,7 @@ svg {
   position: absolute;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
   border-radius: 15px;
-  top: 13%;
-  right: 1%;
+  transform: translate(-100px, 170px);
   width: 250px;
   background-color: var(--color-white);
   display: none;
@@ -169,20 +201,23 @@ svg {
   flex-direction: column;
 }
 
-#menu-drop ul li {
-  padding-top: 10px;
-  padding-bottom: 10px;
+#menu-part1 {
   text-align: center;
-  width: 100%;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
-#menu-part2 {
+#menu-part1, #menu-part2 {
   width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 #menu-part2 li {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 10px;
+}
+
+#menu-part2 form li {
+  width: 100%;
 }
 
 #menu-drop ul li:last-child {
@@ -192,6 +227,21 @@ svg {
 #menu-drop ul li button {
   padding: 0;
   margin: 0;
+}
+
+#user-mail {
+  font-size: 15px;
+  padding-bottom: 5px;
+  padding-top: 10px;
+  color: var(--color-black);
+}
+
+#user-type {
+  font-size: 13px;
+  font-variant: small-caps;
+  padding-top: 0px;
+  padding-bottom: 10px;
+  color: #B9B8D8;
 }
 
 #btn-logout {
@@ -283,6 +333,30 @@ button:hover {
 }
 
 /**************************************************************
+* PARRAINER
+**************************************************************/
+
+#section-parrainer form {
+  width: 500px;
+}
+
+#coord-can-par {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+#coord-can-par h3 {
+  text-align: center;
+}
+
+#coord-candidat,#coord-parrain {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+/**************************************************************
 * FORMULAIRE
 **************************************************************/
 
@@ -347,4 +421,55 @@ footer ul li {
 footer ul li a:hover {
   color: var(--color-black);
   text-decoration: underline;
+}
+
+/**************************************************************
+* RESPONSIVE
+**************************************************************/
+
+@media only screen and (max-width: 600px) {
+
+  body, html, main {
+    min-height: 100%;
+  }
+
+  nav {
+    flex-direction: column;
+  }
+
+  nav ul:nth-child(1) {
+    flex-direction: column;
+  }
+
+  #nav-log {
+    display: none;
+  }
+
+  nav>ul {
+    margin: 0;
+  }
+
+  svg {
+    width: 400px;
+    height: 300px;
+  }
+
+  section {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  #section-accueil-1 div:nth-child(1) {
+    width: auto;
+    text-align: center;
+  }
+
+  .form {
+    width: auto;
+  }
+
+  #section-accueil-1 div:first-child form {
+    justify-content: center;
+  }
+
 }

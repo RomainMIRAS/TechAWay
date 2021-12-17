@@ -42,6 +42,28 @@ class Entreprise {
     return $this->offres;
   }
 
+
+
+  function setNom(string $nom) : void {
+    $this->nom = $nom;
+  }
+
+  function setAdresse(string $adresse) : void {
+    $this->adresse = $adresse;
+  }
+
+  function setTelephone(string $telephone) : void {
+    $this->telephone = $telephone;
+  }
+
+  function setMail(string $mail) : void {
+    $this->mail = $mail;
+  }
+
+  function setOffres(Offre $offres) : void {
+    $this->offres = $offres;
+  }
+
 }
 
 
