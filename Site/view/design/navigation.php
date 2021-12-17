@@ -54,8 +54,10 @@ session_start();
 
         <script>
           $(document).ready(function(){
+            var nb_click = 0;
+
             $("#btn-compte img").click(function(){
-              $("#menu-drop").toggle(1000);
+              $("#menu-drop").toggle();
             });
           });
         </script>
