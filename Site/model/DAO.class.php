@@ -5,6 +5,7 @@ require_once(__DIR__.'/Offre.class.php'); */
 
 require_once(__DIR__.'/Candidat.class.php');
 require_once(__DIR__.'/Competence.class.php');
+require_once(__DIR__.'/Renseignement.class.php');
 require_once(__DIR__.'/Coach.class.php');
 
 // Le Data Access Objet
