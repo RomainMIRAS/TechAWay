@@ -5,6 +5,7 @@ require_once(__DIR__.'/Offre.class.php'); */
 
 require_once(__DIR__.'/Candidat.class.php');
 require_once(__DIR__.'/Competence.class.php');
+require_once(__DIR__.'/Renseignement.class.php');
 require_once(__DIR__.'/Coach.class.php');
 
 // Le Data Access Objet
@@ -17,7 +18,7 @@ private static $instance = null;
 function __construct() {
 	try{
 	$this->db = pg_connect("host=localhost port=5432 dbname=techawaydb user=pagman password=pagman");//138.68.96.182
-	
+
 	}catch (Exception $e) {
 		die("PSQL ERROR :".$e->getMessage());
 	}
@@ -85,8 +86,7 @@ function createUtilisateur(string $mail, string $pass) { //returns boolean
 
 function verifierLogin(string $mail, string $pass) { //returns boolean
 	try {
-		$r = "
-		SELECT password FROM utilisateur where adressemail='$mail';";
+		$r = "SELECT password FROM utilisateur where adressemail='$mail';";
 
 		$q = pg_query($this->db, $r);
 
@@ -108,7 +108,7 @@ function verifierLogin(string $mail, string $pass) { //returns boolean
 function getCoach(string $mail) {
 	try {
 		$req = pg_query($this->db,"SELECT * from utilisateur where idutilisateur in (Select idCoach from coach) AND adressemail='$mail'");
-	
+
 		$coachbf = pg_fetch_all($req);
 
 
@@ -132,7 +132,7 @@ function getCoach(string $mail) {
 			);
 		}
 
-		
+
 		// Tests d'erreurs
 		} catch (Exception $e) {
 			die("PSQL ERROR :".$e->getMessage());
@@ -143,7 +143,7 @@ function getCoach(string $mail) {
 function getCandidat(string $mail) {
 	try {
 		$req = pg_query($this->db,"SELECT * from utilisateur where idutilisateur in (Select idcandidat from candidat) AND adressemail='$mail'");
-	
+
 		$candidatbf = pg_fetch_all($req);
 
 
@@ -168,7 +168,7 @@ function getCandidat(string $mail) {
 				$candidatUti[0]['lienlettremotivation']
 			);
 		}
-		
+
 		// Tests d'erreurs
 		} catch (Exception $e) {
 			die("PSQL ERROR :".$e->getMessage());
@@ -190,7 +190,7 @@ function getCoachOuCandidat(string $mail, string $pass) {
 		}else{
 			return new Candidat($mail, $pass,'','',0,'','','');
 		}
-		
+
 	} catch (Exception $e) {
 		die("PSQL ERROR :".$e->getMessage());
 	}
@@ -227,14 +227,42 @@ function getCompetence($adressemail): Competence{
 			$competence[0]['langueparle'],
 			$competence[0]['langagesacquis']
 		);
-		
+
 	} catch (Exception $e) {
 		die("PSQL ERROR :".$e->getMessage());
 	}
 	return $competences;
 }
 
-/* 
+function getRenseignement($adressemail): Renseignement{
+	try {
+		$idRens = $this->getId($adressemail);
+		$req = pg_query($this->db,"SELECT * FROM renseignement where idrenseignement='{$idRens}'");
+		// Affiche en clair l'erreur PDO si la requête ne peut pas s'exécuter
+
+		$renseignement = pg_fetch_all($req);
+
+		if ($renseignement[0]['travetranger'] == 'f') {
+			$t = false;
+		}else{
+			$t = true;
+		}
+		$rens = new Renseignement(
+			intval($renseignement[0]['idrenseignement']),
+			$t,
+			$renseignement[0]['secteur'],
+			$renseignement[0]['typecontrat'],
+			$renseignement[0]['poste'],
+			$renseignement[0]['tyeentreprise']
+		);
+
+	} catch (Exception $e) {
+		die("PSQL ERROR :".$e->getMessage());
+	}
+	return $rens;
+}
+
+/*
 function getOffres() : array {
 	try {
 		$req = pg_query($this->db,"SELECT adresseMail FROM UTILISATEUR");
@@ -284,6 +312,9 @@ function getOffres() : array {
 
 	$table = pg_fetch_all($req);
 
+<<<<<<< HEAD
+/*
+=======
 	$listeMail = array();
 	foreach ($table as $mail) {
 		array_push($listeMail,$mail['adressemail']);
@@ -298,7 +329,8 @@ function getOffres() : array {
 	return $listeMail;
 }
  */
-/* 
+/*
+>>>>>>> 3ba79176356e7dcc6fd84b26e4bb277bf429794b
 //Accès à un client
 function getEntreprise(int $idEntreprise) : Client {
 	try {
@@ -309,14 +341,14 @@ function getEntreprise(int $idEntreprise) : Client {
 		exit(1);
 	}
 	$table = pg_fetch_all($req);
-	var_dump($f); 
+	var_dump($f);
 	$client = new Client();
 
 	while ($data = pg_fetch_object($req)) {
 		echo $data->author . " (";
 		echo $data->year . "): ";
 		echo $data->title . "<br />";
-	} 
+	}
 
 	// Tests d'erreurs
 	if (count($table) == 0) {
@@ -388,5 +420,5 @@ function getOffre(int $idOffre) : Offre {
 	}
 	return $offre;
 }*/
-} 
+}
 ?>
