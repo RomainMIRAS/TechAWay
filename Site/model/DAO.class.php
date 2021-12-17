@@ -241,12 +241,15 @@ function getRenseignement($adressemail): Renseignement{
 		// Affiche en clair l'erreur PDO si la requête ne peut pas s'exécuter
 
 		$renseignement = pg_fetch_all($req);
-
-		echo '<pre>' . var_export($renseignement, true) . '</pre>';
-		var_dump($renseignement);
+		
+		if ($renseignement[0]['travetranger'] == 'f') {
+			$t = false;
+		}else{
+			$t = true;
+		}
 		$rens = new Renseignement(
 			intval($renseignement[0]['idrenseignement']),
-			$renseignement[0]['travetranger'],
+			$t,
 			$renseignement[0]['secteur'],
 			$renseignement[0]['typecontrat'],
 			$renseignement[0]['poste'],
