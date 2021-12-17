@@ -234,7 +234,7 @@ function getCompetence($adressemail): Competence{
 	return $competences;
 }
 
-function getRenseignement($adressemail): Competence{
+function getRenseignement($adressemail): Renseignement{
 	try {
 		$idRens = $this->getId($adressemail);
 		$req = pg_query($this->db,"SELECT * FROM renseignement where idrenseignement='{$idRens}'");
@@ -244,7 +244,7 @@ function getRenseignement($adressemail): Competence{
 
 		echo '<pre>' . var_export($renseignement, true) . '</pre>';
 		var_dump($renseignement);
-		$rens = new Competence(
+		$rens = new Renseignement(
 			intval($renseignement[0]['idrenseignement']),
 			$renseignement[0]['travetranger'],
 			$renseignement[0]['secteur'],
