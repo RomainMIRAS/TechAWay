@@ -234,6 +234,29 @@ function getCompetence($adressemail): Competence{
 	return $competences;
 }
 
+function getRenseignement($adressemail): Competence{
+	try {
+		$idRens = $this->getId($adressemail);
+		$req = pg_query($this->db,"SELECT * FROM competence where idcompetence='{$idRens}'");
+		// Affiche en clair l'erreur PDO si la requête ne peut pas s'exécuter
+
+		$renseignement = pg_fetch_all($req);
+
+		$rens = new Competence(
+			intval($renseignement[0]['idrenseignement']),
+			$renseignement[0]['travetranger'],
+			$renseignement[0]['secteur'],
+			$renseignement[0]['typecontrat'],
+			$renseignement[0]['poste'],
+			$renseignement[0]['tyeentreprise']
+		);
+		
+	} catch (Exception $e) {
+		die("PSQL ERROR :".$e->getMessage());
+	}
+	return $rens;
+}
+
 /* 
 function getOffres() : array {
 	try {

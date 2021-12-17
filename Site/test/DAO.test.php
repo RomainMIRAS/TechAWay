@@ -113,6 +113,14 @@ try{
     echo "</br>False ";
   }
 
+  echo "</br>getRenseignement(adressemail) : adresse-candidat@gmail.com doit retourner type Renseignement de l'utilisateur d'adressemail adresse-candidat@gmail.com";
+  $testLogin = $db->getRenseignement("adresse-candidat@gmail.com");
+  if ($testLogin){
+    echo '<pre>' . var_export($testLogin, true) . '</pre>';
+  }else{
+    echo "</br>False ";
+  }
+
 
   //Un echo de getEmails
   echo "</br></br> Liste de Mail :";
