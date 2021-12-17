@@ -85,9 +85,9 @@ nav>ul{
 }
 
 #btn-compte {
-  border: 2px solid var(--color-blue1);
+  /*border: 2px solid var(--color-blue1);
   align-items: center;
-  /**/
+  */
   height: 50px;
   width: 50px;
   display: flex;
@@ -106,7 +106,7 @@ nav>ul{
 /*#btn-compte img {
   border-radius: 100%;
   transition: all .2s ease-in-out;
-}*/
+}
 
 /*#btn-compte:hover img {
   transform: scale(1.05);
@@ -250,7 +250,7 @@ svg {
   background-color: transparent;
   text-decoration: underline;
   color: var(--color-blue1);
-}
+}imgRecrutement
 
 /**************************************************************
 * LOG
@@ -264,9 +264,6 @@ output{
 
 .authen button {
   font-size: 20px;
-}
-
-.hidden {
   display: none;
 }
 
@@ -394,6 +391,38 @@ button:hover {
   display: flex;
   justify-content: center;
 }
+
+
+/**************************************************************
+* Recruter
+**************************************************************/
+#section1{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  
+}
+
+#article1{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  background-color:#7094FF;
+}
+#article2{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  background-color:#FCD873;
+}
+
+
+#section2{
+  justify-content: center;
+  background-color: #7094FF;
+}
+
+
 
 /**************************************************************
 * FOOTER

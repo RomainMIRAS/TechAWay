@@ -1,6 +1,5 @@
 <?php
 include_once(__DIR__."/../model/Utilisateur.class.php");
-
 // Description d'un candidat
 class Candidat extends Utilisateur {
   private string $pays;                 //pays du candidat
