@@ -344,9 +344,6 @@ button:hover {
   position: relative;
 }
 
-#coord-can-par h3 {
-  text-align: center;
-}
 
 #coord-candidat,#coord-parrain {
   width: 500px;
@@ -365,7 +362,7 @@ button:hover {
   font-size: 18px;
   font-weight: 500;
   width: 100px;
-  
+  text-align: center;
 }
 
 #coord-can-par a:hover{
