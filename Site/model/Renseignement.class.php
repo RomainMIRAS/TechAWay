@@ -4,7 +4,7 @@
 // Description d'un renseignement  
 class Renseignement {
   private int $id;                  //id renseignement
-  private boolean $travEtranger;    //Travail à l'étranger ?
+  private bool $travEtranger;    //Travail à l'étranger ?
   private string $secteur;          //Secteur du métier
   private string $typeContrat;      //Type de contrat
   private string $poste;            //Poste concerné
@@ -13,7 +13,8 @@ class Renseignement {
 
 
   // Contructeur
-  function __construct(boolean $travEtranger, string $secteur, string $typeContrat, string $poste, string $typeEntreprise) {
+  function __construct(int $id,bool $travEtranger, string $secteur, string $typeContrat, string $poste, string $typeEntreprise) {
+    $this->id = $id;
     $this->travEtranger = $travEtranger;
     $this->secteur = $secteur;
     $this->typeContrat = $typeContrat;
@@ -25,7 +26,7 @@ class Renseignement {
     return $this->id;
   }
 
-  function getTravEtranger() : boolean {
+  function getTravEtranger() : bool {
     return $this->travEtranger;
   }
 
@@ -46,7 +47,7 @@ class Renseignement {
   }
 
 
-  function setTravEtranger(boolean $travEtranger) : void {
+  function setTravEtranger(bool $travEtranger) : void {
     $this->travEtranger = $travEtranger;
   }
 

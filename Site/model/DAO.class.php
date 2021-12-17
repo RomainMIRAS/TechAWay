@@ -4,6 +4,8 @@ require_once(__DIR__.'/Candidat.class.php');
 require_once(__DIR__.'/Offre.class.php'); */
 
 require_once(__DIR__.'/Candidat.class.php');
+require_once(__DIR__.'/Competence.class.php');
+require_once(__DIR__.'/Renseignement.class.php');
 require_once(__DIR__.'/Coach.class.php');
 
 // Le Data Access Objet
@@ -35,16 +37,16 @@ public static function get() : DAO {
 
 function getEmails() : array {
 	try {
-	$req = pg_query($this->db,"SELECT adresseMail FROM UTILISATEUR");
-	// Affiche en clair l'erreur PDO si la requête ne peut pas s'exécuter
+		$req = pg_query($this->db,"SELECT adresseMail FROM UTILISATEUR");
+		// Affiche en clair l'erreur PDO si la requête ne peut pas s'exécuter
 
-	$table = pg_fetch_all($req);
+		$table = pg_fetch_all($req);
 
-	$listeMail = array();
-	foreach ($table as $mail) {
-		array_push($listeMail,$mail['adressemail']);
-	};
-	// Tests d'erreurs
+		$listeMail = array();
+		foreach ($table as $mail) {
+			array_push($listeMail,$mail['adressemail']);
+		};
+		// Tests d'erreurs
 	if (count($table) == 0) {
 		throw new Exception("Aucun Email trouvee\n");
 	}
@@ -84,36 +86,18 @@ function createUtilisateur(string $mail, string $pass) { //returns boolean
 
 function verifierLogin(string $mail, string $pass) { //returns boolean
 	try {
-	$r = "
-	SELECT password FROM utilisateur where adressemail='$mail';";
+		$r = "SELECT password FROM utilisateur where adressemail='$mail';";
 
-	$q = pg_query($this->db, $r);
+		$q = pg_query($this->db, $r);
 
-	$res = pg_fetch_row($q);
+		$res = pg_fetch_row($q);
 
-	$check = @password_verify($pass,$res[0]);
-	if($check){
-		return true;
-	}else{
-		return false;
-	}
-
-
-/*
-	$r = "SELECT EXISTS(SELECT * FROM utilisateur where adressemail='$mail' AND password='$pass')";
-
-	$q = pg_query($this->db, $r);
-
-	$res = pg_fetch_all($q);
-
-	if($res[0]['exists'] == 't'){
-		return true;
-	}else{
-		return false;
-	} */
-
-
-	// Tests d'erreurs
+		$check = @password_verify($pass,$res[0]);
+		if($check){
+			return true;
+		}else{
+			return false;
+		}
 	} catch (Exception $e) {
 		die("PSQL ERROR verifierLogin : ".$e->getMessage());
 	}
@@ -212,9 +196,141 @@ function getCoachOuCandidat(string $mail, string $pass) {
 	}
 }
 
+function getId($adressemail): int{
+	try {
+		$req = pg_query($this->db,"SELECT idutilisateur FROM utilisateur where adressemail='{$adressemail}'");
+		// Affiche en clair l'erreur PDO si la requête ne peut pas s'exécuter
 
+		$table = pg_fetch_all($req);
+		$idcompetence = intval($table[0]['idutilisateur']);
+		// Tests d'erreurs
+	if (count($table) == 0) {
+		throw new Exception("Aucun Email trouvee\n");
+	}
+	} catch (Exception $e) {
+		die("PSQL ERROR :".$e->getMessage());
+	}
+	return $idcompetence;
+}
+
+function getCompetence($adressemail): Competence{
+	try {
+		$idCand = $this->getId($adressemail);
+		$req = pg_query($this->db,"SELECT * FROM competence where idcompetence='{$idCand}'");
+		// Affiche en clair l'erreur PDO si la requête ne peut pas s'exécuter
+
+		$competence = pg_fetch_all($req);
+
+		$competences = new Competence(
+			$competence[0]['idcompetence'],
+			$competence[0]['nvetude'],
+			$competence[0]['langueparle'],
+			$competence[0]['langagesacquis']
+		);
+
+	} catch (Exception $e) {
+		die("PSQL ERROR :".$e->getMessage());
+	}
+	return $competences;
+}
+
+function getRenseignement($adressemail): Renseignement{
+	try {
+		$idRens = $this->getId($adressemail);
+		$req = pg_query($this->db,"SELECT * FROM renseignement where idrenseignement='{$idRens}'");
+		// Affiche en clair l'erreur PDO si la requête ne peut pas s'exécuter
+
+		$renseignement = pg_fetch_all($req);
+
+		if ($renseignement[0]['travetranger'] == 'f') {
+			$t = false;
+		}else{
+			$t = true;
+		}
+		$rens = new Renseignement(
+			intval($renseignement[0]['idrenseignement']),
+			$t,
+			$renseignement[0]['secteur'],
+			$renseignement[0]['typecontrat'],
+			$renseignement[0]['poste'],
+			$renseignement[0]['tyeentreprise']
+		);
+
+	} catch (Exception $e) {
+		die("PSQL ERROR :".$e->getMessage());
+	}
+	return $rens;
+}
 
 /*
+function getOffres() : array {
+	try {
+		$req = pg_query($this->db,"SELECT adresseMail FROM UTILISATEUR");
+		// Affiche en clair l'erreur PDO si la requête ne peut pas s'exécuter
+
+		$table = pg_fetch_all($req);
+
+		$listeMail = array();
+		foreach ($table as $mail) {
+			array_push($listeMail,$mail['adressemail']);
+		};
+		// Tests d'erreurs
+	if (count($table) == 0) {
+		throw new Exception("Aucun Email trouvee\n");
+	}
+	} catch (Exception $e) {
+		die("PSQL ERROR :".$e->getMessage());
+	}
+	return $listeMail;
+}
+
+function getOffre() : array {
+	try {
+	$req = pg_query($this->db,"SELECT adresseMail FROM UTILISATEUR");
+	// Affiche en clair l'erreur PDO si la requête ne peut pas s'exécuter
+
+	$table = pg_fetch_all($req);
+
+	$listeMail = array();
+	foreach ($table as $mail) {
+		array_push($listeMail,$mail['adressemail']);
+	};
+	// Tests d'erreurs
+	if (count($table) == 0) {
+		throw new Exception("Aucun Email trouvee\n");
+	}
+	} catch (Exception $e) {
+		die("PSQL ERROR :".$e->getMessage());
+	}
+	return $listeMail;
+}
+
+function getOffres() : array {
+	try {
+	$req = pg_query($this->db,"SELECT adresseMail FROM UTILISATEUR");
+	// Affiche en clair l'erreur PDO si la requête ne peut pas s'exécuter
+
+	$table = pg_fetch_all($req);
+
+<<<<<<< HEAD
+/*
+=======
+	$listeMail = array();
+	foreach ($table as $mail) {
+		array_push($listeMail,$mail['adressemail']);
+	};
+	// Tests d'erreurs
+	if (count($table) == 0) {
+		throw new Exception("Aucun Email trouvee\n");
+	}
+	} catch (Exception $e) {
+		die("PSQL ERROR :".$e->getMessage());
+	}
+	return $listeMail;
+}
+ */
+/*
+>>>>>>> 3ba79176356e7dcc6fd84b26e4bb277bf429794b
 //Accès à un client
 function getEntreprise(int $idEntreprise) : Client {
 	try {
@@ -236,7 +352,7 @@ function getEntreprise(int $idEntreprise) : Client {
 
 	// Tests d'erreurs
 	if (count($table) == 0) {
-		throw new Exception("Client d'id $idClient non trouvé\n");
+		throw new Exception("Client d'idcompetence $idClient non trouvé\n");
 	}
 	$client = $table[0];
 	} catch (PDOException $e) {
@@ -256,7 +372,7 @@ function getCoach(int $idCoach) : Coach {
 	$table = $r->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE,'Coach');
 	// Tests d'erreurs
 	if (count($table) == 0) {
-		throw new Exception("Coach d'id $idCoach non trouvé\n");
+		throw new Exception("Coach d'idcompetence $idCoach non trouvé\n");
 	}
 	$client = $table[0];
 	} catch (PDOException $e) {
@@ -276,7 +392,7 @@ function getCandidat(int $idCandidat) : Candidat {
 	$table = $r->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE,'Candidat');
 	// Tests d'erreurs
 	if (count($table) == 0) {
-		throw new Exception("Candidat d'id $idCandidat non trouvé\n");
+		throw new Exception("Candidat d'idcompetence $idCandidat non trouvé\n");
 	}
 	$candidat = $table[0];
 	} catch (PDOException $e) {
@@ -296,7 +412,7 @@ function getOffre(int $idOffre) : Offre {
 	$table = $r->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE,'Offre');
 	// Tests d'erreurs
 	if (count($table) == 0) {
-		throw new Exception("Offre d'id $idOffre non trouvé\n");
+		throw new Exception("Offre d'idcompetence $idOffre non trouvé\n");
 	}
 	$offre = $table[0];
 	} catch (PDOException $e) {
