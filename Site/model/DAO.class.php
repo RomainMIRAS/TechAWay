@@ -237,7 +237,7 @@ function getCompetence($adressemail): Competence{
 function getRenseignement($adressemail): Competence{
 	try {
 		$idRens = $this->getId($adressemail);
-		$req = pg_query($this->db,"SELECT * FROM competence where idcompetence='{$idRens}'");
+		$req = pg_query($this->db,"SELECT * FROM renseignement where idrenseignement='{$idRens}'");
 		// Affiche en clair l'erreur PDO si la requête ne peut pas s'exécuter
 
 		$renseignement = pg_fetch_all($req);
