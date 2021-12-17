@@ -24,11 +24,11 @@ session_start();
         <li><button id="login" type="submit" name="action" value="login">S'identifier</button></li>
       </form>
       <?php else: ?>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="../../framework/jquery-3.6.0.min.js"></script>
 
-        <div id="btn-compte"><i class="fa fa-user" aria-hidden="true"></i></div>
-
-        <img src="../../view/design/img/profil.jpg" alt="">
+        <div id="btn-compte">
+          <img src="../view/design/img/profil.jpg" alt="">
+        </div>
 
         <div id="menu-drop">
           <ul>
