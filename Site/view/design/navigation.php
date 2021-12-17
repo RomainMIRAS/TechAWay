@@ -54,7 +54,7 @@ session_start();
 
         <script>
           $(document).ready(function(){
-            $("#btn-compte").click(function(){
+            $("#btn-compte img").click(function(){
               $("#menu-drop").toggle();
             });
           });
