@@ -40,9 +40,9 @@
           <form class="form" action="authentification.ctrl.php" method="post" style="padding-bottom: 193px;">
             <h1>S'identifier</h1>
             <label for="email">Adresse E-mail</label>
-            <input id="email" type="text" name="email" placeholder="Entrez votre adresse e-mail" required>
+            <input id="email" type="text" name="email" placeholder="Entrez votre adresse e-mail" >
             <label for="password">Mot de passe</label>
-            <input id="password" type="password" name="password" placeholder="Mot de passe" required>
+            <input id="password" type="password" name="password" placeholder="Mot de passe" >
             <output><?=$erreur?></output>
             <button type="submit" name="confirmation" value="oui">Confirmation</button>
             <input type="hidden" name="action" value="<?= $action ?>">
@@ -54,11 +54,11 @@
           <form class="form" action="authentification.ctrl.php" method="post" style="padding-bottom: 114px;">
             <h1>S'inscrire</h1>
             <label for="email">Adresse E-mail</label>
-            <input id="email" type="text" name="email" placeholder="Entrez votre adresse e-mail" required>
+            <input id="email" type="text" name="email" placeholder="Entrez votre adresse e-mail" >
             <label for="password">Mot de passe</label>
-            <input id="password" type="password" name="password" placeholder="Mot de passe" required>
+            <input id="password" type="password" name="password" placeholder="Mot de passe" >
             <label for="checkpassword">Confirmation du mot de passe</label>
-            <input id="checkpassword" type="password" name="checkpassword" placeholder="Mot de passe" required>
+            <input id="checkpassword" type="password" name="checkpassword" placeholder="Mot de passe" >
             <output><?=$erreur?></output>
             <button type="submit" name="confirmation" value="oui">Confirmation</button>
             <input type="hidden" name="action" value="<?= $action ?>">

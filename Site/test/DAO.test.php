@@ -80,14 +80,14 @@ try{
     echo "</br>False ";
   }
 
-
+/* 
   echo "</br>createCompetence('IUT 2', 'Anglais,Francais,Russian' , 'C++,Java,Css,HTML,Javascript') : (doit retourner true)";
   $testLogin = $db->createCompetence("IUT 2", "Anglais,Francais,Russian" , "C++,Java,Css,HTML,Javascript");
   if ($testLogin){
     echo '<pre>' . var_export($testLogin, true) . '</pre>';
   }else{
     echo "</br>False ";
-  }
+  } */
 
   echo "</br>getCoachOuCandidat(adressemail) : adresse-coach@gmail.com  : (doit retourner type Coach)";
   $testLogin = $db->getCoachOuCandidat("adresse-coach@gmail.com","motdepassecoach");
@@ -97,6 +97,29 @@ try{
     echo "</br>False ";
   }
   
+  echo "</br>getId(adressemail) : adresse-candidat@gmail.com : retourne id du candidat d'adressemail: adresse-candidat@gmail.com (doit etre = 966)";
+  $testLogin = $db->getId("adresse-candidat@gmail.com");
+  if ($testLogin){
+    echo '<pre>' . var_export($testLogin, true) . '</pre>';
+  }else{
+    echo "</br>False ";
+  }
+
+  echo "</br>getCompetence(adressemail) : adresse-candidat@gmail.com doit retourner type Competence de l'utilisateur d'adressemail adresse-candidat@gmail.com";
+  $testLogin = $db->getCompetence("adresse-candidat@gmail.com");
+  if ($testLogin){
+    echo '<pre>' . var_export($testLogin, true) . '</pre>';
+  }else{
+    echo "</br>False ";
+  }
+
+  echo "</br>getRenseignement(adressemail) : adresse-candidat@gmail.com doit retourner type Renseignement de l'utilisateur d'adressemail adresse-candidat@gmail.com";
+  $testLogin = $db->getRenseignement("adresse-candidat@gmail.com");
+  if ($testLogin){
+    echo '<pre>' . var_export($testLogin, true) . '</pre>';
+  }else{
+    echo "</br>False ";
+  }
 
 
   //Un echo de getEmails

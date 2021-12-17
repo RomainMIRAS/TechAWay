@@ -10,7 +10,7 @@ session_start();
     <ul>
         <li><a href="main.ctrl.php"><img id="logo" src="../view/design/img/logo.png" ></a></li>
         <div>
-          <li><a href="#">Recruter</a></li>
+          <li><a href="recruter.ctrl.php">Recruter</a></li>
           <li><a href="#">Trouver un job</a></li>
           <li><a href="parrainer.ctrl.php">Parrainer</a></li>
         </div>
@@ -24,11 +24,11 @@ session_start();
         <li><button id="login" type="submit" name="action" value="login">S'identifier</button></li>
       </form>
       <?php else: ?>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="../framework/jquery-3.6.0.min.js"></script>
 
-        <div id="btn-compte"><i class="fa fa-user" aria-hidden="true"></i></div>
-
-        <img src="../../view/design/img/profil.jpg" alt="">
+        <div id="btn-compte">
+          <img src="../view/design/img/profil.jpg" alt="">
+        </div>
 
         <div id="menu-drop">
           <ul>
@@ -40,7 +40,7 @@ session_start();
 
             <div id="menu-part2">
               <?php if (is_a($_SESSION['utilisateur'],"Candidat")) : ?>
-                <li><a href="#"><i class="fa fa-user"></i> Mon profil</a></li>
+                <li><a href="../controler/profil.ctrl.php"><i class="fa fa-user"></i> Mon profil</a></li>
                 <li><a href="#"><i class="fa fa-pencil-square-o"></i> Editer mon profil</a></li>
                 <li><a href="../controler/recrutement-candidat.ctrl.php"><i class="fa fa-level-up" aria-hidden="true"></i> Mon Recrutement</a></li>
               <?php endif; ?>
@@ -54,7 +54,9 @@ session_start();
 
         <script>
           $(document).ready(function(){
-            $("#btn-compte").click(function(){
+            var nb_click = 0;
+
+            $("#btn-compte img").click(function(){
               $("#menu-drop").toggle();
             });
           });
