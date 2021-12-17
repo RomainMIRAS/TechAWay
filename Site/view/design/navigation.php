@@ -24,7 +24,7 @@ session_start();
         <li><button id="login" type="submit" name="action" value="login">S'identifier</button></li>
       </form>
       <?php else: ?>
-        <script src="../../framework/jquery-3.6.0.min.js"></script>
+        <script src="../framework/jquery-3.6.0.min.js"></script>
 
         <div id="btn-compte">
           <img src="../view/design/img/profil.jpg" alt="">
@@ -54,8 +54,8 @@ session_start();
 
         <script>
           $(document).ready(function(){
-            $("#btn-compte").click(function(){
-              $("#menu-drop").toggle();
+            $("#btn-compte img").click(function(){
+              $("#menu-drop").toggle(1000);
             });
           });
         </script>
