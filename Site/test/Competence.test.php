@@ -1,6 +1,7 @@
 
 <?php
 require_once(__DIR__.'/../model/DAO.class.php');
+require_once(__DIR__.'/../model/Competence.class.php');
 
 try{
   $db = DAO::get();//138.68.96.182
