@@ -10,7 +10,7 @@ session_start();
     <ul>
         <li><a href="main.ctrl.php"><img id="logo" src="../view/design/img/logo.png" ></a></li>
         <div>
-          <li><a href="#">Recruter</a></li>
+          <li><a href="recruter.ctrl.php">Recruter</a></li>
           <li><a href="#">Trouver un job</a></li>
           <li><a href="parrainer.ctrl.php">Parrainer</a></li>
         </div>
