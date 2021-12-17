@@ -212,7 +212,22 @@ function getId($adressemail): int{
 	return $id;
 }
 
+function getCompetence($adressemail): int{
+	try {
+		$req = pg_query($this->db,"SELECT idutilisateur FROM utilisateur where adressemail='{$adressemail}'");
+		// Affiche en clair l'erreur PDO si la requête ne peut pas s'exécuter
 
+		$table = pg_fetch_all($req);
+		$id = intval($table[0]['idutilisateur']);
+		// Tests d'erreurs
+	if (count($table) == 0) {
+		throw new Exception("Aucun Email trouvee\n");
+	}
+	} catch (Exception $e) {
+		die("PSQL ERROR :".$e->getMessage());
+	}
+	return $id;
+}
 
 /* 
 function getOffres() : array {
