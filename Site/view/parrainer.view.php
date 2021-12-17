@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr" dir="ltr" style="height: 100vh;">
+<html lang="fr" dir="ltr">
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,13 +23,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       
   </head>
-  <body style="height: 100vh;">
+  <body>
 
     <!-- NAVIGATION ---------------------------------------------------------------------------->
     <?php include_once('../view/design/navigation.php'); ?>
 
     <!-- MAIN ---------------------------------------------------------------------------------->
-    <main style="max-height: 100vh;">
+    <main>
           <section class="section-accueil" id="section-parrainer">
 
             <form class="form" action="parrainer.ctrl.php" method="post">
