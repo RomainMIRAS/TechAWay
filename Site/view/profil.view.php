@@ -34,10 +34,10 @@
       <section class="section-accueil">
             <img id="img-profil" src="../view/design/img/profil.jpg" alt="">
             <div>
-                <input type="text" value="<?= $utilisateur->getNom() ?>" disabled>
-                <input type="text" value="<?= $utilisateur->getPrenom() ?>" disabled>
-                <input type="text" value="<?= $utilisateur->getMail() ?>" disabled>
-                <input type="text" value="<?= $utilisateur->getTelephone() ?>" disabled>
+                <input type="text" value="Nom" disabled>
+                <input type="text" value="Prénom" disabled>
+                <input type="text" value="Mail" disabled>
+                <input type="text" value="Téléphone" disabled>
             </div>
       </section>
 

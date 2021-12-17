@@ -13,7 +13,10 @@ include_once(__DIR__."/../model/DAO.class.php");
 ////////////////////////////////////////////////////////////////////////////
 // Gestion de la session utilisateur
 ////////////////////////////////////////////////////////////////////////////
-$utilisateur = $_SESSION["utilisateur"];
+if (isset($_SESSION['utilisateur'])) {
+    $utilisateur = $_SESSION["utilisateur"];
+}
+
 
 // Destruction de Session
 
