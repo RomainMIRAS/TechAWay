@@ -105,13 +105,13 @@ try{
     echo "</br>False ";
   }
 
-  /* echo "</br>getCompetence(adressemail) : adresse-candidat@gmail.com doit retourner type Competence de l'utilisateur d'adressemail adresse-candidat@gmail.com";
-  $testLogin = $db->getCoachOuCandidat("adresse-candidat@gmail.com","motdepassecandidat");
+  echo "</br>getCompetence(adressemail) : adresse-candidat@gmail.com doit retourner type Competence de l'utilisateur d'adressemail adresse-candidat@gmail.com";
+  $testLogin = $db->getCompetence("adresse-candidat@gmail.com");
   if ($testLogin){
     echo '<pre>' . var_export($testLogin, true) . '</pre>';
   }else{
     echo "</br>False ";
-  } */
+  }
 
 
   //Un echo de getEmails

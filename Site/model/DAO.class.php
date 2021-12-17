@@ -4,6 +4,7 @@ require_once(__DIR__.'/Candidat.class.php');
 require_once(__DIR__.'/Offre.class.php'); */
 
 require_once(__DIR__.'/Candidat.class.php');
+require_once(__DIR__.'/Competence.class.php');
 require_once(__DIR__.'/Coach.class.php');
 
 // Le Data Access Objet
@@ -201,7 +202,7 @@ function getId($adressemail): int{
 		// Affiche en clair l'erreur PDO si la requête ne peut pas s'exécuter
 
 		$table = pg_fetch_all($req);
-		$id = intval($table[0]['idutilisateur']);
+		$idcompetence = intval($table[0]['idutilisateur']);
 		// Tests d'erreurs
 	if (count($table) == 0) {
 		throw new Exception("Aucun Email trouvee\n");
@@ -209,24 +210,28 @@ function getId($adressemail): int{
 	} catch (Exception $e) {
 		die("PSQL ERROR :".$e->getMessage());
 	}
-	return $id;
+	return $idcompetence;
 }
 
-function getCompetence($adressemail): int{
+function getCompetence($adressemail): Competence{
 	try {
-		$req = pg_query($this->db,"SELECT idutilisateur FROM utilisateur where adressemail='{$adressemail}'");
+		$idCand = $this->getId($adressemail);
+		$req = pg_query($this->db,"SELECT * FROM competence where idcompetence='{$idCand}'");
 		// Affiche en clair l'erreur PDO si la requête ne peut pas s'exécuter
 
-		$table = pg_fetch_all($req);
-		$id = intval($table[0]['idutilisateur']);
-		// Tests d'erreurs
-	if (count($table) == 0) {
-		throw new Exception("Aucun Email trouvee\n");
-	}
+		$competence = pg_fetch_all($req);
+
+		$competences = new Competence(
+			$competence[0]['idcompetence'],
+			$competence[0]['nvetude'],
+			$competence[0]['langueparle'],
+			$competence[0]['langagesacquis']
+		);
+		
 	} catch (Exception $e) {
 		die("PSQL ERROR :".$e->getMessage());
 	}
-	return $id;
+	return $competences;
 }
 
 /* 
@@ -315,7 +320,7 @@ function getEntreprise(int $idEntreprise) : Client {
 
 	// Tests d'erreurs
 	if (count($table) == 0) {
-		throw new Exception("Client d'id $idClient non trouvé\n");
+		throw new Exception("Client d'idcompetence $idClient non trouvé\n");
 	}
 	$client = $table[0];
 	} catch (PDOException $e) {
@@ -335,7 +340,7 @@ function getCoach(int $idCoach) : Coach {
 	$table = $r->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE,'Coach');
 	// Tests d'erreurs
 	if (count($table) == 0) {
-		throw new Exception("Coach d'id $idCoach non trouvé\n");
+		throw new Exception("Coach d'idcompetence $idCoach non trouvé\n");
 	}
 	$client = $table[0];
 	} catch (PDOException $e) {
@@ -355,7 +360,7 @@ function getCandidat(int $idCandidat) : Candidat {
 	$table = $r->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE,'Candidat');
 	// Tests d'erreurs
 	if (count($table) == 0) {
-		throw new Exception("Candidat d'id $idCandidat non trouvé\n");
+		throw new Exception("Candidat d'idcompetence $idCandidat non trouvé\n");
 	}
 	$candidat = $table[0];
 	} catch (PDOException $e) {
@@ -375,7 +380,7 @@ function getOffre(int $idOffre) : Offre {
 	$table = $r->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE,'Offre');
 	// Tests d'erreurs
 	if (count($table) == 0) {
-		throw new Exception("Offre d'id $idOffre non trouvé\n");
+		throw new Exception("Offre d'idcompetence $idOffre non trouvé\n");
 	}
 	$offre = $table[0];
 	} catch (PDOException $e) {

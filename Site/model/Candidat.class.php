@@ -90,7 +90,7 @@ class Candidat extends Utilisateur {
     $this->discussions = $discussions;
   }
 
-  function addDiscussions(Discussions $discussions) : void {
+  function addDiscussions(Discussion $discussions) : void {
     array_push($this->discussions,$discussions);
   }
 
