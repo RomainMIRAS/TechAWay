@@ -364,8 +364,8 @@ button:hover {
   padding: 5px 15px;
   font-size: 18px;
   font-weight: 500;
-  /*width: 100px;*/
-  text-align: center;
+  width: 100px;
+  
 }
 
 #coord-can-par a:hover{
