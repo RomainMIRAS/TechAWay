@@ -207,6 +207,8 @@ svg {
 
 #menu-part1, #menu-part2 {
   width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 #menu-part2 li {
