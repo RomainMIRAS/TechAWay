@@ -32,9 +32,13 @@
     <main>
 
       <section class="section-accueil">
-        <div>
-          <h1>Profil</h1>
-        </div>
+            <img id="img-profil" src="../view/design/img/profil.jpg" alt="">
+            <div>
+                <input type="text" value="Nom" disabled>
+                <input type="text" value="Prénom" disabled>
+                <input type="text" value="Mail" disabled>
+                <input type="text" value="Téléphone" disabled>
+            </div>
       </section>
 
     </main>
