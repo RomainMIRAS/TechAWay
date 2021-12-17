@@ -85,9 +85,9 @@ nav>ul{
 }
 
 #btn-compte {
-  border: 2px solid var(--color-blue1);
+  /*border: 2px solid var(--color-blue1);
   align-items: center;
-  /**/
+  */
   height: 50px;
   width: 50px;
   display: flex;
@@ -106,7 +106,7 @@ nav>ul{
 #btn-compte img {
   border-radius: 100%;
   transition: all .2s ease-in-out;
-}*/
+}
 
 #btn-compte:hover img {
   transform: scale(1.05);
