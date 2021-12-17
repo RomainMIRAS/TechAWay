@@ -201,7 +201,7 @@ function getId($adressemail): int{
 		// Affiche en clair l'erreur PDO si la requête ne peut pas s'exécuter
 
 		$table = pg_fetch_all($req);
-
+		var_dump($req);
 		$id = intval($req['idutilisateur']);
 		// Tests d'erreurs
 	if (count($table) == 0) {
