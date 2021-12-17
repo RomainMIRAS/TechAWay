@@ -45,7 +45,7 @@
               <div id="coord-can-par">
                 <!-- Saisie des infos du parrain -->
                 <div id="coord-parrain">
-                  
+                  <h3>Coordonnées du parrain</h3>
                   <label for="nomParrain">Nom / Prénom</label>
                   <input id="nomParrain" type="text" name="nomParrain" placeholder="Nom et prénom du parrain">
                   <label for="mailParrain">Adresse mail</label>
@@ -61,6 +61,7 @@
 
                 <!-- Saisie des infos du candidat -->
                 <div id="coord-candidat">
+                <h3>Coordonnées du candidat</h3>
                   <label for="nomCandidat">Nom / Prénom</label>
                   <input id="nomCandidat" type="text" name="nomCandidat" placeholder="Nom et prénom du candidat" >
                   <label for="mailCandidat">Adresse mail</label>
