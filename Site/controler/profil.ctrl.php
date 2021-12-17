@@ -13,6 +13,7 @@ include_once(__DIR__."/../model/DAO.class.php");
 ////////////////////////////////////////////////////////////////////////////
 // Gestion de la session utilisateur
 ////////////////////////////////////////////////////////////////////////////
+$utilisateur = $_SESSION["utilisateur"];
 
 // Destruction de Session
 
@@ -23,7 +24,7 @@ include_once(__DIR__."/../model/DAO.class.php");
 $view = new View();
 
 // Passe les paramètres à la vue
-// A Faire
+$view->assign("utilisateur",$utilisateur);
 
 // Charge la vue
 $view->display("profil.view.php");

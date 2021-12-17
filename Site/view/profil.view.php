@@ -32,9 +32,13 @@
     <main>
 
       <section class="section-accueil">
-        <div>
-          <h1>Profil</h1>
-        </div>
+            <img id="img-profil" src="../view/design/img/profil.jpg" alt="">
+            <div>
+                <input type="text" value="<?= $utilisateur->getNom() ?>" disabled>
+                <input type="text" value="<?= $utilisateur->getPrenom() ?>" disabled>
+                <input type="text" value="<?= $utilisateur->getMail() ?>" disabled>
+                <input type="text" value="<?= $utilisateur->getTelephone() ?>" disabled>
+            </div>
       </section>
 
     </main>
