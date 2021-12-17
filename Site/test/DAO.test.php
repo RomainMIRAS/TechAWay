@@ -19,6 +19,8 @@ try{
     echo "</br>Erreur Utilisateur existe deja</br>";
   }
 
+  echo '<hr>';
+
   echo "Creation d'utilisateur : adresse-candidat@gmail.com:motdepassecandidat:  (doit retourner un erreur car il existe deja)";
   $test = $db->createUtilisateur("adresse-candidat2@gmail.com","motdepassecandidat");
 
@@ -27,6 +29,8 @@ try{
   }else{
     echo "</br>Erreur Utilisateur existe deja</br>";
   }
+
+  echo '<hr>';
 
   //Test de la methode VeriferLogin, C'est qui permet de se Login.
   echo "</br>Verification de Login : adresse-candidat@gmail.com:motdepassecandidat  : (doit etre correcte)";
@@ -37,6 +41,8 @@ try{
     echo "</br>Login incorrecte</br>";
   }
 
+  echo '<hr>';
+
   echo "</br>Verification de Login : adresse-candidat@gmail.com:motdepassecandidat2  : (doit etre incorrecte car mdp different)";
   $testLogin = $db->verifierLogin("adresse-candidat@gmail.com","motdepassecandidat2");
   if ($testLogin){
@@ -44,6 +50,8 @@ try{
   }else{
     echo "</br>Login incorrecte</br>";
   }
+
+  echo '<hr>';
 
   echo "</br>Verification de Login : adresse-candidat2@gmail.com:motdepassecandidat  : (doit etre incorrecte car email inexistant)";
   $testLogin = $db->verifierLogin("adresse-candidat2@gmail.com","motdepassecandidat");
@@ -53,6 +61,7 @@ try{
     echo "</br>Login incorrecte</br>";
   }
 
+  echo '<hr>';
   
   //verification de la methode getCoach() il return un Coach s'il existe, faux sinon
   echo "</br>getCoach(adressemail) : adresse-coach@gmail.com  : (doit retourner type Coach)";
@@ -62,6 +71,9 @@ try{
   }else{
     echo "</br>False ";
   }
+
+  echo '<hr>';
+
   //verification de la methode getCandidat() il return un Candidat s'il existe, faux sinon
   echo "</br>getCandidat(adressemail) : adresse-candidat@gmail.com  : (doit retourner type Candidat)";
   $testLogin = $db->getCandidat("adresse-candidat@gmail.com");
@@ -70,6 +82,8 @@ try{
   }else{
     echo "</br>False ";
   }
+
+  echo '<hr>';
 
   //Test de fonction getCoachOuCandidat qu il return un coach ou candidat dependant de son type automatiquement
   echo "</br>getCoachOuCandidat(adressemail) : adresse-candidat@gmail.com  : (doit retourner type Candidat)";
@@ -80,14 +94,7 @@ try{
     echo "</br>False ";
   }
 
-/* 
-  echo "</br>createCompetence('IUT 2', 'Anglais,Francais,Russian' , 'C++,Java,Css,HTML,Javascript') : (doit retourner true)";
-  $testLogin = $db->createCompetence("IUT 2", "Anglais,Francais,Russian" , "C++,Java,Css,HTML,Javascript");
-  if ($testLogin){
-    echo '<pre>' . var_export($testLogin, true) . '</pre>';
-  }else{
-    echo "</br>False ";
-  } */
+  echo '<hr>';
 
   echo "</br>getCoachOuCandidat(adressemail) : adresse-coach@gmail.com  : (doit retourner type Coach)";
   $testLogin = $db->getCoachOuCandidat("adresse-coach@gmail.com","motdepassecoach");
@@ -97,7 +104,7 @@ try{
     echo "</br>False ";
   }
 
-  echo '<hr/>';
+  echo '<hr>';
 
   echo "</br>getId(adressemail) : adresse-candidat@gmail.com : retourne id du candidat d'adressemail: adresse-candidat@gmail.com (doit etre = 966)";
   $testLogin = $db->getId("adresse-candidat@gmail.com");
@@ -107,6 +114,8 @@ try{
     echo "</br>False ";
   }
 
+  echo '<hr>';
+
   echo "</br>getCompetence(adressemail) : adresse-candidat@gmail.com doit retourner type Competence de l'utilisateur d'adressemail adresse-candidat@gmail.com";
   $testLogin = $db->getCompetence("adresse-candidat@gmail.com");
   if ($testLogin){
@@ -115,6 +124,8 @@ try{
     echo "</br>False ";
   }
 
+  echo '<hr>';
+
   echo "</br>getRenseignement(adressemail) : adresse-candidat@gmail.com doit retourner type Renseignement de l'utilisateur d'adressemail adresse-candidat@gmail.com";
   $testLogin = $db->getRenseignement("adresse-candidat@gmail.com");
   if ($testLogin){
@@ -122,6 +133,8 @@ try{
   }else{
     echo "</br>False ";
   }
+
+  echo '<hr>';
 
 
   //Un echo de getEmails
