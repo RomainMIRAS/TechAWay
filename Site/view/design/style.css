@@ -338,7 +338,7 @@ button:hover {
 **************************************************************/
 
 #section-parrainer form {
-  width: 510px;
+  width: 500px;
 }
 
 #coord-can-par {
@@ -351,13 +351,10 @@ button:hover {
   text-align: center;
 }
 
-#coord-candidat {
-  border-right: 2px solid var(--color-blue1);
-  padding-right: 10px;
-}
-
-#coord-parrain {
-  margin-left: 10px;
+#coord-candidat,#coord-parrain {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
 }
 
 /**************************************************************
