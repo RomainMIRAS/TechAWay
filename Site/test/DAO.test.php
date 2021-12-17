@@ -16,7 +16,7 @@ try{
   if ($test){
     echo "</br>Utilisateur Cree :</br>";
   }else{
-    echo "</br>Erreur Utilisateur existe deja</br>";
+    echo "</br>Erreur Utilisateur existe deja";
   }
 
   echo '<hr>';
@@ -27,7 +27,7 @@ try{
   if ($test){
     echo "</br>Utilisateur Cree :</br>";
   }else{
-    echo "</br>Erreur Utilisateur existe deja</br>";
+    echo "</br>Erreur Utilisateur existe deja";
   }
 
   echo '<hr>';
