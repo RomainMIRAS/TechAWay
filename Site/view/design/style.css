@@ -396,12 +396,13 @@ button:hover {
 **************************************************************/
 
 .section-profil {
-  justify-content: center;
+  align-items: center;
   flex-direction: column;
 }
 
-#container-actions {
+#container-profil {
   display: flex;
+  flex-direction: column;
 }
 
 #img-profil {
