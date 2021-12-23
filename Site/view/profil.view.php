@@ -35,7 +35,7 @@
             <img id="img-profil" src="../view/design/img/profil.jpg" alt="">
             <form action="" class="form">
                 <label for="">Nom</label>
-                <input type="text" value="<?= $utilisateur->getMail()?>" disabled>
+                <input type="text" value="Nom" disabled>
                 <label for="">Prénom</label>
                 <input type="text" value="Prénom" disabled>
                 <label for="">Adresse mail</label>
