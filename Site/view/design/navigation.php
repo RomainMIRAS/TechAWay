@@ -40,7 +40,7 @@ session_start();
 
             <div id="menu-part2">
               <?php if (is_a($_SESSION['utilisateur'],"Candidat")) : ?>
-                <p><?= $_SESSION['utilisateur']->getEtape()?></p>
+                <p><?= $_SESSION['candidat']->getEtape()?></p>
                 <li><a href="../controler/profil.ctrl.php"><i class="fa fa-user"></i> Mon profil</a></li>
                 <li><a href="#"><i class="fa fa-pencil-square-o"></i> Editer mon profil</a></li>
                 <li><a href="../controler/recrutement-candidat.ctrl.php"><i class="fa fa-level-up" aria-hidden="true"></i> Mon Recrutement</a></li>
