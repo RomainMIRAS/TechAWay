@@ -12,6 +12,7 @@ include_once(__DIR__."/../model/Coach.class.php");
 $view = new View();
 
 if (isset($_SESSION['email'])) {
+    session_start();
     $mail = $_SESSION["mail"];
     $candidat = DAO::get()->getCandidat($mail);
     $view->assign("candidat",$candidat);

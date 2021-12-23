@@ -33,9 +33,10 @@
 
       <section class="section-profil">
             <img id="img-profil" src="../view/design/img/profil.jpg" alt="">
+            <p><?= $candidat->getEtape() ?></p>
             <form action="" class="form">
                 <label for="">Nom</label>
-                <input type="text" value="<?= $candidat->getEtape() ?>" disabled>
+                <input type="text" value="Nom" disabled>
                 <label for="">Prénom</label>
                 <input type="text" value="Prénom" disabled>
                 <label for="">Adresse mail</label>
