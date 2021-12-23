@@ -13,8 +13,7 @@ $view = new View();
 
 if (isset($_SESSION['email'])) {
     session_start();
-    $mail = $_SESSION["mail"];
-    $candidat = DAO::get()->getCandidat($mail);
+    $candidat = DAO::get()->getCandidat($_SESSION["mail"]);
     $view->assign("candidat",$candidat);
 }
 
