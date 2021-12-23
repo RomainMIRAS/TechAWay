@@ -31,13 +31,10 @@
     <!-- MAIN ---------------------------------------------------------------------------------->
     <main>
 
-      <section class="section-accueil">
+      <section class="section-profil">
             <img id="img-profil" src="../view/design/img/profil.jpg" alt="">
-            <div>
-                <input type="text" value="Nom" disabled>
-                <input type="text" value="Prénom" disabled>
-                <input type="text" value="Mail" disabled>
-                <input type="text" value="Téléphone" disabled>
+            <div id="container-profil">
+                <input type="text" value="<?= $utilisateur->getNom() ?>" disabled>
             </div>
       </section>
 

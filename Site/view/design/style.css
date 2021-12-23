@@ -395,6 +395,15 @@ button:hover {
 * PROFIL
 **************************************************************/
 
+.section-profil {
+  justify-content: center;
+  flex-direction: column;
+}
+
+#container-actions {
+  display: flex;
+}
+
 #img-profil {
   border-radius: 100%;
   width: 100px;
