@@ -538,21 +538,20 @@ button:hover {
 }
 
 table {
-  font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 100%;
   border-radius: 15px;
 }
 
 td, th {
-  border: 1px solid var(--color-grey);
+  border: 1px solid #dddddd;
   text-align: left;
   padding: 8px;
   cursor: initial;
 }
 
 tr:nth-child(even) {
-  background-color: var(--color-grey);
+  background-color: #dddddd;;
 }
 
 tr:nth-child(1):hover {
