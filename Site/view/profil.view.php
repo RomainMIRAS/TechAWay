@@ -36,7 +36,7 @@
             <p>Vous êtes à l'étape n°<?= $_SESSION['utilisateur']->getEtape() ?></p>
             <form action="" class="form">
                 <label for="">Nom</label>
-                <input type="text" value="<?= $_SESSION['utilisateur']->getNom() ?>" disabled>
+                <input type="text" value="<?= $candidat->getNom() ?>" disabled>
                 <label for="">Prénom</label>
                 <input type="text" value="<?= $_SESSION['utilisateur']->getPrenom() ?>" disabled>
                 <label for="">Adresse mail</label>
