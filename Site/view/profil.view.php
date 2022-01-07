@@ -65,7 +65,31 @@
           <button type="submit">Enregistrer</button>
         </form>
 
-        
+        <!-- Formulaire de compétences -->
+        <form action="" class="form" id="form-comp">
+          <label for="">Niveau d'études</label>
+          <input type="text" value="">
+          <label for="">Langue(s) parlée(s)</label>
+          <input type="text" value="" disabled>
+          <label for="">Langage(s) informatique(s)</label>
+          <input type="text" value="" disabled>
+          <button type="submit">Enregistrer</button>
+        </form>
+
+        <!-- Formulaire de preferences -->
+        <form action="" class="form" id="form-pref">
+          <label for="">Travailler à l'étranger ?</label>
+          <input type="text" value="">
+          <label for="">Secteur(s) d'activité(s)</label>
+          <input type="text" value="">
+          <label for="">Contrat recherché</label>
+          <input type="text" value="">
+          <label for="">Poste recherché</label>
+          <input type="text" value="">
+          <label for="">Type d'entreprise recherché</label>
+          <input type="text" value="">
+          <button type="submit">Enregistrer</button>
+        </form>
 
         <!-- Formulaire de documents -->
         <form action="" class="form" id="form-docs">
@@ -82,12 +106,9 @@
 
     </main>
 
-    <?php echo "test"; ?>
-
     <!-- FOOTER -------------------------------------------------------------------------------->
     <?php include_once('../view/design/footer.php'); ?>
 
-    <?php echo "test"; ?>
 
 
   </body>
@@ -97,39 +118,39 @@
           $(window).ready(function() {
             /* on cache les formulaires */
             $("#form-rens").hide();
-            /*$("#form-comp").hide();
-            $("#form-pref").hide();*/
+            $("#form-comp").hide();
+            $("#form-pref").hide();
             $("#form-docs").hide();
 
             /* si bouton 'mes renseignements' est cliqué  */
             $("#btn-rens").click(function() {
-              /*$("#form-pref").hide();
-              $("#form-comp").hide();*/
+              $("#form-pref").hide();
+              $("#form-comp").hide();
               $("#form-docs").hide();
               $("#form-rens").toggle();
             });
 
             /* si bouton 'mes compétences' est cliqué  */
-            /*$("#btn-comp").click(function() {
+            $("#btn-comp").click(function() {
               $("#form-rens").hide();
               $("#form-pref").hide();
               $("#form-docs").hide();
               $("#form-comp").toggle();
             });
 
-            /* si bouton 'mes préférences' est cliqué  
+            /* si bouton 'mes préférences' est cliqué */
             $("#btn-pref").click(function() {
               $("#form-rens").hide();
               $("#form-comp").hide();
               $("#form-docs").hide();
               $("#form-pref").toggle();
-            });*/
+            });
 
             /* si bouton 'mes documents' est cliqué  */
             $("#btn-docs").click(function() {
               $("#form-rens").hide();
-              /*$("#form-comp").hide();
-              $("#form-pref").hide();*/
+              $("#form-comp").hide();
+              $("#form-pref").hide();
               $("#form-docs").toggle();
             });
 
