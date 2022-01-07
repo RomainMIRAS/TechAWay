@@ -207,6 +207,8 @@ svg {
 
 #menu-part1, #menu-part2 {
   width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 #menu-part2 li {
@@ -397,6 +399,33 @@ button:hover {
   justify-content: center;
 }
 
+/**************************************************************
+* PROFIL
+**************************************************************/
+
+.section-profil {
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.section-profil .form {
+  overflow-y: auto;
+  height: 500px;
+  padding-inline: 10px;
+}
+
+#container-profil {
+  display: flex;
+  flex-direction: column;
+}
+
+#img-profil {
+  border-radius: 100%;
+  width: 100px;
+  height: 100px;
+}
+
 
 /**************************************************************
 * Recruter
@@ -421,12 +450,12 @@ button:hover {
   background-color:#FCD873;
 }
 
-
 #section2{
   justify-content: center;
   background-color: #7094FF;
 }
 
+<<<<<<< HEAD
 /**************************************************************
 * TROUVERUNJOB
 **************************************************************/
@@ -468,6 +497,8 @@ button:hover {
   justify-content: center;
   text-align: center;
 }
+=======
+>>>>>>> 796dbb9409ff87ea21ef9782d9b50bcdec2e828c
 /**************************************************************
 * FOOTER
 **************************************************************/

@@ -1,7 +1,7 @@
 
 <?php
 
-// Description d'une compétence  
+// Description d'une compétence
 class Competence {
   private int $id;                      //Identifiant compétence
   private string $nvEtude;              //Niveau étude
@@ -9,13 +9,19 @@ class Competence {
   private array $langageAcquis;         //Langage informatique parlé
 
   // Contructeur
-  function __construct(string $nvEtude, array $langeParle, array $langageAcquis) {
+  function __construct(string $nvEtude, string $langeParle, string $langageAcquis,int $id=null) {
+    $this->id = $id;
     $this->nvEtude = $nvEtude;
-    $this->langeParle = $langeParle;
-    $this->langageAcquis = $langageAcquis;
+    $this->langeParle = conversionStringArray($langeParle);
+    $this->langageAcquis = conversionStringArray($langageAcquis);
   }
 
-  
+  private function conversionStringArray(string $chaine){
+    $arrayChaine = explode(",",strtolower($chaine));
+    return $arrayChaine;
+  }
+
+
   function getId() : int {
     return $this->id;
   }
@@ -31,9 +37,7 @@ class Competence {
   function getLangageAcquis() : array {
     return $this->langageAcquis;
   }
-
-
-
+  
   function setNvEtude(string $nvEtude) : void {
     $this->nvEtude = $nvEtude;
   }

@@ -18,7 +18,7 @@
     <!-- GOOGLE FONT -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
     <!-- FONT AWESOME -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -39,14 +39,14 @@
               <h1>Formulaire</h1>
               <!-- Saisie des informations du candidat -->
               <label for="nom">Nom</label>
-              <input id="nom" type="text" name="nom" placeholder="Entrez votre nom" >
+              <input id="nom" type="text" name="nom" placeholder="Entrez votre nom" value="<?php $candidat->getNom(); ?>" >
               <label for="prenom">Prénom</label>
-              <input id="prenom" type="text" name="prenom" placeholder="Entrez votre prénom" >
+              <input id="prenom" type="text" name="prenom" placeholder="Entrez votre prénom" value="<?php $candidat->getPrenom(); ?>">
               <label for="age">Date de naissance</label>
               <input id="age" type="date" name="age" >
               <label for="tel">Téléphone</label>
               <!-- type tel -> seul les chiffres sont autorisé -->
-              <input id="tel" type="tel" name="tel" placeholder="+33 6 01 02 03 04" >
+              <input id="tel" type="tel" name="tel" placeholder="+33 6 01 02 03 04" <?php $candidat->getTelephone(); ?> >
 
 
               <!-- Section du pays parmis la liste des pays europeens -->
@@ -62,7 +62,7 @@
               </select>
 
               <label for="ville">Ville</label>
-              <input id="ville" type="text" name="ville" >
+              <input id="ville" type="text" name="ville" value="<?php $candidat->getVille(); ?>">
 
               <output><?=$erreur?></output>
               <button type="submit" name="action" value="suivant">Confirmation</button>
@@ -81,8 +81,8 @@
               <input id="nvEtude" type="text" name="nvEtude" placeholder="Format : Bac+3" >
               <label for="langueParle">Langues parlé</label>
               <input id="langueParle" type="text" name="langueParle" placeholder="ex : francais, anglais" >
-              <label for="languageAquis">Niveau d'etudes</label>
-              <input id="languageAquis" type="text" name="languageAquis" placeholder="Select" >
+              <label for="languageAquis">Languages aquis</label>
+              <input id="languageAquis" type="text" name="languageAquis" placeholder="ex : C++, Java, PHP" >
               <form action ="formulaire.ctrl.php" method="post">
               <output><?=$erreur?></output>
               <button type="submit" name="action" value="precedent">Precedent</button>
@@ -99,11 +99,11 @@
               <!-- Saisie des preferences du candidat -->
 
               <label for="travEtranger">Travail à l'etranger</label>
-              <input type="radio" name="travEtranger" value="oui">
+              <input type="radio" name="travEtranger" value=true>
               <label for="oui">Oui</label>
-              <input type="radio" name="travEtranger" value="non">
+              <input type="radio" name="travEtranger" value=false>
               <label for="oui">Non</label>
-              
+
 
 
               <label for="typeContrat">Type de contrat</label>

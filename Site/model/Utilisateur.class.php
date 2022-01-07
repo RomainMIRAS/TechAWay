@@ -1,23 +1,24 @@
 <?php
 
 // Description d'un utilisateur
-abstract class Utilisateur {        
+abstract class Utilisateur {
   private string $nom;          //Nom
   private string $prenom;       //Prenom
   private string $mail;         //Mail Clee primaire
   private string $password;     //Mot de passe
   private string $telephone;    //Telephone
-  private int $age;             //Age*
+  private int $age;             //Age
   private string $dateCreation; //Date de création
 
   // Contructeur
-  function __construct(string $mail, string $password,string $nom ='', string $prenom='', int $age = 0, string $telephone='') {
+  function __construct(string $mail, string $password,string $nom ='', string $prenom='', int $age = 0, string $telephone='', string $dateCreation = '') {
     $this->nom = $nom;
     $this->prenom = $prenom;
     $this->mail = $mail;
     $this->password = $password;
     $this->telephone = $telephone;
     $this->age = $age;
+    $this->dateCreation = $dateCreation;
   }
   function getNom() : string {
     return $this->nom;

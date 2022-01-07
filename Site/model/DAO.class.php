@@ -35,16 +35,16 @@ public static function get() : DAO {
 
 function getEmails() : array {
 	try {
-		$req = pg_query($this->db,"SELECT adresseMail FROM UTILISATEUR");
-		// Affiche en clair l'erreur PDO si la requête ne peut pas s'exécuter
+	$req = pg_query($this->db,"SELECT adresseMail FROM UTILISATEUR");
+	// Affiche en clair l'erreur PDO si la requête ne peut pas s'exécuter
 
-		$table = pg_fetch_all($req);
+	$table = pg_fetch_all($req);
 
-		$listeMail = array();
-		foreach ($table as $mail) {
-			array_push($listeMail,$mail['adressemail']);
-		};
-		// Tests d'erreurs
+	$listeMail = array();
+	foreach ($table as $mail) {
+		array_push($listeMail,$mail['adressemail']);
+	};
+	// Tests d'erreurs
 	if (count($table) == 0) {
 		throw new Exception("Aucun Email trouvee\n");
 	}
@@ -62,11 +62,14 @@ function createUtilisateur(string $mail, string $pass) { //returns boolean
 
 		$sel = "(SELECT idUtilisateur from utilisateur where adressemail='". $mail ."')";
 
+		$comp = "(SELECT idcompetence from competence where link='". $mail ."')";
+		$rens = "(SELECT idrenseignement from RENSEIGNEMENT where link='". $mail ."')";
+
 		$r = "
 		INSERT INTO utilisateur VALUES(DEFAULT,'". $mail ."','". $hashedPw ."','','',0,'',now());
-		INSERT INTO competence values($sel,NULL,NULL,NULL);
-		INSERT INTO renseignement values($sel,NULL,NULL,NULL);
-		INSERT INTO candidat values($sel,'','',0,'','',$sel,$sel);
+		INSERT INTO competence values(DEFAULT,NULL,NULL,NULL,".$mail.");
+		INSERT INTO renseignement values(DEFAULT,NULL,NULL,NULL,".$mail.");
+		INSERT INTO candidat values($sel,'','',0,'','',$comp,$rens);
 		";
 
 		$res = @pg_query($this->db, $r);
@@ -84,19 +87,36 @@ function createUtilisateur(string $mail, string $pass) { //returns boolean
 
 function verifierLogin(string $mail, string $pass) { //returns boolean
 	try {
-		$r = "
-		SELECT password FROM utilisateur where adressemail='$mail';";
+	$r = "
+	SELECT password FROM utilisateur where adressemail='$mail';";
 
-		$q = pg_query($this->db, $r);
+	$q = pg_query($this->db, $r);
 
-		$res = pg_fetch_row($q);
+	$res = pg_fetch_row($q);
 
-		$check = @password_verify($pass,$res[0]);
-		if($check){
-			return true;
-		}else{
-			return false;
-		}
+	$check = @password_verify($pass,$res[0]);
+	if($check){
+		return true;
+	}else{
+		return false;
+	}
+
+
+/* 
+	$r = "SELECT EXISTS(SELECT * FROM utilisateur where adressemail='$mail' AND password='$pass')";
+
+	$q = pg_query($this->db, $r);
+
+	$res = pg_fetch_all($q);
+
+	if($res[0]['exists'] == 't'){
+		return true;
+	}else{
+		return false;
+	} */
+
+
+	// Tests d'erreurs
 	} catch (Exception $e) {
 		die("PSQL ERROR verifierLogin : ".$e->getMessage());
 	}
@@ -127,7 +147,8 @@ function getCoach(string $mail) {
 				$coachbf[0]['prenom'],
 				$coachbf[0]['telephone'],
 				intVal($age),
-				$coachUti[0]['lienphoto']
+				$coachUti[0]['lienphoto'],
+				$coachbf[0]['datecreation']
 			);
 		}
 
@@ -155,6 +176,7 @@ function getCandidat(string $mail) {
 			$candidatUti = pg_fetch_all($req);
 
 			$age = $candidatbf[0]['age'];
+			$etape = $candidatUti[0]['etape'];
 
 			$coach = new Candidat(
 				$candidatbf[0]['adressemail'],
@@ -164,7 +186,13 @@ function getCandidat(string $mail) {
 				intVal($age),
 				$candidatbf[0]['telephone'],
 				$candidatUti[0]['liencv'],
-				$candidatUti[0]['lienlettremotivation']
+				$candidatUti[0]['lienlettremotivation'],
+				intVal($etape),
+				$candidatUti[0]['pays'],
+				$candidatUti[0]['ville'],
+				$candidatbf[0]['datecreation']
+				//competence
+				//rensegniement
 			);
 		}
 		
@@ -195,89 +223,48 @@ function getCoachOuCandidat(string $mail, string $pass) {
 	}
 }
 
-function getId($adressemail): int{
+function getCompetence(int $id) {
 	try {
-		$req = pg_query($this->db,"SELECT idutilisateur FROM utilisateur where adressemail='{$adressemail}'");
-		// Affiche en clair l'erreur PDO si la requête ne peut pas s'exécuter
+		$req = pg_query($this->db,"SELECT * from competence where idutilisateur in (Select idcandidat from candidat) AND adressemail='$mail'");
+	
+		$candidatbf = pg_fetch_all($req);
 
-		$table = pg_fetch_all($req);
-		$id = intval($table[0]['idutilisateur']);
+
+		if (empty($candidatbf)) {
+			return false;
+		}else{
+
+			$req = pg_query($this->db,"SELECT * FROM candidat WHERE idcompetence=$id");
+
+			$candidatUti = pg_fetch_all($req);
+
+			$age = $candidatbf[0]['age'];
+			$etape = $candidatUti[0]['etape'];
+
+			$coach = new Candidat(
+				$candidatbf[0]['adressemail'],
+				$candidatbf[0]['password'],
+				$candidatbf[0]['nom'],
+				$candidatbf[0]['prenom'],
+				intVal($age),
+				$candidatbf[0]['telephone'],
+				$candidatUti[0]['liencv'],
+				$candidatUti[0]['lienlettremotivation'],
+				intVal($etape),
+				$candidatUti[0]['pays'],
+				$candidatUti[0]['ville']
+				//competence
+				//rensegniement
+			);
+		}
+		
 		// Tests d'erreurs
-	if (count($table) == 0) {
-		throw new Exception("Aucun Email trouvee\n");
-	}
-	} catch (Exception $e) {
-		die("PSQL ERROR :".$e->getMessage());
-	}
-	return $id;
+		} catch (Exception $e) {
+			die("PSQL ERROR :".$e->getMessage());
+		}
+		return $coach;
 }
 
-
-
-/* 
-function getOffres() : array {
-	try {
-		$req = pg_query($this->db,"SELECT adresseMail FROM UTILISATEUR");
-		// Affiche en clair l'erreur PDO si la requête ne peut pas s'exécuter
-
-		$table = pg_fetch_all($req);
-
-		$listeMail = array();
-		foreach ($table as $mail) {
-			array_push($listeMail,$mail['adressemail']);
-		};
-		// Tests d'erreurs
-	if (count($table) == 0) {
-		throw new Exception("Aucun Email trouvee\n");
-	}
-	} catch (Exception $e) {
-		die("PSQL ERROR :".$e->getMessage());
-	}
-	return $listeMail;
-}
-
-function getOffre() : array {
-	try {
-	$req = pg_query($this->db,"SELECT adresseMail FROM UTILISATEUR");
-	// Affiche en clair l'erreur PDO si la requête ne peut pas s'exécuter
-
-	$table = pg_fetch_all($req);
-
-	$listeMail = array();
-	foreach ($table as $mail) {
-		array_push($listeMail,$mail['adressemail']);
-	};
-	// Tests d'erreurs
-	if (count($table) == 0) {
-		throw new Exception("Aucun Email trouvee\n");
-	}
-	} catch (Exception $e) {
-		die("PSQL ERROR :".$e->getMessage());
-	}
-	return $listeMail;
-}
-
-function getOffres() : array {
-	try {
-	$req = pg_query($this->db,"SELECT adresseMail FROM UTILISATEUR");
-	// Affiche en clair l'erreur PDO si la requête ne peut pas s'exécuter
-
-	$table = pg_fetch_all($req);
-
-	$listeMail = array();
-	foreach ($table as $mail) {
-		array_push($listeMail,$mail['adressemail']);
-	};
-	// Tests d'erreurs
-	if (count($table) == 0) {
-		throw new Exception("Aucun Email trouvee\n");
-	}
-	} catch (Exception $e) {
-		die("PSQL ERROR :".$e->getMessage());
-	}
-	return $listeMail;
-}
- */
 /* 
 //Accès à un client
 function getEntreprise(int $idEntreprise) : Client {

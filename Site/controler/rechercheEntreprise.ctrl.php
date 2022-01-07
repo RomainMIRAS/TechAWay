@@ -1,15 +1,4 @@
- <?php
-//
-///////////////////////////////////////////////////////////////////////////////
-// Protection Contre Erreurs
-///////////////////////////////////////////////////////////////////////////////
-
-// Si déja connecté => Ne pas afficher cette page :D !
-session_start();
-if (isset($_SESSION['utilisateur'])) header('Location: main.ctrl.php');
-session_write_close();
-
-
+<?php
 ///////////////////////////////////////////////////////////////////////////////
 // Declaration
 ///////////////////////////////////////////////////////////////////////////////
@@ -19,6 +8,9 @@ include_once(__DIR__."/../framework/view.class.php");
 
 // Inclusion du modèle
 include_once(__DIR__."/../model/DAO.class.php"); // Singleton
+include_once(__DIR__."/../model/Competece.class.php");
+include_once(__DIR__."/../model/Renseignement.class.php");
+include_once(__DIR__."/../model/Offre.class.php");
 include_once(__DIR__."/../model/Candidat.class.php");
 
 // Déclaration
@@ -27,9 +19,6 @@ $password = (isset($_POST['password'])) ? $_POST['password']:"";
 $checkpassword = (isset($_POST['checkpassword'])) ? $_POST['checkpassword']:"";
 $confirmation = (isset($_POST['confirmation'])) ? $_POST['confirmation']:"non";
 $erreur = "";
-
-//Set le type d'action (SignUp ou Login). Par défaut login
-$action = (isset($_POST['action'])) ? $_POST['action']:"login";
 
 //Permet d'executer toute les actions de connection
 function seConnecter($email,$password){
@@ -79,7 +68,6 @@ if ($confirmation == "oui" && $action == "login"){
 
 if ($erreur == "" && $confirmation == "oui"){
   if ($action == "signup") {// Inscription Possible de Candidat
-    $key = "";
     for($i=1;$i<15;$i++) {
       $key .= mt_rand(0,9);
     }
@@ -105,7 +93,7 @@ if ($erreur == "" && $confirmation == "oui"){
                        // Ferme la session
                        session_write_close();
                        $erreur = "Veuillez confirmez votre adresse email";
-    //DAO::get()->createUtilisateur($email, $password);
+    DAO::get()->createUtilisateur($email, $password);
     //seConnecter($email,$password);
   } else if ($action == "login"){ // Connexion réussi
     //$erreur = "Vous êtes connecté avec email $email et mdp $password";
@@ -127,3 +115,5 @@ $view->display("authentification.view.php");
 // Fin du code à ajouter ]]
 
 ?>
+
+
