@@ -2,7 +2,7 @@
 
 
 include_once(__DIR__."/../framework/view.class.php");
-include_once(__DIR__."/../model/Competence.class.php");
+include_once(__DIR__."/../model/Utilisateur.class.php");
 include_once(__DIR__."/../model/Renseignement.class.php");
 
 
@@ -180,8 +180,8 @@ if ($erreur == "" && $action == "suivant"){
     $_SESSION["utilisateur"]->setAge($age);
     $_SESSION["utilisateur"]->setTelephone($tel);
   } else if ($etape == "competences") {
-    $competence = new Competence($nvEtude,$langueParle,$languageAquis);
-    $_SESSION["utilisateur"]->setCompetenceAcquis($competence);
+    // $competence = new Competence(0,$nvEtude,$langueParle,$languageAquis);
+    // $_SESSION["utilisateur"]->setCompetenceAcquis($competence);
   } else if ($etape == "preferences") {
 
   }
