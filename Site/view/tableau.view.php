@@ -1,3 +1,7 @@
+<?php
+    include_once(__DIR__."/../model/Utilisateur.class.php");
+    include_once(__DIR__."/../model/Candidat.class.php");
+?>
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
   <head>
@@ -34,17 +38,21 @@
       <section> <!-- Tous les candidats inscrits -->
 
         <h2>Candidats inscrits</h2>
-
+        <br>
         <table>
             <tr>
                 <th>Nom</th>
                 <th>Prénom</th>
                 <th>Email</th>
             </tr>
-            <?php foreach($emails as $e): ?>
-                <tr>
-                    <td>OK</td>
-                </tr>
+            <?php foreach($candidats as $c): ?> <!-- pour chaque candidat -->
+                <?php if ($c!=false): ?>
+                    <tr> <!-- affichage du nom, prenom, mail...etc du candidat -->
+                        <td><?= $c->getNom() ?></td>
+                        <td><?= $c->getPrenom() ?></td>
+                        <td><?= $c->getMail() ?></td>
+                    </tr>
+                <?php endif; ?>
             <?php endforeach; ?>
         </table>
 

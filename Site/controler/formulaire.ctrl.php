@@ -3,6 +3,7 @@
 
 include_once(__DIR__."/../framework/view.class.php");
 include_once(__DIR__."/../model/Utilisateur.class.php");
+include_once(__DIR__."/../model/Candidat.class.php");
 include_once(__DIR__."/../model/Renseignement.class.php");
 
 
@@ -14,13 +15,6 @@ $nom = (isset($_POST['nom'])) ? $_POST['nom']:"";
 $prenom = (isset($_POST['prenom'])) ? $_POST['prenom']:"";
 
 $age = (isset($_POST['age'])) ? $_POST['age']:"";
-
-/*
-$ageDate = strtotime($age);
-$date1 = date("m-d-Y");
-$today = strtotime($date1);
-$dateNull = 0;  //"00-00-0000";
-*/
 
 // Attribut de la première page ( BASE )
 $tel = (isset($_POST['tel'])) ? $_POST['tel']:"";
@@ -172,6 +166,7 @@ if ($erreur == "" && $action == "suivant"){
 
   // Push des donnés dans la session puis quand fini dans la base
   if ($etape == "base"){
+    session_start();
     $_SESSION["utilisateur"]->setNom($nom);
     $_SESSION["utilisateur"]->setPrenom($prenom);
     // Cacul d'age
@@ -181,22 +176,28 @@ if ($erreur == "" && $action == "suivant"){
     $_SESSION["utilisateur"]->setAge($age);
     $_SESSION["utilisateur"]->setVille($ville);
     $_SESSION["utilisateur"]->setPays($pays);
+    session_write_close();
   } else if ($etape == "competences") {
+    session_start();
     $competence = $_SESSION["utilisateur"]->getCompetenceAcquis();
 
     $competence->setNvEtude($nvEtude);
     $competence->setLangeParle($langueParle);
     $competence->setLangageAcquis($languageAquis);
     $_SESSION["utilisateur"]->setCompetenceAcquis($competence);
-
+    session_write_close();
   } else if ($etape == "preferences") {
-
+    session_start();
     $renseignement = $_SESSION["utilisateur"]->getRenseignement();
     $renseignement->setTravEtranger($travEtranger);
     $renseignement->setTypeContrat($typeContrat);
     $renseignement->setSecteur($secteur);
     $renseignement->setPoste($poste);
     $renseignement->setTypeEntreprise($typeEntreprise);
+
+
+    // FAIRE LE PUSH DE DONNES EN BASE ICI
+    session_write_close();
   }
 }
 

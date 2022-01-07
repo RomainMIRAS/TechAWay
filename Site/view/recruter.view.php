@@ -17,11 +17,11 @@
     <!-- GOOGLE FONT -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
     <!-- FONT AWESOME -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-      
+
   </head>
   <body>
 
@@ -46,12 +46,12 @@
         <div>
           <h2>ENTREPRISES PARTENAIRES</h2>
           <h3>Trouvez les candidats qu'il vous faut</h3>
-          <p>Tech a Way vous donne accès à des candidats qui correspondent à 100% à vos attentes. 
+          <p>Tech a Way vous donne accès à des candidats qui correspondent à 100% à vos attentes.
             Expliquez-nous toutes les spécificités du poste et on vous trouvera le ou la candidate dont vous avez besoin !</p>
         </div>
 
         </article>
-        
+
         <article id = "article2">
         <div>
           <h2>Candidater avec NOUS</h2>
@@ -60,15 +60,15 @@
             <li>Un gain de temps considérable</li>
             <li>Un accès à de nouveaux profils Tech</li>
           </ul>
-          
-          
+
+
         </div>
 
         <div id="svg1">
           <?php include_once("../view/design/svg/p1 var 1.svg") ?>
         </div>
         </article>
-        
+
 </section>
 
       <section id = "section2" >
@@ -81,10 +81,10 @@
             <label for="email">Adresse E-mail</label>
             <input id="email" type="text" name="email" placeholder="Entrez votre adresse e-mail" >
             <label for="nomEntreprise">Nom de l'entreprise</label>
-            <input id="postactu" type="text" name="postactu" placeholder="Votre Poste Actuel" >
+            <input id="nomEntreprise" type="text" name="nomEntreprise" placeholder="Nom de l'entreprise" >
             <form action ="recruter.ctrl.php" method="post">
             <output><?=$erreur?></output>
-            
+
             <button type="submit" name="action" value="confirmation">Confirmation</button>
           </form>
 
