@@ -71,7 +71,7 @@ Tech A Way permet donc aux entreprises d’externaliser leur recrutement, et off
       </section>
 
       <section id = "section2" >
-      <form class="form" action="authentification.ctrl.php" method="post" style="padding-bottom: 193px;">
+      <form class="form" action="nousrejoindre.ctrl.php" method="post" style="padding-bottom: 193px;">
             <h1>VOUS SOUHAITEZ REJOINDRE TECH A WAY? CONTACTEZ NOUS!</h1>
             <label for="nom">Nom</label>
             <input id="nom" type="text" name="nom" placeholder="Nom" >
@@ -80,6 +80,7 @@ Tech A Way permet donc aux entreprises d’externaliser leur recrutement, et off
             <label for="email">Adresse E-mail</label>
             <input id="email" type="text" name="email" placeholder="Entrez votre adresse e-mail" >
             <button type="submit" name="action" value="confirmation">Confirmation</button>
+            <output><?=$erreur?></output>
           </form>
 
       </section>
