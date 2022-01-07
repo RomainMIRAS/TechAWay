@@ -136,8 +136,6 @@ function getCoach(string $mail) {
 
 			$coachUti = pg_fetch_all($req);
 
-			var_dump($candidatUti[0]['datecreation']);
-
 			$age = $coachbf[0]['age'];
 			$coach = new Coach(
 				$coachbf[0]['adressemail'],
@@ -147,7 +145,6 @@ function getCoach(string $mail) {
 				$coachbf[0]['telephone'],
 				intVal($age),
 				$coachUti[0]['lienphoto'],
-				$candidatUti[0]['datecreation']
 			);
 		}
 
@@ -189,6 +186,7 @@ function getCandidat(string $mail) {
 				intVal($etape),
 				$candidatUti[0]['pays'],
 				$candidatUti[0]['ville'],
+				$candidatbf[0]['datecreation']
 				//competence
 				//rensegniement
 			);
