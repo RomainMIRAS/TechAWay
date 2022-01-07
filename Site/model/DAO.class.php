@@ -172,6 +172,7 @@ function getCandidat(string $mail) {
 			$candidatUti = pg_fetch_all($req);
 
 			$age = $candidatbf[0]['age'];
+			$age = $candidatbf[0]['age'];
 
 			$coach = new Candidat(
 				$candidatbf[0]['adressemail'],
@@ -182,6 +183,9 @@ function getCandidat(string $mail) {
 				$candidatbf[0]['telephone'],
 				$candidatUti[0]['liencv'],
 				$candidatUti[0]['lienlettremotivation']
+				//etape
+				//pays
+				//ville
 			);
 		}
 		
