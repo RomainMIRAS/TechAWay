@@ -42,6 +42,7 @@
           <button id="btn-rens">Mes renseignements</button>
           <button id="btn-comp">Mes compétences</button>
           <button id="btn-pref">Mes préférences</button>
+          <button id="btn-docs">Mes documents</button>
         </div>
       </section>
       <section class="section-profil">
@@ -53,6 +54,8 @@
               <input type="text" value="<?= $_SESSION['utilisateur']->getPrenom() ?>" disabled>
               <label for="">Adresse mail</label>
               <input type="text" value="<?= $_SESSION['utilisateur']->getMail() ?>" disabled>
+              <label for="">Téléphone</label>
+              <input type="text" value="<?= $_SESSION['utilisateur']->getTelephone() ?>" disabled>
               <label for="">Pays</label>
               <input type="text" value="<?= $_SESSION['utilisateur']->getPays() ?>" disabled>
               <label for="">Ville</label>
@@ -78,6 +81,16 @@
               <label for="">Adresse mail</label>
               <input type="text" value="<?= $_SESSION['utilisateur']->getMail() ?>" disabled>
           </form>
+
+          <!-- Formulaire de documents -->
+          <form action="" class="form" id="form-docs">
+              <label for="">Nom</label>
+              <input type="text" value="<?= $_SESSION['utilisateur']->getNom() ?>" disabled>
+              <label for="">Prénom</label>
+              <input type="text" value="<?= $_SESSION['utilisateur']->getPrenom() ?>" disabled>
+              <label for="">Adresse mail</label>
+              <input type="text" value="<?= $_SESSION['utilisateur']->getMail() ?>" disabled>
+          </form>
       </section>
 
       <script src="../framework/jquery-3.6.0.min.js"></script>
@@ -87,11 +100,13 @@
           $("#form-rens").hide();
           $("#form-comp").hide();
           $("#form-pref").hide();
+          $("#form-docs").hide();
 
           /* si bouton 'mes renseignements' est cliqué  */
           $("#btn-rens").click(function() {
             $("#form-pref").hide();
             $("#form-comp").hide();
+            $("#form-docs").hide();
             $("#form-rens").toggle();
           });
 
@@ -99,6 +114,7 @@
           $("#btn-comp").click(function() {
             $("#form-rens").hide();
             $("#form-pref").hide();
+            $("#form-docs").hide();
             $("#form-comp").toggle();
           });
 
@@ -106,7 +122,16 @@
           $("#btn-pref").click(function() {
             $("#form-rens").hide();
             $("#form-comp").hide();
+            $("#form-docs").hide();
             $("#form-pref").toggle();
+          });
+
+          /* si bouton 'mes documents' est cliqué  */
+          $("#btn-docs").click(function() {
+            $("#form-rens").hide();
+            $("#form-comp").hide();
+            $("#form-pref").hide();
+            $("#form-docs").toggle();
           });
 
         });

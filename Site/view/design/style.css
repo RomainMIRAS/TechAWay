@@ -398,7 +398,7 @@ button:hover {
 .section-profil {
   align-items: center;
   flex-direction: column;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .section-profil .form {
