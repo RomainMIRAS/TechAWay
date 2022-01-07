@@ -48,9 +48,9 @@
             <?php foreach($candidats as $c): ?>
                 <?php if ($c!=false): ?>
                     <tr>
-                        <td><?= $c->getNom(); ?></td>
-                        <td></td>
-                        <td></td>
+                        <td><?= $c->getNom() ?></td>
+                        <td><?= $c->getPrenom() ?></td>
+                        <td><?= $c->getEmail() ?></td>
                     </tr>
                 <?php endif; ?>
             <?php endforeach; ?>
