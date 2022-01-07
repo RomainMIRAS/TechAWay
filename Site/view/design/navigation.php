@@ -45,7 +45,7 @@ session_start();
                 <?php endif; ?>
                 <li><a href="../controler/recrutement-candidat.ctrl.php"><i class="fa fa-level-up" aria-hidden="true"></i>Mon Recrutement</a></li>
                 <?php if ($_SESSION['utilisateur']->getEtape()>=1) : ?>
-                  <li><a href="#"><i class="fa fa-enveloppe"></i>Ma messagerie</a></li>
+                  <li><a href="#"><i class="fa fa-envelope"></i>Ma messagerie</a></li>
                 <?php endif; ?>
               <?php endif; ?>
               <form action="../controler/main.ctrl.php" method="post">
