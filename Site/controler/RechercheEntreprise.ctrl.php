@@ -29,7 +29,7 @@ $view = new View();
 
 //$view->assign('competence',$competence);
 //$view->assign('etude',$nvEtude);
-$view->assign('competence',$competence);
+$view->assign('competence',$candidat);
 $view->display("RechercheEntreprise.view.php");
 
 
