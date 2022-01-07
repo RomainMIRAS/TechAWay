@@ -244,14 +244,14 @@ function getCompetence($link) {
 
 			$idc = $competenceRes[0]['idcompetence'];
 
-
+			var_dump(intval($idc));
 			$competence = new Competence(
 				intval($idc),
 				$competenceRes[0]['nvetude'],
 				$competenceRes[0]['langueparle'],
 				$competenceRes[0]['langagesacquis']
 			);
-			var_dump(intval($idc));
+			
 		}
 		
 		// Tests d'erreurs
