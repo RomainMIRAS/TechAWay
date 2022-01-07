@@ -239,7 +239,7 @@ function getCompetence($link) {
 			$idc = $competenceRes[0]['idcompetence'];
 
 			$competence = new Competence(
-				$competenceRes[0]['idcompetence'],
+				intval($idc),
 				$competenceRes[0]['nvetude'],
 				$competenceRes[0]['langueparle'],
 				$competenceRes[0]['langagesacquis']
@@ -262,8 +262,11 @@ function getRenseignement($link) {
 		if (empty($renseignementRes)) {
 			return false;
 		}else{
+
+			$idr = intval($renseignementRes[0]['idrenseignement']);
+
 			$renseignement = new Renseignement(
-				$renseignementRes[0]['idrenseignement'],
+				$idr,
 				$renseignementRes[0]['nvetude'],
 				$renseignementRes[0]['langueparle'],
 				$renseignementRes[0]['langagesacquis']
