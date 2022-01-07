@@ -43,7 +43,7 @@
           <button id="btn-pref">Mes préférences</button>
         </div>
       </section>
-      <section class="section-profil-form">
+      <section class="section-profil">
         <!-- Formulaire de renseignements -->
           <form action="" class="form" id="form-rens">
               <label for="">Nom</label>
@@ -68,10 +68,19 @@
       <script src="../framework/jquery-3.6.0.min.js"></script>
       <script>
         $(window).ready(function() {
-            $("#form-rens").hide();
-            $("#btn-rens").click(function() {
-              $("#form-rens").toggle();
-            });
+          /* on cache les formulaires */
+          $("#form-rens").hide();
+          $("#form-pref").hide();
+
+          /* si bouton 'mes renseignements' est cliqué  */
+          $("#btn-rens").click(function() {
+            $("#form-rens").toggle();
+          });
+
+          $("#btn-pref").click(function() {
+            $("#form-pref").toggle();
+          });
+
         });
       </script>
 
