@@ -380,8 +380,16 @@ button:hover {
 
 #btn-envoyer{
   width: 100px;
+  height: 33px;
+}
+#btn-envoyer,#btn-suivant,#btn-precedent{
+  margin: 0;
+  padding: 5px 15px;
 }
 
+#btn-precedent{
+  height: 21px;
+}
 /**************************************************************
 * FORMULAIRE
 **************************************************************/
@@ -445,6 +453,48 @@ button:hover {
 #section2{
   justify-content: center;
   background-color: #7094FF;
+}
+
+/**************************************************************
+* TROUVERUNJOB
+**************************************************************/
+#mainTrouverUnJob {
+
+  height: 100%;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+
+}
+
+#sectionTUJ{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#sectionTUJ section{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+#sectionTUJ section article #signup{
+  border: 2px solid var(--color-blue1);
+  margin-left: 0;
+}
+
+#sectionTUJ section article #signup:hover {
+  background-color: var(--color-blue1);
+  color: var(--color-white);
+}
+
+#sectionTUJ section article form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
 }
 
 /**************************************************************

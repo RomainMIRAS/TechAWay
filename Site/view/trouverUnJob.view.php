@@ -29,13 +29,13 @@
     <?php include_once('../view/design/navigation.php'); ?>
 
     <!-- MAIN ---------------------------------------------------------------------------------->
-    <main id = "mainRecruter">
+    <main id = "mainTrouverUnJob">
 
       <section id="section1"> <!-- section Accueil -->
         <div>
-          <h1>Découvrez Tech A Way</h1>
+          <h1>Trouvez le métier qu'il vous faut</h1>
           <p>Tech a Way est un cabinet de recrutement spécialisé dans le domaine de la tech en full remote et partout en Europe</p>
-          <h2>L'expertise du recrutement dans le domaine de la tech avec des recuteurs qui vous accompagne jusqu'à l'embauche</h2>
+          <h2>L'expertise du recrutment dans le domaine de la tech avec des recuteur qui vous accompagne jusqu'à l'embauche</h2>
         </div>
 
         <article id = "article1">
@@ -44,21 +44,21 @@
         </div>
 
         <div>
-          <h2>ENTREPRISES PARTENAIRES</h2>
-          <h3>Trouvez les candidats qu'il vous faut</h3>
-          <p>Tech a Way vous donne accès à des candidats qui correspondent à 100% à vos attentes. 
-            Expliquez-nous toutes les spécificités du poste et on vous trouvera le ou la candidate dont vous avez besoin !</p>
+          <h2>CANDIDATS</h2>
+          <h3>Trouvez LES recruteurs qu'il vous faut</h3>
+          <p>Tech a Way vous permet de postuler chez les entreprises qui correspondent le mieux au job que vous rechercher. <br>
+            Vous n'avez qu'à vous inscrire et nous spécifier ce que vous chercher, on s'occupe de vous mettre en lien avec l'employeur idéal !</p>
         </div>
 
         </article>
         
         <article id = "article2">
         <div>
-          <h2>Candidater avec NOUS</h2>
+          <h2>On vous aide àvous faire recruter</h2>
           <ul>
-            <li>Une expertise dans le recrutement Tech</li>
-            <li>Un gain de temps considérable</li>
-            <li>Un accès à de nouveaux profils Tech</li>
+            <li>Une recherche d'emploi efficace</li>
+            <li>Une aide à la création du CV et de la lettre de motivation</li>
+            <li>Un accompagnement tout au long de votre recrutement</li>
           </ul>
           
           
@@ -69,26 +69,19 @@
         </div>
         </article>
         
-</section>
+    </section>
 
-      <section id = "section2" >
-      <form class="form" action="recruter.ctrl.php" method="post" style="padding-bottom: 193px;">
-            <h1>DES BESOINS EN RECRUTEMENT TECH ? ÉCHANGE AVEC NOUS !</h1>
-            <label for="nom">Nom</label>
-            <input id="nom" type="text" name="nom" placeholder="Nom" >
-            <label for="prenom">Prenom</label>
-            <input id="prenom" type="text" name="prenom" placeholder="Prenom" >
-            <label for="email">Adresse E-mail</label>
-            <input id="email" type="text" name="email" placeholder="Entrez votre adresse e-mail" >
-            <label for="nomEntreprise">Nom de l'entreprise</label>
-            <input id="postactu" type="text" name="postactu" placeholder="Votre Poste Actuel" >
-            <form action ="recruter.ctrl.php" method="post">
-            <output><?=$erreur?></output>
-            
-            <button type="submit" name="action" value="confirmation">Confirmation</button>
-          </form>
-
-      </section>
+    <section id = "sectionTUJ" >
+        <section>
+            <article>
+                <h2>Rejoignez-nous !</h2>
+                <form action="../controler/authentification.ctrl.php">                
+                    <button id="signup" type="submit" name="action" value="signup">S'inscrire</button>
+                </form>
+            </article>
+        </section>
+        
+    </section>
 
     </main>
 

@@ -8,7 +8,6 @@ include_once(__DIR__."/../model/Renseignement.class.php");
 
 //-------------------Affectation des variables
 
-
 //$etape = (isset($_POST['etape'])) ? $_POST['etape']:"NPE";  //Declaration d'étapes
 
 $nom = (isset($_POST['nom'])) ? $_POST['nom']:"";
@@ -27,6 +26,7 @@ $dateNull = 0;  //"00-00-0000";
 $tel = (isset($_POST['tel'])) ? $_POST['tel']:"";
 $tellength= strlen($tel);
 $ville = (isset($_POST['ville'])) ? $_POST['ville']:"";
+$ville = (isset($_POST['pays'])) ? $_POST['pays']:"";
 $etape = (isset($_POST['etape'])) ? $_POST['etape']:"non";
 
 
@@ -174,14 +174,18 @@ if ($erreur == "" && $action == "suivant"){
   if ($etape == "base"){
     $_SESSION["utilisateur"]->setNom($nom);
     $_SESSION["utilisateur"]->setPrenom($prenom);
-
     // Cacul d'age
+    $today   = new DateTime('today');
+    $age = $age->diff($today)->y;
     // A FAIRE
     $_SESSION["utilisateur"]->setAge($age);
-    $_SESSION["utilisateur"]->setTelephone($tel);
+    $_SESSION["utilisateur"]->setVille($ville);
+    $_SESSION["utilisateur"]->setPays($pays);
   } else if ($etape == "competences") {
-    // $competence = new Competence(0,$nvEtude,$langueParle,$languageAquis);
-    // $_SESSION["utilisateur"]->setCompetenceAcquis($competence);
+    $compétence = $_SESSION["utilisateur"]->getCompetenceAcquis()->
+    //
+
+
   } else if ($etape == "preferences") {
 
   }
@@ -213,6 +217,7 @@ $view->assign('erreur',$erreur);
 $view->assign('pays',$pays);
 $view->assign('action',$action);
 $view->assign('etape',$etape);
+//$view->assign('candidat',$_SESSION["utilisateur"]);
 $view->display("formulaire.view.php");
 
 
