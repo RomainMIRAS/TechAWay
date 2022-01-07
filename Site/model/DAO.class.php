@@ -2,7 +2,8 @@
 /* require_once(__DIR__.'/Client.class.php');
 require_once(__DIR__.'/Candidat.class.php');
 require_once(__DIR__.'/Offre.class.php'); */
-
+require_once(__DIR__.'/Competence.class.php');
+require_once(__DIR__.'/Renseignement.class.php');
 require_once(__DIR__.'/Candidat.class.php');
 require_once(__DIR__.'/Coach.class.php');
 
@@ -251,6 +252,7 @@ function getCompetence($link) {
 		}
 		return $competence;
 }
+
 function getRenseignement($link) {
 	try {
 		$req = pg_query($this->db,"SELECT * from competence where link='$link'");
