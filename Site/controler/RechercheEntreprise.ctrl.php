@@ -8,7 +8,7 @@ include_once(__DIR__."/../framework/view.class.php");
 
 // Inclusion du modèle
 include_once(__DIR__."/../model/DAO.class.php"); // Singleton
-include_once(__DIR__."/../model/Competece.class.php");
+include_once(__DIR__."/../model/Competence.class.php");
 include_once(__DIR__."/../model/Renseignement.class.php");
 include_once(__DIR__."/../model/Offre.class.php");
 include_once(__DIR__."/../model/Candidat.class.php");
