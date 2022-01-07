@@ -56,7 +56,7 @@
                     <tr> <!-- affichage du nom, prenom, mail...etc du candidat -->
                         <td><?= $c->getNom() ?></td>
                         <td><?= $c->getPrenom() ?></td>
-                        <td><a href="mailto:<?= $c->getMail() ?>"></a></td>
+                        <td><a href="mailto:<?= $c->getMail() ?>"><?= $c->getMail() ?></a></td>
                         <td><?= $c->getTelephone() ?></td>
                         <td><?= $c->getEtape() ?></td>
                         <td><?= $c->getVille() ?></td>
