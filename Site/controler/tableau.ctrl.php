@@ -15,7 +15,13 @@ $db = new DAO();
 
 $emails = $db->getEmails();
 
-$view->assign("emails",$emails);
+$candidats = array();
+
+foreach($emails as $e) {
+    array_push($candidats,$db->getCandidat($e));
+}
+
+$view->assign("candidats",$candidats);
 
 // Charge la vue
 $view->display("tableau.view.php");

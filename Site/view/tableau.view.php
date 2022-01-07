@@ -41,9 +41,11 @@
                 <th>Prénom</th>
                 <th>Email</th>
             </tr>
-            <?php foreach($emails as $e): ?>
+            <?php foreach($candidats as $c): ?>
                 <tr>
-                    <td>OK</td>
+                    <td><?= e->getNom() ?></td>
+                    <td></td>
+                    <td></td>
                 </tr>
             <?php endforeach; ?>
         </table>
