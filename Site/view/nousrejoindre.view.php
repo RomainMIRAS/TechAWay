@@ -44,27 +44,27 @@
         </div>
 
         <div>
-          <h2>WHO'S NEXT?</h2>
-          <h3>Rejoignez l'équipe</h3>
-          <p>Tech a Way est en pleine croissance ! Si tu veux rejoindre une belle aventure humaine et apprendre un job passionnant, n’hésites pas à nous contacter [Stage / Alternance / CDI] </p>
+          <h2>QUI SOMME NOUS?</h2>
+          <h3>A propos de nous</h3>
+          <p>Tech a Way est un cabinet de recrutement spécialisé dans le domaine de la tech en full remote et partout en Europe. 
+
+De nos jours Tech A Way reçoit des demandes de partenariat d’entreprises cherchant à recruter un candidat. Suite à cela les coachs de l’agence exercent une chasse aux candidats sur des réseaux comme LinkedIn où ils leur proposent de s’entretenir via des messages électroniques. 
+
+Tech A Way permet donc aux entreprises d’externaliser leur recrutement, et offre ainsi au candidat un meilleur équilibre entre vie professionnelle et vie personnelle, qui se voit passer ses entretiens chez lui. 
+          </p>
         </div>
 
         </article>
         
         <article id = "article2">
         <div>
-          <h2>Candidater avec NOUS</h2>
-          <ul>
-            <li>Une expertise dans le recrutement Tech</li>
-            <li>Un gain de temps considérable</li>
-            <li>Un accès à de nouveaux profils Tech</li>
-          </ul>
-          
-          
+          <h2>WHO'S NEXT?</h2>
+          <h3>Rejoignez l'équipe</h3>
+          <p>Tech a Way est en pleine croissance ! Si tu veux rejoindre une belle aventure humaine et apprendre un job passionnant, n’hésites pas à nous contacter [Stage / Alternance / CDI] </p>
         </div>
 
         <div id="svg1">
-          <?php include_once("../view/design/svg/p1 var 1.svg") ?>
+          <?php include_once("../view/design/svg/p4.svg") ?>
         </div>
         </article>
         
@@ -72,11 +72,11 @@
 
       <section id = "section2" >
       <form class="form" action="authentification.ctrl.php" method="post" style="padding-bottom: 193px;">
-            <h1>DES BESOINS EN RECRUTEMENT TECH ? ÉCHANGE AVEC NOUS !</h1>
+            <h1>VOUS SOUHAITEZ REJOINDRE TECH A WAY? CONTACTEZ NOUS!</h1>
             <label for="nom">Nom</label>
             <input id="nom" type="text" name="nom" placeholder="Nom" required>
             <label for="prenom">Prenom</label>
-            <input id="prenom" type="text" name="prenom" placeholder="om" required>
+            <input id="prenom" type="text" name="prenom" placeholder="Prenom" required>
             <label for="email">Adresse E-mail</label>
             <input id="email" type="text" name="email" placeholder="Entrez votre adresse e-mail" required>
             <label for="nomEntreprise">Nom de l'entreprise</label>

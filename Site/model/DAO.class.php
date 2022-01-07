@@ -144,7 +144,8 @@ function getCoach(string $mail) {
 				$coachbf[0]['prenom'],
 				$coachbf[0]['telephone'],
 				intVal($age),
-				$coachUti[0]['lienphoto']
+				$coachUti[0]['lienphoto'],
+				$coachbf[0]['datecreation']
 			);
 		}
 
