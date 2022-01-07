@@ -60,8 +60,8 @@
               <input type="text" value="<?= $_SESSION['utilisateur']->getPays() ?>" disabled>
               <label for="">Ville</label>
               <input type="text" value="<?= $_SESSION['utilisateur']->getVille() ?>" disabled>
-              <!--<label for="">Date de création</label>
-              <input type="text" value="<?= $_SESSION['utilisateur']->getDateCreation() ?>" disabled>-->
+              <label for="">Date de création</label>
+              <input type="text" value="<?= $_SESSION['utilisateur']->getDateCreation() ?>" disabled>
               <button type="submit">Enregistrer</button>
           </form>
 
