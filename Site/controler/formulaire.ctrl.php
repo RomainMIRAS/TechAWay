@@ -7,9 +7,6 @@ include_once(__DIR__."/../model/Renseignement.class.php");
 
 
 //-------------------Affectation des variables
-
-session_start();
-
 //$etape = (isset($_POST['etape'])) ? $_POST['etape']:"NPE";  //Declaration d'étapes
 
 $nom = (isset($_POST['nom'])) ? $_POST['nom']:"";
