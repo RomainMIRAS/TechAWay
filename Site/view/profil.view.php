@@ -135,6 +135,8 @@
               $("#form-comp").hide();
               $("#form-docs").hide();
               $("#form-rens").show();
+              $("#btn-rens").css("color","var(--color-black)");
+              $("#btn-rens").css("border", "1px solid var(--color-black)");
             });
 
             /* si bouton 'mes compétences' est cliqué  */
