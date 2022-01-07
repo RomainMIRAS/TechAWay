@@ -526,6 +526,7 @@ td, th {
   border: 1px solid #dddddd;
   text-align: left;
   padding: 8px;
+  cursor: initial;
 }
 
 tr:nth-child(even) {
@@ -533,7 +534,7 @@ tr:nth-child(even) {
 }
 
 tr:nth-child(1):hover {
-  background-color: #dddddd;
+  background-color: var(--color-white);
 }
 
 tr:hover {
@@ -541,7 +542,7 @@ tr:hover {
 }
 
 tr:hover td {
-  color: #dddddd;
+  color: var(--color-white);
 }
 
 /**************************************************************
