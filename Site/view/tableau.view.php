@@ -1,3 +1,7 @@
+<?php
+    include_once(__DIR__."/../model/Utilisateur.class.php");
+    include_once(__DIR__."/../model/Candidat.class.php");
+?>
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
   <head>
