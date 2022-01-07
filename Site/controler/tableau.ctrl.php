@@ -19,7 +19,10 @@ $candidats = array();
 
 foreach($emails as $e) {
     array_push($candidats,$db->getCandidat($e));
+    
 }
+
+$db->getCandidat("azeaze");
 
 $view->assign("candidats",$candidats);
 
