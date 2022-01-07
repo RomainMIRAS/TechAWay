@@ -108,8 +108,8 @@
         $(window).ready(function() {
           /* on cache les formulaires */
           $("#form-rens").hide();
-          $("#form-comp").hide();
-          $("#form-pref").hide();
+          /*$("#form-comp").hide();
+          $("#form-pref").hide();*/
           $("#form-docs").hide();
 
           /* si bouton 'mes renseignements' est cliqué  */
@@ -121,20 +121,20 @@
           });
 
           /* si bouton 'mes compétences' est cliqué  */
-          $("#btn-comp").click(function() {
+          /*$("#btn-comp").click(function() {
             $("#form-rens").hide();
             $("#form-pref").hide();
             $("#form-docs").hide();
             $("#form-comp").toggle();
           });
 
-          /* si bouton 'mes préférences' est cliqué  */
+          /* si bouton 'mes préférences' est cliqué  
           $("#btn-pref").click(function() {
             $("#form-rens").hide();
             $("#form-comp").hide();
             $("#form-docs").hide();
             $("#form-pref").toggle();
-          });
+          });*/
 
           /* si bouton 'mes documents' est cliqué  */
           $("#btn-docs").click(function() {
