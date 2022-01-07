@@ -31,7 +31,24 @@
     <!-- MAIN ---------------------------------------------------------------------------------->
     <main>
 
-      
+      <section> <!-- Tous les candidats inscrits -->
+
+        <h2>Candidats inscrits</h2>
+
+        <table>
+            <tr>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Email</th>
+            </tr>
+            <tr>
+                <?php foreach($emails as $e): ?>
+                    <td>OK</td>
+                <?php endforeach; ?>
+            </tr>
+        </table>
+
+      </section>
 
     </main>
 
