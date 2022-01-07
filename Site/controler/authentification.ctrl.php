@@ -79,6 +79,7 @@ if ($confirmation == "oui" && $action == "login"){
 
 if ($erreur == "" && $confirmation == "oui"){
   if ($action == "signup") {// Inscription Possible de Candidat
+    $key = "";
     for($i=1;$i<15;$i++) {
       $key .= mt_rand(0,9);
     }
@@ -104,7 +105,7 @@ if ($erreur == "" && $confirmation == "oui"){
                        // Ferme la session
                        session_write_close();
                        $erreur = "Veuillez confirmez votre adresse email";
-    DAO::get()->createUtilisateur($email, $password);
+    //DAO::get()->createUtilisateur($email, $password);
     //seConnecter($email,$password);
   } else if ($action == "login"){ // Connexion réussi
     //$erreur = "Vous êtes connecté avec email $email et mdp $password";

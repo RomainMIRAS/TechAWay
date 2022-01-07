@@ -1,28 +1,32 @@
 <?php
 include_once(__DIR__."/../model/Utilisateur.class.php");
+include_once(__DIR__."/../model/Competence.class.php");
+include_once(__DIR__."/../model/Renseignement.class.php");
+
 // Description d'un candidat
 class Candidat extends Utilisateur {
   private string $pays;                 //pays du candidat
   private string $ville;                //ville du candidat
   private string $lienCV;               //lien CV
   private string $lienLM;               //lien lettre de motivation
-  private string $etape;                //Etape du recrutement
+  private int $etape;                //Etape du recrutement
   private Competence $competenceAcquis; //Les compétence du candidat
   private Renseignement $preference;     //Préférence concernant les offres
   private array $discussions;           //discussions auquelle participe le candidat
 
   // Contructeur
+
   // Revoir Constructeur
-  function __construct(string $mail, string $password,string $nom='', string $prenom='', int $age=0, string $telephone='', string $lienCV='', string $lienLM='') {
+function __construct(string $mail, string $password,string $nom='', string $prenom='', int $age=0, string $telephone='', string $lienCV='', string $lienLM='', int $etape = 0, string $pays ='', string $ville ='' /*Competence $competenceAcquis = null, Renseignement $preference = 0 */ ) {
     parent::__construct($mail, $password, $nom, $prenom, $age,$telephone);
     $this->lienCV = $lienCV;
     $this->lienLM = $lienLM;
-    $this->pays = '';
-    $this->ville = '';
-    $this->etape = '';
-    /* $this->competenceAcquis = null;
+    $this->etape = $etape;
+    $this->pays = $pays;
+    $this->ville = $ville;
+    $this->competenceAcquis = $competenceAcquis;
     $this->preference = null;
-    $this->discussions = null; */
+    $this->discussions = null;
   }
 
   function getPays() : string {
@@ -56,7 +60,7 @@ class Candidat extends Utilisateur {
   function getDiscussions() : array {
     return $this->discussions;
   }
- 
+
 
   function setPays(string $pays) : void {
     $this->pays = $pays;
