@@ -35,7 +35,7 @@
     <!-- MAIN ---------------------------------------------------------------------------------->
     <main>
 
-      <section> <!-- Tous les candidats inscrits -->
+      <section id="tableau-bord"> <!-- Tous les candidats inscrits -->
 
         <h2>Candidats <span style="font-size: 12px"><?= $nbCandidats?> candidat(s) enregistré(s)</span></h2>
 
