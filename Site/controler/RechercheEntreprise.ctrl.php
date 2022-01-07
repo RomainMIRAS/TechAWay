@@ -20,7 +20,7 @@ $checkpassword = (isset($_POST['checkpassword'])) ? $_POST['checkpassword']:"";
 
 
 session_start();
-$competence = $_SESSION['utilisateur']->getCompetenceAcquis();
+$competence = $_SESSION['utilisateur']->getPays;
 session_write_close();
 ///////////////////////////////////////////////////////////////////////////////
 // Partie View
@@ -29,7 +29,7 @@ session_write_close();
 $view = new View();
 
 $view->assign('erreur',$competence);
-$view->display("authentification.view.php");
+$view->display("RechercheEntreprise.view.php");
 
 
 // Fin du code à ajouter ]]

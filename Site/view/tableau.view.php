@@ -46,11 +46,13 @@
                 <th>Email</th>
             </tr>
             <?php foreach($candidats as $c): ?>
-                <tr>
-                    <td><?= $c->getNom(); ?></td>
-                    <td></td>
-                    <td></td>
-                </tr>
+                <?php if ($c!=false): ?>
+                    <tr>
+                        <td><?= $c->getNom(); ?></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                <?php endif; ?>
             <?php endforeach; ?>
         </table>
 
