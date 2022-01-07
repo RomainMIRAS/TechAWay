@@ -42,10 +42,10 @@
         <?php if (is_a($_SESSION['utilisateur'],"Candidat")): ?> <!-- si l'utilisateur est un candidat -->
           <p>Vous êtes à l'étape n°<?= $_SESSION['utilisateur']->getEtape() ?></p>
           <div id="btn-profil-container">
-            <button id="btn-rens">Mes renseignements</button>
-            <button id="btn-comp">Mes compétences</button>
-            <button id="btn-pref">Mes préférences</button>
-            <button id="btn-docs">Mes documents</button>
+            <button id="btn-rens" class="btn-menu-profil">Mes renseignements</button>
+            <button id="btn-comp" class="btn-menu-profil">Mes compétences</button>
+            <button id="btn-pref" class="btn-menu-profil">Mes préférences</button>
+            <button id="btn-docs" class="btn-menu-profil">Mes documents</button>
           </div>
         <?php endif; ?>
       </section>
