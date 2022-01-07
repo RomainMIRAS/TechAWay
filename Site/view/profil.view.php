@@ -33,6 +33,7 @@
 
       <section class="section-profil">
             <img id="img-profil" src="../view/design/img/profil.jpg" alt="">
+            <p>Vous êtes à l'étape n°<?= $_SESSION['utilisateur']->getEtape() ?></p>
             <form action="" class="form">
                 <label for="">Nom</label>
                 <input type="text" value="<?= $_SESSION['utilisateur']->getNom() ?>" disabled>
