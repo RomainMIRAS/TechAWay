@@ -73,7 +73,7 @@
         <!-- Formulaire de compétences -->
         <form action="" class="form" id="form-comp">
           <label for="">Niveau d'études</label>
-          <input type="text" value="">
+          <input type="text" value="<?= $_SESSION['utilisateur']->getCompetenceAcquis()->getNvEtude() ?>">
           <label for="">Langue(s) parlée(s)</label>
           <input type="text" value="" disabled>
           <label for="">Langage(s) informatique(s)</label>
