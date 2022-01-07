@@ -155,7 +155,7 @@ section h1 {
   width: 500px;
 }
 
-form {
+#sectionBoutonsAccueil {
   display: flex;
   flex-direction: row;
 }

@@ -37,10 +37,14 @@
           <p>Tech a Way est un cabinet de recrutement spécialisé dans le domaine de la tech en full remote et partout en Europe.</p>
           <h2>Commencez l'aventure</h2>
           <h4>Vous-êtes ?</h4>
-          <form action="../controler/authentification.ctrl.php" method="post">
-              <button type="submit" name="action" value="signup">Candidat</button>
+          <section id="sectionBoutonsAccueil">
+            <form action="../controler/trouverUnJob.ctrl.php" method="post">
+                <button type="submit" name="action" value="signup">Candidat</button>
+            </form>
+            <form action="../controler/recruter.ctrl.php" method="post">
               <button type="submit" name="action" value="signup">Recruteur</button>
-          </form>
+            </form>
+          </section>
         </div>
 
         <div id="svg1">
