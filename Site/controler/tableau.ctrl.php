@@ -16,12 +16,15 @@ $db = DAO::get();
 $emails = $db->getEmails();
 
 $candidats = array();
+$nbCandidats = 0;
 
 foreach($emails as $e) {
     array_push($candidats,$db->getCandidat($e)); 
+    $nbCandidats++;
 }
 
 $view->assign("candidats",$candidats);
+$view->assign("nbCandidats",$nbCandidats);
 
 // Charge la vue
 $view->display("tableau.view.php");

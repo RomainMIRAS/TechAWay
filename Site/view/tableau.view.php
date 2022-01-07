@@ -37,7 +37,7 @@
 
       <section> <!-- Tous les candidats inscrits -->
 
-        <h2>Candidats inscrits</h2>
+        <h2>Candidats <span style="font-size: 12px"><?= $nbCandidats?> candidat(s) enregistré(s)</span></h2>
 
         <table>
             <tr>
