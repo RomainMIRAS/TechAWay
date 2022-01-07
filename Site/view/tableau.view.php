@@ -50,6 +50,7 @@
                 <th>Pays</th>
                 <th>Lien CV</th>
                 <th>Lien Lettre</th>
+                <th>Compétence</th>
             </tr>
             <?php foreach($candidats as $c): ?> <!-- pour chaque candidat -->
                 <?php if ($c!=false): ?>
@@ -63,6 +64,7 @@
                         <td><?= $c->getPays() ?></td>
                         <td><?= $c->getLienCv() ?></td>
                         <td><?= $c->getLienLM() ?></td>
+                        <td><?= $c->getCompetenceAcquis() ?></td>
                     </tr>
                 <?php endif; ?>
             <?php endforeach; ?>
