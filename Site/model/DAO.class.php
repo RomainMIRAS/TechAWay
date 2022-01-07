@@ -258,7 +258,7 @@ function getCompetence($link) {
 
 function getRenseignement($link) {
 	try {
-		$req = pg_query($this->db,"SELECT * from rensegniement where link='$link'");
+		$req = pg_query($this->db,"SELECT * from renseignement where link='$link'");
 	
 		$renseignementRes = pg_fetch_all($req);
 
