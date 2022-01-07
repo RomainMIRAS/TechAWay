@@ -41,11 +41,11 @@
                 <th>Prénom</th>
                 <th>Email</th>
             </tr>
-            <tr>
-                <?php foreach($emails as $e): ?>
+            <?php foreach($emails as $e): ?>
+                <tr>
                     <td>OK</td>
-                <?php endforeach; ?>
-            </tr>
+                </tr>
+            <?php endforeach; ?>
         </table>
 
       </section>
