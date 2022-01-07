@@ -304,6 +304,10 @@ output{
   border-radius: 5px;
 }
 
+.form input:disabled {
+  opacity: 50%;
+}
+
 select {
   background-color: transparent;
 }
@@ -439,7 +443,7 @@ button:hover {
 }
 
 .btn-menu-profil {
-  color: var(--color-black);
+  color: var(--color-grey);
   border: 1px solid var(--color-grey);
   font-weight: initial;
 }
