@@ -175,13 +175,15 @@ function getCandidat(string $mail) {
 		}else{
 
 			$req = pg_query($this->db,"SELECT * FROM candidat WHERE idcandidat=". intVal($candidatbf[0]['idutilisateur']) ."");
-
 			$candidatUti = pg_fetch_all($req);
 
-			$age = $candidatbf[0]['age'];
-			$etape = $candidatUti[0]['etape'];
+			if (empty($candidatUti)) {
+				return false;
+			}else{
+				$age = $candidatbf[0]['age'];
+				$etape = $candidatUti[0]['etape'];
 
-			$coach = new Candidat(
+				$candidat = new Candidat(
 				$candidatbf[0]['adressemail'],
 				$candidatbf[0]['password'],
 				$candidatbf[0]['nom'],
@@ -197,13 +199,14 @@ function getCandidat(string $mail) {
 				//competence
 				//rensegniement
 			);
+			}
 		}
 		
 		// Tests d'erreurs
 		} catch (Exception $e) {
 			die("PSQL ERROR :".$e->getMessage());
 		}
-		return $coach;
+		return $candidat;
 }
 
 function getCoachOuCandidat(string $mail, string $pass) {
@@ -265,11 +268,15 @@ function getRenseignement($link) {
 
 			$idr = intval($renseignementRes[0]['idrenseignement']);
 
+			echo "<br>{$renseignementRes[0]['travetranger']} </br>";
+
 			$renseignement = new Renseignement(
 				intval($idr),
-				$renseignementRes[0]['nvetude'],
-				$renseignementRes[0]['langueparle'],
-				$renseignementRes[0]['langagesacquis']
+				$renseignementRes[0]['travetranger'],
+				$renseignementRes[0]['secteur'],
+				$renseignementRes[0]['typecontrat'],
+				$renseignementRes[0]['poste'],
+				$renseignementRes[0]['tyeentreprise']
 			);
 		}
 		

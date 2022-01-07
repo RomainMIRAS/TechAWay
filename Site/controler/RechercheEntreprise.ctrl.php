@@ -18,7 +18,10 @@ $email = (isset($_POST['email'])) ? $_POST['email']:"";
 $password = (isset($_POST['password'])) ? $_POST['password']:"";
 $checkpassword = (isset($_POST['checkpassword'])) ? $_POST['checkpassword']:"";
 
-$competence = $_SESSION['utilisateur']->getCompetenceAcquis();
+
+session_start();
+$competence = $_SESSION['utilisateur']->getPays;
+session_write_close();
 ///////////////////////////////////////////////////////////////////////////////
 // Partie View
 ///////////////////////////////////////////////////////////////////////////////
