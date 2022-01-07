@@ -34,7 +34,6 @@
       <section class="section-profil">
         <img id="img-profil" src="../view/design/img/profil.jpg" alt="">
         <p>Vous êtes à l'étape n°<?= $_SESSION['utilisateur']->getEtape() ?></p>
-        <p><?= $etapeDetail ?></p>
         <div id="btn-profil-container">
           <button id="btn-rens">Mes renseignements</button>
           <button id="btn-comp">Mes compétences</button>

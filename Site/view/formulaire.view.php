@@ -41,7 +41,7 @@
               <label for="nom">Nom</label>
               <input id="nom" type="text" name="nom" placeholder="Entrez votre nom" >
               <label for="prenom">Prénom</label>
-              <input id="prenom" type="text" name="prenom" placeholder="Entrez votre prénom" value="">
+              <input id="prenom" type="text" name="prenom" placeholder="Entrez votre prénom" >
               <label for="age">Date de naissance</label>
               <input id="age" type="date" name="age" >
               <label for="tel">Téléphone</label>
@@ -78,11 +78,20 @@
               <h1>Formulaire</h1>
               <!-- Saisie des competences du candidat -->
               <label for="nvEtude">Niveau d'etudes</label>
-              <input id="nvEtude" type="text" name="nvEtude" placeholder="Format : Bac+3" >
+              <select name="pays">
+                      <option value="<?php echo"bac+1" ?>" selected>Bac +1</option>
+                      <option value="<?php echo"bac+2" ?>" >Bac +1</option>
+                      <option value="<?php echo"bac+3" ?>" >Bac +3</option>
+                      <option value="<?php echo"bac+4" ?>" >Bac +4</option>
+                      <option value="<?php echo"bac+5" ?>" >Bac +5</option>
+                      <option value="<?php echo"bac+6" ?>" >Bac +6</option>
+                      <option value="<?php echo"bac+7" ?>" >Bac +7</option>
+                      <option value="<?php echo"bac+8" ?>" >Bac +8</option>
+              </select>
               <label for="langueParle">Langues parlé</label>
-              <input id="langueParle" type="text" name="langueParle" placeholder="ex : francais, anglais" >
+              <input id="langueParle" type="text" name="langueParle" placeholder="ex :Francais,Anglais" >
               <label for="languageAquis">Languages aquis</label>
-              <input id="languageAquis" type="text" name="languageAquis" placeholder="ex : C++, Java, PHP" >
+              <input id="languageAquis" type="text" name="languageAquis" placeholder="ex :C++,Java,PHP" >
               <form action ="formulaire.ctrl.php" method="post">
               <output><?=$erreur?></output>
               <button type="submit" name="action" value="precedent">Precedent</button>
@@ -124,7 +133,7 @@
               <select name="poste" >
                   <option value="">--Veuillez choisir une option--</option>
                   <option value="cdi">Poste 1</option>
-                  <option value="cdd">Poste 2</option>prefer
+                  <option value="cdd">Poste 2</option>
               </select>
 
               <label for="typeEntreprise">Type d'entreprise</label>

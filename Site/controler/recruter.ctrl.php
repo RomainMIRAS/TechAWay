@@ -47,3 +47,4 @@ $view->assign('action',$action);
 $view->display("recruter.view.php");
 
 ?>
+  

@@ -8,7 +8,6 @@ include_once(__DIR__."/../model/Renseignement.class.php");
 
 //-------------------Affectation des variables
 
-
 //$etape = (isset($_POST['etape'])) ? $_POST['etape']:"NPE";  //Declaration d'étapes
 
 $nom = (isset($_POST['nom'])) ? $_POST['nom']:"";
@@ -27,6 +26,7 @@ $dateNull = 0;  //"00-00-0000";
 $tel = (isset($_POST['tel'])) ? $_POST['tel']:"";
 $tellength= strlen($tel);
 $ville = (isset($_POST['ville'])) ? $_POST['ville']:"";
+$ville = (isset($_POST['pays'])) ? $_POST['pays']:"";
 $etape = (isset($_POST['etape'])) ? $_POST['etape']:"non";
 
 
@@ -172,18 +172,35 @@ if ($erreur == "" && $action == "suivant"){
 
   // Push des donnés dans la session puis quand fini dans la base
   if ($etape == "base"){
+    session_start();
     $_SESSION["utilisateur"]->setNom($nom);
     $_SESSION["utilisateur"]->setPrenom($prenom);
-
     // Cacul d'age
+    $today   = new DateTime('today');
+    $age = $age->diff($today)->y;
     // A FAIRE
     $_SESSION["utilisateur"]->setAge($age);
-    $_SESSION["utilisateur"]->setTelephone($tel);
+    $_SESSION["utilisateur"]->setVille($ville);
+    $_SESSION["utilisateur"]->setPays($pays);
+    session_write_close();
   } else if ($etape == "competences") {
-    // $competence = new Competence(0,$nvEtude,$langueParle,$languageAquis);
-    // $_SESSION["utilisateur"]->setCompetenceAcquis($competence);
-  } else if ($etape == "preferences") {
+    session_start();
+    $competence = $_SESSION["utilisateur"]->getCompetenceAcquis();
 
+    $competence->setNvEtude($nvEtude);
+    $competence->setLangeParle($langueParle);
+    $competence->setLangageAcquis($languageAquis);
+    $_SESSION["utilisateur"]->setCompetenceAcquis($competence);
+    session_write_close();
+  } else if ($etape == "preferences") {
+    session_start();
+    $renseignement = $_SESSION["utilisateur"]->getRenseignement();
+    $renseignement->setTravEtranger($travEtranger);
+    $renseignement->setTypeContrat($typeContrat);
+    $renseignement->setSecteur($secteur);
+    $renseignement->setPoste($poste);
+    $renseignement->setTypeEntreprise($typeEntreprise);
+    session_write_close();
   }
 }
 
@@ -213,6 +230,7 @@ $view->assign('erreur',$erreur);
 $view->assign('pays',$pays);
 $view->assign('action',$action);
 $view->assign('etape',$etape);
+//$view->assign('candidat',$_SESSION["utilisateur"]);
 $view->display("formulaire.view.php");
 
 
