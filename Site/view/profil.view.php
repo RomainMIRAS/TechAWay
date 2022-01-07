@@ -52,21 +52,22 @@
       <section class="section-profil">
         <!-- Formulaire de renseignements -->
         <form action="" class="form" id="form-rens">
-          <label for="">Nom</label>
+          <label for="">Nom*</label>
           <input type="text" value="<?= $_SESSION['utilisateur']->getNom() ?>" disabled>
-          <label for="">Prénom</label>
+          <label for="">Prénom*</label>
           <input type="text" value="<?= $_SESSION['utilisateur']->getPrenom() ?>" disabled>
-          <label for="">Adresse mail</label>
+          <label for="">Adresse mail*</label>
           <input type="text" value="<?= $_SESSION['utilisateur']->getMail() ?>" disabled>
-          <label for="">Téléphone</label>
+          <label for="">Téléphone*</label>
           <input type="text" value="<?= $_SESSION['utilisateur']->getTelephone() ?>" disabled>
-          <label for="">Pays</label>
+          <label for="">Pays*</label>
           <input type="text" value="<?= $_SESSION['utilisateur']->getPays() ?>" disabled>
-          <label for="">Ville</label>
+          <label for="">Ville*</label>
           <input type="text" value="<?= $_SESSION['utilisateur']->getVille() ?>" disabled>
-          <label for="">Date de création</label>
+          <label for="">Date de création*</label>
           <input type="text" value="<?= $_SESSION['utilisateur']->getDateCreation() ?>" disabled>
           <button type="submit">Enregistrer</button>
+          <p>*: ces entrées ne sont pas modifiable directement.</p>
         </form>
 
         <!-- Formulaire de compétences -->
@@ -122,6 +123,8 @@
           $(window).ready(function() {
             /* on cache les formulaires */
             $("#form-rens").show();
+            $("#form-rens").css("color: var(--color-black)");
+            $("#form-rens").css("border: 1px solid var(--color-black)");
             $("#form-comp").hide();
             $("#form-pref").hide();
             $("#form-docs").hide();
