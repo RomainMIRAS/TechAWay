@@ -18,7 +18,8 @@ $emails = $db->getEmails();
 $candidats = array();
 
 foreach($emails as $e) {
-    array_push($candidats,$db->getCandidat($e));
+    /*array_push($candidats,$db->getCandidat($e));*/
+    echo "$e";
 }
 
 $view->assign("candidats",$candidats);
