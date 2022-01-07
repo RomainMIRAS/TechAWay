@@ -55,7 +55,7 @@
         $(window).ready(function() {
             alert("OK");
             $("#form-rens").hide();
-            $("#btn-rens").onclick(function() {
+            $("#btn-rens").click(function() {
               $("#form-rens").show();
               alert("OK");
             });
