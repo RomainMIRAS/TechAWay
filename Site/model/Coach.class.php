@@ -6,8 +6,8 @@ class Coach extends Utilisateur {
   private array $discussions;   //Discussion auquelle le coach participe
 
   // Contructeur
-  function __construct(string $mail, string $password,string $nom='', string $prenom='', string $telephone='', int $age=0, string $lienPhoto='',string $dateCreation='') {
-    parent::__construct($mail, $password, $nom, $prenom, $age, $telephone,$dateCreation);
+  function __construct(string $mail, string $password,string $nom='', string $prenom='', string $telephone='', int $age=0, string $lienPhoto='') {
+    parent::__construct($mail, $password, $nom, $prenom, $age, $telephone);
     $this->lienPhoto = $lienPhoto;
     //$this->discussions = null;
   }
