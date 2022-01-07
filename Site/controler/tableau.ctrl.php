@@ -11,6 +11,18 @@ include_once(__DIR__."/../model/Coach.class.php");
 
 $view = new View();
 
+$db = DAO::get();
+
+$emails = $db->getEmails();
+
+$candidats = array();
+
+foreach($emails as $e) {
+    array_push($candidats,$db->getCandidat($e)); 
+}
+
+$view->assign("candidats",$candidats);
+
 // Charge la vue
-$view->display("profil.view.php");
+$view->display("tableau.view.php");
 ?>

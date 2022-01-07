@@ -11,7 +11,7 @@ session_start();
         <li><a href="main.ctrl.php"><img id="logo" src="../view/design/img/logo.png" ></a></li>
         <div>
           <li><a href="recruter.ctrl.php">Recruter</a></li>
-          <li><a href="#">Trouver un job</a></li>
+          <li><a href="trouverUnJob.ctrl.php">Trouver un job</a></li>
           <li><a href="parrainer.ctrl.php">Parrainer</a></li>
         </div>
     </ul>
@@ -39,13 +39,22 @@ session_start();
             </div>
 
             <div id="menu-part2">
-              <?php if (is_a($_SESSION['utilisateur'],"Candidat")) : ?>
-                <li><a href="../controler/profil.ctrl.php"><i class="fa fa-user"></i> Mon profil</a></li>
-                <li><a href="#"><i class="fa fa-pencil-square-o"></i> Editer mon profil</a></li>
-                <li><a href="../controler/recrutement-candidat.ctrl.php"><i class="fa fa-level-up" aria-hidden="true"></i> Mon Recrutement</a></li>
+              <?php if (is_a($_SESSION['utilisateur'],"Candidat")) : ?> <!-- CANDIDAT -->
+                <?php if ($_SESSION['utilisateur']->getEtape()>=1) : ?> <!-- si le candidat en n'est pas à l'étape 1 au minimum il ne peut pas voir son profil car il doit le compléter -->
+                  <li><a href="../controler/profil.ctrl.php"><i class="fa fa-user"></i>Mon profil</a></li>
+                <?php endif; ?>
+                <?php if ($_SESSION['utilisateur']->getEtape()==0) : ?>
+                  <li><a href="../controler/recrutement-candidat.ctrl.php"><i class="fa fa-level-up" aria-hidden="true"></i>Mon Recrutement</a></li>
+                <?php endif; ?>
+                <?php if ($_SESSION['utilisateur']->getEtape()>=1) : ?>
+                  <li><a href="#"><i class="fa fa-envelope"></i>Ma messagerie</a></li>
+                <?php endif; ?>
+              <?php else: ?> <!-- COACH -->
+                <li><a href="../controler/profil.ctrl.php"><i class="fa fa-user"></i>Mon profil</a></li>
+                <li><a href="../controler/tableau.ctrl.php"><i class="fa fa-list"></i>Tableau de bord</a></li>
               <?php endif; ?>
               <form action="../controler/main.ctrl.php" method="post">
-                <li><button id="btn-logout" type="submit" name="logout" value="true"><i class="fa fa-sign-out" aria-hidden="true"></i> Déconnexion</button></li>
+                <li><button id="btn-logout" type="submit" name="logout" value="true"><i class="fa fa-sign-out" aria-hidden="true"></i>Déconnexion</button></li>
               </form>
             </div>
 
@@ -54,8 +63,6 @@ session_start();
 
         <script>
           $(document).ready(function(){
-            var nb_click = 0;
-
             $("#btn-compte img").click(function(){
               $("#menu-drop").toggle();
             });

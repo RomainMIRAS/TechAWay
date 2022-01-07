@@ -1,3 +1,7 @@
+<?php
+    include_once(__DIR__."/../model/Utilisateur.class.php");
+    include_once(__DIR__."/../model/Candidat.class.php");
+?>
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
   <head>
@@ -31,25 +35,26 @@
     <!-- MAIN ---------------------------------------------------------------------------------->
     <main>
 
-      <section class="section-accueil" id="section-accueil-1"> <!-- section Accueil -->
-        <div>
-          <h1>Découvrez Tech A Way</h1>
-          <p>Tech a Way est un cabinet de recrutement spécialisé dans le domaine de la tech en full remote et partout en Europe.</p>
-          <h2>Commencez l'aventure</h2>
-          <h4>Vous-êtes ?</h4>
-          <section id="sectionBoutonsAccueil">
-            <form action="../controler/trouverUnJob.ctrl.php" method="post">
-                <button type="submit" name="action" value="signup">Candidat</button>
-            </form>
-            <form action="../controler/recruter.ctrl.php" method="post">
-              <button type="submit" name="action" value="signup">Recruteur</button>
-            </form>
-          </section>
-        </div>
+      <section> <!-- Tous les candidats inscrits -->
 
-        <div id="svg1">
-          <?php include_once("../view/design/svg/p1 var 1.svg") ?>
-        </div>
+        <h2>Candidats inscrits</h2>
+        <br>
+        <table>
+            <tr>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Email</th>
+            </tr>
+            <?php foreach($candidats as $c): ?> <!-- pour chaque candidat -->
+                <?php if ($c!=false): ?>
+                    <tr> <!-- affichage du nom, prenom, mail...etc du candidat -->
+                        <td><?= $c->getNom() ?></td>
+                        <td><?= $c->getPrenom() ?></td>
+                        <td><?= $c->getMail() ?></td>
+                    </tr>
+                <?php endif; ?>
+            <?php endforeach; ?>
+        </table>
 
       </section>
 
@@ -59,5 +64,7 @@
     <?php include_once('../view/design/footer.php'); ?>
 
 
+
   </body>
+
 </html>

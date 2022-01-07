@@ -29,11 +29,11 @@
     <?php include_once('../view/design/navigation.php'); ?>
 
     <!-- MAIN ---------------------------------------------------------------------------------->
-    <main id = "mainRecruter">
+    <main id = "mainTrouverUnJob">
 
       <section id="section1"> <!-- section Accueil -->
         <div>
-          <h1>Rejoignez Tech A Way</h1>
+          <h1>Trouvez le métier qu'il vous faut</h1>
           <p>Tech a Way est un cabinet de recrutement spécialisé dans le domaine de la tech en full remote et partout en Europe</p>
           <h2>L'expertise du recrutment dans le domaine de la tech avec des recuteur qui vous accompagne jusqu'à l'embauche</h2>
         </div>
@@ -44,46 +44,44 @@
         </div>
 
         <div>
-          <h2>QUI SOMME NOUS?</h2>
-          <h3>A propos de nous</h3>
-          <p>Tech a Way est un cabinet de recrutement spécialisé dans le domaine de la tech en full remote et partout en Europe. 
-
-De nos jours Tech A Way reçoit des demandes de partenariat d’entreprises cherchant à recruter un candidat. Suite à cela les coachs de l’agence exercent une chasse aux candidats sur des réseaux comme LinkedIn où ils leur proposent de s’entretenir via des messages électroniques. 
-
-Tech A Way permet donc aux entreprises d’externaliser leur recrutement, et offre ainsi au candidat un meilleur équilibre entre vie professionnelle et vie personnelle, qui se voit passer ses entretiens chez lui. 
-          </p>
+          <h2>CANDIDATS</h2>
+          <h3>Trouvez LES recruteurs qu'il vous faut</h3>
+          <p>Tech a Way vous permet de postuler chez les entreprises qui correspondent le mieux au job que vous rechercher. <br>
+            Vous n'avez qu'à vous inscrire et nous spécifier ce que vous chercher, on s'occupe de vous mettre en lien avec l'employeur idéal !</p>
         </div>
 
         </article>
         
         <article id = "article2">
         <div>
-          <h2>WHO'S NEXT?</h2>
-          <h3>Rejoignez l'équipe</h3>
-          <p>Tech a Way est en pleine croissance ! Si tu veux rejoindre une belle aventure humaine et apprendre un job passionnant, n’hésites pas à nous contacter [Stage / Alternance / CDI] </p>
+          <h2>On vous aide àvous faire recruter</h2>
+          <ul>
+            <li>Une recherche d'emploi efficace</li>
+            <li>Une aide à la création du CV et de la lettre de motivation</li>
+            <li>Un accompagnement tout au long de votre recrutement</li>
+          </ul>
+          
+          
         </div>
 
         <div id="svg1">
-          <?php include_once("../view/design/svg/p4.svg") ?>
+          <?php include_once("../view/design/svg/p1 var 1.svg") ?>
         </div>
         </article>
         
-      </section>
+    </section>
 
-      <section id = "section2" >
-      <form class="form" action="nousrejoindre.ctrl.php" method="post" style="padding-bottom: 193px;">
-            <h1>VOUS SOUHAITEZ REJOINDRE TECH A WAY? CONTACTEZ NOUS!</h1>
-            <label for="nom">Nom</label>
-            <input id="nom" type="text" name="nom" placeholder="Nom" >
-            <label for="prenom">Prenom</label>
-            <input id="prenom" type="text" name="prenom" placeholder="Prenom" >
-            <label for="email">Adresse E-mail</label>
-            <input id="email" type="text" name="email" placeholder="Entrez votre adresse e-mail" >
-            <button type="submit" name="action" value="confirmation">Confirmation</button>
-            <output><?=$erreur?></output>
-          </form>
-
-      </section>
+    <section id = "sectionTUJ" >
+        <section>
+            <article>
+                <h2>Rejoignez-nous !</h2>
+                <form action="../controler/authentification.ctrl.php">                
+                    <button id="signup" type="submit" name="action" value="signup">S'inscrire</button>
+                </form>
+            </article>
+        </section>
+        
+    </section>
 
     </main>
 
@@ -93,4 +91,3 @@ Tech A Way permet donc aux entreprises d’externaliser leur recrutement, et off
 
   </body>
 </html>
- 

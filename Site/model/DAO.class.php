@@ -2,7 +2,8 @@
 /* require_once(__DIR__.'/Client.class.php');
 require_once(__DIR__.'/Candidat.class.php');
 require_once(__DIR__.'/Offre.class.php'); */
-
+require_once(__DIR__.'/Competence.class.php');
+require_once(__DIR__.'/Renseignement.class.php');
 require_once(__DIR__.'/Candidat.class.php');
 require_once(__DIR__.'/Coach.class.php');
 
@@ -67,12 +68,14 @@ function createUtilisateur(string $mail, string $pass) { //returns boolean
 
 		$r = "
 		INSERT INTO utilisateur VALUES(DEFAULT,'". $mail ."','". $hashedPw ."','','',0,'',now());
-		INSERT INTO competence values(DEFAULT,NULL,NULL,NULL,".$mail.");
-		INSERT INTO renseignement values(DEFAULT,NULL,NULL,NULL,".$mail.");
+		INSERT INTO competence values(DEFAULT,'','','','".$mail."');
+		INSERT INTO renseignement values(DEFAULT,DEFAULT,'','','','','".$mail."');
 		INSERT INTO candidat values($sel,'','',0,'','',$comp,$rens);
 		";
 
 		$res = @pg_query($this->db, $r);
+
+		echo "$res rererer";
 
 		if($res){
 			return true;
@@ -172,13 +175,18 @@ function getCandidat(string $mail) {
 		}else{
 
 			$req = pg_query($this->db,"SELECT * FROM candidat WHERE idcandidat=". intVal($candidatbf[0]['idutilisateur']) ."");
-
 			$candidatUti = pg_fetch_all($req);
 
-			$age = $candidatbf[0]['age'];
-			$etape = $candidatUti[0]['etape'];
+			$compCand = $this->getCompetence($mail);
+			$rensCand = $this->getRenseignement($mail);
 
-			$coach = new Candidat(
+			if (empty($candidatUti)) {
+				return false;
+			}else{
+				$age = $candidatbf[0]['age'];
+				$etape = $candidatUti[0]['etape'];
+
+				$candidat = new Candidat(
 				$candidatbf[0]['adressemail'],
 				$candidatbf[0]['password'],
 				$candidatbf[0]['nom'],
@@ -190,17 +198,18 @@ function getCandidat(string $mail) {
 				intVal($etape),
 				$candidatUti[0]['pays'],
 				$candidatUti[0]['ville'],
-				$candidatbf[0]['datecreation']
-				//competence
-				//rensegniement
+				$candidatbf[0]['datecreation'],
+				$compCand,
+				$rensCand
 			);
+			}
 		}
 		
 		// Tests d'erreurs
 		} catch (Exception $e) {
 			die("PSQL ERROR :".$e->getMessage());
 		}
-		return $coach;
+		return $candidat;
 }
 
 function getCoachOuCandidat(string $mail, string $pass) {
@@ -223,38 +232,55 @@ function getCoachOuCandidat(string $mail, string $pass) {
 	}
 }
 
-function getCompetence(int $id) {
+function getCompetence($link) {
 	try {
-		$req = pg_query($this->db,"SELECT * from competence where idutilisateur in (Select idcandidat from candidat) AND adressemail='$mail'");
+		$req = pg_query($this->db,"SELECT * from competence where link='$link'");
 	
-		$candidatbf = pg_fetch_all($req);
+		$competenceRes = pg_fetch_all($req);
 
-
-		if (empty($candidatbf)) {
+		if (empty($competenceRes)) {
 			return false;
 		}else{
 
-			$req = pg_query($this->db,"SELECT * FROM candidat WHERE idcompetence=$id");
+			$idc = $competenceRes[0]['idcompetence'];
 
-			$candidatUti = pg_fetch_all($req);
+			$competence = new Competence(
+				intval($idc),
+				$competenceRes[0]['nvetude'],
+				$competenceRes[0]['langueparle'],
+				$competenceRes[0]['langagesacquis']
+			);
+			
+		}
+		
+		// Tests d'erreurs
+		} catch (Exception $e) {
+			die("PSQL ERROR :".$e->getMessage());
+		}
+		return $competence;
+}
 
-			$age = $candidatbf[0]['age'];
-			$etape = $candidatUti[0]['etape'];
+function getRenseignement($link) {
+	try {
+		$req = pg_query($this->db,"SELECT * from renseignement where link='$link'");
+	
+		$renseignementRes = pg_fetch_all($req);
 
-			$coach = new Candidat(
-				$candidatbf[0]['adressemail'],
-				$candidatbf[0]['password'],
-				$candidatbf[0]['nom'],
-				$candidatbf[0]['prenom'],
-				intVal($age),
-				$candidatbf[0]['telephone'],
-				$candidatUti[0]['liencv'],
-				$candidatUti[0]['lienlettremotivation'],
-				intVal($etape),
-				$candidatUti[0]['pays'],
-				$candidatUti[0]['ville']
-				//competence
-				//rensegniement
+		if (empty($renseignementRes)) {
+			return false;
+		}else{
+
+			$idr = intval($renseignementRes[0]['idrenseignement']);
+
+			echo "<br>{$renseignementRes[0]['travetranger']} </br>";
+
+			$renseignement = new Renseignement(
+				intval($idr),
+				$renseignementRes[0]['travetranger'],
+				$renseignementRes[0]['secteur'],
+				$renseignementRes[0]['typecontrat'],
+				$renseignementRes[0]['poste'],
+				$renseignementRes[0]['tyeentreprise']
 			);
 		}
 		
@@ -262,7 +288,7 @@ function getCompetence(int $id) {
 		} catch (Exception $e) {
 			die("PSQL ERROR :".$e->getMessage());
 		}
-		return $coach;
+		return $renseignement;
 }
 
 /* 

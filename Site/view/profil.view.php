@@ -32,15 +32,22 @@
     <main>
 
       <section class="section-profil">
+
         <img id="img-profil" src="../view/design/img/profil.jpg" alt="">
-        <p>Vous êtes à l'étape n°<?= $_SESSION['utilisateur']->getEtape() ?></p>
-        <p><?= $etapeDetail ?></p>
-        <div id="btn-profil-container">
-          <button id="btn-rens">Mes renseignements</button>
-          <button id="btn-comp">Mes compétences</button>
-          <button id="btn-pref">Mes préférences</button>
-          <button id="btn-docs">Mes documents</button>
+        <div id="img-profil-config">
+          <label for="">Changer la photo</label>
+          <input type="file">
         </div>
+
+        <?php if (is_a($_SESSION['utilisateur'],"Candidat")): ?> <!-- si l'utilisateur est un candidat -->
+          <p>Vous êtes à l'étape n°<?= $_SESSION['utilisateur']->getEtape() ?></p>
+          <div id="btn-profil-container">
+            <button id="btn-rens">Mes renseignements</button>
+            <button id="btn-comp">Mes compétences</button>
+            <button id="btn-pref">Mes préférences</button>
+            <button id="btn-docs">Mes documents</button>
+          </div>
+        <?php endif; ?>
       </section>
       <section class="section-profil">
         <!-- Formulaire de renseignements -->
@@ -149,6 +156,11 @@
               $("#form-comp").hide();
               $("#form-pref").hide();
               $("#form-docs").toggle();
+            });
+
+            $("#img-profil-config").hide();
+            $("#img-profil").click(function() {
+              $("#img-profil-config").toggle();
             });
 
           });

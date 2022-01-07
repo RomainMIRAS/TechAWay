@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
   <head>
@@ -33,9 +34,9 @@
 
       <section id="section1"> <!-- section Accueil -->
         <div>
-          <h1>Rejoignez Tech A Way</h1>
+          <h1><output><?=$etude?></output>Découvrez Tech A Way</h1>
           <p>Tech a Way est un cabinet de recrutement spécialisé dans le domaine de la tech en full remote et partout en Europe</p>
-          <h2>L'expertise du recrutment dans le domaine de la tech avec des recuteur qui vous accompagne jusqu'à l'embauche</h2>
+          <h2>L'expertise du recrutement dans le domaine de la tech avec des recuteurs qui vous accompagne jusqu'à l'embauche</h2>
         </div>
 
         <article id = "article1">
@@ -44,43 +45,48 @@
         </div>
 
         <div>
-          <h2>QUI SOMME NOUS?</h2>
-          <h3>A propos de nous</h3>
-          <p>Tech a Way est un cabinet de recrutement spécialisé dans le domaine de la tech en full remote et partout en Europe. 
-
-De nos jours Tech A Way reçoit des demandes de partenariat d’entreprises cherchant à recruter un candidat. Suite à cela les coachs de l’agence exercent une chasse aux candidats sur des réseaux comme LinkedIn où ils leur proposent de s’entretenir via des messages électroniques. 
-
-Tech A Way permet donc aux entreprises d’externaliser leur recrutement, et offre ainsi au candidat un meilleur équilibre entre vie professionnelle et vie personnelle, qui se voit passer ses entretiens chez lui. 
-          </p>
+          <h2>ENTREPRISES PARTENAIRES</h2>
+          <h3>Trouvez les candidats qu'il vous faut</h3>
+          <p>Tech a Way vous donne accès à des candidats qui correspondent à 100% à vos attentes. 
+            Expliquez-nous toutes les spécificités du poste et on vous trouvera le ou la candidate dont vous avez besoin !</p>
         </div>
 
         </article>
         
         <article id = "article2">
         <div>
-          <h2>WHO'S NEXT?</h2>
-          <h3>Rejoignez l'équipe</h3>
-          <p>Tech a Way est en pleine croissance ! Si tu veux rejoindre une belle aventure humaine et apprendre un job passionnant, n’hésites pas à nous contacter [Stage / Alternance / CDI] </p>
+          <h2>Candidater avec NOUS</h2>
+          <ul>
+            <li>Une expertise dans le recrutement Tech</li>
+            <li>Un gain de temps considérable</li>
+            <li>Un accès à de nouveaux profils Tech</li>
+          </ul>
+          
+          
         </div>
 
         <div id="svg1">
-          <?php include_once("../view/design/svg/p4.svg") ?>
+          <?php include_once("../view/design/svg/p1 var 1.svg") ?>
         </div>
         </article>
         
-      </section>
+</section>
 
       <section id = "section2" >
-      <form class="form" action="nousrejoindre.ctrl.php" method="post" style="padding-bottom: 193px;">
-            <h1>VOUS SOUHAITEZ REJOINDRE TECH A WAY? CONTACTEZ NOUS!</h1>
+      <form class="form" action="recruter.ctrl.php" method="post" style="padding-bottom: 193px;">
+            <h1>DES BESOINS EN RECRUTEMENT TECH ? ÉCHANGE AVEC NOUS !</h1>
             <label for="nom">Nom</label>
             <input id="nom" type="text" name="nom" placeholder="Nom" >
             <label for="prenom">Prenom</label>
             <input id="prenom" type="text" name="prenom" placeholder="Prenom" >
             <label for="email">Adresse E-mail</label>
             <input id="email" type="text" name="email" placeholder="Entrez votre adresse e-mail" >
-            <button type="submit" name="action" value="confirmation">Confirmation</button>
+            <label for="nomEntreprise">Nom de l'entreprise</label>
+            <input id="postactu" type="text" name="postactu" placeholder="Votre Poste Actuel" >
+            <form action ="recruter.ctrl.php" method="post">
             <output><?=$erreur?></output>
+            
+            <button type="submit" name="action" value="confirmation">Confirmation</button>
           </form>
 
       </section>
@@ -93,4 +99,3 @@ Tech A Way permet donc aux entreprises d’externaliser leur recrutement, et off
 
   </body>
 </html>
- 
