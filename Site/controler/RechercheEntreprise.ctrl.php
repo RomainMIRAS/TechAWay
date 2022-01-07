@@ -16,7 +16,7 @@ include_once(__DIR__."/../model/Candidat.class.php");
 
 
 session_start();
-$competence = $_SESSION['utilisateur']->getNom();
+$competence = $_SESSION['utilisateur']->getRenseignement();
 session_write_close();
 
 
