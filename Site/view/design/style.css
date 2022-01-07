@@ -421,6 +421,10 @@ button:hover {
 .section-profil {
   align-items: center;
   flex-direction: column;
+}
+
+.section-profil:nth-child(1) {
+  padding-top: 20px;
   margin-bottom: 20px;
 }
 
