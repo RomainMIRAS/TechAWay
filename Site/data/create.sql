@@ -21,6 +21,7 @@ CREATE TABLE IF NOT EXISTS COACH (
 -- Competences
 CREATE TABLE IF NOT EXISTS COMPETENCE(
 	idCompetence INTEGER NOT NULL PRIMARY KEY, -- identifiant unique des compétences
+	link VARCHAR(30) NOT NULL, -- corrsepond a l'id d'une offre ou l'adresse mail d'un candidat
 	nvEtude VARCHAR(30) NULL, -- niveau d'études
 	langueParle VARCHAR(30) NULL, -- langues parlées
 	langagesAcquis VARCHAR(30) NULL -- Langages informatiques maitrisés
@@ -29,6 +30,7 @@ CREATE TABLE IF NOT EXISTS COMPETENCE(
 -- Renseignements du candidat (chercheur d'emploi)
 CREATE TABLE IF NOT EXISTS RENSEIGNEMENT (
 	idRenseignement INTEGER NOT NULL PRIMARY KEY, -- idenifiant unique du renseignement
+	link VARCHAR(30) NOT NULL,-- corrsepond a l'id d'une offre ou l'adresse mail d'un candidat
 	travEtranger BOOLEAN NULL DEFAULT FALSE, -- localisation du travail
 	secteur VARCHAR(30) NULL, -- secteur de l'offre
 	typeContrat VARCHAR(30) NULL, -- type de contrat en jeu
