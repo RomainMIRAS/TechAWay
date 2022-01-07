@@ -72,7 +72,7 @@ function createUtilisateur(string $mail, string $pass) { //returns boolean
 		INSERT INTO candidat values($sel,'','',0,'','',$comp,$rens);
 		";
 
-		$res = pg_query($this->db, $r);
+		$res = @pg_query($this->db, $r);
 
 		if($res){
 			return true;
