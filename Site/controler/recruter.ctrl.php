@@ -40,7 +40,9 @@ else if($nomEntreprise == "" )
 }
 
 if ($erreur == "" && $action == "confirmation"){
-  $erreur = "Le mail se partenariat a été envoyé !";
+
+
+
   $message =
   "Vous avez reçu une demande de partenariat !\r\n
   \r\n----------------------
@@ -53,10 +55,34 @@ if ($erreur == "" && $action == "confirmation"){
 
   // Dans le cas où nos lignes comportent plus de 70 caractères, nous les coupons en utilisant wordwrap()
   $message = wordwrap($message, 70, "\r\n");
-  $headers = "From: $mail" . "\r\n" .
-       'X-Mailer: PHP/' . phpversion();
-  // Envoi du mail
-  mail('techawayteam13@gmail.com', "Demande de Partenariat - $nomEntreprise", $message,$headers);
+  
+  $mail = new PHPMailer(true);
+
+//Send mail using gmail
+if($send_using_gmail){
+    $mail->IsSMTP(); // telling the class to use SMTP
+    $mail->SMTPAuth = true; // enable SMTP authentication
+    $mail->SMTPSecure = "ssl"; // sets the prefix to the servier
+    $mail->Host = "smtp.gmail.com"; // sets GMAIL as the SMTP server
+    $mail->Port = 465; // set the SMTP port for the GMAIL server
+    $mail->Username = "techawayteam13@gmail.com"; // GMAIL username
+    $mail->Password = "projetteam13"; // GMAIL password
+}
+
+//Typical mail data
+$mail->AddAddress("techawayteam13@gmail.com", "TechAway");
+$mail->SetFrom($mail, $nomEtreprise);
+$mail->Subject = "Demande de Partenariat - $nomEntreprise";
+$mail->Body = $message;
+
+try{
+    $mail->Send();
+    $erreur = "Le mail se partenariat a été envoyé !";
+} catch(Exception $e){
+  $erreur = "Le mail n'a pas pu être envoyé - Erreur SMTP!";
+
+}
+
 }
 
 
