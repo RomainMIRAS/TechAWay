@@ -68,8 +68,8 @@ function createUtilisateur(string $mail, string $pass) { //returns boolean
 
 		$r = "
 		INSERT INTO utilisateur VALUES(DEFAULT,'". $mail ."','". $hashedPw ."','','',0,'',now());
-		INSERT INTO competence values(DEFAULT,NULL,NULL,NULL,'".$mail."');
-		INSERT INTO renseignement values(DEFAULT,DEFAULT,NULL,NULL,NULL,NULL,'".$mail."');
+		INSERT INTO competence values(DEFAULT,'','','','".$mail."');
+		INSERT INTO renseignement values(DEFAULT,DEFAULT,'','','','','".$mail."');
 		INSERT INTO candidat values($sel,'','',0,'','',$comp,$rens);
 		";
 
@@ -244,7 +244,7 @@ function getCompetence($link) {
 
 			$idc = $competenceRes[0]['idcompetence'];
 
-			var_dump(intval($idc));
+			var_dump($competenceRes[0]['nvetude']);
 			$competence = new Competence(
 				intval($idc),
 				$competenceRes[0]['nvetude'],
