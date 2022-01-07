@@ -401,15 +401,15 @@ button:hover {
   margin-bottom: 10px;
 }
 
-#container-profil {
-  display: flex;
-  flex-direction: column;
-}
-
-#container-profil .form {
+.section-profil .form {
   overflow-y: auto;
   height: 500px;
   padding-inline: 10px;
+}
+
+#container-profil {
+  display: flex;
+  flex-direction: column;
 }
 
 #img-profil {
