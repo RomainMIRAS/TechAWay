@@ -60,12 +60,18 @@
           <input type="text" value="<?= $_SESSION['utilisateur']->getMail() ?>" disabled>
           <label for="">Téléphone *</label>
           <input type="text" value="<?= $_SESSION['utilisateur']->getTelephone() ?>" disabled>
-          <label for="">Pays *</label>
-          <input type="text" value="<?= $_SESSION['utilisateur']->getPays() ?>" disabled>
-          <label for="">Ville *</label>
-          <input type="text" value="<?= $_SESSION['utilisateur']->getVille() ?>" disabled>
-          <label for="">Date de création *</label>
-          <input type="text" value="<?= $_SESSION['utilisateur']->getDateCreation() ?>" disabled>
+          <?php if (is_a($_SESSION['utilisateur'],"Candidat")): ?>
+            <label for="">Pays *</label>
+            <input type="text" value="<?= $_SESSION['utilisateur']->getPays() ?>" disabled>
+          <?php endif; ?>
+          <?php if (is_a($_SESSION['utilisateur'],"Candidat")): ?>
+            <label for="">Ville *</label>
+            <input type="text" value="<?= $_SESSION['utilisateur']->getVille() ?>" disabled>
+          <?php endif; ?>
+          <?php if (is_a($_SESSION['utilisateur'],"Candidat")): ?>
+            <label for="">Date de création *</label>
+            <input type="text" value="<?= $_SESSION['utilisateur']->getDateCreation() ?>" disabled>
+          <?php endif; ?>
           <button type="submit">Enregistrer</button>
           <p>* : ces entrées ne sont pas modifiable directement.</p>
         </form>
