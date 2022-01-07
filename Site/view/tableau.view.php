@@ -50,21 +50,19 @@
                 <th>Pays</th>
                 <th>Lien CV</th>
                 <th>Lien Lettre</th>
-                <th>Compétence</th>
             </tr>
             <?php foreach($candidats as $c): ?> <!-- pour chaque candidat -->
                 <?php if ($c!=false): ?>
                     <tr> <!-- affichage du nom, prenom, mail...etc du candidat -->
                         <td><?= $c->getNom() ?></td>
                         <td><?= $c->getPrenom() ?></td>
-                        <td><?= $c->getMail() ?></td>
+                        <td><a href="mailto:<?= $c->getMail() ?>"></a></td>
                         <td><?= $c->getTelephone() ?></td>
                         <td><?= $c->getEtape() ?></td>
                         <td><?= $c->getVille() ?></td>
                         <td><?= $c->getPays() ?></td>
                         <td><?= $c->getLienCv() ?></td>
                         <td><?= $c->getLienLM() ?></td>
-                        <td><?= $c->getCompetenceAcquis()->getNvEtude() ?></td>
                     </tr>
                 <?php endif; ?>
             <?php endforeach; ?>
