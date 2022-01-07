@@ -24,7 +24,7 @@ function __construct(string $mail, string $password,string $nom='', string $pren
     $this->pays = $pays;
     $this->ville = $ville;
     $this->competenceAcquis = $competenceAcquis;
-    $this->preference = $competenceAcquis;
+    $this->preference = $preference;
     // $this->discussions = null;
   }
 
