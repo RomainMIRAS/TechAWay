@@ -39,7 +39,7 @@ session_start();
             </div>
 
             <div id="menu-part2">
-              <?php if (is_a($_SESSION['utilisateur'],"Candidat")) : ?>
+              <?php if (is_a($_SESSION['utilisateur'],"Candidat")) : ?> <!-- CANDIDAT -->
                 <?php if ($_SESSION['utilisateur']->getEtape()>=1) : ?> <!-- si le candidat en n'est pas à l'étape 1 au minimum il ne peut pas voir son profil car il doit le compléter -->
                   <li><a href="../controler/profil.ctrl.php"><i class="fa fa-user"></i>Mon profil</a></li>
                 <?php endif; ?>
@@ -47,6 +47,9 @@ session_start();
                 <?php if ($_SESSION['utilisateur']->getEtape()>=1) : ?>
                   <li><a href="#"><i class="fa fa-envelope"></i>Ma messagerie</a></li>
                 <?php endif; ?>
+              <?php else: ?> <!-- COACH -->
+                <li><a href="../controler/profil.ctrl.php"><i class="fa fa-user"></i>Mon profil</a></li>
+                <li><a href="../controler/tableau.ctrl.php"><i class="fa fa-list"></i>Tableau de bord</a></li>
               <?php endif; ?>
               <form action="../controler/main.ctrl.php" method="post">
                 <li><button id="btn-logout" type="submit" name="logout" value="true"><i class="fa fa-sign-out" aria-hidden="true"></i>Déconnexion</button></li>
