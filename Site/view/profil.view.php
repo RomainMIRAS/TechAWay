@@ -158,10 +158,10 @@
               $("#form-docs").toggle();
             });
 
-            $("#img-profil-config").hide();
+            /*$("#img-profil-config").hide();
             $("#img-profil").click(function() {
               $("#img-profil-config").toggle();
-            });
+            });*/
 
           });
         </script>
