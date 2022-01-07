@@ -6,3 +6,4 @@ $view = new View();
 $view->display("recruter.view.php");
 
 ?>
+  
