@@ -50,7 +50,7 @@
                     <tr>
                         <td><?= $c->getNom() ?></td>
                         <td><?= $c->getPrenom() ?></td>
-                        <td><?= $c->getEmail() ?></td>
+                        <td><?= $c::parent->getEmail() ?></td>
                     </tr>
                 <?php endif; ?>
             <?php endforeach; ?>
