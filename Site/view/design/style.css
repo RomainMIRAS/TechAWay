@@ -532,8 +532,16 @@ tr:nth-child(even) {
   background-color: #dddddd;
 }
 
+tr:nth-child(1):hover {
+  background-color: #dddddd;
+}
+
 tr:hover {
   background-color: var(--color-blue1);
+}
+
+tr:hover td {
+  color: #dddddd;
 }
 
 /**************************************************************
