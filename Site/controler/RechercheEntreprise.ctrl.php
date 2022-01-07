@@ -20,18 +20,21 @@ $checkpassword = (isset($_POST['checkpassword'])) ? $_POST['checkpassword']:"";
 
 
 session_start();
-$competence = $_SESSION['utilisateur']->getCompetenceAcquis();
+//$competence = $_SESSION['utilisateur']->getCompetenceAcquis();
+$name = $_SESSION['utilisateur']->getNom();
 session_write_close();
 
-$nvEtude = $competence->getnvEtude();
+
+//$nvEtude = $competence->getnvEtude();
 ///////////////////////////////////////////////////////////////////////////////
 // Partie View
 ///////////////////////////////////////////////////////////////////////////////
 
 $view = new View();
 
-$view->assign('competence',$competence);
-$view->assign('etude',$nvEtude);
+//$view->assign('competence',$competence);
+//$view->assign('etude',$nvEtude);
+$view->assign('name',$name);
 $view->display("RechercheEntreprise.view.php");
 
 
