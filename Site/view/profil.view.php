@@ -77,44 +77,46 @@
         </form>
 
         <!-- Formulaire de compétences -->
-        <form action="" class="form" id="form-comp">
-          <label for="">Niveau d'études *</label>
-          <input type="text" value="<?= $_SESSION['utilisateur']->getCompetenceAcquis()->getNvEtude() ?>" disabled>
-          <label for="">Langue(s) parlée(s)</label>
-          <input type="text" value="<?= $_SESSION['utilisateur']->getCompetenceAcquis()->getLangeParle() ?>">
-          <label for="">Langage(s) informatique(s)</label>
-          <input type="text" value="<?= $_SESSION['utilisateur']->getCompetenceAcquis()->getLangageAcquis() ?>">
-          <button type="submit">Enregistrer</button>
-          <p>* : ces entrées ne sont pas modifiable directement.</p>
-        </form>
+        <?php if (is_a($_SESSION['utilisateur'],"Candidat")): ?> <!-- formulaire qui concerne uniquement le candidat -->
+          <form action="" class="form" id="form-comp">
+            <label for="">Niveau d'études *</label>
+            <input type="text" value="<?= $_SESSION['utilisateur']->getCompetenceAcquis()->getNvEtude() ?>" disabled>
+            <label for="">Langue(s) parlée(s)</label>
+            <input type="text" value="<?= $_SESSION['utilisateur']->getCompetenceAcquis()->getLangeParle() ?>">
+            <label for="">Langage(s) informatique(s)</label>
+            <input type="text" value="<?= $_SESSION['utilisateur']->getCompetenceAcquis()->getLangageAcquis() ?>">
+            <button type="submit">Enregistrer</button>
+            <p>* : ces entrées ne sont pas modifiable directement.</p>
+          </form>
 
-        <!-- Formulaire de preferences -->
-        <form action="" class="form" id="form-pref">
-          <label for="">Travailler à l'étranger ?</label>
-          <input type="text" value="<?= $_SESSION['utilisateur']->getRenseignement()->getTravEtranger() ?>">
-          <label for="">Secteur(s) d'activité(s)</label>
-          <input type="text" value="<?= $_SESSION['utilisateur']->getRenseignement()->getSecteur() ?>">
-          <label for="">Contrat recherché</label>
-          <input type="text" value="<?= $_SESSION['utilisateur']->getRenseignement()->getTypeContrat() ?>">
-          <label for="">Poste recherché</label>
-          <input type="text" value="<?= $_SESSION['utilisateur']->getRenseignement()->getPoste() ?>">
-          <label for="">Type d'entreprise recherché</label>
-          <input type="text" value="<?= $_SESSION['utilisateur']->getRenseignement()->getTypeEntreprise() ?>">
-          <button type="submit">Enregistrer</button>
-          <p>* : ces entrées ne sont pas modifiable directement.</p>
-        </form>
+          <!-- Formulaire de preferences -->
+          <form action="" class="form" id="form-pref">
+            <label for="">Travailler à l'étranger ?</label>
+            <input type="text" value="<?= $_SESSION['utilisateur']->getRenseignement()->getTravEtranger() ?>">
+            <label for="">Secteur(s) d'activité(s)</label>
+            <input type="text" value="<?= $_SESSION['utilisateur']->getRenseignement()->getSecteur() ?>">
+            <label for="">Contrat recherché</label>
+            <input type="text" value="<?= $_SESSION['utilisateur']->getRenseignement()->getTypeContrat() ?>">
+            <label for="">Poste recherché</label>
+            <input type="text" value="<?= $_SESSION['utilisateur']->getRenseignement()->getPoste() ?>">
+            <label for="">Type d'entreprise recherché</label>
+            <input type="text" value="<?= $_SESSION['utilisateur']->getRenseignement()->getTypeEntreprise() ?>">
+            <button type="submit">Enregistrer</button>
+            <p>* : ces entrées ne sont pas modifiable directement.</p>
+          </form>
 
-        <!-- Formulaire de documents -->
-        <form action="" class="form" id="form-docs">
-          <label for="">Nom</label>
-          <input type="text" value="<?= $_SESSION['utilisateur']->getNom() ?>" disabled>
-          <label for="">Prénom</label>
-          <input type="text" value="<?= $_SESSION['utilisateur']->getPrenom() ?>" disabled>
-          <label for="">Adresse mail</label>
-          <input type="text" value="<?= $_SESSION['utilisateur']->getMail() ?>" disabled>
-          <button type="submit">Enregistrer</button>
-          <p>* : ces entrées ne sont pas modifiable directement.</p>
-        </form>
+          <!-- Formulaire de documents -->
+          <form action="" class="form" id="form-docs">
+            <label for="">Nom</label>
+            <input type="text" value="<?= $_SESSION['utilisateur']->getNom() ?>" disabled>
+            <label for="">Prénom</label>
+            <input type="text" value="<?= $_SESSION['utilisateur']->getPrenom() ?>" disabled>
+            <label for="">Adresse mail</label>
+            <input type="text" value="<?= $_SESSION['utilisateur']->getMail() ?>" disabled>
+            <button type="submit">Enregistrer</button>
+            <p>* : ces entrées ne sont pas modifiable directement.</p>
+          </form>
+        <?php endif; ?>
 
       </section>
 
