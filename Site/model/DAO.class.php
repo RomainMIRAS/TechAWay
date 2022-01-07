@@ -74,6 +74,8 @@ function createUtilisateur(string $mail, string $pass) { //returns boolean
 
 		$res = @pg_query($this->db, $r);
 
+		echo "$res";
+
 		if($res){
 			return true;
 		}
