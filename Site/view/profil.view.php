@@ -35,10 +35,15 @@
     <!-- MAIN ---------------------------------------------------------------------------------->
     <main>
 
+      <section>
+        <img id="img-profil" src="../view/design/img/profil.jpg" alt="">
+        <p>Vous êtes à l'étape n°<?= $_SESSION['utilisateur']->getEtape() ?></p>
+        <div id="btn-profil-container">
+          <button id="btn-rens">Mes renseignements</button>
+          <button id="btn-pref">Mes préférences</button>
+        </div>
+      </section>
       <section class="section-profil">
-            <img id="img-profil" src="../view/design/img/profil.jpg" alt="">
-            <p>Vous êtes à l'étape n°<?= $_SESSION['utilisateur']->getEtape() ?></p>
-            <button id="btn-rens">Mes renseignements</button>
             <form action="" class="form" id="form-rens">
                 <label for="">Nom</label>
                 <input type="text" value="<?= $_SESSION['utilisateur']->getNom() ?>" disabled>
@@ -47,17 +52,14 @@
                 <label for="">Adresse mail</label>
                 <input type="text" value="<?= $_SESSION['utilisateur']->getMail() ?>" disabled>
             </form>
-            <button id="btn-pref">Mes préférences</button>
       </section>
 
       <script src="../framework/jquery-3.6.0.min.js"></script>
       <script>
         $(window).ready(function() {
-            alert("OK");
             $("#form-rens").hide();
             $("#btn-rens").click(function() {
-              $("#form-rens").show();
-              alert("OK");
+              $("#form-rens").toggle();
             });
         });
       </script>
