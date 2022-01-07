@@ -42,6 +42,7 @@
           <button id="btn-rens">Mes renseignements</button>
           <button id="btn-comp">Mes compétences</button>
           <button id="btn-pref">Mes préférences</button>
+          <button id="btn-docs">Mes documents</button>
         </div>
       </section>
       <section class="section-profil">
@@ -53,30 +54,52 @@
               <input type="text" value="<?= $_SESSION['utilisateur']->getPrenom() ?>" disabled>
               <label for="">Adresse mail</label>
               <input type="text" value="<?= $_SESSION['utilisateur']->getMail() ?>" disabled>
+              <label for="">Téléphone</label>
+              <input type="text" value="<?= $_SESSION['utilisateur']->getTelephone() ?>" disabled>
               <label for="">Pays</label>
               <input type="text" value="<?= $_SESSION['utilisateur']->getPays() ?>" disabled>
               <label for="">Ville</label>
               <input type="text" value="<?= $_SESSION['utilisateur']->getVille() ?>" disabled>
+              <!--<label for="">Date de création</label>
+              <input type="text" value="<?= $_SESSION['utilisateur']->getDateCreation() ?>" disabled>-->
+              <button type="submit">Enregistrer</button>
           </form>
 
           <!-- Formulaire de compétences -->
           <form action="" class="form" id="form-comp">
-              <label for="">Nom</label>
-              <input type="text" value="<?= $_SESSION['utilisateur']->getNom() ?>" disabled>
-              <label for="">Prénom</label>
-              <input type="text" value="<?= $_SESSION['utilisateur']->getPrenom() ?>" disabled>
-              <label for="">Adresse mail</label>
-              <input type="text" value="<?= $_SESSION['utilisateur']->getMail() ?>" disabled>
+              <label for="">Niveau d'études</label>
+              <input type="text" value="<?= $_SESSION['utilisateur']->getCompetenceAcquis()->getNvEtude() ?>">
+              <label for="">Langue(s) parlée(s)</label>
+              <input type="text" value="<?= $_SESSION['utilisateur']->getCompetenceAcquis()->getLangeParle() ?>" disabled>
+              <label for="">Langage(s) informatique(s)</label>
+              <input type="text" value="<?= $_SESSION['utilisateur']->getCompetenceAcquis()->getLangageAcquis() ?>" disabled>
+              <button type="submit">Enregistrer</button>
           </form>
 
           <!-- Formulaire de preferences -->
           <form action="" class="form" id="form-pref">
+              <label for="">Travailler à l'étranger ?</label>
+              <input type="text" value="<?= $_SESSION['utilisateur']->getRenseignement()->getTravEtranger() ?>">
+              <label for="">Secteur(s) d'activité(s)</label>
+              <input type="text" value="<?= $_SESSION['utilisateur']->getRenseignement()->getSecteur() ?>">
+              <label for="">Contrat recherché</label>
+              <input type="text" value="<?= $_SESSION['utilisateur']->getRenseignement()->getTypeContrat() ?>">
+              <label for="">Poste recherché</label>
+              <input type="text" value="<?= $_SESSION['utilisateur']->getRenseignement()->getPoste() ?>">
+              <label for="">Type d'entreprise recherché</label>
+              <input type="text" value="<?= $_SESSION['utilisateur']->getRenseignement()->getTypeEntreprise() ?>">
+              <button type="submit">Enregistrer</button>
+          </form>
+
+          <!-- Formulaire de documents -->
+          <form action="" class="form" id="form-docs">
               <label for="">Nom</label>
               <input type="text" value="<?= $_SESSION['utilisateur']->getNom() ?>" disabled>
               <label for="">Prénom</label>
               <input type="text" value="<?= $_SESSION['utilisateur']->getPrenom() ?>" disabled>
               <label for="">Adresse mail</label>
               <input type="text" value="<?= $_SESSION['utilisateur']->getMail() ?>" disabled>
+              <button type="submit">Enregistrer</button>
           </form>
       </section>
 
@@ -87,11 +110,13 @@
           $("#form-rens").hide();
           $("#form-comp").hide();
           $("#form-pref").hide();
+          $("#form-docs").hide();
 
           /* si bouton 'mes renseignements' est cliqué  */
           $("#btn-rens").click(function() {
             $("#form-pref").hide();
             $("#form-comp").hide();
+            $("#form-docs").hide();
             $("#form-rens").toggle();
           });
 
@@ -99,6 +124,7 @@
           $("#btn-comp").click(function() {
             $("#form-rens").hide();
             $("#form-pref").hide();
+            $("#form-docs").hide();
             $("#form-comp").toggle();
           });
 
@@ -106,7 +132,16 @@
           $("#btn-pref").click(function() {
             $("#form-rens").hide();
             $("#form-comp").hide();
+            $("#form-docs").hide();
             $("#form-pref").toggle();
+          });
+
+          /* si bouton 'mes documents' est cliqué  */
+          $("#btn-docs").click(function() {
+            $("#form-rens").hide();
+            $("#form-comp").hide();
+            $("#form-pref").hide();
+            $("#form-docs").toggle();
           });
 
         });
