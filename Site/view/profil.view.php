@@ -35,7 +35,7 @@
     <!-- MAIN ---------------------------------------------------------------------------------->
     <main>
 
-      <section>
+      <section class="section-profil">
         <img id="img-profil" src="../view/design/img/profil.jpg" alt="">
         <p>Vous êtes à l'étape n°<?= $_SESSION['utilisateur']->getEtape() ?></p>
         <div id="btn-profil-container">
@@ -43,15 +43,26 @@
           <button id="btn-pref">Mes préférences</button>
         </div>
       </section>
-      <section class="section-profil">
-            <form action="" class="form" id="form-rens">
-                <label for="">Nom</label>
-                <input type="text" value="<?= $_SESSION['utilisateur']->getNom() ?>" disabled>
-                <label for="">Prénom</label>
-                <input type="text" value="<?= $_SESSION['utilisateur']->getPrenom() ?>" disabled>
-                <label for="">Adresse mail</label>
-                <input type="text" value="<?= $_SESSION['utilisateur']->getMail() ?>" disabled>
-            </form>
+      <section class="section-profil-form">
+        <!-- Formulaire de renseignements -->
+          <form action="" class="form" id="form-rens">
+              <label for="">Nom</label>
+              <input type="text" value="<?= $_SESSION['utilisateur']->getNom() ?>" disabled>
+              <label for="">Prénom</label>
+              <input type="text" value="<?= $_SESSION['utilisateur']->getPrenom() ?>" disabled>
+              <label for="">Adresse mail</label>
+              <input type="text" value="<?= $_SESSION['utilisateur']->getMail() ?>" disabled>
+          </form>
+
+          <!-- Formulaire de preferences -->
+          <form action="" class="form" id="form-rens">
+              <label for="">Nom</label>
+              <input type="text" value="<?= $_SESSION['utilisateur']->getNom() ?>" disabled>
+              <label for="">Prénom</label>
+              <input type="text" value="<?= $_SESSION['utilisateur']->getPrenom() ?>" disabled>
+              <label for="">Adresse mail</label>
+              <input type="text" value="<?= $_SESSION['utilisateur']->getMail() ?>" disabled>
+          </form>
       </section>
 
       <script src="../framework/jquery-3.6.0.min.js"></script>
