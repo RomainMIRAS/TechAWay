@@ -106,8 +106,12 @@
 
     </main>
 
+    <?php echo "test"; ?>
+
     <!-- FOOTER -------------------------------------------------------------------------------->
     <?php include_once('../view/design/footer.php'); ?>
+
+    <?php echo "test"; ?>
 
 
   </body>
