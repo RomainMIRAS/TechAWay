@@ -39,14 +39,14 @@
               <h1>Formulaire</h1>
               <!-- Saisie des informations du candidat -->
               <label for="nom">Nom</label>
-              <input id="nom" type="text" name="nom" placeholder="Entrez votre nom" value="<?php $candidat->getNom(); ?>" >
+              <input id="nom" type="text" name="nom" placeholder="Entrez votre nom" >
               <label for="prenom">Prénom</label>
-              <input id="prenom" type="text" name="prenom" placeholder="Entrez votre prénom" value="<?php $candidat->getPrenom(); ?>">
+              <input id="prenom" type="text" name="prenom" placeholder="Entrez votre prénom" >
               <label for="age">Date de naissance</label>
               <input id="age" type="date" name="age" >
               <label for="tel">Téléphone</label>
               <!-- type tel -> seul les chiffres sont autorisé -->
-              <input id="tel" type="tel" name="tel" placeholder="+33 6 01 02 03 04" <?php $candidat->getTelephone(); ?> >
+              <input id="tel" type="tel" name="tel" placeholder="+33 6 01 02 03 04" >
 
 
               <!-- Section du pays parmis la liste des pays europeens -->
@@ -62,7 +62,7 @@
               </select>
 
               <label for="ville">Ville</label>
-              <input id="ville" type="text" name="ville" value="<?php $candidat->getVille(); ?>">
+              <input id="ville" type="text" name="ville" >
 
               <output><?=$erreur?></output>
               <button type="submit" name="action" value="suivant">Confirmation</button>

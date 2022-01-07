@@ -74,6 +74,8 @@ function createUtilisateur(string $mail, string $pass) { //returns boolean
 
 		$res = @pg_query($this->db, $r);
 
+		echo "$res rererer";
+
 		if($res){
 			return true;
 		}
@@ -223,38 +225,23 @@ function getCoachOuCandidat(string $mail, string $pass) {
 	}
 }
 
-function getCompetence(int $id) {
+function getCompetence($link) {
 	try {
-		$req = pg_query($this->db,"SELECT * from competence where idutilisateur in (Select idcandidat from candidat) AND adressemail='$mail'");
+		$req = pg_query($this->db,"SELECT * from competence where link='$link'");
 	
-		$candidatbf = pg_fetch_all($req);
+		$competenceRes = pg_fetch_all($req);
 
-
-		if (empty($candidatbf)) {
+		if (empty($competenceRes)) {
 			return false;
 		}else{
 
-			$req = pg_query($this->db,"SELECT * FROM candidat WHERE idcompetence=$id");
+			$idc = $competenceRes[0]['idcompetence'];
 
-			$candidatUti = pg_fetch_all($req);
-
-			$age = $candidatbf[0]['age'];
-			$etape = $candidatUti[0]['etape'];
-
-			$coach = new Candidat(
-				$candidatbf[0]['adressemail'],
-				$candidatbf[0]['password'],
-				$candidatbf[0]['nom'],
-				$candidatbf[0]['prenom'],
-				intVal($age),
-				$candidatbf[0]['telephone'],
-				$candidatUti[0]['liencv'],
-				$candidatUti[0]['lienlettremotivation'],
-				intVal($etape),
-				$candidatUti[0]['pays'],
-				$candidatUti[0]['ville']
-				//competence
-				//rensegniement
+			$competence = new Competence(
+				$competenceRes[0]['idcompetence'],
+				$competenceRes[0]['nvetude'],
+				$competenceRes[0]['langueparle'],
+				$competenceRes[0]['langagesacquis']
 			);
 		}
 		
@@ -262,7 +249,30 @@ function getCompetence(int $id) {
 		} catch (Exception $e) {
 			die("PSQL ERROR :".$e->getMessage());
 		}
-		return $coach;
+		return $competence;
+}
+function getRenseignement($link) {
+	try {
+		$req = pg_query($this->db,"SELECT * from competence where link='$link'");
+	
+		$renseignementRes = pg_fetch_all($req);
+
+		if (empty($renseignementRes)) {
+			return false;
+		}else{
+			$renseignement = new Renseignement(
+				$renseignementRes[0]['idrenseignement'],
+				$renseignementRes[0]['nvetude'],
+				$renseignementRes[0]['langueparle'],
+				$renseignementRes[0]['langagesacquis']
+			);
+		}
+		
+		// Tests d'erreurs
+		} catch (Exception $e) {
+			die("PSQL ERROR :".$e->getMessage());
+		}
+		return $renseignement;
 }
 
 /* 
