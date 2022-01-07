@@ -65,31 +65,7 @@
           <button type="submit">Enregistrer</button>
         </form>
 
-        <!-- Formulaire de compétences
-        <form action="" class="form" id="form-comp">
-          <label for="">Niveau d'études</label>
-          <input type="text" value="<?= $_SESSION['utilisateur']->getCompetenceAcquis()->getNvEtude() ?>">
-          <label for="">Langue(s) parlée(s)</label>
-          <input type="text" value="<?= $_SESSION['utilisateur']->getCompetenceAcquis()->getLangeParle() ?>" disabled>
-          <label for="">Langage(s) informatique(s)</label>
-          <input type="text" value="<?= $_SESSION['utilisateur']->getCompetenceAcquis()->getLangageAcquis() ?>" disabled>
-          <button type="submit">Enregistrer</button>
-        </form>-->
-
-        <!-- Formulaire de preferences 
-        <form action="" class="form" id="form-pref">
-          <label for="">Travailler à l'étranger ?</label>
-          <input type="text" value="<?= $_SESSION['utilisateur']->getRenseignement()->getTravEtranger() ?>">
-          <label for="">Secteur(s) d'activité(s)</label>
-          <input type="text" value="<?= $_SESSION['utilisateur']->getRenseignement()->getSecteur() ?>">
-          <label for="">Contrat recherché</label>
-          <input type="text" value="<?= $_SESSION['utilisateur']->getRenseignement()->getTypeContrat() ?>">
-          <label for="">Poste recherché</label>
-          <input type="text" value="<?= $_SESSION['utilisateur']->getRenseignement()->getPoste() ?>">
-          <label for="">Type d'entreprise recherché</label>
-          <input type="text" value="<?= $_SESSION['utilisateur']->getRenseignement()->getTypeEntreprise() ?>">
-          <button type="submit">Enregistrer</button>
-        </form>-->
+        
 
         <!-- Formulaire de documents -->
         <form action="" class="form" id="form-docs">
