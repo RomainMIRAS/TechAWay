@@ -39,7 +39,69 @@
 
         <h2>Candidats <span style="font-size: 12px"><?= $nbCandidats?> candidat(s) enregistré(s)</span></h2>
 
-        <table>
+        <table>  <!-- Tableau des candidats -->
+            <tr>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Email</th>
+                <th>Téléphone</th>
+                <th>Etape</th>
+                <th>Ville</th>
+                <th>Pays</th>
+                <th>Lien CV</th>
+                <th>Lien Lettre</th>
+            </tr>
+            <?php foreach($candidats as $c): ?> <!-- pour chaque candidat -->
+                <?php if ($c!=false): ?>
+                    <tr> <!-- affichage du nom, prenom, mail...etc du candidat -->
+                        <td><?= $c->getNom() ?></td>
+                        <td><?= $c->getPrenom() ?></td>
+                        <td><a href="mailto:<?= $c->getMail() ?>"><?= $c->getMail() ?></a></td>
+                        <td><?= $c->getTelephone() ?></td>
+                        <td><?= $c->getEtape() ?></td>
+                        <td><?= $c->getVille() ?></td>
+                        <td><?= $c->getPays() ?></td>
+                        <td><?= $c->getLienCv() ?></td>
+                        <td><?= $c->getLienLM() ?></td>
+                    </tr>
+                <?php endif; ?>
+            <?php endforeach; ?>
+        </table>
+
+        <h2>Entreprises <span style="font-size: 12px"><?= $nbCandidats?> entreprise(s) enregistrée(s)</span></h2>
+
+        <table>  <!-- Tableau des entreprises partenaires -->
+            <tr>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Email</th>
+                <th>Téléphone</th>
+                <th>Etape</th>
+                <th>Ville</th>
+                <th>Pays</th>
+                <th>Lien CV</th>
+                <th>Lien Lettre</th>
+            </tr>
+            <?php foreach($candidats as $c): ?> <!-- pour chaque candidat -->
+                <?php if ($c!=false): ?>
+                    <tr> <!-- affichage du nom, prenom, mail...etc du candidat -->
+                        <td><?= $c->getNom() ?></td>
+                        <td><?= $c->getPrenom() ?></td>
+                        <td><a href="mailto:<?= $c->getMail() ?>"><?= $c->getMail() ?></a></td>
+                        <td><?= $c->getTelephone() ?></td>
+                        <td><?= $c->getEtape() ?></td>
+                        <td><?= $c->getVille() ?></td>
+                        <td><?= $c->getPays() ?></td>
+                        <td><?= $c->getLienCv() ?></td>
+                        <td><?= $c->getLienLM() ?></td>
+                    </tr>
+                <?php endif; ?>
+            <?php endforeach; ?>
+        </table>
+
+        <h2>Offres <span style="font-size: 12px"><?= $nbCandidats?> offre(s) enregistrée(s)</span></h2>
+
+        <table>  <!-- Tableau des offres d'emplois -->
             <tr>
                 <th>Nom</th>
                 <th>Prénom</th>
