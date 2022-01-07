@@ -11,7 +11,7 @@ try{
 
   //Test de Creation d'utilisateur;
   echo "Creation d'utilisateur : adresse-candidat@gmail.com:motdepassecandidat:  (doit retourner un erreur car il existe deja)";
-  $test = $db->createUtilisateur("adresse-candidat@gmail.com","motdepassecandidat");
+  $test = $db->createUtilisateur("adresse-11candidat@gmail.com","motdepassecandidat");
 
   if ($test){
     echo "</br>Utilisateur Cree :</br>";
