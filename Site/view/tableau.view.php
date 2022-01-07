@@ -64,7 +64,7 @@
                         <td><?= $c->getPays() ?></td>
                         <td><?= $c->getLienCv() ?></td>
                         <td><?= $c->getLienLM() ?></td>
-                        <td><?= $c->getCompetenceAcquis() ?></td>
+                        <td><?= $c->getCompetenceAcquis()->getNvEtude() ?></td>
                     </tr>
                 <?php endif; ?>
             <?php endforeach; ?>
