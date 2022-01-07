@@ -251,7 +251,7 @@ function getCompetence($link) {
 				$competenceRes[0]['langueparle'],
 				$competenceRes[0]['langagesacquis']
 			);
-			var_dump($competence);
+			var_dump(intval($idc));
 		}
 		
 		// Tests d'erreurs
