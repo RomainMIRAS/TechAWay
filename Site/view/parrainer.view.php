@@ -30,35 +30,76 @@
 
     <!-- MAIN ---------------------------------------------------------------------------------->
     <main>
-          <section class="section-parrainer">
-            <form class="form" action="parrainer.ctrl.php" method="post">
+          <section class="section-accueil" id="section-parrainer">
+
+            <form class="form" method="post">
+
               <h1>Parrainer</h1>
-              <p>Si vous connaissez quelqu'un qui pourrait être intéressé par l'offre, <br>
-                n'hésitez pas à lui en parler !
+              <p>
+                Une personne de ton entourage est à l’écoute d’opportunités ?<br>
+                Tu souhaites nous mettre en relation ?<br>Cela nous semble normal de te remercier !<br><br>
+                Touche 600€ si la personne parrainée est recrutée chez un de nos partenaires.
               </p>
-              <h2>Parrainer quelqu'un :</h2>
-              <!-- Saisie des infos du candidat -->
-              <div>
-                <label for="nomCandidat">Nom/Prénom du candidat</label>
-                <input id="nomCandidat" type="text" name="nomCandidat" placeholder="Entrez le nom et le prénom du candidat" >
-                <label for="telCandidat">Téléphone du candidat</label>
-                <!-- type tel -> seul les chiffres sont autorisé -->
-                <input id="telCandidat" type="tel" name="telCandidat" placeholder="+33 6 01 02 03 04" >
+              <h2>Parrainer quelqu'un</h2>
+
+              <div id="coord-can-par">
+                <!-- Saisie des infos du parrain -->
+                <div id="coord-parrain">
+                  <h3>Coordonnées du parrain</h3>
+                  <label for="nomParrain">Nom / Prénom</label>
+                  <input id="nomParrain" type="text" name="nomParrain" placeholder="Nom et prénom du parrain">
+                  <label for="mailParrain">Adresse mail</label>
+                  <input id="mailParrain" type="mail" name="mailParrain" placeholder="Adresse mail du parrain">
+                  <label for="telParrain">Téléphone</label>
+                  <!-- type tel -> seul les chiffres sont autorisé -->
+                  <input id="telParrain" type="tel" name="telParrain" placeholder="+33 6 01 02 03 04" >
+                  <div>
+                    <a id="btn-suivant">Suivant</a>
+                  </div>
+                  
+                </div>
+
+                <!-- Saisie des infos du candidat -->
+                <div id="coord-candidat">
+                <h3>Coordonnées du candidat</h3>
+                  <label for="nomCandidat">Nom / Prénom</label>
+                  <input id="nomCandidat" type="text" name="nomCandidat" placeholder="Nom et prénom du candidat" >
+                  <label for="mailCandidat">Adresse mail</label>
+                  <input id="mailCandidat" type="mail" name="mailCandidat" placeholder="Adresse mail du candidat">
+                  <label for="telCandidat">Téléphone</label>
+                  <!-- type tel -> seul les chiffres sont autorisé -->
+                  <input id="telCandidat" type="tel" name="telCandidat" placeholder="+33 6 01 02 03 04" >
+                  <div>
+                    <a id="btn-precedent">Précédent</a>
+                    <button id="btn-envoyer" type="submit" name="etape" value="preferences">Envoyer</button>
+                  </div>
+                </div>
+
+                
               </div>
 
-              <!-- Saisie des infos du parrain -->
-              <div>
-                <label for="nomParrain">Nom/prénom du parrain</label>
-                <input id="nomParrain" type="text" name="nomParrain" placeholder="Entrez le nom et le prénom du parrain">
-                <label for="telParrain">Téléphone du parrain</label>
-                <!-- type tel -> seul les chiffres sont autorisé -->
-                <input id="telParrain" type="tel" name="telParrain" placeholder="+33 6 01 02 03 04" >
-              </div>
-
-
+              <script src="../framework/jquery-3.6.0.min.js"></script>
+              <script>
+                $(window).ready(function(){
+                  $("#coord-parrain").show();
+                  $("#coord-candidat").hide();
+                  $("#btn-suivant").click(function(){
+                    $("#coord-candidat").show();
+                    $("#coord-parrain").hide();
+                  });
+                  $("#btn-precedent").click(function(){
+                    $("#coord-parrain").show();
+                    $("#coord-candidat").hide();
+                  });
+                });
+              </script>
               <form action ="formulaire.ctrl.php" method="post">
-              <button type="submit" name="etape" value="preferences">Envoyer</button>
               </form>
+
+              <div>
+                <?php include_once("../view/design/svg/p2.svg") ?>
+              </div>
+
           </section>
     </main>
 

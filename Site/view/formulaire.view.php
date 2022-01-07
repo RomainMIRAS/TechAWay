@@ -81,8 +81,8 @@
               <input id="nvEtude" type="text" name="nvEtude" placeholder="Format : Bac+3" >
               <label for="langueParle">Langues parlé</label>
               <input id="langueParle" type="text" name="langueParle" placeholder="ex : francais, anglais" >
-              <label for="languageAquis">Niveau d'etudes</label>
-              <input id="languageAquis" type="text" name="languageAquis" placeholder="Select" >
+              <label for="languageAquis">Languages aquis</label>
+              <input id="languageAquis" type="text" name="languageAquis" placeholder="ex : C++, Java, PHP" >
               <form action ="formulaire.ctrl.php" method="post">
               <output><?=$erreur?></output>
               <button type="submit" name="action" value="precedent">Precedent</button>

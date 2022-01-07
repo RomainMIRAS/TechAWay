@@ -1,6 +1,5 @@
 <?php
 include_once(__DIR__."/../model/Utilisateur.class.php");
-
 // Description d'un candidat
 class Candidat extends Utilisateur {
   private string $pays;                 //pays du candidat
@@ -91,7 +90,7 @@ class Candidat extends Utilisateur {
     $this->discussions = $discussions;
   }
 
-  function addDiscussions(Discussions $discussions) : void {
+  function addDiscussions(Discussion $discussions) : void {
     array_push($this->discussions,$discussions);
   }
 

@@ -11,8 +11,19 @@ include_once(__DIR__."/../framework/view.class.php");
 
 $nom = (isset($_POST['nom'])) ? $_POST['nom']:""; 
 $prenom = (isset($_POST['prenom'])) ? $_POST['prenom']:"";  
-$age = (isset($_POST['age'])) ? $_POST['age']:"";  
+
+$age = (isset($_POST['age'])) ? $_POST['age']:"";
+
+/*
+$ageDate = strtotime($age);  
+$date1 = date("m-d-Y");
+$today = strtotime($date1);  
+$dateNull = 0;  //"00-00-0000";
+*/
+
 $tel = (isset($_POST['tel'])) ? $_POST['tel']:""; 
+$tellength= strlen($tel);
+$ville = (isset($_POST['ville'])) ? $_POST['ville']:""; 
 $etape = (isset($_POST['etape'])) ? $_POST['etape']:"non";
 
 $nvEtude = (isset($_POST['nvEtude'])) ? $_POST['nvEtude']:"";  //Affectation du niveau d'etude
@@ -28,12 +39,8 @@ $typeEntreprise = (isset($_POST['typeEntreprise'])) ? $_POST['typeEntreprise']:"
 
 
 
-/*
-$nom = '';
-if (isset($_POST['nom'])) {
-  $nom = $_POST['nom'];
-}
-*/
+$_SESSION['nom'] = $_POST['nom'];
+
 
 $erreur = "";
 
@@ -41,36 +48,67 @@ $pays = array('Allemagne','Autriche','Andorre','Belgique','Boznie Herzegovine','
 
 $action = (isset($_POST['action'])) ? $_POST['action']: 'formulaire';
 
-  $etape = (isset($_POST['etape'])) ? $_POST['etape']: 'base';
-$today = date("m-d-Y");
+$etape = (isset($_POST['etape'])) ? $_POST['etape']: 'base';
 
 
 ///////////////////////////////////////////////////////////////////////////////
 // Partie Gestion des erreurs
 ///////////////////////////////////////////////////////////////////////////////
 
-// Si le boutton enclenché est "envoyer" alors on passe une serie de test de validité des info
+
+// Si le boutton enclenché est "suivant" de la premiere page, alors on passe une serie de test de validité des info
 
 if($action== "suivant" && $etape == "base")  
 {
-  // Si niveau d'etude vide alors --> erreur 
+  
   if($nom == "") 
   {
-    $erreur = "Le nom doit etre rempli";
+    $erreur = "Le nom doit etre rempli";  // Si nom est vide --> erreur 
+  }
+  else if(preg_match('/^[a-z]+$/i', $nom) == false)
+  {
+    $erreur = "Le nom doit etre composé de lettres seulement"; // Si nom n'est pas en lettre --> erreur 
   }
   // Si aucune langue selectionné
   else if($prenom == "" )
   {
-    $erreur = "Le prenom doit etre rempli";
+    $erreur = "Le prenom doit etre rempli";  // Si prenom est vide --> erreur 
   }
-  // Si age incorrect
-  else if($age == "" && $age < $today)
+  else if(preg_match('/^[a-z]+$/i', $prenom) == false)
   {
-    $erreur = "L'age doit etre rempli et correct";
+    $erreur = "Le prenom doit etre composé de lettres seulement"; // Si prenom n'est pas en lettre --> erreur 
   }
-  else if($tel == "" && is_numeric($tel) && strlen($tel) > 5)
+  // Si age incorrect 
+  else if($age == "")
+  {
+    $erreur = "L'age doit etre rempli";
+  }
+  /*
+  else if(strtotime($age) >= strtotime(date("m-d-Y"))   $today - $ageDate < $dateNull)
+  {
+    $erreur = "L'age ne doit pas être superieur à la date d'aujourd'hui";
+  }
+  */
+
+  else if($tel == "")
   {
     $erreur = "Le telephone doit etre rempli et correct";
+  }
+  else if($tellength !== 10)
+  {
+    $erreur = "Le telephone doit être au format indiqué";
+  }
+  else if(preg_match('/^[0-9]+$/i', $tel) == false)
+  {
+    $erreur = "Le telephone doit etre composé de chiffre";
+  }
+  else if($ville == "" )
+  {
+    $erreur = "La ville doit etre rempli";  // Si ville est vide --> erreur 
+  }
+  else if(preg_match('/^[a-z]+$/i', $ville) == false)
+  {
+    $erreur = "La ville doit etre composé de lettres seulement"; // Si ville n'est pas en lettre --> erreur 
   }
   else{
     $etape = (isset($_POST['etape'])) ? $_POST['etape']: 'base';
@@ -131,6 +169,15 @@ if($etape== "envoyer")
 // Gestion suivant
 if ($erreur == "" && $action == "suivant"){
   $etape = ($etape == "base") ? "competences": "preferences";
+  if ($etape == "base"){
+    $_SESSION["utilisateur"]->setNom($nom);
+    $_SESSION["utilisateur"]->setPrenom($prenom);
+    $_SESSION["utilisateur"]->setAge($age);
+    $_SESSION["utilisateur"]->setTelephone($tel);
+
+
+    
+  }
 }
 
 //Gestion précédent
