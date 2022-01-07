@@ -102,7 +102,17 @@
           <button type="submit">Enregistrer</button>
         </form>
 
-        <script src="../framework/jquery-3.6.0.min.js"></script>
+      </section>
+
+    </main>
+
+    <!-- FOOTER -------------------------------------------------------------------------------->
+    <?php include_once('../view/design/footer.php'); ?>
+
+
+  </body>
+
+  <script src="../framework/jquery-3.6.0.min.js"></script>
         <script>
           $(window).ready(function() {
             /* on cache les formulaires */
@@ -146,13 +156,4 @@
           });
         </script>
 
-      </section>
-
-    </main>
-
-    <!-- FOOTER -------------------------------------------------------------------------------->
-    <?php include_once('../view/design/footer.php'); ?>
-
-
-  </body>
 </html>
