@@ -33,14 +33,13 @@
 
       <section class="section-profil">
             <img id="img-profil" src="../view/design/img/profil.jpg" alt="">
-            <p><?= $_SESSION['utilisateur']->getMail() ?></p>
             <form action="" class="form">
                 <label for="">Nom</label>
-                <input type="text" value="Nom" disabled>
+                <input type="text" value="<?= $_SESSION['utilisateur']->getNom() ?>" disabled>
                 <label for="">Prénom</label>
-                <input type="text" value="Prénom" disabled>
+                <input type="text" value="<?= $_SESSION['utilisateur']->getPrenom() ?>" disabled>
                 <label for="">Adresse mail</label>
-                <input type="text" value="Adresse mail" disabled>
+                <input type="text" value="<?= $_SESSION['utilisateur']->getMail() ?>" disabled>
             </form>
       </section>
 
