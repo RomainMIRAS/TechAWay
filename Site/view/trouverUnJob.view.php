@@ -75,7 +75,7 @@
         <section>
             <article>
                 <h2>Rejoignez-nous !</h2>
-                <form action="../controler/authentification.ctrl.php">                
+                <form action="../controler/authentification.ctrl.php" method="post">                
                     <button id="signup" type="submit" name="action" value="signup">S'inscrire</button>
                 </form>
             </article>
