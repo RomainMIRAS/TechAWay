@@ -34,7 +34,7 @@
 
       <section id="section1"> <!-- section Accueil -->
         <div>
-          <h1><output><?=$candidat->getNom();?></output>Découvrez Tech A Way</h1>
+          <h1><output><?=$candidat->getCompetenceAcquis();?></output>Découvrez Tech A Way</h1>
           <p>Tech a Way est un cabinet de recrutement spécialisé dans le domaine de la tech en full remote et partout en Europe</p>
           <h2>L'expertise du recrutement dans le domaine de la tech avec des recuteurs qui vous accompagne jusqu'à l'embauche</h2>
         </div>
