@@ -21,8 +21,6 @@ foreach($emails as $e) {
     array_push($candidats,$db->getCandidat($e));
 }
 
-var_dump($candidats);
-
 $view->assign("candidats",$candidats);
 
 // Charge la vue
