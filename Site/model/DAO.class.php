@@ -244,7 +244,6 @@ function getCompetence($link) {
 
 			$idc = $competenceRes[0]['idcompetence'];
 
-			var_dump($competenceRes[0]['nvetude']);
 			$competence = new Competence(
 				intval($idc),
 				$competenceRes[0]['nvetude'],
