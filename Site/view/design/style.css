@@ -421,12 +421,6 @@ button:hover {
   margin-bottom: 20px;
 }
 
-.section-profil .form {
-  overflow-y: auto;
-  height: 500px;
-  padding-inline: 10px;
-}
-
 #container-profil {
   display: flex;
   flex-direction: column;
@@ -441,7 +435,7 @@ button:hover {
 }
 
 #img-profil:hover {
-  opacity: 40%;
+  opacity: 80%;
 }
 
 .btn-menu-profil {
@@ -451,7 +445,7 @@ button:hover {
 }
 
 .btn-menu-profil:hover, .btn-menu-profil:focus {
-  color: var(--color-grey);
+  color: var(--color-black);
   border: 1px solid var(--color-black);
   background-color: transparent;
 }
