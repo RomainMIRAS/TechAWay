@@ -20,7 +20,7 @@ $checkpassword = (isset($_POST['checkpassword'])) ? $_POST['checkpassword']:"";
 
 
 session_start();
-$competence = new competence($_SESSION['utilisateur']->getCompetenceAcquis());
+$competence = $_SESSION['utilisateur']->getCompetenceAcquis();
 session_write_close();
 
 $nvEtude = $competence->getnvEtude();
