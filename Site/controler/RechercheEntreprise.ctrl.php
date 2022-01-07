@@ -20,7 +20,7 @@ $checkpassword = (isset($_POST['checkpassword'])) ? $_POST['checkpassword']:"";
 
 
 session_start();
-$competence = $_SESSION['utilisateur']->getPays;
+$competence = $_SESSION['utilisateur']->getPays();
 session_write_close();
 ///////////////////////////////////////////////////////////////////////////////
 // Partie View

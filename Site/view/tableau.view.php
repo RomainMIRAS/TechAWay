@@ -38,16 +38,16 @@
       <section> <!-- Tous les candidats inscrits -->
 
         <h2>Candidats inscrits</h2>
-
+        <br>
         <table>
             <tr>
                 <th>Nom</th>
                 <th>Prénom</th>
                 <th>Email</th>
             </tr>
-            <?php foreach($candidats as $c): ?>
+            <?php foreach($candidats as $c): ?> <!-- pour chaque candidat -->
                 <?php if ($c!=false): ?>
-                    <tr>
+                    <tr> <!-- affichage du nom, prenom, mail...etc du candidat -->
                         <td><?= $c->getNom() ?></td>
                         <td><?= $c->getPrenom() ?></td>
                         <td><?= $c->getMail() ?></td>
