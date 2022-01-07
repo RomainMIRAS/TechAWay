@@ -38,6 +38,7 @@
       <section class="section-profil">
         <img id="img-profil" src="../view/design/img/profil.jpg" alt="">
         <p>Vous êtes à l'étape n°<?= $_SESSION['utilisateur']->getEtape() ?></p>
+        <p><?= $etapeDetail ?></p>
         <div id="btn-profil-container">
           <button id="btn-rens">Mes renseignements</button>
           <button id="btn-comp">Mes compétences</button>
@@ -47,105 +48,62 @@
       </section>
       <section class="section-profil">
         <!-- Formulaire de renseignements -->
-          <form action="" class="form" id="form-rens">
-              <label for="">Nom</label>
-              <input type="text" value="<?= $_SESSION['utilisateur']->getNom() ?>" disabled>
-              <label for="">Prénom</label>
-              <input type="text" value="<?= $_SESSION['utilisateur']->getPrenom() ?>" disabled>
-              <label for="">Adresse mail</label>
-              <input type="text" value="<?= $_SESSION['utilisateur']->getMail() ?>" disabled>
-              <label for="">Téléphone</label>
-              <input type="text" value="<?= $_SESSION['utilisateur']->getTelephone() ?>" disabled>
-              <label for="">Pays</label>
-              <input type="text" value="<?= $_SESSION['utilisateur']->getPays() ?>" disabled>
-              <label for="">Ville</label>
-              <input type="text" value="<?= $_SESSION['utilisateur']->getVille() ?>" disabled>
-              <!--<label for="">Date de création</label>
-              <input type="text" value="<?= $_SESSION['utilisateur']->getDateCreation() ?>" disabled>-->
-              <button type="submit">Enregistrer</button>
-          </form>
+        <form action="" class="form" id="form-rens">
+          <label for="">Nom</label>
+          <input type="text" value="<?= $_SESSION['utilisateur']->getNom() ?>" disabled>
+          <label for="">Prénom</label>
+          <input type="text" value="<?= $_SESSION['utilisateur']->getPrenom() ?>" disabled>
+          <label for="">Adresse mail</label>
+          <input type="text" value="<?= $_SESSION['utilisateur']->getMail() ?>" disabled>
+          <label for="">Téléphone</label>
+          <input type="text" value="<?= $_SESSION['utilisateur']->getTelephone() ?>" disabled>
+          <label for="">Pays</label>
+          <input type="text" value="<?= $_SESSION['utilisateur']->getPays() ?>" disabled>
+          <label for="">Ville</label>
+          <input type="text" value="<?= $_SESSION['utilisateur']->getVille() ?>" disabled>
+          <label for="">Date de création</label>
+          <input type="text" value="<?= $_SESSION['utilisateur']->getDateCreation() ?>" disabled>
+          <button type="submit">Enregistrer</button>
+        </form>
 
-          <!-- Formulaire de compétences -->
-          <form action="" class="form" id="form-comp">
-              <label for="">Niveau d'études</label>
-              <input type="text" value="<?= $_SESSION['utilisateur']->getCompetenceAcquis()->getNvEtude() ?>">
-              <label for="">Langue(s) parlée(s)</label>
-              <input type="text" value="<?= $_SESSION['utilisateur']->getCompetenceAcquis()->getLangeParle() ?>" disabled>
-              <label for="">Langage(s) informatique(s)</label>
-              <input type="text" value="<?= $_SESSION['utilisateur']->getCompetenceAcquis()->getLangageAcquis() ?>" disabled>
-              <button type="submit">Enregistrer</button>
-          </form>
+        <!-- Formulaire de compétences -->
+        <form action="" class="form" id="form-comp">
+          <label for="">Niveau d'études</label>
+          <input type="text" value="">
+          <label for="">Langue(s) parlée(s)</label>
+          <input type="text" value="" disabled>
+          <label for="">Langage(s) informatique(s)</label>
+          <input type="text" value="" disabled>
+          <button type="submit">Enregistrer</button>
+        </form>
 
-          <!-- Formulaire de preferences -->
-          <form action="" class="form" id="form-pref">
-              <label for="">Travailler à l'étranger ?</label>
-              <input type="text" value="<?= $_SESSION['utilisateur']->getRenseignement()->getTravEtranger() ?>">
-              <label for="">Secteur(s) d'activité(s)</label>
-              <input type="text" value="<?= $_SESSION['utilisateur']->getRenseignement()->getSecteur() ?>">
-              <label for="">Contrat recherché</label>
-              <input type="text" value="<?= $_SESSION['utilisateur']->getRenseignement()->getTypeContrat() ?>">
-              <label for="">Poste recherché</label>
-              <input type="text" value="<?= $_SESSION['utilisateur']->getRenseignement()->getPoste() ?>">
-              <label for="">Type d'entreprise recherché</label>
-              <input type="text" value="<?= $_SESSION['utilisateur']->getRenseignement()->getTypeEntreprise() ?>">
-              <button type="submit">Enregistrer</button>
-          </form>
+        <!-- Formulaire de preferences -->
+        <form action="" class="form" id="form-pref">
+          <label for="">Travailler à l'étranger ?</label>
+          <input type="text" value="">
+          <label for="">Secteur(s) d'activité(s)</label>
+          <input type="text" value="">
+          <label for="">Contrat recherché</label>
+          <input type="text" value="">
+          <label for="">Poste recherché</label>
+          <input type="text" value="">
+          <label for="">Type d'entreprise recherché</label>
+          <input type="text" value="">
+          <button type="submit">Enregistrer</button>
+        </form>
 
-          <!-- Formulaire de documents -->
-          <form action="" class="form" id="form-docs">
-              <label for="">Nom</label>
-              <input type="text" value="<?= $_SESSION['utilisateur']->getNom() ?>" disabled>
-              <label for="">Prénom</label>
-              <input type="text" value="<?= $_SESSION['utilisateur']->getPrenom() ?>" disabled>
-              <label for="">Adresse mail</label>
-              <input type="text" value="<?= $_SESSION['utilisateur']->getMail() ?>" disabled>
-              <button type="submit">Enregistrer</button>
-          </form>
+        <!-- Formulaire de documents -->
+        <form action="" class="form" id="form-docs">
+          <label for="">Nom</label>
+          <input type="text" value="<?= $_SESSION['utilisateur']->getNom() ?>" disabled>
+          <label for="">Prénom</label>
+          <input type="text" value="<?= $_SESSION['utilisateur']->getPrenom() ?>" disabled>
+          <label for="">Adresse mail</label>
+          <input type="text" value="<?= $_SESSION['utilisateur']->getMail() ?>" disabled>
+          <button type="submit">Enregistrer</button>
+        </form>
+
       </section>
-
-      <script src="../framework/jquery-3.6.0.min.js"></script>
-      <script>
-        $(window).ready(function() {
-          /* on cache les formulaires */
-          $("#form-rens").hide();
-          $("#form-comp").hide();
-          $("#form-pref").hide();
-          $("#form-docs").hide();
-
-          /* si bouton 'mes renseignements' est cliqué  */
-          $("#btn-rens").click(function() {
-            $("#form-pref").hide();
-            $("#form-comp").hide();
-            $("#form-docs").hide();
-            $("#form-rens").toggle();
-          });
-
-          /* si bouton 'mes compétences' est cliqué  */
-          $("#btn-comp").click(function() {
-            $("#form-rens").hide();
-            $("#form-pref").hide();
-            $("#form-docs").hide();
-            $("#form-comp").toggle();
-          });
-
-          /* si bouton 'mes préférences' est cliqué  */
-          $("#btn-pref").click(function() {
-            $("#form-rens").hide();
-            $("#form-comp").hide();
-            $("#form-docs").hide();
-            $("#form-pref").toggle();
-          });
-
-          /* si bouton 'mes documents' est cliqué  */
-          $("#btn-docs").click(function() {
-            $("#form-rens").hide();
-            $("#form-comp").hide();
-            $("#form-pref").hide();
-            $("#form-docs").toggle();
-          });
-
-        });
-      </script>
 
     </main>
 
@@ -153,5 +111,51 @@
     <?php include_once('../view/design/footer.php'); ?>
 
 
+
   </body>
+
+  <script src="../framework/jquery-3.6.0.min.js"></script>
+        <script>
+          $(window).ready(function() {
+            /* on cache les formulaires */
+            $("#form-rens").show();
+            $("#form-comp").hide();
+            $("#form-pref").hide();
+            $("#form-docs").hide();
+
+            /* si bouton 'mes renseignements' est cliqué  */
+            $("#btn-rens").click(function() {
+              $("#form-pref").hide();
+              $("#form-comp").hide();
+              $("#form-docs").hide();
+              $("#form-rens").toggle();
+            });
+
+            /* si bouton 'mes compétences' est cliqué  */
+            $("#btn-comp").click(function() {
+              $("#form-rens").hide();
+              $("#form-pref").hide();
+              $("#form-docs").hide();
+              $("#form-comp").toggle();
+            });
+
+            /* si bouton 'mes préférences' est cliqué */
+            $("#btn-pref").click(function() {
+              $("#form-rens").hide();
+              $("#form-comp").hide();
+              $("#form-docs").hide();
+              $("#form-pref").toggle();
+            });
+
+            /* si bouton 'mes documents' est cliqué  */
+            $("#btn-docs").click(function() {
+              $("#form-rens").hide();
+              $("#form-comp").hide();
+              $("#form-pref").hide();
+              $("#form-docs").toggle();
+            });
+
+          });
+        </script>
+
 </html>
