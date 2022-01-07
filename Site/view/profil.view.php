@@ -40,6 +40,7 @@
         <p>Vous êtes à l'étape n°<?= $_SESSION['utilisateur']->getEtape() ?></p>
         <div id="btn-profil-container">
           <button id="btn-rens">Mes renseignements</button>
+          <button id="btn-comp">Mes compétences</button>
           <button id="btn-pref">Mes préférences</button>
         </div>
       </section>
@@ -52,10 +53,24 @@
               <input type="text" value="<?= $_SESSION['utilisateur']->getPrenom() ?>" disabled>
               <label for="">Adresse mail</label>
               <input type="text" value="<?= $_SESSION['utilisateur']->getMail() ?>" disabled>
+              <label for="">Pays</label>
+              <input type="text" value="<?= $_SESSION['utilisateur']->getPays() ?>" disabled>
+              <label for="">Ville</label>
+              <input type="text" value="<?= $_SESSION['utilisateur']->getVille() ?>" disabled>
+          </form>
+
+          <!-- Formulaire de compétences -->
+          <form action="" class="form" id="form-comp">
+              <label for="">Nom</label>
+              <input type="text" value="<?= $_SESSION['utilisateur']->getNom() ?>" disabled>
+              <label for="">Prénom</label>
+              <input type="text" value="<?= $_SESSION['utilisateur']->getPrenom() ?>" disabled>
+              <label for="">Adresse mail</label>
+              <input type="text" value="<?= $_SESSION['utilisateur']->getMail() ?>" disabled>
           </form>
 
           <!-- Formulaire de preferences -->
-          <form action="" class="form" id="form-rens">
+          <form action="" class="form" id="form-pref">
               <label for="">Nom</label>
               <input type="text" value="<?= $_SESSION['utilisateur']->getNom() ?>" disabled>
               <label for="">Prénom</label>
@@ -70,14 +85,27 @@
         $(window).ready(function() {
           /* on cache les formulaires */
           $("#form-rens").hide();
+          $("#form-comp").hide();
           $("#form-pref").hide();
 
           /* si bouton 'mes renseignements' est cliqué  */
           $("#btn-rens").click(function() {
+            $("#form-pref").hide();
+            $("#form-comp").hide();
             $("#form-rens").toggle();
           });
 
+          /* si bouton 'mes compétences' est cliqué  */
+          $("#btn-comp").click(function() {
+            $("#form-rens").hide();
+            $("#form-pref").hide();
+            $("#form-comp").toggle();
+          });
+
+          /* si bouton 'mes préférences' est cliqué  */
           $("#btn-pref").click(function() {
+            $("#form-rens").hide();
+            $("#form-comp").hide();
             $("#form-pref").toggle();
           });
 
