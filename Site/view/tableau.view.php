@@ -1,6 +1,6 @@
 <?php
-    include_once(__DIR__."/../model/Utilisateur.class.php");
-    include_once(__DIR__."/../model/Candidat.class.php");
+    include_once(__DIR__."/../../model/Utilisateur.class.php");
+    include_once(__DIR__."/../../model/Candidat.class.php");
 ?>
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
@@ -47,7 +47,7 @@
             </tr>
             <?php foreach($candidats as $c): ?>
                 <tr>
-                    <td><?php echo $c->getNom(); ?></td>
+                    <td><?= $c->getNom(); ?></td>
                     <td></td>
                     <td></td>
                 </tr>
