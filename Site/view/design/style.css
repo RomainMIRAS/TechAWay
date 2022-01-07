@@ -155,7 +155,7 @@ section h1 {
   width: 500px;
 }
 
-form {
+#sectionBoutonsAccueil {
   display: flex;
   flex-direction: row;
 }
@@ -455,7 +455,6 @@ button:hover {
   background-color: #7094FF;
 }
 
-<<<<<<< HEAD
 /**************************************************************
 * TROUVERUNJOB
 **************************************************************/
@@ -497,8 +496,7 @@ button:hover {
   justify-content: center;
   text-align: center;
 }
-=======
->>>>>>> 796dbb9409ff87ea21ef9782d9b50bcdec2e828c
+
 /**************************************************************
 * FOOTER
 **************************************************************/
