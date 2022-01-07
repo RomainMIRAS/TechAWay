@@ -1,5 +1,6 @@
 :root {
   --color-blue1: #0036d9;
+  --color-blue2: #0036d94b;
   --color-yellow1: #fac120;
   --color-white: white;
   --color-black: black;
@@ -538,7 +539,7 @@ tr:nth-child(1):hover {
 }
 
 tr:hover {
-  background-color: var(--color-blue1);
+  background-color: var(--color-blue2);
 }
 
 tr:hover td {
