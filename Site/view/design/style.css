@@ -398,18 +398,18 @@ button:hover {
 .section-profil {
   align-items: center;
   flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.section-profil .form {
+  overflow-y: auto;
+  height: 500px;
+  padding-inline: 10px;
 }
 
 #container-profil {
   display: flex;
   flex-direction: column;
-  margin-bottom: 10px;
-}
-
-#container-profil .form {
-  overflow-y: auto;
-  height: 500px;
-  padding-inline: 10px;
 }
 
 #img-profil {

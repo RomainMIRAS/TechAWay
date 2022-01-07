@@ -41,7 +41,7 @@
               <label for="nom">Nom</label>
               <input id="nom" type="text" name="nom" placeholder="Entrez votre nom" >
               <label for="prenom">Prénom</label>
-              <input id="prenom" type="text" name="prenom" placeholder="Entrez votre prénom" >
+              <input id="prenom" type="text" name="prenom" placeholder="Entrez votre prénom" value="">
               <label for="age">Date de naissance</label>
               <input id="age" type="date" name="age" >
               <label for="tel">Téléphone</label>

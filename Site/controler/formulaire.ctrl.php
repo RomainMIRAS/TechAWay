@@ -2,8 +2,8 @@
 
 
 include_once(__DIR__."/../framework/view.class.php");
-include_once(__DIR__."/../framework/Competence.class.php");
-include_once(__DIR__."/../framework/Renseignement.class.php");
+include_once(__DIR__."/../model/Competence.class.php");
+include_once(__DIR__."/../model/Renseignement.class.php");
 
 
 //-------------------Affectation des variables
