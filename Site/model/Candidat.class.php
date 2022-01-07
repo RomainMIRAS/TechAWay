@@ -25,7 +25,6 @@ function __construct(string $mail, string $password,string $nom='', string $pren
     $this->ville = $ville;
     // $this->competenceAcquis = $competenceAcquis;
     // $this->preference = $competenceAcquis;
-    // $this->discussions = null;
   }
 
   function getPays() : string {

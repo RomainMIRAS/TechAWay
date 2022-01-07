@@ -37,7 +37,7 @@ class Competence {
   function getLangageAcquis() : array {
     return $this->langageAcquis;
   }
-  
+
   function setNvEtude(string $nvEtude) : void {
     $this->nvEtude = $nvEtude;
   }
