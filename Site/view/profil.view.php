@@ -52,10 +52,12 @@
 
       <script src="../framework/jquery-3.6.0.min.js"></script>
       <script>
-        $(window).ready(function(){
+        $(window).ready(function() {
+            alert("OK");
             $("#form-rens").hide();
             $("#btn-rens").onclick(function() {
               $("#form-rens").show();
+              alert("OK");
             });
         });
       </script>
