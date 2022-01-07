@@ -177,13 +177,10 @@ function getCandidat(string $mail) {
 			$req = pg_query($this->db,"SELECT * FROM candidat WHERE idcandidat=". intVal($candidatbf[0]['idutilisateur']) ."");
 			$candidatUti = pg_fetch_all($req);
 
-			if (empty($candidatUti)) {
-				return false;
-			}else{
-				$age = $candidatbf[0]['age'];
-				$etape = $candidatUti[0]['etape'];
+			$age = $candidatbf[0]['age'];
+			$etape = $candidatUti[0]['etape'];
 
-				$candidat = new Candidat(
+			$coach = new Candidat(
 				$candidatbf[0]['adressemail'],
 				$candidatbf[0]['password'],
 				$candidatbf[0]['nom'],
@@ -199,14 +196,13 @@ function getCandidat(string $mail) {
 				//competence
 				//rensegniement
 			);
-			}
 		}
 		
 		// Tests d'erreurs
 		} catch (Exception $e) {
 			die("PSQL ERROR :".$e->getMessage());
 		}
-		return $candidat;
+		return $coach;
 }
 
 function getCoachOuCandidat(string $mail, string $pass) {
