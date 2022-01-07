@@ -433,6 +433,12 @@ button:hover {
   border-radius: 100%;
   width: 100px;
   height: 100px;
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+}
+
+#img-profil:hover {
+  opacity: 40%;
 }
 
 
@@ -504,6 +510,26 @@ button:hover {
   flex-direction: column;
   justify-content: center;
   text-align: center;
+}
+
+/**************************************************************
+* TABLEAU DE BORD 
+**************************************************************/
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
 }
 
 /**************************************************************

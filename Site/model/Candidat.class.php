@@ -16,15 +16,21 @@ class Candidat extends Utilisateur {
 
   // Contructeur
   // Revoir Constructeur
-function __construct(string $mail, string $password,string $nom='', string $prenom='', int $age=0, string $telephone='', string $lienCV='', string $lienLM='', int $etape = 0, string $pays ='' , string $ville = '', string $dateCreation = ''  /*Competence $competenceAcquis = null, Renseignement $preference = 0 */ ) {
+function __construct(string $mail, string $password,string $nom='', string $prenom='', int $age=0, string $telephone='', string $lienCV='', string $lienLM='', int $etape = 0, string $pays ='' , string $ville = '', string $dateCreation = '' , Competence $competenceAcquis, Renseignement $preference  ) {
     parent::__construct($mail, $password, $nom, $prenom, $age, $telephone, $dateCreation);
     $this->lienCV = $lienCV;
     $this->lienLM = $lienLM;
     $this->etape = $etape;
     $this->pays = $pays;
     $this->ville = $ville;
+<<<<<<< HEAD
     // $this->competenceAcquis = $competenceAcquis;
     // $this->preference = $competenceAcquis;
+=======
+    $this->competenceAcquis = $competenceAcquis;
+    $this->preference = $preference;
+    // $this->discussions = null;
+>>>>>>> e7b13eda893273a018f9b16876e202f2dc831e58
   }
 
   function getPays() : string {

@@ -11,9 +11,10 @@ $mail = (isset($_POST['email'])) ? $_POST['email']:"";
 $erreur = "";
 $action = (isset($_POST['action'])) ? $_POST['action']: '';
 
-    if($action == "confirmation" )  
-    {
-        if($nom == "")
+if($action == "confirmation" )  
+{
+
+    if($nom == "")
         {
             $erreur = "Le nom doit etre rempli";  // Si nom est vide --> erreur
         }
@@ -21,19 +22,16 @@ $action = (isset($_POST['action'])) ? $_POST['action']: '';
         {
             $erreur = "Le nom doit etre composé de lettres seulement"; // Si nom n'est pas en lettre --> erreur
         }
-    if($prenom == "")
+    else if($prenom == "")
         {
-            $erreur = "Le prenom doit etre rempli";  // Si nom est vide --> erreur
+            $erreur = "Le prenom doit etre rempli";  // Si prenom est vide --> erreur
         }
     else if(preg_match('/^[a-z]+$/i', $prenom) == false)
         {
-            $erreur = "Le prenom doit etre composé de lettres seulement"; // Si nom n'est pas en lettre --> erreur
+            $erreur = "Le prenom doit etre composé de lettres seulement"; // Si prenom n'est pas en lettre --> erreur
         }
-    else if (in_array($email,DAO::get()->getEmails()))
-    { // Si email déja enregistrée
-        $erreur = "Cette adresse mail est déjà utilisé.";
-    } 
-    else if (!filter_var($email, FILTER_VALIDATE_EMAIL))
+    
+    else if (!filter_var($mail, FILTER_VALIDATE_EMAIL))
     { // Si email invalide
         $erreur = "Adresse mail non valide.";
     } 

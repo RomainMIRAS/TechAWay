@@ -68,8 +68,8 @@ function createUtilisateur(string $mail, string $pass) { //returns boolean
 
 		$r = "
 		INSERT INTO utilisateur VALUES(DEFAULT,'". $mail ."','". $hashedPw ."','','',0,'',now());
-		INSERT INTO competence values(DEFAULT,NULL,NULL,NULL,'".$mail."');
-		INSERT INTO renseignement values(DEFAULT,DEFAULT,NULL,NULL,NULL,NULL,'".$mail."');
+		INSERT INTO competence values(DEFAULT,'','','','".$mail."');
+		INSERT INTO renseignement values(DEFAULT,DEFAULT,'','','','','".$mail."');
 		INSERT INTO candidat values($sel,'','',0,'','',$comp,$rens);
 		";
 
@@ -177,6 +177,9 @@ function getCandidat(string $mail) {
 			$req = pg_query($this->db,"SELECT * FROM candidat WHERE idcandidat=". intVal($candidatbf[0]['idutilisateur']) ."");
 			$candidatUti = pg_fetch_all($req);
 
+			$compCand = $this->getCompetence($mail);
+			$rensCand = $this->getRenseignement($mail);
+
 			if (empty($candidatUti)) {
 				return false;
 			}else{
@@ -195,9 +198,9 @@ function getCandidat(string $mail) {
 				intVal($etape),
 				$candidatUti[0]['pays'],
 				$candidatUti[0]['ville'],
-				$candidatbf[0]['datecreation']
-				//competence
-				//rensegniement
+				$candidatbf[0]['datecreation'],
+				$compCand,
+				$rensCand
 			);
 			}
 		}
@@ -241,12 +244,14 @@ function getCompetence($link) {
 
 			$idc = $competenceRes[0]['idcompetence'];
 
+			var_dump($competenceRes[0]['nvetude']);
 			$competence = new Competence(
 				intval($idc),
 				$competenceRes[0]['nvetude'],
 				$competenceRes[0]['langueparle'],
 				$competenceRes[0]['langagesacquis']
 			);
+			
 		}
 		
 		// Tests d'erreurs
@@ -258,7 +263,7 @@ function getCompetence($link) {
 
 function getRenseignement($link) {
 	try {
-		$req = pg_query($this->db,"SELECT * from competence where link='$link'");
+		$req = pg_query($this->db,"SELECT * from renseignement where link='$link'");
 	
 		$renseignementRes = pg_fetch_all($req);
 

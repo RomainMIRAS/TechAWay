@@ -43,7 +43,9 @@ session_start();
                 <?php if ($_SESSION['utilisateur']->getEtape()>=1) : ?> <!-- si le candidat en n'est pas à l'étape 1 au minimum il ne peut pas voir son profil car il doit le compléter -->
                   <li><a href="../controler/profil.ctrl.php"><i class="fa fa-user"></i>Mon profil</a></li>
                 <?php endif; ?>
-                <li><a href="../controler/recrutement-candidat.ctrl.php"><i class="fa fa-level-up" aria-hidden="true"></i>Mon Recrutement</a></li>
+                <?php if ($_SESSION['utilisateur']->getEtape()==0) : ?>
+                  <li><a href="../controler/recrutement-candidat.ctrl.php"><i class="fa fa-level-up" aria-hidden="true"></i>Mon Recrutement</a></li>
+                <?php endif; ?>
                 <?php if ($_SESSION['utilisateur']->getEtape()>=1) : ?>
                   <li><a href="#"><i class="fa fa-envelope"></i>Ma messagerie</a></li>
                 <?php endif; ?>
