@@ -39,7 +39,7 @@ else if($nomEntreprise == "" )
     }
 }
 
-if ($erreur == ""){
+if ($erreur == "" && $action == "confirmation"){
   $erreur = "Le mail se partenariat a été envoyé !";
   $message =
   "Vous avez reçu une demande de partenariat !\r\n
