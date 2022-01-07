@@ -266,7 +266,7 @@ function getRenseignement($link) {
 			$idr = intval($renseignementRes[0]['idrenseignement']);
 
 			$renseignement = new Renseignement(
-				$idr,
+				intval($idr),
 				$renseignementRes[0]['nvetude'],
 				$renseignementRes[0]['langueparle'],
 				$renseignementRes[0]['langagesacquis']
