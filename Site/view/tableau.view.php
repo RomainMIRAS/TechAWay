@@ -43,7 +43,7 @@
             </tr>
             <?php foreach($candidats as $c): ?>
                 <tr>
-                    <td><?= e->getNom() ?></td>
+                    <td><?= $c->getNom() ?></td>
                     <td></td>
                     <td></td>
                 </tr>
