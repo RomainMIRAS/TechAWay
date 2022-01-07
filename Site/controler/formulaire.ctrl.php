@@ -3,6 +3,7 @@
 
 include_once(__DIR__."/../framework/view.class.php");
 include_once(__DIR__."/../model/Utilisateur.class.php");
+include_once(__DIR__."/../model/Candidat.class.php");
 include_once(__DIR__."/../model/Renseignement.class.php");
 
 
@@ -14,13 +15,6 @@ $nom = (isset($_POST['nom'])) ? $_POST['nom']:"";
 $prenom = (isset($_POST['prenom'])) ? $_POST['prenom']:"";
 
 $age = (isset($_POST['age'])) ? $_POST['age']:"";
-
-/*
-$ageDate = strtotime($age);
-$date1 = date("m-d-Y");
-$today = strtotime($date1);
-$dateNull = 0;  //"00-00-0000";
-*/
 
 // Attribut de la première page ( BASE )
 $tel = (isset($_POST['tel'])) ? $_POST['tel']:"";
