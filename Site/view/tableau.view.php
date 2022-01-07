@@ -31,7 +31,19 @@
     <!-- MAIN ---------------------------------------------------------------------------------->
     <main>
 
-      
+      <section> <!-- Tous les candidats inscrits -->
+
+        <h2>Candidats inscrits</h2>
+
+        <table>
+            <tr>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Email</th>
+            </tr>
+        </table>
+
+      </section>
 
     </main>
 
