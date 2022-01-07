@@ -172,6 +172,7 @@ if ($erreur == "" && $action == "suivant"){
 
   // Push des donnés dans la session puis quand fini dans la base
   if ($etape == "base"){
+    session_start();
     $_SESSION["utilisateur"]->setNom($nom);
     $_SESSION["utilisateur"]->setPrenom($prenom);
     // Cacul d'age
@@ -181,22 +182,25 @@ if ($erreur == "" && $action == "suivant"){
     $_SESSION["utilisateur"]->setAge($age);
     $_SESSION["utilisateur"]->setVille($ville);
     $_SESSION["utilisateur"]->setPays($pays);
+    session_write_close();
   } else if ($etape == "competences") {
+    session_start();
     $competence = $_SESSION["utilisateur"]->getCompetenceAcquis();
 
     $competence->setNvEtude($nvEtude);
     $competence->setLangeParle($langueParle);
     $competence->setLangageAcquis($languageAquis);
     $_SESSION["utilisateur"]->setCompetenceAcquis($competence);
-
+    session_write_close();
   } else if ($etape == "preferences") {
-
+    session_start();
     $renseignement = $_SESSION["utilisateur"]->getRenseignement();
     $renseignement->setTravEtranger($travEtranger);
     $renseignement->setTypeContrat($typeContrat);
     $renseignement->setSecteur($secteur);
     $renseignement->setPoste($poste);
     $renseignement->setTypeEntreprise($typeEntreprise);
+    session_write_close();
   }
 }
 
