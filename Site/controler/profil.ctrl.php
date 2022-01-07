@@ -13,6 +13,8 @@ $view = new View();
 
 if (isset($_SESSION['utilisateur'])) { /* Si la variable session 'utilisateur' existe */
     
+    echo "test";
+    
     /* En fonction de l'étape */
     switch ($_SESSION['utilisateur']->getEtape()) {
         case 1:
