@@ -245,6 +245,7 @@ function getCompetence($link) {
 			$idc = $competenceRes[0]['idcompetence'];
 
 			var_dump($competenceRes[0]['langagesacquis']);
+			var_dump($competenceRes[0]['langueparle']);
 
 			$competence = new Competence(
 				intval($idc),
