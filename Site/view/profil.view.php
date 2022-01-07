@@ -1,3 +1,7 @@
+<?php
+  include_once(__DIR__."/../model/Candidat.class.php");
+  include_once(__DIR__."/../model/Utilisateur.class.php");
+?>
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
   <head>
@@ -34,7 +38,8 @@
       <section class="section-profil">
             <img id="img-profil" src="../view/design/img/profil.jpg" alt="">
             <p>Vous êtes à l'étape n°<?= $_SESSION['utilisateur']->getEtape() ?></p>
-            <form action="" class="form">
+            <button id="btn-rens">Mes renseignements</button>
+            <form action="" class="form" id="form-rens">
                 <label for="">Nom</label>
                 <input type="text" value="<?= $_SESSION['utilisateur']->getNom() ?>" disabled>
                 <label for="">Prénom</label>
@@ -42,7 +47,18 @@
                 <label for="">Adresse mail</label>
                 <input type="text" value="<?= $_SESSION['utilisateur']->getMail() ?>" disabled>
             </form>
+            <button id="btn-pref">Mes préférences</button>
       </section>
+
+      <script src="../framework/jquery-3.6.0.min.js"></script>
+      <script>
+        $(window).ready(function(){
+            $("#form-rens").hide();
+            $("#btn-rens").onclick(function() {
+              $("#form-rens").show();
+            });
+        });
+      </script>
 
     </main>
 
