@@ -1,3 +1,7 @@
+<?php
+    include_once(__DIR__."/../model/Utilisateur.class.php");
+    include_once(__DIR__."/../model/Candidat.class.php");
+?>
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
   <head>
@@ -41,9 +45,11 @@
                 <th>Prénom</th>
                 <th>Email</th>
             </tr>
-            <?php foreach($emails as $e): ?>
+            <?php foreach($candidats as $c): ?>
                 <tr>
-                    <td>OK</td>
+                    <td><?= $c->getNom() ?></td>
+                    <td></td>
+                    <td></td>
                 </tr>
             <?php endforeach; ?>
         </table>
