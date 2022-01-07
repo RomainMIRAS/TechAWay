@@ -17,13 +17,12 @@ $emails = $db->getEmails();
 
 $candidats = array();
 
-echo "{$db->getCandidat('azeaze')}";
-
 foreach($emails as $e) {
     array_push($candidats,$db->getCandidat($e));
     
 }
 
+var_dump($candidats);
 
 $view->assign("candidats",$candidats);
 
