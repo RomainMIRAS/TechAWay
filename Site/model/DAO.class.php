@@ -144,8 +144,7 @@ function getCoach(string $mail) {
 				$coachbf[0]['prenom'],
 				$coachbf[0]['telephone'],
 				intVal($age),
-				$coachUti[0]['lienphoto'],
-				$candidatUti[0]['candidatUti']
+				$coachUti[0]['lienphoto']
 			);
 		}
 
@@ -187,6 +186,7 @@ function getCandidat(string $mail) {
 				intVal($etape),
 				$candidatUti[0]['pays'],
 				$candidatUti[0]['ville'],
+				$candidatbf[0]['datecreation']
 				//competence
 				//rensegniement
 			);

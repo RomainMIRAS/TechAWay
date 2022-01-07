@@ -18,7 +18,7 @@ abstract class Utilisateur {
     $this->password = $password;
     $this->telephone = $telephone;
     $this->age = $age;
-    $this->$dateCreation = $dateCreation;
+    $this->dateCreation = $dateCreation;
   }
   function getNom() : string {
     return $this->nom;
