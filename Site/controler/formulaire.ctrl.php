@@ -2,6 +2,8 @@
 
 
 include_once(__DIR__."/../framework/view.class.php");
+include_once(__DIR__."/../framework/Competence.class.php");
+include_once(__DIR__."/../framework/Renseignement.class.php");
 
 
 //-------------------Affectation des variables
@@ -9,38 +11,36 @@ include_once(__DIR__."/../framework/view.class.php");
 
 //$etape = (isset($_POST['etape'])) ? $_POST['etape']:"NPE";  //Declaration d'étapes
 
-$nom = (isset($_POST['nom'])) ? $_POST['nom']:""; 
-$prenom = (isset($_POST['prenom'])) ? $_POST['prenom']:"";  
+$nom = (isset($_POST['nom'])) ? $_POST['nom']:"";
+$prenom = (isset($_POST['prenom'])) ? $_POST['prenom']:"";
 
 $age = (isset($_POST['age'])) ? $_POST['age']:"";
 
 /*
-$ageDate = strtotime($age);  
+$ageDate = strtotime($age);
 $date1 = date("m-d-Y");
-$today = strtotime($date1);  
+$today = strtotime($date1);
 $dateNull = 0;  //"00-00-0000";
 */
 
-$tel = (isset($_POST['tel'])) ? $_POST['tel']:""; 
+// Attribut de la première page ( BASE )
+$tel = (isset($_POST['tel'])) ? $_POST['tel']:"";
 $tellength= strlen($tel);
-$ville = (isset($_POST['ville'])) ? $_POST['ville']:""; 
+$ville = (isset($_POST['ville'])) ? $_POST['ville']:"";
 $etape = (isset($_POST['etape'])) ? $_POST['etape']:"non";
 
+
+// Attribut de la deuxième page (Compétence)
 $nvEtude = (isset($_POST['nvEtude'])) ? $_POST['nvEtude']:"";  //Affectation du niveau d'etude
 $langueParle = (isset($_POST['langueParle'])) ? $_POST['langueParle']:"";  //Affectation de la langue parlé
 $languageAquis = (isset($_POST['languageAquis'])) ? $_POST['languageAquis']:"";  //Affectation des languages aquis
 
-
+// Attribut de la deuxième page (Préfèrence)
 $travEtranger = (isset($_POST['travEtranger'])) ? $_POST['travEtranger']:"";
 $typeContrat = (isset($_POST['typeContrat'])) ? $_POST['typeContrat']:"";
 $secteur = (isset($_POST['secteur'])) ? $_POST['secteur']:"";
 $poste = (isset($_POST['poste'])) ? $_POST['poste']:"";
 $typeEntreprise = (isset($_POST['typeEntreprise'])) ? $_POST['typeEntreprise']:"";
-
-
-
-$_SESSION['nom'] = $_POST['nom'];
-
 
 $erreur = "";
 
@@ -58,27 +58,27 @@ $etape = (isset($_POST['etape'])) ? $_POST['etape']: 'base';
 
 // Si le boutton enclenché est "suivant" de la premiere page, alors on passe une serie de test de validité des info
 
-if($action== "suivant" && $etape == "base")  
+if($action== "suivant" && $etape == "base")
 {
-  
-  if($nom == "") 
+
+  if($nom == "")
   {
-    $erreur = "Le nom doit etre rempli";  // Si nom est vide --> erreur 
+    $erreur = "Le nom doit etre rempli";  // Si nom est vide --> erreur
   }
   else if(preg_match('/^[a-z]+$/i', $nom) == false)
   {
-    $erreur = "Le nom doit etre composé de lettres seulement"; // Si nom n'est pas en lettre --> erreur 
+    $erreur = "Le nom doit etre composé de lettres seulement"; // Si nom n'est pas en lettre --> erreur
   }
   // Si aucune langue selectionné
   else if($prenom == "" )
   {
-    $erreur = "Le prenom doit etre rempli";  // Si prenom est vide --> erreur 
+    $erreur = "Le prenom doit etre rempli";  // Si prenom est vide --> erreur
   }
   else if(preg_match('/^[a-z]+$/i', $prenom) == false)
   {
-    $erreur = "Le prenom doit etre composé de lettres seulement"; // Si prenom n'est pas en lettre --> erreur 
+    $erreur = "Le prenom doit etre composé de lettres seulement"; // Si prenom n'est pas en lettre --> erreur
   }
-  // Si age incorrect 
+  // Si age incorrect
   else if($age == "")
   {
     $erreur = "L'age doit etre rempli";
@@ -104,11 +104,11 @@ if($action== "suivant" && $etape == "base")
   }
   else if($ville == "" )
   {
-    $erreur = "La ville doit etre rempli";  // Si ville est vide --> erreur 
+    $erreur = "La ville doit etre rempli";  // Si ville est vide --> erreur
   }
   else if(preg_match('/^[a-z]+$/i', $ville) == false)
   {
-    $erreur = "La ville doit etre composé de lettres seulement"; // Si ville n'est pas en lettre --> erreur 
+    $erreur = "La ville doit etre composé de lettres seulement"; // Si ville n'est pas en lettre --> erreur
   }
   else{
     $etape = (isset($_POST['etape'])) ? $_POST['etape']: 'base';
@@ -117,9 +117,9 @@ if($action== "suivant" && $etape == "base")
 
 
 // Gestion des erreur de competences
-if($action== "suivant" && $etape == "competences")  
+if($action== "suivant" && $etape == "competences")
 {
-  // Si niveau d'etude vide alors --> erreur 
+  // Si niveau d'etude vide alors --> erreur
   if($nvEtude == "")
   {
     $erreur = "Veuillez entrer votre niveau d'etude";
@@ -138,10 +138,10 @@ if($action== "suivant" && $etape == "competences")
 }
 
 // Gestion des erreur de preferences
-if($etape== "envoyer")  
+if($etape== "envoyer")
 {
-  // Si niveau d'etude vide alors --> erreur 
-  if($travEtranger == "") 
+  // Si niveau d'etude vide alors --> erreur
+  if($travEtranger == "")
   {
     $erreur = "Tu veut taff ailleur ou pas pelo";
   }
@@ -169,14 +169,21 @@ if($etape== "envoyer")
 // Gestion suivant
 if ($erreur == "" && $action == "suivant"){
   $etape = ($etape == "base") ? "competences": "preferences";
+
+  // Push des donnés dans la session puis quand fini dans la base
   if ($etape == "base"){
     $_SESSION["utilisateur"]->setNom($nom);
     $_SESSION["utilisateur"]->setPrenom($prenom);
+
+    // Cacul d'age
+    // A FAIRE
     $_SESSION["utilisateur"]->setAge($age);
     $_SESSION["utilisateur"]->setTelephone($tel);
+  } else if ($etape == "competences") {
+    $competence = new Competence($nvEtude,$langueParle,$languageAquis);
+    $_SESSION["utilisateur"]->setCompetenceAcquis($competence);
+  } else if ($etape == "preferences") {
 
-
-    
   }
 }
 

@@ -1,3 +1,7 @@
+<?php
+  include_once(__DIR__."/../model/Candidat.class.php");
+  include_once(__DIR__."/../model/Utilisateur.class.php");
+?>
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
   <head>
@@ -32,17 +36,81 @@
     <main>
 
       <section class="section-profil">
-            <img id="img-profil" src="../view/design/img/profil.jpg" alt="">
-            <p><?= $candidat->getMail() ?></p>
-            <form action="" class="form">
-                <label for="">Nom</label>
-                <input type="text" value="Nom" disabled>
-                <label for="">Prénom</label>
-                <input type="text" value="Prénom" disabled>
-                <label for="">Adresse mail</label>
-                <input type="text" value="Adresse mail" disabled>
-            </form>
+        <img id="img-profil" src="../view/design/img/profil.jpg" alt="">
+        <p>Vous êtes à l'étape n°<?= $_SESSION['utilisateur']->getEtape() ?></p>
+        <div id="btn-profil-container">
+          <button id="btn-rens">Mes renseignements</button>
+          <button id="btn-comp">Mes compétences</button>
+          <button id="btn-pref">Mes préférences</button>
+        </div>
       </section>
+      <section class="section-profil">
+        <!-- Formulaire de renseignements -->
+          <form action="" class="form" id="form-rens">
+              <label for="">Nom</label>
+              <input type="text" value="<?= $_SESSION['utilisateur']->getNom() ?>" disabled>
+              <label for="">Prénom</label>
+              <input type="text" value="<?= $_SESSION['utilisateur']->getPrenom() ?>" disabled>
+              <label for="">Adresse mail</label>
+              <input type="text" value="<?= $_SESSION['utilisateur']->getMail() ?>" disabled>
+              <label for="">Pays</label>
+              <input type="text" value="<?= $_SESSION['utilisateur']->getPays() ?>" disabled>
+              <label for="">Ville</label>
+              <input type="text" value="<?= $_SESSION['utilisateur']->getVille() ?>" disabled>
+          </form>
+
+          <!-- Formulaire de compétences -->
+          <form action="" class="form" id="form-comp">
+              <label for="">Nom</label>
+              <input type="text" value="<?= $_SESSION['utilisateur']->getNom() ?>" disabled>
+              <label for="">Prénom</label>
+              <input type="text" value="<?= $_SESSION['utilisateur']->getPrenom() ?>" disabled>
+              <label for="">Adresse mail</label>
+              <input type="text" value="<?= $_SESSION['utilisateur']->getMail() ?>" disabled>
+          </form>
+
+          <!-- Formulaire de preferences -->
+          <form action="" class="form" id="form-pref">
+              <label for="">Nom</label>
+              <input type="text" value="<?= $_SESSION['utilisateur']->getNom() ?>" disabled>
+              <label for="">Prénom</label>
+              <input type="text" value="<?= $_SESSION['utilisateur']->getPrenom() ?>" disabled>
+              <label for="">Adresse mail</label>
+              <input type="text" value="<?= $_SESSION['utilisateur']->getMail() ?>" disabled>
+          </form>
+      </section>
+
+      <script src="../framework/jquery-3.6.0.min.js"></script>
+      <script>
+        $(window).ready(function() {
+          /* on cache les formulaires */
+          $("#form-rens").hide();
+          $("#form-comp").hide();
+          $("#form-pref").hide();
+
+          /* si bouton 'mes renseignements' est cliqué  */
+          $("#btn-rens").click(function() {
+            $("#form-pref").hide();
+            $("#form-comp").hide();
+            $("#form-rens").toggle();
+          });
+
+          /* si bouton 'mes compétences' est cliqué  */
+          $("#btn-comp").click(function() {
+            $("#form-rens").hide();
+            $("#form-pref").hide();
+            $("#form-comp").toggle();
+          });
+
+          /* si bouton 'mes préférences' est cliqué  */
+          $("#btn-pref").click(function() {
+            $("#form-rens").hide();
+            $("#form-comp").hide();
+            $("#form-pref").toggle();
+          });
+
+        });
+      </script>
 
     </main>
 
