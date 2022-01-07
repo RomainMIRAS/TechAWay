@@ -15,6 +15,8 @@ if (isset($_SESSION['utilisateur'])) { /* Si la variable session 'utilisateur' e
     
     $etape = $_SESSION['utilisateur']->getEtape();
 
+    echo $etape;
+
     /* En fonction de l'étape */
     switch ($etape) {
         case 1:
