@@ -29,7 +29,7 @@ session_write_close();
 $view = new View();
 
 $view->assign('erreur',$competence);
-$view->display("authentification.view.php");
+$view->display("RechercheEntreprise.view.php");
 
 
 // Fin du code à ajouter ]]
