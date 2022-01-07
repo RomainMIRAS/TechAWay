@@ -33,9 +33,7 @@
 
       <section class="section-profil">
 
-        <div id="img-profil">
-            <img src="../view/design/img/profil.jpg" alt="">
-        </div>
+        <img id="img-profil" src="../view/design/img/profil.jpg" alt="">
         <div id="img-profil-config">
           <label for="">Changer la photo</label>
           <input type="file">
@@ -160,10 +158,10 @@
               $("#form-docs").toggle();
             });
 
-            $("#img-profil-config").hide();
+            /*$("#img-profil-config").hide();
             $("#img-profil").click(function() {
               $("#img-profil-config").toggle();
-            });
+            });*/
 
           });
         </script>
