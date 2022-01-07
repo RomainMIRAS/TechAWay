@@ -112,8 +112,6 @@
           $("#form-pref").hide();
           $("#form-docs").hide();
 
-          alert("OK");
-
           /* si bouton 'mes renseignements' est cliqué  */
           $("#btn-rens").click(function() {
             $("#form-pref").hide();
@@ -124,7 +122,6 @@
 
           /* si bouton 'mes compétences' est cliqué  */
           $("#btn-comp").click(function() {
-            alert("OK");
             $("#form-rens").hide();
             $("#form-pref").hide();
             $("#form-docs").hide();
