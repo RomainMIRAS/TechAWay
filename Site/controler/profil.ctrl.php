@@ -9,12 +9,20 @@ include_once(__DIR__."/../model/Utilisateur.class.php");
 include_once(__DIR__."/../model/Candidat.class.php");
 include_once(__DIR__."/../model/Coach.class.php");
 
-$view = new View();
-
-if (isset($_SESSION['utilisateur'])) {
-    $candidat = $_SESSION['utilisateur'];
-    $view->assign("utilisateur",$candidat);
+$view = new View(); 
+    
+/* En fonction de l'étape */
+switch ($_SESSION['utilisateur']->getEtape()) {
+    case 1:
+        $etapeDetail = "Vous venez de definir votre profil, dès lors vous pouvez consulter les offres qui peuvent potentiellement vous intéresser.";
+        break;
+        
+    case 2:
+        $etapeDetail = "";
+        break;
 }
+$view->assign("etapeDetail",$etapeDetail);
+
 
 
 // Charge la vue
