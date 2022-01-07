@@ -143,8 +143,8 @@
               $("#form-pref").hide();
               $("#form-docs").hide();
               $("#form-comp").show();
-              $("#btn-rens").css("color","var(--color-black)");
-              $("#btn-rens").css("border", "1px solid var(--color-black)");
+              $("#btn-rens").css("color","var(--color-grey)");
+              $("#btn-rens").css("border", "1px solid var(--color-grey)");
             });
 
             /* si bouton 'mes préférences' est cliqué */
@@ -153,8 +153,8 @@
               $("#form-comp").hide();
               $("#form-docs").hide();
               $("#form-pref").show();
-              $("#btn-rens").css("color","var(--color-black)");
-              $("#btn-rens").css("border", "1px solid var(--color-black)");
+              $("#btn-rens").css("color","var(--color-grey)");
+              $("#btn-rens").css("border", "1px solid var(--color-grey)");
             });
 
             /* si bouton 'mes documents' est cliqué  */
