@@ -177,6 +177,9 @@ function getCandidat(string $mail) {
 			$req = pg_query($this->db,"SELECT * FROM candidat WHERE idcandidat=". intVal($candidatbf[0]['idutilisateur']) ."");
 			$candidatUti = pg_fetch_all($req);
 
+			$compCand = getCompetence($mail);
+			$rensCand = getRenseignement($mail);
+
 			if (empty($candidatUti)) {
 				return false;
 			}else{
@@ -195,7 +198,9 @@ function getCandidat(string $mail) {
 				intVal($etape),
 				$candidatUti[0]['pays'],
 				$candidatUti[0]['ville'],
-				$candidatbf[0]['datecreation']
+				$candidatbf[0]['datecreation'],
+				$compCand,
+				$rensCand
 				//competence
 				//rensegniement
 			);
