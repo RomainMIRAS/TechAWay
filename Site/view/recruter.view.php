@@ -35,7 +35,7 @@
         <div>
           <h1>Découvrez Tech A Way</h1>
           <p>Tech a Way est un cabinet de recrutement spécialisé dans le domaine de la tech en full remote et partout en Europe</p>
-          <h2>L'expertise du recrutment dans le domaine de la tech avec des recuteur qui vous accompagne jusqu'à l'embauche</h2>
+          <h2>L'expertise du recrutement dans le domaine de la tech avec des recuteurs qui vous accompagne jusqu'à l'embauche</h2>
         </div>
 
         <article id = "article1">
@@ -45,7 +45,7 @@
 
         <div>
           <h2>ENTREPRISES PARTENAIRES</h2>
-          <h3>Trouvez LES candidats qu'il vous faut</h3>
+          <h3>Trouvez les candidats qu'il vous faut</h3>
           <p>Tech a Way vous donne accès à des candidats qui correspondent à 100% à vos attentes. 
             Expliquez-nous toutes les spécificités du poste et on vous trouvera le ou la candidate dont vous avez besoin !</p>
         </div>
@@ -72,18 +72,20 @@
 </section>
 
       <section id = "section2" >
-      <form class="form" action="authentification.ctrl.php" method="post" style="padding-bottom: 193px;">
+      <form class="form" action="recruter.ctrl.php" method="post" style="padding-bottom: 193px;">
             <h1>DES BESOINS EN RECRUTEMENT TECH ? ÉCHANGE AVEC NOUS !</h1>
             <label for="nom">Nom</label>
-            <input id="nom" type="text" name="nom" placeholder="Nom" required>
+            <input id="nom" type="text" name="nom" placeholder="Nom" >
             <label for="prenom">Prenom</label>
-            <input id="prenom" type="text" name="prenom" placeholder="om" required>
+            <input id="prenom" type="text" name="prenom" placeholder="Prenom" >
             <label for="email">Adresse E-mail</label>
-            <input id="email" type="text" name="email" placeholder="Entrez votre adresse e-mail" required>
+            <input id="email" type="text" name="email" placeholder="Entrez votre adresse e-mail" >
             <label for="nomEntreprise">Nom de l'entreprise</label>
-            <input id="postactu" type="text" name="postactu" placeholder="Votre Poste Actuel" required>
+            <input id="postactu" type="text" name="postactu" placeholder="Votre Poste Actuel" >
+            <form action ="recruter.ctrl.php" method="post">
+            <output><?=$erreur?></output>
             
-            <button type="submit" name="confirmation" value="oui">Confirmation</button>
+            <button type="submit" name="action" value="confirmation">Confirmation</button>
           </form>
 
       </section>
