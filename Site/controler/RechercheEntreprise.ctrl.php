@@ -13,14 +13,10 @@ include_once(__DIR__."/../model/Renseignement.class.php");
 include_once(__DIR__."/../model/Offre.class.php");
 include_once(__DIR__."/../model/Candidat.class.php");
 
-// Déclaration
-$email = (isset($_POST['email'])) ? $_POST['email']:"";
-$password = (isset($_POST['password'])) ? $_POST['password']:"";
-$checkpassword = (isset($_POST['checkpassword'])) ? $_POST['checkpassword']:"";
 
 
 session_start();
-$competence = $_SESSION['utilisateur']->getCompetenceAcquis();
+$competence = $_SESSION['utilisateur']->getRenseignement();
 session_write_close();
 
 
