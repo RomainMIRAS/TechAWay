@@ -114,8 +114,8 @@
 
           /* si bouton 'mes renseignements' est cliqué  */
           $("#btn-rens").click(function() {
-            $("#form-pref").hide();
-            $("#form-comp").hide();
+            /*$("#form-pref").hide();
+            $("#form-comp").hide();*/
             $("#form-docs").hide();
             $("#form-rens").toggle();
           });
@@ -139,8 +139,8 @@
           /* si bouton 'mes documents' est cliqué  */
           $("#btn-docs").click(function() {
             $("#form-rens").hide();
-            $("#form-comp").hide();
-            $("#form-pref").hide();
+            /*$("#form-comp").hide();
+            $("#form-pref").hide();*/
             $("#form-docs").toggle();
           });
 
