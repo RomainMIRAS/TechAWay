@@ -75,7 +75,6 @@ function createUtilisateur(string $mail, string $pass) { //returns boolean
 
 		$res = @pg_query($this->db, $r);
 
-		echo "$res rererer";
 
 		if($res){
 			return true;
@@ -187,21 +186,21 @@ function getCandidat(string $mail) {
 				$etape = $candidatUti[0]['etape'];
 
 				$candidat = new Candidat(
-				$candidatbf[0]['adressemail'],
-				$candidatbf[0]['password'],
-				$candidatbf[0]['nom'],
-				$candidatbf[0]['prenom'],
-				intVal($age),
-				$candidatbf[0]['telephone'],
-				$candidatUti[0]['liencv'],
-				$candidatUti[0]['lienlettremotivation'],
-				intVal($etape),
-				$candidatUti[0]['pays'],
-				$candidatUti[0]['ville'],
-				$candidatbf[0]['datecreation'],
-				$compCand,
-				$rensCand
-			);
+					$candidatbf[0]['adressemail'],
+					$candidatbf[0]['password'],
+					$candidatbf[0]['nom'],
+					$candidatbf[0]['prenom'],
+					intVal($age),
+					$candidatbf[0]['telephone'],
+					$candidatUti[0]['liencv'],
+					$candidatUti[0]['lienlettremotivation'],
+					intVal($etape),
+					$candidatUti[0]['pays'],
+					$candidatUti[0]['ville'],
+					$candidatbf[0]['datecreation'],
+					$compCand,
+					$rensCand
+				);
 			}
 		}
 		
@@ -271,8 +270,6 @@ function getRenseignement($link) {
 		}else{
 
 			$idr = intval($renseignementRes[0]['idrenseignement']);
-
-			echo "<br>{$renseignementRes[0]['travetranger']} </br>";
 
 			$renseignement = new Renseignement(
 				intval($idr),

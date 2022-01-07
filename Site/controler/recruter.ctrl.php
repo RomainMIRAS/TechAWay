@@ -39,7 +39,7 @@ else if($nomEntreprise == "" )
     }
 }
 
-if ($erreur == ""){
+if ($erreur == "" && $action == "confirmation"){
   $erreur = "Le mail se partenariat a été envoyé !";
   $message =
   "Vous avez reçu une demande de partenariat !\r\n
@@ -54,7 +54,6 @@ if ($erreur == ""){
   // Dans le cas où nos lignes comportent plus de 70 caractères, nous les coupons en utilisant wordwrap()
   $message = wordwrap($message, 70, "\r\n");
   $headers = "From: $mail" . "\r\n" .
-       'Reply-To: Demande de partenariat' . "\r\n" .
        'X-Mailer: PHP/' . phpversion();
   // Envoi du mail
   mail('techawayteam13@gmail.com', "Demande de Partenariat - $nomEntreprise", $message,$headers);
