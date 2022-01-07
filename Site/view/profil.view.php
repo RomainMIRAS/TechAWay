@@ -159,7 +159,7 @@
             });
 
             $("#img-profil-config").hide();
-            $("#img-profil").click(function() {
+            $("img").click(function() {
               $("#img-profil-config").toggle();
             });
 
