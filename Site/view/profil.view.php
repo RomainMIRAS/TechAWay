@@ -131,7 +131,7 @@
               $("#form-pref").hide();
               $("#form-comp").hide();
               $("#form-docs").hide();
-              $("#form-rens").toggle();
+              $("#form-rens").show();
             });
 
             /* si bouton 'mes compétences' est cliqué  */
@@ -139,7 +139,7 @@
               $("#form-rens").hide();
               $("#form-pref").hide();
               $("#form-docs").hide();
-              $("#form-comp").toggle();
+              $("#form-comp").show();
             });
 
             /* si bouton 'mes préférences' est cliqué */
@@ -147,7 +147,7 @@
               $("#form-rens").hide();
               $("#form-comp").hide();
               $("#form-docs").hide();
-              $("#form-pref").toggle();
+              $("#form-pref").show();
             });
 
             /* si bouton 'mes documents' est cliqué  */
@@ -155,7 +155,7 @@
               $("#form-rens").hide();
               $("#form-comp").hide();
               $("#form-pref").hide();
-              $("#form-docs").toggle();
+              $("#form-docs").show();
             });
 
             /*$("#img-profil-config").hide();
