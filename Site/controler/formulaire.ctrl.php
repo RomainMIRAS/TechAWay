@@ -7,6 +7,7 @@ include_once(__DIR__."/../model/Renseignement.class.php");
 
 
 //-------------------Affectation des variables
+
 //$etape = (isset($_POST['etape'])) ? $_POST['etape']:"NPE";  //Declaration d'étapes
 
 $nom = (isset($_POST['nom'])) ? $_POST['nom']:"";
@@ -181,7 +182,8 @@ if ($erreur == "" && $action == "suivant"){
     $_SESSION["utilisateur"]->setVille($ville);
     $_SESSION["utilisateur"]->setPays($pays);
   } else if ($etape == "competences") {
-    // $_SESSION["utilisateur"]->getCompetenceAcquis()->
+    $compétence = $_SESSION["utilisateur"]->getCompetenceAcquis()->
+    //
 
 
   } else if ($etape == "preferences") {
@@ -215,7 +217,7 @@ $view->assign('erreur',$erreur);
 $view->assign('pays',$pays);
 $view->assign('action',$action);
 $view->assign('etape',$etape);
-$view->assign('candidat',$_SESSION["utilisateur"]);
+//$view->assign('candidat',$_SESSION["utilisateur"]);
 $view->display("formulaire.view.php");
 
 
