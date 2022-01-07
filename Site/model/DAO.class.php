@@ -75,7 +75,6 @@ function createUtilisateur(string $mail, string $pass) { //returns boolean
 
 		$res = @pg_query($this->db, $r);
 
-		echo "$res rererer";
 
 		if($res){
 			return true;
@@ -271,8 +270,6 @@ function getRenseignement($link) {
 		}else{
 
 			$idr = intval($renseignementRes[0]['idrenseignement']);
-
-			echo "<br>{$renseignementRes[0]['travetranger']} </br>";
 
 			$renseignement = new Renseignement(
 				intval($idr),

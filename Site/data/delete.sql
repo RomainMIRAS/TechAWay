@@ -1,5 +1,5 @@
-delete from candidat where idcandidat=(select idutilisateur from utilisateur where adressemail = 'raniazouita@icloud.com');
-delete from competence where link='raniazouita@icloud.com';
-delete from renseignement where link='raniazouita@icloud.com';
-delete from utilisateur where adressemail='raniazouita@icloud.com';
+delete from candidat where idcandidat=(select idutilisateur from utilisateur where adressemail = 'adresse-11candidat@gmail.com');
+delete from competence where link='adresse-11candidat@gmail.com';
+delete from renseignement where link='adresse-11candidat@gmail.com';
+delete from utilisateur where adressemail='adresse-11candidat@gmail.com';
 select * from utilisateur;
