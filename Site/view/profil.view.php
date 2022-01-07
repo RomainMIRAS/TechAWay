@@ -33,7 +33,7 @@
 
       <section class="section-profil">
             <img id="img-profil" src="../view/design/img/profil.jpg" alt="">
-            <p><?= $candidat->getMail() ?></p>
+            <p><?= $_SESSION['utilisateur']->getMail() ?></p>
             <form action="" class="form">
                 <label for="">Nom</label>
                 <input type="text" value="Nom" disabled>
