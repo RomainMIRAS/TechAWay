@@ -175,13 +175,18 @@ function getCandidat(string $mail) {
 		}else{
 
 			$req = pg_query($this->db,"SELECT * FROM candidat WHERE idcandidat=". intVal($candidatbf[0]['idutilisateur']) ."");
-
 			$candidatUti = pg_fetch_all($req);
 
-			$age = $candidatbf[0]['age'];
-			$etape = $candidatUti[0]['etape'];
+			$compCand = $this->getCompetence($mail);
+			$rensCand = $this->getRenseignement($mail);
 
-			$coach = new Candidat(
+			if (empty($candidatUti)) {
+				return false;
+			}else{
+				$age = $candidatbf[0]['age'];
+				$etape = $candidatUti[0]['etape'];
+
+				$candidat = new Candidat(
 				$candidatbf[0]['adressemail'],
 				$candidatbf[0]['password'],
 				$candidatbf[0]['nom'],
@@ -193,17 +198,18 @@ function getCandidat(string $mail) {
 				intVal($etape),
 				$candidatUti[0]['pays'],
 				$candidatUti[0]['ville'],
-				$candidatbf[0]['datecreation']
-				//competence
-				//rensegniement
+				$candidatbf[0]['datecreation'],
+				$compCand,
+				$rensCand
 			);
+			}
 		}
 		
 		// Tests d'erreurs
 		} catch (Exception $e) {
 			die("PSQL ERROR :".$e->getMessage());
 		}
-		return $coach;
+		return $candidat;
 }
 
 function getCoachOuCandidat(string $mail, string $pass) {
@@ -239,7 +245,7 @@ function getCompetence($link) {
 			$idc = $competenceRes[0]['idcompetence'];
 
 			$competence = new Competence(
-				$competenceRes[0]['idcompetence'],
+				intval($idc),
 				$competenceRes[0]['nvetude'],
 				$competenceRes[0]['langueparle'],
 				$competenceRes[0]['langagesacquis']
@@ -255,18 +261,25 @@ function getCompetence($link) {
 
 function getRenseignement($link) {
 	try {
-		$req = pg_query($this->db,"SELECT * from competence where link='$link'");
+		$req = pg_query($this->db,"SELECT * from renseignement where link='$link'");
 	
 		$renseignementRes = pg_fetch_all($req);
 
 		if (empty($renseignementRes)) {
 			return false;
 		}else{
+
+			$idr = intval($renseignementRes[0]['idrenseignement']);
+
+			echo "<br>{$renseignementRes[0]['travetranger']} </br>";
+
 			$renseignement = new Renseignement(
-				$renseignementRes[0]['idrenseignement'],
-				$renseignementRes[0]['nvetude'],
-				$renseignementRes[0]['langueparle'],
-				$renseignementRes[0]['langagesacquis']
+				intval($idr),
+				$renseignementRes[0]['travetranger'],
+				$renseignementRes[0]['secteur'],
+				$renseignementRes[0]['typecontrat'],
+				$renseignementRes[0]['poste'],
+				$renseignementRes[0]['tyeentreprise']
 			);
 		}
 		
