@@ -47,7 +47,7 @@
             </tr>
             <?php foreach($candidats as $c): ?>
                 <tr>
-                    <td><?= $c->getNom() ?></td>
+                    <td><?= $c->getNom(); ?></td>
                     <td></td>
                     <td></td>
                 </tr>
