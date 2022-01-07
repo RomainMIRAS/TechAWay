@@ -108,7 +108,6 @@ if ($expected->getAge() == $value->getAge()) {
 
 if ($dao->verifierLogin('adresse-candidat@gmail.com', 'motdepassecandidat')) {
                             printf("Mot de passe OK <br>");
-                            printf("Tout OK <br>");
                           } else {
                             printf("Age not OK, otenue : %s; attendu : %s", $expected->getAge(), $value->getAge());
                             throw new Exception("Lecture Age du candidat N°966 incorrecte");
