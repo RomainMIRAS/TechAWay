@@ -20,7 +20,7 @@ $nbCandidats = 0;
 
 foreach($emails as $e) {
     array_push($candidats,$db->getCandidat($e)); 
-    if (db->getCandidat($e)) {
+    if ($db->getCandidat($e)) {
         $nbCandidats++;
     }
 }
