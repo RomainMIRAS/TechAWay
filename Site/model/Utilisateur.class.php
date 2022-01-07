@@ -11,13 +11,14 @@ abstract class Utilisateur {
   private string $dateCreation; //Date de création
 
   // Contructeur
-  function __construct(string $mail, string $password,string $nom ='', string $prenom='', int $age = 0, string $telephone='') {
+  function __construct(string $mail, string $password,string $nom ='', string $prenom='', int $age = 0, string $telephone='', string $dateCreation = '') {
     $this->nom = $nom;
     $this->prenom = $prenom;
     $this->mail = $mail;
     $this->password = $password;
     $this->telephone = $telephone;
     $this->age = $age;
+    $this->$dateCreation = $dateCreation;
   }
   function getNom() : string {
     return $this->nom;

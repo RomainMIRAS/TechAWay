@@ -17,8 +17,8 @@ class Candidat extends Utilisateur {
   // Contructeur
 
   // Revoir Constructeur
-function __construct(string $mail, string $password,string $nom='', string $prenom='', int $age=0, string $telephone='', string $lienCV='', string $lienLM='', int $etape = 0, string $pays ='', string $ville ='' /*Competence $competenceAcquis = null, Renseignement $preference = 0 */ ) {
-    parent::__construct($mail, $password, $nom, $prenom, $age,$telephone);
+function __construct(string $mail, string $password,string $nom='', string $prenom='', int $age=0, string $telephone='', string $dateCreation = '' , string $lienCV='', string $lienLM='', int $etape = 0, string $pays ='', string $ville =''  /*Competence $competenceAcquis = null, Renseignement $preference = 0 */ ) {
+    parent::__construct($mail, $password, $nom, $prenom, $age,$telephone, $dateCreation);
     $this->lienCV = $lienCV;
     $this->lienLM = $lienLM;
     $this->etape = $etape;
