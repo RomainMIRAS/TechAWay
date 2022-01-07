@@ -9,7 +9,7 @@ class Competence {
   private array $langageAcquis;         //Langage informatique parlé
 
   // Contructeur
-  function __construct(int $id,string $nvEtude, string $langeParle, string $langageAcquis) {
+  function __construct(string $nvEtude, string $langeParle, string $langageAcquis,int $id=null) {
     $this->id = $id;
     $this->nvEtude = $nvEtude;
     $this->langeParle = conversionStringArray($langeParle);
@@ -37,9 +37,7 @@ class Competence {
   function getLangageAcquis() : array {
     return $this->langageAcquis;
   }
-
-
-
+  
   function setNvEtude(string $nvEtude) : void {
     $this->nvEtude = $nvEtude;
   }
