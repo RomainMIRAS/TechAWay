@@ -24,9 +24,9 @@ function __construct(string $mail, string $password,string $nom='', string $pren
     $this->etape = $etape;
     $this->pays = $pays;
     $this->ville = $ville;
-    $this->competenceAcquis = $competenceAcquis;
-    $this->preference = null;
-    $this->discussions = null;
+    // $this->competenceAcquis = $competenceAcquis;
+    // $this->preference = $competenceAcquis;
+    // $this->discussions = null;
   }
 
   function getPays() : string {
