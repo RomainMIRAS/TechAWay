@@ -180,8 +180,8 @@ if ($erreur == "" && $action == "suivant"){
     $_SESSION["utilisateur"]->setAge($age);
     $_SESSION["utilisateur"]->setTelephone($tel);
   } else if ($etape == "competences") {
-    $competence = new Competence($nvEtude,$langueParle,$languageAquis);
-    $_SESSION["utilisateur"]->setCompetenceAcquis($competence);
+    // $competence = new Competence(0,$nvEtude,$langueParle,$languageAquis);
+    // $_SESSION["utilisateur"]->setCompetenceAcquis($competence);
   } else if ($etape == "preferences") {
 
   }
