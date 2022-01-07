@@ -20,7 +20,9 @@ $nbCandidats = 0;
 
 foreach($emails as $e) {
     array_push($candidats,$db->getCandidat($e)); 
-    $nbCandidats++;
+    if (db->getCandidat($e)) {
+        $nbCandidats++;
+    }
 }
 
 $view->assign("candidats",$candidats);
