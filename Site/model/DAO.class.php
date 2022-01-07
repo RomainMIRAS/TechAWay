@@ -177,8 +177,8 @@ function getCandidat(string $mail) {
 			$req = pg_query($this->db,"SELECT * FROM candidat WHERE idcandidat=". intVal($candidatbf[0]['idutilisateur']) ."");
 			$candidatUti = pg_fetch_all($req);
 
-			$compCand = getCompetence($mail);
-			$rensCand = getRenseignement($mail);
+			$compCand = $this->getCompetence($mail);
+			$rensCand = $this->getRenseignement($mail);
 
 			if (empty($candidatUti)) {
 				return false;
@@ -201,8 +201,6 @@ function getCandidat(string $mail) {
 				$candidatbf[0]['datecreation'],
 				$compCand,
 				$rensCand
-				//competence
-				//rensegniement
 			);
 			}
 		}
