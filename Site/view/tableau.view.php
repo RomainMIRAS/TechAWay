@@ -38,12 +38,18 @@
       <section> <!-- Tous les candidats inscrits -->
 
         <h2>Candidats inscrits</h2>
-        <br>
+
         <table>
             <tr>
                 <th>Nom</th>
                 <th>Prénom</th>
                 <th>Email</th>
+                <th>Téléphone</th>
+                <th>Etape</th>
+                <th>Ville</th>
+                <th>Pays</th>
+                <th>Lien CV</th>
+                <th>Lien Lettre</th>
             </tr>
             <?php foreach($candidats as $c): ?> <!-- pour chaque candidat -->
                 <?php if ($c!=false): ?>
@@ -51,6 +57,12 @@
                         <td><?= $c->getNom() ?></td>
                         <td><?= $c->getPrenom() ?></td>
                         <td><?= $c->getMail() ?></td>
+                        <td><?= $c->getTelephone() ?></td>
+                        <td><?= $c->getEtape() ?></td>
+                        <td><?= $c->getVille() ?></td>
+                        <td><?= $c->getPays() ?></td>
+                        <td><?= $c->getLienCv() ?></td>
+                        <td><?= $c->getLienLM() ?></td>
                     </tr>
                 <?php endif; ?>
             <?php endforeach; ?>
