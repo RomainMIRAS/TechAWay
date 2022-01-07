@@ -17,9 +17,8 @@ include_once(__DIR__."/../model/Candidat.class.php");
 
 session_start();
 $candidat = $_SESSION['utilisateur'];
-$competence = $candidat->getCompetenceAcquis();
 session_write_close();
-
+$competence = $candidat->getCompetenceAcquis();
 
 //$nvEtude = $competence->getnvEtude();
 ///////////////////////////////////////////////////////////////////////////////
