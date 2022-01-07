@@ -11,7 +11,7 @@ include_once(__DIR__."/../model/Coach.class.php");
 
 $view = new View();
 
-$db = new DAO();
+$db = DAO::get();
 
 $emails = $db->getEmails();
 
