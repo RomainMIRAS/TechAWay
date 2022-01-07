@@ -1,7 +1,7 @@
 
 <?php
 
-// Description d'un renseignement  
+// Description d'un renseignement
 class Renseignement {
   private int $id;                  //id renseignement
   private bool $travEtranger;    //Travail à l'étranger ?

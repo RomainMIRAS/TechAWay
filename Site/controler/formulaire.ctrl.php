@@ -182,12 +182,21 @@ if ($erreur == "" && $action == "suivant"){
     $_SESSION["utilisateur"]->setVille($ville);
     $_SESSION["utilisateur"]->setPays($pays);
   } else if ($etape == "competences") {
-    $compétence = $_SESSION["utilisateur"]->getCompetenceAcquis()->
-    //
+    $competence = $_SESSION["utilisateur"]->getCompetenceAcquis();
 
+    $competence->setNvEtude($nvEtude);
+    $competence->setLangeParle($langueParle);
+    $competence->setLangageAcquis($languageAquis);
+    $_SESSION["utilisateur"]->setCompetenceAcquis($competence);
 
   } else if ($etape == "preferences") {
 
+    $renseignement = $_SESSION["utilisateur"]->getRenseignement();
+    $renseignement->setTravEtranger($travEtranger);
+    $renseignement->setTypeContrat($typeContrat);
+    $renseignement->setSecteur($secteur);
+    $renseignement->setPoste($poste);
+    $renseignement->setTypeEntreprise($typeEntreprise);
   }
 }
 
