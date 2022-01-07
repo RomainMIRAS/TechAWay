@@ -532,6 +532,10 @@ tr:nth-child(even) {
   background-color: #dddddd;
 }
 
+tr:hover {
+  background-color: var(--color-blue1);
+}
+
 /**************************************************************
 * FOOTER
 **************************************************************/
