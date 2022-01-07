@@ -144,7 +144,8 @@ function getCoach(string $mail) {
 				$coachbf[0]['prenom'],
 				$coachbf[0]['telephone'],
 				intVal($age),
-				$coachUti[0]['lienphoto']
+				$coachUti[0]['lienphoto'],
+				$candidatUti[0]['candidatUti']
 			);
 		}
 
@@ -185,7 +186,7 @@ function getCandidat(string $mail) {
 				$candidatUti[0]['lienlettremotivation'],
 				intVal($etape),
 				$candidatUti[0]['pays'],
-				$candidatUti[0]['ville']
+				$candidatUti[0]['ville'],
 				//competence
 				//rensegniement
 			);
@@ -218,7 +219,47 @@ function getCoachOuCandidat(string $mail, string $pass) {
 	}
 }
 
+function getCompetence(int $id) {
+	try {
+		$req = pg_query($this->db,"SELECT * from competence where idutilisateur in (Select idcandidat from candidat) AND adressemail='$mail'");
+	
+		$candidatbf = pg_fetch_all($req);
 
+
+		if (empty($candidatbf)) {
+			return false;
+		}else{
+
+			$req = pg_query($this->db,"SELECT * FROM candidat WHERE idcompetence=$id");
+
+			$candidatUti = pg_fetch_all($req);
+
+			$age = $candidatbf[0]['age'];
+			$etape = $candidatUti[0]['etape'];
+
+			$coach = new Candidat(
+				$candidatbf[0]['adressemail'],
+				$candidatbf[0]['password'],
+				$candidatbf[0]['nom'],
+				$candidatbf[0]['prenom'],
+				intVal($age),
+				$candidatbf[0]['telephone'],
+				$candidatUti[0]['liencv'],
+				$candidatUti[0]['lienlettremotivation'],
+				intVal($etape),
+				$candidatUti[0]['pays'],
+				$candidatUti[0]['ville']
+				//competence
+				//rensegniement
+			);
+		}
+		
+		// Tests d'erreurs
+		} catch (Exception $e) {
+			die("PSQL ERROR :".$e->getMessage());
+		}
+		return $coach;
+}
 
 /* 
 //Accès à un client
