@@ -133,11 +133,20 @@ try{
   }else{
     echo "</br>False ";
   }
-
   echo '<hr>';
 
   echo "</br>creeEntreprise('entreprise@mail.com')  : doit retourner true";
   $testLogin = $db->creeEntreprise('entreprise@mail.com');
+  if ($testLogin){
+    echo '<pre>' . var_export($testLogin, true) . '</pre>';
+  }else{
+    echo "</br>False ";
+  }
+
+  echo '<hr>';
+
+  echo "</br>getEntreprises() :  doit retourner toutes les entreprises de type Offre ";
+  $testLogin = $db->getEntreprises();
   if ($testLogin){
     echo '<pre>' . var_export($testLogin, true) . '</pre>';
   }else{
@@ -158,16 +167,6 @@ try{
 
   echo "</br>getOffres() :  doit retourner toutes les offres de type Offre ";
   $testLogin = $db->getOffres();
-  if ($testLogin){
-    echo '<pre>' . var_export($testLogin, true) . '</pre>';
-  }else{
-    echo "</br>False ";
-  }
-
-  echo '<hr>';
-
-  echo "</br>getEntreprises() :  doit retourner toutes les entreprises de type Offre ";
-  $testLogin = $db->getEntreprises();
   if ($testLogin){
     echo '<pre>' . var_export($testLogin, true) . '</pre>';
   }else{
