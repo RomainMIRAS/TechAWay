@@ -469,6 +469,13 @@ button:hover {
   border-radius: 15px;
   width: 250px;
   background-color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+}
+
+#img-profil-config form {
+  display: flex;
+  flex-direction: column;
 }
 
 
