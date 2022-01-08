@@ -105,21 +105,6 @@ function verifierLogin(string $mail, string $pass) { //returns boolean
 		return false;
 	}
 
-
-/* 
-	$r = "SELECT EXISTS(SELECT * FROM utilisateur where adressemail='$mail' AND password='$pass')";
-
-	$q = pg_query($this->db, $r);
-
-	$res = pg_fetch_all($q);
-
-	if($res[0]['exists'] == 't'){
-		return true;
-	}else{
-		return false;
-	} */
-
-
 	// Tests d'erreurs
 	} catch (Exception $e) {
 		die("PSQL ERROR verifierLogin : ".$e->getMessage());
@@ -213,7 +198,7 @@ function getCandidat(string $mail) {
 		return $candidat;
 }
 
-function getCoachOuCandidat(string $mail, string $pass) {
+function getCoachOuCandidat(string $mail, string $pass = '') {
 
 	try {
 		$res = $this->getCandidat($mail);
@@ -235,7 +220,7 @@ function getCoachOuCandidat(string $mail, string $pass) {
 	}
 }
 
-function getCompetence($link) {
+function getCompetence($link) {// il retourne un type Competence d'une offre ou candidat
 	try {
 		$req = pg_query($this->db,"SELECT * from competence where link='$link'");
 	
@@ -291,7 +276,6 @@ function getRenseignement($link) {
 		}
 		return $renseignement;
 }
-
 
 function getEntreprise(int $id) {
 	try {
@@ -410,8 +394,10 @@ function getOffres() {
 
 function creeOffre(int $identreprise , Renseignement $rens, Competence $comp, $nom =''){
 	try {
+		$langParle = $this->conversionArrayString($comp->getLangeParle());
+		$langAcquis = $this->conversionArrayString($comp->getLangeParle());
 		$r = "
-		insert into competence values(DEFAULT,'{$comp->getnvEtude()}', '{$comp->getLangeParle()}', '{$comp->getLangageAcquis()}','-2');
+		insert into competence values(DEFAULT,'{$comp->getnvEtude()}', '$langParle', '$langAcquis','-2');
 		insert into renseignement values(DEFAULT,{$rens->getTravEtranger()}, '{$rens->getSecteur()}', '{$rens->getTypeContrat()}', '{$rens->getPoste()}', '{$rens->getTypeEntreprise()}','-2');
 		insert into offre values(DEFAULT,'$nom',now(),$identreprise,
 								(select idcompetence from competence where idcompetence = currval('competence_idcompetence_seq')),
@@ -447,7 +433,14 @@ function creeEntreprise($mail,$nom ='',$telephone = '',$pays='', $ville =''){
 	return false;
 }
 
-
+function conversionStringArray(string $chaine){
+    $arrayChaine = explode(",",$chaine);
+    return $arrayChaine;
+}
+function conversionArrayString(array $array){
+$arrayChaine = implode(",",$array);
+return $arrayChaine;
+}
 /* 
 //Accès à un client
 function getEntreprise(int $idEntreprise) : Client {
