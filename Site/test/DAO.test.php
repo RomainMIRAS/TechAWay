@@ -166,6 +166,16 @@ try{
 
   echo '<hr>';
 
+  echo "</br>getEntreprises() :  doit retourner toutes les entreprises de type Offre ";
+  $testLogin = $db->getEntreprises();
+  if ($testLogin){
+    echo '<pre>' . var_export($testLogin, true) . '</pre>';
+  }else{
+    echo "</br>False ";
+  }
+
+  echo '<hr>';
+
   //Un echo de getEmails
   echo "</br></br> Liste de Mail :";
   $liste = $db->getEmails();

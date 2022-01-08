@@ -324,6 +324,31 @@ function getEntreprise(int $id) {
 		return $entreprise;
 }
 
+function getEntreprises() {
+	try {
+		$req = pg_query($this->db,"SELECT idEntreprise from entreprise");
+	
+		$entrepriseReq = pg_fetch_all($req);
+
+		if (empty($entrepriseReq)) {
+			return false;
+		}else{
+
+			$entreprises = array();
+
+			foreach ($entrepriseReq as $e) {
+				$ide = intval($e['identreprise']);
+				array_push($entreprises,$this->getOffre($ide));
+			}
+		}
+		
+		// Tests d'erreurs
+		} catch (Exception $e) {
+			die("PSQL ERROR :".$e->getMessage());
+		}
+		return $entreprises;
+}
+
 function getOffre(int $id) {
 	try {
 		$req = pg_query($this->db,"SELECT * from offre where idoffre=$id");
