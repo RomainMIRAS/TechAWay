@@ -166,7 +166,7 @@ try{
   echo '<hr>';
   $langP = array("anglais","francais");
   $langA = array("react","angular","scss","sass","javascript");  
-  $rens = new Renseignement(-2,true, 'web-dev', 'CDI', 'Dynamic Websites,3d animation, fast', 'Grande');
+  $rens = new Renseignement(-2,true, 'web-dev', 'CDI', 'Dynamic Websites,3d animation', 'Grande');
   $comp = new Competence(-2,'bac+3', 'anglais,francais', 'react,angular,scss,sass');
 
   echo $rens->getTravEtranger();

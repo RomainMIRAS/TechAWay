@@ -395,7 +395,6 @@ function creeOffre(int $identreprise , Renseignement $rens, Competence $comp, $n
 	try {
 		$langParle = $this->conversionArrayString($comp->getLangeParle());
 		$langAcquis = $this->conversionArrayString($comp->getLangageAcquis());
-		echo "<br> $langParle <br><br> $langAcquis a<br>";
 		$r = "
 		insert into competence values(DEFAULT,'{$comp->getnvEtude()}', '$langParle', '$langAcquis','-2');
 		insert into renseignement values(DEFAULT,{$rens->getTravEtranger()}::boolean, '{$rens->getSecteur()}', '{$rens->getTypeContrat()}', '{$rens->getPoste()}', '{$rens->getTypeEntreprise()}','-2');
