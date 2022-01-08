@@ -335,8 +335,9 @@ function getOffre(int $id) {
 		}else{
 
 			$ido = intval($offreRes[0]['idoffre']);
+			$ide = intval($offreRes[0]['identreprise']);
 			
-			$entreprise = $this->getEntreprise($ido);
+			$entreprise = $this->getEntreprise($ide);
 			$competence = $this->getCompetence($ido);
 			$renseignement = $this->getRenseignement($ido);
 
