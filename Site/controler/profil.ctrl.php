@@ -15,7 +15,8 @@ $view = new View();
 
 if(isset($_POST["submit"])) {
     echo "OK";
-    echo basename($_FILES["fileToUpload"]["name"]);
+    $fileToUpload = $_FILES['fileToUpload']['name'];
+    echo $fileToUpload;
 }
 
 // Passage des paramètres
