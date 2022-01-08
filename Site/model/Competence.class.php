@@ -12,12 +12,12 @@ class Competence {
   function __construct(int $id,string $nvEtude = '', string $langeParle = '', string $langageAcquis = '') {
     $this->id = $id;
     $this->nvEtude = $nvEtude;
-    //$this->langeParle = conversionStringArray($langeParle);
-    //$this->langageAcquis = conversionStringArray($langageAcquis);
+    $this->langeParle = $this->conversionStringArray($langeParle);
+    $this->langageAcquis = $this->conversionStringArray($langageAcquis);
   }
 
-  private function conversionStringArray(string $chaine){
-    $arrayChaine = explode(",",strtolower($chaine));
+  function conversionStringArray(string $chaine){
+    $arrayChaine = explode(",",$chaine);
     return $arrayChaine;
   }
 

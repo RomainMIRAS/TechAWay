@@ -164,8 +164,10 @@ try{
   }
 
   echo '<hr>';
-  $rens = new Renseignement(-2,true, 'web-dev', 'CDI', 'Dynamic Websites,3d animations, fast', 'Grande','-2');
-  $comp = new Competence(-2,'bac+3', 'anglais,francais', 'react,angular,scss,sass','-2');
+  $langP = array("anglais","francais");
+  $langA = array("react","angular","scss","sass","javascript");  
+  $rens = new Renseignement(-2,true, 'web-dev', 'CDI', 'Dynamic Websites,3d animations, fast', 'Grande');
+  $comp = new Competence(-2,'bac+3', 'anglais,francais', 'react,angular,scss,sass');
   echo "</br>creeOffre(idEntreprise, Rensegnement,Competence,nomOffre)  : doit retourner true";
   $testLogin = $db->creeEntreprise(4,$rens,$comp,"Back-End - WebApp");
   if ($testLogin){
