@@ -36,7 +36,7 @@
         <img id="img-profil" src="../view/design/img/profil.jpg" alt="">
         <div id="img-profil-config">
           <label for="">Changer la photo</label>
-          <input type="file">
+          <input type="file" name="link-photo">
         </div>
 
         <?php if (is_a($_SESSION['utilisateur'],"Candidat")): ?> <!-- si l'utilisateur est un candidat -->
