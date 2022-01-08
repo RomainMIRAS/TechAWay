@@ -171,7 +171,7 @@ try{
 
   echo $rens->getTravEtranger();
   echo "</br>creeOffre(idEntreprise, Rensegnement,Competence,nomOffre)  : doit retourner true";
-  $testLogin = $db->creeOffre(4,$rens,$comp,"Back-End - WebApp");
+  $testLogin = $db->creeOffre(5,$rens,$comp,"Back-End - WebApp");
   if ($testLogin){
     echo '<pre>' . var_export($testLogin, true) . '</pre>';
   }else{
