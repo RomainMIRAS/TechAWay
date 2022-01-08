@@ -385,7 +385,7 @@ function getOffres() {
 
 function creeEntreprise($mail,$nom ='',$telephone = '',$pays='', $ville =''){
 	try {
-		$r = "INSERT INTO entreprise VALUES(DEFAULT,$nom,$mail,$telephone,$pays,$ville);";
+		$r = "INSERT INTO entreprise VALUES(DEFAULT,'$nom','$mail','$telephone','$pays','$ville');";
 
 		$res = pg_query($this->db, $r);
 
