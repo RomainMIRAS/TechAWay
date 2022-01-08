@@ -33,7 +33,7 @@
 
       <section class="section-profil">
 
-        <img id="img-profil" src="../view/design/img/<?= $photoLink ?>" alt="">
+        <img id="img-profil" src="../view/design/img/profil.jpg" alt="">
         <div id="img-profil-config">
           <label for="">Changer la photo</label>
           <form action="profil.ctrl.php" method="POST">
