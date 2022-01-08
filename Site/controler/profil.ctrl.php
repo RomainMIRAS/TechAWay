@@ -11,6 +11,16 @@ include_once(__DIR__."/../model/Coach.class.php");
 
 $view = new View();
 
+/* On récupère le lien photo 
+
+if(isset($_POST["submit"])) {
+    echo "OK";
+    $fileToUpload = $_FILES['fileToUpload']['name'];
+    echo $fileToUpload;
+}*/
+
+// Passage des paramètres
+
 // Charge la vue
 $view->display("profil.view.php");
 ?>
