@@ -13,8 +13,10 @@ $view = new View();
 
 /* On récupère le lien photo */
 
-
-echo "File ". $_FILES['link-photo']['name'] ." téléchargé avec succès.\n";
+if(isset($_POST["submit"])) {
+    echo "OK";
+    echo basename($_FILES["fileToUpload"]["name"]);
+}
 
 // Passage des paramètres
 

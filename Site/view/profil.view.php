@@ -37,8 +37,8 @@
         <div id="img-profil-config">
           <label for="">Changer la photo</label>
           <form action="profil.ctrl.php" method="POST">
-            <input type="file" name="link-photo">
-            <button type="submit">Appliquer</button>
+            <input type="file" name="fileToUpload">
+            <button type="submit" name="submit">Appliquer</button>
           </form>
         </div>
 
