@@ -369,10 +369,8 @@ function getOffres() {
 
 			$offres = array();
 
-			var_dump($offresReq[0]);
-
 			foreach ($offresReq as $offre) {
-				$ido = intval($offre[0]['idoffre']);
+				$ido = intval($offre['idoffre']);
 				array_push($offres,$this->getOffre($ido));
 			}
 		}
