@@ -137,7 +137,7 @@ try{
   echo '<hr>';
 
   echo "</br>creeEntreprise('entreprise@mail.com')  : doit retourner true";
-  $testLogin = $db->getEntreprise('entreprise@mail.com');
+  $testLogin = $db->creeEntreprise('entreprise@mail.com');
   if ($testLogin){
     echo '<pre>' . var_export($testLogin, true) . '</pre>';
   }else{
