@@ -408,11 +408,34 @@ function getOffres() {
 		return $offres;
 }
 
+function creeOffre(int $identreprise , Renseignement $rens, Competence $comp, $nom =''){
+	try {
+		$r = "
+		insert into competence values(DEFAULT,'{$comp->getnvEtude()}', '{$comp->getLangeParle()}', '{$comp->getLangageAcquis()}','-2');
+		insert into renseignement values(DEFAULT,{$rens->getTravEtranger()}, '{$rens->getSecteur()}', '{$rens->getTypeContrat()}', '{$rens->getPoste()}', '{$rens->getTypeEntreprise()}','-2');
+		insert into offre values(DEFAULT,'$nom',now(),$identreprise,
+								(select idcompetence from competence where idcompetence = currval('competence_idcompetence_seq')),
+								(select idrenseignement from renseignement where idrenseignement = currval('renseignement_idrenseignement_seq')));
+		update competence set link = currval('offre_idoffre_seq')::varchar(30) where link = '-2';
+		update renseignement set link = currval('offre_idoffre_seq')::varchar(30) where link = '-2';";
+
+		$res = pg_query($this->db, $r);
+
+		if($res){
+			return true;
+		}
+	// Tests d'erreurs
+	} catch (Exception $e) {
+		die("PSQL ERROR createUtilisateur : ".$e->getMessage());
+	}
+	return false;
+}
+
 function creeEntreprise($mail,$nom ='',$telephone = '',$pays='', $ville =''){
 	try {
 		$r = "INSERT INTO entreprise VALUES(DEFAULT,'$nom','$mail','$telephone','$pays','$ville');";
 
-		$res = pg_query($this->db, $r);
+		$res = @pg_query($this->db, $r);
 
 		if($res){
 			return true;
