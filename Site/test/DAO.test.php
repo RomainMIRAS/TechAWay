@@ -137,7 +137,7 @@ try{
   echo '<hr>';
 
   echo "</br>getEntreprise(idEntreprise) :  1  : doit retourner type Entreprise de id 1";
-  $testLogin = $db->getEntreprise(1);
+  $testLogin = $db->getEntreprise(3);
   if ($testLogin){
     echo '<pre>' . var_export($testLogin, true) . '</pre>';
   }else{
