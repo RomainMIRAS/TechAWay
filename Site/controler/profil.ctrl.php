@@ -18,8 +18,6 @@ echo "File ". $_FILES['link-photo']['name'] ." téléchargé avec succès.\n";
 
 // Passage des paramètres
 
-$view->assign("photoLink",$photoLink);
-
 // Charge la vue
 $view->display("profil.view.php");
 ?>
