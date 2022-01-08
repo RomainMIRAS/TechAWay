@@ -146,8 +146,8 @@ try{
 
   echo '<hr>';
 
-  echo "</br>getOffre(1) :  1  : doit retourner type Offre de id 1";
-  $testLogin = $db->getOffre(1);
+  echo "</br>getOffre(4) :  4  : doit retourner type Offre de id 4";
+  $testLogin = $db->getOffre(4);
   if ($testLogin){
     echo '<pre>' . var_export($testLogin, true) . '</pre>';
   }else{
