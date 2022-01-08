@@ -14,7 +14,11 @@ $view = new View();
 /* On récupère le lien photo */
 $photoLink = $_POST['link-photo'] ?? '';
 
-move_uploaded_file($photoLink,"../data/");
+if (move_uploaded_file($photoLink,__DIR__."/../data/")) {
+    echo "Succès";
+} else {
+    echo "Echec";
+}
 
 // Passage des paramètres
 
