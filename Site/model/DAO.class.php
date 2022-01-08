@@ -357,13 +357,13 @@ function getOffre(int $id) {
 		return $offre;
 }
 
-/* function getOffres() {
+function getOffres() {
 	try {
-		$req = pg_query($this->db,"SELECT * from offre");
+		$req = pg_query($this->db,"SELECT idoffre from offre");
 	
 		$offresReq = pg_fetch_all($req);
 
-		if (empty($renseignementRes)) {
+		if (empty($offresReq)) {
 			return false;
 		}else{
 
@@ -371,27 +371,16 @@ function getOffre(int $id) {
 
 			foreach ($offresReq as $offre) {
 				$ido = intval($offre[0]['idoffre']);
-				$competenceO = $this->getCompetence($ido);
-				$o = new Offre(
-					intval($idr),
-					$offre[0]['nomoffre'],
-					$offre[0]['dateoffre'],
-					$offre[0]['identreprise'],
-					$offre[0]['idcompetence'],
-					$offre[0]['idrenseignement']
-				);
+				array_push($offres,$this->getOffre($ido));
 			}
-
-			
-
 		}
 		
 		// Tests d'erreurs
 		} catch (Exception $e) {
 			die("PSQL ERROR :".$e->getMessage());
 		}
-		return $renseignement;
-} */
+		return $offres;
+}
 
 /* 
 //Accès à un client

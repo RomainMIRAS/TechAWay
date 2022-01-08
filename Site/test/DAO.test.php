@@ -156,6 +156,15 @@ try{
 
   echo '<hr>';
 
+  echo "</br>getOffres() :  doit retourner toutes les offres de type Offre ";
+  $testLogin = $db->getOffres();
+  if ($testLogin){
+    echo '<pre>' . var_export($testLogin, true) . '</pre>';
+  }else{
+    echo "</br>False ";
+  }
+
+  echo '<hr>';
 
   //Un echo de getEmails
   echo "</br></br> Liste de Mail :";
