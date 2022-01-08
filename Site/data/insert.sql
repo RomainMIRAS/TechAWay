@@ -20,3 +20,6 @@ BEGIN;
     INSERT INTO renseignement values(1005,NULL,NULL,NULL);
     INSERT INTO candidat values(1005,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 COMMIT;
+
+
+insert into entreprise values(DEFAULT,"DevCorp","devCorp@corp.com","0721322542","France,Paris");
