@@ -7,6 +7,8 @@ ALTER TABLE RENSEIGNEMENT ADD COLUMN link VARCHAR(30) NOT NULL;
 
 ALTER TABLE RENSEIGNEMENT ALTER COLUMN idrenseignement SET DEFAULT nextval('renseignement_idrenseignement_seq');
 
+ALTER TABLE entreprise ADD CONSTRAINT nom_entreprise_constraint UNIQUE (nomentreprise);
+
 update Competence set link='.';
 update COMPETENCE set link='adresse-candidat@gmail.com' where idcompetence=1;
 

@@ -383,6 +383,23 @@ function getOffres() {
 		return $offres;
 }
 
+function creeEntreprise($mail,$nom ='',$telephone = '',$pays='', $ville =''){
+	try {
+		$r = "INSERT INTO entreprise VALUES(DEFAULT,$nom,$mail,$telephone,$pays,$ville);";
+
+		$res = @pg_query($this->db, $r);
+
+		if($res){
+			return true;
+		}
+	// Tests d'erreurs
+	} catch (Exception $e) {
+		die("PSQL ERROR createUtilisateur : ".$e->getMessage());
+	}
+	return false;
+}
+
+
 /* 
 //Accès à un client
 function getEntreprise(int $idEntreprise) : Client {

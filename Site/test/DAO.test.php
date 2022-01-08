@@ -136,6 +136,16 @@ try{
 
   echo '<hr>';
 
+  echo "</br>creeEntreprise('entreprise@mail.com')  : doit retourner true";
+  $testLogin = $db->getEntreprise('entreprise@mail.com');
+  if ($testLogin){
+    echo '<pre>' . var_export($testLogin, true) . '</pre>';
+  }else{
+    echo "</br>False ";
+  }
+
+  echo '<hr>';
+
   echo "</br>getOffre(4) :  4  : doit retourner type Offre de id 4";
   $testLogin = $db->getOffre(4);
   if ($testLogin){
