@@ -14,10 +14,11 @@ $view = new View();
 /* On récupère le lien photo */
 $photoLink = $_POST['link-photo'] ?? '';
 
-if (move_uploaded_file($photoLink,__DIR__."/../data/")) {
-    echo "Succès";
+if (is_uploaded_file($_FILES[$photoLink]['tmp_name'])) {
+    echo "File ". $_FILES[$photoLink]['name'] ." téléchargé avec succès.\n";
 } else {
-    echo "Echec";
+    echo "Attaque possible par téléchargement de fichier : ";
+    echo "Nom du fichier : '". $_FILES[$photoLink]['tmp_name'] . "'.";
 }
 
 // Passage des paramètres
