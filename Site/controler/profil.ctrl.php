@@ -13,12 +13,8 @@ $view = new View();
 
 /* On récupère le lien photo */
 
-if (is_uploaded_file($_FILES['link-photo']['tmp_name'])) {
-    echo "File ". $_FILES['link-photo']['name'] ." téléchargé avec succès.\n";
-} else {
-    echo "Attaque possible par téléchargement de fichier : ";
-    echo "Nom du fichier : '". $_FILES['link-photo']['tmp_name'] . "'.";
-}
+
+echo "File ". $_FILES['link-photo']['name'] ." téléchargé avec succès.\n";
 
 // Passage des paramètres
 
