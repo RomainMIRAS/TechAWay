@@ -106,16 +106,6 @@ try{
 
   echo '<hr>';
 
-/*   echo "</br>getId(adressemail) : adresse-candidat@gmail.com : retourne id du candidat d'adressemail: adresse-candidat@gmail.com (doit etre = 966)";
-  $testLogin = $db->getId("adresse-candidat@gmail.com");
-  if ($testLogin){
-    echo '<pre>' . var_export($testLogin, true) . '</pre>';
-  }else{
-    echo "</br>False ";
-  } */
-
-  echo '<hr>';
-
   echo "</br>getCompetence(adressemail) : adresse-candidat@gmail.com doit retourner type Competence de l'utilisateur d'adressemail adresse-candidat@gmail.com";
   $testLogin = $db->getCompetence("adresse-candidat@gmail.com");
   if ($testLogin){
