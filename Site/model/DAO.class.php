@@ -335,7 +335,7 @@ function getOffre(int $id) {
 		}else{
 
 			$ido = intval($offreRes[0]['idoffre']);
-			var_dump($offreRes);
+			
 			$entreprise = $this->getEntreprise($ido);
 			$competence = $this->getCompetence($ido);
 			$renseignement = $this->getRenseignement($ido);
