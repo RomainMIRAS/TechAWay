@@ -387,7 +387,7 @@ function creeEntreprise($mail,$nom ='',$telephone = '',$pays='', $ville =''){
 	try {
 		$r = "INSERT INTO entreprise VALUES(DEFAULT,$nom,$mail,$telephone,$pays,$ville);";
 
-		$res = @pg_query($this->db, $r);
+		$res = pg_query($this->db, $r);
 
 		if($res){
 			return true;
