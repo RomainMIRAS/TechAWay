@@ -31,12 +31,21 @@ GRANT SELECT ON CANDIDAT TO pagman;
 GRANT UPDATE ON CANDIDAT TO pagman;
 GRANT INSERT ON CANDIDAT TO pagman;
 
-
 --TABLE COACH
 GRANT SELECT ON coach TO pagman;
 GRANT USAGE ON SEQUENCE coach_idcoach_seq to pagman ;
 
---TABLE CANDIDAT
+--TABLE RENSEIGNEMENTS
+GRANT SELECT ON ENTREPRISE TO pagman;
+GRANT UPDATE ON ENTREPRISE TO pagman;
+GRANT INSERT ON ENTREPRISE TO pagman;
+GRANT USAGE ON SEQUENCE entreprise_identreprise_seq to pagman ;
+
+--TABLE OFFRE
+GRANT SELECT ON OFFRE TO pagman;
+GRANT UPDATE ON OFFRE TO pagman;
+GRANT INSERT ON OFFRE TO pagman;
+GRANT USAGE ON SEQUENCE offre_idoffre_seq to pagman ;
 
 --droits admin a romian
 grant all ON ALL TABLES IN SCHEMA utilisateur to romain ;

@@ -326,7 +326,7 @@ function getEntreprise(int $id) {
 
 function getOffre(int $id) {
 	try {
-		$req = pg_query($this->db,"SELECT * from offre where id=$id");
+		$req = pg_query($this->db,"SELECT * from offre where idoffre=$id");
 	
 		$offreRes = pg_fetch_all($req);
 
