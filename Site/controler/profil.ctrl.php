@@ -14,7 +14,7 @@ $view = new View();
 /* On récupère le lien photo */
 $photoLink = $_POST['link-photo'] ?? '';
 
-copy($photoLink,"../data/");
+move_uploaded_file($photoLink,"../data/");
 
 // Passage des paramètres
 
