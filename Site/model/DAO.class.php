@@ -6,6 +6,8 @@ require_once(__DIR__.'/Competence.class.php');
 require_once(__DIR__.'/Renseignement.class.php');
 require_once(__DIR__.'/Candidat.class.php');
 require_once(__DIR__.'/Coach.class.php');
+require_once(__DIR__.'/Offre.class.php');
+require_once(__DIR__.'/Entreprise.class.php');
 
 // Le Data Access Objet
 class DAO {
@@ -222,9 +224,11 @@ function getCoachOuCandidat(string $mail, string $pass) {
 		$res = $this->getCoach($mail);
 		if ($res){
 			return $res;
-		}else{
-			return new Candidat($mail, $pass,'','',0,'','','');
 		}
+		//NOTE Removed here
+		/* else{
+			return new Candidat($mail, $pass,'','',0,'','','',0,'','','',NULL,NULL);
+		} */
 		
 	} catch (Exception $e) {
 		die("PSQL ERROR :".$e->getMessage());
@@ -287,6 +291,107 @@ function getRenseignement($link) {
 		}
 		return $renseignement;
 }
+
+
+function getEntreprise(int $id) {
+	try {
+		$req = pg_query($this->db,"SELECT * from entreprise where identreprise=$id");
+	
+		$entrepriseRes = pg_fetch_all($req);
+
+		if (empty($entrepriseRes)) {
+			return false;
+		}else{
+
+			$ide = $entrepriseRes[0]['identreprise'];
+
+			$adresse = $entrepriseRes[0]['pays'] . ",". $entrepriseRes[0]['ville'];
+
+			$entreprise = new Entreprise(
+				intval($ide),
+				$entrepriseRes[0]['nomentreprise'],
+				$entrepriseRes[0]['mailentreprise'],
+				$entrepriseRes[0]['telephone'],
+				$adresse
+			);
+			
+		}
+		
+		// Tests d'erreurs
+		} catch (Exception $e) {
+			die("PSQL ERROR :".$e->getMessage());
+		}
+		return $entreprise;
+}
+
+function getOffre(int $id) {
+	try {
+		$req = pg_query($this->db,"SELECT * from offre where id=$id");
+	
+		$offreRes = pg_fetch_all($req);
+
+		if (empty($offreRes)) {
+			return false;
+		}else{
+
+			$ido = intval($offreRes[0]['idoffre']);
+
+			$entreprise = $this->getEntreprise($ido);
+			$competence = $this->getCompetence($ido);
+			$renseignement = $this->getRenseignement($ido);
+
+			$offre = new Offre(
+				intval($ido),
+				$offreRes[0]['nomoffre'],
+				$offreRes[0]['dateoffre'],
+				$entreprise,
+				$competence,
+				$renseignement
+			);
+		}
+		
+		// Tests d'erreurs
+		} catch (Exception $e) {
+			die("PSQL ERROR :".$e->getMessage());
+		}
+		return $offre;
+}
+
+/* function getOffres() {
+	try {
+		$req = pg_query($this->db,"SELECT * from offre");
+	
+		$offresReq = pg_fetch_all($req);
+
+		if (empty($renseignementRes)) {
+			return false;
+		}else{
+
+			$offres = array();
+
+			foreach ($offresReq as $offre) {
+				$ido = intval($offre[0]['idoffre']);
+				$competenceO = $this->getCompetence($ido);
+				$o = new Offre(
+					intval($idr),
+					$offre[0]['nomoffre'],
+					$offre[0]['dateoffre'],
+					$offre[0]['identreprise'],
+					$offre[0]['idcompetence'],
+					$offre[0]['idrenseignement']
+				);
+			}
+
+			
+
+		}
+		
+		// Tests d'erreurs
+		} catch (Exception $e) {
+			die("PSQL ERROR :".$e->getMessage());
+		}
+		return $renseignement;
+} */
 
 /* 
 //Accès à un client

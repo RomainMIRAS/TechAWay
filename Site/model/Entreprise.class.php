@@ -7,19 +7,20 @@ class Entreprise {
   private string $adresse;      //Adresse du client
   private string $telephone;    //Telephone
   private string $mail;         //Mail
-  private Offre $offres;        //liste des offres faite par l'entreprise
+  //private Offre $offres;        //liste des offres faite par l'entreprise
 
   // Contructeur
-  function __construct(string $nom, string $adresse, string $telephone, string $mail) {
+  function __construct(int $id , string $nom = '',string $mail = '', string $telephone = '', string $adresse = '') {
+    $this->id = $id;
     $this->nom = $nom;
     $this->adresse = $adresse;
     $this->telephone = $telephone;
     $this->mail = $mail;
-    $this->offres = null;
+    //$this->offres = null;
   }
 
   function getId() : int {
-    return $this->idClient;
+    return $this->id;
   }
 
   function getNom() : string {
@@ -35,7 +36,7 @@ class Entreprise {
   }
 
   function getMail() : string {
-    return $this->lienCV;
+    return $this->mail;
   }
 
   function getOffres() : Offre {

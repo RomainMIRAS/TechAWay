@@ -136,6 +136,26 @@ try{
 
   echo '<hr>';
 
+  echo "</br>getEntreprise(idEntreprise) :  1  : doit retourner type Entreprise de id 1";
+  $testLogin = $db->getEntreprise(1);
+  if ($testLogin){
+    echo '<pre>' . var_export($testLogin, true) . '</pre>';
+  }else{
+    echo "</br>False ";
+  }
+
+  echo '<hr>';
+
+  echo "</br>getOffre(1) :  1  : doit retourner type Offre de id 1";
+  $testLogin = $db->getOffre(1);
+  if ($testLogin){
+    echo '<pre>' . var_export($testLogin, true) . '</pre>';
+  }else{
+    echo "</br>False ";
+  }
+
+  echo '<hr>';
+
 
   //Un echo de getEmails
   echo "</br></br> Liste de Mail :";

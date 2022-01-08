@@ -8,16 +8,18 @@ class Offre {
   private string $dateOffre;                //lien lettre de motivation
   private Renseignement $detailOffre;       //detail de l'offres
   private Competence $competenceRecherche;  //Competence souhaité par l'offre
-  private array $candidats;                 //Tous les candidat potentiel
+  //private array $candidats;                 //Tous les candidat potentiel
   private Entreprise $entreprise;           //L'entreprise à l'initiative de l'offre
 
   // Contructeur
-  function __construct(string $nomOffre, Entreprise $entreprise) {
+  function __construct(int $id, string $nomOffre = '', string $dateOffre = '', Entreprise $entreprise, Competence $competenceRecherche, Renseignement $detailOffre) {
+    $this->id = $id;
+    $this->dateOffre = $dateOffre;
     $this->nomOffre = $nomOffre;
     $this->entreprise = $entreprise;
-    $this->detailOffre = null;
-    $this->competenceRecherche = null;
-    $this->candidats = null;
+    $this->detailOffre = $detailOffre;
+    $this->competenceRecherche = $competenceRecherche;
+    //$this->candidats = null;
   }
 
   function getId() : int {
