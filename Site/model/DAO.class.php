@@ -338,7 +338,7 @@ function getEntreprises() {
 
 			foreach ($entrepriseReq as $e) {
 				$ide = intval($e['identreprise']);
-				array_push($entreprises,$this->getOffre($ide));
+				array_push($entreprises,$this->getEntreprise($ide));
 			}
 		}
 		
