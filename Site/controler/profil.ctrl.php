@@ -11,6 +11,14 @@ include_once(__DIR__."/../model/Coach.class.php");
 
 $view = new View();
 
+/* On récupère le lien photo */
+$photoLink = $_POST['link-photo'] ?? '';
+
+
+// Passage des paramètres
+
+$view->assign("photoLink",$photoLink);
+
 // Charge la vue
 $view->display("profil.view.php");
 ?>

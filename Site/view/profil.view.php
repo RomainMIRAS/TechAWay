@@ -36,7 +36,11 @@
         <img id="img-profil" src="../view/design/img/profil.jpg" alt="">
         <div id="img-profil-config">
           <label for="">Changer la photo</label>
-          <input type="file" name="link-photo">
+          <form action="profil.ctrl.php" method="POST">
+            <input type="file" name="link-photo">
+            <button type="submit">Appliquer</button>
+            <?= $photoLink ?>
+          </form>
         </div>
 
         <?php if (is_a($_SESSION['utilisateur'],"Candidat")): ?> <!-- si l'utilisateur est un candidat -->
