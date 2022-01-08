@@ -32,20 +32,14 @@
     <main id = "mainRecruter">
 
       <section id="section1"> <!-- section Accueil -->
-        <div>
-          <h1>Rejoignez Tech A Way</h1>
-          <p>Tech a Way est un cabinet de recrutement spécialisé dans le domaine de la tech en full remote et partout en Europe</p>
-          <h2>L'expertise du recrutment dans le domaine de la tech avec des recuteur qui vous accompagne jusqu'à l'embauche</h2>
-        </div>
-
         <article id = "article1">
         <div id="svg1">
           <?php include_once("../view/design/svg/p5.svg") ?>
         </div>
 
         <div>
-          <h2>QUI SOMME NOUS?</h2>
-          <h3>A propos de nous</h3>
+          <h1>Rejoignez nous !</h1>
+          <h2>A propos de nous</h2>
           <p>Tech a Way est un cabinet de recrutement spécialisé dans le domaine de la tech en full remote et partout en Europe. 
 
 De nos jours Tech A Way reçoit des demandes de partenariat d’entreprises cherchant à recruter un candidat. Suite à cela les coachs de l’agence exercent une chasse aux candidats sur des réseaux comme LinkedIn où ils leur proposent de s’entretenir via des messages électroniques. 
@@ -71,15 +65,17 @@ Tech A Way permet donc aux entreprises d’externaliser leur recrutement, et off
       </section>
 
       <section id = "section2" >
-      <form class="form" action="nousrejoindre.ctrl.php" method="post" style="padding-bottom: 193px;">
-            <h1>VOUS SOUHAITEZ REJOINDRE TECH A WAY? CONTACTEZ NOUS!</h1>
+      <h2>Vous souhaitez rejoindre Tech A Way ? Contactez-nous !</h2>
+      <form class="form" action="nousrejoindre.ctrl.php" method="post">
             <label for="nom">Nom</label>
             <input id="nom" type="text" name="nom" placeholder="Nom" >
-            <label for="prenom">Prenom</label>
-            <input id="prenom" type="text" name="prenom" placeholder="Prenom" >
+            <label for="prenom">Prénom</label>
+            <input id="prenom" type="text" name="prenom" placeholder="Prénom" >
             <label for="email">Adresse E-mail</label>
             <input id="email" type="text" name="email" placeholder="Entrez votre adresse e-mail" >
-            <button type="submit" name="action" value="confirmation">Confirmation</button>
+            <label for="">Message</label>
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+            <button type="submit" name="action" value="confirmation">Envoyer</button>
             <output><?=$erreur?></output>
           </form>
 

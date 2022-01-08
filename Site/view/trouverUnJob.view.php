@@ -32,49 +32,45 @@
     <main id = "mainTrouverUnJob">
 
       <section id="section1"> <!-- section Accueil -->
-        <div>
-          <h1>Trouvez le métier qu'il vous faut</h1>
-          <p>Tech a Way est un cabinet de recrutement spécialisé dans le domaine de la tech en full remote et partout en Europe</p>
-          <h2>L'expertise du recrutment dans le domaine de la tech avec des recuteur qui vous accompagne jusqu'à l'embauche</h2>
-        </div>
 
         <article id = "article1">
-        <div id="svg1">
-          <?php include_once("../view/design/svg/p5.svg") ?>
-        </div>
 
-        <div>
-          <h2>CANDIDATS</h2>
-          <h3>Trouvez LES recruteurs qu'il vous faut</h3>
-          <p>Tech a Way vous permet de postuler chez les entreprises qui correspondent le mieux au job que vous rechercher. <br>
-            Vous n'avez qu'à vous inscrire et nous spécifier ce que vous chercher, on s'occupe de vous mettre en lien avec l'employeur idéal !</p>
-        </div>
+          <div>
+            <h1>Candidats</h1>
+            <h2>Trouvez LES recruteurs qu'il vous faut</h2>
+            <p>Tech A Way vous permet de postuler à des offres qui corresponde le mieux.
+              Vous n'avez qu'à vous inscrire et renseigner votre profil. Ensuite on s'occupe de vous mettre en lien avec l'employeur idéal !</p>
+          </div>
+
+          <div id="svg1">
+            <?php include_once("../view/design/svg/p5.svg") ?>
+          </div>
 
         </article>
         
         <article id = "article2">
-        <div>
-          <h2>On vous aide àvous faire recruter</h2>
-          <ul>
-            <li>Une recherche d'emploi efficace</li>
-            <li>Une aide à la création du CV et de la lettre de motivation</li>
-            <li>Un accompagnement tout au long de votre recrutement</li>
-          </ul>
-          
-          
-        </div>
 
-        <div id="svg1">
-          <?php include_once("../view/design/svg/p1 var 1.svg") ?>
-        </div>
+          <div id="svg1">
+            <?php include_once("../view/design/svg/p1 var 1.svg") ?>
+          </div>
+
+          <div>
+            <h3>On vous aide à vous faire recruter</h3>
+            <ul>
+              <li>Une recherche d'emploi efficace</li>
+              <li>Une aide à la création du CV et de la lettre de motivation</li>
+              <li>Un accompagnement tout au long de votre recrutement</li>
+            </ul>
+          </div>
+
         </article>
-        
+
     </section>
 
     <section id = "sectionTUJ" >
         <section>
             <article>
-                <h2>Rejoignez-nous !</h2>
+                <h2>Commencez dès maintenant !</h2>
                 <form action="../controler/authentification.ctrl.php" method="post">                
                     <button id="signup" type="submit" name="action" value="signup">S'inscrire</button>
                 </form>

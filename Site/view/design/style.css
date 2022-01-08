@@ -120,9 +120,9 @@ nav>ul{
 **************************************************************/
 
 main {
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  padding: 20px;
 }
 
 h1 {
@@ -295,12 +295,19 @@ output{
   color: var(--color-blue1);
 }
 
-.form input, select {
+.form input, select, textarea {
   padding: 12px 20px;
   margin: 10px 0;
   border: 1px solid var(--color-grey);
   outline: none;
   border-radius: 5px;
+}
+
+textarea {
+  min-width: 200px;
+  max-width: 500px;
+  min-height: 200px;
+  max-height: 800px;
 }
 
 .form input:disabled {
@@ -472,18 +479,17 @@ button:hover {
   display:flex;
   justify-content: center;
   align-items: center;
-  background-color:#7094FF;
 }
 #article2{
   display:flex;
   justify-content: center;
   align-items: center;
-  background-color:#FCD873;
 }
 
 #section2{
-  justify-content: center;
-  background-color: #7094FF;
+  display: flex; 
+  flex-direction: column; 
+  align-items:center;
 }
 
 /**************************************************************
@@ -606,6 +612,10 @@ footer ul li a:hover {
     min-height: 100%;
   }
 
+  main {
+    padding: 20px;
+  }
+
   nav {
     flex-direction: column;
   }
@@ -643,6 +653,14 @@ footer ul li a:hover {
 
   #section-accueil-1 div:first-child form {
     justify-content: center;
+  }
+
+  #article1 {
+    flex-direction: column;
+  }
+
+  #article2 {
+    flex-direction: column-reverse;
   }
 
 }
