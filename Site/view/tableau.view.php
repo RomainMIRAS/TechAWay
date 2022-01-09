@@ -86,6 +86,9 @@
         <div>
           <form action="">
             <input type="text" placeholder="Nom">
+            <select name="" id="">
+              <!-- Liste des entreprises -->
+            </select>
             <button>Ajouter</button>
           </form>
         </div>
