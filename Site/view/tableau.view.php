@@ -80,7 +80,6 @@
                 <?php if ($e!=false): ?>
                     <tr> <!-- affichage du nom, prenom, mail...etc du candidat -->
                         <td><?= $e->getNom() ?></td>
-                        <td><?= $e->getPrenom() ?></td>
                         <td><a href="mailto:<?= $c->getMail() ?>"><?= $e->getMail() ?></a></td>
                         <td><?= $e->getTelephone() ?></td>
                     </tr>
