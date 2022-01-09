@@ -74,18 +74,16 @@
             <tr>
                 <th>Nom</th>
                 <th>Email</th>
-                <th>Téléphone</th>
+                <!--<th>Téléphone</th>
                 <th>Adresse</th>
-                <th>Nombres d'offres</th>
+                <th>Nombres d'offres</th>-->
             </tr>
             <?php foreach($entreprises as $e): ?> <!-- pour chaque candidat -->
                 <?php if ($e!=false): ?>
                     <tr> <!-- affichage du nom, prenom, mail...etc du candidat -->
                         <td><?= $e->getNom() ?></td>
                         <td><a href="mailto:<?= $c->getMail() ?>"><?= $e->getMail() ?></a></td>
-                        <td><?= $e->getTelephone() ?></td>
-                        <td><?= $e->getAdresse() ?></td>
-                        <td></td>
+                        
                     </tr>
                 <?php endif; ?>
             <?php endforeach; ?>
