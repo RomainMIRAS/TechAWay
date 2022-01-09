@@ -434,17 +434,17 @@ class DAO {
 	}
 
 	//Fonction qui cree une nouvelle Entreprise dans la base de donnee
-	function creeEntreprise($mail,$nom ='',$telephone = '',$pays='', $ville ='') : bool{
+	function creeEntreprise($mail,$nom ='',$telephone = '',$pays='', $ville ='') {
 		try {
 			$r = "INSERT INTO entreprise VALUES(DEFAULT,'$nom','$mail','$telephone','$pays','$ville');
 			SELECT currval('entreprise_identreprise_seq');";
 
 			$res = @pg_query($this->db, $r);
-			
+
 			$req = pg_fetch_all($res);
 
 			if($res){
-				return intval($req[0]['currval']); //returne le id de l'offre cree
+				return intval($req[0]['currval']); //returne le id de l'entreprise qu'il cree
 			}
 			
 		// Tests d'erreurs
