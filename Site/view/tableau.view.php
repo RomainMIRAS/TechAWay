@@ -100,14 +100,16 @@
                         <td><?= $c->getPays() ?></td>
                         <td class="sup">
                           <form action="tableau.ctrl.php" method="POST">
-                            <i class="fa fa-times" aria-hidden="true"></i>
-                            <input type="hidden" name="entrepriseToDelete" value="<?= $e->getId() ?>">
+                            <input type="hidden" class="entrepriseAction" name="entrepriseAction" value="deleteN">
+                            <input type="hidden" name="entrepriseToDelete" value="<?= $c->getId() ?>">
+                            <button type="submit" class="entrepriseDeleteBtn"><i class="fa fa-times" aria-hidden="true"></i></button>
                           </form>
                         </td>
                     </tr>
                 <?php endif; ?>
             <?php endforeach; ?>
         </table>
+        <span class="deleteMessage"><?= $entrepriseMessage ?></span>
 
         <h2>Offres <span style="font-size: 12px"><?= $nbCandidats?> offre(s) enregistrée(s)</span></h2>
         <div class="nav-options-board">
@@ -136,14 +138,17 @@
                         <td><?= $o->getEntreprise()->getNom() ?></td>
                         <td><?= $o->getDateOffre() ?></td>
                         <td class="sup">
-                          <form action="actionOffre">
-                            <i class="fa fa-times" aria-hidden="true"></i>
+                          <form action="tableau.ctrl.php" method="POST">
+                            <input type="hidden" class="offreAction" name="offreAction" value="deleteN">
+                            <input type="hidden" name="offreToDelete" value="<?= $c->getId() ?>">
+                            <button type="submit" class="offreDeleteBtn"><i class="fa fa-times" aria-hidden="true"></i></button>
                           </form>
                         </td>
                     </tr>
                 <?php endif; ?>
             <?php endforeach; ?>
         </table>
+        <span class="deleteMessage"><?= $offreMessage ?></span>
 
       </section>
 
@@ -165,6 +170,22 @@
           $(".candidatAction").val("deleteY");
         } else {
           $(".candidatAction").val("deleteN");
+        }
+      });
+
+      $(".entrepriseDeleteBtn").click(function() { /* Affichage d'une fenêtre de confirmation pour la suppression d'une entreprise */
+        if (confirm("Etes-vous sûr de vouloir supprimer cette entreprise ?")) {
+          $(".entrepriseAction").val("deleteY");
+        } else {
+          $(".entrepriseAction").val("deleteN");
+        }
+      });
+
+      $(".offreDeleteBtn").click(function() { /* Affichage d'une fenêtre de confirmation pour la suppression d'une offre */
+        if (confirm("Etes-vous sûr de vouloir supprimer cette offre ?")) {
+          $(".offreAction").val("deleteY");
+        } else {
+          $(".offreAction").val("deleteN");
         }
       });
 

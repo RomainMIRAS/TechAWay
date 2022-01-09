@@ -30,7 +30,7 @@ $nbEntreprises = $db->nombreEntreprises();
 $offres = $db->getOffres();
 $nbOffres = $db->nombreOffres();
 
-/* */
+/* Suppression d'un candidat */
 
 $candidatToDelete = $_POST['candidatToDelete'] ?? '';
 $candidatAction = $_POST['candidatAction'] ?? '';
@@ -39,6 +39,28 @@ $candidatMessage = '';
 if ($candidatAction=='deleteY') {
     $db->deleteCandidat($candidatToDelete);
     $candidatMessage = "Le candidat $candidatToDelete a bien été supprimé.";
+}
+
+/* Suppression d'une entreprise */
+
+$entrepriseToDelete = $_POST['entrepriseToDelete'] ?? '';
+$entrepriseAction = $_POST['entrepriseAction'] ?? '';
+$entrepriseMessage = '';
+
+if ($entrepriseAction=='deleteY') {
+    $db->deleteEntreprise($entrepriseToDelete);
+    $entrepriseMessage = "L'entreprise $entrepriseToDelete a bien été supprimée.";
+}
+
+/* Suppression d'une offre */
+
+$offreToDelete = $_POST['offreToDelete'] ?? '';
+$offreAction = $_POST['offreAction'] ?? '';
+$offreMessage = '';
+
+if ($offreAction=='deleteY') {
+    $db->deleteOffre($offreToDelete);
+    $offreMessage = "L'offre $offreToDelete a bien été supprimée.";
 }
 
 
@@ -54,6 +76,8 @@ $view->assign("offres",$offres);
 $view->assign("nbOffres",$nbOffres);
 
 $view->assign("candidatMessage",$candidatMessage);
+$view->assign("entrepriseMessage",$entrepriseMessage);
+$view->assign("offreMessage",$offreMessage);
 
 /* Chargement de la vue */
 $view->display("tableau.view.php");
