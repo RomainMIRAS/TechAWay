@@ -66,7 +66,7 @@
                         <td><?= $c->getLienLM() ?></td>
                         <td class="sup">
                           
-                            <button type="submit" id="candidatDeleteBtn"><i class="fa fa-times" aria-hidden="true"></i></button>
+                            <button id="candidatDeleteBtn"><i class="fa fa-times" aria-hidden="true"></i></button>
                           
                         </td>
                     </tr>
