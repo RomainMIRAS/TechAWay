@@ -93,15 +93,15 @@
             <?php foreach($entreprises as $e): ?> <!-- pour chaque candidat -->
                 <?php if ($e!=false): ?>
                     <tr> <!-- affichage du nom, prenom, mail...etc du candidat -->
-                        <td><?= $c->getNom() ?></td>
-                        <td><a href="mailto:<?= $c->getMail() ?>"><?= $c->getMail() ?></a></td>
-                        <td><?= $c->getTelephone() ?></td>
-                        <td><?= $c->getVille() ?></td>
-                        <td><?= $c->getPays() ?></td>
+                        <td><?= $e->getNom() ?></td>
+                        <td><a href="mailto:<?= $e->getMail() ?>"><?= $e->getMail() ?></a></td>
+                        <td><?= $e->getTelephone() ?></td>
+                        <td><?= $e->getVille() ?></td>
+                        <td><?= $e->getPays() ?></td>
                         <td class="sup">
                           <form action="tableau.ctrl.php" method="POST">
                             <input type="hidden" class="entrepriseAction" name="entrepriseAction" value="deleteN">
-                            <input type="hidden" name="entrepriseToDelete" value="<?= $c->getId() ?>">
+                            <input type="hidden" name="entrepriseToDelete" value="<?= $e->getId() ?>">
                             <button type="submit" class="entrepriseDeleteBtn"><i class="fa fa-times" aria-hidden="true"></i></button>
                           </form>
                         </td>
