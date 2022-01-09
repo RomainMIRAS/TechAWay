@@ -75,6 +75,7 @@
                 <th>Nom</th>
                 <th>Email</th>
                 <th>Téléphone</th>
+                <th>Adresse</th>
             </tr>
             <?php foreach($entreprises as $e): ?> <!-- pour chaque candidat -->
                 <?php if ($e!=false): ?>
@@ -82,6 +83,7 @@
                         <td><?= $e->getNom() ?></td>
                         <td><a href="mailto:<?= $c->getMail() ?>"><?= $e->getMail() ?></a></td>
                         <td><?= $e->getTelephone() ?></td>
+                        <td><?= $e->getAdresse() ?></td>
                     </tr>
                 <?php endif; ?>
             <?php endforeach; ?>
