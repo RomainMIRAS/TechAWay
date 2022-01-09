@@ -21,8 +21,8 @@ $candidats = array();
 $nbCandidats = 0;
 
 foreach($emails as $e) {
-    array_push($candidats,$db->getCandidat($e)); 
     if ($db->getCandidat($e)!=false) {
+        array_push($candidats,$db->getCandidat($e)); 
         $nbCandidats++;
     }
 }
