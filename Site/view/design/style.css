@@ -567,20 +567,12 @@ table {
   border-radius: 15px;
 }
 
-th {
-  text-align: center;
-}
-
 td, th {
   border: 1px solid #dddddd;
   text-align: left;
   padding: 5px;
   font-size: 14px;
   cursor: initial;
-}
-
-.sup form {
-  justify-content: center;
 }
 
 .sup i {
