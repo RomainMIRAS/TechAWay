@@ -44,33 +44,33 @@ if ($candidatAction=='deleteY') {
 /* Suppression d'une entreprise */
 
 $entrepriseToDelete = $_POST['entrepriseToDelete'] ?? '';
-if ($db->getEntreprise($entrepriseToDelete)!=false) {
+/*if ($db->getEntreprise($entrepriseToDelete)!=false) {
     $entrepriseToDeleteName = $db->getEntreprise($entrepriseToDelete)->getNom();
 } else {
     $entrepriseToDeleteName = $entrepriseToDelete;
-}
+}*/
 $entrepriseAction = $_POST['entrepriseAction'] ?? '';
 $entrepriseMessage = '';
 
 if ($entrepriseAction=='deleteY') {
     $db->deleteEntreprise($entrepriseToDelete);
-    $entrepriseMessage = "L'entreprise $entrepriseToDeleteName a bien été supprimée.";
+    $entrepriseMessage = "L'entreprise $entrepriseToDelete a bien été supprimée.";
 }
 
 /* Suppression d'une offre */
 
 $offreToDelete = $_POST['offreToDelete'] ?? '';
-if ($db->getOffre($offreToDelete)!=false) {
+/*if ($db->getOffre($offreToDelete)!=false) {
     $offreToDeleteName = $db->getOffre($offreToDelete)->getNomOffre();
 } else {
     $offreToDeleteName = $offreToDelete;
-}
+}*/
 $offreAction = $_POST['offreAction'] ?? '';
 $offreMessage = '';
 
 if ($offreAction=='deleteY') {
     $db->deleteOffre($offreToDelete);
-    $offreMessage = "L'offre $offreToDeleteName a bien été supprimée.";
+    $offreMessage = "L'offre $offreToDelete a bien été supprimée.";
 }
 
 
