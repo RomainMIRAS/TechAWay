@@ -66,9 +66,9 @@
                         <td><?= $c->getLienLM() ?></td>
                         <td class="sup">
                           <form action="tableau.ctrl.php" method="POST">
-                            <i class="fa fa-times" aria-hidden="true"></i>
                             <input type="hidden" name="candidatAction" value="delete">
                             <input type="hidden" name="candidatToDelete" value="<?= $c->getMail() ?>">
+                            <button type="submit"><i class="fa fa-times" aria-hidden="true"></i></button>
                           </form>
                         </td>
                     </tr>
