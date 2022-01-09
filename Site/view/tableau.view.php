@@ -64,9 +64,9 @@
                         <td><?= $c->getPays() ?></td>
                         <td><?= $c->getLienCv() ?></td>
                         <td><?= $c->getLienLM() ?></td>
-                        <td class="sup" id="candidatDeleteBtn">
+                        <td class="sup">
                           
-                            <button><i class="fa fa-times" aria-hidden="true"></i></button>
+                            <button id="candidatDeleteBtn"><i class="fa fa-times" aria-hidden="true"></i></button>
                           
                         </td>
                     </tr>
@@ -157,13 +157,9 @@
   <script src="../framework/jquery-3.6.0.min.js"></script>
   <script>
     $(window).ready(function() {
-      confirm("Est-vous sur ?");
+      
       $("#candidatDeleteBtn").click(function() {
-        if (confirm("Etes-vous sûr de vouloir supprimer ce candidat ?")) {
-          $("#candidatAction").val("deleteY");
-        } else {
-          $("#candidatAction").val("deleteN");
-        }
+        alert("OK");
       });
 
     });
