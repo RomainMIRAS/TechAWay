@@ -344,7 +344,7 @@ class DAO {
 
 
 	//Fonction qui returne une offre d'id donnee
-	function getOffre(int $id) : Offre{
+	function getOffre(int $id) : Offre {
 		try {
 			$req = pg_query($this->db,"SELECT * from offre where idoffre=$id");
 		
