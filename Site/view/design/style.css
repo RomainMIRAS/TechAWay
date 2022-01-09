@@ -575,8 +575,8 @@ td, th {
   cursor: initial;
 }
 
-.sup {
-  text-align: center;
+.sup form {
+  justify-content: center;
 }
 
 .sup i {
