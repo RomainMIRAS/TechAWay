@@ -214,9 +214,9 @@ class DAO {
 			$res = $this->getCoach($mail);
 			if ($res){
 				return $res;
-			}else{
+			}/* else{
 				return new Candidat($mail, $pass,'','',0,'','','',0,'','','',NULL,NULL);
-			}
+			} */
 			
 		} catch (Exception $e) {
 			die("PSQL ERROR :".$e->getMessage());
