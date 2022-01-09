@@ -70,26 +70,23 @@
 
         <h2>Entreprises <span style="font-size: 12px"><?= $nbEntreprises ?> entreprise(s) enregistrée(s)</span></h2>
 
-        <table>  <!-- Tableau des candidats -->
+        <h2>Offres <span style="font-size: 12px"><?= $nbCandidats?> offre(s) enregistrée(s)</span></h2>
+
+        <table>  <!-- Tableau des offres -->
             <tr>
                 <th>Nom</th>
-                <th>Email</th>
-                <!--<th>Téléphone</th>
-                <th>Adresse</th>
-                <th>Nombres d'offres</th>-->
+                <!--<th>Entreprise</th>
+                <th>Date</th>
+                <th>Nombres de candidats</th>-->
             </tr>
-            <?php foreach($entreprises as $e): ?> <!-- pour chaque candidat -->
-                <?php if ($e!=false): ?>
+            <?php foreach($offres as $o): ?> <!-- pour chaque candidat -->
+                <?php if ($o!=false): ?>
                     <tr> <!-- affichage du nom, prenom, mail...etc du candidat -->
-                        <td><?= $e->getNom() ?></td>
-                        <td><a href="mailto:<?= $c->getMail() ?>"><?= $e->getMail() ?></a></td>
-                        
+                        <td><?= $o->getNomOffre() ?></td>
                     </tr>
                 <?php endif; ?>
             <?php endforeach; ?>
         </table>
-
-        <h2>Offres <span style="font-size: 12px"><?= $nbCandidats?> offre(s) enregistrée(s)</span></h2>
 
       </section>
 

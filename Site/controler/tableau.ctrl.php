@@ -38,6 +38,15 @@ $nbEntreprises = 0;
     }
 }*/
 
+/* Récupération de toutes les offres de la base */
+
+$offres = $db->getOffres();
+$nbOffres = 0;
+
+foreach($offres as $o) {
+    $nbOffres++;
+}
+
 /* Passage des paramètres à la vue */
 
 $view->assign("candidats",$candidats);
@@ -45,6 +54,9 @@ $view->assign("nbCandidats",$nbCandidats);
 
 $view->assign("entreprises",$entreprises);
 $view->assign("nbEntreprises",$nbEntreprises);
+
+$view->assign("offres",$offres);
+$view->assign("nbOffres",$nbOffres);
 
 // Charger la vue
 $view->display("tableau.view.php");
