@@ -85,6 +85,7 @@
                 <th>Téléphone</th>
                 <th>Ville</th>
                 <th>Pays</th>
+                <th>Supprimer</th>
             </tr>
             <?php foreach($entreprises as $e): ?> <!-- pour chaque candidat -->
                 <?php if ($e!=false): ?>
@@ -108,15 +109,15 @@
         <div class="nav-options-board">
           <button>Ajouter une offre</button>
         </div>
-        <div>
+        <!--<div> Ajouter une entreprise 
           <form action="">
             <input type="text" placeholder="Nom">
             <select name="" id="">
-              <!-- Liste des entreprises -->
+              
             </select>
             <button>Ajouter</button>
           </form>
-        </div>
+        </div>-->
         <table>  <!-- Tableau des offres -->
             <tr>
                 <th>Nom</th>
@@ -150,5 +151,12 @@
 
 
   </body>
+
+  <script src="../framework/jquery-3.6.0.min.js"></script>
+  <script>
+    $(window).ready(function() {
+
+    });
+  </script>
 
 </html>
