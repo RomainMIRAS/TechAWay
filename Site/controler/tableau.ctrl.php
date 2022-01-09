@@ -30,12 +30,19 @@ foreach($emails as $e) {
 /* Récupération de toutes les entreprises de la base */
 
 $entreprises = $db->getEntreprises();
+$nbEntreprises = 0;
+
+foreach ($entreprises as $e) {
+    $nbEntreprises++;
+}
 
 /* Passage des paramètres à la vue */
 
 $view->assign("candidats",$candidats);
 $view->assign("nbCandidats",$nbCandidats);
+
 $view->assign("entreprises",$entreprises);
+$view->assign("nbEntreprises",$nbEntreprises);
 
 // Charger la vue
 $view->display("tableau.view.php");

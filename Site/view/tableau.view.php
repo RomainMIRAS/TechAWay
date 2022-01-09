@@ -68,7 +68,7 @@
             <?php endforeach; ?>
         </table>
 
-        <h2>Entreprises <span style="font-size: 12px"><?= $nbCandidats?> entreprise(s) enregistrée(s)</span></h2>
+        <h2>Entreprises <span style="font-size: 12px"><?= $nbEntreprises ?> entreprise(s) enregistrée(s)</span></h2>
 
         <table>  <!-- Tableau des candidats -->
             <tr>
@@ -76,6 +76,7 @@
                 <th>Email</th>
                 <th>Téléphone</th>
                 <th>Adresse</th>
+                <th>Nombres d'offres</th>
             </tr>
             <?php foreach($entreprises as $e): ?> <!-- pour chaque candidat -->
                 <?php if ($e!=false): ?>
@@ -84,6 +85,7 @@
                         <td><a href="mailto:<?= $c->getMail() ?>"><?= $e->getMail() ?></a></td>
                         <td><?= $e->getTelephone() ?></td>
                         <td><?= $e->getAdresse() ?></td>
+                        <td></td>
                     </tr>
                 <?php endif; ?>
             <?php endforeach; ?>
