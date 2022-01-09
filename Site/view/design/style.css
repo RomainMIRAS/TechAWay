@@ -570,8 +570,17 @@ table {
 td, th {
   border: 1px solid #dddddd;
   text-align: left;
-  padding: 8px;
+  padding: 5px;
+  font-size: 14px;
   cursor: initial;
+}
+
+.sup {
+  text-align: center;
+}
+
+.sup i {
+  cursor: pointer;
 }
 
 tr:nth-child(even) {

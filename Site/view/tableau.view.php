@@ -50,7 +50,7 @@
                 <th>Pays</th>
                 <th>Lien CV</th>
                 <th>Lien Lettre</th>
-                <th>Action</th>
+                <th>Supprimer</th>
             </tr>
             <?php foreach($candidats as $c): ?> <!-- pour chaque candidat -->
                 <?php if ($c!=false): ?>
@@ -64,7 +64,7 @@
                         <td><?= $c->getPays() ?></td>
                         <td><?= $c->getLienCv() ?></td>
                         <td><?= $c->getLienLM() ?></td>
-                        <td>
+                        <td class="sup">
                           <form action="actionCandidat">
                             <i class="fa fa-times" aria-hidden="true"></i>
                           </form>
@@ -96,7 +96,7 @@
                         <td><?= $o->getNomOffre() ?></td>
                         <td><?= $o->getEntreprise()->getNom() ?></td>
                         <td><?= $o->getDateOffre() ?></td>
-                        <td>
+                        <td class="sup">
                           <form action="actionOffre">
                             <i class="fa fa-times" aria-hidden="true"></i>
                           </form>
