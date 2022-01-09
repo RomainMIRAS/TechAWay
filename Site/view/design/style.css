@@ -567,6 +567,10 @@ table {
   border-radius: 15px;
 }
 
+th {
+  text-align: center;
+}
+
 td, th {
   border: 1px solid #dddddd;
   text-align: left;
