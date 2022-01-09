@@ -652,6 +652,7 @@ tr:hover td {
 
 .addNewSection form {
   display: flex;
+  flex-direction: column;
   font-size: 14px;
 }
 
