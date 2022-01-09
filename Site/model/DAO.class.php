@@ -421,7 +421,8 @@ class DAO {
 
 			$res = pg_query($this->db, $r);
 
-			var_dump($res);
+			$req = pg_fetch_all($res);
+			var_dump($req);
 
 			if($res){
 				return true;
