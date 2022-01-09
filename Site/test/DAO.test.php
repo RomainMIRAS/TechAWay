@@ -157,6 +157,16 @@ try{
 
   echo '<hr>';
 
+  echo "</br>deleteEntreprise('entreprise@mail.com') :  returns True";
+  $testLogin = $db->deleteEntreprise('entreprise@mail.com');
+  if ($testLogin){
+    echo '<pre>' . var_export($testLogin, true) . '</pre>';
+  }else{
+    echo "</br>False ";
+  }
+
+  echo '<hr>';
+
   echo "</br>getEntreprises() :  doit retourner toutes les entreprises de type Offre ";
   $testLogin = $db->getEntreprises();
   if ($testLogin){

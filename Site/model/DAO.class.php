@@ -409,14 +409,14 @@ class DAO {
 		try {
 			$langParle = $this->conversionArrayString($comp->getLangeParle());
 			$langAcquis = $this->conversionArrayString($comp->getLangageAcquis());
-			$r = "
-			insert into competence values(DEFAULT,'{$comp->getnvEtude()}', '$langParle', '$langAcquis','-2');
-			insert into renseignement values(DEFAULT,{$rens->getTravEtranger()}::boolean, '{$rens->getSecteur()}', '{$rens->getTypeContrat()}', '{$rens->getPoste()}', '{$rens->getTypeEntreprise()}','-2');
-			insert into offre values(DEFAULT,'$nom',now(),$identreprise,
+
+			$r = "INSERT into competence values(DEFAULT,'{$comp->getnvEtude()}', '$langParle', '$langAcquis','-2');
+			INSERT into renseignement values(DEFAULT,{$rens->getTravEtranger()}::boolean, '{$rens->getSecteur()}', '{$rens->getTypeContrat()}', '{$rens->getPoste()}', '{$rens->getTypeEntreprise()}','-2');
+			INSERT into offre values(DEFAULT,'$nom',now(),$identreprise,
 									(select idcompetence from competence where idcompetence = currval('competence_idcompetence_seq')),
 									(select idrenseignement from renseignement where idrenseignement = currval('renseignement_idrenseignement_seq')));
-			update competence set link = currval('offre_idoffre_seq')::varchar where link = '-2';
-			update renseignement set link = currval('offre_idoffre_seq')::varchar where link = '-2';
+			UPDATE competence set link = currval('offre_idoffre_seq')::varchar where link = '-2';
+			UPDATE renseignement set link = currval('offre_idoffre_seq')::varchar where link = '-2';
 			SELECT currval('offre_idoffre_seq');";
 
 			$res = pg_query($this->db, $r);
@@ -436,13 +436,17 @@ class DAO {
 	//Fonction qui cree une nouvelle Entreprise dans la base de donnee
 	function creeEntreprise($mail,$nom ='',$telephone = '',$pays='', $ville ='') : bool{
 		try {
-			$r = "INSERT INTO entreprise VALUES(DEFAULT,'$nom','$mail','$telephone','$pays','$ville');";
+			$r = "INSERT INTO entreprise VALUES(DEFAULT,'$nom','$mail','$telephone','$pays','$ville');
+			SELECT currval('entreprise_identreprise_seq');";
 
 			$res = @pg_query($this->db, $r);
+			
+			$req = pg_fetch_all($res);
 
 			if($res){
-				return true;
+				return intval($req[0]['currval']); //returne le id de l'offre cree
 			}
+			
 		// Tests d'erreurs
 		} catch (Exception $e) {
 			die("PSQL ERROR createUtilisateur : ".$e->getMessage());
@@ -488,7 +492,7 @@ class DAO {
 		return false;
 	}
 	//Fonction qui supprime une Entreprise Existant dans la base de donnee
-	function deleteEnterprise($idEntreprise) : bool{
+	function deleteEntreprise($idEntreprise) : bool{
 		try {
 			$r = "DELETE from entreprise where identreprise='$idEntreprise';";
 
