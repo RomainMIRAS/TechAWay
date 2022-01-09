@@ -420,6 +420,8 @@ class DAO {
 
 			$res = pg_query($this->db, $r);
 
+			var_dump($res);
+
 			if($res){
 				return true;
 			}
@@ -455,7 +457,41 @@ class DAO {
 			DELETE from renseignement where link='$mail';
 			DELETE from utilisateur where adressemail='$mail';";
 
-			$res = pg_query($this->db, $r);
+			$res = @pg_query($this->db, $r);
+
+			if($res){
+				return true;
+			}
+		// Tests d'erreurs
+		} catch (Exception $e) {
+			die("PSQL ERROR createUtilisateur : ".$e->getMessage());
+		}
+		return false;
+	}
+	//Fonction qui supprime une offre Existant dans la base de donnee
+	function deleteOffre($idoffre) : bool{
+		try {
+			$r = "DELETE from offre where idoffre='$idoffre';
+			DELETE from competence where link='$idoffre';
+			DELETE from renseignement where link='$idoffre';";
+
+			$res = @pg_query($this->db, $r);
+
+			if($res){
+				return true;
+			}
+		// Tests d'erreurs
+		} catch (Exception $e) {
+			die("PSQL ERROR createUtilisateur : ".$e->getMessage());
+		}
+		return false;
+	}
+	//Fonction qui supprime une Entreprise Existant dans la base de donnee
+	function deleteEnterprise($idEntreprise) : bool{
+		try {
+			$r = "DELETE from entreprise where identreprise='$idEntreprise';";
+
+			$res = @pg_query($this->db, $r);
 
 			if($res){
 				return true;
