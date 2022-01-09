@@ -618,6 +618,13 @@ tr:hover td {
   border: 1px solid var(--color-blue1);
 }
 
+.deleteMessage {
+  color: red;
+  font-size: 13px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
 /**************************************************************
 * FOOTER
 **************************************************************/

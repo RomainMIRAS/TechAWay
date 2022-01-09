@@ -75,7 +75,7 @@
                 <?php endif; ?>
             <?php endforeach; ?>
         </table>
-        <span><?= $candidatMessage ?></span>
+        <span class="deleteMessage"><?= $candidatMessage ?></span>
 
         <h2>Entreprises <span style="font-size: 12px"><?= $nbEntreprises ?> entreprise(s) enregistrée(s)</span></h2>
         <div class="nav-options-board">
