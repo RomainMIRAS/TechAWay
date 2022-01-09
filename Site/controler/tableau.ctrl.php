@@ -21,8 +21,8 @@ $candidats = array();
 $nbCandidats = 0;
 
 foreach($emails as $e) {
-    array_push($candidats,$db->getCandidat($e)); 
     if ($db->getCandidat($e)!=false) {
+        array_push($candidats,$db->getCandidat($e)); 
         $nbCandidats++;
     }
 }
@@ -32,11 +32,9 @@ foreach($emails as $e) {
 $entreprises = $db->getEntreprises();
 $nbEntreprises = 0;
 
-/*foreach ($entreprises as $e) {
-    if ($db->getEntreprise($e)!=false) {
-        $nbEntreprises++;
-    }
-}*/
+foreach ($entreprises as $e) {
+    $nbEntreprises++;
+}
 
 /* Récupération de toutes les offres de la base */
 
