@@ -39,7 +39,9 @@
       <section id="tableau-bord"> <!-- Tous les candidats inscrits -->
 
         <h2>Candidats <span style="font-size: 12px"><?= $nbCandidats?> candidat(s) enregistré(s)</span></h2>
-
+        <div class="">
+          <button>Action</button>
+        </div>
         <table>  <!-- Tableau des candidats -->
             <tr>
                 <th>Nom</th>
@@ -51,6 +53,7 @@
                 <th>Pays</th>
                 <th>Lien CV</th>
                 <th>Lien Lettre</th>
+                <th>Supprimer</th>
             </tr>
             <?php foreach($candidats as $c): ?> <!-- pour chaque candidat -->
                 <?php if ($c!=false): ?>
@@ -64,6 +67,11 @@
                         <td><?= $c->getPays() ?></td>
                         <td><?= $c->getLienCv() ?></td>
                         <td><?= $c->getLienLM() ?></td>
+                        <td>
+                          <form action="">
+                            <i class="fa fa-times" aria-hidden="true"></i>
+                          </form>
+                        </td>
                     </tr>
                 <?php endif; ?>
             <?php endforeach; ?>
@@ -71,13 +79,13 @@
 
         <h2>Entreprises <span style="font-size: 12px"><?= $nbEntreprises ?> entreprise(s) enregistrée(s)</span></h2>
         <div>
-          <button>Ajouter</button>
+          <button>Ajouter une entreprise</button>
           <button>Effacer</button>
         </div>
 
         <h2>Offres <span style="font-size: 12px"><?= $nbCandidats?> offre(s) enregistrée(s)</span></h2>
         <div>
-          <button>Ajouter</button>
+          <button>Ajouter une offre</button>
           <button>Effacer</button>
         </div>
         <table>  <!-- Tableau des offres -->
@@ -85,7 +93,7 @@
                 <th>Nom</th>
                 <th>Entreprise</th>
                 <th>Date</th>
-                <th>Nombres de candidats</th>
+                <th>Supprimer</th>
             </tr>
             <?php foreach($offres as $o): ?> <!-- pour chaque candidat -->
                 <?php if ($o!=false): ?>
@@ -93,7 +101,11 @@
                         <td><?= $o->getNomOffre() ?></td>
                         <td><?= $o->getEntreprise()->getNom() ?></td>
                         <td><?= $o->getDateOffre() ?></td>
-                        <td><?= $o->getDateOffre() ?></td>
+                        <td>
+                          <form action="">
+                            <i class="fa fa-times" aria-hidden="true"></i>
+                          </form>
+                        </td>
                     </tr>
                 <?php endif; ?>
             <?php endforeach; ?>
