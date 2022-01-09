@@ -129,7 +129,7 @@
         </table>
         <span class="deleteMessage"><?= $entrepriseMessage ?></span>
 
-        <h2>Offres <span style="font-size: 12px"><?= $nbCandidats?> offre(s) enregistrée(s)</span></h2>
+        <h2>Offres <span style="font-size: 12px"><?= $nbOffres ?> offre(s) enregistrée(s)</span></h2>
         <div class="nav-options-board">
           <button>Ajouter une offre</button>
         </div>
