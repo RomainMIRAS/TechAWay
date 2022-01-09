@@ -112,7 +112,7 @@
                             <i class="fa fa-times" aria-hidden="true"></i>
                           </form>
                         </td>
-                    </tr>
+                    </tr> 
                 <?php endif; ?>
             <?php endforeach; ?>
         </table>
