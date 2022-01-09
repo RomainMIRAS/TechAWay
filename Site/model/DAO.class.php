@@ -419,7 +419,7 @@ class DAO {
 			UPDATE renseignement set link = currval('offre_idoffre_seq')::varchar where link = '-2';
 			SELECT currval('offre_idoffre_seq');";
 
-			$res = pg_query($this->db, $r);
+			$res = @pg_query($this->db, $r);
 
 			$req = pg_fetch_all($res);
 
