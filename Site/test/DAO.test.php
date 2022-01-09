@@ -193,7 +193,17 @@ try{
 
   echo $rens->getTravEtranger();
   echo "</br>creeOffre(idEntreprise, Rensegnement,Competence,nomOffre)  : doit retourner true";
-  $testLogin = $db->creeOffre(5,$rens,$comp,"Back-End - WebApp");
+  $offre = $db->creeOffre(5,$rens,$comp,"Back-End - WebApp");
+  if ($offre){
+    echo '<pre>' . var_export($offre, true) . '</pre>';
+  }else{
+    echo "</br>False ";
+  }
+
+  echo '<hr>';
+
+  echo "</br>deleteOffre(idOffre) :  returns True";
+  $testLogin = $db->deleteOffre($offre);
   if ($testLogin){
     echo '<pre>' . var_export($testLogin, true) . '</pre>';
   }else{
