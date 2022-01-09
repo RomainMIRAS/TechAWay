@@ -70,21 +70,29 @@
         </table>
 
         <h2>Entreprises <span style="font-size: 12px"><?= $nbEntreprises ?> entreprise(s) enregistrée(s)</span></h2>
+        <div>
+          <button>Ajouter</button>
+          <button>Effacer</button>
+        </div>
 
         <h2>Offres <span style="font-size: 12px"><?= $nbCandidats?> offre(s) enregistrée(s)</span></h2>
-
+        <div>
+          <button>Ajouter</button>
+          <button>Effacer</button>
+        </div>
         <table>  <!-- Tableau des offres -->
             <tr>
                 <th>Nom</th>
                 <th>Entreprise</th>
                 <th>Date</th>
-                
+                <th>Nombres de candidats</th>
             </tr>
             <?php foreach($offres as $o): ?> <!-- pour chaque candidat -->
                 <?php if ($o!=false): ?>
                     <tr> <!-- affichage du nom, prenom, mail...etc du candidat -->
                         <td><?= $o->getNomOffre() ?></td>
                         <td><?= $o->getEntreprise()->getNom() ?></td>
+                        <td><?= $o->getDateOffre() ?></td>
                         <td><?= $o->getDateOffre() ?></td>
                     </tr>
                 <?php endif; ?>
