@@ -203,7 +203,7 @@ try{
 
   echo $rens->getTravEtranger();
   echo "</br>creeOffre(idEntreprise, Rensegnement,Competence,nomOffre)  : doit retourner true";
-  $offre = $db->creeOffre(5,$rens,$comp,"Back-End - WebApp");
+  $offre = $db->creeOffre(3,$rens,$comp,"Back-End - WebApp");
   if ($offre){
     echo '<pre>' . var_export($offre, true) . '</pre>';
   }else{
