@@ -405,7 +405,7 @@ class DAO {
 	}
 
 	//Fonction qui cree une nouvelle offre dans la base de donnee
-	function creeOffre(int $identreprise , Renseignement $rens, Competence $comp, $nom ='') : bool{
+	function creeOffre(int $identreprise , Renseignement $rens, Competence $comp, $nom =''){
 		try {
 			$langParle = $this->conversionArrayString($comp->getLangeParle());
 			$langAcquis = $this->conversionArrayString($comp->getLangageAcquis());
@@ -422,10 +422,9 @@ class DAO {
 			$res = pg_query($this->db, $r);
 
 			$req = pg_fetch_all($res);
-			var_dump($req);
 
 			if($res){
-				return true;
+				return intval($req[0]['currval']); //returne le id de l'offre cree
 			}
 		// Tests d'erreurs
 		} catch (Exception $e) {
