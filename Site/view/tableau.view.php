@@ -83,9 +83,9 @@
         <div class="nav-options-board">
           <button id="addEntrepriseBtn">Ajouter une entreprise</button>
         </div>
-        <div> <!-- Ajouter une entreprise -->
+        <div id="addEntrepriseSection"> <!-- Ajouter une entreprise -->
           <form action="" method="POST" class="addNewSection">
-            <button>Fermer</button>
+            <button id="addEntrepriseClose">Fermer</button>
             <label for="nom">Nom</label>
             <input type="text" name="entrepriseName" placeholder="Entrez le nom de l'entreprise" >
             <label for="mail">Adresse E-mail</label>
@@ -198,8 +198,14 @@
         }
       });
 
-      $("#addEntrepriseBtn").click(function() {
+      $("#addEntrepriseSection").hide();
 
+      $("#addEntrepriseBtn").click(function() {
+        $("#addEntrepriseSection").show();
+      });
+
+      $("#addEntrepriseClose").click(function() {
+        $("#addEntrepriseSection").hide();
       });
 
     });
