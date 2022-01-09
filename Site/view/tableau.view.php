@@ -84,8 +84,8 @@
           <button id="addEntrepriseBtn">Ajouter une entreprise</button>
         </div>
         <div id="addEntrepriseSection"> <!-- Ajouter une entreprise -->
+          <button id="addEntrepriseClose">Fermer</button>
           <form action="" method="POST" class="addNewSection">
-            <button id="addEntrepriseClose">Fermer</button>
             <label for="nom">Nom</label>
             <input type="text" name="entrepriseName" placeholder="Entrez le nom de l'entreprise" >
             <label for="mail">Adresse E-mail</label>
