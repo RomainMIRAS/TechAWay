@@ -81,7 +81,23 @@
 
         <h2>Entreprises <span style="font-size: 12px"><?= $nbEntreprises ?> entreprise(s) enregistrée(s)</span></h2>
         <div class="nav-options-board">
-          <button>Ajouter une entreprise</button>
+          <button id="addEntrepriseBtn">Ajouter une entreprise</button>
+        </div>
+        <div> <!-- Ajouter une entreprise -->
+          <form action="" method="POST">
+            <button>Fermer</button>
+            <label for="nom">Nom</label>
+            <input type="text" name="entrepriseName" placeholder="Entrez le nom de l'entreprise" >
+            <label for="mail">Adresse E-mail</label>
+            <input type="mail" name="entrepriseMail" placeholder="Entrez l' adresse mail de l'entreprise" >
+            <label for="tel">Téléphone</label>
+            <input type="mail" name="entrepriseTel" placeholder="Entrez le téléphone de l'entreprise" >
+            <label for="ville">Ville</label>
+            <input type="text" name="entrepriseVille" placeholder="Entrez la ville l'entreprise" >
+            <label for="tel">Pays</label>
+            <input type="text" name="entreprisePays" placeholder="Entrez le pays de l'entreprise" >
+            <button>Ajouter</button>
+          </form>
         </div>
         <table>  <!-- Tableau des entreprises -->
             <tr>
@@ -117,15 +133,6 @@
         <div class="nav-options-board">
           <button>Ajouter une offre</button>
         </div>
-        <!--<div> Ajouter une entreprise 
-          <form action="">
-            <input type="text" placeholder="Nom">
-            <select name="" id="">
-              
-            </select>
-            <button>Ajouter</button>
-          </form>
-        </div>-->
         <table>  <!-- Tableau des offres -->
             <tr>
                 <th>Nom</th>
