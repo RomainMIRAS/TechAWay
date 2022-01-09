@@ -159,10 +159,9 @@
   <script src="../framework/jquery-3.6.0.min.js"></script>
   <script>
     $(window).ready(function() {
-
+      aler("OK");
       $("#candidatDeleteBtn").click(function() {
-        var mailCandidat = $("#mailCandidat");
-        if (confirm("Etes-vous sûr de vouloir supprimer le candidat "+ mailCandidat +" ?")) {
+        if (confirm("Etes-vous sûr de vouloir supprimer ce candidat ?")) {
 
         } else {
 
