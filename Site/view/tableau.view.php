@@ -1,6 +1,7 @@
 <?php
     include_once(__DIR__."/../model/Utilisateur.class.php");
     include_once(__DIR__."/../model/Candidat.class.php");
+    include_once(__DIR__."/../model/Entreprise.class.php");
 ?>
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
@@ -75,14 +76,16 @@
         <table>  <!-- Tableau des offres -->
             <tr>
                 <th>Nom</th>
-                <!--<th>Entreprise</th>
+                <th>Entreprise</th>
                 <th>Date</th>
-                <th>Nombres de candidats</th>-->
+                
             </tr>
             <?php foreach($offres as $o): ?> <!-- pour chaque candidat -->
                 <?php if ($o!=false): ?>
                     <tr> <!-- affichage du nom, prenom, mail...etc du candidat -->
                         <td><?= $o->getNomOffre() ?></td>
+                        <td><?= $o->getEntreprise()->getNom() ?></td>
+                        <td><?= $o->getDateOffre() ?></td>
                     </tr>
                 <?php endif; ?>
             <?php endforeach; ?>
