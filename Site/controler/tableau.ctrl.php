@@ -44,7 +44,7 @@ if ($candidatAction=='deleteY') {
 /* Suppression d'une entreprise */
 
 $entrepriseToDelete = $_POST['entrepriseToDelete'] ?? '';
-if ($db->getEntreprise($entrepriseToDelete)) {
+if ($db->getEntreprise($entrepriseToDelete)!=false) {
     $entrepriseToDeleteName = $db->getEntreprise($entrepriseToDelete)->getNom();
 } else {
     $entrepriseToDeleteName = $entrepriseToDelete;
@@ -60,7 +60,7 @@ if ($entrepriseAction=='deleteY') {
 /* Suppression d'une offre */
 
 $offreToDelete = $_POST['offreToDelete'] ?? '';
-if ($db->getOffre($offreToDelete)) {
+if ($db->getOffre($offreToDelete)!=false) {
     $offreToDeleteName = $db->getOffre($offreToDelete)->getNomOffre();
 } else {
     $offreToDeleteName = $offreToDelete;
