@@ -447,6 +447,26 @@ class DAO {
 		return false;
 	}
 
+	//Fonction qui supprime un candidat Existant dans la base de donnee
+	function deleteCandidat($mail) : bool{
+		try {
+			$r = "DELETE from candidat where idcandidat=(select idutilisateur from utilisateur where adressemail = '$mail');
+			DELETE from competence where link='$mail';
+			DELETE from renseignement where link='$mail';
+			DELETE from utilisateur where adressemail='$mail');";
+
+			$res = @pg_query($this->db, $r);
+
+			if($res){
+				return true;
+			}
+		// Tests d'erreurs
+		} catch (Exception $e) {
+			die("PSQL ERROR createUtilisateur : ".$e->getMessage());
+		}
+		return false;
+	}
+
 	function nombreEntreprises() : int{
 		try {
 			$req = pg_query($this->db,"SELECT count(*) from entreprise");

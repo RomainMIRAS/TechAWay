@@ -95,7 +95,19 @@ try{
   }
 
   echo '<hr>';
+  $liste = $db->getEmails();
+  echo '<pre>' . var_export($liste, true) . '</pre>';
+  echo "</br>deleteCandidat(adresse-11candidat@gmail.com) : returns True";
+  $testLogin = $db->deleteCandidat('adresse-11candidat@gmail.com');
+  if ($testLogin){
+    echo '<pre>' . var_export($testLogin, true) . '</pre>';
+    $liste = $db->getEmails();
+    echo '<pre>' . var_export($liste, true) . '</pre>';
+  }else{
+    echo "</br>False ";
+  }
 
+  echo '<hr>';
   echo "</br>nombreCandidats() :  doit returner le nombre de candidats sur la base de donnees ";
   $testLogin = $db->nombreCandidats();
   if ($testLogin){
