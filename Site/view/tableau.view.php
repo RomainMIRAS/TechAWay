@@ -78,6 +78,31 @@
         <div class="nav-options-board">
           <button>Ajouter une entreprise</button>
         </div>
+        <table>  <!-- Tableau des entreprises -->
+            <tr>
+                <th>Nom</th>
+                <th>Email</th>
+                <th>Téléphone</th>
+                <th>Ville</th>
+                <th>Pays</th>
+            </tr>
+            <?php foreach($entreprises as $e): ?> <!-- pour chaque candidat -->
+                <?php if ($e!=false): ?>
+                    <tr> <!-- affichage du nom, prenom, mail...etc du candidat -->
+                        <td><?= $c->getNom() ?></td>
+                        <td><a href="mailto:<?= $c->getMail() ?>"><?= $c->getMail() ?></a></td>
+                        <td><?= $c->getTelephone() ?></td>
+                        <td><?= $c->getVille() ?></td>
+                        <td><?= $c->getPays() ?></td>
+                        <td class="sup">
+                          <form action="actionEntreprise">
+                            <i class="fa fa-times" aria-hidden="true"></i>
+                          </form>
+                        </td>
+                    </tr>
+                <?php endif; ?>
+            <?php endforeach; ?>
+        </table>
 
         <h2>Offres <span style="font-size: 12px"><?= $nbCandidats?> offre(s) enregistrée(s)</span></h2>
         <div class="nav-options-board">
