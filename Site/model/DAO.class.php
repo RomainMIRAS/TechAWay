@@ -439,7 +439,7 @@ class DAO {
 			$r = "INSERT INTO entreprise VALUES(DEFAULT,'$nom','$mail','$telephone','$pays','$ville');
 			SELECT currval('entreprise_identreprise_seq');";
 
-			$res = @pg_query($this->db, $r);
+			$res = pg_query($this->db, $r);
 
 			$req = pg_fetch_all($res);
 
