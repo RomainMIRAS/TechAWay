@@ -560,6 +560,11 @@ button:hover {
   flex-direction: column;
 }
 
+#tableau-bord h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
 table {
   border-collapse: collapse;
   width: 100%;
