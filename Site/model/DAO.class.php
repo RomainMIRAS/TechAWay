@@ -115,8 +115,8 @@ class DAO {
 
 	}
 
-	//Fonction Qui retourne un Coach de adresse mail donnee
-	function getCoach(string $mail) : Coach{
+	//Fonction Qui retourne un Coach de adresse mail donnee ou false si il n'existe pas
+	function getCoach(string $mail){
 		try {
 			$req = pg_query($this->db,"SELECT * from utilisateur where idutilisateur in (Select idCoach from coach) AND adressemail='$mail'");
 		
@@ -152,8 +152,8 @@ class DAO {
 			return $coach;
 	}
 
-	//Fonction Qui retourne un Candidat de adresse mail donnee
-	function getCandidat(string $mail) : Candidat{
+	//Fonction Qui retourne un Candidat de adresse mail donnee ou false si il n'existe pas
+	function getCandidat(string $mail){
 		try {
 			$req = pg_query($this->db,"SELECT * from utilisateur where idutilisateur in (Select idcandidat from candidat) AND adressemail='$mail'");
 		

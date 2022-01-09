@@ -35,11 +35,11 @@ $action = (isset($_POST['action'])) ? $_POST['action']:"login";
 function seConnecter($email,$password){
   session_start();
   // A testé si Candidat ou Coach ( Pour l'instant toujours Candidat)
-  $c = DAO::get()->getCoach($email) ?? 0;
+  $c = DAO::get()->getCandidat($email) ?? 0;
   if($c){
     $_SESSION['utilisateur'] = $c;
   }else{
-    $_SESSION['utilisateur'] = DAO::get()->getCandidat($email);
+    $_SESSION['utilisateur'] = DAO::get()->getCoach($email);
   }
   //$_SESSION['utilisateur'] = DAO::get()->getCoachOuCandidat($email,$password);
   // Ferme la session
