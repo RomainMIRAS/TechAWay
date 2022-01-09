@@ -216,9 +216,9 @@ class DAO {
 				return $res;
 			}
 			//NOTE Removed here
-			/* else{
-				return new Candidat($mail, $pass,'','',0,'','','',0,'','','',NULL,NULL);
-			} */
+			else{
+				return new Candidat($mail, $pass,'','',0,'','','',0,'','','',new Competence(-2),new Renseignement(-2));
+			} 
 			
 		} catch (Exception $e) {
 			die("PSQL ERROR :".$e->getMessage());
