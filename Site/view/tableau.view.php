@@ -65,9 +65,11 @@
                         <td><?= $c->getLienCv() ?></td>
                         <td><?= $c->getLienLM() ?></td>
                         <td class="sup">
-                          
-                            <button id="candidatDeleteBtn"><i class="fa fa-times" aria-hidden="true"></i></button>
-                          
+                          <form action="tableau.ctrl.php" method="POST">
+                            <input type="hidden" class="candidatAction" name="candidatAction" value="deleteN">
+                            <input type="hidden" name="candidatToDelete" value="<?= $c->getMail() ?>">
+                            <button type="submit" class="candidatDeleteBtn"><i class="fa fa-times" aria-hidden="true"></i></button>
+                          </form>
                         </td>
                     </tr>
                 <?php endif; ?>
@@ -157,9 +159,12 @@
   <script src="../framework/jquery-3.6.0.min.js"></script>
   <script>
     $(window).ready(function() {
-      
-      $("#candidatDeleteBtn").click(function() {
-        alert("OK");
+      $(".candidatDeleteBtn").click(function() {
+        if (confirm("Etes-vous sûr de vouloir supprimer ce candidat ?")) {
+          $(".candidatAction").val("deleteY");
+        } else {
+          $(".candidatAction").val("deleteN");
+        }
       });
 
     });
