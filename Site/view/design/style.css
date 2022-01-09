@@ -631,7 +631,6 @@ tr:hover td {
 }
 
 .addNewSection {
-  display: flex;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -643,10 +642,20 @@ tr:hover td {
   border-radius: 15px;
   background-color: var(--color-white);
   padding: 10px;
-  font-size: 14px;
 }
 
 .addNewSection button {
+  margin: 0;
+  border: 1px solid var(--color-blue1);
+  font-size: 14px;
+}
+
+.addNewSection form {
+  display: flex;
+  font-size: 14px;
+}
+
+.addNewSection form button {
   margin: 0;
   border: 1px solid var(--color-blue1);
   font-size: 14px;
