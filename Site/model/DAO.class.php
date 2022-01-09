@@ -203,7 +203,7 @@ class DAO {
 	}
 
 	//Fonction Qui retourne un coach ou Candidat depuis une adressemail donnee
-	function getCoachOuCandidat(string $mail, string $pass = '') {
+function getCoachOuCandidat(string $mail, string $pass = '') {
 
 		try {
 			$res = $this->getCandidat($mail);
@@ -219,7 +219,6 @@ class DAO {
 			else{
 				return new Candidat($mail, $pass,'','',0,'','','',0,'','','',new Competence(-2),new Renseignement(-2));
 			} 
-			
 		} catch (Exception $e) {
 			die("PSQL ERROR :".$e->getMessage());
 		}
