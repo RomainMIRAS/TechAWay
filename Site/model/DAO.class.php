@@ -214,7 +214,9 @@ class DAO {
 			$res = $this->getCoach($mail);
 			if ($res){
 				return $res;
-			}/* else{
+			}
+			//NOTE Removed here
+			/* else{
 				return new Candidat($mail, $pass,'','',0,'','','',0,'','','',NULL,NULL);
 			} */
 			
