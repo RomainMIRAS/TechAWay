@@ -416,7 +416,8 @@ class DAO {
 									(select idcompetence from competence where idcompetence = currval('competence_idcompetence_seq')),
 									(select idrenseignement from renseignement where idrenseignement = currval('renseignement_idrenseignement_seq')));
 			update competence set link = currval('offre_idoffre_seq')::varchar where link = '-2';
-			update renseignement set link = currval('offre_idoffre_seq')::varchar where link = '-2';";
+			update renseignement set link = currval('offre_idoffre_seq')::varchar where link = '-2';
+			SELECT currval('offre_idoffre_seq');";
 
 			$res = pg_query($this->db, $r);
 
