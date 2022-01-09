@@ -15,35 +15,18 @@ $db = DAO::get();
 
 /* Récupération de tous les candidats de la base */
 
-$emails = $db->getEmails();
-
-$candidats = array();
-$nbCandidats = 0;
-
-foreach($emails as $e) {
-    if ($db->getCandidat($e)!=false) {
-        array_push($candidats,$db->getCandidat($e)); 
-        $nbCandidats++;
-    }
-}
+$candidats = $db->getCandidats();
+$nbCandidats = $db->nombreCandidats();
 
 /* Récupération de toutes les entreprises de la base */
 
 $entreprises = $db->getEntreprises();
-$nbEntreprises = 0;
-
-foreach ($entreprises as $e) {
-    $nbEntreprises++;
-}
+$nbEntreprises = $db->nombreEntreprises();
 
 /* Récupération de toutes les offres de la base */
 
 $offres = $db->getOffres();
-$nbOffres = 0;
-
-foreach($offres as $o) {
-    $nbOffres++;
-}
+$nbOffres = $db->nombreOffres();
 
 /* Passage des paramètres à la vue */
 
