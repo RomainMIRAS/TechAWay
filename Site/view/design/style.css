@@ -576,6 +576,9 @@ td, th {
 
 .sup form button {
   border: none;
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
 }
 
 .sup form button:hover {
