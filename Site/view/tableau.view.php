@@ -84,7 +84,7 @@
           <button id="addEntrepriseBtn">Ajouter une entreprise</button>
         </div>
         <div> <!-- Ajouter une entreprise -->
-          <form action="" method="POST" class="form">
+          <form action="" method="POST" class="addNewSection">
             <button>Fermer</button>
             <label for="nom">Nom</label>
             <input type="text" name="entrepriseName" placeholder="Entrez le nom de l'entreprise" >
@@ -196,6 +196,10 @@
         } else {
           $(".offreAction").val("deleteN");
         }
+      });
+
+      $("#addEntrepriseBtn").click(function() {
+
       });
 
     });
