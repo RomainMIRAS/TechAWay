@@ -148,9 +148,9 @@ try{
   echo '<hr>';
 
   echo "</br>creeEntreprise('entreprise@mail.com')  : doit retourner true";
-  $testLogin = $db->creeEntreprise('entreprise@mail.com');
-  if ($testLogin){
-    echo '<pre>' . var_export($testLogin, true) . '</pre>';
+  $entreprise = $db->creeEntreprise('entreprise@mail.com');
+  if ($entreprise){
+    echo '<pre>' . var_export($entreprise, true) . '</pre>';
   }else{
     echo "</br>False ";
   }
@@ -158,7 +158,7 @@ try{
   echo '<hr>';
 
   echo "</br>deleteEntreprise('entreprise@mail.com') :  returns True";
-  $testLogin = $db->deleteEntreprise('entreprise@mail.com');
+  $testLogin = $db->deleteEntreprise($entreprise);
   if ($testLogin){
     echo '<pre>' . var_export($testLogin, true) . '</pre>';
   }else{
