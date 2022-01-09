@@ -83,6 +83,17 @@
         <div class="nav-options-board">
           <button>Ajouter une offre</button>
         </div>
+        <div>
+          <form action="">
+            <input type="text" placeholder="Nom">
+            <select name="" id="">
+              <?php foreach($entreprises as $e): ?>
+                <option value=""><?= $e->getNom() ?></option>
+              <? endforeach; ?>
+            </select>
+            <button>Ajouter</button>
+          </form>
+        </div>
         <table>  <!-- Tableau des offres -->
             <tr>
                 <th>Nom</th>
