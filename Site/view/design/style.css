@@ -574,7 +574,17 @@ td, th {
   cursor: initial;
 }
 
-.sup i {
+.sup form button {
+  border: none;
+}
+
+.sup form button:hover {
+  background-color: transparent;
+  color: var(--color-black);
+}
+
+.sup form button i {
+  color: var(--color-black);
   cursor: pointer;
 }
 
