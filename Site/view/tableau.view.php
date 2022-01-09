@@ -68,8 +68,8 @@
                           <form action="tableau.ctrl.php" method="POST">
                             <input type="hidden" name="candidatAction" value="deleteN">
                             <input type="hidden" name="candidatToDelete" value="<?= $c->getMail() ?>">
-                            <button type="submit" id="candidatDeleteBtn"><i class="fa fa-times" aria-hidden="true"></i></button>
                           </form>
+                          <button type="submit" id="candidatDeleteBtn"><i class="fa fa-times" aria-hidden="true"></i></button>
                         </td>
                     </tr>
                 <?php endif; ?>
