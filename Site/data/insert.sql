@@ -22,7 +22,7 @@ BEGIN;
 COMMIT;
 
 
-insert into entreprise values(DEFAULT,'Ubisoft','ubisoftFake@ubisoft.com','0721322542','France,Annecy');
+insert into entreprise values(DEFAULT,'Ubisoft','ubisoftFake@ubisoft.com','0721322542','France','Annecy');
 insert into competence values(DEFAULT,'bac+3', 'anglais,francais', 'c,c++,python','-2');
 insert into renseignement values(DEFAULT,true, 'gaming', 'CDI', 'gamedev,unity,3d', 'Grande','-2');
 insert into offre values(DEFAULT,'Game Developer',now(),

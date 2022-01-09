@@ -3,19 +3,21 @@
 // Description d'une entreprise  
 class Entreprise {
   private int $id;              //Identifiant du client
-  private string $nom;          //Nom
-  private string $adresse;      //Adresse du client
-  private string $telephone;    //Telephone
   private string $mail;         //Mail
+  private string $nom;          //Nom
+  private string $telephone;    //Telephone
+  private string $pays;      //Adresse du client
+  private string $ville;      //Adresse du client
   //private Offre $offres;        //liste des offres faite par l'entreprise
 
   // Contructeur
-  function __construct(int $id , string $nom = '',string $mail = '', string $telephone = '', string $adresse = '') {
+  function __construct(int $id , string $nom = '',string $mail = '', string $telephone = '', string $pays = '', string $ville = '') {
     $this->id = $id;
-    $this->nom = $nom;
-    $this->adresse = $adresse;
-    $this->telephone = $telephone;
     $this->mail = $mail;
+    $this->nom = $nom;
+    $this->pays = $pays;
+    $this->ville = $ville;
+    $this->telephone = $telephone;
     //$this->offres = null;
   }
 

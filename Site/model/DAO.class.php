@@ -58,7 +58,7 @@ class DAO {
 	}
 
 	//Fonction qui cree un utilisateur (Sign Up)
-	function createUtilisateur(string $mail, string $pass) { //returns boolean
+	function createUtilisateur(string $mail, string $pass) : bool{ //returns boolean
 		//Cree un utilisateur Candidat par defaut avant de rensegnier le formulaire
 		try {
 
@@ -91,7 +91,7 @@ class DAO {
 	}
 
 	//Fonction qui se connecte sur l'application avec ses login (LOGIN) 
-	function verifierLogin(string $mail, string $pass) { //returns boolean
+	function verifierLogin(string $mail, string $pass) : bool{ //returns boolean
 		try {
 		$r = "
 		SELECT password FROM utilisateur where adressemail='$mail';";
@@ -116,7 +116,7 @@ class DAO {
 	}
 
 	//Fonction Qui retourne un Coach de adresse mail donnee
-	function getCoach(string $mail) {
+	function getCoach(string $mail) : Coach{
 		try {
 			$req = pg_query($this->db,"SELECT * from utilisateur where idutilisateur in (Select idCoach from coach) AND adressemail='$mail'");
 		
@@ -153,7 +153,7 @@ class DAO {
 	}
 
 	//Fonction Qui retourne un Candidat de adresse mail donnee
-	function getCandidat(string $mail) {
+	function getCandidat(string $mail) : Candidat{
 		try {
 			$req = pg_query($this->db,"SELECT * from utilisateur where idutilisateur in (Select idcandidat from candidat) AND adressemail='$mail'");
 		
@@ -226,7 +226,7 @@ class DAO {
 	}
 
 	//Fonction qui returne une competence d'une offre ou candidat
-	function getCompetence($link) {
+	function getCompetence($link) : Competence{
 		try {
 			$req = pg_query($this->db,"SELECT * from competence where link='$link'");
 		
@@ -255,7 +255,7 @@ class DAO {
 	}
 
 	//Fonction qui returne un renseignment d'une offre ou candidat
-	function getRenseignement($link) {
+	function getRenseignement($link) : Renseignement{
 		try {
 			$req = pg_query($this->db,"SELECT * from renseignement where link='$link'");
 		
@@ -285,7 +285,7 @@ class DAO {
 	}
 
 	//Fonction qui returne une entreprise 
-	function getEntreprise(int $id) {
+	function getEntreprise(int $id) : Entreprise{
 		try {
 			$req = pg_query($this->db,"SELECT * from entreprise where identreprise=$id");
 		
@@ -304,7 +304,8 @@ class DAO {
 					$entrepriseRes[0]['nomentreprise'],
 					$entrepriseRes[0]['mailentreprise'],
 					$entrepriseRes[0]['telephone'],
-					$adresse
+					$entrepriseRes[0]['pays'],
+					$entrepriseRes[0]['ville']
 				);
 				
 			}
@@ -317,7 +318,7 @@ class DAO {
 	}
 
 	//Fonction qui returne tout les entreprises
-	function getEntreprises() {
+	function getEntreprises() : array{
 		try {
 			$req = pg_query($this->db,"SELECT idEntreprise from entreprise");
 		
@@ -343,7 +344,7 @@ class DAO {
 	}
 
 	//Fonction qui returne une offre d'id donnee
-	function getOffre(int $id) {
+	function getOffre(int $id) : Offre{
 		try {
 			$req = pg_query($this->db,"SELECT * from offre where idoffre=$id");
 		
@@ -378,7 +379,7 @@ class DAO {
 	}
 
 	//Fonction qui returne tout les Offres
-	function getOffres() {
+	function getOffres() : array{
 		try {
 			$req = pg_query($this->db,"SELECT idoffre from offre");
 		
@@ -404,7 +405,7 @@ class DAO {
 	}
 
 	//Fonction qui cree une nouvelle offre dans la base de donnee
-	function creeOffre(int $identreprise , Renseignement $rens, Competence $comp, $nom =''){
+	function creeOffre(int $identreprise , Renseignement $rens, Competence $comp, $nom ='') : bool{
 		try {
 			$langParle = $this->conversionArrayString($comp->getLangeParle());
 			$langAcquis = $this->conversionArrayString($comp->getLangageAcquis());
@@ -430,7 +431,7 @@ class DAO {
 	}
 
 	//Fonction qui cree une nouvelle Entreprise dans la base de donnee
-	function creeEntreprise($mail,$nom ='',$telephone = '',$pays='', $ville =''){
+	function creeEntreprise($mail,$nom ='',$telephone = '',$pays='', $ville ='') : bool{
 		try {
 			$r = "INSERT INTO entreprise VALUES(DEFAULT,'$nom','$mail','$telephone','$pays','$ville');";
 
@@ -446,8 +447,6 @@ class DAO {
 		return false;
 	}
 
-
-	
 	//Fonctions utile
 	function conversionStringArray(string $chaine){
 		$arrayChaine = explode(",",$chaine);
