@@ -66,10 +66,10 @@
                         <td><?= $c->getLienLM() ?></td>
                         <td class="sup">
                           <form action="tableau.ctrl.php" method="POST">
-                            <input type="hidden" name="candidatAction" value="deleteN">
+                            <input type="hidden" id="candidatAction" name="candidatAction" value="deleteN">
                             <input type="hidden" name="candidatToDelete" value="<?= $c->getMail() ?>">
+                            <button type="submit" id="candidatDeleteBtn"><i class="fa fa-times" aria-hidden="true"></i></button>
                           </form>
-                          <button type="submit" id="candidatDeleteBtn"><i class="fa fa-times" aria-hidden="true"></i></button>
                         </td>
                     </tr>
                 <?php endif; ?>
@@ -161,9 +161,9 @@
     $(window).ready(function() {
       $("#candidatDeleteBtn").click(function() {
         if (confirm("Etes-vous sûr de vouloir supprimer ce candidat ?")) {
-          document.getElementsByName("candidatAction").value = "deleteY";
+          $("#candidatAction").val("deleteY");
         } else {
-          document.getElementsByName("candidatAction").value = "deleteN";
+          $("#candidatAction").val("deleteN");
         }
       });
 
