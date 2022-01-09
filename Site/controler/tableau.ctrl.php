@@ -60,7 +60,11 @@ if ($entrepriseAction=='deleteY') {
 /* Suppression d'une offre */
 
 $offreToDelete = $_POST['offreToDelete'] ?? '';
-$offreToDeleteName = $db->getOffre($offreToDelete)->getNomOffre();
+if ($db->getOffre($offreToDelete)) {
+    $offreToDeleteName = $db->getOffre($offreToDelete)->getNomOffre();
+} else {
+    $offreToDeleteName = $offreToDelete;
+}
 $offreAction = $_POST['offreAction'] ?? '';
 $offreMessage = '';
 
