@@ -295,9 +295,7 @@ function getCoachOuCandidat(string $mail, string $pass = '') {
 			}else{
 
 				$ide = $entrepriseRes[0]['identreprise'];
-
-				$adresse = $entrepriseRes[0]['pays'] . ",". $entrepriseRes[0]['ville'];
-
+				
 				$entreprise = new Entreprise(
 					intval($ide),
 					$entrepriseRes[0]['nomentreprise'],
