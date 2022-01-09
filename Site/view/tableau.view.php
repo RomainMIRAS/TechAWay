@@ -64,9 +64,9 @@
                         <td><?= $c->getPays() ?></td>
                         <td><?= $c->getLienCv() ?></td>
                         <td><?= $c->getLienLM() ?></td>
-                        <td class="sup">
+                        <td class="sup" id="candidatDeleteBtn">
                           
-                            <button id="candidatDeleteBtn"><i class="fa fa-times" aria-hidden="true"></i></button>
+                            <button><i class="fa fa-times" aria-hidden="true"></i></button>
                           
                         </td>
                     </tr>
