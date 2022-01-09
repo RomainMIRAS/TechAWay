@@ -9,8 +9,10 @@ include_once(__DIR__."/../model/Utilisateur.class.php");
 include_once(__DIR__."/../model/Candidat.class.php");
 include_once(__DIR__."/../model/Coach.class.php");
 
+/* Création de la vue */
 $view = new View();
 
+/* Récupération de l'unique instance de la base de données */
 $db = DAO::get();
 
 /* Récupération de tous les candidats de la base */
@@ -28,6 +30,18 @@ $nbEntreprises = $db->nombreEntreprises();
 $offres = $db->getOffres();
 $nbOffres = $db->nombreOffres();
 
+/* */
+
+$candidatToDelete = $_POST['candidatToDelete'] ?? '';
+$candidatAction = $_POST['candidatAction'] ?? '';
+$candidatMessage = '';
+
+if ($candidatAction=='delete') {
+    $db->deleteCandidat($candidatToDelete);
+    $candidatMessage = "Le candidat $candidatToDelete a bien été supprimé.";
+}
+
+
 /* Passage des paramètres à la vue */
 
 $view->assign("candidats",$candidats);
@@ -39,6 +53,9 @@ $view->assign("nbEntreprises",$nbEntreprises);
 $view->assign("offres",$offres);
 $view->assign("nbOffres",$nbOffres);
 
-// Charger la vue
+$view->assign("candidatMessage",$candidatMessage);
+
+/* Chargement de la vue */
 $view->display("tableau.view.php");
+
 ?>

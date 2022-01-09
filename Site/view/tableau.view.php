@@ -65,14 +65,17 @@
                         <td><?= $c->getLienCv() ?></td>
                         <td><?= $c->getLienLM() ?></td>
                         <td class="sup">
-                          <form action="actionCandidat">
+                          <form action="tableau.ctrl.php" method="POST">
                             <i class="fa fa-times" aria-hidden="true"></i>
+                            <input type="hidden" name="candidatAction" value="delete">
+                            <input type="hidden" name="candidatToDelete" value="<?= $c->getMail() ?>">
                           </form>
                         </td>
                     </tr>
                 <?php endif; ?>
             <?php endforeach; ?>
         </table>
+        <span><?= $candidatMessage ?></span>
 
         <h2>Entreprises <span style="font-size: 12px"><?= $nbEntreprises ?> entreprise(s) enregistrée(s)</span></h2>
         <div class="nav-options-board">
@@ -96,8 +99,9 @@
                         <td><?= $c->getVille() ?></td>
                         <td><?= $c->getPays() ?></td>
                         <td class="sup">
-                          <form action="actionEntreprise">
+                          <form action="tableau.ctrl.php" method="POST">
                             <i class="fa fa-times" aria-hidden="true"></i>
+                            <input type="hidden" name="entrepriseToDelete" value="<?= $e->getId() ?>">
                           </form>
                         </td>
                     </tr>

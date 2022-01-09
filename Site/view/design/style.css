@@ -558,7 +558,6 @@ button:hover {
 
 #tableau-bord {
   flex-direction: column;
-  padding-inline: 20px;
 }
 
 table {
