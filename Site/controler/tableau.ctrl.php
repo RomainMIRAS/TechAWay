@@ -36,7 +36,7 @@ $candidatToDelete = $_POST['candidatToDelete'] ?? '';
 $candidatAction = $_POST['candidatAction'] ?? '';
 $candidatMessage = '';
 
-if ($candidatAction=='delete') {
+if ($candidatAction=='deleteY') {
     $db->deleteCandidat($candidatToDelete);
     $candidatMessage = "Le candidat $candidatToDelete a bien été supprimé.";
 }

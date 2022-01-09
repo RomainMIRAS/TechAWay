@@ -57,7 +57,7 @@
                     <tr> <!-- affichage du nom, prenom, mail...etc du candidat -->
                         <td><?= $c->getNom() ?></td>
                         <td><?= $c->getPrenom() ?></td>
-                        <td id="mailCandidat"><a href="mailto:<?= $c->getMail() ?>"><?= $c->getMail() ?></a></td>
+                        <td><a href="mailto:<?= $c->getMail() ?>"><?= $c->getMail() ?></a></td>
                         <td><?= $c->getTelephone() ?></td>
                         <td><?= $c->getEtape() ?></td>
                         <td><?= $c->getVille() ?></td>
@@ -159,12 +159,11 @@
   <script src="../framework/jquery-3.6.0.min.js"></script>
   <script>
     $(window).ready(function() {
-      alert("OK");
       $("#candidatDeleteBtn").click(function() {
         if (confirm("Etes-vous sûr de vouloir supprimer ce candidat ?")) {
-
+          document.getElementsByName("candidatAction").value = "deleteY";
         } else {
-
+          document.getElementsByName("candidatAction").value = "deleteN";
         }
       });
 
