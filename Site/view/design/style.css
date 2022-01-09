@@ -590,6 +590,14 @@ tr:hover td {
   color: var(--color-white);
 }
 
+.nav-options-board {
+  margin-left: 0;
+  margin-right: 5px;
+  margin-bottom: 10px;
+  font-size: initial;
+  padding: 3px 12px;
+}
+
 /**************************************************************
 * FOOTER
 **************************************************************/
