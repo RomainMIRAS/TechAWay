@@ -115,8 +115,8 @@ class DAO {
 
 	}
 
-	//Fonction Qui retourne un Coach de adresse mail donnee
-	function getCoach(string $mail) : Coach{
+	//Fonction Qui retourne un Coach de adresse mail donnee ou false si il n'existe pas
+	function getCoach(string $mail){
 		try {
 			$req = pg_query($this->db,"SELECT * from utilisateur where idutilisateur in (Select idCoach from coach) AND adressemail='$mail'");
 		
@@ -152,8 +152,8 @@ class DAO {
 			return $coach;
 	}
 
-	//Fonction Qui retourne un Candidat de adresse mail donnee
-	function getCandidat(string $mail) : Candidat{
+	//Fonction Qui retourne un Candidat de adresse mail donnee ou false si il n'existe pas
+	function getCandidat(string $mail){
 		try {
 			$req = pg_query($this->db,"SELECT * from utilisateur where idutilisateur in (Select idcandidat from candidat) AND adressemail='$mail'");
 		
@@ -202,27 +202,28 @@ class DAO {
 			return $candidat;
 	}
 
-	//Fonction Qui retourne un coach ou Candidat depuis une adressemail donnee
-	function getCoachOuCandidat(string $mail, string $pass = '') {
-
+	function getCandidats() : array{
 		try {
-			$res = $this->getCandidat($mail);
-			if ($res){
-				return $res;
-			}
+			$req = pg_query($this->db,"SELECT adressemail from utilisateur where idutilisateur in (select idcandidat from candidat)");
+		
+			$candidatsReq = pg_fetch_all($req);
 
-			$res = $this->getCoach($mail);
-			if ($res){
-				return $res;
+			if (empty($candidatsReq)) {
+				return false;
+			}else{
+
+				$candidats = array();
+
+				foreach ($candidatsReq as $c) {
+					array_push($candidats,$this->getCandidat($c['adressemail']));
+				}
 			}
-			//NOTE Removed here
-			else{
-				return new Candidat($mail, $pass,'','',0,'','','',0,'','','',new Competence(-2),new Renseignement(-2));
-			} 
 			
-		} catch (Exception $e) {
-			die("PSQL ERROR :".$e->getMessage());
-		}
+			// Tests d'erreurs
+			} catch (Exception $e) {
+				die("PSQL ERROR :".$e->getMessage());
+			}
+			return $candidats;
 	}
 
 	//Fonction qui returne une competence d'une offre ou candidat
@@ -296,8 +297,6 @@ class DAO {
 			}else{
 
 				$ide = $entrepriseRes[0]['identreprise'];
-
-				$adresse = $entrepriseRes[0]['pays'] . ",". $entrepriseRes[0]['ville'];
 
 				$entreprise = new Entreprise(
 					intval($ide),

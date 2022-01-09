@@ -85,25 +85,14 @@ try{
 
   echo '<hr>';
 
-  //Test de fonction getCoachOuCandidat qu il return un coach ou candidat dependant de son type automatiquement
-  echo "</br>getCoachOuCandidat(adressemail) : adresse-candidat@gmail.com  : (doit retourner type Candidat)";
-  $testLogin = $db->getCoachOuCandidat("adresse-candidat@gmail.com","motdepassecandidat");
+  //verification de la methode getCandidat() il return un Candidat s'il existe, faux sinon
+  echo "</br>getCandidats() : doit retourner tout les candidats de type Candidat";
+  $testLogin = $db->getCandidats();
   if ($testLogin){
     echo '<pre>' . var_export($testLogin, true) . '</pre>';
   }else{
     echo "</br>False ";
   }
-
-  echo '<hr>';
-
-  echo "</br>getCoachOuCandidat(adressemail) : adresse-coach@gmail.com  : (doit retourner type Coach)";
-  $testLogin = $db->getCoachOuCandidat("adresse-coach@gmail.com","motdepassecoach");
-  if ($testLogin){
-    echo '<pre>' . var_export($testLogin, true) . '</pre>';
-  }else{
-    echo "</br>False ";
-  }
-
   echo '<hr>';
 
   echo "</br>getCompetence(adressemail) : adresse-candidat@gmail.com doit retourner type Competence de l'utilisateur d'adressemail adresse-candidat@gmail.com";
