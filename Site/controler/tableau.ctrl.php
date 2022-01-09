@@ -33,7 +33,9 @@ $entreprises = $db->getEntreprises();
 $nbEntreprises = 0;
 
 foreach ($entreprises as $e) {
-    $nbEntreprises++;
+    if ($db->getEntreprise($e)!=false) {
+        $nbEntreprises++;
+    }
 }
 
 /* Passage des paramètres à la vue */
