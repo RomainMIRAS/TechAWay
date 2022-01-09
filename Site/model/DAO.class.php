@@ -202,7 +202,7 @@ class DAO {
 			return $candidat;
 	}
 
-	//Fonction Qui retourne un coach ou Candidat depuis une adressemail donnee
+/* 	//Fonction Qui retourne un coach ou Candidat depuis une adressemail donnee
 function getCoachOuCandidat(string $mail, string $pass = '') {
 
 		try {
@@ -222,7 +222,7 @@ function getCoachOuCandidat(string $mail, string $pass = '') {
 		} catch (Exception $e) {
 			die("PSQL ERROR :".$e->getMessage());
 		}
-	}
+	} */
 
 	//Fonction qui returne une competence d'une offre ou candidat
 	function getCompetence($link) : Competence{

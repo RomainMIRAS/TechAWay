@@ -85,7 +85,7 @@ try{
 
   echo '<hr>';
 
-  //Test de fonction getCoachOuCandidat qu il return un coach ou candidat dependant de son type automatiquement
+/*   //Test de fonction getCoachOuCandidat qu il return un coach ou candidat dependant de son type automatiquement
   echo "</br>getCoachOuCandidat(adressemail) : adresse-candidat@gmail.com  : (doit retourner type Candidat)";
   $testLogin = $db->getCoachOuCandidat("adresse-candidat@gmail.com","motdepassecandidat");
   if ($testLogin){
@@ -102,7 +102,7 @@ try{
     echo '<pre>' . var_export($testLogin, true) . '</pre>';
   }else{
     echo "</br>False ";
-  }
+  } */
 
   echo '<hr>';
 
