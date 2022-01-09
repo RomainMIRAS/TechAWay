@@ -140,7 +140,7 @@
                         <td class="sup">
                           <form action="tableau.ctrl.php" method="POST">
                             <input type="hidden" class="offreAction" name="offreAction" value="deleteN">
-                            <input type="hidden" name="offreToDelete" value="<?= $c->getId() ?>">
+                            <input type="hidden" name="offreToDelete" value="<?= $o->getId() ?>">
                             <button type="submit" class="offreDeleteBtn"><i class="fa fa-times" aria-hidden="true"></i></button>
                           </form>
                         </td>
