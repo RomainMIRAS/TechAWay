@@ -207,7 +207,7 @@ class DAO {
 
 		try {
 			$res = $this->getCandidat($mail);
-			if (!$res){
+			if ($res){
 				return $res;
 			}
 
