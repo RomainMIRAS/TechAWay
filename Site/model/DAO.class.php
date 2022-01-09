@@ -202,27 +202,29 @@ class DAO {
 			return $candidat;
 	}
 
-/* 	//Fonction Qui retourne un coach ou Candidat depuis une adressemail donnee
-function getCoachOuCandidat(string $mail, string $pass = '') {
-
+	function getCandidats() : array{
 		try {
-			$res = $this->getCandidat($mail);
-			if ($res){
-				return $res;
-			}
+			$req = pg_query($this->db,"SELECT adressemail from utilisateur where idutilisateur in (select idcandidat from candidat)");
+		
+			$candidatsReq = pg_fetch_all($req);
 
-			$res = $this->getCoach($mail);
-			if ($res){
-				return $res;
+			if (empty($candidatsReq)) {
+				return false;
+			}else{
+
+				$candidats = array();
+
+				foreach ($candidatsReq as $c) {
+					array_push($candidats,$this->getCandidat($c['adressemail']));
+				}
 			}
-			//NOTE Removed here
-			else{
-				return new Candidat($mail, $pass,'','',0,'','','',0,'','','',new Competence(-2),new Renseignement(-2));
-			} 
-		} catch (Exception $e) {
-			die("PSQL ERROR :".$e->getMessage());
-		}
-	} */
+			
+			// Tests d'erreurs
+			} catch (Exception $e) {
+				die("PSQL ERROR :".$e->getMessage());
+			}
+			return $candidats;
+	}
 
 	//Fonction qui returne une competence d'une offre ou candidat
 	function getCompetence($link) : Competence{
@@ -295,7 +297,7 @@ function getCoachOuCandidat(string $mail, string $pass = '') {
 			}else{
 
 				$ide = $entrepriseRes[0]['identreprise'];
-				
+
 				$entreprise = new Entreprise(
 					intval($ide),
 					$entrepriseRes[0]['nomentreprise'],
