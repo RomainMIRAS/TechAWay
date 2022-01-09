@@ -65,10 +65,8 @@
                         <td><?= $c->getLienCv() ?></td>
                         <td><?= $c->getLienLM() ?></td>
                         <td>
-                          <form action="">
-                            <select name="actionCandidat" id="">
-                              <option value="supprimer">Supprimer</option>
-                            </select>
+                          <form action="actionCandidat">
+                            <i class="fa fa-times" aria-hidden="true"></i>
                           </form>
                         </td>
                     </tr>
@@ -90,7 +88,7 @@
                 <th>Nom</th>
                 <th>Entreprise</th>
                 <th>Date</th>
-                <th>Action</th>
+                <th>Supprimer</th>
             </tr>
             <?php foreach($offres as $o): ?> <!-- pour chaque candidat -->
                 <?php if ($o!=false): ?>
@@ -99,10 +97,8 @@
                         <td><?= $o->getEntreprise()->getNom() ?></td>
                         <td><?= $o->getDateOffre() ?></td>
                         <td>
-                          <form action="">
-                            <select name="actionOffre" id="">
-                              <option value="supprimer">Supprimer</option>
-                            </select>
+                          <form action="actionOffre">
+                            <i class="fa fa-times" aria-hidden="true"></i>
                           </form>
                         </td>
                     </tr>

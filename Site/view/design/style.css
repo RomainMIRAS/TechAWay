@@ -593,9 +593,12 @@ tr:hover td {
 .nav-options-board button {
   margin-left: 0;
   margin-right: 5px;
+  margin-top: 0;
   margin-bottom: 10px;
   font-size: initial;
   padding: 3px 12px;
+  font-size: 14px;
+  border: 1px solid var(--color-blue1);
 }
 
 /**************************************************************
