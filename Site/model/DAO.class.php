@@ -342,6 +342,7 @@ class DAO {
 			return $entreprises;
 	}
 
+
 	//Fonction qui returne une offre d'id donnee
 	function getOffre(int $id) : Offre{
 		try {
@@ -446,6 +447,25 @@ class DAO {
 		return false;
 	}
 
+	function nombreEntreprises() : int{
+		try {
+			$req = pg_query($this->db,"SELECT count(*) from entreprise");
+		
+			$nombreReq = pg_fetch_all($req);
+
+			if (empty($nombreReq)) {
+				return false;
+			}else{
+
+				$nombre = intval($nombreReq[0]['count']);
+			}
+			
+			// Tests d'erreurs
+			} catch (Exception $e) {
+				die("PSQL ERROR :".$e->getMessage());
+			}
+			return $nombre;
+	}
 	//Fonctions utile
 	function conversionStringArray(string $chaine){
 		$arrayChaine = explode(",",$chaine);

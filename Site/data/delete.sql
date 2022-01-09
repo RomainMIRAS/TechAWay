@@ -7,7 +7,12 @@ delete from utilisateur where adressemail='adresse-candidat@gmail.com1';
 select * from utilisateur;
 
 -- delete un offre
+delete from offre where idoffre='idoffre';
 delete from competence where link='idoffre';
 delete from renseignement where link='idoffre';
-delete from utilisateur where adressemail='idoffre';
-select * from utilisateur;
+select * from offre;
+
+--delete tests
+delete from offre where nomoffre='Back-End - WebApp';
+delete from competence where langagesacquis='react,angular,scss,sass';
+delete from renseignement where poste='Dynamic Websites,3d animation';

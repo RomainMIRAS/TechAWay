@@ -95,6 +95,7 @@ try{
   }
   echo '<hr>';
 
+  //test si on retourne bien tout les candidats
   echo "</br>getCompetence(adressemail) : adresse-candidat@gmail.com doit retourner type Competence de l'utilisateur d'adressemail adresse-candidat@gmail.com";
   $testLogin = $db->getCompetence("adresse-candidat@gmail.com");
   if ($testLogin){
@@ -136,6 +137,16 @@ try{
 
   echo "</br>getEntreprises() :  doit retourner toutes les entreprises de type Offre ";
   $testLogin = $db->getEntreprises();
+  if ($testLogin){
+    echo '<pre>' . var_export($testLogin, true) . '</pre>';
+  }else{
+    echo "</br>False ";
+  }
+  
+  echo '<hr>';
+
+  echo "</br>nombreEntreprises() :  doit le numero d'entreprises sur la base de donnees ";
+  $testLogin = $db->nombreEntreprises();
   if ($testLogin){
     echo '<pre>' . var_export($testLogin, true) . '</pre>';
   }else{
