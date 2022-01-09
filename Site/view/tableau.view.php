@@ -85,10 +85,11 @@
         </div>
         <div id="addEntrepriseSection" class="addNewSection"> <!-- Ajouter une entreprise -->
           <button id="addEntrepriseClose">Fermer</button>
+          <h3>Ajouter une entreprise</h3>
           <form action="" method="POST">
             <label for="nom">Nom</label>
             <input type="text" name="entrepriseName" placeholder="Entrez le nom de l'entreprise" >
-            <label for="mail">Adresse E-mail</label>
+            <label for="mail">Adresse E-mail *</label>
             <input type="mail" name="entrepriseMail" placeholder="Entrez l' adresse mail de l'entreprise" >
             <label for="tel">Téléphone</label>
             <input type="mail" name="entrepriseTel" placeholder="Entrez le téléphone de l'entreprise" >
@@ -98,6 +99,7 @@
             <input type="text" name="entreprisePays" placeholder="Entrez le pays de l'entreprise" >
             <button>Ajouter</button>
           </form>
+          <span class="asterisque">* : Champ obligatoire</span>
         </div>
         <table>  <!-- Tableau des entreprises -->
             <tr>
