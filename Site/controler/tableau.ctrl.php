@@ -32,11 +32,11 @@ foreach($emails as $e) {
 $entreprises = $db->getEntreprises();
 $nbEntreprises = 0;
 
-foreach ($entreprises as $e) {
+/*foreach ($entreprises as $e) {
     if ($db->getEntreprise($e)!=false) {
         $nbEntreprises++;
     }
-}
+}*/
 
 /* Passage des paramètres à la vue */
 
