@@ -455,7 +455,7 @@ class DAO {
 			DELETE from renseignement where link='$mail';
 			DELETE from utilisateur where adressemail='$mail');";
 
-			$res = @pg_query($this->db, $r);
+			$res = pg_query($this->db, $r);
 
 			if($res){
 				return true;
