@@ -29,8 +29,12 @@ class Entreprise {
     return $this->nom;
   }
 
-  function getAdresse() : string {
-    return $this->adresse;
+  function getVille() : string {
+    return $this->ville;
+  }
+
+  function getPays() : string {
+    return $this->pays;
   }
 
   function getTelephone() : string {
@@ -51,8 +55,12 @@ class Entreprise {
     $this->nom = $nom;
   }
 
-  function setAdresse(string $adresse) : void {
-    $this->adresse = $adresse;
+  function setVille(string $ville) : void {
+    $this->ville = $ville;
+  }
+
+  function setPays(string $pays) : void {
+    $this->pays = $pays;
   }
 
   function setTelephone(string $telephone) : void {

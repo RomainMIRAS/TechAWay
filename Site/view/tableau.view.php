@@ -1,6 +1,7 @@
 <?php
     include_once(__DIR__."/../model/Utilisateur.class.php");
     include_once(__DIR__."/../model/Candidat.class.php");
+    include_once(__DIR__."/../model/Entreprise.class.php");
 ?>
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
@@ -38,7 +39,6 @@
       <section id="tableau-bord"> <!-- Tous les candidats inscrits -->
 
         <h2>Candidats <span style="font-size: 12px"><?= $nbCandidats?> candidat(s) enregistré(s)</span></h2>
-
         <table>  <!-- Tableau des candidats -->
             <tr>
                 <th>Nom</th>
@@ -50,6 +50,7 @@
                 <th>Pays</th>
                 <th>Lien CV</th>
                 <th>Lien Lettre</th>
+                <th>Supprimer</th>
             </tr>
             <?php foreach($candidats as $c): ?> <!-- pour chaque candidat -->
                 <?php if ($c!=false): ?>
@@ -63,14 +64,56 @@
                         <td><?= $c->getPays() ?></td>
                         <td><?= $c->getLienCv() ?></td>
                         <td><?= $c->getLienLM() ?></td>
+                        <td class="sup">
+                          <form action="actionCandidat">
+                            <i class="fa fa-times" aria-hidden="true"></i>
+                          </form>
+                        </td>
                     </tr>
                 <?php endif; ?>
             <?php endforeach; ?>
         </table>
 
-        <h2>Entreprises <span style="font-size: 12px"><?= $nbCandidats?> entreprise(s) enregistrée(s)</span></h2>
+        <h2>Entreprises <span style="font-size: 12px"><?= $nbEntreprises ?> entreprise(s) enregistrée(s)</span></h2>
+        <div class="nav-options-board">
+          <button>Ajouter une entreprise</button>
+        </div>
 
         <h2>Offres <span style="font-size: 12px"><?= $nbCandidats?> offre(s) enregistrée(s)</span></h2>
+        <div class="nav-options-board">
+          <button>Ajouter une offre</button>
+        </div>
+        <div>
+          <form action="">
+            <input type="text" placeholder="Nom">
+            <select name="" id="">
+              <!-- Liste des entreprises -->
+            </select>
+            <button>Ajouter</button>
+          </form>
+        </div>
+        <table>  <!-- Tableau des offres -->
+            <tr>
+                <th>Nom</th>
+                <th>Entreprise</th>
+                <th>Date</th>
+                <th>Supprimer</th>
+            </tr>
+            <?php foreach($offres as $o): ?> <!-- pour chaque candidat -->
+                <?php if ($o!=false): ?>
+                    <tr> <!-- affichage du nom, prenom, mail...etc du candidat -->
+                        <td><?= $o->getNomOffre() ?></td>
+                        <td><?= $o->getEntreprise()->getNom() ?></td>
+                        <td><?= $o->getDateOffre() ?></td>
+                        <td class="sup">
+                          <form action="actionOffre">
+                            <i class="fa fa-times" aria-hidden="true"></i>
+                          </form>
+                        </td>
+                    </tr>
+                <?php endif; ?>
+            <?php endforeach; ?>
+        </table>
 
       </section>
 

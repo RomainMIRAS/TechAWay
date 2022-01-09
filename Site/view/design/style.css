@@ -570,8 +570,13 @@ table {
 td, th {
   border: 1px solid #dddddd;
   text-align: left;
-  padding: 8px;
+  padding: 5px;
+  font-size: 14px;
   cursor: initial;
+}
+
+.sup i {
+  cursor: pointer;
 }
 
 tr:nth-child(even) {
@@ -588,6 +593,17 @@ tr:hover {
 
 tr:hover td {
   color: var(--color-white);
+}
+
+.nav-options-board button {
+  margin-left: 0;
+  margin-right: 5px;
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: initial;
+  padding: 3px 12px;
+  font-size: 14px;
+  border: 1px solid var(--color-blue1);
 }
 
 /**************************************************************

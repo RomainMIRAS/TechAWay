@@ -13,6 +13,8 @@ $view = new View();
 
 $db = DAO::get();
 
+/* Récupération de tous les candidats de la base */
+
 $emails = $db->getEmails();
 
 $candidats = array();
@@ -25,9 +27,37 @@ foreach($emails as $e) {
     }
 }
 
+/* Récupération de toutes les entreprises de la base */
+
+$entreprises = $db->getEntreprises();
+$nbEntreprises = 0;
+
+/*foreach ($entreprises as $e) {
+    if ($db->getEntreprise($e)!=false) {
+        $nbEntreprises++;
+    }
+}*/
+
+/* Récupération de toutes les offres de la base */
+
+$offres = $db->getOffres();
+$nbOffres = 0;
+
+foreach($offres as $o) {
+    $nbOffres++;
+}
+
+/* Passage des paramètres à la vue */
+
 $view->assign("candidats",$candidats);
 $view->assign("nbCandidats",$nbCandidats);
 
-// Charge la vue
+$view->assign("entreprises",$entreprises);
+$view->assign("nbEntreprises",$nbEntreprises);
+
+$view->assign("offres",$offres);
+$view->assign("nbOffres",$nbOffres);
+
+// Charger la vue
 $view->display("tableau.view.php");
 ?>
