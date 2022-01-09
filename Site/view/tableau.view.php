@@ -57,7 +57,7 @@
                     <tr> <!-- affichage du nom, prenom, mail...etc du candidat -->
                         <td><?= $c->getNom() ?></td>
                         <td><?= $c->getPrenom() ?></td>
-                        <td><a href="mailto:<?= $c->getMail() ?>"><?= $c->getMail() ?></a></td>
+                        <td id="mailCandidat"><a href="mailto:<?= $c->getMail() ?>"><?= $c->getMail() ?></a></td>
                         <td><?= $c->getTelephone() ?></td>
                         <td><?= $c->getEtape() ?></td>
                         <td><?= $c->getVille() ?></td>
@@ -68,7 +68,7 @@
                           <form action="tableau.ctrl.php" method="POST">
                             <input type="hidden" name="candidatAction" value="deleteN">
                             <input type="hidden" name="candidatToDelete" value="<?= $c->getMail() ?>">
-                            <button type="submit"><i class="fa fa-times" aria-hidden="true"></i></button>
+                            <button type="submit" id="candidatDeleteBtn"><i class="fa fa-times" aria-hidden="true"></i></button>
                           </form>
                         </td>
                     </tr>
@@ -159,6 +159,15 @@
   <script src="../framework/jquery-3.6.0.min.js"></script>
   <script>
     $(window).ready(function() {
+
+      $("#candidatDeleteBtn").click(function() {
+        var mailCandidat = $("#mailCandidat");
+        if (confirm("Etes-vous sûr de vouloir supprimer le candidat "+ mailCandidat +" ?")) {
+
+        } else {
+
+        }
+      });
 
     });
   </script>
