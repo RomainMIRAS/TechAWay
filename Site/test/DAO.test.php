@@ -93,6 +93,16 @@ try{
   }else{
     echo "</br>False ";
   }
+
+  echo '<hr>';
+
+  echo "</br>nombreCandidats() :  doit returner le nombre de candidats sur la base de donnees ";
+  $testLogin = $db->nombreCandidats();
+  if ($testLogin){
+    echo '<pre>' . var_export($testLogin, true) . '</pre>';
+  }else{
+    echo "</br>False ";
+  }
   echo '<hr>';
 
   //test si on retourne bien tout les candidats
@@ -180,8 +190,6 @@ try{
 
   echo '<hr>';
 
-  echo '<hr>';
-
   echo "</br>getOffres() :  doit retourner toutes les offres de type Offre ";
   $testLogin = $db->getOffres();
   if ($testLogin){
@@ -189,7 +197,15 @@ try{
   }else{
     echo "</br>False ";
   }
+  echo '<hr>';
 
+  echo "</br>nombreOffres() :  doit returner le nombre d'offres sur la base de donnees ";
+  $testLogin = $db->nombreOffres();
+  if ($testLogin){
+    echo '<pre>' . var_export($testLogin, true) . '</pre>';
+  }else{
+    echo "</br>False ";
+  }
   echo '<hr>';
 
   //Un echo de getEmails

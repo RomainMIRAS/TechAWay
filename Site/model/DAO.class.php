@@ -466,6 +466,44 @@ class DAO {
 			}
 			return $nombre;
 	}
+	function nombreCandidats() : int{
+		try {
+			$req = pg_query($this->db,"SELECT count(*) from candidat");
+		
+			$nombreReq = pg_fetch_all($req);
+
+			if (empty($nombreReq)) {
+				return false;
+			}else{
+
+				$nombre = intval($nombreReq[0]['count']);
+			}
+			
+			// Tests d'erreurs
+			} catch (Exception $e) {
+				die("PSQL ERROR :".$e->getMessage());
+			}
+			return $nombre;
+	}
+	function nombreOffres() : int{
+		try {
+			$req = pg_query($this->db,"SELECT count(*) from offre");
+		
+			$nombreReq = pg_fetch_all($req);
+
+			if (empty($nombreReq)) {
+				return false;
+			}else{
+
+				$nombre = intval($nombreReq[0]['count']);
+			}
+			
+			// Tests d'erreurs
+			} catch (Exception $e) {
+				die("PSQL ERROR :".$e->getMessage());
+			}
+			return $nombre;
+	}
 	//Fonctions utile
 	function conversionStringArray(string $chaine){
 		$arrayChaine = explode(",",$chaine);
