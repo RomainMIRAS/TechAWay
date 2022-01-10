@@ -77,7 +77,7 @@ if($action== "suivant" && $etape == "base")
   {
     $erreur = "L'age doit etre rempli";
   }
-  else if(strtotime($age) >= strtotime(DateTime('today')))
+  else if(strtotime($age) >= strtotime(getdate('today')))
   {
     $erreur = "L'age ne doit pas être superieur à la date d'aujourd'hui";
   }
