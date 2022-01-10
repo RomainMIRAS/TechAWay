@@ -60,7 +60,7 @@ if ($erreur == "" && $action == "confirmation"){
   // Dans le cas où nos lignes comportent plus de 70 caractères, nous les coupons en utilisant wordwrap()
   $message = wordwrap($message, 70, "\r\n");
 
-  $mail = new PHPMailer(true);
+  $mail = new PHPMailer();
 
 //Send mail using gmail
 
