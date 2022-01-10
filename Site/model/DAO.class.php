@@ -610,7 +610,7 @@ class DAO {
 	function updateEntreprise(Entreprise $entreprise){
 		try {
 			$r = "UPDATE entreprise
-			set mail = '{$entreprise->getMail()}',
+			set mailentreprise = '{$entreprise->getMail()}',
 				nomentreprise = '{$entreprise->getNom()}',
 				telephone = '{$entreprise->getTelephone()}',
 				pays = '{$entreprise->getPays()}',
