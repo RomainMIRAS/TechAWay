@@ -514,7 +514,7 @@ class DAO {
 			$lp = $this->conversionArrayString($candidat->getCompetenceAcquis()->getLangeParle());
 			$la = $this->conversionArrayString($candidat->getCompetenceAcquis()->getLangageAcquis());
 
-			echo $candidat->getRenseignement()->getTravEtranger();
+			$te = $candidat->getRenseignement()->getTravEtranger() ?? 0;
 
 			$r = "UPDATE utilisateur 
 			set nom = '{$candidat->getNom()}',
@@ -538,7 +538,7 @@ class DAO {
 			where idcompetence = {$candidat->getCompetenceAcquis()->getId()};
 			
 			update renseignement
-			set travetranger = {$candidat->getRenseignement()->getTravEtranger()}::boolean,
+			set travetranger = $te::boolean,
 				secteur = '{$candidat->getRenseignement()->getSecteur()}',
 				typecontrat = '{$candidat->getRenseignement()->getTypeContrat()}',
 				poste = '{$candidat->getRenseignement()->getPoste()}',
