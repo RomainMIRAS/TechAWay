@@ -63,22 +63,22 @@ if ($erreur == "" && $action == "confirmation"){
   // $mail = new PHPMailer(true);
 
 //Send mail using gmail
-$mail = new PHPMailer();
-
-
-    $mail->IsSMTP(); // telling the class to use SMTP
-    $mail->SMTPAuth = true; // enable SMTP authentication
-    $mail->SMTPSecure = "ssl"; // sets the prefix to the servier
-    $mail->Host = "smtp.gmail.com"; // sets GMAIL as the SMTP server
-    $mail->Port = 465; // set the SMTP port for the GMAIL server
-    $mail->Username = "techawayteam13@gmail.com"; // GMAIL username
-    $mail->Password = "projetteam13"; // GMAIL password
-
-$mail->From      = "test@gmail.com";
-$mail->FromName  = $nom.$prenom;
-$mail->Subject   = "Demande de Partenariat -".$nomEntreprise;
-$mail->Body      = $message;
-$mail->AddAddress( 'techawayteam13@gmail.com' );
+// $mail = new PHPMailer();
+//
+//
+//     $mail->IsSMTP(); // telling the class to use SMTP
+//     $mail->SMTPAuth = true; // enable SMTP authentication
+//     $mail->SMTPSecure = "ssl"; // sets the prefix to the servier
+//     $mail->Host = "smtp.gmail.com"; // sets GMAIL as the SMTP server
+//     $mail->Port = 465; // set the SMTP port for the GMAIL server
+//     $mail->Username = "techawayteam13@gmail.com"; // GMAIL username
+//     $mail->Password = "projetteam13"; // GMAIL password
+//
+// $mail->From      = "test@gmail.com";
+// $mail->FromName  = $nom.$prenom;
+// $mail->Subject   = "Demande de Partenariat -".$nomEntreprise;
+// $mail->Body      = $message;
+// $mail->AddAddress( 'techawayteam13@gmail.com' );
 
 
 
@@ -90,6 +90,20 @@ $mail->AddAddress( 'techawayteam13@gmail.com' );
 // $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
 // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 // $mail->send();
+
+
+$mail = new PHPMailer();
+$mail - > IsSMTP(); // Telling the class to use SMTP
+
+$mail - > SMTPAuth = true;
+$mail - > SMTPSecure = "ssl";
+$mail - > Host = "smtp.gmail.com"; // SMTP server
+$mail - > Username = "techawayteam13@gmail.com"; // "The account"
+$mail - > Password = "projetteam13"; // "The password"
+$mail - > Port = 465; // "The port"
+$mail - > Subject = "My first email "; // "The subject"
+$mail - > Body = "This is a test"; // "The message."
+$mail - > WordWrap = 100; // "The lenght of the text."
 
 
 if(!$mail->send()) {
