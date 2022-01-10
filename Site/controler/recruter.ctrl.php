@@ -41,6 +41,12 @@ else if($nomEntreprise == "" )
 
 if ($erreur == "" && $action == "confirmation"){
 
+  use PHPMailer\PHPMailer\PHPMailer;
+  use PHPMailer\PHPMailer\Exception;
+
+  require '/root/PHPMailer/src/Exception.php';
+  require '/root/PHPMailer/src/PHPMailer.php';
+  require '/root/PHPMailer/src/SMTP.php';
 
 
   $message =
@@ -55,7 +61,7 @@ if ($erreur == "" && $action == "confirmation"){
 
   // Dans le cas où nos lignes comportent plus de 70 caractères, nous les coupons en utilisant wordwrap()
   $message = wordwrap($message, 70, "\r\n");
-  
+
   $mail = new PHPMailer(true);
 
 //Send mail using gmail
