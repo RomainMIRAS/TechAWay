@@ -516,31 +516,31 @@ class DAO {
 
 			$r = "UPDATE utilisateur 
 			set nom = '{$candidat->getNom()}',
-			set prenom = '{$candidat->getPrenom()}',
-			set age = {$candidat->getAge()},
-			set telephone = '{$candidat->getTelephone()}'
+				prenom = '{$candidat->getPrenom()}',
+				age = {$candidat->getAge()},
+				telephone = '{$candidat->getTelephone()}'
 			where adressemail= '{$candidat->getMail()}';
 			
 			update candidat
 			set liencv = '{$candidat->getLienCv()}',
-			set lienlettremotivation = '{$candidat->getLienLM()}',
-			set etape = {$candidat->getLienLM()},
-			set pays = '{$candidat->getLienLM()}',
-			set ville = '{$candidat->getLienLM()}'
+				lienlettremotivation = '{$candidat->getLienLM()}',
+				etape = {$candidat->getLienLM()},
+				pays = '{$candidat->getLienLM()}',
+				ville = '{$candidat->getLienLM()}'
 			where idcandidat in (select idutilisateur from utilisateur where adressemail='{$candidat->getMail()}');
 			
 			update competence
-			set nvetude = '{$candidat->getCompetenceAcquis()->getNvEtude()}',
-			set langueparle = '$lp',
-			set langagesacquis = '$la'
+			set	nvetude = '{$candidat->getCompetenceAcquis()->getNvEtude()}',
+				langueparle = '$lp',
+				langagesacquis = '$la'
 			where idcompetence = {$candidat->getCompetenceAcquis()->getId()};
 			
 			update from renseignement
 			set travetranger = {$candidat->getRenseignement()->getId()},
-			set secteur = '{$candidat->getRenseignement()->getSecteur()}',
-			set typecontrat = '{$candidat->getRenseignement()->getTypeContrat()}',
-			set poste = '{$candidat->getRenseignement()->getPoste()}',
-			set tyeentreprise = '{$candidat->getRenseignement()->getTypeEntreprise()}'
+				secteur = '{$candidat->getRenseignement()->getSecteur()}',
+				typecontrat = '{$candidat->getRenseignement()->getTypeContrat()}',
+				poste = '{$candidat->getRenseignement()->getPoste()}',
+				tyeentreprise = '{$candidat->getRenseignement()->getTypeEntreprise()}'
 			where idrenseignement = {$candidat->getRenseignement()->getId()}";
 
 			$res = pg_query($this->db, $r);
