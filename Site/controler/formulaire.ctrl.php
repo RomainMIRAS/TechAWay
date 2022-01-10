@@ -207,7 +207,7 @@ if ($erreur == "" && $action == "suivant"){
 
     // Redirection sur la page principale
     // header('Location: main.ctrl.php');
-    $erreur = "Marche "
+    $erreur = "Marche pas ";
   }
 
   // Gestion du Statuts de l'étape
