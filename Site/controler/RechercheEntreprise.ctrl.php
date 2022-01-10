@@ -30,8 +30,8 @@ foreach($offres as $o):
     $scoreMatch = 0;
     $competOffre = $o->getCompetenceRecherche();
     $renseiOffre = $o->getDetailOffre();
-    $competCandid = $candidat->getCompetenceAcquis;
-    $renseiCandid = $candidat->getRenseignement;
+    $competCandid = $candidat->getCompetenceAcquis();
+    $renseiCandid = $candidat->getRenseignement();
 
     if ($competCandid->getNvEtude() == $competOffre->getNvEtude()) {
         $scoreMatch = $scoreMatch + 6;
