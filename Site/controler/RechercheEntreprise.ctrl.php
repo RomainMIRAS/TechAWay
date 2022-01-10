@@ -25,10 +25,9 @@ $nbOffres = $db->nombreOffres();
 
 $scoresMatch = array();
 
-
 foreach($offres as $o){
     $ii = $o->getId();
-    echo "/////$ii/////";
+    echo "Offre n°$ii : <br/>";
     $scoreMatch = 0;
     $competOffre = $o->getCompetenceRecherche();
     $renseiOffre = $o->getDetailOffre();
@@ -46,6 +45,7 @@ foreach($offres as $o){
             }
         }
         if (!$langeEstParler) {
+            echo "$lo est inconnue<br/>";
             $scoreMatch = $scoreMatch - 8; // On enlève 8 au score si la langue n'est pas parler
         }
         $langeEstParler = false;
@@ -62,20 +62,23 @@ foreach($offres as $o){
             }
         }
         if (!$langeEstParler) {
-            echo "$lo est inconnue";
+            echo "$lo est inconnue<br/>";
             $scoreMatch = $scoreMatch - 10; // On enlève 10 au score si le candidat ne connait pas le langage
         }
         $langeEstParler = false;
     }
 
-
+$t1 = $competCandid->getNvEtude();
+$t2 = $competOffre->getNvEtude();
     //Niveau d'étude
+    echo "$t1 ainsi que $t2<br/>";
     if ($competCandid->getNvEtude() == $competOffre->getNvEtude()) {
         $scoreMatch = $scoreMatch + 6; // On ajoute 6 au score si le niveau d'étude est identique entre l'offre et le candidat
     } else {
         $scoreMatch = $scoreMatch - 6; // On enleve 8 au score si le niveau d'étude du candidat est inférieur à celui de l'offre
+        echo "Pas niveau étude<br/>";
     }
-    echo "$scoreMatch";
+    echo "Score : $scoreMatch<br/><br/><br/>";
     array_push($scoresMatch,$scoreMatch);
 }
 
