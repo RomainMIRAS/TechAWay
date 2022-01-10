@@ -569,43 +569,54 @@ class DAO {
 	function updateOffre(Offre $offre){
 		try {
 
-			$lp = $this->conversionArrayString($candidat->getCompetenceAcquis()->getLangeParle());
-			$la = $this->conversionArrayString($candidat->getCompetenceAcquis()->getLangageAcquis());
+			$lp = $this->conversionArrayString($offre->getCompetenceRecherche()->getLangeParle());
+			$la = $this->conversionArrayString($offre->getCompetenceRecherche()->getLangageAcquis());
 
-			if ($candidat->getRenseignement()->getTravEtranger()){
-				$te = $candidat->getRenseignement()->getTravEtranger();
+			if ($offre->getDetailOffre()->getTravEtranger()){
+				$te = $offre->getDetailOffre()->getTravEtranger();
 			}else{
 				$te = 0;
 			}
 
-			$r = "UPDATE utilisateur 
-			set nom = '{$candidat->getNom()}',
-				prenom = '{$candidat->getPrenom()}',
-				age = {$candidat->getAge()},
-				telephone = '{$candidat->getTelephone()}'
-			where adressemail= '{$candidat->getMail()}';
-			
-			update candidat
-			set liencv = '{$candidat->getLienCv()}',
-				lienlettremotivation = '{$candidat->getLienLM()}',
-				etape = {$candidat->getEtape()},
-				pays = '{$candidat->getPays()}',
-				ville = '{$candidat->getVille()}'
-			where idcandidat in (select idutilisateur from utilisateur where adressemail='{$candidat->getMail()}');
-			
+			$r = "UPDATE offre
+
+			where idoffre = {$offre->getId()};
+			set nomoffre = '{$offre->getNomOffre()}'
 			update competence
-			set	nvetude = '{$candidat->getCompetenceAcquis()->getNvEtude()}',
+			set	nvetude = '{$offre->getCompetenceRecherche()->getNvEtude()}',
 				langueparle = '$lp',
 				langagesacquis = '$la'
-			where idcompetence = {$candidat->getCompetenceAcquis()->getId()};
+			where idcompetence = {$offre->getCompetenceRecherche()->getId()};
 			
 			update renseignement
 			set travetranger = $te::boolean,
-				secteur = '{$candidat->getRenseignement()->getSecteur()}',
-				typecontrat = '{$candidat->getRenseignement()->getTypeContrat()}',
-				poste = '{$candidat->getRenseignement()->getPoste()}',
-				tyeentreprise = '{$candidat->getRenseignement()->getTypeEntreprise()}'
-			where idrenseignement = {$candidat->getRenseignement()->getId()}";
+				secteur = '{$offre->getDetailOffre()->getSecteur()}',
+				typecontrat = '{$offre->getDetailOffre()->getTypeContrat()}',
+				poste = '{$offre->getDetailOffre()->getPoste()}',
+				tyeentreprise = '{$offre->getDetailOffre()->getTypeEntreprise()}'
+			where idrenseignement = {$offre->getDetailOffre()->getId()}";
+
+			$res = pg_query($this->db, $r);
+
+			if($res){
+				return true;
+			}
+		// Tests d'erreurs
+		} catch (Exception $e) {
+			die("PSQL ERROR createUtilisateur : ".$e->getMessage());
+		}
+		return false;
+	}
+
+	function updateEntreprise(Entreprise $entreprise){
+		try {
+			$r = "UPDATE entreprise
+			set mail = '{$entreprise->getMail()}',
+				nomentreprise = '{$entreprise->getNom()}',
+				telephone = '{$entreprise->getTelephone()}',
+				pays = '{$entreprise->getPays()}',
+				ville = '{$entreprise->getVille()}'
+			where identreprise = {$entreprise->getId()}";
 
 			$res = pg_query($this->db, $r);
 

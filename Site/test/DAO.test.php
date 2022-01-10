@@ -201,7 +201,20 @@ try{
   echo '<hr>';
 
   echo "</br>getOffre(4) :  4  : doit retourner type Offre de id 4";
-  $testLogin = $db->getOffre(4);
+  $off = $db->getOffre(4);
+  if ($off){
+    echo '<pre>' . var_export($off, true) . '</pre>';
+  }else{
+    echo "</br>False ";
+  }
+
+  echo '<hr>';
+
+  $off->setNomOffre("Game-Developer");
+  $off->getDetailOffre()->setTravEtranger(FALSE);
+
+  echo "</br>updateOffre(Offre \$offre) : update le offre donnee avec les bonnes";
+  $testLogin = $db->updateOffre($off);
   if ($testLogin){
     echo '<pre>' . var_export($testLogin, true) . '</pre>';
   }else{
@@ -209,6 +222,7 @@ try{
   }
 
   echo '<hr>';
+
   $langP = array("anglais","francais");
   $langA = array("react","angular","scss","sass","javascript");  
   $rens = new Renseignement(-2,true, 'web-dev', 'CDI', 'Dynamic Websites,3d animation', 'Grande');
