@@ -72,7 +72,7 @@ foreach($offres as $o){
     } else {
         $scoreMatch = $scoreMatch - 6; // On enleve 8 au score si le niveau d'étude du candidat est inférieur à celui de l'offre
     }
-
+    echo "$scoreMatch";
     array_push($scoresMatch,$scoreMatch);
 }
 
