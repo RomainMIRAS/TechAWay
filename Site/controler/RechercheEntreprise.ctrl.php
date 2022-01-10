@@ -38,7 +38,7 @@ foreach($offres as $o):
     } else {
         $scoreMatch = $scoreMatch - 6;
     }
-    $tt = $competCandid->getLangeParle()
+    $tt = $competCandid->getLangeParle();
     echo "$tt";
 
     array_push($scoresMatch,$scoreMatch);
