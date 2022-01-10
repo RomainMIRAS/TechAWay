@@ -33,8 +33,8 @@ foreach($offres as $o):
     $competCandid = $candidat->getCompetenceAcquis();
     $renseiCandid = $candidat->getRenseignement();
 
-
-    foreach ($competCandid->getLangeParle() as $l) {
+    $tt = $competCandid->getLangeParle();
+    foreach ($tt as $l) {
         echo "$l";
     }
 
