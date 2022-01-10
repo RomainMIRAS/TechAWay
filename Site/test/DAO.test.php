@@ -76,7 +76,19 @@ try{
 
   //verification de la methode getCandidat() il return un Candidat s'il existe, faux sinon
   echo "</br>getCandidat(adressemail) : adresse-candidat@gmail.com  : (doit retourner type Candidat)";
-  $testLogin = $db->getCandidat("adresse-candidat@gmail.com");
+  $us = $db->getCandidat("adresse-candidat@gmail.com");
+  if ($us){
+    echo '<pre>' . var_export($us, true) . '</pre>';
+  }else{
+    echo "</br>False ";
+  }
+
+  echo '<hr>';
+
+  $us->setAge(333);
+
+  echo "</br>updateCandidat(Candidat \$candidat) :update le candidat donner avec ses valeurs";
+  $testLogin = $db->updateCandidat($us);
   if ($testLogin){
     echo '<pre>' . var_export($testLogin, true) . '</pre>';
   }else{

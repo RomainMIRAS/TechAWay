@@ -508,6 +508,53 @@ class DAO {
 		return false;
 	}
 
+	function updateCandidat(Candidat $candidat){
+		try {
+
+			$lp = $this->conversionArrayString($candidat->getCompetenceAcquis()->getLangeParle());
+			$la = $this->conversionArrayString($candidat->getCompetenceAcquis()->getLangageAcquis());
+
+			$r = "UPDATE from utilisateur 
+			set nom = '{$candidat->getNom()}',
+			set prenom = '{$candidat->getPrenom()}',
+			set age = {$candidat->getAge()},
+			set telephone = '{$candidat->getTelephone()}'
+			where adressemail= '{$candidat->getMail()}';
+			
+			update from candidat
+			set liencv = '{$candidat->getLienCv()}',
+			set lienlettremotivation = '{$candidat->getLienLM()}',
+			set etape = {$candidat->getLienLM()},
+			set pays = '{$candidat->getLienLM()}',
+			set ville = '{$candidat->getLienLM()}'
+			where idcandidat in (select idutilisateur from utilisateur where adressemail='{$candidat->getMail()}');
+			
+			update from competence
+			set nvetude = '{$candidat->getCompetenceAcquis()->getNvEtude()}',
+			set langueparle = '$lp',
+			set langagesacquis = '$la'
+			where idcompetence = {$candidat->getCompetenceAcquis()->getId()};
+			
+			update from renseignement
+			set travetranger = {$candidat->getRenseignement()->getId()},
+			set secteur = '{$candidat->getRenseignement()->getSecteur()}',
+			set typecontrat = '{$candidat->getRenseignement()->getTypeContrat()}',
+			set poste = '{$candidat->getRenseignement()->getPoste()}',
+			set tyeentreprise = '{$candidat->getRenseignement()->getTypeEntreprise()}'
+			where idrenseignement = {$candidat->getRenseignement()->getId()}";
+
+			$res = @pg_query($this->db, $r);
+
+			if($res){
+				return true;
+			}
+		// Tests d'erreurs
+		} catch (Exception $e) {
+			die("PSQL ERROR createUtilisateur : ".$e->getMessage());
+		}
+		return false;
+	}
+
 	function nombreEntreprises() : int{
 		try {
 			$req = pg_query($this->db,"SELECT count(*) from entreprise");
