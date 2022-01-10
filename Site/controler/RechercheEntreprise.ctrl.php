@@ -26,7 +26,7 @@ $db = DAO::get(); // on récupère l'unique instance
 
 Mieu gerer niveau étude => si == +6 si inf -6 sinon +9
 
-
+Mieu gerer type entreprise => si == +6 si inf -6 sinon +9
 
 
 
@@ -128,13 +128,28 @@ foreach($offres as $o){
     }
 
     //Type de contrat
-    if ($renseiOffre->getSecteur() == $renseiCandid->getSecteur()) {
+    if ($renseiOffre->getTypeContrat() == $renseiCandid->getTypeContrat()) {
         $scoreMatch = $scoreMatch + 6;
     } else {
         $scoreMatch = $scoreMatch - 30;
     }
 
     
+    //Secteur
+    if ($renseiOffre->getSecteur() == $renseiCandid->getSecteur()) {
+        $scoreMatch = $scoreMatch + 6;
+    } else {
+        $scoreMatch = $scoreMatch - 100;
+    }
+
+
+
+    //type entreprise
+    if ($renseiOffre->getTypeEntreprise() == $renseiCandid->getTypeEntreprise()) {
+        $scoreMatch = $scoreMatch + 6;
+    } else {
+        $scoreMatch = $scoreMatch - 5;
+    }
 
 
     echo "$scoreMatch";
