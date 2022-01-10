@@ -535,7 +535,7 @@ class DAO {
 				langagesacquis = '$la'
 			where idcompetence = {$candidat->getCompetenceAcquis()->getId()};
 			
-			update from renseignement
+			update renseignement
 			set travetranger = {$candidat->getRenseignement()->getId()},
 				secteur = '{$candidat->getRenseignement()->getSecteur()}',
 				typecontrat = '{$candidat->getRenseignement()->getTypeContrat()}',
