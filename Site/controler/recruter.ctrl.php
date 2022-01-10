@@ -92,8 +92,8 @@ if ($erreur == "" && $action == "confirmation"){
 // $mail->send();
 
 
-$mail = new PHPMailer();
-$mail - > IsSMTP(); // Telling the class to use SMTP
+$mail = new PHPMailer;
+$mail-> IsSMTP(); // Telling the class to use SMTP
 
 $mail - > SMTPAuth = true;
 $mail - > SMTPSecure = "ssl";
