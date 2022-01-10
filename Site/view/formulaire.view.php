@@ -89,16 +89,13 @@
                       <option value="bac+8" >Bac +8</option>
               </select>
               <label for="langueParle">Langues parlé</label>
-              <select name="langueParle" required>
                 <input type="checkbox" name="langueParle" value="francais" selected>Français</option>
                 <input type="checkbox" name="langueParle" value="anglais" >Anglais</option>
                 <input type="checkbox" name="langueParle" value="espagnole" >Espagnole</option>
                 <input type="checkbox" name="langueParle" value="italien" >Italien</option>
                 <input type="checkbox" name="langueParle" value="allemand">Allemand</option>
                 <input type="checkbox" name="langueParle" value="albanais">Albanais</option>
-              </select>
               <label for="languageAquis">Languages aquis</label>
-              <select name="languageAquis" required>
                 <input type="checkbox" name="languageAquis" value="php" selected>PHP</option>
                 <input type="checkbox" name="languageAquis" value="hmtl/css" >HTML/CSS</option>
                 <input type="checkbox" name="languageAquis" value="c" >C#, C ou C++</option>
@@ -109,7 +106,6 @@
                 <input type="checkbox" name="languageAquis" value="swift">Swift</option>
                 <input type="checkbox" name="languageAquis" value="julia">Julia</option>
                 <input type="checkbox" name="languageAquis" value="scala">Scala</option>
-              </select>
               <form action ="formulaire.ctrl.php" method="post">
               <output><?=$erreur?></output>
               <button type="submit" name="action" value="precedent">Precedent</button>
