@@ -133,6 +133,7 @@ foreach($offres as $o){
     } else {
         $scoreMatch = $scoreMatch - 30;
     }
+
     
 
 
