@@ -5,7 +5,6 @@ use PHPMailer\PHPMailer\Exception;
 require '/var/www/html/PHPMailer/src/Exception.php';
 require '/var/www/html/PHPMailer/src/PHPMailer.php';
 require '/var/www/html/PHPMailer/src/SMTP.php';
-require '/var/www/html/PHPMailer/src/PHPMailerAutoload.php';
 
 include_once(__DIR__."/../framework/view.class.php");
 
@@ -80,7 +79,7 @@ if ($erreur == "" && $action == "confirmation"){
 // $mail->AddAddress( 'techawayteam13@gmail.com' );
 
 
-$mail = new PHPMailer;
+$mail = new PHPMailer();
 
 
 $mail->From = $mail;
