@@ -33,15 +33,29 @@ foreach($offres as $o):
     $competCandid = $candidat->getCompetenceAcquis();
     $renseiCandid = $candidat->getRenseignement();
 
-    $tt = $competCandid->getLangeParle();
-    foreach ($tt as $l) {
-        echo "$l";
-    }
 
+
+    //Langue parlé
+    foreach ($competOffre->getLangeParle() as $lo):
+        $langeEstParler = false;
+        foreach ($competCandid->getLangeParle() as $lc):
+            if ($lo == $lc) {
+                $scoreMatch = $scoreMatch + 10; // On ajoute 10 au score si la langue est parler
+                $langeEstParler = true;
+            }
+        endforeach;
+        if (!$langeEstParler) {
+            $scoreMatch = $scoreMatch - 10; // On enlève 10 au score si la langue n'est pas parler
+        }
+        $langeEstParler = false;
+    endforeach;
+
+
+    //Niveau d'étude
     if ($competCandid->getNvEtude() == $competOffre->getNvEtude()) {
-        $scoreMatch = $scoreMatch + 6;
+        $scoreMatch = $scoreMatch + 6; // On ajoute 6 au score si le niveau d'étude est identique entre l'offre et le candidat
     } else {
-        $scoreMatch = $scoreMatch - 6;
+        $scoreMatch = $scoreMatch - 8; // On enleve 8 au score si le niveau d'étude du candidat est inférieur à celui de l'offre
     }
 
     array_push($scoresMatch,$scoreMatch);
