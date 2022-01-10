@@ -33,13 +33,16 @@ foreach($offres as $o):
     $competCandid = $candidat->getCompetenceAcquis();
     $renseiCandid = $candidat->getRenseignement();
 
+
+    foreach ($competCandid->getLangeParle() as $l) {
+        echo "$l";
+    }
+
     if ($competCandid->getNvEtude() == $competOffre->getNvEtude()) {
         $scoreMatch = $scoreMatch + 6;
     } else {
         $scoreMatch = $scoreMatch - 6;
     }
-    $tt = $competCandid->getLangeParle();
-    echo "$tt";
 
     array_push($scoresMatch,$scoreMatch);
 endforeach;
