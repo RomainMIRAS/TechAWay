@@ -67,7 +67,6 @@ try {
 //Send mail using gmail
 $mail = new PHPMailer();
 
-    $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
     $mail->IsSMTP(); // telling the class to use SMTP
     $mail->SMTPAuth = true; // enable SMTP authentication
     $mail->Host = "smtp.gmail.com"; // sets GMAIL as the SMTP server
