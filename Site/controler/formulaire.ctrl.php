@@ -206,8 +206,8 @@ if ($erreur == "" && $action == "suivant"){
     DAO::get()->updateCandidat($_SESSION["utilisateur"]);
 
     // Redirection sur la page principale
-    header('Location: main.ctrl.php');
-
+    // header('Location: main.ctrl.php');
+    $erreur = "Marche pas ";
   }
 
   // Gestion du Statuts de l'étape
