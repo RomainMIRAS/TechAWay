@@ -27,7 +27,8 @@ $scoresMatch = array();
 
 
 foreach($offres as $o){
-    echo "/////$o->getId()";
+    $ii = $o->getId();
+    echo "/////$ii";
     $scoreMatch = 0;
     $competOffre = $o->getCompetenceRecherche();
     $renseiOffre = $o->getDetailOffre();
