@@ -79,19 +79,37 @@
               <!-- Saisie des competences du candidat -->
               <label for="nvEtude">Niveau d'etudes</label>
               <select name="pays">
-                      <option value="<?php echo"bac+1" ?>" selected>Bac +1</option>
-                      <option value="<?php echo"bac+2" ?>" >Bac +1</option>
-                      <option value="<?php echo"bac+3" ?>" >Bac +3</option>
-                      <option value="<?php echo"bac+4" ?>" >Bac +4</option>
-                      <option value="<?php echo"bac+5" ?>" >Bac +5</option>
-                      <option value="<?php echo"bac+6" ?>" >Bac +6</option>
-                      <option value="<?php echo"bac+7" ?>" >Bac +7</option>
-                      <option value="<?php echo"bac+8" ?>" >Bac +8</option>
+                      <option value="bac+1" selected>Bac +1</option>
+                      <option value="bac+2" >Bac +1</option>
+                      <option value="bac+3" >Bac +3</option>
+                      <option value="bac+4" >Bac +4</option>
+                      <option value="bac+5" >Bac +5</option>
+                      <option value="bac+6">Bac +6</option>
+                      <option value="bac+7" >Bac +7</option>
+                      <option value="bac+8" >Bac +8</option>
               </select>
               <label for="langueParle">Langues parlé</label>
-              <input id="langueParle" type="text" name="langueParle" placeholder="ex :Francais,Anglais" >
+              <select name="langueParle" multiple="multiple" required>
+                <option value="francais" selected>Français</option>
+                <option value="anglais" >Anglais</option>
+                <option value="espagnole" >Espagnole</option>
+                <option value="italien" >Italien</option>
+                <option value="allemand">Allemand</option>
+                <option value="albanais">Albanais</option>
+              </select>
               <label for="languageAquis">Languages aquis</label>
-              <input id="languageAquis" type="text" name="languageAquis" placeholder="ex :C++,Java,PHP" >
+              <select name="languageAquis" multiple="multiple" required>
+                <option value="php" selected>PHP</option>
+                <option value="hmtl/css" >HTML/CSS</option>
+                <option value="c" >C#, C ou C++</option>
+                <option value="python" >Python</option>
+                <option value="perl">PERL</option>
+                <option value="java">Java</option>
+                <option value="ruby">Ruby</option>
+                <option value="swift">Swift</option>
+                <option value="julia">Julia</option>
+                <option value="scala">Scala</option>
+              </select>
               <form action ="formulaire.ctrl.php" method="post">
               <output><?=$erreur?></output>
               <button type="submit" name="action" value="precedent">Precedent</button>
