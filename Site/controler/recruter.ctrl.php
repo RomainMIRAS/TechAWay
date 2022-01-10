@@ -74,23 +74,23 @@ $mail = new PHPMailer();
     $mail->Username = "techawayteam13@gmail.com"; // GMAIL username
     $mail->Password = "projetteam13"; // GMAIL password
 
-$mail->From      = $mail;
-$mail->FromName  = $nom.$prenom;
-$mail->Subject   = "Demande de Partenariat -".$nomEntreprise;
-$mail->Body      = $message;
-$mail->AddAddress( 'techawayteam13@gmail.com' );
+// $mail->From      = $mail;
+// $mail->FromName  = $nom.$prenom;
+// $mail->Subject   = "Demande de Partenariat -".$nomEntreprise;
+// $mail->Body      = $message;
+// $mail->AddAddress( 'techawayteam13@gmail.com' );
 
 
 
 
-// $mail->From = 'techawayteam13@gmail.com';
-// $mail->FromName = 'Mailer';
-// $mail->addAddress('techawayteam13@gmail.com');     // Add a recipient
-//
-// $mail->Subject = 'Here is the subject';
-// $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
-// $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
-// $mail->send();
+$mail->From = 'techawayteam13@gmail.com';
+$mail->FromName = 'Mailer';
+$mail->addAddress('techawayteam13@gmail.com');     // Add a recipient
+
+$mail->Subject = 'Here is the subject';
+$mail->Body    = 'This is the HTML message body <b>in bold!</b>';
+$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+$mail->send();
 
 
 if(!$mail->send()) {
