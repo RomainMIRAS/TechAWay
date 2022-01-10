@@ -77,10 +77,10 @@ if($action== "suivant" && $etape == "base")
   {
     $erreur = "L'age doit etre rempli";
   }
-  else if(strtotime($age) >= strtotime(getdate('today')))
-  {
-    $erreur = "L'age ne doit pas être superieur à la date d'aujourd'hui";
-  }
+  // else if(strtotime($age) >= strtotime(getdate('today')))
+  // {
+  //   $erreur = "L'age ne doit pas être superieur à la date d'aujourd'hui";
+  // }
 
 
   else if($tel == "")
@@ -198,6 +198,10 @@ if ($erreur == "" && $action == "suivant"){
     $renseignement->setPoste($poste);
     $renseignement->setTypeEntreprise($typeEntreprise);
     $_SESSION["utilisateur"]->setPreference($renseignement);
+    $_SESSION["utilisateur"]->setEtape(1);
+
+
+    DAO::get()->updateCandidat($_SESSION["utilisateur"]);
     // FAIRE LE PUSH DE DONNES EN BASE ICI
     session_write_close();
   }
