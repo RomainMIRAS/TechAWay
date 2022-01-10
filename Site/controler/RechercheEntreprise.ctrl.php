@@ -28,7 +28,7 @@ Mieu gerer niveau étude => si == +6 si inf -6 sinon +9
 
 Mieu gerer type entreprise => si == +6 si inf -6 sinon +9
 
-
+Poste pas gerer
 
 
 ////////////////////////////////////////////////////////////////////////////*/
