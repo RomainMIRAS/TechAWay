@@ -514,7 +514,7 @@ class DAO {
 			$lp = $this->conversionArrayString($candidat->getCompetenceAcquis()->getLangeParle());
 			$la = $this->conversionArrayString($candidat->getCompetenceAcquis()->getLangageAcquis());
 
-			var_dump($candidat->getRenseignement()->getTravEtranger());
+			echo $candidat->getRenseignement()->getTravEtranger();
 
 			$r = "UPDATE utilisateur 
 			set nom = '{$candidat->getNom()}',
