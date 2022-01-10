@@ -95,15 +95,15 @@ if ($erreur == "" && $action == "confirmation"){
 $mail = new PHPMailer;
 $mail-> IsSMTP(); // Telling the class to use SMTP
 
-$mail - > SMTPAuth = true;
-$mail - > SMTPSecure = "ssl";
-$mail - > Host = "smtp.gmail.com"; // SMTP server
-$mail - > Username = "techawayteam13@gmail.com"; // "The account"
-$mail - > Password = "projetteam13"; // "The password"
-$mail - > Port = 465; // "The port"
-$mail - > Subject = "My first email "; // "The subject"
-$mail - > Body = "This is a test"; // "The message."
-$mail - > WordWrap = 100; // "The lenght of the text."
+$mail->SMTPAuth = true;
+$mail->SMTPSecure = "ssl";
+$mail->Host = "smtp.gmail.com"; // SMTP server
+$mail->Username = "techawayteam13@gmail.com"; // "The account"
+$mail->Password = "projetteam13"; // "The password"
+$mail->Port = 465; // "The port"
+$mail->Subject = "My first email "; // "The subject"
+$mail->Body = "This is a test"; // "The message."
+$mail->WordWrap = 100; // "The lenght of the text."
 
 
 if(!$mail->send()) {
