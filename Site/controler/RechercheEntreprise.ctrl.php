@@ -33,7 +33,9 @@ foreach($offres as $o):
     $competCandid = $candidat->getCompetenceAcquis();
     $renseiCandid = $candidat->getRenseignement();
 
-
+foreach ($competOffre->getLangageAcquis() as $lo) {
+    echo "$lo";
+}
 
     //Langue parlé
     foreach ($competOffre->getLangeParle() as $lo):
