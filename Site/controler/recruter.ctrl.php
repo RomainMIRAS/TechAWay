@@ -47,6 +47,10 @@ else if($nomEntreprise == "" )
 
 if ($erreur == "" && $action == "confirmation"){
 
+try {
+  $erreur = "Le mail se partenariat a été envoyé !";
+
+
   $message =
   "Vous avez reçu une demande de partenariat !\r\n
   \r\n----------------------
@@ -63,20 +67,26 @@ if ($erreur == "" && $action == "confirmation"){
 //Send mail using gmail
 $mail = new PHPMailer();
 
-
+    $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
     $mail->IsSMTP(); // telling the class to use SMTP
     $mail->SMTPAuth = true; // enable SMTP authentication
-    $mail->SMTPSecure = "ssl"; // sets the prefix to the servier
     $mail->Host = "smtp.gmail.com"; // sets GMAIL as the SMTP server
     $mail->Port = 465; // set the SMTP port for the GMAIL server
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+
     $mail->Username = "techawayteam13@gmail.com"; // GMAIL username
     $mail->Password = "projetteam13"; // GMAIL password
 
+    $mail->AddAddress( 'techawayteam13@gmail.com','Team TechAWay');
+
 $mail->From      = "test@gmail.com";
-$mail->FromName  = $nom.$prenom;
+// $mail->FromName  = $nom.$prenom;
+$mail->AddAddress( 'techawayteam13@gmail.com','Team TechAWay');
+
+
+$mail->isHTML(false);                                  //Set email format to HTML
 $mail->Subject   = "Demande de Partenariat -".$nomEntreprise;
 $mail->Body      = $message;
-$mail->AddAddress( 'techawayteam13@gmail.com' );
 
 
 
@@ -91,11 +101,9 @@ $mail->AddAddress( 'techawayteam13@gmail.com' );
 
 $mail->send();
 
-if(!$mail->send()) {
-  $erreur = "Le mail se partenariat a été envoyé !";
-} else {
-  $erreur = "Le mail n'a pas pu être envoyé - Erreur SMTP!";
-}
+  }catch (Exception $e) {
+    $erreur = "Le mail n'a pas pu être envoyé - Erreur SMTP!";
+  }
 
 
 }
