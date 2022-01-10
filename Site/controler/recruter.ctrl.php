@@ -85,13 +85,6 @@ $mail = new PHPMailer;
 $mail->From = 'techawayteam13@gmail.com';
 $mail->FromName = 'Mailer';
 $mail->addAddress('techawayteam13@gmail.com');     // Add a recipient
-$mail->addReplyTo('info@example.com', 'Information');
-$mail->addCC('cc@example.com');
-$mail->addBCC('bcc@example.com');
-
-$mail->addAttachment('');         // Add attachments
-$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
-$mail->isHTML(true);                                  // Set email format to HTML
 
 $mail->Subject = 'Here is the subject';
 $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
@@ -102,6 +95,8 @@ if(!$mail->send()) {
 } else {
   $erreur = "Le mail n'a pas pu être envoyé - Erreur SMTP!";
 }
+
+
 }
 
 $view = new View();
