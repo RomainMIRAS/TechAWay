@@ -39,7 +39,7 @@ foreach($offres as $o):
         $scoreMatch = $scoreMatch - 6;
     }
 
-    echo "$competCandid->getLangeParle()"
+    echo "$competCandid->getLangeParle()";
 
     array_push($scoresMatch,$scoreMatch);
 endforeach;
