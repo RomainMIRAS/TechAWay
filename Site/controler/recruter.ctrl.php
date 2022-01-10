@@ -5,6 +5,7 @@ use PHPMailer\PHPMailer\Exception;
 require '/var/www/html/PHPMailer/src/Exception.php';
 require '/var/www/html/PHPMailer/src/PHPMailer.php';
 require '/var/www/html/PHPMailer/src/SMTP.php';
+require '/var/www/html/PHPMailer/src/PHPMailerAutoload.php';
 
 include_once(__DIR__."/../framework/view.class.php");
 
@@ -60,23 +61,36 @@ if ($erreur == "" && $action == "confirmation"){
   // Dans le cas où nos lignes comportent plus de 70 caractères, nous les coupons en utilisant wordwrap()
   $message = wordwrap($message, 70, "\r\n");
 
-  $mail = new PHPMailer();
+  // $mail = new PHPMailer(true);
 
 //Send mail using gmail
 
-    // $mail->IsSMTP(); // telling the class to use SMTP
-    // $mail->SMTPAuth = true; // enable SMTP authentication
-    // $mail->SMTPSecure = "ssl"; // sets the prefix to the servier
-    // $mail->Host = "smtp.gmail.com"; // sets GMAIL as the SMTP server
-    // $mail->Port = 465; // set the SMTP port for the GMAIL server
-    // $mail->Username = "techawayteam13@gmail.com"; // GMAIL username
-    // $mail->Password = "projetteam13"; // GMAIL password
+//     $mail->IsSMTP(); // telling the class to use SMTP
+//     $mail->SMTPAuth = true; // enable SMTP authentication
+//     $mail->SMTPSecure = "ssl"; // sets the prefix to the servier
+//     $mail->Host = "smtp.gmail.com"; // sets GMAIL as the SMTP server
+//     $mail->Port = 465; // set the SMTP port for the GMAIL server
+//     $mail->Username = "techawayteam13@gmail.com"; // GMAIL username
+//     $mail->Password = "projetteam13"; // GMAIL password
+//
+// $mail->From      = "$mail";
+// $mail->FromName  = "$nom $prenom";
+// $mail->Subject   = "Demande de Partenariat - $nomEntreprise";
+// $mail->Body      = $message;
+// $mail->AddAddress( 'techawayteam13@gmail.com' );
 
-$mail->From      = "$mail";
-$mail->FromName  = "$nom $prenom";
-$mail->Subject   = "Demande de Partenariat - $nomEntreprise";
-$mail->Body      = $message;
-$mail->AddAddress( 'techawayteam13@gmail.com' );
+
+$mail = new PHPMailer;
+
+
+$mail->From = $mail;
+$mail->FromName = $nom;
+$mail->addAddress('techawayteam13@gmail.com');               // Name is optional
+$mail->Subject = 'Here is the subject';
+$mail->Body    = 'This is the HTML message body <b>in bold!</b>';
+$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+
+
 
 try{
     $mail->Send();
