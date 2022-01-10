@@ -41,7 +41,7 @@ foreach($offres as $o):
 
     echo "$competCandid->getLangeParle()"
 
-    array_push($scoreMatch,$scoreMatch);
+    array_push($scoresMatch,$scoreMatch);
 endforeach;
 
 ///////////////////////////////////////////////////////////////////////////////
