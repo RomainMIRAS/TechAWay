@@ -16,6 +16,26 @@ include_once(__DIR__."/../model/Candidat.class.php");
 $db = DAO::get(); // on récupère l'unique instance 
 
 
+
+
+
+
+
+
+/*////////////////////////////////////////////////////////////////////////////
+
+Mieu gerer niveau étude => si == +6 si inf -6 sinon +9
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////*/
+
+
+
+
 session_start();
 $candidat = $_SESSION['utilisateur'];
 session_write_close();
@@ -26,8 +46,6 @@ $nbOffres = $db->nombreOffres();
 $scoresMatch = array();
 
 foreach($offres as $o){
-    $ii = $o->getId();
-    echo "Offre n°$ii : <br/>";
     $scoreMatch = 0;
     $competOffre = $o->getCompetenceRecherche();
     $renseiOffre = $o->getDetailOffre();
@@ -45,7 +63,6 @@ foreach($offres as $o){
             }
         }
         if (!$langeEstParler) {
-            echo "$lo est inconnue<br/>";
             $scoreMatch = $scoreMatch - 8; // On enlève 8 au score si la langue n'est pas parler
         }
         $langeEstParler = false;
@@ -62,23 +79,59 @@ foreach($offres as $o){
             }
         }
         if (!$langeEstParler) {
-            echo "$lo est inconnue<br/>";
             $scoreMatch = $scoreMatch - 10; // On enlève 10 au score si le candidat ne connait pas le langage
         }
         $langeEstParler = false;
     }
 
-$t1 = $competCandid->getNvEtude();
-$t2 = $competOffre->getNvEtude();
     //Niveau d'étude
-    echo "$t1 ainsi que $t2<br/>";
     if ($competCandid->getNvEtude() == $competOffre->getNvEtude()) {
         $scoreMatch = $scoreMatch + 6; // On ajoute 6 au score si le niveau d'étude est identique entre l'offre et le candidat
     } else {
         $scoreMatch = $scoreMatch - 6; // On enleve 8 au score si le niveau d'étude du candidat est inférieur à celui de l'offre
-        echo "Pas niveau étude<br/>";
     }
-    echo "Score : $scoreMatch<br/><br/><br/>";
+
+
+
+    //Etranger
+    $paysOffre = $o->getEntreprise()->getPays();
+    $paysCandid = $candidat->getPays();
+
+    if ($renseiOffre->getTravEtranger()) {
+        if ($paysOffre == $paysCandid) {
+            if ($renseiCandid->getTravEtranger()) {
+                $scoreMatch = $scoreMatch; 
+            } else {
+                $scoreMatch = $scoreMatch;
+            }
+        } else {
+            if ($renseiCandid->getTravEtranger()) {
+                $scoreMatch = $scoreMatch + 10;
+            } else {
+                $scoreMatch = $scoreMatch - 200;
+            }
+        }
+    } else {
+        if ($paysOffre == $paysCandid) {
+            if ($renseiCandid->getTravEtranger()) {
+                $scoreMatch = $scoreMatch + 5;
+            } else {
+                $scoreMatch = $scoreMatch + 15;
+            }
+        } else {
+            if ($renseiCandid->getTravEtranger()) {
+                $scoreMatch = $scoreMatch - 50;
+            } else {
+                $scoreMatch = $scoreMatch - 200;
+            }
+        }
+    }
+
+
+    
+
+
+    echo "$scoreMatch";
     array_push($scoresMatch,$scoreMatch);
 }
 
