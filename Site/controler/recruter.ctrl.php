@@ -2,9 +2,9 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require '/root/PHPMailer/src/Exception.php';
-require '/root/PHPMailer/src/PHPMailer.php';
-require '/root/PHPMailer/src/SMTP.php';
+require '/var/www/html/PHPMailer/src/Exception.php';
+require '/var/www/html/PHPMailer/src/PHPMailer.php';
+require '/var/www/html/PHPMailer/src/SMTP.php';
 
 include_once(__DIR__."/../framework/view.class.php");
 
