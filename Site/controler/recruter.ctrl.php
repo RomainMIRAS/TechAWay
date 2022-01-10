@@ -68,24 +68,19 @@ try {
 $mail = new PHPMailer();
 
     $mail->IsSMTP(); // telling the class to use SMTP
-    $mail->SMTPAuth = true; // enable SMTP authentication
     $mail->Host = "smtp.gmail.com"; // sets GMAIL as the SMTP server
-    $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
-    $mail->Port = 587; 
-
+    $mail->SMTPAuth = true; // enable SMTP authentication
     $mail->Username = "techawayteam13@gmail.com"; // GMAIL username
     $mail->Password = "projetteam13"; // GMAIL password
+    $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+    $mail->Port = 587;
 
-    $mail->AddAddress( 'techawayteam13@gmail.com','Team TechAWay');
-
-$mail->From      = "test@gmail.com";
+$mail->From = "test@gmail.com";
 // $mail->FromName  = $nom.$prenom;
 $mail->AddAddress( 'techawayteam13@gmail.com','Team TechAWay');
 
-
-$mail->isHTML(false);                                  //Set email format to HTML
-$mail->Subject   = "Demande de Partenariat -".$nomEntreprise;
-$mail->Body      = $message;
+$mail->Subject   = "Demande de Partenariat -";
+$mail->Body      = "Please marche";
 
 
 
