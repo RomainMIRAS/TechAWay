@@ -342,7 +342,6 @@ class DAO {
 			return $entreprises;
 	}
 
-
 	//Fonction qui returne une offre d'id donnee
 	function getOffre(int $id) : Offre {
 		try {
@@ -515,6 +514,59 @@ class DAO {
 	}
 
 	function updateCandidat(Candidat $candidat){
+		try {
+
+			$lp = $this->conversionArrayString($candidat->getCompetenceAcquis()->getLangeParle());
+			$la = $this->conversionArrayString($candidat->getCompetenceAcquis()->getLangageAcquis());
+
+			if ($candidat->getRenseignement()->getTravEtranger()){
+				$te = $candidat->getRenseignement()->getTravEtranger();
+			}else{
+				$te = 0;
+			}
+
+			$r = "UPDATE utilisateur 
+			set nom = '{$candidat->getNom()}',
+				prenom = '{$candidat->getPrenom()}',
+				age = {$candidat->getAge()},
+				telephone = '{$candidat->getTelephone()}'
+			where adressemail= '{$candidat->getMail()}';
+			
+			update candidat
+			set liencv = '{$candidat->getLienCv()}',
+				lienlettremotivation = '{$candidat->getLienLM()}',
+				etape = {$candidat->getEtape()},
+				pays = '{$candidat->getPays()}',
+				ville = '{$candidat->getVille()}'
+			where idcandidat in (select idutilisateur from utilisateur where adressemail='{$candidat->getMail()}');
+			
+			update competence
+			set	nvetude = '{$candidat->getCompetenceAcquis()->getNvEtude()}',
+				langueparle = '$lp',
+				langagesacquis = '$la'
+			where idcompetence = {$candidat->getCompetenceAcquis()->getId()};
+			
+			update renseignement
+			set travetranger = $te::boolean,
+				secteur = '{$candidat->getRenseignement()->getSecteur()}',
+				typecontrat = '{$candidat->getRenseignement()->getTypeContrat()}',
+				poste = '{$candidat->getRenseignement()->getPoste()}',
+				tyeentreprise = '{$candidat->getRenseignement()->getTypeEntreprise()}'
+			where idrenseignement = {$candidat->getRenseignement()->getId()}";
+
+			$res = pg_query($this->db, $r);
+
+			if($res){
+				return true;
+			}
+		// Tests d'erreurs
+		} catch (Exception $e) {
+			die("PSQL ERROR createUtilisateur : ".$e->getMessage());
+		}
+		return false;
+	}
+
+	function updateOffre(Offre $offre){
 		try {
 
 			$lp = $this->conversionArrayString($candidat->getCompetenceAcquis()->getLangeParle());

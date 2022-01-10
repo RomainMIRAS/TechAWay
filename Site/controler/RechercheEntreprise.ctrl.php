@@ -127,6 +127,12 @@ foreach($offres as $o){
         }
     }
 
+    //Type de contrat
+    if ($renseiOffre->getSecteur() == $renseiCandid->getSecteur()) {
+        $scoreMatch = $scoreMatch + 6;
+    } else {
+        $scoreMatch = $scoreMatch - 30;
+    }
 
     
 
