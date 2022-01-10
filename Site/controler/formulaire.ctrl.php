@@ -179,7 +179,7 @@ if ($erreur == "" && $action == "suivant"){
     // A FAIRE
     $_SESSION["utilisateur"]->setAge($age);
     $_SESSION["utilisateur"]->setVille($ville);
-    $_SESSION["utilisateur"]->setPays($pays);
+    $_SESSION["utilisateur"]->setPays($pays[0]);
     session_write_close();
   } else if ($etape == "competences") {
     session_start();
