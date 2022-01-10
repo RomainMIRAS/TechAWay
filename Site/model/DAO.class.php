@@ -543,7 +543,7 @@ class DAO {
 			set tyeentreprise = '{$candidat->getRenseignement()->getTypeEntreprise()}'
 			where idrenseignement = {$candidat->getRenseignement()->getId()}";
 
-			$res = @pg_query($this->db, $r);
+			$res = pg_query($this->db, $r);
 
 			if($res){
 				return true;
