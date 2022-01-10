@@ -170,7 +170,7 @@ if ($erreur == "" && $action == "suivant"){
     $_SESSION["utilisateur"]->setPrenom($prenom);
     // Cacul d'age
     $today   = new DateTime('today');
-    $age = strtotime($age)->diff($today)->y;
+    $age = $today->diff(strtotime($age))->y;
     // A FAIRE
     $_SESSION["utilisateur"]->setAge($age);
     $_SESSION["utilisateur"]->setVille($ville);
