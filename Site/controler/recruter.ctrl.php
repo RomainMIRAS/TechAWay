@@ -97,18 +97,12 @@ $mail->Subject = 'Here is the subject';
 $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
 $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
-
-
-try{
-    $mail->Send();
-    $erreur = "Le mail se partenariat a été envoyé !";
-} catch(Exception $e){
+if(!$mail->send()) {
+  $erreur = "Le mail se partenariat a été envoyé !";
+} else {
   $erreur = "Le mail n'a pas pu être envoyé - Erreur SMTP!";
-
 }
-
 }
-
 
 $view = new View();
 
