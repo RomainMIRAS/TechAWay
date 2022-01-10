@@ -8,7 +8,7 @@ class Entreprise {
   private string $telephone;    //Telephone
   private string $pays;      //Adresse du client
   private string $ville;      //Adresse du client
-  //private Offre $offres;        //liste des offres faite par l'entreprise
+  //private array $offres;        //liste des offres faite par l'entreprise
 
   // Contructeur
   function __construct(int $id , string $nom = '',string $mail = '', string $telephone = '', string $pays = '', string $ville = '') {
