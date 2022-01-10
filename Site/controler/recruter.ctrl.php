@@ -82,9 +82,9 @@ if ($erreur == "" && $action == "confirmation"){
 $mail = new PHPMailer;
 
 
-$mail->From = 'from@example.com';
+$mail->From = 'techawayteam13@gmail.com';
 $mail->FromName = 'Mailer';
-$mail->addAddress('techawayteam13@gmail.com', 'User');     // Add a recipient
+$mail->addAddress('techawayteam13@gmail.com');     // Add a recipient
 $mail->addReplyTo('info@example.com', 'Information');
 $mail->addCC('cc@example.com');
 $mail->addBCC('bcc@example.com');
