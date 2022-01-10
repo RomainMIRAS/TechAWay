@@ -63,7 +63,7 @@ if ($erreur == "" && $action == "confirmation"){
   $mail = new PHPMailer(true);
 
 //Send mail using gmail
-if($send_using_gmail){
+
     $mail->IsSMTP(); // telling the class to use SMTP
     $mail->SMTPAuth = true; // enable SMTP authentication
     $mail->SMTPSecure = "ssl"; // sets the prefix to the servier
@@ -71,11 +71,10 @@ if($send_using_gmail){
     $mail->Port = 465; // set the SMTP port for the GMAIL server
     $mail->Username = "techawayteam13@gmail.com"; // GMAIL username
     $mail->Password = "projetteam13"; // GMAIL password
-}
 
 //Typical mail data
-$mail->AddAddress("techawayteam13@gmail.com", "TechAway");
-$mail->SetFrom($mail, $nomEtreprise);
+$mail->AddAddress($mail, $nomEtreprise);
+$mail->SetFrom("techawayteam13@gmail.com", "TechAway");
 $mail->Subject = "Demande de Partenariat - $nomEntreprise";
 $mail->Body = $message;
 
