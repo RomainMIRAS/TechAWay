@@ -63,23 +63,24 @@ if ($erreur == "" && $action == "confirmation"){
   // $mail = new PHPMailer(true);
 
 //Send mail using gmail
-
-//     $mail->IsSMTP(); // telling the class to use SMTP
-//     $mail->SMTPAuth = true; // enable SMTP authentication
-//     $mail->SMTPSecure = "ssl"; // sets the prefix to the servier
-//     $mail->Host = "smtp.gmail.com"; // sets GMAIL as the SMTP server
-//     $mail->Port = 465; // set the SMTP port for the GMAIL server
-//     $mail->Username = "techawayteam13@gmail.com"; // GMAIL username
-//     $mail->Password = "projetteam13"; // GMAIL password
-//
-// $mail->From      = "$mail";
-// $mail->FromName  = "$nom $prenom";
-// $mail->Subject   = "Demande de Partenariat - $nomEntreprise";
-// $mail->Body      = $message;
-// $mail->AddAddress( 'techawayteam13@gmail.com' );
+$mail = new PHPMailer();
 
 
-$mail = new PHPMailer;
+    $mail->IsSMTP(); // telling the class to use SMTP
+    $mail->SMTPAuth = true; // enable SMTP authentication
+    $mail->SMTPSecure = "ssl"; // sets the prefix to the servier
+    $mail->Host = "smtp.gmail.com"; // sets GMAIL as the SMTP server
+    $mail->Port = 465; // set the SMTP port for the GMAIL server
+    $mail->Username = "techawayteam13@gmail.com"; // GMAIL username
+    $mail->Password = "projetteam13"; // GMAIL password
+
+$mail->From      = "$mail";
+$mail->FromName  = "$nom $prenom";
+$mail->Subject   = "Demande de Partenariat - $nomEntreprise";
+$mail->Body      = $message;
+$mail->AddAddress( 'techawayteam13@gmail.com' );
+
+
 
 
 $mail->From = 'techawayteam13@gmail.com';
@@ -89,6 +90,8 @@ $mail->addAddress('techawayteam13@gmail.com');     // Add a recipient
 $mail->Subject = 'Here is the subject';
 $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
 $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+$mail->send()
+
 
 if(!$mail->send()) {
   $erreur = "Le mail se partenariat a été envoyé !";
