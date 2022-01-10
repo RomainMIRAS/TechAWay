@@ -514,14 +514,14 @@ class DAO {
 			$lp = $this->conversionArrayString($candidat->getCompetenceAcquis()->getLangeParle());
 			$la = $this->conversionArrayString($candidat->getCompetenceAcquis()->getLangageAcquis());
 
-			$r = "UPDATE from utilisateur 
+			$r = "UPDATE utilisateur 
 			set nom = '{$candidat->getNom()}',
 			set prenom = '{$candidat->getPrenom()}',
 			set age = {$candidat->getAge()},
 			set telephone = '{$candidat->getTelephone()}'
 			where adressemail= '{$candidat->getMail()}';
 			
-			update from candidat
+			update candidat
 			set liencv = '{$candidat->getLienCv()}',
 			set lienlettremotivation = '{$candidat->getLienLM()}',
 			set etape = {$candidat->getLienLM()},
@@ -529,7 +529,7 @@ class DAO {
 			set ville = '{$candidat->getLienLM()}'
 			where idcandidat in (select idutilisateur from utilisateur where adressemail='{$candidat->getMail()}');
 			
-			update from competence
+			update competence
 			set nvetude = '{$candidat->getCompetenceAcquis()->getNvEtude()}',
 			set langueparle = '$lp',
 			set langagesacquis = '$la'
