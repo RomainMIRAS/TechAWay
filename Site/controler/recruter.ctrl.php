@@ -70,8 +70,8 @@ $mail = new PHPMailer();
     $mail->IsSMTP(); // telling the class to use SMTP
     $mail->SMTPAuth = true; // enable SMTP authentication
     $mail->Host = "smtp.gmail.com"; // sets GMAIL as the SMTP server
-    $mail->Port = 465; // set the SMTP port for the GMAIL server
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+    $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+    $mail->Port = 587; 
 
     $mail->Username = "techawayteam13@gmail.com"; // GMAIL username
     $mail->Password = "projetteam13"; // GMAIL password
