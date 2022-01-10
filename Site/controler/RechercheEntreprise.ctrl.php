@@ -60,6 +60,7 @@ foreach($offres as $o){
             }
         }
         if (!$langeEstParler) {
+            echo "$lo est inconnue";
             $scoreMatch = $scoreMatch - 10; // On enlève 10 au score si le candidat ne connait pas le langage
         }
         $langeEstParler = false;
