@@ -152,7 +152,18 @@ try{
   echo '<hr>';
 
   echo "</br>getEntreprise(idEntreprise) :  1  : doit retourner type Entreprise de id 1";
-  $testLogin = $db->getEntreprise(3);
+  $en = $db->getEntreprise(3);
+  if ($en){
+    echo '<pre>' . var_export($en, true) . '</pre>';
+  }else{
+    echo "</br>False ";
+  }
+  echo '<hr>';
+
+  $en->setNom("UbisoftFake");
+
+  echo "</br>updateEntreprise(Entreprise \$entreprise) :  update l'entreprise donne avec les nouvelles valeurs";
+  $testLogin = $db->updateEntreprise($en);
   if ($testLogin){
     echo '<pre>' . var_export($testLogin, true) . '</pre>';
   }else{
