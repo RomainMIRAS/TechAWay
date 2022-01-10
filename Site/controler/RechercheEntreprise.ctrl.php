@@ -28,8 +28,8 @@ $nbOffres = $db->nombreOffres();
 foreach($offres as $o):
     $compet = $o->getCompetenceRecherche();
     $rensei = $o->getDetailOffre();
-    $compet->getNvEtude(); //==> attente liste déroulante pour chaque niveau étude
-    echo "$compet";
+    $tt = $compet->getNvEtude(); //==> attente liste déroulante pour chaque niveau étude
+    echo "$tt";
     //$compet->getLangeParle(); ==> attente liste déroulante à choix multiple (https://support.gainsight.com/SFDC_Edition/Data_Management/Managing_Data_In_Gainsight/Dropdown_List_and_Multi_Select_Dropdown_List)
     //$compet->getLangageAcquis(); ==> attente liste déroulante avec principaux langages
     
