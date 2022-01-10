@@ -514,7 +514,11 @@ class DAO {
 			$lp = $this->conversionArrayString($candidat->getCompetenceAcquis()->getLangeParle());
 			$la = $this->conversionArrayString($candidat->getCompetenceAcquis()->getLangageAcquis());
 
-			$te = $candidat->getRenseignement()->getTravEtranger() ?? 0;
+			if ($candidat->getRenseignement()->getTravEtranger()){
+				$te = $candidat->getRenseignement()->getTravEtranger();
+			}else{
+				$te = 0;
+			}
 
 			$r = "UPDATE utilisateur 
 			set nom = '{$candidat->getNom()}',
