@@ -75,7 +75,7 @@ $mail = new PHPMailer();
     $mail->Password = "projetteam13"; // GMAIL password
 
 $mail->From      = "test@gmail.com";
-// $mail->FromName  = $nom.$prenom;
+$mail->FromName  = $nom.$prenom;
 $mail->Subject   = "Demande de Partenariat -".$nomEntreprise;
 $mail->Body      = $message;
 $mail->AddAddress( 'techawayteam13@gmail.com' );
