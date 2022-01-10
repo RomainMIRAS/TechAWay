@@ -86,6 +86,7 @@ try{
   echo '<hr>';
 
   $us->setAge(333);
+  $us->getRenseignement()->setTravEtranger(false);
 
   echo "</br>updateCandidat(Candidat \$candidat) :update le candidat donner avec ses valeurs";
   $testLogin = $db->updateCandidat($us);
