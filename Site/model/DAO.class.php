@@ -410,8 +410,14 @@ class DAO {
 			$langParle = $this->conversionArrayString($comp->getLangeParle());
 			$langAcquis = $this->conversionArrayString($comp->getLangageAcquis());
 
+			if ($rens->getTravEtranger()){
+				$te = $rens->getTravEtranger();
+			}else{
+				$te = 0;
+			}
+
 			$r = "INSERT into competence values(DEFAULT,'{$comp->getnvEtude()}', '$langParle', '$langAcquis','-2');
-			INSERT into renseignement values(DEFAULT,{$rens->getTravEtranger()}::boolean, '{$rens->getSecteur()}', '{$rens->getTypeContrat()}', '{$rens->getPoste()}', '{$rens->getTypeEntreprise()}','-2');
+			INSERT into renseignement values(DEFAULT,$te::boolean, '{$rens->getSecteur()}', '{$rens->getTypeContrat()}', '{$rens->getPoste()}', '{$rens->getTypeEntreprise()}','-2');
 			INSERT into offre values(DEFAULT,'$nom',now(),$identreprise,
 									(select idcompetence from competence where idcompetence = currval('competence_idcompetence_seq')),
 									(select idrenseignement from renseignement where idrenseignement = currval('renseignement_idrenseignement_seq')));
