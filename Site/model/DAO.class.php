@@ -524,9 +524,9 @@ class DAO {
 			update candidat
 			set liencv = '{$candidat->getLienCv()}',
 				lienlettremotivation = '{$candidat->getLienLM()}',
-				etape = {$candidat->getLienLM()},
-				pays = '{$candidat->getLienLM()}',
-				ville = '{$candidat->getLienLM()}'
+				etape = {$candidat->getEtape()},
+				pays = '{$candidat->getPays()}',
+				ville = '{$candidat->getVille()}'
 			where idcandidat in (select idutilisateur from utilisateur where adressemail='{$candidat->getMail()}');
 			
 			update competence

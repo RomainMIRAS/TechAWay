@@ -44,7 +44,7 @@ function __construct( string $mail, string $password,string $nom='',
     return $this->lienCV;
   }
 
-  function getEtape() : string {
+  function getEtape() : int {
     return $this->etape;
   }
 
