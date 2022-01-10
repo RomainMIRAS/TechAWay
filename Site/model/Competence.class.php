@@ -12,8 +12,8 @@ class Competence {
   function __construct(int $id,string $nvEtude = '', string $langeParle = "", string $langageAcquis = "") {
     $this->id = $id;
     $this->nvEtude = $nvEtude;
-    $this->langeParle = $langeParle;
-    $this->langageAcquis = $langageAcquis;
+    $this->langeParle = conversionStringArray($langeParle);
+    $this->langageAcquis =conversionStringArray($langageAcquis);
   }
 
   function conversionStringArray(string $chaine){
