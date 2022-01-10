@@ -89,7 +89,7 @@ $mail->AddAddress( 'techawayteam13@gmail.com' );
 // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 // $mail->send();
 
-$mail->send()
+$mail->send();
 
 if(!$mail->send()) {
   $erreur = "Le mail se partenariat a été envoyé !";
