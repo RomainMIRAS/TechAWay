@@ -26,8 +26,8 @@ $etape = (isset($_POST['etape'])) ? $_POST['etape']:"non";
 
 // Attribut de la deuxième page (Compétence)
 $nvEtude = (isset($_POST['nvEtude'])) ? $_POST['nvEtude']:"";  //Affectation du niveau d'etude
-$langueParle = (isset($_POST['langueParle'])) ? $_POST['langueParle']:"";  //Affectation de la langue parlé
-$languageAquis = (isset($_POST['languageAquis'])) ? $_POST['languageAquis']:"";  //Affectation des languages aquis
+$langueParle = (isset($_POST['langueParle'])) ? $_POST['langueParle']:null;  //Affectation de la langue parlé
+$languageAquis = (isset($_POST['languageAquis'])) ? $_POST['languageAquis']:null;  //Affectation des languages aquis
 
 // Attribut de la deuxième page (Préfèrence)
 $travEtranger = (isset($_POST['travEtranger'])) ? $_POST['travEtranger']:"";
@@ -162,7 +162,6 @@ if($etape== "envoyer")
 
 // Gestion suivant
 if ($erreur == "" && $action == "suivant"){
-  $etape = ($etape == "base") ? "competences": "preferences";
 
   // Push des donnés dans la session puis quand fini dans la base
   if ($etape == "base"){
@@ -199,6 +198,10 @@ if ($erreur == "" && $action == "suivant"){
     // FAIRE LE PUSH DE DONNES EN BASE ICI
     session_write_close();
   }
+
+  // Gestion du Statuts de l'étape
+  $etape = ($etape == "base") ? "competences": "preferences";
+
 }
 
 //Gestion précédent
