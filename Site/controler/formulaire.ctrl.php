@@ -198,8 +198,7 @@ if ($erreur == "" && $action == "suivant"){
     $renseignement->setSecteur($secteur);
     $renseignement->setPoste($poste);
     $renseignement->setTypeEntreprise($typeEntreprise);
-
-
+    $_SESSION["utilisateur"]->setPreference($renseignement);
     // FAIRE LE PUSH DE DONNES EN BASE ICI
     session_write_close();
   }
