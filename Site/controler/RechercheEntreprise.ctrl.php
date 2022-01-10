@@ -68,8 +68,10 @@ foreach($offres as $o){
         $langeEstParler = false;
     }
 
-
+$t1 = $competCandid->getNvEtude();
+$t2 = $competOffre->getNvEtude();
     //Niveau d'étude
+    echo "$t1 ainsi que $t2<br/>";
     if ($competCandid->getNvEtude() == $competOffre->getNvEtude()) {
         $scoreMatch = $scoreMatch + 6; // On ajoute 6 au score si le niveau d'étude est identique entre l'offre et le candidat
     } else {
