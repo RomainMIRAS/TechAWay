@@ -1,4 +1,10 @@
 <?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require '/root/PHPMailer/src/Exception.php';
+require '/root/PHPMailer/src/PHPMailer.php';
+require '/root/PHPMailer/src/SMTP.php';
 
 include_once(__DIR__."/../framework/view.class.php");
 
@@ -40,14 +46,6 @@ else if($nomEntreprise == "" )
 }
 
 if ($erreur == "" && $action == "confirmation"){
-
-  use PHPMailer\PHPMailer\PHPMailer;
-  use PHPMailer\PHPMailer\Exception;
-
-  require '/root/PHPMailer/src/Exception.php';
-  require '/root/PHPMailer/src/PHPMailer.php';
-  require '/root/PHPMailer/src/SMTP.php';
-
 
   $message =
   "Vous avez reçu une demande de partenariat !\r\n
