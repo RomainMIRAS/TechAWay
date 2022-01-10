@@ -200,10 +200,14 @@ if ($erreur == "" && $action == "suivant"){
     $_SESSION["utilisateur"]->setPreference($renseignement);
     $_SESSION["utilisateur"]->setEtape(1);
 
-
-    DAO::get()->updateCandidat($_SESSION["utilisateur"]);
-    // FAIRE LE PUSH DE DONNES EN BASE ICI
     session_write_close();
+
+    // FAIRE LE PUSH DE DONNES EN BASE ICI
+    DAO::get()->updateCandidat($_SESSION["utilisateur"]);
+
+    // Redirection sur la page principale
+    header('Location: main.ctrl.php');
+
   }
 
   // Gestion du Statuts de l'étape
