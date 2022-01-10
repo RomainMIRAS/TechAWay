@@ -26,42 +26,55 @@ $nbOffres = $db->nombreOffres();
 $scoresMatch = array();
 
 
-foreach($offres as $o):
+foreach($offres as $o){
     $scoreMatch = 0;
     $competOffre = $o->getCompetenceRecherche();
     $renseiOffre = $o->getDetailOffre();
     $competCandid = $candidat->getCompetenceAcquis();
     $renseiCandid = $candidat->getRenseignement();
 
-foreach ($competOffre->getLangageAcquis() as $lo) {
-    echo "$lo";
-}
 
     //Langue parlé
-    foreach ($competOffre->getLangeParle() as $lo):
+    foreach ($competOffre->getLangeParle() as $lo) {
         $langeEstParler = false;
-        foreach ($competCandid->getLangeParle() as $lc):
+        foreach ($competCandid->getLangeParle() as $lc){
             if ($lo == $lc) {
                 $scoreMatch = $scoreMatch + 10; // On ajoute 10 au score si la langue est parler
                 $langeEstParler = true;
             }
-        endforeach;
+        }
         if (!$langeEstParler) {
-            $scoreMatch = $scoreMatch - 10; // On enlève 10 au score si la langue n'est pas parler
+            $scoreMatch = $scoreMatch - 8; // On enlève 8 au score si la langue n'est pas parler
         }
         $langeEstParler = false;
-    endforeach;
+    }
+
+
+//Langage connue
+    foreach ($competOffre->getLangageAcquis() as $lo) {
+        $langeEstParler = false;
+        foreach ($competCandid->getLangageAcquis() as $lc){
+            if ($lo == $lc) {
+                $scoreMatch = $scoreMatch + 8; // On ajoute 8 au score si le langage est connue
+                $langeEstParler = true;
+            }
+        }
+        if (!$langeEstParler) {
+            $scoreMatch = $scoreMatch - 10; // On enlève 10 au score si le candidat ne connait pas le langage
+        }
+        $langeEstParler = false;
+    }
 
 
     //Niveau d'étude
     if ($competCandid->getNvEtude() == $competOffre->getNvEtude()) {
         $scoreMatch = $scoreMatch + 6; // On ajoute 6 au score si le niveau d'étude est identique entre l'offre et le candidat
     } else {
-        $scoreMatch = $scoreMatch - 8; // On enleve 8 au score si le niveau d'étude du candidat est inférieur à celui de l'offre
+        $scoreMatch = $scoreMatch - 6; // On enleve 8 au score si le niveau d'étude du candidat est inférieur à celui de l'offre
     }
-
+    echo "$scoreMatch";
     array_push($scoresMatch,$scoreMatch);
-endforeach;
+}
 
 ///////////////////////////////////////////////////////////////////////////////
 // Partie View
