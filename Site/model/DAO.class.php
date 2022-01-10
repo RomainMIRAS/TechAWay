@@ -579,9 +579,8 @@ class DAO {
 			}
 
 			$r = "UPDATE offre
-
-			where idoffre = {$offre->getId()};
 			set nomoffre = '{$offre->getNomOffre()}'
+			where idoffre = {$offre->getId()};
 			update competence
 			set	nvetude = '{$offre->getCompetenceRecherche()->getNvEtude()}',
 				langueparle = '$lp',
