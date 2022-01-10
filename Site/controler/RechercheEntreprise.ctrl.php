@@ -25,7 +25,9 @@ $nbOffres = $db->nombreOffres();
 
 $scoresMatch = array();
 
+$uwu = $candidat->getCompetenceAcquis()->getId();
 
+echo "$uwu";
 foreach($offres as $o){
     $ii = $o->getId();
     echo "Offre n°$ii : <br/>";
