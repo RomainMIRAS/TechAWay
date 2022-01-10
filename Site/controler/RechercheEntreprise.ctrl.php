@@ -27,6 +27,8 @@ $scoresMatch = array();
 
 
 foreach($offres as $o){
+    $ii = $o->getId();
+    echo "/////$ii";
     $scoreMatch = 0;
     $competOffre = $o->getCompetenceRecherche();
     $renseiOffre = $o->getDetailOffre();
@@ -60,6 +62,7 @@ foreach($offres as $o){
             }
         }
         if (!$langeEstParler) {
+            echo "$lo est inconnue";
             $scoreMatch = $scoreMatch - 10; // On enlève 10 au score si le candidat ne connait pas le langage
         }
         $langeEstParler = false;
