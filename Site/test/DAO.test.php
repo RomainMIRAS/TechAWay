@@ -178,15 +178,15 @@ try{
     echo "</br>False ";
   }
 
-  //echo '<hr>';
+  echo '<hr>';
 
-  //echo "</br>deleteEntreprise('entreprise@mail.com') :  returns True";
- //$testLogin = $db->deleteEntreprise($entreprise);
-  //if ($testLogin){
-  //  echo '<pre>' . var_export($testLogin, true) . '</pre>';
-  //}else{
-  //  echo "</br>False ";
-  //}
+  echo "</br>deleteEntreprise('entreprise@mail.com') :  returns True";
+  $testLogin = $db->deleteEntreprise($entreprise);
+  if ($testLogin){
+    echo '<pre>' . var_export($testLogin, true) . '</pre>';
+  }else{
+    echo "</br>False ";
+  }
 
   echo '<hr>';
 
