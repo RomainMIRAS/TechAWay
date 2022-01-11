@@ -170,7 +170,6 @@ try{
     echo "</br>False ";
   }
   echo '<hr>';
-  $mail,$nom ='',$telephone = '',$pays='', $ville =''
   echo "</br>creeEntreprise('entreprise@mail.com')  : doit retourner true";
   $entreprise = $db->creeEntreprise('entreprise@mail.com', 'NomEntrePriseB','07 07 07 07 07','France','Paris');
   if ($entreprise){
