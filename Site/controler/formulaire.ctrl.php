@@ -184,7 +184,6 @@ if ($erreur == "" && $action == "suivant"){
     $_SESSION["utilisateur"]->setVille($ville);
     $_SESSION["utilisateur"]->setTelephone($telephone);
     $_SESSION["utilisateur"]->setPays($pays);
-    echo '<pre>' . var_export($_SESSION["utilisateur"], true) . '</pre>';
     session_write_close();
   } else if ($etape == "competences") {
     session_start();
@@ -195,7 +194,6 @@ if ($erreur == "" && $action == "suivant"){
     $competence->setLangageAcquis($languageAquis);
     $_SESSION["utilisateur"]->setCompetenceAcquis($competence);
     session_write_close();
-    echo '<pre>' . var_export($_SESSION["utilisateur"], true) . '</pre>';
 
   } else if ($etape == "preferences") {
     session_start();
