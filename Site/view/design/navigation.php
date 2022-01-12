@@ -72,3 +72,5 @@ session_start();
       <?php endif; ?>
     </ul>
 </nav>
+<?php session_write_close();
+ ?>
