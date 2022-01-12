@@ -17,7 +17,7 @@ $prenom = (isset($_POST['prenom'])) ? $_POST['prenom']:"";
 $age = (isset($_POST['age'])) ? $_POST['age']:"";
 
 // Attribut de la première page ( BASE )
-$telephone = (isset($_POST['tel'])) ? $_POST['tel']:"";
+$telephone = (isset($_POST['telephone'])) ? $_POST['telephone']:"";
 $tellength= strlen($telephone);
 $ville = (isset($_POST['ville'])) ? $_POST['ville']:"";
 $pays = (isset($_POST['pays'])) ? $_POST['pays']:"";
@@ -83,7 +83,7 @@ if($action== "suivant" && $etape == "base")
   // }
 
 
-  else if($tel == "")
+  else if($telephone == "")
   {
     $erreur = "Le telephone doit etre rempli et correct";
   }
@@ -91,7 +91,7 @@ if($action== "suivant" && $etape == "base")
   {
     $erreur = "Le telephone doit être au format indiqué";
   }
-  else if(preg_match('/^[0-9]+$/i', $tel) == false)
+  else if(preg_match('/^[0-9]+$/i', $telephone) == false)
   {
     $erreur = "Le telephone doit etre composé de chiffre";
   }
