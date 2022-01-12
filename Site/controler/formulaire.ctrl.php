@@ -200,7 +200,7 @@ if ($erreur == "" && $action == "suivant"){
     $renseignement->setTypeEntreprise($typeEntreprise);
     $_SESSION["utilisateur"]->setPreference($renseignement);
     $_SESSION["utilisateur"]->setEtape(1);
-    var_dump($_SESSION["utilisateur"])
+    var_dump($_SESSION["utilisateur"]);
 
     session_write_close();
 
