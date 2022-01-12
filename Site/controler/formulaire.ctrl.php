@@ -17,7 +17,7 @@ $prenom = (isset($_POST['prenom'])) ? $_POST['prenom']:"";
 $age = (isset($_POST['age'])) ? $_POST['age']:"";
 
 // Attribut de la première page ( BASE )
-$tel = (isset($_POST['tel'])) ? $_POST['tel']:"";
+$telephone = (isset($_POST['tel'])) ? $_POST['tel']:"";
 $tellength= strlen($tel);
 $ville = (isset($_POST['ville'])) ? $_POST['ville']:"";
 $pays = (isset($_POST['pays'])) ? $_POST['pays']:"";
@@ -179,6 +179,7 @@ if ($erreur == "" && $action == "suivant"){
     //$_SESSION["utilisateur"]->setMail("changement de mail");
     $_SESSION["utilisateur"]->setAge($age);
     $_SESSION["utilisateur"]->setVille($ville);
+    $_SESSION["utilisateur"]->setTelephone($telephone);
     $_SESSION["utilisateur"]->setPays($pays);
     echo '<pre>' . var_export($_SESSION["utilisateur"], true) . '</pre>';
     session_write_close();
