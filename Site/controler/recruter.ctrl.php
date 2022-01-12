@@ -81,7 +81,6 @@ else if($message == "" )
     {
       $erreur = "Le nom de l'entreprise doit etre rempli";
     }
-}
 
 }
 
