@@ -31,7 +31,6 @@ function smtpmailer($to, $from, $from_name, $subject, $body) {
         $error = 'Mail error: '.$mail->ErrorInfo;
         return false;
     } else {
-        $error = 'Message sent!';
         return true;
     }
 }
