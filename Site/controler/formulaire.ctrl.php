@@ -59,19 +59,19 @@ if($action== "suivant" && $etape == "base")
   {
     $erreur = "Le nom doit etre rempli";  // Si nom est vide --> erreur
   }
-  else if(preg_match('/^[a-z]+$/i', $nom) == false)
-  {
-    $erreur = "Le nom doit etre composé de lettres seulement"; // Si nom n'est pas en lettre --> erreur
-  }
+  // else if(preg_match('/^[a-z]+$/i', $nom) == false)
+  // {
+  //   $erreur = "Le nom doit etre composé de lettres seulement"; // Si nom n'est pas en lettre --> erreur
+  // }
   // Si aucune langue selectionné
   else if($prenom == "" )
   {
     $erreur = "Le prenom doit etre rempli";  // Si prenom est vide --> erreur
   }
-  else if(ctype_alpha($prenom)) == false)
-  {
-    $erreur = "Le prenom doit etre composé de lettres seulement"; // Si prenom n'est pas en lettre --> erreur
-  }
+  // else if(preg_match('/^[a-z]+$/i', $prenom) == false)
+  // {
+  //   $erreur = "Le prenom doit etre composé de lettres seulement"; // Si prenom n'est pas en lettre --> erreur
+  // }
   // Si age incorrect
   else if($age == "")
   {
@@ -99,10 +99,10 @@ if($action== "suivant" && $etape == "base")
   {
     $erreur = "La ville doit etre rempli";  // Si ville est vide --> erreur
   }
-  else if(preg_match('/^[a-z]+$/i', $ville) == false)
-  {
-    $erreur = "La ville doit etre composé de lettres seulement"; // Si ville n'est pas en lettre --> erreur
-  }
+  // else if(preg_match('/^[a-z]+$/i', $ville) == false)
+  // {
+  //   $erreur = "La ville doit etre composé de lettres seulement"; // Si ville n'est pas en lettre --> erreur
+  // }
   else{
     $etape = (isset($_POST['etape'])) ? $_POST['etape']: 'base';
   }
