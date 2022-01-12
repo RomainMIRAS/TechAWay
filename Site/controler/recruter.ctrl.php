@@ -27,7 +27,7 @@ function smtpmailer($to, $from, $from_name, $subject, $body) {
     $mail->Subject = $subject;
     $mail->Body = $body;
     $mail->AddAddress($to);
-    if(!$mail->Send()) {
+    if(!$mail->send()) {
         $error = 'Mail error: '.$mail->ErrorInfo;
         return false;
     } else {
@@ -105,7 +105,7 @@ if ($erreur == "" && $action == "confirmation"){
 $result = smtpmailer('techawayteam13@gmail.com', $mail, $nom,"Demande de Partenariat - $nomEntreprise",$body);
 
 
-if (true !== $result){
+if (true != $result){
 	// erreur -- traiter l'erreur
   $erreur = "Le mail n'a pas pu être envoyé - $error";
 } else {
