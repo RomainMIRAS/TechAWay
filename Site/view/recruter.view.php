@@ -32,7 +32,7 @@
     <main id = "mainRecruter">
 
       <section id="section1"> <!-- section Accueil -->
- 
+
         <article id="article1">
 
           <div>
@@ -81,7 +81,7 @@
           <input id="nomEntreprise" type="text" name="nomEntreprise" placeholder="Nom de l'entreprise" >
           <form action ="recruter.ctrl.php" method="post">
           <label for="">Message</label>
-          <textarea name="" id="" cols="30" rows="10"></textarea>
+          <textarea name="message" id="message" cols="30" rows="10"></textarea>
           <output><?=$erreur?></output>
           <button type="submit" name="action" value="confirmation">Envoyer</button>
        </form>

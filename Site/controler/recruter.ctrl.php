@@ -44,6 +44,8 @@ $nom = (isset($_POST['nom'])) ? $_POST['nom']:"";
 $prenom = (isset($_POST['prenom'])) ? $_POST['prenom']:"";
 $mail = (isset($_POST['email'])) ? $_POST['email']:"";
 $nomEntreprise = (isset($_POST['nomEntreprise'])) ? $_POST['nomEntreprise']:"";
+$message = (isset($_POST['message'])) ? $_POST['message']:"";
+
 
 
 $erreur = "";
@@ -76,15 +78,22 @@ else if($nomEntreprise == "" )
     }
 }
 
+else if($message == "" )
+    {
+      $erreur = "Le nom de l'entreprise doit etre rempli";
+    }
+}
+
 if ($erreur == "" && $action == "confirmation"){
 
-  $message =
+  $body =
   "Vous avez reçu une demande de partenariat !\r\n
   \r\n----------------------
   Prénom : $prenom \r\n
   Nom : $nom \r\n
   Mail : $mail \r\n
   Nom de l'entreprise : $nomEntreprise \r\n
+  Message : $message
   ----------------------
   ";
 
@@ -93,7 +102,7 @@ if ($erreur == "" && $action == "confirmation"){
 
 //Send mail using gmail
 
-$result = smtpmailer('techawayteam13@mail.com', $mail, $nom,"Demande de Partenariat - $nomEntreprise",$message);
+$result = smtpmailer('techawayteam13@gmail.com', $mail, $nom,"Demande de Partenariat - $nomEntreprise",$body);
 
 
 if (true !== $result){
