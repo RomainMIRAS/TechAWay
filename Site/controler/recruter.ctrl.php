@@ -6,6 +6,32 @@ require '/var/www/html/PHPMailer/src/Exception.php';
 require '/var/www/html/PHPMailer/src/PHPMailer.php';
 require '/var/www/html/PHPMailer/src/SMTP.php';
 
+define('GMailUSER', 'techawayteam13@gmail.com'); // utilisateur Gmail
+define('GMailPWD', 'projetteam13'); // Mot de passe Gmail
+
+
+function smtpMailer($to, $from, $from_name, $subject, $body) {
+	$mail = new PHPMailer();  // Cree un nouvel objet PHPMailer
+	$mail->IsSMTP(); // active SMTP
+	$mail->SMTPDebug = 0;  // debogage: 1 = Erreurs et messages, 2 = messages seulement
+	$mail->SMTPAuth = true;  // Authentification SMTP active
+	$mail->SMTPSecure = 'ssl'; // Gmail REQUIERT Le transfert securise
+	$mail->Host = 'smtp.gmail.com';
+	$mail->Port = 465;
+	$mail->Username = GMailUser;
+	$mail->Password = GMailPWD;
+	$mail->SetFrom($from, $from_name);
+	$mail->Subject = $subject;
+	$mail->Body = $body;
+	$mail->AddAddress($to);
+	if(!$mail->Send()) {
+		return 'Mail error: '.$mail->ErrorInfo;
+	} else {
+		return true;
+	}
+}
+
+
 include_once(__DIR__."/../framework/view.class.php");
 
 
@@ -47,10 +73,6 @@ else if($nomEntreprise == "" )
 
 if ($erreur == "" && $action == "confirmation"){
 
-try {
-  $erreur = "Le mail se partenariat a été envoyé !";
-
-
   $message =
   "Vous avez reçu une demande de partenariat !\r\n
   \r\n----------------------
@@ -65,39 +87,16 @@ try {
   // $message = wordwrap($message, 70, "\r\n");
 
 //Send mail using gmail
-$mail = new PHPMailer();
 
-    $mail->IsSMTP(); // telling the class to use SMTP
-    $mail->Host = "smtp.gmail.com"; // sets GMAIL as the SMTP server
-    $mail->SMTPAuth = true; // enable SMTP authentication
-    $mail->Username = "techawayteam13@gmail.com"; // GMAIL username
-    $mail->Password = "projetteam13"; // GMAIL password
-    $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
-    $mail->Port = 587;
-
-$mail->From = "test@gmail.com";
-// $mail->FromName  = $nom.$prenom;
-$mail->AddAddress( 'techawayteam13@gmail.com','Team TechAWay');
-
-$mail->Subject   = "Demande de Partenariat -";
-$mail->Body      = "Please marche";
+$result = smtpmailer('techawayteam13@mail.com', $mail, $nom, $message, "Demande de Partenariat - $nomEntreprise");
 
 
-
-
-// $mail->From = 'techawayteam13@gmail.com';
-// $mail->FromName = 'Mailer';
-// $mail->addAddress('techawayteam13@gmail.com');     // Add a recipient
-// $mail->Subject = 'Here is the subject';
-// $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
-// $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
-// $mail->send();
-
-$mail->send();
-
-  }catch (Exception $e) {
-    $erreur = "Le mail n'a pas pu être envoyé - Erreur SMTP!";
-  }
+if (true !== $result){
+	// erreur -- traiter l'erreur
+  $erreur = "Le mail n'a pas pu être envoyé - Erreur SMTP!";
+} else {
+  $erreur = "Le mail se partenariat a été envoyé !";
+}
 
 
 }
