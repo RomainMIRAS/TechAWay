@@ -6,6 +6,10 @@ include_once(__DIR__."/../model/Utilisateur.class.php");
 include_once(__DIR__."/../model/Candidat.class.php");
 include_once(__DIR__."/../model/Renseignement.class.php");
 
+session_start();
+var_dump($_SESSION["utilisateur"]);
+
+session_write_close();
 
 //-------------------Affectation des variables
 
@@ -192,6 +196,7 @@ if ($erreur == "" && $action == "suivant"){
     session_write_close();
   } else if ($etape == "preferences") {
     session_start();
+    var_dump($_SESSION["utilisateur"]);
     $renseignement = $_SESSION["utilisateur"]->getRenseignement();
     $renseignement->setTravEtranger($travEtranger);
     $renseignement->setTypeContrat($typeContrat);
@@ -200,7 +205,6 @@ if ($erreur == "" && $action == "suivant"){
     $renseignement->setTypeEntreprise($typeEntreprise);
     $_SESSION["utilisateur"]->setPreference($renseignement);
     $_SESSION["utilisateur"]->setEtape(1);
-    var_dump($_SESSION["utilisateur"]);
 
     session_write_close();
 
@@ -208,7 +212,7 @@ if ($erreur == "" && $action == "suivant"){
     DAO::get()->updateCandidat($_SESSION["utilisateur"]);
 
     // Redirection sur la page principale
-    // header('Location: main.ctrl.php');
+    header('Location: main.ctrl.php');
     $erreur = "Marche pas ";
   }
 
