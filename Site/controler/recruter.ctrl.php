@@ -18,7 +18,7 @@ function smtpMailer($to, $from, $from_name, $subject, $body) {
 	$mail->SMTPSecure = 'ssl'; // Gmail REQUIERT Le transfert securise
 	$mail->Host = 'smtp.gmail.com';
 	$mail->Port = 465;
-	$mail->Username = GMailUser;
+	$mail->Username = GMailUSER;
 	$mail->Password = GMailPWD;
 	$mail->SetFrom($from, $from_name);
 	$mail->Subject = $subject;
