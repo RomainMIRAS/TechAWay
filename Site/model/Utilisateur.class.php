@@ -67,8 +67,8 @@ abstract class Utilisateur {
     $this->password = $password;
   }
 
-  function setTelephone(string $telpehone) : void {
-    $this->telpehone = $telpehone;
+  function setTelephone(string $telephone) : void {
+    $this->telephone = $telephone;
   }
 
   function setAge(int $age) : void {
