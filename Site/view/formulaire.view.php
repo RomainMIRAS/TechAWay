@@ -88,24 +88,24 @@
                       <option value="bac+7" >Bac +7</option>
                       <option value="bac+8" >Bac +8</option>
               </select>
-              <label for="langueParle">Langues parlé</label>
-                <input type="checkbox" name="langueParle" value="francais" selected>Français</option>
-                <input type="checkbox" name="langueParle" value="anglais" >Anglais</option>
-                <input type="checkbox" name="langueParle" value="espagnole" >Espagnole</option>
-                <input type="checkbox" name="langueParle" value="italien" >Italien</option>
-                <input type="checkbox" name="langueParle" value="allemand">Allemand</option>
-                <input type="checkbox" name="langueParle" value="albanais">Albanais</option>
-              <label for="languageAquis">Languages aquis</label>
-                <input type="checkbox" name="languageAquis" value="php" selected>PHP</option>
-                <input type="checkbox" name="languageAquis" value="hmtl/css" >HTML/CSS</option>
-                <input type="checkbox" name="languageAquis" value="c" >C#, C ou C++</option>
-                <input type="checkbox" name="languageAquis" value="python" >Python</option>
-                <input type="checkbox" name="languageAquis" value="perl">PERL</option>
-                <input type="checkbox" name="languageAquis" value="java">Java</option>
-                <input type="checkbox" name="languageAquis" value="ruby">Ruby</option>
-                <input type="checkbox" name="languageAquis" value="swift">Swift</option>
-                <input type="checkbox" name="languageAquis" value="julia">Julia</option>
-                <input type="checkbox" name="languageAquis" value="scala">Scala</option>
+              <label for="langueParle[]">Langues parlé</label>
+                <input type="checkbox" name="langueParle[]" value="francais" selected>Français</option>
+                <input type="checkbox" name="langueParle[]" value="anglais" >Anglais</option>
+                <input type="checkbox" name="langueParle[]" value="espagnole" >Espagnole</option>
+                <input type="checkbox" name="langueParle[]" value="italien" >Italien</option>
+                <input type="checkbox" name="langueParle[]" value="allemand">Allemand</option>
+                <input type="checkbox" name="langueParle[]" value="albanais">Albanais</option>
+              <label for="languageAquis[]">Languages aquis</label>
+                <input type="checkbox" name="languageAquis[]" value="php" selected>PHP</option>
+                <input type="checkbox" name="languageAquis[]" value="hmtl/css" >HTML/CSS</option>
+                <input type="checkbox" name="languageAquis[]" value="c" >C#, C ou C++</option>
+                <input type="checkbox" name="languageAquis[]" value="python" >Python</option>
+                <input type="checkbox" name="languageAquis[]" value="perl">PERL</option>
+                <input type="checkbox" name="languageAquis[]" value="java">Java</option>
+                <input type="checkbox" name="languageAquis[]" value="ruby">Ruby</option>
+                <input type="checkbox" name="languageAquis[]" value="swift">Swift</option>
+                <input type="checkbox" name="languageAquis[]" value="julia">Julia</option>
+                <input type="checkbox" name="languageAquis[]" value="scala">Scala</option>
               <form action ="formulaire.ctrl.php" method="post">
               <output><?=$erreur?></output>
               <button type="submit" name="action" value="precedent">Precedent</button>
