@@ -21,8 +21,8 @@ function smtpmailer($to, $from, $from_name, $subject, $body) {
     $mail->Host = 'smtp.gmail.com';
     $mail->Port = 587;
 
-    $mail->Username = GUSER;
-    $mail->Password = GPWD;
+    $mail->Username = GMailUSER;
+    $mail->Password = GMailPWD;
     $mail->SetFrom($from, $from_name);
     $mail->Subject = $subject;
     $mail->Body = $body;
