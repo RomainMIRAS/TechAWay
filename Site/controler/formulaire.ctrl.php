@@ -23,6 +23,9 @@ $ville = (isset($_POST['ville'])) ? $_POST['ville']:"";
 $pays = (isset($_POST['pays'])) ? $_POST['pays']:"";
 $etape = (isset($_POST['etape'])) ? $_POST['etape']:"non";
 
+if(isset($_POST['langueParle'])){
+  var_dump($_POST['langueParle']);
+}
 
 // Attribut de la deuxième page (Compétence)
 $nvEtude = (isset($_POST['nvEtude'])) ? $_POST['nvEtude']:"";  //Affectation du niveau d'etude
