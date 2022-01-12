@@ -68,7 +68,7 @@ if($action== "suivant" && $etape == "base")
   {
     $erreur = "Le prenom doit etre rempli";  // Si prenom est vide --> erreur
   }
-  else if(preg_match('/^[a-z]+$/i', $prenom) == false)
+  else if(ctype_alpha($prenom)) == false)
   {
     $erreur = "Le prenom doit etre composé de lettres seulement"; // Si prenom n'est pas en lettre --> erreur
   }
