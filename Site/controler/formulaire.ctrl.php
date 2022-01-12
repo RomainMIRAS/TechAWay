@@ -188,8 +188,8 @@ if ($erreur == "" && $action == "suivant"){
     $competence = $_SESSION["utilisateur"]->getCompetenceAcquis();
 
     $competence->setNvEtude($nvEtude);
-    $competence->setLangeParle($langueParle[]);
-    $competence->setLangageAcquis($languageAquis[]);
+    $competence->setLangeParle($langueParle);
+    $competence->setLangageAcquis($languageAquis);
     $_SESSION["utilisateur"]->setCompetenceAcquis($competence);
     session_write_close();
     echo '<pre>' . var_export($_SESSION["utilisateur"], true) . '</pre>';
