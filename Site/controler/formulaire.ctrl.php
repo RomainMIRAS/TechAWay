@@ -23,10 +23,6 @@ $ville = (isset($_POST['ville'])) ? $_POST['ville']:"";
 $pays = (isset($_POST['pays'])) ? $_POST['pays']:"";
 $etape = (isset($_POST['etape'])) ? $_POST['etape']:"non";
 
-if(isset($_POST['langueParle'])){
-  var_dump($_POST['langueParle']);
-}
-
 // Attribut de la deuxième page (Compétence)
 $nvEtude = (isset($_POST['nvEtude'])) ? $_POST['nvEtude']:"";  //Affectation du niveau d'etude
 $langueParle[] = (isset($_POST['langueParle'])) ? $_POST['langueParle']:null;  //Affectation de la langue parlé
@@ -197,7 +193,6 @@ if ($erreur == "" && $action == "suivant"){
 
   } else if ($etape == "preferences") {
     session_start();
-    var_dump($_SESSION["utilisateur"]);
     $renseignement = $_SESSION["utilisateur"]->getRenseignement();
     $renseignement->setTravEtranger($travEtranger);
     $renseignement->setTypeContrat($typeContrat);
