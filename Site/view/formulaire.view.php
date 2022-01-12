@@ -159,7 +159,7 @@
               <output><?=$erreur?></output>
               <form action ="formulaire.ctrl.php" method="post">
               <button type="submit" name="action" value="precedent">Precedent</button>
-              <button type="submit" name="action" value="confirmation">Envoyer</button>
+              <button type="submit" name="action" value="suivant">Envoyer</button>
               <input type="hidden" name="etape" value="preferences">
               </form>
           </section>
