@@ -29,8 +29,9 @@ if(isset($_POST['langueParle'])){
 
 // Attribut de la deuxième page (Compétence)
 $nvEtude = (isset($_POST['nvEtude'])) ? $_POST['nvEtude']:"";  //Affectation du niveau d'etude
-$langueParle[] = $_REQUEST['checkboxvar'];  //Affectation de la langue parlé
-$languageAquis[] = $_REQUEST['checkboxvar'];  //Affectation des languages aquis
+
+$langueParle[] = $_REQUEST['langueParle'];  //Affectation de la langue parlé
+$languageAquis[] = $_REQUEST['languageAquis'];  //Affectation des languages aquis
 
 // Attribut de la deuxième page (Préfèrence)
 $travEtranger = (isset($_POST['travEtranger'])) ? $_POST['travEtranger']:"";
