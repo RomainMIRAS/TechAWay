@@ -15,9 +15,9 @@ function smtpMailer($to, $from, $from_name, $subject, $body) {
 	$mail->IsSMTP(); // active SMTP
 	$mail->SMTPDebug = 0;  // debogage: 1 = Erreurs et messages, 2 = messages seulement
 	$mail->SMTPAuth = true;  // Authentification SMTP active
-	$mail->SMTPSecure = 'ssl'; // Gmail REQUIERT Le transfert securise
+	$mail->SMTPSecure = 'tls'; // Gmail REQUIERT Le transfert securise
 	$mail->Host = 'smtp.gmail.com';
-	$mail->Port = 465;
+	$mail->Port = 587;
 	$mail->Username = GMailUSER;
 	$mail->Password = GMailPWD;
 	$mail->SetFrom($from, $from_name);
