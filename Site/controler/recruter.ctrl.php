@@ -93,7 +93,7 @@ $result = smtpmailer('techawayteam13@mail.com', $mail, $nom, $message, "Demande 
 
 if (true !== $result){
 	// erreur -- traiter l'erreur
-  $erreur = "Le mail n'a pas pu être envoyé - Erreur SMTP!";
+  $erreur = "Le mail n'a pas pu être envoyé - $result";
 } else {
   $erreur = "Le mail se partenariat a été envoyé !";
 }
