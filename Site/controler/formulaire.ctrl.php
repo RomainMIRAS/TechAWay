@@ -5,6 +5,8 @@ include_once(__DIR__."/../framework/view.class.php");
 include_once(__DIR__."/../model/Utilisateur.class.php");
 include_once(__DIR__."/../model/Candidat.class.php");
 include_once(__DIR__."/../model/Renseignement.class.php");
+include_once(__DIR__."/../model/DAO.class.php");
+
 
 session_start();
 echo '<pre>' . var_export($_SESSION["utilisateur"], true) . '</pre>';
