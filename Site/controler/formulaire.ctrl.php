@@ -176,7 +176,7 @@ if ($erreur == "" && $action == "suivant"){
     // $diff = date_diff(date_create($dateOfBirth), date_create($today));
 
     // A FAIRE
-    $_SESSION["utilisateur"]->setMail("changement de mail");
+    //$_SESSION["utilisateur"]->setMail("changement de mail");
     $_SESSION["utilisateur"]->setAge($age);
     $_SESSION["utilisateur"]->setVille($ville);
     $_SESSION["utilisateur"]->setPays($pays[0]);
@@ -200,6 +200,7 @@ if ($erreur == "" && $action == "suivant"){
     $renseignement->setTypeEntreprise($typeEntreprise);
     $_SESSION["utilisateur"]->setPreference($renseignement);
     $_SESSION["utilisateur"]->setEtape(1);
+    var_dump($_SESSION["utilisateur"])
 
     session_write_close();
 
