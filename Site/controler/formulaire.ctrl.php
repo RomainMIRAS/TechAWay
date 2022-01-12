@@ -7,12 +7,6 @@ include_once(__DIR__."/../model/Candidat.class.php");
 include_once(__DIR__."/../model/Renseignement.class.php");
 include_once(__DIR__."/../model/DAO.class.php");
 
-
-session_start();
-echo '<pre>' . var_export($_SESSION["utilisateur"], true) . '</pre>';
-
-session_write_close();
-
 //-------------------Affectation des variables
 
 //$etape = (isset($_POST['etape'])) ? $_POST['etape']:"NPE";  //Declaration d'étapes
@@ -26,7 +20,7 @@ $age = (isset($_POST['age'])) ? $_POST['age']:"";
 $tel = (isset($_POST['tel'])) ? $_POST['tel']:"";
 $tellength= strlen($tel);
 $ville = (isset($_POST['ville'])) ? $_POST['ville']:"";
-$ville = (isset($_POST['pays'])) ? $_POST['pays']:"";
+$pays = (isset($_POST['pays'])) ? $_POST['pays']:"";
 $etape = (isset($_POST['etape'])) ? $_POST['etape']:"non";
 
 
@@ -44,7 +38,7 @@ $typeEntreprise = (isset($_POST['typeEntreprise'])) ? $_POST['typeEntreprise']:"
 
 $erreur = "";
 
-$pays = array('Allemagne','Autriche','Andorre','Belgique','Boznie Herzegovine','Bulgarie','Chypre','Croatie','Danemark','Espagne','Estonie','Finlande','France','Gibraltar','Grece','Hongrie','Irlande','Islande','italie','Lettonie','Liechtenstein','Lituanie','Luxembourg','Malte','Monaco','Norvege','Pays Bas','Pays de Galle','Pologne','Portugal','Republique Tcheque','Roumanie','Royaume Uni','Russie','Slovaquie','Slovenie','Suede','Suisse','Ukraine','Vatican');
+$listepays = array('Allemagne','Autriche','Andorre','Belgique','Boznie Herzegovine','Bulgarie','Chypre','Croatie','Danemark','Espagne','Estonie','Finlande','France','Gibraltar','Grece','Hongrie','Irlande','Islande','italie','Lettonie','Liechtenstein','Lituanie','Luxembourg','Malte','Monaco','Norvege','Pays Bas','Pays de Galle','Pologne','Portugal','Republique Tcheque','Roumanie','Royaume Uni','Russie','Slovaquie','Slovenie','Suede','Suisse','Ukraine','Vatican');
 
 $action = (isset($_POST['action'])) ? $_POST['action']: 'formulaire';
 
@@ -185,7 +179,8 @@ if ($erreur == "" && $action == "suivant"){
     //$_SESSION["utilisateur"]->setMail("changement de mail");
     $_SESSION["utilisateur"]->setAge($age);
     $_SESSION["utilisateur"]->setVille($ville);
-    $_SESSION["utilisateur"]->setPays($pays[0]);
+    $_SESSION["utilisateur"]->setPays($pays);
+    echo '<pre>' . var_export($_SESSION["utilisateur"], true) . '</pre>';
     session_write_close();
   } else if ($etape == "competences") {
     session_start();
@@ -196,6 +191,8 @@ if ($erreur == "" && $action == "suivant"){
     $competence->setLangageAcquis($languageAquis);
     $_SESSION["utilisateur"]->setCompetenceAcquis($competence);
     session_write_close();
+    echo '<pre>' . var_export($_SESSION["utilisateur"], true) . '</pre>';
+
   } else if ($etape == "preferences") {
     session_start();
     var_dump($_SESSION["utilisateur"]);
@@ -246,7 +243,7 @@ if ($erreur == "" && $etape == "preferences"){
 
 $view = new View();
 $view->assign('erreur',$erreur);
-$view->assign('pays',$pays);
+$view->assign('pays',$listepays );
 $view->assign('action',$action);
 $view->assign('etape',$etape);
 //$view->assign('candidat',$_SESSION["utilisateur"]);

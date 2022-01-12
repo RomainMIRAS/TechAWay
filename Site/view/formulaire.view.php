@@ -139,22 +139,22 @@
               <label for="secteur">Secteur de travail</label>
               <select name="secteur" >
                   <option value="">--Veuillez choisir une option--</option>
-                  <option value="cdi">Secteur 1</option>
-                  <option value="cdd">Secteur 2</option>
+                  <option value="secteur 1">Secteur 1</option>
+                  <option value="secteur 2">Secteur 2</option>
               </select>
 
               <label for="poste">Poste</label>
               <select name="poste" >
                   <option value="">--Veuillez choisir une option--</option>
-                  <option value="cdi">Poste 1</option>
-                  <option value="cdd">Poste 2</option>
+                  <option value="poste 1">Poste 1</option>
+                  <option value="poste 2">Poste 2</option>
               </select>
 
               <label for="typeEntreprise">Type d'entreprise</label>
               <select name="typeEntreprise" >
                   <option value="">--Veuillez choisir une option--</option>
-                  <option value="cdi">Start-Up</option>
-                  <option value="cdd">Multinational</option>
+                  <option value="start-up">Start-Up</option>
+                  <option value="multinational">Multinational</option>
               </select>
               <output><?=$erreur?></output>
               <form action ="formulaire.ctrl.php" method="post">
