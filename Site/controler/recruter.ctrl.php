@@ -76,13 +76,15 @@ else if($nomEntreprise == "" )
     {
       $erreur = "Le nom de l'entreprise doit etre rempli";
     }
-}
 
 else if($message == "" )
     {
       $erreur = "Le nom de l'entreprise doit etre rempli";
     }
 }
+
+}
+
 
 if ($erreur == "" && $action == "confirmation"){
 
