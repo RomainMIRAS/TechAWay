@@ -18,7 +18,7 @@ $age = (isset($_POST['age'])) ? $_POST['age']:"";
 
 // Attribut de la première page ( BASE )
 $telephone = (isset($_POST['tel'])) ? $_POST['tel']:"";
-$tellength= strlen($tel);
+$tellength= strlen($telephone);
 $ville = (isset($_POST['ville'])) ? $_POST['ville']:"";
 $pays = (isset($_POST['pays'])) ? $_POST['pays']:"";
 $etape = (isset($_POST['etape'])) ? $_POST['etape']:"non";
