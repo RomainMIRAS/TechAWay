@@ -14,7 +14,7 @@ function smtpmailer($to, $from, $from_name, $subject, $body) {
     global $error;
     $mail = new PHPMailer();  // create a new object
     $mail->IsSMTP(); // enable SMTP
-    $mail->SMTPDebug = 2;  // debugging: 1 = errors and messages, 2 = messages only
+    $mail->SMTPDebug = 0;  // debugging: 1 = errors and messages, 2 = messages only
     $mail->SMTPAuth = true;  // authentication enabled
     $mail->SMTPSecure = 'tls'; // secure transfer enabled REQUIRED for GMail
     $mail->SMTPAutoTLS = false;
@@ -97,11 +97,7 @@ if ($erreur == "" && $action == "confirmation"){
   ----------------------
   ";
 
-  // Dans le cas où nos lignes comportent plus de 70 caractères, nous les coupons en utilisant wordwrap()
-  // $message = wordwrap($message, 70, "\r\n");
-
 //Send mail using gmail
-
 $result = smtpmailer('techawayteam13@gmail.com', $mail, $nom,"Demande de Partenariat - $nomEntreprise",$body);
 
 
