@@ -27,7 +27,7 @@ session_start();
         <script src="../framework/jquery-3.6.0.min.js"></script>
 
         <div id="btn-compte">
-          <img src="../view/design/img/profil.jpg" alt="">
+          <img src="../view/design/img/profil.png" alt="">
         </div>
 
         <div id="menu-drop">

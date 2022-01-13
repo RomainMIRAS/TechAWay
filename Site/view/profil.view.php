@@ -33,14 +33,7 @@
 
       <section class="section-profil">
 
-        <img id="img-profil" src="../view/design/img/profil.jpg" alt="">
-        <div id="img-profil-config">
-          <label for="">Changer la photo</label>
-          <form action="profil.ctrl.php" method="POST">
-            <input type="file" name="fileToUpload">
-            <button type="submit" name="submit">Appliquer</button>
-          </form>
-        </div>
+        <img id="img-profil" src="../view/design/img/profil.png" alt="">
 
         <?php if (is_a($_SESSION['utilisateur'],"Candidat")): ?> <!-- si l'utilisateur est un candidat -->
           <p>Vous êtes à l'étape n°<?= $_SESSION['utilisateur']->getEtape() ?></p>
