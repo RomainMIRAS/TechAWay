@@ -68,12 +68,7 @@
                         <td><?= $c->getLienLM() ?></td>
                         <td><?= $c->getDateCreation() ?></td>
                         <td>
-                          <select name="" id="">
-                            <option value="">
-                              <label for="">Nom</label>
-                              <input type="text">
-                            </option>
-                          </select>
+                          <button type="submit" class="candidatDeleteBtn"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
                         </td>
                         <td class="sup">
                           <form action="tableau.ctrl.php" method="POST">
