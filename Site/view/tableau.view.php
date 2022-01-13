@@ -68,8 +68,23 @@
                         <td><?= $c->getLienLM() ?></td>
                         <td><?= $c->getDateCreation() ?></td>
                         <td class="sup">
-                          <button class="edit" class="candidatDeleteBtn"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                          <button class="editBtn"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
                         </td>
+
+                        <div class="editCandidatSection" class="addNewSection"> <!-- Modifier un candidat -->
+                          <button class="editCandidatClose">Fermer</button>
+                          <h3>Modifer un candidat</h3>
+                          <form action="tableau.ctrl.php" method="POST">
+                            <label for="nom">Nom</label>
+                            <input type="text" name="editNomCandidat" placeholder="Entrez le nouveau nom" value="<?= $c->getNom() ?>">
+                            <label for="nom">Prénom</label>
+                            <input type="text" name="editPrenomCandidat" placeholder="Entrez le nouveau prénom" value="<?= $c->getPrenom() ?>">
+                            
+                            <button type="submit" name="editCandidatBtn" value="editCandidat">Modifier</button>
+                          </form>
+                          <span class="erreur"></span>
+                        </div>
+
                         <td class="sup">
                           <form action="tableau.ctrl.php" method="POST">
                             <input type="hidden" class="candidatAction" name="candidatAction" value="deleteN">
@@ -227,22 +242,29 @@
         }
       });
 
-      $("#addEntrepriseSection").hide();
+      /* Modifier candidat */
+      $(".editCandidatSection").hide();
+      $(".editBtn").click(function() {
+        $(".editCandidatSection").show();
+      });
+      $(".editCandidatClose").click(function() {
+        $(".editCandidatSection").hide();
+      });
 
+      /* Ajouter entreprise */
+      $("#addEntrepriseSection").hide();
       $("#addEntrepriseBtn").click(function() {
         $("#addEntrepriseSection").show();
       });
-
       $("#addEntrepriseClose").click(function() {
         $("#addEntrepriseSection").hide();
       });
 
+      /* Ajouter offre */
       $("#addOffreSection").hide();
-
       $("#addOffreBtn").click(function() {
         $("#addOffreSection").show();
       });
-
       $("#addOffreClose").click(function() {
         $("#addOffreSection").hide();
       });
