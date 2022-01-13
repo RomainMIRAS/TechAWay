@@ -584,19 +584,19 @@ td, th {
   cursor: initial;
 }
 
-.sup form button {
+.sup form button, sup button {
   border: none;
   padding: 0;
   margin: 0;
   font-size: 14px;
 }
 
-.sup form button:hover {
+.sup form button:hover, .sup button:hover {
   background-color: transparent;
   color: var(--color-black);
 }
 
-.sup form button i {
+.sup form button i, .sup button i {
   color: var(--color-black);
   cursor: pointer;
 }
