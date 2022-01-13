@@ -69,6 +69,7 @@ if ($candidatAction=='deleteY') {
     $candidatMessage = "Le candidat $candidatToDelete a bien été supprimé.";
 }
 
+$entrepriseToDelete = $_POST['entrepriseToDelete'] ?? '';
 $entrepriseAction = $_POST['entrepriseAction'] ?? '';
 $entrepriseMessage = '';
 
