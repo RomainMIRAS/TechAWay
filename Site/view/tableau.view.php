@@ -68,11 +68,11 @@
                         <td><?= $c->getLienLM() ?></td>
                         <td><?= $c->getDateCreation() ?></td>
                         <td class="sup">
-                          <button class="editBtn"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                          <button id="editBtn"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
                         </td>
 
-                        <div class="editCandidatSection" class="addNewSection"> <!-- Modifier un candidat -->
-                          <button class="editCandidatClose">Fermer</button>
+                        <div id="editCandidatSection" class="addNewSection"> <!-- Modifier un candidat -->
+                          <button id="editCandidatClose">Fermer</button>
                           <h3>Modifer un candidat</h3>
                           <form action="tableau.ctrl.php" method="POST">
                             <label for="nom">Nom</label>
@@ -243,12 +243,12 @@
       });
 
       /* Modifier candidat */
-      $(".editCandidatSection").hide();
-      $(".editBtn").click(function() {
-        $(".editCandidatSection").show();
+      $("#editCandidatSection").hide();
+      $("#editBtn").click(function() {
+        $("#editCandidatSection").show();
       });
-      $(".editCandidatClose").click(function() {
-        $(".editCandidatSection").hide();
+      $("#editCandidatClose").click(function() {
+        $("#editCandidatSection").hide();
       });
 
       /* Ajouter entreprise */
