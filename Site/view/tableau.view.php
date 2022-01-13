@@ -243,12 +243,12 @@
       });
 
       /* Modifier candidat */
-      $("#editCandidatSection").hide();
-      $("#editBtn").click(function() {
-        $("#editCandidatSection").show();
+      $(".editCandidatSection").hide();
+      $(".editBtn").click(function() {
+        $(".editCandidatSection").show();
       });
-      $("#editCandidatClose").click(function() {
-        $("#editCandidatSection").hide();
+      $(".editCandidatClose").click(function() {
+        $(".editCandidatSection").hide();
       });
 
       /* Ajouter entreprise */
