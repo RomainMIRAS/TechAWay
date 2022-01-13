@@ -76,10 +76,15 @@ if($action== "suivant" && $etape == "base")
   {
     $erreur = "L'age doit etre rempli";
   }
-  // else if(strtotime($age) >= strtotime(getdate('today')))
-  // {
-  //   $erreur = "L'age ne doit pas être superieur à la date d'aujourd'hui";
-  // }
+
+
+  // Gestion des dates du formulaire
+  $today = new DateTime('today');
+
+  else if(date_create($age) >= $today ) // Si la date rentrée est supérieur à celle d'aujourd'hui
+  {
+    $erreur = "L'age ne doit pas être superieur à la date d'aujourd'hui";
+  }
 
 
   else if($telephone == "")
@@ -167,7 +172,6 @@ if ($erreur == "" && $action == "suivant"){
     $_SESSION["utilisateur"]->setNom($nom);
     $_SESSION["utilisateur"]->setPrenom($prenom);
     // Cacul d'age
-    $today   = new DateTime('today');
     $age = date_create($age)->diff($today)->y;
 
     // $dateOfBirth = "17-10-1985";
