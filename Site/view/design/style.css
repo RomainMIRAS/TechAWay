@@ -491,7 +491,7 @@ button:hover {
   display: flex;
   flex-direction: column;
   text-align: center;
-  
+
 }
 
 #article1{
@@ -506,8 +506,8 @@ button:hover {
 }
 
 #section2{
-  display: flex; 
-  flex-direction: column; 
+  display: flex;
+  flex-direction: column;
   align-items:center;
 }
 
@@ -558,7 +558,7 @@ button:hover {
 }
 
 /**************************************************************
-* TABLEAU DE BORD 
+* TABLEAU DE BORD
 **************************************************************/
 
 #tableau-bord {
@@ -778,6 +778,11 @@ footer ul li a:hover {
 
   #article2 {
     flex-direction: column-reverse;
+  }
+
+  #signature{
+    text-decoration: none;
+    color: black;
   }
 
 }
