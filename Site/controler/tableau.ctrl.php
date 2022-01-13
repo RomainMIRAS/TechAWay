@@ -67,6 +67,7 @@ $candidatMessage = '';
 if ($candidatAction=='deleteY') {
     $db->deleteCandidat($candidatToDelete);
     $candidatMessage = "Le candidat $candidatToDelete a bien été supprimé.";
+    header("Location: tableau.ctrl.php");
 }
 
 $entrepriseToDelete = $_POST['entrepriseToDelete'] ?? '';
@@ -80,17 +81,13 @@ if ($entrepriseAction=='deleteY') {
 }
 
 $offreToDelete = $_POST['offreToDelete'] ?? '';
-/*if ($db->getOffre($offreToDelete)!=false) {
-    $offreToDeleteName = $db->getOffre($offreToDelete)->getNomOffre();
-} else {
-    $offreToDeleteName = $offreToDelete;
-}*/
 $offreAction = $_POST['offreAction'] ?? '';
 $offreMessage = '';
 
 if ($offreAction=='deleteY') {
     $db->deleteOffre($offreToDelete);
-    $offreMessage = "L'offre $offreToDelete a bien été supprimée.";
+    $offreMessage = "L'offre a bien été supprimée.";
+    header("Location: tableau.ctrl.php");
 }
 
 
