@@ -70,21 +70,6 @@
                         <td class="sup">
                           <button class="editBtn"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
                         </td>
-
-                        <div class="editCandidatSection" class="addNewSection"> <!-- Modifier un candidat -->
-                          <button class="editCandidatClose">Fermer</button>
-                          <h3>Modifer un candidat</h3>
-                          <form action="tableau.ctrl.php" method="POST">
-                            <label for="nom">Nom</label>
-                            <input type="text" name="editNomCandidat" placeholder="Entrez le nouveau nom" value="<?= $c->getNom() ?>">
-                            <label for="nom">Prénom</label>
-                            <input type="text" name="editPrenomCandidat" placeholder="Entrez le nouveau prénom" value="<?= $c->getPrenom() ?>">
-                            
-                            <button type="submit" name="editCandidatBtn" value="editCandidat">Modifier</button>
-                          </form>
-                          <span class="erreur"></span>
-                        </div>
-
                         <td class="sup">
                           <form action="tableau.ctrl.php" method="POST">
                             <input type="hidden" class="candidatAction" name="candidatAction" value="deleteN">
@@ -132,6 +117,7 @@
                 <th>Téléphone</th>
                 <th>Ville</th>
                 <th>Pays</th>
+                <th>Modifier</th>
                 <th>Supprimer</th>
             </tr>
             <?php foreach($entreprises as $e): ?> <!-- pour chaque candidat -->
@@ -142,6 +128,9 @@
                         <td><?= $e->getTelephone() ?></td>
                         <td><?= $e->getVille() ?></td>
                         <td><?= $e->getPays() ?></td>
+                        <td class="sup">
+                          <button class="editBtn"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                        </td>
                         <td class="sup">
                           <form action="tableau.ctrl.php" method="POST">
                             <input type="hidden" class="entrepriseAction" name="entrepriseAction" value="deleteN">
@@ -182,6 +171,7 @@
                 <th>Nom</th>
                 <th>Entreprise</th>
                 <th>Date</th>
+                <th>Modifier</th>
                 <th>Supprimer</th>
             </tr>
             <?php foreach($offres as $o): ?> <!-- pour chaque candidat -->
@@ -190,6 +180,9 @@
                         <td><?= $o->getNomOffre() ?></td>
                         <td><?= $o->getEntreprise()->getNom() ?></td>
                         <td><?= $o->getDateOffre() ?></td>
+                        <td class="sup">
+                          <button class="editBtn"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                        </td>
                         <td class="sup">
                           <form action="tableau.ctrl.php" method="POST">
                             <input type="hidden" class="offreAction" name="offreAction" value="deleteN">
