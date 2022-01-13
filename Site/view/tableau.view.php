@@ -86,7 +86,7 @@
         <div id="addEntrepriseSection" class="addNewSection"> <!-- Ajouter une entreprise -->
           <button id="addEntrepriseClose">Fermer</button>
           <h3>Ajouter une entreprise</h3>
-          <form action="" method="POST">
+          <form action="tableau.ctrl.php" method="POST">
             <label for="nom">Nom *</label>
             <input type="text" name="entrepriseName" placeholder="Entrez le nom de l'entreprise" >
             <label for="mail">Adresse E-mail *</label>
@@ -101,7 +101,7 @@
             </select>
             <label for="ville">Ville</label>
             <input type="text" name="entrepriseVille" placeholder="Entrez la ville l'entreprise" >
-            <button>Ajouter</button>
+            <button type="submit" value="ajouterEntreprise">Ajouter</button>
           </form>
           <span class="erreur"></span>
           <span class="asterisque">* : Champ obligatoire</span>
