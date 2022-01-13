@@ -69,14 +69,12 @@ if ($candidatAction=='deleteY') {
     $candidatMessage = "Le candidat $candidatToDelete a bien été supprimé.";
 }
 
-$entrepriseToDelete = $_POST['entrepriseToDelete'] ?? '';
-$entrepriseToDeleteName = $db->getEntreprise($entrepriseToDelete)->getNom();
 $entrepriseAction = $_POST['entrepriseAction'] ?? '';
 $entrepriseMessage = '';
 
 if ($entrepriseAction=='deleteY') {
     $db->deleteEntreprise($entrepriseToDelete);
-    $entrepriseMessage = "L'entreprise $entrepriseToDeleteName a bien été supprimée.";
+    $entrepriseMessage = "L'entreprise a bien été supprimée.";
 }
 
 $offreToDelete = $_POST['offreToDelete'] ?? '';
