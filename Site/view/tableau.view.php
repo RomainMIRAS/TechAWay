@@ -51,6 +51,7 @@
                 <th>Lien CV</th>
                 <th>Lien Lettre</th>
                 <th>Date de création</th>
+                <th>Modifier</th>
                 <th>Supprimer</th>
             </tr>
             <?php foreach($candidats as $c): ?> <!-- pour chaque candidat -->
@@ -66,6 +67,14 @@
                         <td><?= $c->getLienCv() ?></td>
                         <td><?= $c->getLienLM() ?></td>
                         <td><?= $c->getDateCreation() ?></td>
+                        <td>
+                          <select name="" id="">
+                            <option value="">
+                              <label for="">Nom</label>
+                              <input type="text">
+                            </option>
+                          </select>
+                        </td>
                         <td class="sup">
                           <form action="tableau.ctrl.php" method="POST">
                             <input type="hidden" class="candidatAction" name="candidatAction" value="deleteN">
