@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mention Legale</title>
-    <link rel="stylesheet" type="text/css" href="../view/design/style.css">
 
 </head>
 <body>
@@ -64,7 +63,7 @@ Conformément à la Loi Informatique et Libertés du 6 janvier 1978, vous dispos
 
 <h4>Site à visée commerciale</h4> <br>
 
-Aucune transaction ni aucune <a id="signature" href="https://youtu.be/dQw4w9WgXcQ">utilisation</a> commerciale n’est faite à partir de ce nom de domaine https://www.TechAway.jobs/. Tout le contenu de ce site web est donné uniquement à titre indicatif et ne saurait faire l’objet d’une plainte concernant un mauvais usage du commerce informatique. Tech A Way ne saurait être tenu responsable des erreurs concernant les informations diffusées sur cette plateforme <br> <br>
+Aucune transaction ni aucune <a id="signature" style="text-decoration : none; color : black " href="https://youtu.be/dQw4w9WgXcQ">utilisation</a> commerciale n’est faite à partir de ce nom de domaine https://www.TechAway.jobs/. Tout le contenu de ce site web est donné uniquement à titre indicatif et ne saurait faire l’objet d’une plainte concernant un mauvais usage du commerce informatique. Tech A Way ne saurait être tenu responsable des erreurs concernant les informations diffusées sur cette plateforme <br> <br>
 
 
 
