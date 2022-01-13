@@ -138,7 +138,25 @@
 
         <h2>Offres <span style="font-size: 12px"><?= $nbOffres ?> offre(s) enregistrée(s)</span></h2>
         <div class="nav-options-board">
-          <button>Ajouter une offre</button>
+          <button id="addOffreBtn">Ajouter une offre</button>
+        </div>
+        <div id="addOffreSection" class="addNewSection"> <!-- Ajouter une offre -->
+          <button id="addOffreClose">Fermer</button>
+          <h3>Ajouter une offre</h3>
+          <form action="tableau.ctrl.php" method="POST">
+            <label for="nom">Nom *</label>
+            <input type="text" name="offreName" placeholder="Entrez le nom de l'offre" >
+            <label for="">Entreprise *</label>
+            <select name="idEntrepriseOffre" id="">
+              <?php foreach($entreprises as $e): ?>
+                <option value="<?= $e->getId() ?>"><?= $e->getNom() ?></option>
+              <?php endforeach; ?>
+            </select>
+            
+            <button type="submit" name="ajouterOffreBtn" value="ajouterOffre">Ajouter</button>
+          </form>
+          <span class="erreur"></span>
+          <span class="asterisque">* : Champ obligatoire</span>
         </div>
         <table>  <!-- Tableau des offres -->
             <tr>
@@ -213,6 +231,16 @@
 
       $("#addEntrepriseClose").click(function() {
         $("#addEntrepriseSection").hide();
+      });
+
+      $("#addOffreSection").hide();
+
+      $("#addOffreBtn").click(function() {
+        $("#addOffreSection").show();
+      });
+
+      $("#addOffreClose").click(function() {
+        $("#addOffreSection").hide();
       });
 
     });

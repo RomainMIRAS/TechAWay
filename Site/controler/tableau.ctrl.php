@@ -44,6 +44,8 @@ $nbOffres = $db->nombreOffres();
 
 /* Ajout Entreprises et Offres ****************************************************************/
 
+// Ajout entreprise
+
 $entrepriseName  = $_POST['entrepriseName']  ?? '';
 $entrepriseMail  = $_POST['entrepriseMail']  ?? '';
 $entrepriseTel   = $_POST['entrepriseTel']   ?? '';
@@ -53,6 +55,22 @@ $entrepriseVille = $_POST['entrepriseVille'] ?? '';
 if ($ajouterEntrepriseBtn=='ajouterEntreprise') {
     if ($entrepriseMail!='' && $entreprisePays!='' && $entrepriseName!='') {
         $db->creeEntreprise($entrepriseMail,$entrepriseName,$entrepriseTel,$entreprisePays,$entrepriseVille);
+    } else {
+        $erreur = "Les champs * sont obligatoires.";
+    }
+}
+
+// Ajout offre
+
+$offreName  = $_POST['offreName']  ?? '';
+$idEntrepriseOffre  = $_POST['idEntrepriseOffre']  ?? '';
+$entrepriseTel   = $_POST['entrepriseTel']   ?? '';
+$entreprisePays  = $_POST['entreprisePays']  ?? '';
+$entrepriseVille = $_POST['entrepriseVille'] ?? '';
+
+if ($ajouterOffreBtn=='ajouterOffre') {
+    if ($offreName!='' && $idEntrepriseOffre!='') {
+        //$db->creeOffre($idEntrepriseOffre , new Renseignement(), new Competence(), $offreName);
     } else {
         $erreur = "Les champs * sont obligatoires.";
     }
