@@ -67,8 +67,8 @@
                         <td><?= $c->getLienCv() ?></td>
                         <td><?= $c->getLienLM() ?></td>
                         <td><?= $c->getDateCreation() ?></td>
-                        <td>
-                          <button type="submit" class="candidatDeleteBtn"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                        <td class="sup">
+                          <button class="edit" class="candidatDeleteBtn"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
                         </td>
                         <td class="sup">
                           <form action="tableau.ctrl.php" method="POST">
