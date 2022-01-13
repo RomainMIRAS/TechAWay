@@ -70,11 +70,7 @@ if ($candidatAction=='deleteY') {
 }
 
 $entrepriseToDelete = $_POST['entrepriseToDelete'] ?? '';
-if ($db->getEntreprise($entrepriseToDelete)!=false) {
-    $entrepriseToDeleteName = $db->getEntreprise($entrepriseToDelete)->getNom();
-} else {
-    $entrepriseToDeleteName = $entrepriseToDelete;
-}
+$entrepriseToDeleteName = $db->getEntreprise($entrepriseToDelete)->getNom();
 $entrepriseAction = $_POST['entrepriseAction'] ?? '';
 $entrepriseMessage = '';
 
