@@ -21,6 +21,7 @@ $erreur = ''; // variable erreur initialisée à vide
 /* Boutons 'Ajouter' **************************************************************************/
 
 $ajouterEntrepriseBtn = $_POST['ajouterEntrepriseBtn'] ?? '';
+$ajouterOffreBtn = $_POST['ajouterOffreBtn'] ?? '';
 
 /* Liste de tous les pays européens (continent) ***********************************************/
 
