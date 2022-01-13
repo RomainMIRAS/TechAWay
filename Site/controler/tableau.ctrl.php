@@ -18,6 +18,10 @@ $view = new View();
 
 $erreur = ''; // variable erreur initialisée à vide
 
+/* Boutons 'Ajouter' **************************************************************************/
+
+$ajouterEntrepriseBtn = $_POST['ajouterEntrepriseBtn'] ?? '';
+
 /* Liste de tous les pays européens (continent) ***********************************************/
 
 $listePays = array('Allemagne','Autriche','Andorre','Belgique','Boznie Herzegovine','Bulgarie','Chypre','Croatie','Danemark','Espagne','Estonie','Finlande','France','Gibraltar','Grece','Hongrie','Irlande','Islande','italie','Lettonie','Liechtenstein','Lituanie','Luxembourg','Malte','Monaco','Norvege','Pays Bas','Pays de Galle','Pologne','Portugal','Republique Tcheque','Roumanie','Royaume Uni','Russie','Slovaquie','Slovenie','Suede','Suisse','Ukraine','Vatican');
@@ -46,10 +50,12 @@ $entrepriseTel   = $_POST['entrepriseTel']  ?? '';
 $entreprisePays = $_POST['entreprisePays'] ?? '';
 $entrepriseVille = $_POST['entrepriseVille'] ?? '';
 
-if ($entrepriseMail!='' && $entreprisePays!='' && $entrepriseName!='') {
-    $db->creeEntreprise($entrepriseMail,$entrepriseName,$entrepriseTel,$entreprisePays,$entrepriseVille);
-} else {
-    $erreur = "Les champs * sont obligatoires.";
+if ($ajouterEntrepriseBtn=='ajouterEntreprise') {
+    if ($entrepriseMail!='' && $entreprisePays!='' && $entrepriseName!='') {
+        $db->creeEntreprise($entrepriseMail,$entrepriseName,$entrepriseTel,$entreprisePays,$entrepriseVille);
+    } else {
+        $erreur = "Les champs * sont obligatoires.";
+    }
 }
 
 /* Suppression Candidats, Entreprises et Offres ***********************************************/

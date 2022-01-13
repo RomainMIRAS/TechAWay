@@ -101,7 +101,7 @@
             </select>
             <label for="ville">Ville</label>
             <input type="text" name="entrepriseVille" placeholder="Entrez la ville l'entreprise" >
-            <button type="submit" value="ajouterEntreprise">Ajouter</button>
+            <button type="submit" name="ajouterEntrepriseBtn" value="ajouterEntreprise">Ajouter</button>
           </form>
           <span class="erreur"></span>
           <span class="asterisque">* : Champ obligatoire</span>
