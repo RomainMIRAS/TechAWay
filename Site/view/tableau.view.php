@@ -68,11 +68,11 @@
                         <td><?= $c->getLienLM() ?></td>
                         <td><?= $c->getDateCreation() ?></td>
                         <td class="sup">
-                          <button id="editBtn"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                          <button class="editBtn"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
                         </td>
 
-                        <div id="editCandidatSection" class="addNewSection"> <!-- Modifier un candidat -->
-                          <button id="editCandidatClose">Fermer</button>
+                        <div class="editCandidatSection" class="addNewSection"> <!-- Modifier un candidat -->
+                          <button class="editCandidatClose">Fermer</button>
                           <h3>Modifer un candidat</h3>
                           <form action="tableau.ctrl.php" method="POST">
                             <label for="nom">Nom</label>
