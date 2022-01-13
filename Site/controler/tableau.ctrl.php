@@ -76,6 +76,7 @@ $entrepriseMessage = '';
 if ($entrepriseAction=='deleteY') {
     $db->deleteEntreprise($entrepriseToDelete);
     $entrepriseMessage = "L'entreprise a bien été supprimée.";
+    header("refresh");
 }
 
 $offreToDelete = $_POST['offreToDelete'] ?? '';
