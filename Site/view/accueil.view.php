@@ -33,19 +33,19 @@
 
       <section class="section-accueil" id="section-accueil-1"> <!-- section Accueil -->
         <div>
-          <h1>Découvrez Tech A Way</h1>
-          <h2>L'expertise du recrutement dans le domaine de la tech avec des recruteurs qui vous accompagne jusqu'à l'embauche</h2>
-          <p>Tech a Way est un cabinet de recrutement spécialisé dans le domaine de la tech en full remote et partout en Europe.</p>
-          <h3>Commencez l'aventure</h3>
-          <h4>Vous-êtes ?</h4>
-          <section id="sectionBoutonsAccueil">
-            <form action="../controler/trouverUnJob.ctrl.php" method="post">
-                <button type="submit" name="action" value="signup">Candidat</button>
-            </form>
-            <form action="../controler/recruter.ctrl.php" method="post">
-              <button type="submit" name="action" value="signup">Recruteur</button>
-            </form>
-          </section>
+            <h1 class="basicAnimation">Découvrez Tech A Way</h1>
+            <h2 class="basicAnimation">L'expertise du recrutement dans le domaine de la tech avec des recruteurs qui vous accompagne jusqu'à l'embauche</h2>
+            <p class="basicAnimation">Tech a Way est un cabinet de recrutement spécialisé dans le domaine de la tech en full remote et partout en Europe.</p>
+            <h3 class="basicAnimation">Commencez l'aventure</h3>
+            <h4 class="basicAnimation">Vous-êtes ?</h4>
+            <section id="sectionBoutonsAccueil" class="basicAnimation">
+              <form action="../controler/trouverUnJob.ctrl.php" method="post">
+                  <button type="submit" name="action" value="signup">Candidat</button>
+              </form>
+              <form action="../controler/recruter.ctrl.php" method="post">
+                <button type="submit" name="action" value="signup">Recruteur</button>
+              </form>
+            </section>
         </div>
 
         <div id="svg1">
@@ -61,4 +61,6 @@
 
 
   </body>
+  <script src="../view/design/js/gsap.min.js"></script>
+  <script src="../view/design/js/gsap-animations.js"></script>
 </html>
