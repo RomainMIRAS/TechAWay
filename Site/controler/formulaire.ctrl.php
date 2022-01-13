@@ -44,6 +44,8 @@ $action = (isset($_POST['action'])) ? $_POST['action']: 'formulaire';
 $etape = (isset($_POST['etape'])) ? $_POST['etape']: 'base';
 
 
+$today = new DateTime('today');
+
 ///////////////////////////////////////////////////////////////////////////////
 // Partie Gestion des erreurs
 ///////////////////////////////////////////////////////////////////////////////
@@ -71,16 +73,12 @@ if($action== "suivant" && $etape == "base")
   // {
   //   $erreur = "Le prenom doit etre composé de lettres seulement"; // Si prenom n'est pas en lettre --> erreur
   // }
-  // Si age incorrect
+  // Gestion des dates du formulaire
+
   else if($age == "")
   {
     $erreur = "L'age doit etre rempli";
   }
-
-
-  // Gestion des dates du formulaire
-  $today = new DateTime('today');
-
   else if(date_create($age) >= $today ) // Si la date rentrée est supérieur à celle d'aujourd'hui
   {
     $erreur = "L'age ne doit pas être superieur à la date d'aujourd'hui";
