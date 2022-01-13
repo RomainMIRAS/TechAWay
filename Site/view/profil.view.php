@@ -69,7 +69,7 @@
             <input type="text" value="<?= $_SESSION['utilisateur']->getDateCreation() ?>" disabled>
           <?php endif; ?>
           <button type="submit">Enregistrer</button>
-          <p>* : ces entrées ne sont pas modifiable directement.</p>
+          <span class="asterisque">* : ces entrées ne sont pas modifiable directement. Veuillez contacter l'équipe de Tech A Way.</span>
         </form>
 
         <!-- Formulaire de compétences -->
@@ -82,7 +82,7 @@
             <label for="">Langage(s) informatique(s)</label>
             <input type="text" value="<?= $_SESSION['utilisateur']->getCompetenceAcquis()->getLangageAcquis() ?>">
             <button type="submit">Enregistrer</button>
-            <p>* : ces entrées ne sont pas modifiable directement.</p>
+            <span class="asterisque">* : ces entrées ne sont pas modifiable directement. Veuillez contacter l'équipe de Tech A Way.</span>
           </form>
 
           <!-- Formulaire de preferences -->
@@ -98,7 +98,7 @@
             <label for="">Type d'entreprise recherché</label>
             <input type="text" value="<?= $_SESSION['utilisateur']->getRenseignement()->getTypeEntreprise() ?>">
             <button type="submit">Enregistrer</button>
-            <p>* : ces entrées ne sont pas modifiable directement.</p>
+            <span class="asterisque">* : ces entrées ne sont pas modifiable directement. Veuillez contacter l'équipe de Tech A Way.</span>
           </form>
 
           <!-- Formulaire de documents -->
@@ -110,7 +110,7 @@
             <label for="">Adresse mail</label>
             <input type="text" value="<?= $_SESSION['utilisateur']->getMail() ?>" disabled>
             <button type="submit">Enregistrer</button>
-            <p>* : ces entrées ne sont pas modifiable directement.</p>
+            <span class="asterisque">* : ces entrées ne sont pas modifiable directement. Veuillez contacter l'équipe de Tech A Way.</span>
           </form>
         <?php endif; ?>
 
