@@ -44,10 +44,10 @@ $nbOffres = $db->nombreOffres();
 
 /* Ajout Entreprises et Offres ****************************************************************/
 
-$entrepriseName  = $_POST['entrepriseName'] ?? '';
-$entrepriseMail  = $_POST['entrepriseMail'] ?? '';
-$entrepriseTel   = $_POST['entrepriseTel']  ?? '';
-$entreprisePays = $_POST['entreprisePays'] ?? '';
+$entrepriseName  = $_POST['entrepriseName']  ?? '';
+$entrepriseMail  = $_POST['entrepriseMail']  ?? '';
+$entrepriseTel   = $_POST['entrepriseTel']   ?? '';
+$entreprisePays  = $_POST['entreprisePays']  ?? '';
 $entrepriseVille = $_POST['entrepriseVille'] ?? '';
 
 if ($ajouterEntrepriseBtn=='ajouterEntreprise') {
@@ -70,17 +70,17 @@ if ($candidatAction=='deleteY') {
 }
 
 $entrepriseToDelete = $_POST['entrepriseToDelete'] ?? '';
-/*if ($db->getEntreprise($entrepriseToDelete)!=false) {
+if ($db->getEntreprise($entrepriseToDelete)!=false) {
     $entrepriseToDeleteName = $db->getEntreprise($entrepriseToDelete)->getNom();
 } else {
     $entrepriseToDeleteName = $entrepriseToDelete;
-}*/
+}
 $entrepriseAction = $_POST['entrepriseAction'] ?? '';
 $entrepriseMessage = '';
 
 if ($entrepriseAction=='deleteY') {
     $db->deleteEntreprise($entrepriseToDelete);
-    $entrepriseMessage = "L'entreprise $entrepriseToDelete a bien été supprimée.";
+    $entrepriseMessage = "L'entreprise $entrepriseToDeleteName a bien été supprimée.";
 }
 
 $offreToDelete = $_POST['offreToDelete'] ?? '';
@@ -100,21 +100,21 @@ if ($offreAction=='deleteY') {
 
 /* Passage des paramètres à la vue ************************************************************/
 
-$view->assign("candidats",$candidats);                     // liste des candidats
-$view->assign("nbCandidats",$nbCandidats);                 // nombres de candidats
+$view->assign("candidats",$candidats);                                 // liste des candidats
+$view->assign("nbCandidats",$nbCandidats);                             // nombres de candidats
 
-$view->assign("entreprises",$entreprises);                 // listes des entreprises
-$view->assign("nbEntreprises",$nbEntreprises);             // nombres d'entreprises
+$view->assign("entreprises",$entreprises);                             // listes des entreprises
+$view->assign("nbEntreprises",$nbEntreprises);                         // nombres d'entreprises
 
-$view->assign("offres",$offres);                           // listes des offres
-$view->assign("nbOffres",$nbOffres);                       // nombres d'offres
+$view->assign("offres",$offres);                                       // listes des offres
+$view->assign("nbOffres",$nbOffres);                                   // nombres d'offres
 
-$view->assign("candidatMessage",$candidatMessage);         // message Candidat
-$view->assign("entrepriseMessage",$entrepriseMessage);     // message Entreprise
-$view->assign("offreMessage",$offreMessage);               // message Offre
+$view->assign("candidatMessage",$candidatMessage);                     // message Candidat
+$view->assign("entrepriseMessage",$entrepriseMessage);                 // message Entreprise
+$view->assign("offreMessage",$offreMessage);                           // message Offre
 
-$view->assign("erreur",$erreur);                           // variable erreur
-$view->assign("listePays",$listePays);                     // liste des pays
+$view->assign("erreur",$erreur);                                       // variable erreur
+$view->assign("listePays",$listePays);                                 // liste des pays
 
 /* Chargement de la vue ***********************************************************************/
 $view->display("tableau.view.php"); // on affiche la vue tableau.view.php
