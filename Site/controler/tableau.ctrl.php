@@ -14,6 +14,13 @@ include_once(__DIR__."/../model/Coach.class.php");
 /* Création de la vue *************************************************************************/
 $view = new View();
 
+/* Variable erreur ****************************************************************************/
+
+$erreur = ''; // variable erreur initialisée à vide
+
+/* Liste de tous les pays européens (continent) ***********************************************/
+
+$listePays = array('Allemagne','Autriche','Andorre','Belgique','Boznie Herzegovine','Bulgarie','Chypre','Croatie','Danemark','Espagne','Estonie','Finlande','France','Gibraltar','Grece','Hongrie','Irlande','Islande','italie','Lettonie','Liechtenstein','Lituanie','Luxembourg','Malte','Monaco','Norvege','Pays Bas','Pays de Galle','Pologne','Portugal','Republique Tcheque','Roumanie','Royaume Uni','Russie','Slovaquie','Slovenie','Suede','Suisse','Ukraine','Vatican');
 
 /* Instance de la base de données *************************************************************/
 $db = DAO::get(); // on récupère l'unique instance 
@@ -36,10 +43,13 @@ $nbOffres = $db->nombreOffres();
 $entrepriseName  = $_POST['entrepriseName'] ?? '';
 $entrepriseMail  = $_POST['entrepriseMail'] ?? '';
 $entrepriseTel   = $_POST['entrepriseTel']  ?? '';
-$entrepriseVille = $_POST['entreprisePays'] ?? '';
+$entreprisePays = $_POST['entreprisePays'] ?? '';
+$entrepriseVille = $_POST['entrepriseVille'] ?? '';
 
-if ($entrepriseMail!='') {
-    $db->creeEntreprise($entrepriseMail,$entrepriseName,$entrepriseTel,$entrepriseVille);
+if ($entrepriseMail!='' && $entreprisePays!='' && $entrepriseName!='') {
+    $db->creeEntreprise($entrepriseMail,$entrepriseName,$entrepriseTel,$entreprisePays,$entrepriseVille);
+} else {
+    $erreur = "Les champs * sont obligatoires.";
 }
 
 /* Suppression Candidats, Entreprises et Offres ***********************************************/
@@ -97,6 +107,8 @@ $view->assign("candidatMessage",$candidatMessage);         // message Candidat
 $view->assign("entrepriseMessage",$entrepriseMessage);     // message Entreprise
 $view->assign("offreMessage",$offreMessage);               // message Offre
 
+$view->assign("erreur",$erreur);                           // variable erreur
+$view->assign("listePays",$listePays);                     // liste des pays
 
 /* Chargement de la vue ***********************************************************************/
 $view->display("tableau.view.php"); // on affiche la vue tableau.view.php
