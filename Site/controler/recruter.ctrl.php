@@ -72,6 +72,11 @@ if ($erreur == "" && $action == "confirmation"){
   Mail : $mail \r\n
   Nom de l'entreprise : $nomEntreprise \r\n
   Message : $message
+  ---------------------
+
+  Aller nous voir sur
+  techaway.tk/
+  
   ----------------------
   ";
 
