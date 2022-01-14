@@ -127,6 +127,6 @@ if (true != $result){
 // Partie View
 ///////////////////////////////////////////////////////////////////////////////
 $view = new View();
-$view->display("Parrain.view.php");
+$view->display("parrainer.view.php");
 
 ?>
