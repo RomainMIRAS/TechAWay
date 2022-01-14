@@ -37,7 +37,7 @@
     <h1>Voici les informations sur l'offre à laquelle vous avez postulé<h1/>
 
 
-    <?php $Nom = $offre->getNomOffre(); 
+    <?php $date = $offre->getDateOffre(); 
     $nom = $offre->getNomOffre(); 
 
 
@@ -62,7 +62,15 @@
     
     
     ?>
-     <h2><?php echo "$Nom" ?><h2/>
+     <h2>Information générale : <h2/>
+<p>L'offre <?echo "$nom" ?> à été crée le <?echo "$date" ?></p>
+
+
+     <!--<ol>
+     <li><?echo "$date" ?></li>
+     <li><?echo "$nom" ?></li>
+     
+     </ol>-->
       
       
       
