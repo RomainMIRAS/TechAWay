@@ -147,7 +147,7 @@ class DAO {
 
 			$res = @pg_query($this->db, $r);
 
-			$req = pg_fetch_all($res);
+			$req = @pg_fetch_all($res);
 
 			if($res){
 				return intval($req[0]['currval']); //returne le id de l'entreprise qu'il cree
