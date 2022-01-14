@@ -119,9 +119,9 @@
 
       $(".candidatDeleteBtn").click(function() { /* Affichage d'une fenêtre de confirmation pour la suppression d'un candidat */
         if (confirm("Etes-vous sûr de vouloir abandonner cette offre ?")) {
-          $(".candidatAction").val("supprY");
+          $(".action").val("supprY");
         } else {
-          $(".candidatAction").val("supprN");
+          $(".action").val("supprN");
         }
       });
 
