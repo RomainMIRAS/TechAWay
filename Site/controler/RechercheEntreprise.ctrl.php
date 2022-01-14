@@ -47,7 +47,8 @@ $nbOffres = $db->nombreOffres();
 $scoresMatch = array();
 $typeEntreprise = array(1 => "Microentreprise",2 => "Petite entreprise",3 => "Moyenne entreprise",4 => "Grande entreprise");
 
-echo "$typeEntreprise[1]"
+echo "$typeEntreprise[1]";
+
 foreach($offres as $o){
     $scoreMatch = 0;
     $competOffre = $o->getCompetenceRecherche();
