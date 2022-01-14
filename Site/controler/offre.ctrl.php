@@ -50,9 +50,8 @@ $view = new View();
 $action = $_POST['action'] ?? '';
 $message = '';
 
-
 if ($action=='supprY') {
-        $candidat->setLienLM('');
+        $candidat->setLienLM("");
         $candidat->setEtape($candidat->getEtape() - 1);
         $db->updateCandidat($candidat);
         header("Location: offre.ctrl.php");
