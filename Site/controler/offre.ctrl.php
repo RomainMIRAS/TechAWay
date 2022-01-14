@@ -46,7 +46,7 @@ $offre = $db->getOffre($candidat->getLienLM());
 
 $view = new View();
 
-
+$action = 't';
 $action = $_POST['action'] ?? '';
 $message = '';
 if ($action=='supprY') {
