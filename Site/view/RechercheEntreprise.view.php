@@ -60,7 +60,7 @@
                         <td><?= round((($key+473)*100)/(616),2) ?>%</td>
                     </tr>
                     
-                <?php $it++; endif; ?>
+                <?php endif; ?>
             <?php endforeach; ?>
         </table>
         
