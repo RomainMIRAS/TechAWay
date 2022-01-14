@@ -21,7 +21,7 @@ if (!isset($_SESSION['utilisateur'])) header('Location: main.ctrl.php');
 if (!is_a($_SESSION['utilisateur'],"Candidat")) header('Location: main.ctrl.php');
 
 // Si il a déjà rempli le formulaire
-if ($_SESSION['utilisateur']->getEtape != 0) header('Location: main.ctrl.php');
+if ($_SESSION['utilisateur']->getEtape() != 0) header('Location: main.ctrl.php');
 
 session_write_close();
 
