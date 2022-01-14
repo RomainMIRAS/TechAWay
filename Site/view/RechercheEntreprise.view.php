@@ -49,9 +49,8 @@
             <?php foreach($listeOffre as $c): ?> <!-- pour chaque candidat -->
                 <?php if ($c!=false): ?>
                     <tr> <!-- affichage du nom, prenom, mail...etc du candidat -->
-                        <td><?= $c->getNom() ?></td>
+                        <td><?= $c->getNomOffre() ?></td>
                         <td><?= $c->getDateOffre() ?></td>
-                        <td><?= $c->getTelephone() ?></td>
                         <td><?= $c->getDetailOffre()->getSecteur() ?></td>
                         <td><?= $c->getDetailOffre()->getPoste() ?></td>
                         <td><?= $c->getEntreprise()->getNom() ?></td>
