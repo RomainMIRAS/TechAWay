@@ -65,14 +65,9 @@ $langagesAcquis = $_POST['languageAquis[]'] ?? '';
 $btnComp = $_POST['btnComp'] ?? '';
 
 if ($btnComp=='saveComp') {
-  $languesParleesArr = array();
-  array_push(languesParleesArr,$languesParle);
 
-  $langagesAcquisArr = array();
-  array_push(langagesAcquisArr,langagesAcquis);
-
-  $_SESSION['utilisateur']->setlangeParle($languesParleesArr);
-  $_SESSION['utilisateur']->setLangageAcquis($langagesAcquisArr);
+  $_SESSION['utilisateur']->setlangeParle($languesParle);
+  $_SESSION['utilisateur']->setLangageAcquis($langagesAcquis);
   $db->updateCandidat($_SESSION['utilisateur']);
   header("Location: profil.ctrl.php");
 }
