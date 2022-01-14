@@ -89,16 +89,13 @@
             </div>
             <label for="">Langage(s) informatique(s)</label>
             <div class="list-check"> <!-- Liste des langages -->
-              <input type="checkbox" name="languageAquis[]" value="php" selected>PHP</option>
-              <input type="checkbox" name="languageAquis[]" value="hmtl/css" >HTML/CSS</option>
-              <input type="checkbox" name="languageAquis[]" value="c" >C#, C ou C++</option>
-              <input type="checkbox" name="languageAquis[]" value="python" >Python</option>
-              <input type="checkbox" name="languageAquis[]" value="perl">PERL</option>
-              <input type="checkbox" name="languageAquis[]" value="java">Java</option>
-              <input type="checkbox" name="languageAquis[]" value="ruby">Ruby</option>
-              <input type="checkbox" name="languageAquis[]" value="swift">Swift</option>
-              <input type="checkbox" name="languageAquis[]" value="julia">Julia</option>
-              <input type="checkbox" name="languageAquis[]" value="scala">Scala</option>
+              <?php foreach($langages as $l): ?>
+                <?php if (in_array($l,$_SESSION['utilisateur']->getCompetenceAcquis()->getLangageAcquis())): ?>
+                  <input type="checkbox" name="languageAquis[]" value="<?php echo strtolower($l) ?>" checked><?= $l ?></option>
+                <?php else: ?> 
+                  <input type="checkbox" name="languageAquis[]" value="<?php echo strtolower($l) ?>"><?= $l ?></option>
+                <?php endif; ?>
+              <?php endforeach; ?>
             </div>
             <button type="submit">Enregistrer</button>
             <span class="asterisque">* : ces entrées ne sont pas modifiable directement. Veuillez contacter l'équipe de Tech A Way.</span>
