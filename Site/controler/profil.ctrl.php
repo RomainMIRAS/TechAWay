@@ -55,7 +55,7 @@ HTML
 
 */
 
-$langues = array('Français','Anglais','Espagnol','Italien','Allemand','Albanais');
+$langues = array('français','anglais','espagnol','italien','allemand','albanais');
 
 // Passage des paramètres
 $view->assign("langues",$langues);
