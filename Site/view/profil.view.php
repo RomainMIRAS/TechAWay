@@ -41,7 +41,7 @@
             <button id="btn-rens" class="btn-menu-profil">Mes renseignements</button>
             <button id="btn-comp" class="btn-menu-profil">Mes compétences</button>
             <button id="btn-pref" class="btn-menu-profil">Mes préférences</button>
-            <button id="btn-docs" class="btn-menu-profil">Mes documents</button>
+            <!--<button id="btn-docs" class="btn-menu-profil">Mes documents</button> pas le temps de developper cette partie --> 
           </div>
         <?php endif; ?>
       </section>
@@ -228,19 +228,7 @@
             });
 
             /* si bouton 'mes documents' est cliqué  */
-            $("#btn-docs").click(function() {
-              $("#form-rens").hide();
-              $("#form-comp").hide();
-              $("#form-pref").hide();
-              $("#form-docs").show();
-              $("#btn-rens").css("color","var(--color-grey)");
-              $("#btn-rens").css("border", "1px solid var(--color-grey)");
-            });
-
-            /*$("#img-profil-config").hide();
-            $("#img-profil").click(function() {
-              $("#img-profil-config").toggle();
-            });*/
+            
 
           });
         </script>
