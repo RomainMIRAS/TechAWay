@@ -3,7 +3,9 @@
 include_once(__DIR__."/../framework/view.class.php");
 include_once(__DIR__."/../model/Candidat.class.php");
 include_once(__DIR__."/../model/Coach.class.php");
+include_once(__DIR__."/../model/DAO.class.php"); // Singleton
 
+$db = DAO::get();
 
 // Ce controleur permet de sélectionner le bon controleur à utiliser selon
 // L'état du recrutement du candidat
@@ -29,15 +31,15 @@ session_write_close();
 
 session_start();
 
-
+$candidat = $_SESSION['utilisateur'];
 // Etape du formulaire
-if ($_SESSION['utilisateur']->getEtape() == 0){ // Etape du formulaire
+if ($candidat->getEtape() == 0){ // Etape du formulaire
   header('Location: formulaire.ctrl.php');
-} else if ($_SESSION['utilisateur']->getEtape() == 1) { // Etape Recherche d'entreprise
-  header('Location: profile.ctrl.php');
-} else if ($_SESSION['utilisateur']->getEtape() == 2) { // Etape Coaching CV et Lettre
+} else if ($candidat->getEtape() == 1) { // Etape Recherche d'entreprise
+  header('Location: RechercheEntreprise.ctrl.php');
+} else if ($candidat->getEtape() == 2) { // Etape Coaching CV et Lettre
   header('Location: test2.ctrl.php');
-} else if ($_SESSION['utilisateur']->getEtape() == 3) { // Etape Coaching Entretien
+} else if ($candidat->getEtape() == 3) { // Etape Coaching Entretien
   header('Location: main.ctrl.php');
 }
 
