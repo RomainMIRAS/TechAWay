@@ -61,7 +61,7 @@
                         <td><?= $listeOffreMatch[$key]->getEntreprise()->getTelephone() ?></td>
                         <td><?= $listeOffreMatch[$key]->getEntreprise()->getMail() ?></td>
                         <td><?= round((($key+473)*100)/(616)) ?>%</td>
-                        <td class="sup">
+                        <td class="val">
                           <form action="tableau.ctrl.php" method="POST">
                             <button type="submit" class="candidatDeleteBtn"><i class="fa fa-times" aria-hidden="true"></i></button>
                           </form>
@@ -71,9 +71,7 @@
                 <?php endif; ?>
             <?php endforeach; ?>
         </table>
-        
       </section>
-
     </main>
 
     <!-- FOOTER -------------------------------------------------------------------------------->
