@@ -62,11 +62,11 @@
     
     
     ?>
-     <h1>Information générale : <h1/>
+     <h1>Information générale : </h1>
 <p>L'offre se nomme <?php echo "$nom"; ?> et à été crée le <?php echo "$date"; ?>.</p>
 
 
-<h1>Information sur l'entreprise qui à crée l'offre : <h1/>
+<h1>Information sur l'entreprise qui à crée l'offre : </h1>
      <ol>
       <li>Nom : <?php echo "$nomEntreprise"; ?></li>
       <li>Mail : <?php echo "$mailEntreprise"; ?></li>
@@ -76,7 +76,7 @@
       <li>Taille de l'entreprise : <?php echo "$typeEntreprise"; ?></li>
      </ol>
 
-<h1>Information sur les renseignement diverse : <h1/>
+<h1>Information sur les renseignement diverse : </h1>
      <ol>
       <li>Accepte les candidat étranger ? : <?php echo "$travailleEtranger"; ?></li>
       <li>Secteur de l'emploie : <?php echo "$secteur"; ?></li>
@@ -84,7 +84,7 @@
       <li>Poste visé : <?php echo "$poste"; ?></li>
      </ol>
 
-<h1>Information sur les compétences attendue : <h1/>
+<h1>Information sur les compétences attendue : </h1>
      <ol>
       <li>Niveau d'étude attendue : <?php echo "$niveauEtude"; ?></li>
       <li>Langue à maitriser : 
