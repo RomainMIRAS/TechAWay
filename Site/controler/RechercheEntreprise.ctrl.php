@@ -211,10 +211,10 @@ $candidatAction = 't';
 $offreAAjouter = $_POST['offreAAdd'] ?? '';
 $candidatAction = $_POST['candidatAction'] ?? '';
 $message = '';
-//$nomOffre = $db->getOffre($offreAAjouter)->getNomOffre();
-echo "-$offreAAjouter-";
+
 
 if ($candidatAction=='ajouteY') {
+    $nomOffre = $db->getOffre($offreAAjouter)->getNomOffre();
     if ($candidat->getLienLM() == '') {
         $candidat->setLienLM($offreAAjouter);
         $db->updateCandidat($candidat);
