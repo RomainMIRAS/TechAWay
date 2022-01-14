@@ -145,14 +145,14 @@ foreach($offres as $o){
         $scoreMatch = $scoreMatch - 100;
     }
 
-foreach ($typeEntreprise as $aa) {
-    if ($aa == $renseiOffre->getTypeEntreprise()) {
+foreach (array_keys($typeEntreprise) as $key) {
+    /*if ($aa == $renseiOffre->getTypeEntreprise()) {
         $typeOffre = $aa;
     }
     if ($aa == $renseiCandid->getTypeEntreprise()) {
 
-    }
-    $testtt = array_keys($typeEntreprise, $aa);
+    }*/
+    $testtt = $typeEntreprise[$key];
     echo "$testtt";
 }
     //type entreprise
