@@ -62,11 +62,15 @@ HTML
 $languesParle = $_POST['langueParle[]'] ?? '';
 $langagesAcquis = $_POST['languageAquis[]'] ?? '';
 
+
 $btnComp = $_POST['btnComp'] ?? '';
 
 if ($btnComp=='saveComp') { /* Ne fonctionne pas */
-  $_SESSION['utilisateur']->getCompetenceAcquis()->setlangeParle($languesParle);
-  $_SESSION['utilisateur']->getCompetenceAcquis()->setLangageAcquis($langagesAcquis);
+  echo "ok";
+  $competence = $_SESSION["utilisateur"]->getCompetenceAcquis();
+  $competence->setLangeParle($languesParle);
+  $competence->setLangageAcquis($langagesAcquis);
+  $_SESSION["utilisateur"]->setCompetenceAcquis($competence);
   $db->updateCandidat($_SESSION['utilisateur']);
   header("Location: profil.ctrl.php");
 }
