@@ -15,7 +15,7 @@ class DAO {
 	// Constructeur qui permet l'application de se connecter a notre base de donnee
 	function __construct() {
 		try{
-		$this->db = pg_connect("host=localhost port=5432 dbname=techawaydb user=pagman password=pagman");//138.68.96.182
+			include(__DIR__.'/connectionDB.php');
 		
 		}catch (Exception $e) {
 			die("PSQL ERROR :".$e->getMessage());
