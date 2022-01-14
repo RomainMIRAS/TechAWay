@@ -36,6 +36,7 @@ Poste pas gerer
 
 
 
+
 session_start();
 $candidat = $_SESSION['utilisateur'];
 session_write_close();
@@ -44,7 +45,9 @@ $offres = $db->getOffres();
 $nbOffres = $db->nombreOffres();
 
 $scoresMatch = array();
+$typeEntreprise = array(1 => "Microentreprise",2 => "Petite entreprise",3 => "Moyenne entreprise",4 => "Grande entreprise");
 
+echo "$typeEntreprise[1]"
 foreach($offres as $o){
     $scoreMatch = 0;
     $competOffre = $o->getCompetenceRecherche();
@@ -152,7 +155,6 @@ foreach($offres as $o){
     }
 
 
-    echo "$scoreMatch";
     array_push($scoresMatch,$scoreMatch);
 }
 
@@ -169,5 +171,3 @@ $view->display("RechercheEntreprise.view.php");
 // Fin du code à ajouter ]]
 
 ?>
-
-// mettre des commentaire + faire des scénario + faire une version papier du rapport

@@ -79,7 +79,8 @@
               <!-- Saisie des competences du candidat -->
               <label for="nvEtude">Niveau d'etudes</label>
               <select name="nvEtude">
-                      <option value="bac+1" selected>Bac +1</option>
+                      <option value="bac+1" selected>Bac</option>
+                      <option value="bac+2" >Bac +1</option>
                       <option value="bac+2" >Bac +2</option>
                       <option value="bac+3" >Bac +3</option>
                       <option value="bac+4" >Bac +4</option>
@@ -139,22 +140,27 @@
               <label for="secteur">Secteur de travail</label>
               <select name="secteur" >
                   <option value="">--Veuillez choisir une option--</option>
-                  <option value="secteur 1">Secteur 1</option>
-                  <option value="secteur 2">Secteur 2</option>
+                  <option value="Informatique">Informatique</option>
+                  <option value="Autre">Autre</option>
               </select>
 
               <label for="poste">Poste</label>
               <select name="poste" >
                   <option value="">--Veuillez choisir une option--</option>
-                  <option value="poste 1">Poste 1</option>
-                  <option value="poste 2">Poste 2</option>
+                  <option value="Développeur">Développeur</option>
+                  <option value="Développeur de jeux video">Développeur de jeux video</option>
+                  <option value="Front-end développeur">Front-end développeur</option>
+                  <option value="Back-end développeur">Back-end développeur</option>
+                  <option value="Full stack  développeur">Full stack  développeur</option>
               </select>
 
               <label for="typeEntreprise">Type d'entreprise</label>
               <select name="typeEntreprise" >
                   <option value="">--Veuillez choisir une option--</option>
-                  <option value="start-up">Start-Up</option>
-                  <option value="multinational">Multinational</option>
+                  <option value="Microentreprise">Microentreprise</option>
+                  <option value="Petite entreprise">Petite entreprise</option>
+                  <option value="Moyenne entreprise">Moyenne entreprise</option>
+                  <option value="Grande entreprise">Grande entreprise</option>
               </select>
               <output><?=$erreur?></output>
               <form action ="formulaire.ctrl.php" method="post">
