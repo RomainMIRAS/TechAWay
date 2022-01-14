@@ -176,14 +176,9 @@
 
           <!-- Formulaire de documents -->
           <form action="" class="form" id="form-docs">
-            <label for="">Nom</label>
-            <input type="text" value="<?= $candidat->getNom() ?>" disabled>
-            <label for="">Prénom</label>
-            <input type="text" value="<?= $candidat->getPrenom() ?>" disabled>
-            <label for="">Adresse mail</label>
-            <input type="text" value="<?= $candidat->getMail() ?>" disabled>
-            <button type="submit">Enregistrer</button>
-            <span class="asterisque">* : ces entrées ne sont pas modifiable directement. Veuillez contacter l'équipe de Tech A Way.</span>
+            <?= $candidat->getLienLM() ?>
+            <button type="submit">Abandonner l'offre</button>
+            
           </form>
         <?php endif; ?>
 
