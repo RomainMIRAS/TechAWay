@@ -64,7 +64,7 @@
                         <td class="sup">
                           <form action="RechercheEntreprise.ctrl.php" method="POST">
                             <input type="hidden" class="candidatAction" name="candidatAction" value="ajouteN">
-                            <input type="hidden" name="offreAAdd" value="<?= $listeOffreMatch[$key] ?>">
+                            <input type="hidden" name="offreAAdd" value="<?= $listeOffreMatch[$key]->getId() ?>">
                             <button type="submit" class="candidatDeleteBtn"><i class="fa fa-times" aria-hidden="true"></i></button>
                           </form>
                         </td>
