@@ -42,7 +42,7 @@ session_start();
 $candidat = $_SESSION['utilisateur'];
 session_write_close();
 
-
+$view = new View();
 $view->display("offre.view.php");
 
 
