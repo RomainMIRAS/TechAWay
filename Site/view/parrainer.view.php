@@ -94,6 +94,7 @@
                 });
               </script>
               <form action ="formulaire.ctrl.php" method="post">
+                <output><?=$erreur?></output>
               </form>
 
               <div>
