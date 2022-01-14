@@ -87,29 +87,6 @@
         <div class="nav-options-board">
           <button id="addEntrepriseBtn">Ajouter une entreprise</button>
         </div>
-        <div id="addEntrepriseSection" class="addNewSection"> <!-- Ajouter une entreprise -->
-          <button id="addEntrepriseClose">Fermer</button>
-          <h3>Ajouter une entreprise</h3>
-          <form action="tableau.ctrl.php" method="POST">
-            <label for="nom">Nom *</label>
-            <input type="text" name="entrepriseName" placeholder="Entrez le nom de l'entreprise" >
-            <label for="mail">Adresse E-mail *</label>
-            <input type="mail" name="entrepriseMail" placeholder="Entrez l' adresse mail de l'entreprise" >
-            <label for="tel">Téléphone</label>
-            <input type="mail" name="entrepriseTel" placeholder="Entrez le téléphone de l'entreprise" >
-            <label for="tel">Pays *</label>
-            <select name="entreprisePays" id="">
-              <?php foreach($listePays as $pays): ?>
-                <option value="<?= $pays ?>"><?= $pays ?></option>
-              <?php endforeach; ?>
-            </select>
-            <label for="ville">Ville</label>
-            <input type="text" name="entrepriseVille" placeholder="Entrez la ville l'entreprise" >
-            <button type="submit" name="ajouterEntrepriseBtn" value="ajouterEntreprise">Ajouter</button>
-          </form>
-          <span class="erreur"></span>
-          <span class="asterisque">* : Champ obligatoire</span>
-        </div>
         <table>  <!-- Tableau des entreprises -->
             <tr>
                 <th>Nom</th>
@@ -181,8 +158,34 @@
       </section>
 
     </main>
-
-    <div id="addOffreSection" class="addNewSection"> <!-- Ajouter une offre -->
+    <div class="newSectionBg">
+      <div id="addEntrepriseSection" class="addNewSection"> <!-- Ajouter une entreprise -->
+            <button id="addEntrepriseClose">Fermer</button>
+            <h3>Ajouter une entreprise</h3>
+            <form action="tableau.ctrl.php" method="POST">
+              <label for="nom">Nom *</label>
+              <input type="text" name="entrepriseName" placeholder="Entrez le nom de l'entreprise" >
+              <label for="mail">Adresse E-mail *</label>
+              <input type="mail" name="entrepriseMail" placeholder="Entrez l' adresse mail de l'entreprise" >
+              <label for="tel">Téléphone</label>
+              <input type="mail" name="entrepriseTel" placeholder="Entrez le téléphone de l'entreprise" >
+              <label for="tel">Pays *</label>
+              <select name="entreprisePays" id="">
+                <?php foreach($listePays as $pays): ?>
+                  <option value="<?= $pays ?>"><?= $pays ?></option>
+                <?php endforeach; ?>
+              </select>
+              <label for="ville">Ville</label>
+              <input type="text" name="entrepriseVille" placeholder="Entrez la ville l'entreprise" >
+              <button type="submit" name="ajouterEntrepriseBtn" value="ajouterEntreprise">Ajouter</button>
+            </form>
+            <span class="erreur"></span>
+            <span class="asterisque">* : Champ obligatoire</span>
+          </div>
+        </div>
+      </div>
+    <div class="newSectionBg">
+      <div id="addOffreSection" class="addNewSection"> <!-- Ajouter une offre -->
           <button id="addOffreClose">Fermer</button>
           <h3>Ajouter une offre</h3>
           <form action="tableau.ctrl.php" method="POST">
@@ -238,8 +241,9 @@
           <span class="erreur"></span>
           <span class="asterisque">* : Champ obligatoire</span>
         </div>
-
-    <!-- FOOTER -------------------------------------------------------------------------------->
+      </div>
+    
+        <!-- FOOTER -------------------------------------------------------------------------------->
     <?php include_once('../view/design/footer.php'); ?>
 
 

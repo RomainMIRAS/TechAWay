@@ -658,7 +658,7 @@ tr:hover td {
   margin-bottom: 5px;
 }
 
-.backgroundSection{
+.newSectionBg{
   position: fixed;
   backdrop-filter: blur(2px);
   width:100vw;
