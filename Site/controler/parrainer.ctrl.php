@@ -1,6 +1,7 @@
 <?php
 
 include_once(__DIR__."/../framework/view.class.php");
+include_once(__DIR__.'/../model/connectionMail.php');
 
 ///////////////////////////////////////////////////////////////////////////////
 // Partie Récupération des Variables
@@ -127,6 +128,7 @@ if (true != $result){
 // Partie View
 ///////////////////////////////////////////////////////////////////////////////
 $view = new View();
-$view->display("Parrain.view.php");
+$view->assign('erreur',$erreur);
+$view->display("parrainer.view.php");
 
 ?>
