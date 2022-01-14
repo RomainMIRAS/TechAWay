@@ -11,9 +11,30 @@ include_once(__DIR__."/../model/Coach.class.php");
 
 $view = new View();
 
-/* On récupère le lien photo */
+/* On récupère le lien cv */
+/*
+$filename = $_FILES["fileToUpload"]["name"];
+echo $filename."\n";
+$tempname = $_FILES["fileToUpload"]["tmp_name"];    
+echo $tempname;
+$folder = "/home/alexandre/Bureau/Informatique/Web/img/".$filename;
 
+if (move_uploaded_file($tempname, $folder))  {
+    $msg = "Image uploaded successfully";
+}else{
+    $msg = "Failed to upload image";
+}
+echo $msg;
 
+HTML
+
+<form action="upload.php" method="post" enctype="multipart/form-data">
+  Select image to upload:
+  <input type="file" name="fileToUpload">
+  <input type="submit" value="Upload Image" name="submit">
+</form>
+
+*/
 
 // Passage des paramètres
 

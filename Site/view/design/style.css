@@ -127,6 +127,7 @@ main {
 .asterisque {
   color: var(--color-black);
   font-size: 12px;
+  margin-top: 10px;
 }
 
 h1 {
@@ -802,6 +803,15 @@ footer ul li a:hover {
     justify-content: center;
     justify-self: center;
     display: flex;
+  }
+
+  #btn-profil-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .btn-menu-profil {
+    margin-bottom: 5px;
   }
 
 }
