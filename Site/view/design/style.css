@@ -336,7 +336,7 @@ output{
 }
 
 input[type="checkbox"] {
-  margin: 5px;
+  margin: 10px;
 }
 
 textarea {
