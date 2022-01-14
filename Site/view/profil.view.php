@@ -93,7 +93,7 @@
             <label for="">Langage(s) informatique(s)</label>
             <div class="list-check"> <!-- Liste des langages -->
               <?php foreach($langages as $la): ?>
-                <?php if (in_array(strtolower($la),$_SESSION['utilisateur']->getCompetenceAcquis()->getLangageAcquis())): ?>
+                <?php if (in_array(strtolower($la),$candidat->getCompetenceAcquis()->getLangageAcquis())): ?>
                   <input type="checkbox" name="languageAquis[]" value="<?php echo strtolower($la) ?>" checked><?php echo ucfirst($la) ?></option>
                 <?php else: ?> 
                   <input type="checkbox" name="languageAquis[]" value="<?php echo strtolower($la) ?>"><?php echo ucfirst($la) ?></option>

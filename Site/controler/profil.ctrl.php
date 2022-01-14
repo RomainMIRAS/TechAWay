@@ -64,8 +64,10 @@ $languageAquis = (isset($_POST['languageAquis'])) ? $_POST['languageAquis']:null
 var_dump($languageAquis);
 $btnComp = $_POST['btnComp'] ?? '';
 
+$candidat = $db->getCandidat($_SESSION["utilisateur"]->getMail());
+
 if ($btnComp=='saveComp') { /* Ne fonctionne pas */
-  $competence = $db->getCandidat($_SESSION["utilisateur"]->getMail())->getCompetenceAcquis();
+  $competence = $candidat->getCompetenceAcquis();
   $competence->setLangeParle($langueParle);
   $competence->setLangageAcquis($languageAquis);
   $_SESSION["utilisateur"]->setCompetenceAcquis($competence);
@@ -96,6 +98,7 @@ $view->assign("secteurs",$secteurs);
 $view->assign("contrats",$contrats);
 $view->assign("postes",$postes);
 $view->assign("entreprises",$entreprises);
+$view->assign("candidat",$candidat);
 
 // Charge la vue
 $view->display("profil.view.php");
