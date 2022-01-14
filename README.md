@@ -47,6 +47,8 @@ Voici des login d'un coach que vous pouvez utiliser.
 **Adresse Mail** : adresse-coach@gmail.com <br>
 **Mot de Passe** : motdepassecoach <br>
 
+**ATTENTION LES LOGIN VONT ETRE SUPPRIMER APRES L'EVALUATION POUR DES RAISON DE SECURITE**
+
 ### Entreprises :
 
 Vous pouvez envoyer des email pour demander de partenariat -> https://techaway.tk/Site/controler/recruter.ctrl.php
