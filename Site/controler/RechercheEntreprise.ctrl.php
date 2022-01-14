@@ -223,7 +223,6 @@ if ($candidatAction=='ajouteY') {
         $message = "Impossible d'ajouter l'offre $nomOffre car vous en avez déjà une.";
     }
     
-    header("Location: RechercheEntreprise.ctrl.php");
 }
 
 $view->assign('message',$message);
