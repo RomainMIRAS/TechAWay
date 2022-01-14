@@ -79,7 +79,13 @@
             <input type="text" value="<?= $_SESSION['utilisateur']->getCompetenceAcquis()->getNvEtude() ?>" disabled>
             <label for="">Langue(s) parlée(s)</label>
             <div class="list-check"> <!-- Liste des langues -->
-              
+              <?php foreach($langues as $l): ?>
+                <?php if ($l==$_SESSION['utilisateur']->getCompetenceAcquis()->getLangeParle()): ?>
+                  <input type="checkbox" name="langueParle[]" value="<?php echo strtolower($l) ?>"><?= $l ?></option>
+                <?php else: ?>
+                  <input type="checkbox" name="langueParle[]" value="<?php echo strtolower($l) ?>"><?= $l ?></option>
+                <?php endif; ?>
+              <?php endforeach; ?>
             </div>
             <label for="">Langage(s) informatique(s)</label>
             <div class="list-check"> <!-- Liste des langages -->
