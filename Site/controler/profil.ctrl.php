@@ -61,27 +61,41 @@ HTML
 
 $langueParle = (isset($_POST['langueParle'])) ? $_POST['langueParle']:null;  //Affectation de la langue parlé
 $languageAquis = (isset($_POST['languageAquis'])) ? $_POST['languageAquis']:null;  //Affectation des languages aquis
-var_dump($languageAquis);
 $btnComp = $_POST['btnComp'] ?? '';
 
 $candidat = $db->getCandidat($_SESSION["utilisateur"]->getMail());
 
-if ($btnComp=='saveComp') { /* Ne fonctionne pas */
+/* Mofifier competences candidat */
+if ($btnComp=='saveComp') { 
   $competence = $candidat->getCompetenceAcquis();
   $competence->setLangeParle($langueParle);
   $competence->setLangageAcquis($languageAquis);
+
   $_SESSION["utilisateur"]->setCompetenceAcquis($competence);
   $db->updateCandidat($_SESSION['utilisateur']);
+  header("Location: profil.ctrl.php");
 }
 
-/*$btnPref = $_POST['btnPref'] ?? '';
+$btnPref = $_POST['btnPref'] ?? '';
+$travEtranger = $_POST['travE'] ?? '';
+$typeContrat = (isset($_POST['typeContrat'])) ? $_POST['typeContrat']:"";
+$secteur = (isset($_POST['secteur'])) ? $_POST['secteur']:"";
+$poste = (isset($_POST['poste'])) ? $_POST['poste']:"";
+$typeEntreprise = (isset($_POST['typeEntreprise'])) ? $_POST['typeEntreprise']:"";
 
-if ($btnPref=='savePref') { /* Ne fonctionne pas
-  $_SESSION['utilisateur']->setlangeParle($languesParle);
-  $_SESSION['utilisateur']->setLangageAcquis($langagesAcquis);
+/* Modifier preferences candidat */
+if ($btnPref=='savePref') {
+  $renseignement = $candidat->getRenseignement();
+  $renseignement->setTravEtranger($travEtranger);
+  $renseignement->setTypeContrat($typeContrat);
+  $renseignement->setSecteur($secteur);
+  $renseignement->setPoste($poste);
+  $renseignement->setTypeEntreprise($typeEntreprise);
+
+  $_SESSION["utilisateur"]->setPreference($renseignement);
   $db->updateCandidat($_SESSION['utilisateur']);
   header("Location: profil.ctrl.php");
-}*/
+}
 
 
 $langues = array('français','anglais','espagnol','italien','allemand','albanais');

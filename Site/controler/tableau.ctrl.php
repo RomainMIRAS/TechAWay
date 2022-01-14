@@ -73,6 +73,7 @@ $entrepriseVille = $_POST['entrepriseVille'] ?? '';
 if ($ajouterEntrepriseBtn=='ajouterEntreprise') {
     if ($entrepriseMail!='' && $entreprisePays!='' && $entrepriseName!='') {
         $db->creeEntreprise($entrepriseMail,$entrepriseName,$entrepriseTel,$entreprisePays,$entrepriseVille);
+        header("Location: tableau.ctrl.php");
     } else {
         $erreur = "Les champs * sont obligatoires.";
     }
