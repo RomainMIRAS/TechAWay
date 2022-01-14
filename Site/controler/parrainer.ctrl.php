@@ -128,6 +128,7 @@ if (true != $result){
 // Partie View
 ///////////////////////////////////////////////////////////////////////////////
 $view = new View();
+$view->assign('erreur',$erreur);
 $view->display("parrainer.view.php");
 
 ?>
