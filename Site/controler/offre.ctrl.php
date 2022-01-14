@@ -53,7 +53,7 @@ $message = '';
 if ($action=='supprY') {
         $candidat->setLienLM('');
         
-        $candidat->setEtape($candidat->getEtape() - 1);
+        $candidat->setEtape(1);
         $db->updateCandidat($candidat);
 }
 
