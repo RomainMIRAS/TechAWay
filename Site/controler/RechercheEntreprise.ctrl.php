@@ -207,14 +207,7 @@ $offresMatch += [$scoresMatch[$it] => $lo];
 $it++;
 }
 
-
-foreach (array_keys($offresMatch) as $key) {
-   $tt = $offresMatch[$key]->getNomOffre();
-echo "$key pour $tt";
-}
-
-$view->assign('listeOffre',$offres);
-$view->assign('Scores',$scoresMatch);
+$view->assign('listeOffreMatch',$offresMatch);
 $view->display("RechercheEntreprise.view.php");
 
 

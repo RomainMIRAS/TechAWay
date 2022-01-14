@@ -47,17 +47,17 @@
                 <th>Telephone contact</th>
                 <th>Score de match</th>
             </tr>
-            <?php $it = 0?>
-            <?php foreach($listeOffre as $c): ?> <!-- pour chaque candidat -->
-                <?php if ($c!=false): ?>
+            <?php ksort($listeOffreMatch) ?>
+            <?php foreach (array_keys($listeOffreMatch) as $key) : ?> <!-- pour chaque candidat -->
+                <?php if ($key!=false): ?>
                     <tr> <!-- affichage du nom, prenom, mail...etc du candidat -->
-                        <td><?= $c->getNomOffre() ?></td>
-                        <td><?= $c->getDateOffre() ?></td>
-                        <td><?= $c->getDetailOffre()->getSecteur() ?></td>
-                        <td><?= $c->getDetailOffre()->getPoste() ?></td>
-                        <td><?= $c->getEntreprise()->getNom() ?></td>
-                        <td><?= $c->getEntreprise()->getTelephone() ?></td>
-                        <td><?= round((($Scores[$it]+473)*100)/(616),2) ?>%</td>
+                        <td><?= $listeOffreMatch[$key]->getNomOffre() ?></td>
+                        <td><?= $listeOffreMatch[$key]->getDateOffre() ?></td>
+                        <td><?= $listeOffreMatch[$key]->getDetailOffre()->getSecteur() ?></td>
+                        <td><?= $listeOffreMatch[$key]->getDetailOffre()->getPoste() ?></td>
+                        <td><?= $listeOffreMatch[$key]->getEntreprise()->getNom() ?></td>
+                        <td><?= $listeOffreMatch[$key]->getEntreprise()->getTelephone() ?></td>
+                        <td><?= round((($key+473)*100)/(616),2) ?>%</td>
                     </tr>
                     
                 <?php $it++; endif; ?>
