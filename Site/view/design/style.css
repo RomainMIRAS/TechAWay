@@ -555,7 +555,12 @@ button:hover {
   justify-content: center;
   text-align: center;
 }
-
+#article1TUJ{
+  margin:0 7.5%;
+}
+#article2TUJ{
+  margin:0 7.5%;
+}
 #sectionTUJ section article #signup{
   border: 2px solid var(--color-blue1);
   margin-left: 0;
