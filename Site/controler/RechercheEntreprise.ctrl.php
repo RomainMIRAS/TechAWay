@@ -147,7 +147,7 @@ foreach($offres as $o){
 
 foreach ($typeEntreprise as $aa) {
     if ($aa == $renseiOffre->getTypeEntreprise()) {
-        $typeOffre = $aa
+        $typeOffre = $aa;
     }
     if ($aa == $renseiCandid->getTypeEntreprise()) {
 
