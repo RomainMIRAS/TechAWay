@@ -40,7 +40,6 @@
 
     <?php $date = $offre->getDateOffre(); 
     $nom = $offre->getNomOffre(); 
-    $db = DAO::get();
 
     //Paramètre en lien avec l'entreprise
     $nomEntreprise = $offre->getEntreprise()->getNom(); 
@@ -58,8 +57,8 @@
     
     //Paramètre en lien avec les competence
     $niveauEtude = $offre->getCompetenceRecherche()->getNvEtude();
-    $langue = $db->conversionArrayString($offre->getCompetenceRecherche()->getlangeParle());
-    $langage = $db->conversionArrayString($offre->getCompetenceRecherche()->getLangageAcquis());
+    $langue = $offre->getCompetenceRecherche()->getlangeParle();
+    $langage = $offre->getCompetenceRecherche()->getLangageAcquis();
     
     
     ?>
@@ -91,7 +90,7 @@
 <h2>Information sur les compétences attendue : <h2/>
      <ol>
       <li>Niveau d'étude attendue : <?php echo "$niveauEtude"; ?></li>
-      <li>Langue à maitriser : <?php echo "$langue"; ?></li>
+      <li>Langue à maitriser : <?php foreach ($langue as $la) {echo "$la";} ?></li>
       <li>Langage informatique à connaître : <?php echo "$langage"; ?></li>
      </ol>
       
