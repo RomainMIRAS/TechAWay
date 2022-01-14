@@ -87,8 +87,8 @@
         <div class="nav-options-board">
           <button id="addEntrepriseBtn">Ajouter une entreprise</button>
         </div>
-        <div id="addEntrepriseSection" class="backgroundSection">
-          <div class="addNewSection"> <!-- Ajouter une entreprise -->
+        <div class="backgroundSection">
+          <div id="addEntrepriseSection" class="addNewSection"> <!-- Ajouter une entreprise -->
             <button id="addEntrepriseClose">Fermer</button>
             <h3>Ajouter une entreprise</h3>
             <form action="tableau.ctrl.php" method="POST">
@@ -149,8 +149,8 @@
         <div class="nav-options-board">
           <button id="addOffreBtn">Ajouter une offre</button>
         </div>
-        <div id="addOffreSection" class="backgroundSection">
-          <div class="addNewSection"> <!-- Ajouter une offre -->
+        <div class="backgroundSection">
+          <div id="addOffreSection" class="addNewSection"> <!-- Ajouter une offre -->
             <button id="addOffreClose">Fermer</button>
             <h3>Ajouter une offre</h3>
             <form action="tableau.ctrl.php" method="POST">
