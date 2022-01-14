@@ -211,8 +211,8 @@ $candidatAction = 't';
 $offreAAjouter = $_POST['offreAAdd'] ?? '';
 $candidatAction = $_POST['candidatAction'] ?? '';
 $message = '';
-$nomOffre = $db->getOffre($offreAAjouter)->getNomOffre();
-
+//$nomOffre = $db->getOffre($offreAAjouter)->getNomOffre();
+echo "-$offreAAjouter-";
 
 if ($candidatAction=='ajouteY') {
     if ($candidat->getLienLM() == '') {
