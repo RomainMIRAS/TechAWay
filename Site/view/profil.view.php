@@ -105,9 +105,13 @@
           <form action="" class="form" id="form-pref">
             <label for="">Travailler à l'étranger ?</label>
             <div class="list-radio">
-              <input type="radio" name="travEtranger" value=true>
+              <?php if ($_SESSION['utilisateur']->getRenseignement()->getTravEtranger()==true): ?>
+                <input type="radio" name="travEtranger" value=true checked>
+              <?php endif; ?>
               <label for="oui">Oui</label>
-              <input type="radio" name="travEtranger" value=false>
+              <?php if ($_SESSION['utilisateur']->getRenseignement()->getTravEtranger()==false): ?>
+                <input type="radio" name="travEtranger" value=false checked>
+              <?php endif; ?>
               <label for="oui">Non</label>
             </div>
             <label for="">Secteur(s) d'activité(s)</label>
