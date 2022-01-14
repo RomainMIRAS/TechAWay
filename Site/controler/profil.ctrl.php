@@ -72,7 +72,6 @@ if ($btnComp=='saveComp') { /* Ne fonctionne pas */
   $competence->setLangageAcquis($languageAquis);
   $_SESSION["utilisateur"]->setCompetenceAcquis($competence);
   $db->updateCandidat($_SESSION['utilisateur']);
-  header("Location: profil.ctrl.php");
 }
 
 /*$btnPref = $_POST['btnPref'] ?? '';
