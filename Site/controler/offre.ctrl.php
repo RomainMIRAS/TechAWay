@@ -39,7 +39,7 @@ session_write_close();
 ///////////////////////////////////////////////////////////////////////////////
 
 session_start();
-$candidat = $_SESSION['utilisateur'];
+$candidat = $db->getCandidat($_SESSION['utilisateur']->getMail());
 session_write_close();
 //$int = (int)$candidat->getLienLM();
 echo "-" . $candidat->getLienLM() . "-";
