@@ -62,6 +62,11 @@ if ($erreur == "" && $action == "confirmation"){
   Nom : $nom \r\n
   Mail : $mail \r\n
   Message : $message
+  ---------------------
+
+  Aller nous voir sur
+  techaway.tk/
+  
   ----------------------
   ";
 
