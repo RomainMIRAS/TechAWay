@@ -46,7 +46,7 @@ Vous pouvez envoyer des email pour demander de partenariat -> https://techaway.t
 
 ## Pour les profs : 
 
-### login Admin (Coach)
+### Login d'Admin (Coach)
 Voici des login d'un coach que vous pouvez utiliser.
 
 **Adresse Mail** : adresse-coach@gmail.com <br>
