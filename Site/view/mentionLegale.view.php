@@ -46,40 +46,11 @@ Le nom de domaine https://www.TechAway.jobs/ a déposé une déclaration officie
 
 
 <h4>Sécurité etProtection de vos données personnelles</h4> <br>
-
-Possession de vos données : Les données personnelles rassemblées par le cabinet de recrutement Tech A Way ont été mises à notre disposition avec votre accord. La récupération de vos données est conforme aux exigences de la CNIL. <br>
+Possession de vos données : Les données <a id="signature" style="text-decoration : none; color : black " href="https://youtu.be/dQw4w9WgXcQ">personnelles</a> rassemblées par le cabinet de recrutement Tech A Way ont été mises à notre disposition avec votre accord. La récupération de vos données est conforme aux exigences de la CNIL. <br>
 
 Conservation de ces données : Tech A Way conserve vos données relatives à votre carrière professionnelle dans une visée uniquement professionnelle à l’exclusion de tout autre activité. En remplissant les formulaires présents sur ce site ou en nous fournissant des données dans le cadre de notre activité, vous acceptez le traitement et la transmission de ces données à des tiers est uniquement réalisé en intern à des fins professioneles et transmises dans le respect de la profession. La transmission sera pas opposable. Vos données seront conservées pour une durée maximale de 2 ans et seront supprimées ou éventuellement mises à jour par les consultants de Tech A Way. <br>
 
-<<<<<<< HEAD
 Conformément au Loi Informatique et Libertés III et au RGPD Datant respectivement de 2016 et 2018 , vous disposez d’un droit d’opposition, d’accès et de rectification des données vous concernant, dont nous sommes seuls destinataires. Pour exercer ces droits, vous pouvez vous adresser par e-mail à techAWay@trobsocial.jobs ou par courrier à l’adresse ci-dessus. Toute demande de rectification ou d’opposition à la possession de données personnelles vous concernant devra faire l’objet d’une demande écrite par mail ou courrier papier. <br> <br>
-=======
-<h4>Sécurité</h4>
->>>>>>> d8c72cace0538b375f60e01d05e5a428292ac466
-
-Tech A Way prend en charge la sécurisation de sa base de données et de son traitement informatique pour s’assurer d’aucune utilisation indésirable. Aucun partage ni aucune communication de vos données n’est effectué sans votre accord de consentement. Le traitement de ces données est uniquement réalisé en interne à des fins professionnelles et transmises dans le respect de la profession.
-
-
-
-<<<<<<< HEAD
- 
- 
-=======
-
-
-<h4>Site à visée commerciale</h4> <br>
-
-Aucune transaction ni aucune <a id="signature" style="text-decoration : none; color : black " href="https://youtu.be/dQw4w9WgXcQ">utilisation</a> commerciale n’est faite à partir de ce nom de domaine https://www.TechAway.jobs/. Tout le contenu de ce site web est donné uniquement à titre indicatif et ne saurait faire l’objet d’une plainte concernant un mauvais usage du commerce informatique. Tech A Way ne saurait être tenu responsable des erreurs concernant les informations diffusées sur cette plateforme <br> <br>
-
-
->>>>>>> d8c72cace0538b375f60e01d05e5a428292ac466
-
-
-<<<<<<< HEAD
-    
-=======
 Pour tout renseignement complémentaire, vous pouvez également nous joindre directement sur notre Page Contact !</p>
-
->>>>>>> d8c72cace0538b375f60e01d05e5a428292ac466
 </body>
 </html>
