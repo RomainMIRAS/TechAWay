@@ -107,10 +107,14 @@
             <div class="list-radio">
               <?php if ($_SESSION['utilisateur']->getRenseignement()->getTravEtranger()==true): ?>
                 <input type="radio" name="travEtranger" value=true checked>
+              <?php else: ?>
+                <input type="radio" name="travEtranger" value=true>
               <?php endif; ?>
               <label for="oui">Oui</label>
               <?php if ($_SESSION['utilisateur']->getRenseignement()->getTravEtranger()==false): ?>
                 <input type="radio" name="travEtranger" value=false checked>
+              <?php else: ?>
+                <input type="radio" name="travEtranger" value=false>
               <?php endif; ?>
               <label for="oui">Non</label>
             </div>
