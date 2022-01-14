@@ -47,7 +47,7 @@
                 <th>Telephone contact</th>
                 <th>Score de match</th>
             </tr>
-            <?php ksort($listeOffreMatch) ?>
+            <?php krsort($listeOffreMatch) ?>
             <?php foreach (array_keys($listeOffreMatch) as $key) : ?> <!-- pour chaque candidat -->
                 <?php if ($key!=false): ?>
                     <tr> <!-- affichage du nom, prenom, mail...etc du candidat -->
