@@ -65,12 +65,15 @@ $btnComp = $_POST['btnComp'] ?? '';
 
 $candidat = $db->getCandidat($_SESSION["utilisateur"]->getMail());
 
+/* Mofifier competences candidat */
 if ($btnComp=='saveComp') { 
   $competence = $candidat->getCompetenceAcquis();
   $competence->setLangeParle($langueParle);
   $competence->setLangageAcquis($languageAquis);
+
   $_SESSION["utilisateur"]->setCompetenceAcquis($competence);
   $db->updateCandidat($_SESSION['utilisateur']);
+  header("Location: profil.ctrl.php");
 }
 
 $btnPref = $_POST['btnPref'] ?? '';
@@ -79,7 +82,8 @@ $typeContrat = (isset($_POST['typeContrat'])) ? $_POST['typeContrat']:"";
 $secteur = (isset($_POST['secteur'])) ? $_POST['secteur']:"";
 $poste = (isset($_POST['poste'])) ? $_POST['poste']:"";
 $typeEntreprise = (isset($_POST['typeEntreprise'])) ? $_POST['typeEntreprise']:"";
-var_dump($travEtranger);
+
+/* Modifier preferences candidat */
 if ($btnPref=='savePref') {
   $renseignement = $candidat->getRenseignement();
   $renseignement->setTravEtranger($travEtranger);
@@ -87,6 +91,7 @@ if ($btnPref=='savePref') {
   $renseignement->setSecteur($secteur);
   $renseignement->setPoste($poste);
   $renseignement->setTypeEntreprise($typeEntreprise);
+
   $_SESSION["utilisateur"]->setPreference($renseignement);
   $db->updateCandidat($_SESSION['utilisateur']);
   header("Location: profil.ctrl.php");
