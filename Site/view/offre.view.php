@@ -62,10 +62,7 @@
     
     
     ?>
-    <form action="offre.ctrl.php" method="POST">
-                            <input type="hidden" class="action" name="action" value="supprN">
-                            <button type="submit" class="candidatDeleteBtn">Abandonner l'offre</button>
-                          </form>
+    
 
                           
      <h2>Information générale : </h2>
@@ -103,7 +100,10 @@
       </ol></li>
      </ol>
       
-      
+      <form action="offre.ctrl.php" method="POST">
+                            <input type="hidden" class="action" name="action" value="supprN">
+                            <button type="submit" class="candidatDeleteBtn">Abandonner l'offre</button>
+                          </form>
       
     </main>
 
