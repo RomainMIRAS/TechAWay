@@ -148,7 +148,41 @@
         <div class="nav-options-board">
           <button id="addOffreBtn">Ajouter une offre</button>
         </div>
-        <div id="addOffreSection" class="addNewSection"> <!-- Ajouter une offre -->
+        <table>  <!-- Tableau des offres -->
+            <tr>
+                <th>Nom</th>
+                <th>Entreprise</th>
+                <th>Date</th>
+                <th>Modifier</th>
+                <th>Supprimer</th>
+            </tr>
+            <?php foreach($offres as $o): ?> <!-- pour chaque candidat -->
+                <?php if ($o!=false): ?>
+                    <tr> <!-- affichage du nom, prenom, mail...etc du candidat -->
+                        <td><?= $o->getNomOffre() ?></td>
+                        <td><?= $o->getEntreprise()->getNom() ?></td>
+                        <td><?= $o->getDateOffre() ?></td>
+                        <td class="sup">
+                          <button class="editBtn"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                        </td>
+                        <td class="sup">
+                          <form action="tableau.ctrl.php" method="POST">
+                            <input type="hidden" class="offreAction" name="offreAction" value="deleteN">
+                            <input type="hidden" name="offreToDelete" value="<?= $o->getId() ?>">
+                            <button type="submit" class="offreDeleteBtn"><i class="fa fa-times" aria-hidden="true"></i></button>
+                          </form>
+                        </td>
+                    </tr>
+                <?php endif; ?>
+            <?php endforeach; ?>
+        </table>
+        <span class="deleteMessage"><?= $offreMessage ?></span>
+
+      </section>
+
+    </main>
+
+    <div id="addOffreSection" class="addNewSection"> <!-- Ajouter une offre -->
           <button id="addOffreClose">Fermer</button>
           <h3>Ajouter une offre</h3>
           <form action="tableau.ctrl.php" method="POST">
@@ -204,39 +238,6 @@
           <span class="erreur"></span>
           <span class="asterisque">* : Champ obligatoire</span>
         </div>
-        <table>  <!-- Tableau des offres -->
-            <tr>
-                <th>Nom</th>
-                <th>Entreprise</th>
-                <th>Date</th>
-                <th>Modifier</th>
-                <th>Supprimer</th>
-            </tr>
-            <?php foreach($offres as $o): ?> <!-- pour chaque candidat -->
-                <?php if ($o!=false): ?>
-                    <tr> <!-- affichage du nom, prenom, mail...etc du candidat -->
-                        <td><?= $o->getNomOffre() ?></td>
-                        <td><?= $o->getEntreprise()->getNom() ?></td>
-                        <td><?= $o->getDateOffre() ?></td>
-                        <td class="sup">
-                          <button class="editBtn"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
-                        </td>
-                        <td class="sup">
-                          <form action="tableau.ctrl.php" method="POST">
-                            <input type="hidden" class="offreAction" name="offreAction" value="deleteN">
-                            <input type="hidden" name="offreToDelete" value="<?= $o->getId() ?>">
-                            <button type="submit" class="offreDeleteBtn"><i class="fa fa-times" aria-hidden="true"></i></button>
-                          </form>
-                        </td>
-                    </tr>
-                <?php endif; ?>
-            <?php endforeach; ?>
-        </table>
-        <span class="deleteMessage"><?= $offreMessage ?></span>
-
-      </section>
-
-    </main>
 
     <!-- FOOTER -------------------------------------------------------------------------------->
     <?php include_once('../view/design/footer.php'); ?>
