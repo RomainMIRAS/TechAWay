@@ -215,7 +215,7 @@ $message = '';
 
 
 if ($action=='ajouteY') {
-    $message = "L'offre $offreAAdd a bien été ajouté.";
+    $message = "L'offre $offreAAjouter a bien été ajouté.";
     header("Location: RechercheEntreprise.ctrl.php");
 }
 echo "$message";
