@@ -212,11 +212,11 @@ $offreAAjouter = $_POST['offreAAdd'] ?? '';
 $candidatAction = $_POST['candidatAction'] ?? '';
 $message = '';
 $nomOffre = $db->getOffre($offreAAjouter)->getNomOffre();
-
+echo "-$offreAAjouter-";
 
 if ($candidatAction=='ajouteY') {
     if ($candidat->getLienLM() == '') {
-        $candidat->setLienLM((int)$offreAAjouter);
+        $candidat->setLienLM($offreAAjouter);
         $db->updateCandidat($candidat);
         $message = "Vous avez bien postuler à l'offre $nomOffre.";
     } else {
