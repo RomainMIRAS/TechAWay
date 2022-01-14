@@ -42,7 +42,7 @@ session_start();
 $candidat = $_SESSION['utilisateur'];
 session_write_close();
 //$int = (int)$candidat->getLienLM();
-//echo "$int";
+echo "-" . $candidat->getLienLM() . "-";
 //$offre = "";
 $offre = $db->getOffre($candidat->getLienLM());
 
