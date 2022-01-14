@@ -146,15 +146,15 @@ foreach($offres as $o){
     }
 
 foreach (array_keys($typeEntreprise) as $key) {
-    /*if ($aa == $renseiOffre->getTypeEntreprise()) {
-        $typeOffre = $aa;
+    if ($typeEntreprise[$key] == $renseiOffre->getTypeEntreprise()) {
+        $typeOffre = $key;
     }
-    if ($aa == $renseiCandid->getTypeEntreprise()) {
-
-    }*/
-    $testtt = $typeEntreprise[$key];
-    echo "$testtt -- $key";
+    if ($typeEntreprise[$key] == $renseiCandid->getTypeEntreprise()) {
+        $typeCandid = $key;
+    }
 }
+
+echo "Candidat : $typeCandid et Entreprise : $typeOffre";
     //type entreprise
     if ($renseiOffre->getTypeEntreprise() == $renseiCandid->getTypeEntreprise()) {
         $scoreMatch = $scoreMatch + 6;
