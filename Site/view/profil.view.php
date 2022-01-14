@@ -61,7 +61,7 @@
           <?php if (is_a($candidat,"Candidat")): ?>
             <label for="">Pays *</label>
             <input type="text" value="<?= $candidat->getPays() ?>" disabled>
-          <?php endif; $tt = $candidat->getEtape(); echo "$tt";?>
+          <?php endif;?>
           <?php if (is_a($candidat,"Candidat")): ?>
             <label for="">Ville *</label>
             <input type="text" value="<?= $candidat->getVille() ?>" disabled>
