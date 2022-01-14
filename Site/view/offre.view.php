@@ -90,7 +90,7 @@
 <h2>Information sur les compétences attendue : <h2/>
      <ol>
       <li>Niveau d'étude attendue : <?php echo "$niveauEtude"; ?></li>
-      <li>Langue à maitriser : <?php foreach ($langue as $la) {echo "$la";} ?></li>
+      <li>Langue à maitriser : <?php foreach ($langue as $la) {echo "$la</br>";} ?></li>
       <li>Langage informatique à connaître : <?php echo "$langage"; ?></li>
      </ol>
       
