@@ -57,7 +57,7 @@
                         <td><?= $c->getDetailOffre()->getPoste() ?></td>
                         <td><?= $c->getEntreprise()->getNom() ?></td>
                         <td><?= $c->getEntreprise()->getTelephone() ?></td>
-                        <td><?= $Scores[$it] ?></td>
+                        <td><?= ($Scores[$it]*100)/143 ?>%</td>
                     </tr>
                     
                 <?php $it++; endif; ?>
