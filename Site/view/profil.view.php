@@ -129,7 +129,7 @@
               <?php endforeach; ?>
             </select>
             <label for="">Contrat recherché</label>
-            <select name="contrat" >
+            <select name="typeContrat" >
             <?php foreach($contrats as $c): ?>
                 <?php if ($c==$_SESSION['utilisateur']->getRenseignement()->getTypeContrat()): ?>
                 <option value="<?= $c ?>" selected><?php echo strtoupper($c) ?></option>
@@ -139,6 +139,15 @@
               <?php endforeach; ?>
             </select>
             <label for="">Poste recherché</label>
+            <select name="poste" >
+            <?php foreach($postes as $p): ?>
+                <?php if ($p==$_SESSION['utilisateur']->getRenseignement()->getPoste()): ?>
+                <option value="<?= $p ?>" selected><?php echo ucfirst($p) ?></option>
+                <?php else: ?>
+                <option value="<?= $p ?>"><?php echo ucfirst($p) ?></option>
+                <?php endif; ?>
+              <?php endforeach; ?>
+            </select>
             <input type="text" value="<?= $_SESSION['utilisateur']->getRenseignement()->getPoste() ?>">
             <label for="">Type d'entreprise recherché</label>
             <input type="text" value="<?= $_SESSION['utilisateur']->getRenseignement()->getTypeEntreprise() ?>">
