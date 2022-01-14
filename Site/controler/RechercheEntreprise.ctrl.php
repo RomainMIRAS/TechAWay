@@ -13,9 +13,30 @@ include_once(__DIR__."/../model/Renseignement.class.php");
 include_once(__DIR__."/../model/Offre.class.php");
 include_once(__DIR__."/../model/Candidat.class.php");
 
-$db = DAO::get(); // on récupère l'unique instance 
+$db = DAO::get(); // on récupère l'unique instance
+
+///////////////////////////////////////////////////////////////////////////////
+// Protection Contre Erreurs
+///////////////////////////////////////////////////////////////////////////////
+
+// Si l'étape et déjà passer ou qu'il est un coach!
+session_start();
+
+// Si pas connecter
+if (!isset($_SESSION['utilisateur'])) header('Location: authentification.ctrl.php');
+
+// Si utilisateur est un coach
+if (!is_a($_SESSION['utilisateur'],"Candidat")) header('Location: main.ctrl.php');
+
+// Si il a déjà rempli le formulaire
+if ($_SESSION['utilisateur']->getEtape() != 1) header('Location: main.ctrl.php');
+
+session_write_close();
 
 
+///////////////////////////////////////////////////////////////////////////////
+// Déclaration de variable
+///////////////////////////////////////////////////////////////////////////////
 
 session_start();
 $candidat = $_SESSION['utilisateur'];
@@ -70,7 +91,7 @@ foreach($offres as $o){
     }
 
 foreach (array_keys($niveauEtude) as $key) {
-    
+
     if ($niveauEtude[$key] == $competCandid->getNvEtude()) {
         $nivCandid = $key;
     }
@@ -108,7 +129,7 @@ foreach (array_keys($niveauEtude) as $key) {
     if ($renseiOffre->getTravEtranger()) {
         if ($paysOffre == $paysCandid) {
             if ($renseiCandid->getTravEtranger()) {
-                $scoreMatch = $scoreMatch; 
+                $scoreMatch = $scoreMatch;
             } else {
                 $scoreMatch = $scoreMatch;
             }
@@ -142,7 +163,7 @@ foreach (array_keys($niveauEtude) as $key) {
         $scoreMatch = $scoreMatch - 30;
     }
 
-    
+
     //Secteur
     if ($renseiOffre->getSecteur() == $renseiCandid->getSecteur()) {
         $scoreMatch = $scoreMatch + 6;
@@ -151,7 +172,7 @@ foreach (array_keys($niveauEtude) as $key) {
     }
 
 foreach (array_keys($typeEntreprise) as $key) {
-    
+
     if ($typeEntreprise[$key] == $renseiOffre->getTypeEntreprise()) {
         $typeOffre = $key;
     }
