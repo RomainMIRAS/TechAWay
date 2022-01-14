@@ -97,7 +97,7 @@
       </ol></li>
      </ol>
       
-      
+      <button id="btn-aban" class="btn-menu-profil">Abandonner cette offre</button>
       
     </main>
 
