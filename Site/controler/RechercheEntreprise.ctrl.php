@@ -207,6 +207,15 @@ $offresMatch += [$scoresMatch[$it] => $lo];
 $it++;
 }
 
+
+$offreAAjouter = $_POST['offreAADD'] ?? '';
+$action = $_POST['actionFaire'] ?? '';
+
+if ($action=='ajouteX') {
+    $candidatMessage = "L'offre $offreAAjouter a bien été ajouté.";
+}
+
+
 $view->assign('listeOffreMatch',$offresMatch);
 $view->display("RechercheEntreprise.view.php");
 
