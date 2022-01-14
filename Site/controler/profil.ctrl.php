@@ -64,13 +64,21 @@ $langagesAcquis = $_POST['languageAquis[]'] ?? '';
 
 $btnComp = $_POST['btnComp'] ?? '';
 
-if ($btnComp=='saveComp') {
+if ($btnComp=='saveComp') { /* Ne fonctionne pas */
+  $_SESSION['utilisateur']->getCompetenceAcquis()->setlangeParle($languesParle);
+  $_SESSION['utilisateur']->getCompetenceAcquis()->setLangageAcquis($langagesAcquis);
+  $db->updateCandidat($_SESSION['utilisateur']);
+  header("Location: profil.ctrl.php");
+}
 
+/*$btnPref = $_POST['btnPref'] ?? '';
+
+if ($btnPref=='savePref') { /* Ne fonctionne pas
   $_SESSION['utilisateur']->setlangeParle($languesParle);
   $_SESSION['utilisateur']->setLangageAcquis($langagesAcquis);
   $db->updateCandidat($_SESSION['utilisateur']);
   header("Location: profil.ctrl.php");
-}
+}*/
 
 
 $langues = array('français','anglais','espagnol','italien','allemand','albanais');
