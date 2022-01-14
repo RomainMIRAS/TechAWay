@@ -106,14 +106,13 @@ nav>ul{
   transform: scale(1.9);
 }
 
-/*#btn-compte img {
-  border-radius: 100%;
-  transition: all .2s ease-in-out;
+#navResp {
+  display: none;
 }
 
-/*#btn-compte:hover img {
-  transform: scale(1.05);
-}*/
+#navResp ul form {
+  align-items: center;
+}
 
 /**************************************************************
 * MAIN
@@ -796,6 +795,13 @@ footer ul li a:hover {
   #signature{
     text-decoration: none;
     color: black;
+  }
+
+  #navResp {
+    background-color: var(--color-white);
+    justify-content: center;
+    justify-self: center;
+    display: flex;
   }
 
 }

@@ -56,6 +56,18 @@
 
     </main>
 
+    <!-- NAVIGATION RESPONSIVE ----------------------------------------------------------------->
+    <nav id="navResp">
+      <ul>
+        <?php if (!isset($_SESSION['utilisateur'])): //Si pas connecté?>
+          <form action="../controler/authentification.ctrl.php" method="post">
+            <li class="navbarAnimate"><button id="signup" type="submit" name="action" value="signup">S'inscrire</button></li>
+            <li class="navbarAnimate"><button id="login" type="submit" name="action" value="login">S'identifier</button></li>
+          </form>
+        <?php endif; ?> 
+      </ul>
+    </nav>
+
     <!-- FOOTER -------------------------------------------------------------------------------->
     <?php include_once('../view/design/footer.php'); ?>
 
