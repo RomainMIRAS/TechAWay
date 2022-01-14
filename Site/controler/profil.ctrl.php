@@ -61,7 +61,7 @@ HTML
 
 $langueParle = (isset($_POST['langueParle'])) ? $_POST['langueParle']:null;  //Affectation de la langue parlé
 $languageAquis = (isset($_POST['languageAquis'])) ? $_POST['languageAquis']:null;  //Affectation des languages aquis
-var_dump($langagesAcquis);
+var_dump($languageAquis);
 $btnComp = $_POST['btnComp'] ?? '';
 
 if ($btnComp=='saveComp') { /* Ne fonctionne pas */
