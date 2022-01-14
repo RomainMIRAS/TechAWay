@@ -52,6 +52,7 @@ $message = '';
 
 if ($action=='supprY') {
         $candidat->setLienLM("");
+        echo "test";
         $candidat->setEtape($candidat->getEtape() - 1);
         $db->updateCandidat($candidat);
         header("Location: offre.ctrl.php");
