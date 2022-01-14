@@ -62,6 +62,12 @@
     
     
     ?>
+    <form action="offre.ctrl.php" method="POST">
+                            <input type="hidden" class="action" name="action" value="supprN">
+                            <button type="submit" class="candidatDeleteBtn">Abandonner l'offre</button>
+                          </form>
+
+                          
      <h2>Information générale : </h2>
 <p>L'offre se nomme <?php echo "$nom"; ?> et à été crée le <?php echo "$date"; ?>.</p>
 
@@ -97,10 +103,7 @@
       </ol></li>
      </ol>
       
-      <form action="offre.ctrl.php" method="POST">
-                            <input type="hidden" class="action" name="action" value="supprN">
-                            <button type="submit" class="candidatDeleteBtn">Abandonner l'offre</button>
-                          </form>
+      
       
     </main>
 
