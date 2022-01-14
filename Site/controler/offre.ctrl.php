@@ -43,6 +43,7 @@ $candidat = $_SESSION['utilisateur'];
 session_write_close();
 $int = (int)$candidat->getLienLM();
 echo "$int";
+$offre = "";
 //$offre = $db->getOffre($int);
 
 $view = new View();
