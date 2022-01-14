@@ -41,10 +41,7 @@ session_write_close();
 session_start();
 $candidat = $db->getCandidat($_SESSION['utilisateur']->getMail());
 session_write_close();
-//$int = (int)$candidat->getLienLM();
-echo "-" . $candidat->getLienLM() . "-";
-$offre = "";
-//$offre = $db->getOffre($candidat->getLienLM());
+$offre = $db->getOffre($candidat->getLienLM());
 
 $view = new View();
 
