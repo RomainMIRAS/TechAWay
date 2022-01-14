@@ -41,7 +41,9 @@
             <button id="btn-rens" class="btn-menu-profil">Mes renseignements</button>
             <button id="btn-comp" class="btn-menu-profil">Mes compétences</button>
             <button id="btn-pref" class="btn-menu-profil">Mes préférences</button>
-            <!--<button id="btn-docs" class="btn-menu-profil">Mes documents</button> pas le temps de developper cette partie --> 
+            <?php if ($candidat->getEtape() >= 2): ?>
+            <button id="btn-docs" class="btn-menu-profil">Mon offre</button>
+            <?php endif; ?>
           </div>
         <?php endif; ?>
       </section>
