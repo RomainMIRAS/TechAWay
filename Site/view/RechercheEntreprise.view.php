@@ -89,7 +89,7 @@
     $(window).ready(function() {
 
       $(".candidatDeleteBtn").click(function() { /* Affichage d'une fenêtre de confirmation pour la suppression d'un candidat */
-        if (confirm("Etes-vous sûr de vouloir supprimer ce candidat ?")) {
+        if (confirm("Etes-vous sûr de vouloir ajouter cette offre ?")) {
           $(".candidatAction").val("ajouteY");
         } else {
           $(".candidatAction").val("ajouteN");
