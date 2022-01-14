@@ -59,8 +59,8 @@ HTML
 
 /* Changer mes compétences */
 
-$languesParle = $_POST['langueParle[]'] ?? '';
-$langagesAcquis = $_POST['languageAquis[]'] ?? '';
+$langueParle = (isset($_POST['langueParle'])) ? $_POST['langueParle']:null;  //Affectation de la langue parlé
+$languageAquis = (isset($_POST['languageAquis'])) ? $_POST['languageAquis']:null;  //Affectation des languages aquis
 
 
 $btnComp = $_POST['btnComp'] ?? '';

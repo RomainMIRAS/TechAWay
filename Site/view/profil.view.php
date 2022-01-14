@@ -167,7 +167,7 @@
                 <?php endif; ?>
               <?php endforeach; ?>
             </select>
-            
+
             <button type="submit" name="btnPref" value="savePref">Enregistrer</button>
             <span class="asterisque">* : ces entrées ne sont pas modifiable directement. Veuillez contacter l'équipe de Tech A Way.</span>
           </form>
