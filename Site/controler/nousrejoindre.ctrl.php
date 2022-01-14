@@ -2,41 +2,121 @@
 
 include_once(__DIR__."/../framework/view.class.php");
 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
-$nom = (isset($_POST['nom'])) ? $_POST['nom']:""; 
-$prenom = (isset($_POST['prenom'])) ? $_POST['prenom']:"";  
+require '/var/www/html/PHPMailer/src/Exception.php';
+require '/var/www/html/PHPMailer/src/PHPMailer.php';
+require '/var/www/html/PHPMailer/src/SMTP.php';
+
+define('GMailUSER', 'techawayteam13@gmail.com'); // utilisateur Gmail
+define('GMailPWD', 'projetteam13'); // Mot de passe Gmail
+
+// Fonction envoie des mails
+function smtpmailer($to, $from, $from_name, $subject, $body) {
+    global $error;
+    $mail = new PHPMailer();  // create a new object
+    $mail->IsSMTP(); // enable SMTP
+    $mail->SMTPDebug = 0;  // debugging: 1 = errors and messages, 2 = messages only
+    $mail->SMTPAuth = true;  // authentication enabled
+    $mail->SMTPSecure = 'tls'; // secure transfer enabled REQUIRED for GMail
+    $mail->SMTPAutoTLS = false;
+    $mail->Host = 'smtp.gmail.com';
+    $mail->Port = 587;
+
+    $mail->Username = GMailUSER;
+    $mail->Password = GMailPWD;
+    $mail->SetFrom($from, $from_name);
+    $mail->Subject = $subject;
+    $mail->Body = $body;
+    $mail->AddAddress($to);
+    if(!$mail->send()) {
+        $error = 'Mail error: '.$mail->ErrorInfo;
+        return false;
+    } else {
+        return true;
+    }
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// Partie Récupération des Variables
+///////////////////////////////////////////////////////////////////////////////
+
+
+$nom = (isset($_POST['nom'])) ? $_POST['nom']:"";
+$prenom = (isset($_POST['prenom'])) ? $_POST['prenom']:"";
 $mail = (isset($_POST['email'])) ? $_POST['email']:"";
-
+$message = (isset($_POST['message'])) ? $_POST['message']:"";
 
 $erreur = "";
 $action = (isset($_POST['action'])) ? $_POST['action']: '';
 
-if($action == "confirmation" )  
-{
+///////////////////////////////////////////////////////////////////////////////
+// Partie Gestion des erreurs
+///////////////////////////////////////////////////////////////////////////////
 
-    if($nom == "")
-        {
-            $erreur = "Le nom doit etre rempli";  // Si nom est vide --> erreur
-        }
-    else if(preg_match('/^[a-z]+$/i', $nom) == false)
-        {
-            $erreur = "Le nom doit etre composé de lettres seulement"; // Si nom n'est pas en lettre --> erreur
-        }
-    else if($prenom == "")
-        {
-            $erreur = "Le prenom doit etre rempli";  // Si prenom est vide --> erreur
-        }
-    else if(preg_match('/^[a-z]+$/i', $prenom) == false)
-        {
-            $erreur = "Le prenom doit etre composé de lettres seulement"; // Si prenom n'est pas en lettre --> erreur
-        }
-    
-    else if (!filter_var($mail, FILTER_VALIDATE_EMAIL))
-    { // Si email invalide
-        $erreur = "Adresse mail non valide.";
-    } 
+if($action == "confirmation" )
+{
+  // Si niveau d'etude vide alors --> erreur
+  if($nom == "")
+  {
+    $erreur = "Le nom doit etre rempli";
+  }
+  // Si aucune langue selectionné
+  else if($prenom == "" )
+  {
+    $erreur = "Le prenom doit etre rempli";
+  }
+  // Si mail incorrect
+  else if($mail == "" )
+  {
+    $erreur = "Le mail doit etre rempli";
+  }
+  else if (!filter_var($mail, FILTER_VALIDATE_EMAIL)){ // Si email valide
+    $erreur = "Adresse mail non valide.";
+  }
+
+else if($message == "" )
+    {
+      $erreur = "Le nom de l'entreprise doit etre rempli";
+    }
 
 }
+
+
+///////////////////////////////////////////////////////////////////////////////
+// Envoie du Mail
+///////////////////////////////////////////////////////////////////////////////
+
+if ($erreur == "" && $action == "confirmation"){
+
+  $body =
+  "Vous avez reçu une demande de recrutement !\r\n
+  \r\n----------------------
+  Prénom : $prenom \r\n
+  Nom : $nom \r\n
+  Mail : $mail \r\n
+  Message : $message
+  ----------------------
+  ";
+
+//Send mail using gmail
+$result = smtpmailer('techawayteam13@gmail.com', $mail, $nom,"Demande de Partenariat - $nomEntreprise",$body);
+
+
+if (true != $result){
+	// erreur -- traiter l'erreur
+  $erreur = "Le mail n'a pas pu être envoyé - $error";
+} else {
+  $erreur = "Le mail se partenariat a été envoyé !";
+}
+
+
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// Partie View
+///////////////////////////////////////////////////////////////////////////////
 
 
 $view = new View();
