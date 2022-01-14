@@ -65,7 +65,7 @@ var_dump($languageAquis);
 $btnComp = $_POST['btnComp'] ?? '';
 
 if ($btnComp=='saveComp') { /* Ne fonctionne pas */
-  $competence = $_SESSION["utilisateur"]->getCompetenceAcquis();
+  $competence = $db->getCandidat($_SESSION["utilisateur"]->getMail())->getCompetenceAcquis();
   $competence->setLangeParle($langueParle);
   $competence->setLangageAcquis($languageAquis);
   $_SESSION["utilisateur"]->setCompetenceAcquis($competence);
