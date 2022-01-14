@@ -491,7 +491,7 @@ class DAO {
 			return $entreprises;
 	}
 
-	function getOffre(int $id) : Offre {
+	function getOffre(int $id) {
 
 		/*
 			Fonction Qui retourne une Offre de l'id donnee de type Offre 
