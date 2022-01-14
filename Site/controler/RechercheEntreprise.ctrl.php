@@ -211,7 +211,7 @@ $candidatAction = 't';
 $offreAAjouter = $_POST['offreAAdd'] ?? '';
 $candidatAction = $_POST['candidatAction'] ?? '';
 $message = '';
-
+$candidat->setEtape($candidat->getEtape() + 1);
 
 if ($candidatAction=='ajouteY') {
     $nomOffre = $db->getOffre($offreAAjouter)->getNomOffre();
