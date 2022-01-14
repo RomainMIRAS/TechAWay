@@ -207,7 +207,7 @@ $offresMatch += [$scoresMatch[$it] => $lo];
 $it++;
 }
 
-
+$candidatAction = 't';
 $offreAAjouter = $_POST['offreAAdd'] ?? '';
 $candidatAction = $_POST['candidatAction'] ?? '';
 $message = '';
