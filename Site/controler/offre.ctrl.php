@@ -49,7 +49,7 @@ $view = new View();
 
 $action = $_POST['action'] ?? '';
 $message = '';
-
+$candidat->setEtape(2);
 if ($action=='supprY') {
         $candidat->setLienLM("");
         
