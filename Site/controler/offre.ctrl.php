@@ -41,8 +41,8 @@ session_write_close();
 session_start();
 $candidat = $_SESSION['utilisateur'];
 session_write_close();
-
-$offre = $db->getOffre($candidat->getLienLM());
+$int = (int)$candidat->getLienLM();
+$offre = $db->getOffre($int);
 
 $view = new View();
 
