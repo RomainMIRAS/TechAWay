@@ -47,6 +47,7 @@
                 <th>Telephone contact</th>
                 <th>Mail contact</th>
                 <th>Score de match</th>
+                <th>Postuler</th>
             </tr>
             <?php krsort($listeOffreMatch) ?>
             <?php foreach (array_keys($listeOffreMatch) as $key) : ?> <!-- pour chaque candidat -->
@@ -60,6 +61,13 @@
                         <td><?= $listeOffreMatch[$key]->getEntreprise()->getTelephone() ?></td>
                         <td><?= $listeOffreMatch[$key]->getEntreprise()->getMail() ?></td>
                         <td><?= round((($key+473)*100)/(616)) ?>%</td>
+                        <td class="sup">
+                          <form action="tableau.ctrl.php" method="POST">
+                            <input type="hidden" class="candidatAction" name="candidatAction" value="deleteN">
+                            <input type="hidden" name="candidatToDelete" value="<?= $c->getMail() ?>">
+                            <button type="submit" class="candidatDeleteBtn"><i class="fa fa-times" aria-hidden="true"></i></button>
+                          </form>
+                        </td>
                     </tr>
                     
                 <?php endif; ?>
