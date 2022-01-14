@@ -152,7 +152,8 @@ foreach ($typeEntreprise as $aa) {
     if ($aa == $renseiCandid->getTypeEntreprise()) {
 
     }
-    echo "array_keys($aa)";
+    $testtt = array_keys($aa);
+    echo "$testtt";
 }
     //type entreprise
     if ($renseiOffre->getTypeEntreprise() == $renseiCandid->getTypeEntreprise()) {
