@@ -10,7 +10,7 @@
   <a href="javascript:history.go(-1)">Retour</a>
     <p>
 Tech A Way - SAS <br>
-65 rue de Turbigo <br>
+65 rue de Turbigo <br>bool in /var/www/html/Site/controler/recrutement-candidat.ctrl.php:34 Stack trace: #0 {main} thrown in /var/www/html/Site/controler/recrutement-candidat.ctrl.php on line 34
 75003 Paris <br>
 Tél: 33+770923228 <br>
 Directeur Tech A Way: Baptiste Arbonel ,Nicolas Delarue.<br>
