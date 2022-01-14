@@ -200,8 +200,14 @@ foreach (array_keys($typeEntreprise) as $key) {
 
 $view = new View();
 
-$view->assign('listeOffre',$offres);
-$view->assign('Scores',$scoresMatch);
+$it = 0;
+$offresMatch = array();
+foreach ($offres as $lo) {
+$offresMatch += [$scoresMatch[$it] => $lo];
+$it++;
+}
+
+$view->assign('listeOffreMatch',$offresMatch);
 $view->display("RechercheEntreprise.view.php");
 
 
