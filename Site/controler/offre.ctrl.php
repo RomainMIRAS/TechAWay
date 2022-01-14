@@ -44,6 +44,7 @@ session_write_close();
 
 $offre = $db->getOffre($candidat->getLienLM());
 
+echo "$offre->getNomOffre()";
 $view = new View();
 
 $view->assign('offre',$offre);
