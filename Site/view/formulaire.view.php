@@ -81,8 +81,8 @@
               <!-- Saisie des competences du candidat -->
               <label for="nvEtude">Niveau d'etudes</label>
               <select name="nvEtude">
-                      <option value="bac+1" selected>Bac</option>
-                      <option value="bac+2" >Bac +1</option>
+                      <option value="bac" selected>Bac</option>
+                      <option value="bac+1" >Bac +1</option>
                       <option value="bac+2" >Bac +2</option>
                       <option value="bac+3" >Bac +3</option>
                       <option value="bac+4" >Bac +4</option>
