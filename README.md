@@ -40,8 +40,13 @@ Il a un mini CRM ou il peut :
 - Ajouter des nouvelles Entreprises, offres
 - Modifier les Entreprises, offres et candidats
 
-Pour les profs : <br>
+### Entreprises :
 
+Vous pouvez envoyer des email pour demander de partenariat -> https://techaway.tk/Site/controler/recruter.ctrl.php
+
+## Pour les profs : 
+
+### login Admin (Coach)
 Voici des login d'un coach que vous pouvez utiliser.
 
 **Adresse Mail** : adresse-coach@gmail.com <br>
@@ -49,9 +54,10 @@ Voici des login d'un coach que vous pouvez utiliser.
 
 **ATTENTION LES LOGIN VONT ETRE SUPPRIMER APRES L'EVALUATION POUR DES RAISON DE SECURITE**
 
-### Entreprises :
+### Se connecter dans la BDD :
+Si vous voulez une connection a notre server virtuel et acceder a la base de donnee,
+envoyer une cle ssh public a altin (**altin.rrahmani@etu.univ-grenoble-alpes.fr**) pour qu'il puisse vous cree un user.<br>
 
-Vous pouvez envoyer des email pour demander de partenariat -> https://techaway.tk/Site/controler/recruter.ctrl.php
 
 ### Cote Serveur : 
 
