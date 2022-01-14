@@ -56,8 +56,8 @@
     
     //Paramètre en lien avec les competence
     $niveauEtude = $offre->getCompetenceRecherche()->getNvEtude();
-    $langue = $offre->getCompetenceRecherche()->getlangeParle();
-    $langage = $offre->getCompetenceRecherche()->getLangageAcquis();
+    $langue = conversionArrayString($offre->getCompetenceRecherche()->getlangeParle());
+    $langage = conversionArrayString($offre->getCompetenceRecherche()->getLangageAcquis());
     
     
     ?>
