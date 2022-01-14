@@ -45,7 +45,7 @@
             <button id="btn-docs" class="btn-menu-profil">Mon offre</button>
             <?php endif; ?> -->
           </div>
-        <?php endif; ?>
+        <?php endif; $tt = $candidat->getEtape(); echo "$tt";?>
       </section>
       <section class="section-profil">
         <!-- Formulaire de renseignements -->
