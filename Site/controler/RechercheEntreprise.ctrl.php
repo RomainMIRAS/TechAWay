@@ -212,6 +212,8 @@ $offreAAjouter = $_POST['offreAAdd'] ?? '';
 $action = $_POST['candidatAction'] ?? '';
 $message = '';
 
+echo "$offreAAjouter";
+
 if ($action=='ajouteY') {
     $message = "L'offre $offreAAdd a bien été ajouté.";
     header("Location: RechercheEntreprise.ctrl.php");
