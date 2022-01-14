@@ -67,7 +67,7 @@ $btnComp = $_POST['btnComp'] ?? '';
 if ($btnComp=='saveComp') {
   $_SESSION['utilisateur']->setlangeParle($languesParle);
   $_SESSION['utilisateur']->setLangageAcquis($langagesAcquis);
-  $db->updateCandidat(($_SESSION['utilisateur']);
+  $db->updateCandidat($_SESSION['utilisateur']);
   header("Location: profil.ctrl.php");
 }
 
