@@ -555,7 +555,6 @@ button:hover {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  text-align: center;
 }
 #sectionTUJ section article #signup{
   border: 2px solid var(--color-blue1);
