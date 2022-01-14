@@ -153,7 +153,7 @@ foreach (array_keys($typeEntreprise) as $key) {
 
     }*/
     $testtt = $typeEntreprise[$key];
-    echo "$testtt";
+    echo "$testtt -- $key";
 }
     //type entreprise
     if ($renseiOffre->getTypeEntreprise() == $renseiCandid->getTypeEntreprise()) {
