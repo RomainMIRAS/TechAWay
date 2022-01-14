@@ -94,8 +94,10 @@ $poste = $_POST['poste'] ?? '';
 
 if ($ajouterOffreBtn=='ajouterOffre') {
     if ($offreName!='' && $idEntrepriseOffre!='') {
+        $lpp = $db->conversionArrayString($languesParlee);
+        $lai = $db->conversionArrayString($langagesInfo);
         $theEntreprise = $db->getEntreprise($idEntrepriseOffre);
-        $competenceOffre = new Competence(-2,$niveauEtudes,$languesParlee,$niveauEtudes,$langagesInfo);
+        $competenceOffre = new Competence(-2,$niveauEtudes,$lpp,$lai);
         $renseignementOffre = new Renseignement(-2,$travEtranger,$secteur,$typeContrat,$poste,'');
         $db->creeOffre(-2, $offreName, now(), $theEntreprise, $competenceOffre, $renseignementOffre);
     } else {
