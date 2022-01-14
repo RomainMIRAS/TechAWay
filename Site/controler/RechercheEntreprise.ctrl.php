@@ -209,8 +209,8 @@ $it++;
 
 
 foreach (array_keys($offresMatch) as $key) {
-   $tt = $key->getNomOffre();
-echo "$tt pour $offresMatch[$key]";
+   $tt = $offresMatch[$key]->getNomOffre();
+echo "$key pour $tt";
 }
 
 $view->assign('listeOffre',$offres);
