@@ -42,9 +42,9 @@ session_start();
 $candidat = $_SESSION['utilisateur'];
 session_write_close();
 
-$offre = $db->getOffre($candidat->getLienLM());
+$offre = $db->getOffre($candidat->getLienLM())->getNomOffre();
 
-echo "$offre->getNomOffre()";
+echo "$offre";
 $view = new View();
 
 $view->assign('offre',$offre);
