@@ -216,7 +216,7 @@ $nomOffre = $db->getOffre($offreAAjouter)->getNomOffre();
 
 if ($candidatAction=='ajouteY') {
     if ($candidat->getLienLM() == '') {
-        $candidat->setLienLM($offreAAjouter);
+        $candidat->setLienLM((int)$offreAAjouter);
         $db->updateCandidat($candidat);
         $message = "Vous avez bien postuler à l'offre $nomOffre.";
     } else {
