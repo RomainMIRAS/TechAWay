@@ -160,7 +160,45 @@
                 <option value="<?= $e->getId() ?>"><?= $e->getNom() ?></option>
               <?php endforeach; ?>
             </select>
-            
+            <label for="nvEtude">Niveau d'etudes</label>
+              <select name="nvEtude">
+                      <option value="bac" selected>Bac</option>
+                      <option value="bac+1" >Bac +1</option>
+                      <option value="bac+2" >Bac +2</option>
+                      <option value="bac+3" >Bac +3</option>
+                      <option value="bac+4" >Bac +4</option>
+                      <option value="bac+5" >Bac +5</option>
+                      <option value="bac+6" >Bac +6</option>
+                      <option value="bac+7" >Bac +7</option>
+                      <option value="bac+8" >Bac +8</option>
+              </select>
+              <label for="langueParle[]">Langue(s) parlée(s)</label>
+                <div class="list-check"> <!-- Liste des langues -->
+                  <input type="checkbox" name="langueParle[]" value="francais" selected>Français</option>
+                  <input type="checkbox" name="langueParle[]" value="anglais" >Anglais</option>
+                  <input type="checkbox" name="langueParle[]" value="espagnole" >Espagnol</option>
+                  <input type="checkbox" name="langueParle[]" value="italien" >Italien</option>
+                  <input type="checkbox" name="langueParle[]" value="allemand">Allemand</option>
+                  <input type="checkbox" name="langueParle[]" value="albanais">Albanais</option>
+                </div>
+              <label for="languageAquis[]">Language(s) infomatique connu(s)</label>
+              <div class="list-check"> <!-- Liste des langages -->
+                <input type="checkbox" name="languageAquis[]" value="php" selected>PHP</option>
+                <input type="checkbox" name="languageAquis[]" value="hmtl/css" >HTML/CSS</option>
+                <input type="checkbox" name="languageAquis[]" value="c" >C#, C ou C++</option>
+                <input type="checkbox" name="languageAquis[]" value="python" >Python</option>
+                <input type="checkbox" name="languageAquis[]" value="perl">PERL</option>
+                <input type="checkbox" name="languageAquis[]" value="java">Java</option>
+                <input type="checkbox" name="languageAquis[]" value="ruby">Ruby</option>
+                <input type="checkbox" name="languageAquis[]" value="swift">Swift</option>
+                <input type="checkbox" name="languageAquis[]" value="julia">Julia</option>
+                <input type="checkbox" name="languageAquis[]" value="scala">Scala</option>
+              </div>
+              <form action ="formulaire.ctrl.php" method="post">
+              <output><?=$erreur?></output>
+              <button type="submit" name="action" value="precedent">Précédent</button>
+              <button type="submit" name="action" value="suivant">Suivant</button>
+              <input type="hidden" name="etape" value="competences">
             <button type="submit" name="ajouterOffreBtn" value="ajouterOffre">Ajouter</button>
           </form>
           <span class="erreur"></span>
