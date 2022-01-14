@@ -20,7 +20,7 @@ session_start();
 // Si pas connecter
 if (!isset($_SESSION['utilisateur'])) header('Location: authentification.ctrl.php');
 
-// Si utilisateur est un cancdidat
+// Si utilisateur est un candidat
 if (is_a($_SESSION['utilisateur'],"Candidat")){
   // Si il a pas déjà rempli le formulaire
   if ($_SESSION['utilisateur']->getEtape() == 0) header('Location: main.ctrl.php');
