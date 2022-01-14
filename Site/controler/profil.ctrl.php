@@ -71,7 +71,6 @@ if ($btnComp=='saveComp') {
   header("Location: profil.ctrl.php");
 }
 
-if ()
 
 $langues = array('français','anglais','espagnol','italien','allemand','albanais');
 $langages = array('php','html/css','c','python','perl','java','ruby','swift','julia','scala');
