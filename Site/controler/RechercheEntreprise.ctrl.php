@@ -217,7 +217,7 @@ if ($candidatAction=='ajouteY') {
     $message = "L'offre $offreAAjouter a bien été ajouté.";
     header("Location: RechercheEntreprise.ctrl.php");
 }
-echo "$message";
+echo "$candidatAction";
 $view->assign('message',$message);
 $view->assign('listeOffreMatch',$offresMatch);
 $view->display("RechercheEntreprise.view.php");
