@@ -43,6 +43,8 @@ session_write_close();
 
 $offres = $db->getOffres();
 $nbOffres = $db->nombreOffres();
+$typeOffre = 0;
+$typeCandid = 0;
 
 $scoresMatch = array();
 $typeEntreprise = array(1 => "Microentreprise",2 => "Petite entreprise",3 => "Moyenne entreprise",4 => "Grande entreprise");
@@ -144,8 +146,7 @@ foreach($offres as $o){
     } else {
         $scoreMatch = $scoreMatch - 100;
     }
-$typeOffre;
-$typeCandid;
+
 foreach (array_keys($typeEntreprise) as $key) {
     if ($typeEntreprise[$key] == $renseiOffre->getTypeEntreprise()) {
         $typeOffre = $key;
