@@ -111,17 +111,17 @@
             <label for="">Travailler à l'étranger ?</label>
             <div class="list-radio">
               <?php if ($candidat->getRenseignement()->getTravEtranger()==true): ?>
-                <input type="radio" name="travEtranger" value=true checked>
+                <input type="radio" name="travE" value=true checked>
               <?php else: ?>
-                <input type="radio" name="travEtranger" value=true>
+                <input type="radio" name="travE" value=true>
               <?php endif; ?>
               <label for="oui">Oui</label>
               <?php if ($candidat->getRenseignement()->getTravEtranger()==false): ?>
-                <input type="radio" name="travEtranger" value=false checked>
+                <input type="radio" name="travE" value=false checked>
               <?php else: ?>
-                <input type="radio" name="travEtranger" value=false>
+                <input type="radio" name="travE" value=false>
               <?php endif; ?>
-              <label for="oui">Non</label>
+              <label for="non">Non</label>
             </div>
 
             <label for="">Secteur(s) d'activité(s)</label>

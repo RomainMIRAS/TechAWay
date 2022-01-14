@@ -212,13 +212,19 @@ $offreAAjouter = $_POST['offreAAdd'] ?? '';
 $candidatAction = $_POST['candidatAction'] ?? '';
 $message = '';
 
+
 if ($candidatAction=='ajouteY') {
-    $candidat->setLienLM($candidat->getLienLM() + "-" + $offreAAjouter);
-    $message = "L'offre $offreAAjouter a bien été ajouté.";
+    $nomOffre = $db->getOffre($offreAAjouter)->getNomOffre();
+    if ($candidat->getLienLM() == '') {
+        $candidat->setLienLM($offreAAjouter);
+        $db->updateCandidat($candidat);
+        $message = "Vous avez bien postuler à l'offre $nomOffre.";
+    } else {
+        $message = "Impossible d'ajouter l'offre $nomOffre car vous en avez déjà une.";
+    }
+    
     header("Location: RechercheEntreprise.ctrl.php");
 }
-$uwu = $candidat->getLienLM();
-echo "$uwu";
 
 $view->assign('message',$message);
 $view->assign('listeOffreMatch',$offresMatch);
