@@ -36,7 +36,31 @@
     <h1>Voici les informations sur l'offre à laquelle vous avez postulé<h1/>
 
 
-    <?php $Nom = $offre->getNomOffre(); ?>
+    <?php $Nom = $offre->getNomOffre(); 
+    $nom = $offre->getNomOffre(); 
+
+
+    //Paramètre en lien avec l'entreprise
+    $nomEntreprise = $offre->getEntreprise()->getNom(); 
+    $mailEntreprise = $offre->getEntreprise()->getMail(); 
+    $telephoneEntreprise = $offre->getEntreprise()->getTelephone();
+    $villeEntreprise = $offre->getEntreprise()->getVille();
+    $paysEntreprise = $offre->getEntreprise()->getPays();
+    
+    //Paramètre en lien avec les renseignement
+    $travailleEtranger = $offre->getDetailOffre()->getTravEtranger();
+    $secteur = $offre->getDetailOffre()->getSecteur();
+    $typeContrat = $offre->getDetailOffre()->getTypeContrat();
+    $poste = $offre->getDetailOffre()->getPoste();
+    $typeEntreprise = $offre->getDetailOffre()->getTypeEntreprise();
+    
+    //Paramètre en lien avec les competence
+    $niveauEtude = $offre->getCompetenceRecherche()->getNvEtude();
+    $langue = $offre->getCompetenceRecherche()->getlangeParle();
+    $langage = $offre->getCompetenceRecherche()->getLangageAcquis();
+    
+    
+    ?>
      <h2><?php echo "$Nom" ?><h2/>
       
       
