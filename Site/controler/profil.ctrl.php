@@ -23,7 +23,7 @@ if (!isset($_SESSION['utilisateur'])) header('Location: authentification.ctrl.ph
 // Si utilisateur est un cancdidat
 if (is_a($_SESSION['utilisateur'],"Candidat")){
   // Si il a pas déjà rempli le formulaire
-  if ($_SESSION['utilisateur']->getEtape() != 0) header('Location: main.ctrl.php');
+  if ($_SESSION['utilisateur']->getEtape() == 0) header('Location: main.ctrl.php');
 }
 
 session_write_close();
