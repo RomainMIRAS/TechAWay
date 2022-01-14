@@ -83,15 +83,21 @@ if ($ajouterEntrepriseBtn=='ajouterEntreprise') {
 
 $offreName  = $_POST['offreName']  ?? '';
 $idEntrepriseOffre  = $_POST['idEntrepriseOffre']  ?? '';
-$entrepriseTel   = $_POST['entrepriseTel']   ?? '';
-$entreprisePays  = $_POST['entreprisePays']  ?? '';
-$entrepriseVille = $_POST['entrepriseVille'] ?? '';
+
+$niveauEtudes   = $_POST['nvEtude']   ?? '';
+$languesParlee  = $_POST['langueParle']  ?? '';
+$langagesInfo = $_POST['languageAquis'] ?? '';
+$travEtranger = $_POST['travEtranger'] ?? '';
+$typeContrat = $_POST['typeContrat'] ?? '';
+$secteur = $_POST['secteur'] ?? '';
+$poste = $_POST['poste'] ?? '';
 
 if ($ajouterOffreBtn=='ajouterOffre') {
     if ($offreName!='' && $idEntrepriseOffre!='') {
-        $competenceOffre = new Competence(-2,);
-        $renseignementOffre = new Renseignement(-2,);
-        //$db->creeOffre($idEntrepriseOffre , new Renseignement(), new Competence(), $offreName);
+        $theEntreprise = $db->getEntreprise($idEntrepriseOffre);
+        $competenceOffre = new Competence(-2,$niveauEtudes,$languesParlee,$niveauEtudes,$langagesInfo);
+        $renseignementOffre = new Renseignement(-2,$travEtranger,$secteur,$typeContrat,$poste,'');
+        $db->creeOffre(-2, $offreName, now(), $theEntreprise, $competenceOffre, $renseignementOffre);
     } else {
         $erreur = "Les champs * sont obligatoires.";
     }

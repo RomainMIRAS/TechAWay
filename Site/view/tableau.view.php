@@ -266,15 +266,6 @@
                   <option value="Full stack  développeur">Full stack  développeur</option>
               </select>
 
-              <label for="typeEntreprise">Type d'entreprise</label>
-              <select name="typeEntreprise" >
-                  <option value="">--Veuillez choisir une option--</option>
-                  <option value="Microentreprise">Microentreprise</option>
-                  <option value="Petite entreprise">Petite entreprise</option>
-                  <option value="Moyenne entreprise">Moyenne entreprise</option>
-                  <option value="Grande entreprise">Grande entreprise</option>
-              </select>
-
               <form action ="formulaire.ctrl.php" method="post">
               <output><?=$erreur?></output>
               <button type="submit" name="action" value="precedent">Précédent</button>
