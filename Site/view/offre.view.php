@@ -33,7 +33,10 @@
 
     <!-- MAIN ---------------------------------------------------------------------------------->
     <main>
-  <?php $Nom = $offre->getNomOffre(); ?>
+    <h1>Voici les informations sur l'offre à laquelle vous avez postulé<h1/>
+
+
+    <?php $Nom = $offre->getNomOffre(); ?>
      <h2><?php echo "$Nom" ?><h2/>
       
       
