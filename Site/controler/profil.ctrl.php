@@ -57,6 +57,7 @@ HTML
 
 $langues = array('français','anglais','espagnol','italien','allemand','albanais');
 $langages = array('php','html/css','c','python','perl','java','ruby','swift','julia','scala');
+$secteurs = array('Informatique',"Autre");
 
 // Passage des paramètres
 $view->assign("langues",$langues);

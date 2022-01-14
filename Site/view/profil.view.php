@@ -120,9 +120,13 @@
             </div>
             <label for="">Secteur(s) d'activité(s)</label>
             <select name="secteur" >
-                <option value="">--Veuillez choisir une option--</option>
-                <option value="Informatique">Informatique</option>
-                <option value="Autre">Autre</option>
+              <?php foreach($secteurs as $s): ?>
+                <?php if ($s==$_SESSION['utilisateur']->getRenseignement()->getSecteur()): ?>
+                <option value="<?= $s ?>" selected><?= $s ?></option>
+                <?php else: ?>
+                <option value="<?= $s ?>"><?= $s ?></option>
+                <?php endif; ?>
+              <?php endforeach; ?>
             </select>
             <label for="">Contrat recherché</label>
             <input type="text" value="<?= $_SESSION['utilisateur']->getRenseignement()->getTypeContrat() ?>">
