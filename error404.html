@@ -8,42 +8,50 @@
     <title>Error 404</title>
 </head>
 
-<style >
-#svg{
-    height:100vh;
-}
+<style>
 
-#Astronaut{
-    animation:2s hovering infinite alternate ease-in-out;
-    animation-delay: 0.5s;
-}
-#Rocket{
-    animation:2s hovering infinite alternate ease-in-out;
-}
-#planetLeft{
-    animation:2s hovering infinite alternate ease-in-out;
-    animation-delay: 0.2s;
-}
-#planetRight{
-    animation:2s scaling infinite alternate ease-in-out;
-    animation-delay: 0.5s;
-}
-@keyframes hovering{
-  0%{
-    transform: translateY(0px);
-  }
-  100%{
-    transform: translateY(15px);
-  }
-}
-@keyframes scaling{
-  0%{
-    transform: scale(1);
-  }
-  100%{
-    transform: scale(0.97);
-  }
-}
+    body{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #svg{
+        height:90vh;
+        text-align: center;
+    }
+
+    #Astronaut{
+        animation:2s hovering infinite alternate ease-in-out;
+        animation-delay: 0.5s;
+    }
+    #Rocket{
+        animation:2s hovering infinite alternate ease-in-out;
+    }
+    #planetLeft{
+        animation:2s hovering infinite alternate ease-in-out;
+        animation-delay: 0.2s;
+    }
+    #planetRight{
+        animation:2s scaling infinite alternate ease-in-out;
+        animation-delay: 0.5s;
+    }
+    @keyframes hovering{
+        0%{
+            transform: translateY(0px);
+        }
+        100%{
+            transform: translateY(15px);
+        }
+    }
+    @keyframes scaling{
+        0%{
+            transform: scale(1);
+        }
+        100%{
+            transform: scale(0.97);
+        }
+    }
 </style>
 
 <body>
