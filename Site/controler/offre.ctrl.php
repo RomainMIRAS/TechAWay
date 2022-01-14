@@ -56,8 +56,8 @@ if ($action=='supprY') {
         $db->updateCandidat($candidat);
         header("Location: offre.ctrl.php");
 }
-
-echo "$candidat->getEtape()";
+$xx = $candidat->getEtape();
+echo "$xx";
 $view->assign('offre',$offre);
 $view->display("offre.view.php");
 
