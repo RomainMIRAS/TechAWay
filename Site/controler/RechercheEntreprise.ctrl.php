@@ -211,7 +211,7 @@ $candidatAction = 't';
 $offreAAjouter = $_POST['offreAAdd'] ?? '';
 $candidatAction = $_POST['candidatAction'] ?? '';
 $message = '';
-$candidat->setEtape($candidat->getEtape() + 1);
+
 if ($candidatAction=='ajouteY') {
     $nomOffre = $db->getOffre($offreAAjouter)->getNomOffre();
     if ($candidat->getLienLM() == '') {
@@ -221,6 +221,7 @@ if ($candidatAction=='ajouteY') {
         $message = "Vous avez bien postuler à l'offre $nomOffre.";
     } else {
         $message = "Impossible d'ajouter l'offre $nomOffre car vous en avez déjà une.";
+        $candidat->setEtape($candidat->getEtape() + 1);
     }
     
 }
