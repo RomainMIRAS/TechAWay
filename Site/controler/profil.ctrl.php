@@ -62,13 +62,9 @@ HTML
 $langueParle = (isset($_POST['langueParle'])) ? $_POST['langueParle']:null;  //Affectation de la langue parlé
 $languageAquis = (isset($_POST['languageAquis'])) ? $_POST['languageAquis']:null;  //Affectation des languages aquis
 
-var_dump($langueParle);
-var_dump($languageAquis);
-
 $btnComp = $_POST['btnComp'] ?? '';
 
 if ($btnComp=='saveComp') { /* Ne fonctionne pas */
-  echo "ok";
   $competence = $_SESSION["utilisateur"]->getCompetenceAcquis();
   $competence->setLangeParle($langueParle);
   $competence->setLangageAcquis($languageAquis);
