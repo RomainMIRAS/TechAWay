@@ -17,25 +17,6 @@ $db = DAO::get(); // on récupère l'unique instance
 
 
 
-
-
-
-
-
-/*////////////////////////////////////////////////////////////////////////////
-
-Mieu gerer niveau étude => si == +6 si inf -6 sinon +9
-
-
-Poste pas gerer
-
-
-////////////////////////////////////////////////////////////////////////////*/
-
-
-
-
-
 session_start();
 $candidat = $_SESSION['utilisateur'];
 session_write_close();
@@ -98,9 +79,6 @@ foreach (array_keys($niveauEtude) as $key) {
     }
 }
 
-$aaa = $niveauEtude[$nivOffre];
-$aaaa = $nivOffre;
-echo "$aaaa = $aaa";
 
     //Niveau d'étude
     if ($nivCandid == $nivOffre) {
@@ -110,6 +88,16 @@ echo "$aaaa = $aaa";
     } else {
         $scoreMatch = $scoreMatch - 6;
     }
+
+
+
+//Poste
+    if ($renseiOffre->getPoste() == $renseiCandid->getPoste()) {
+        $scoreMatch = $scoreMatch + 6;
+    } else {
+        $scoreMatch = $scoreMatch - 50;
+    }
+
 
 
 
