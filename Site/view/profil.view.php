@@ -81,9 +81,9 @@
             <div class="list-check"> <!-- Liste des langues -->
               <?php foreach($langues as $l): ?>
                 <?php if (in_array($l,$_SESSION['utilisateur']->getCompetenceAcquis()->getLangeParle())): ?>
-                  <input type="checkbox" name="langueParle[]" value="<?php echo strtolower($l) ?>" checked><?= $l ?></option>
+                  <input type="checkbox" name="langueParle[]" value="<?php echo strtolower($l) ?>" checked><?php echo ucfirst($l) ?></option>
                 <?php else: ?> 
-                  <input type="checkbox" name="langueParle[]" value="<?php echo strtolower($l) ?>"><?= $l ?></option>
+                  <input type="checkbox" name="langueParle[]" value="<?php echo strtolower($l) ?>"><?php echo ucfirst($l) ?></option>
                 <?php endif; ?>
               <?php endforeach; ?>
             </div>
@@ -91,9 +91,9 @@
             <div class="list-check"> <!-- Liste des langages -->
               <?php foreach($langages as $l): ?>
                 <?php if (in_array($l,$_SESSION['utilisateur']->getCompetenceAcquis()->getLangageAcquis())): ?>
-                  <input type="checkbox" name="languageAquis[]" value="<?php echo strtolower($l) ?>" checked><?= $l ?></option>
+                  <input type="checkbox" name="languageAquis[]" value="<?php echo strtolower($l) ?>" checked><?php echo ucfirst($l) ?></option>
                 <?php else: ?> 
-                  <input type="checkbox" name="languageAquis[]" value="<?php echo strtolower($l) ?>"><?= $l ?></option>
+                  <input type="checkbox" name="languageAquis[]" value="<?php echo strtolower($l) ?>"><?php echo ucfirst($l) ?></option>
                 <?php endif; ?>
               <?php endforeach; ?>
             </div>
