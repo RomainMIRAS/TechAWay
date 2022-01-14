@@ -39,7 +39,7 @@
             <h1>Candidats</h1>
             <h2>Trouvez LES recruteurs qu'il vous faut</h2>
             <p>Tech A Way vous permet de postuler à des offres qui corresponde le mieux.
-              Vous n'avez qu'à vous inscrire et renseigner votre profil. Ensuite on s'occupe de vous mettre en lien avec l'employeur idéal !</p>
+              Vous n'avez qu'à vous inscrire et renseigner votre profil. Ensuite on s'occupe de vous mettre en lien avec l'employeur idéal</p>
           </div>
 
           <div id="svg1">
