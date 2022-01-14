@@ -268,8 +268,6 @@
 
               <form action ="formulaire.ctrl.php" method="post">
               <output><?=$erreur?></output>
-              <button type="submit" name="action" value="precedent">Précédent</button>
-              <button type="submit" name="action" value="suivant">Suivant</button>
               <input type="hidden" name="etape" value="competences">
             <button type="submit" name="ajouterOffreBtn" value="ajouterOffre">Ajouter</button>
           </form>

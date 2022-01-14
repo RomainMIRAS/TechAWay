@@ -100,6 +100,7 @@ if ($ajouterOffreBtn=='ajouterOffre') {
         $competenceOffre = new Competence(-2,$niveauEtudes,$lpp,$lai);
         $renseignementOffre = new Renseignement(-2,$travEtranger,$secteur,$typeContrat,$poste,'');
         $db->creeOffre($idEntrepriseOffre, $renseignementOffre, $competenceOffre, $offreName);
+        header("Location: tableau.ctrl.php");
     } else {
         $erreur = "Les champs * sont obligatoires.";
     }
