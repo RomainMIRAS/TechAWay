@@ -60,6 +60,7 @@ $langages = array('php','html/css','c','python','perl','java','ruby','swift','ju
 
 // Passage des paramètres
 $view->assign("langues",$langues);
+$view->assign("langages",$langages);
 
 // Charge la vue
 $view->display("profil.view.php");
