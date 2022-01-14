@@ -57,7 +57,7 @@ if ($action=='supprY') {
         header("Location: offre.ctrl.php");
 }
 
-
+echo "$candidat->getEtape()";
 $view->assign('offre',$offre);
 $view->display("offre.view.php");
 
