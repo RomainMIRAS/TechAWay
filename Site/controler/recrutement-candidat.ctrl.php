@@ -34,7 +34,7 @@ session_start();
 if ($_SESSION['utilisateur']->getEtape() == 0){ // Etape du formulaire
   header('Location: formulaire.ctrl.php');
 } else if ($_SESSION['utilisateur']->getEtape() == 1) { // Etape Recherche d'entreprise
-  header('Location: test1.ctrl.php');
+  header('Location: profile.ctrl.php');
 } else if ($_SESSION['utilisateur']->getEtape() == 2) { // Etape Coaching CV et Lettre
   header('Location: test2.ctrl.php');
 } else if ($_SESSION['utilisateur']->getEtape() == 3) { // Etape Coaching Entretien
