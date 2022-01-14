@@ -33,7 +33,7 @@
 
       <section id="section1"> <!-- section Accueil -->
 
-        <article id = "article1">
+        <article id = "article1TUJ">
 
           <div>
             <h1>Candidats</h1>
@@ -48,7 +48,7 @@
 
         </article>
         
-        <article id = "article2">
+        <article id = "article2TUJ">
 
           <div id="svg1">
             <?php include_once("../view/design/svg/p1 var 1.svg") ?>
@@ -65,19 +65,19 @@
 
         </article>
 
-    </section>
+      </section>
 
-    <section id = "sectionTUJ" >
-        <section>
-            <article>
-                <h2>Commencez dès maintenant !</h2>
-                <form action="../controler/authentification.ctrl.php" method="post">                
-                    <button id="signup" type="submit" name="action" value="signup">S'inscrire</button>
-                </form>
-            </article>
-        </section>
-        
-    </section>
+      <section id = "sectionTUJ" >
+          <section>
+              <article>
+                  <h2>Commencez dès maintenant !</h2>
+                  <form action="../controler/authentification.ctrl.php" method="post">                
+                      <button id="signup" type="submit" name="action" value="signup">S'inscrire</button>
+                  </form>
+              </article>
+          </section>
+          
+      </section>
 
     </main>
 
