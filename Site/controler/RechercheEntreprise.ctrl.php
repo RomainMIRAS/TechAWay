@@ -179,7 +179,8 @@ foreach (array_keys($typeEntreprise) as $key) {
 
 $view = new View();
 
-$view->assign('candidat',$candidat);
+$view->assign('listeOffre',$offres);
+$view->assign('Scores',$scoresMatch);
 $view->display("RechercheEntreprise.view.php");
 
 
