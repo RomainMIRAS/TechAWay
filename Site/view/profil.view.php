@@ -240,7 +240,14 @@
             });
 
             /* si bouton 'mes documents' est cliqué  */
-            
+            $("#btn-docs").click(function() {
+              $("#form-rens").hide();
+              $("#form-comp").hide();
+              $("#form-docs").show();
+              $("#form-pref").hide();
+              $("#btn-docs").css("color","var(--color-grey)");
+              $("#btn-docs").css("border", "1px solid var(--color-grey)");
+            });
 
           });
         </script>
