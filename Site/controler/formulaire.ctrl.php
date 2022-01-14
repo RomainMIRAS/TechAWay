@@ -7,6 +7,24 @@ include_once(__DIR__."/../model/Candidat.class.php");
 include_once(__DIR__."/../model/Renseignement.class.php");
 include_once(__DIR__."/../model/DAO.class.php");
 
+///////////////////////////////////////////////////////////////////////////////
+// Protection Contre Erreurs
+///////////////////////////////////////////////////////////////////////////////
+
+// Si l'étape et déjà passer ou qu'il est un coach!
+session_start();
+
+// Si pas connecter
+if (!isset($_SESSION['utilisateur'])) header('Location: main.ctrl.php');
+
+// Si utilisateur est un coach
+if (!is_a($_SESSION['utilisateur'],"Candidat")) header('Location: main.ctrl.php');
+
+// Si il a déjà rempli le formulaire
+if ($_SESSION['utilisateur']->getEtape != 0) header('Location: main.ctrl.php');
+
+session_write_close();
+
 //-------------------Affectation des variables
 
 //$etape = (isset($_POST['etape'])) ? $_POST['etape']:"NPE";  //Declaration d'étapes
