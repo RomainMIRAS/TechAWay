@@ -45,7 +45,9 @@
                 <th>Poste</th>
                 <th>Nom entreprise</th>
                 <th>Telephone contact</th>
+                <th>Score de match</th>
             </tr>
+            <?php $it = 0?>
             <?php foreach($listeOffre as $c): ?> <!-- pour chaque candidat -->
                 <?php if ($c!=false): ?>
                     <tr> <!-- affichage du nom, prenom, mail...etc du candidat -->
@@ -55,8 +57,10 @@
                         <td><?= $c->getDetailOffre()->getPoste() ?></td>
                         <td><?= $c->getEntreprise()->getNom() ?></td>
                         <td><?= $c->getEntreprise()->getTelephone() ?></td>
+                        <td><?= $Scores[$it] ?></td>
                     </tr>
-                <?php endif; ?>
+                    
+                <?php $it++; endif; ?>
             <?php endforeach; ?>
         </table>
         
