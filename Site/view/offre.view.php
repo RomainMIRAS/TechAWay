@@ -98,7 +98,7 @@
      </ol>
       
       <form action="offre.ctrl.php" method="POST">
-                            <input type="hidden" class="candidatAction" name="candidatAction" value="ajouteN">
+                            <input type="hidden" class="action" name="action" value="supprN">
                             <button type="submit" class="candidatDeleteBtn">Abandonner l'offre</button>
                           </form>
       
@@ -111,19 +111,60 @@
 
   </body>
   <script src="../framework/jquery-3.6.0.min.js"></script>
-        <script>
-          $(window).ready(function() {
+  <script>
+    $(window).ready(function() {
 
-            /* si bouton 'mes renseignements' est cliqué  */
-            $("#btn-rens").click(function() {
-              $("#form-pref").hide();
-              $("#form-comp").hide();
-              $("#form-docs").hide();
-              $("#form-rens").show();
-              $("#btn-rens").css("color","var(--color-black)");
-              $("#btn-rens").css("border", "1px solid var(--color-black)");
-            });
+      $(".candidatDeleteBtn").click(function() { /* Affichage d'une fenêtre de confirmation pour la suppression d'un candidat */
+        if (confirm("Etes-vous sûr de vouloir abandonner cette offre ?")) {
+          $(".candidatAction").val("supprY");
+        } else {
+          $(".candidatAction").val("supprN");
+        }
+      });
 
-          });
-        </script>
+      $(".entrepriseDeleteBtn").click(function() { /* Affichage d'une fenêtre de confirmation pour la suppression d'une entreprise */
+        if (confirm("Etes-vous sûr de vouloir supprimer cette entreprise ?")) {
+          $(".entrepriseAction").val("deleteY");
+        } else {
+          $(".entrepriseAction").val("deleteN");
+        }
+      });
+
+      $(".offreDeleteBtn").click(function() { /* Affichage d'une fenêtre de confirmation pour la suppression d'une offre */
+        if (confirm("Etes-vous sûr de vouloir supprimer cette offre ?")) {
+          $(".offreAction").val("deleteY");
+        } else {
+          $(".offreAction").val("deleteN");
+        }
+      });
+
+      /* Modifier candidat */
+      $(".editCandidatSection").hide();
+      $(".editBtn").click(function() {
+        $(".editCandidatSection").show();
+      });
+      $(".editCandidatClose").click(function() {
+        $(".editCandidatSection").hide();
+      });
+
+      /* Ajouter entreprise */
+      $("#addEntrepriseSection").hide();
+      $("#addEntrepriseBtn").click(function() {
+        $("#addEntrepriseSection").show();
+      });
+      $("#addEntrepriseClose").click(function() {
+        $("#addEntrepriseSection").hide();
+      });
+
+      /* Ajouter offre */
+      $("#addOffreSection").hide();
+      $("#addOffreBtn").click(function() {
+        $("#addOffreSection").show();
+      });
+      $("#addOffreClose").click(function() {
+        $("#addOffreSection").hide();
+      });
+
+    });
+  </script>
 </html>

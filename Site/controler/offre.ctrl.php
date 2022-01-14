@@ -50,7 +50,7 @@ $view = new View();
 $action = $_POST['action'] ?? '';
 $message = '';
 
-if ($candidatAction=='supprY') {
+if ($action=='supprY') {
     $lienLM = $candidat->setLienLM('');
         $candidat->setEtape($candidat->getEtape() - 1);
         $db->updateCandidat($candidat);
