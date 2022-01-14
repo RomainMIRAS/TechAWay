@@ -40,6 +40,7 @@
 
     <?php $date = $offre->getDateOffre(); 
     $nom = $offre->getNomOffre(); 
+    $db = DAO::get();
 
     //Paramètre en lien avec l'entreprise
     $nomEntreprise = $offre->getEntreprise()->getNom(); 
@@ -57,8 +58,8 @@
     
     //Paramètre en lien avec les competence
     $niveauEtude = $offre->getCompetenceRecherche()->getNvEtude();
-    $langue = DAO::conversionArrayString($offre->getCompetenceRecherche()->getlangeParle());
-    $langage = conversionArrayString($offre->getCompetenceRecherche()->getLangageAcquis());
+    $langue = $db->conversionArrayString($offre->getCompetenceRecherche()->getlangeParle());
+    $langage = $db->conversionArrayString($offre->getCompetenceRecherche()->getLangageAcquis());
     
     
     ?>
