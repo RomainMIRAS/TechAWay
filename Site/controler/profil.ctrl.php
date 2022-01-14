@@ -62,6 +62,7 @@ $secteurs = array('Informatique',"Autre");
 // Passage des paramètres
 $view->assign("langues",$langues);
 $view->assign("langages",$langages);
+$view->assign("secteurs",$secteurs);
 
 // Charge la vue
 $view->display("profil.view.php");
