@@ -1,5 +1,5 @@
 <?php
-include_once(__DIR__."/connectionMail.php");
+include_once(__DIR__.'/connectionMail.php');
 include_once(__DIR__."/../framework/view.class.php");
 
 
