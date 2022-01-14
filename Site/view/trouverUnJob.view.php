@@ -33,7 +33,7 @@
 
       <section id="section1"> <!-- section Accueil -->
 
-        <article id = "article1TUJ">
+        <article id = "article1">
 
           <div>
             <h1>Candidats</h1>
@@ -48,7 +48,7 @@
 
         </article>
         
-        <article id = "article2TUJ">
+        <article id = "article2">
 
           <div id="svg1">
             <?php include_once("../view/design/svg/p1 var 1.svg") ?>

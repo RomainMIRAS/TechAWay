@@ -209,12 +209,12 @@ $it++;
 
 
 $offreAAjouter = $_POST['offreAAdd'] ?? '';
-$action = $_POST['candidatAction'] ?? '';
+$candidatAction = $_POST['candidatAction'] ?? '';
 $message = '';
 
 
 
-if ($action=='ajouteY') {
+if ($candidatAction=='ajouteY') {
     $message = "L'offre $offreAAjouter a bien été ajouté.";
     header("Location: RechercheEntreprise.ctrl.php");
 }
