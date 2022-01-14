@@ -81,7 +81,7 @@
             <div class="list-check"> <!-- Liste des langues -->
               <?php foreach($langues as $l): ?>
                 <?php if (in_array($l,$_SESSION['utilisateur']->getCompetenceAcquis()->getLangeParle())): ?>
-                  <input type="checkbox" name="langueParle[]" value="<?php echo strtolower($l) ?>" selected><?= $l ?></option>
+                  <input type="checkbox" name="langueParle[]" value="<?php echo strtolower($l) ?>" checked><?= $l ?></option>
                 <?php else: ?> 
                   <input type="checkbox" name="langueParle[]" value="<?php echo strtolower($l) ?>"><?= $l ?></option>
                 <?php endif; ?>
