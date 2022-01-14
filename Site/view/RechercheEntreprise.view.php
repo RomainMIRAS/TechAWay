@@ -48,6 +48,7 @@
                 <th>Mail contact</th>
                 <th>Score de match</th>
                 <th>Postuler</th>
+                <th>Postuler22</th>
             </tr>
             <?php krsort($listeOffreMatch) ?>
             <?php foreach (array_keys($listeOffreMatch) as $key) : ?> <!-- pour chaque candidat -->
