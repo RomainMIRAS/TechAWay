@@ -15,7 +15,7 @@ class DAO {
 	// Constructeur qui permet l'application de se connecter a notre base de donnee
 	function __construct() {
 		try{
-			include(__DIR__.'/connectionDB.php');
+			include_once(__DIR__.'/connectionBD.php');
 		
 		}catch (Exception $e) {
 			die("PSQL ERROR :".$e->getMessage());
