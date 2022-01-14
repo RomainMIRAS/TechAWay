@@ -150,7 +150,7 @@ foreach($offres as $o){
 foreach (array_keys($typeEntreprise) as $key) {
     $tt = $typeEntreprise[$key];
     $aaa = $renseiOffre->getTypeEntreprise();
-    echo "$tt = $aaa";
+    echo "///// $tt = $aaa /////";
     
     if ($typeEntreprise[$key] == $renseiOffre->getTypeEntreprise()) {
         $typeOffre = $key;
