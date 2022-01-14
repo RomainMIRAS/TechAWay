@@ -212,7 +212,7 @@ $offreAAjouter = $_POST['offreAAdd'] ?? '';
 $candidatAction = $_POST['candidatAction'] ?? '';
 $message = '';
 
-
+echo "$candidatAction";
 
 if ($candidatAction=='ajouteY') {
     $message = "L'offre $offreAAjouter a bien été ajouté.";
