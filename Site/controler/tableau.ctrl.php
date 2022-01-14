@@ -99,7 +99,7 @@ if ($ajouterOffreBtn=='ajouterOffre') {
         $theEntreprise = $db->getEntreprise($idEntrepriseOffre);
         $competenceOffre = new Competence(-2,$niveauEtudes,$lpp,$lai);
         $renseignementOffre = new Renseignement(-2,$travEtranger,$secteur,$typeContrat,$poste,'');
-        $db->creeOffre(-2, $offreName, now(), $theEntreprise, $competenceOffre, $renseignementOffre);
+        $db->creeOffre($idEntrepriseOffre, $renseignementOffre, $competenceOffre, $offreName);
     } else {
         $erreur = "Les champs * sont obligatoires.";
     }
