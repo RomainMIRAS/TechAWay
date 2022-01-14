@@ -55,7 +55,10 @@ HTML
 
 */
 
+$langues = array('Français','Anglais','Espagnol','Italien','Allemand','Albanais');
+
 // Passage des paramètres
+$view->assign("langues",$langues);
 
 // Charge la vue
 $view->display("profil.view.php");
