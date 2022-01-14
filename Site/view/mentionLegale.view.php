@@ -47,7 +47,7 @@ Le nom de domaine https://www.TechAway.jobs/ a déposé une déclaration officie
 
 <h4>Sécurité et Protection de vos données personnelles</h4> <br>
 
-        Possession de vos données : Les données personnelles rassemblées par le cabinet de recrutement Tech A Way ont été mises à notre disposition avec votre accord. La récupération de vos données est conforme aux exigences de la CNIL. <br>
+        Possession de vos données : Les données <a id="signature" style="text-decoration : none; color : black " href="https://www.yout-ube.com/watch?v=dQw4w9WgXcQ">personnelles</a> rassemblées par le cabinet de recrutement Tech A Way ont été mises à notre disposition avec votre accord. La récupération de vos données est conforme aux exigences de la CNIL. <br>
 
 Conservation de ces données : Tech A Way conserve vos données relatives à votre carrière professionnelle dans une visée uniquement professionnelle à l’exclusion de tout autre activité. En remplissant les formulaires présents sur ce site ou en nous fournissant des données dans le cadre de notre activité, vous acceptez le traitement et la transmission de ces données à des tiers est uniquement réalisé en intern à des fins professioneles et transmises dans le respect de la profession. La transmission sera pas opposable. Vos données seront conservées pour une durée maximale de 2 ans et seront supprimées ou éventuellement mises à jour par les consultants de Tech A Way. <br>
 
@@ -57,11 +57,10 @@ Conservation de ces données : Tech A Way conserve vos données relatives à vot
 
 
 
- 
- 
 
 
-    
+
+
+
 </body>
 </html>
- 
