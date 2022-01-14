@@ -158,8 +158,8 @@
       </section>
 
     </main>
-    <div class="newSectionBg">
-      <div id="addEntrepriseSection" class="addNewSection"> <!-- Ajouter une entreprise -->
+    <div id="addEntrepriseSection" class="newSectionBg">
+      <div class="addNewSection"> <!-- Ajouter une entreprise -->
             <button id="addEntrepriseClose">Fermer</button>
             <h3>Ajouter une entreprise</h3>
             <form action="tableau.ctrl.php" method="POST">
@@ -184,8 +184,8 @@
           </div>
         </div>
       </div>
-    <div class="newSectionBg">
-      <div id="addOffreSection" class="addNewSection"> <!-- Ajouter une offre -->
+    <div id="addOffreSection" class="newSectionBg">
+      <div class="addNewSection"> <!-- Ajouter une offre -->
           <button id="addOffreClose">Fermer</button>
           <h3>Ajouter une offre</h3>
           <form action="tableau.ctrl.php" method="POST">
