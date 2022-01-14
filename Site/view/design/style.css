@@ -514,13 +514,18 @@ button:hover {
   display:flex;
   justify-content: center;
   align-items: center;
-  margin:0 7.5%;
+}
+#article1 #svg1{
+  width:800px;
+  height:500px;
+}
+#article1 div{
+  width:500px;
 }
 #article2{
   display:flex;
   justify-content: center;
   align-items: center;
-  margin:0 7.5%;
 }
 
 #section2{
@@ -528,6 +533,17 @@ button:hover {
   flex-direction: column;
   align-items:center;
 }
+#article2 #svg2{
+  width:800px;
+  height:500px;
+}
+#article2 div{
+  width:600px;
+}
+.ulme{
+  display: block;
+}
+
 
 /**************************************************************
 * TROUVERUNJOB
