@@ -617,26 +617,6 @@ td, th {
   cursor: pointer;
 }
 
-
-
-.val form button, val button {
-  border: none;
-  padding: 0;
-  margin: 0;
-  font-size: 14px;
-}
-
-.val form button:hover, .val button:hover {
-  background-color: transparent;
-  color: var(--color-black);
-}
-
-.val form button i, .val button i {
-  color: var(--color-black);
-  cursor: pointer;
-}
-
-
 .editBtn {
   padding: 0;
   margin: 0;
