@@ -50,7 +50,7 @@
 
         <article id="article2">
 
-          <div id="svg1">
+          <div id="svg2">
             <?php include_once("../view/design/svg/p1 var 1.svg") ?>
           </div>
 
