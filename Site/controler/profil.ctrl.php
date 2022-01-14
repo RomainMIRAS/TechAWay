@@ -59,12 +59,16 @@ $langues = array('français','anglais','espagnol','italien','allemand','albanais
 $langages = array('php','html/css','c','python','perl','java','ruby','swift','julia','scala');
 $secteurs = array('Informatique',"Autre");
 $contrats = array('cdi','cdd');
+$postes = array('Développeur','Développeur de jeux video','Front-end développeur','Back-end développeur','Full stack  développeur');
+$entreprises = array("Microentreprise","Petite entreprise","Moyenne entreprise","Grande entreprise");
 
 // Passage des paramètres
 $view->assign("langues",$langues);
 $view->assign("langages",$langages);
 $view->assign("secteurs",$secteurs);
 $view->assign("contrats",$contrats);
+$view->assign("postes",$postes);
+$view->assign("entreprises",$entreprises);
 
 // Charge la vue
 $view->display("profil.view.php");
