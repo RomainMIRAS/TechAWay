@@ -30,6 +30,8 @@ session_write_close();
 
 $view = new View();
 
+$db = DAO::get();
+
 /* On récupère le lien cv */
 /*
 $filename = $_FILES["fileToUpload"]["name"];
@@ -54,6 +56,22 @@ HTML
 </form>
 
 */
+
+/* Changer mes compétences */
+
+$languesParle = $_POST['langueParle[]'] ?? '';
+$langagesAcquis = $_POST['languageAquis[]'] ?? '';
+
+$btnComp = $_POST['btnComp'] ?? '';
+
+if ($btnComp=='saveComp') {
+  $_SESSION['utilisateur']->setlangeParle($languesParle);
+  $_SESSION['utilisateur']->setLangageAcquis($langagesAcquis);
+  $db->updateCandidat(($_SESSION['utilisateur']);
+  header("Location: profil.ctrl.php");
+}
+
+if ()
 
 $langues = array('français','anglais','espagnol','italien','allemand','albanais');
 $langages = array('php','html/css','c','python','perl','java','ruby','swift','julia','scala');
