@@ -63,7 +63,7 @@
                         <td><?= round((($key+473)*100)/(616)) ?>%</td>
                         <td class="sup">
                           <form action="RechercheEntreprise.ctrl.php" method="POST">
-                            <input type="hidden" class="candidatAction" name="candidatAction" value="ajouteY">
+                            <input type="hidden" class="candidatAction" name="candidatAction" value="ajouteN">
                             <input type="hidden" name="offreAAdd" value="<?= $listeOffreMatch[$key]->getId() ?>">
                             <button type="submit" class="candidatDeleteBtn"><i class="fa fa-check-circle-o" aria-hidden="true"></i></button>
                           </form>

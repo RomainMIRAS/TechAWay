@@ -207,12 +207,13 @@ $offresMatch += [$scoresMatch[$it] => $lo];
 $it++;
 }
 
-
+$candidatAction = 't';
 $offreAAjouter = $_POST['offreAAdd'] ?? '';
+echo "$candidatAction";
 $candidatAction = $_POST['candidatAction'] ?? '';
 $message = '';
 
-echo "$candidatAction";
+echo " - $candidatAction";
 if ($candidatAction=='ajouteY') {
     $message = "L'offre $offreAAjouter a bien été ajouté.";
     header("Location: RechercheEntreprise.ctrl.php");
