@@ -26,7 +26,6 @@ $db = DAO::get(); // on récupère l'unique instance
 
 Mieu gerer niveau étude => si == +6 si inf -6 sinon +9
 
-Mieu gerer type entreprise => si == +6 si inf -6 sinon +9
 
 Poste pas gerer
 
@@ -48,7 +47,7 @@ $typeCandid = 0;
 
 $scoresMatch = array();
 $typeEntreprise = array(1 => "Microentreprise",2 => "Petite entreprise",3 => "Moyenne entreprise",4 => "Grande entreprise");
-
+$niveauEtude = array(1 => "bac",2 => "bac+1",3 => "bac+2",4 => "bac+3",5 => "bac+4",6 => "bac+5",7 => "bac+6",8 => "bac+7",9 => "bac+8");
 
 foreach($offres as $o){
     $scoreMatch = 0;
@@ -89,11 +88,27 @@ foreach($offres as $o){
         $langeEstParler = false;
     }
 
+foreach (array_keys($niveauEtude) as $key) {
+    
+    if ($niveauEtude[$key] == $competCandid->getNvEtude()) {
+        $nivCandid = $key;
+    }
+    if ($niveauEtude[$key] == $competOffre->getNvEtude()) {
+        $nivOffre = $key;
+    }
+}
+
+$aaa = $niveauEtude[$nivCandid];
+$aaaa = $nivCandid;
+echo "$aaaa = $aaa";
+
     //Niveau d'étude
-    if ($competCandid->getNvEtude() == $competOffre->getNvEtude()) {
-        $scoreMatch = $scoreMatch + 6; // On ajoute 6 au score si le niveau d'étude est identique entre l'offre et le candidat
+    if ($nivCandid == $nivOffre) {
+        $scoreMatch = $scoreMatch + 6;
+    } else if ($nivOffre < $nivCandid) {
+        $scoreMatch = $scoreMatch + 10;
     } else {
-        $scoreMatch = $scoreMatch - 6; // On enleve 8 au score si le niveau d'étude du candidat est inférieur à celui de l'offre
+        $scoreMatch = $scoreMatch - 6;
     }
 
 
@@ -148,9 +163,6 @@ foreach($offres as $o){
     }
 
 foreach (array_keys($typeEntreprise) as $key) {
-    $tt = $typeEntreprise[$key];
-    $aaa = $renseiOffre->getTypeEntreprise();
-    echo "///// $tt = $aaa /////";
     
     if ($typeEntreprise[$key] == $renseiOffre->getTypeEntreprise()) {
         $typeOffre = $key;
@@ -160,10 +172,11 @@ foreach (array_keys($typeEntreprise) as $key) {
     }
 }
 
-echo "Candidat : $typeCandid et Entreprise : $typeOffre";
     //type entreprise
-    if ($renseiOffre->getTypeEntreprise() == $renseiCandid->getTypeEntreprise()) {
+    if ($typeOffre == $typeCandid) {
         $scoreMatch = $scoreMatch + 6;
+    } else if ($typeOffre < $typeCandid) {
+        $scoreMatch = $scoreMatch + 10;
     } else {
         $scoreMatch = $scoreMatch - 5;
     }
