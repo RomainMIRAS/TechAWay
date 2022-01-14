@@ -57,7 +57,7 @@
     
     //Paramètre en lien avec les competence
     $niveauEtude = $offre->getCompetenceRecherche()->getNvEtude();
-    $langue = conversionArrayString($offre->getCompetenceRecherche()->getlangeParle());
+    $langue = DAO::conversionArrayString($offre->getCompetenceRecherche()->getlangeParle());
     $langage = conversionArrayString($offre->getCompetenceRecherche()->getLangageAcquis());
     
     
