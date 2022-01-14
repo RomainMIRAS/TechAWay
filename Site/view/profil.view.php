@@ -97,7 +97,7 @@
                 <?php endif; ?>
               <?php endforeach; ?>
             </div>
-            <button type="submit">Enregistrer</button>
+            <button type="submit" name="btnComp" value="saveComp">Enregistrer</button>
             <span class="asterisque">* : ces entrées ne sont pas modifiable directement. Veuillez contacter l'équipe de Tech A Way.</span>
           </form>
 
@@ -149,7 +149,7 @@
               <?php endforeach; ?>
             </select>
             <label for="">Type d'entreprise recherché</label>
-            <select name="poste" >
+            <select name="typeEntreprise" >
             <?php foreach($entreprises as $e): ?>
                 <?php if ($e==$_SESSION['utilisateur']->getRenseignement()->getTypeEntreprise()): ?>
                 <option value="<?= $e ?>" selected><?php echo ucfirst($e) ?></option>
@@ -158,7 +158,7 @@
                 <?php endif; ?>
               <?php endforeach; ?>
             </select>
-            <button type="submit">Enregistrer</button>
+            <button type="submit" name="btnPref" value="savePref">Enregistrer</button>
             <span class="asterisque">* : ces entrées ne sont pas modifiable directement. Veuillez contacter l'équipe de Tech A Way.</span>
           </form>
 
