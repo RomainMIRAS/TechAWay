@@ -101,7 +101,7 @@ if ($erreur == "" && $action == "confirmation"){
   ";
 
 //Send mail using gmail
-$result = smtpmailer('techawayteam13@gmail.com', $mail, $nom,"Demande de Partenariat - $nomEntreprise",$body);
+$result = smtpmailer('techawayteam13@gmail.com', $mail, $nom,"Demande de recrutement - $nom $prenom",$body);
 
 
 if (true != $result){
