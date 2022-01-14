@@ -97,7 +97,10 @@
       </ol></li>
      </ol>
       
-      <button id="testtttttt" class="btn-menu-profil">Abandonner cette offre</button>
+      <form action="offre.ctrl.php" method="POST">
+                            <input type="hidden" class="candidatAction" name="candidatAction" value="ajouteN">
+                            <button type="submit" class="candidatDeleteBtn"><i class="fa fa-check-circle-o" aria-hidden="true"></i></button>
+                          </form>
       
     </main>
 
@@ -107,4 +110,20 @@
 
 
   </body>
+  <script src="../framework/jquery-3.6.0.min.js"></script>
+        <script>
+          $(window).ready(function() {
+
+            /* si bouton 'mes renseignements' est cliqué  */
+            $("#btn-rens").click(function() {
+              $("#form-pref").hide();
+              $("#form-comp").hide();
+              $("#form-docs").hide();
+              $("#form-rens").show();
+              $("#btn-rens").css("color","var(--color-black)");
+              $("#btn-rens").css("border", "1px solid var(--color-black)");
+            });
+
+          });
+        </script>
 </html>
