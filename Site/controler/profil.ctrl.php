@@ -74,7 +74,7 @@ if ($btnComp=='saveComp') {
 }
 
 $btnPref = $_POST['btnPref'] ?? '';
-$travEtranger = (isset($_POST['travEtranger'])) ? $_POST['travEtranger']:"";
+$travEtranger = $_POST['travEtranger'] ?? '';
 $typeContrat = (isset($_POST['typeContrat'])) ? $_POST['typeContrat']:"";
 $secteur = (isset($_POST['secteur'])) ? $_POST['secteur']:"";
 $poste = (isset($_POST['poste'])) ? $_POST['poste']:"";

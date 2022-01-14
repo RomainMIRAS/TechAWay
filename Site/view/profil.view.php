@@ -121,7 +121,7 @@
               <?php else: ?>
                 <input type="radio" name="travEtranger" value="false">
               <?php endif; ?>
-              <label for="oui">Non</label>
+              <label for="non">Non</label>
             </div>
 
             <label for="">Secteur(s) d'activité(s)</label>
