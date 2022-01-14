@@ -59,18 +59,29 @@ HTML
 
 /* Changer mes compétences */
 
-$languesParle = $_POST['langueParle[]'] ?? '';
-$langagesAcquis = $_POST['languageAquis[]'] ?? '';
+$langueParle = (isset($_POST['langueParle'])) ? $_POST['langueParle']:null;  //Affectation de la langue parlé
+$languageAquis = (isset($_POST['languageAquis'])) ? $_POST['languageAquis']:null;  //Affectation des languages aquis
+
 
 $btnComp = $_POST['btnComp'] ?? '';
 
-if ($btnComp=='saveComp') {
+if ($btnComp=='saveComp') { /* Ne fonctionne pas */
+  echo "ok";
+  $competence = $_SESSION["utilisateur"]->getCompetenceAcquis();
+  $competence->setLangeParle($langueParle);
+  $competence->setLangageAcquis($languageAquis);
+  $_SESSION["utilisateur"]->setCompetenceAcquis($competence);
+  $db->updateCandidat($_SESSION['utilisateur']);
+}
 
+/*$btnPref = $_POST['btnPref'] ?? '';
+
+if ($btnPref=='savePref') { /* Ne fonctionne pas
   $_SESSION['utilisateur']->setlangeParle($languesParle);
   $_SESSION['utilisateur']->setLangageAcquis($langagesAcquis);
   $db->updateCandidat($_SESSION['utilisateur']);
   header("Location: profil.ctrl.php");
-}
+}*/
 
 
 $langues = array('français','anglais','espagnol','italien','allemand','albanais');
