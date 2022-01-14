@@ -98,8 +98,8 @@ foreach (array_keys($niveauEtude) as $key) {
     }
 }
 
-$aaa = $niveauEtude[$nivCandid];
-$aaaa = $nivCandid;
+$aaa = $niveauEtude[$nivOffre];
+$aaaa = $nivOffre;
 echo "$aaaa = $aaa";
 
     //Niveau d'étude
