@@ -56,7 +56,7 @@
 
           <div>
             <h3>Candidatez avec NOUS</h3>
-            <ul>
+            <ul class="ulme">
               <li>Une expertise dans le recrutement Tech</li>
               <li>Un gain de temps considérable</li>
               <li>Un accès à de nouveaux profils Tech</li>
@@ -67,7 +67,7 @@
 
       </section>
 
-      <section id = "section2">
+      <section id = "section2" style="margin-top :50px; ">
 
         <h2>Des besoins en recrutement tech ? Échangez avec nous !</h2>
         <form class="form" action="recruter.ctrl.php" method="post">

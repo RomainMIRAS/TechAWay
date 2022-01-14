@@ -67,7 +67,7 @@
 
       </section>
 
-      <section id = "sectionTUJ" >
+      <section id = "sectionTUJ" style="margin-top :50px; ">
           <section>
               <article>
                   <h2>Commencez dès maintenant !</h2>
