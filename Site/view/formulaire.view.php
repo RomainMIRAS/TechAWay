@@ -129,10 +129,12 @@
               <!-- Saisie des preferences du candidat -->
 
               <label for="travEtranger">Travail à l'etranger</label>
-              <input type="radio" name="travEtranger" value=true>
-              <label for="oui">Oui</label>
-              <input type="radio" name="travEtranger" value=false>
-              <label for="oui">Non</label>
+              <div class="list-radio">
+                <label for="oui">Oui</label>
+                <input type="radio" name="travEtranger" value=true>
+                <label for="oui">Non</label>
+                <input type="radio" name="travEtranger" value=false>
+              </div>
 
 
 
