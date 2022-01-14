@@ -3,31 +3,38 @@
 // Description d'une entreprise  
 class Entreprise {
   private int $id;              //Identifiant du client
-  private string $nom;          //Nom
-  private string $adresse;      //Adresse du client
-  private string $telephone;    //Telephone
   private string $mail;         //Mail
-  private Offre $offres;        //liste des offres faite par l'entreprise
+  private string $nom;          //Nom
+  private string $telephone;    //Telephone
+  private string $pays;      //Adresse du client
+  private string $ville;      //Adresse du client
+  //private array $offres;        //liste des offres faite par l'entreprise
 
   // Contructeur
-  function __construct(string $nom, string $adresse, string $telephone, string $mail) {
-    $this->nom = $nom;
-    $this->adresse = $adresse;
-    $this->telephone = $telephone;
+  function __construct(int $id , string $nom = '',string $mail = '', string $telephone = '', string $pays = '', string $ville = '') {
+    $this->id = $id;
     $this->mail = $mail;
-    $this->offres = null;
+    $this->nom = $nom;
+    $this->pays = $pays;
+    $this->ville = $ville;
+    $this->telephone = $telephone;
+    //$this->offres = null;
   }
 
   function getId() : int {
-    return $this->idClient;
+    return $this->id;
   }
 
   function getNom() : string {
     return $this->nom;
   }
 
-  function getAdresse() : string {
-    return $this->adresse;
+  function getVille() : string {
+    return $this->ville;
+  }
+
+  function getPays() : string {
+    return $this->pays;
   }
 
   function getTelephone() : string {
@@ -35,7 +42,7 @@ class Entreprise {
   }
 
   function getMail() : string {
-    return $this->lienCV;
+    return $this->mail;
   }
 
   function getOffres() : Offre {
@@ -48,8 +55,12 @@ class Entreprise {
     $this->nom = $nom;
   }
 
-  function setAdresse(string $adresse) : void {
-    $this->adresse = $adresse;
+  function setVille(string $ville) : void {
+    $this->ville = $ville;
+  }
+
+  function setPays(string $pays) : void {
+    $this->pays = $pays;
   }
 
   function setTelephone(string $telephone) : void {

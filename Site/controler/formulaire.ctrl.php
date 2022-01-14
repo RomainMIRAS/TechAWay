@@ -5,7 +5,25 @@ include_once(__DIR__."/../framework/view.class.php");
 include_once(__DIR__."/../model/Utilisateur.class.php");
 include_once(__DIR__."/../model/Candidat.class.php");
 include_once(__DIR__."/../model/Renseignement.class.php");
+include_once(__DIR__."/../model/DAO.class.php");
 
+///////////////////////////////////////////////////////////////////////////////
+// Protection Contre Erreurs
+///////////////////////////////////////////////////////////////////////////////
+
+// Si l'étape et déjà passer ou qu'il est un coach!
+session_start();
+
+// Si pas connecter
+if (!isset($_SESSION['utilisateur'])) header('Location: main.ctrl.php');
+
+// Si utilisateur est un coach
+if (!is_a($_SESSION['utilisateur'],"Candidat")) header('Location: main.ctrl.php');
+
+// Si il a déjà rempli le formulaire
+if ($_SESSION['utilisateur']->getEtape() != 0) header('Location: recrutement-candidat.ctrl.php');
+
+session_write_close();
 
 //-------------------Affectation des variables
 
@@ -17,17 +35,16 @@ $prenom = (isset($_POST['prenom'])) ? $_POST['prenom']:"";
 $age = (isset($_POST['age'])) ? $_POST['age']:"";
 
 // Attribut de la première page ( BASE )
-$tel = (isset($_POST['tel'])) ? $_POST['tel']:"";
-$tellength= strlen($tel);
+$telephone = (isset($_POST['tel'])) ? $_POST['tel']:"";
+$tellength= strlen($telephone);
 $ville = (isset($_POST['ville'])) ? $_POST['ville']:"";
-$ville = (isset($_POST['pays'])) ? $_POST['pays']:"";
+$pays = (isset($_POST['pays'])) ? $_POST['pays']:"";
 $etape = (isset($_POST['etape'])) ? $_POST['etape']:"non";
-
 
 // Attribut de la deuxième page (Compétence)
 $nvEtude = (isset($_POST['nvEtude'])) ? $_POST['nvEtude']:"";  //Affectation du niveau d'etude
-$langueParle = (isset($_POST['langueParle'])) ? $_POST['langueParle']:"";  //Affectation de la langue parlé
-$languageAquis = (isset($_POST['languageAquis'])) ? $_POST['languageAquis']:"";  //Affectation des languages aquis
+$langueParle = (isset($_POST['langueParle'])) ? $_POST['langueParle']:null;  //Affectation de la langue parlé
+$languageAquis = (isset($_POST['languageAquis'])) ? $_POST['languageAquis']:null;  //Affectation des languages aquis
 
 // Attribut de la deuxième page (Préfèrence)
 $travEtranger = (isset($_POST['travEtranger'])) ? $_POST['travEtranger']:"";
@@ -38,12 +55,14 @@ $typeEntreprise = (isset($_POST['typeEntreprise'])) ? $_POST['typeEntreprise']:"
 
 $erreur = "";
 
-$pays = array('Allemagne','Autriche','Andorre','Belgique','Boznie Herzegovine','Bulgarie','Chypre','Croatie','Danemark','Espagne','Estonie','Finlande','France','Gibraltar','Grece','Hongrie','Irlande','Islande','italie','Lettonie','Liechtenstein','Lituanie','Luxembourg','Malte','Monaco','Norvege','Pays Bas','Pays de Galle','Pologne','Portugal','Republique Tcheque','Roumanie','Royaume Uni','Russie','Slovaquie','Slovenie','Suede','Suisse','Ukraine','Vatican');
+$listepays = array('Allemagne','Autriche','Andorre','Belgique','Boznie Herzegovine','Bulgarie','Chypre','Croatie','Danemark','Espagne','Estonie','Finlande','France','Gibraltar','Grece','Hongrie','Irlande','Islande','italie','Lettonie','Liechtenstein','Lituanie','Luxembourg','Malte','Monaco','Norvege','Pays Bas','Pays de Galle','Pologne','Portugal','Republique Tcheque','Roumanie','Royaume Uni','Russie','Slovaquie','Slovenie','Suede','Suisse','Ukraine','Vatican');
 
 $action = (isset($_POST['action'])) ? $_POST['action']: 'formulaire';
 
 $etape = (isset($_POST['etape'])) ? $_POST['etape']: 'base';
 
+
+$today = new DateTime('today');
 
 ///////////////////////////////////////////////////////////////////////////////
 // Partie Gestion des erreurs
@@ -59,32 +78,32 @@ if($action== "suivant" && $etape == "base")
   {
     $erreur = "Le nom doit etre rempli";  // Si nom est vide --> erreur
   }
-  else if(preg_match('/^[a-z]+$/i', $nom) == false)
-  {
-    $erreur = "Le nom doit etre composé de lettres seulement"; // Si nom n'est pas en lettre --> erreur
-  }
+  // else if(preg_match('/^[a-z]+$/i', $nom) == false)
+  // {
+  //   $erreur = "Le nom doit etre composé de lettres seulement"; // Si nom n'est pas en lettre --> erreur
+  // }
   // Si aucune langue selectionné
   else if($prenom == "" )
   {
     $erreur = "Le prenom doit etre rempli";  // Si prenom est vide --> erreur
   }
-  else if(preg_match('/^[a-z]+$/i', $prenom) == false)
-  {
-    $erreur = "Le prenom doit etre composé de lettres seulement"; // Si prenom n'est pas en lettre --> erreur
-  }
-  // Si age incorrect
+  // else if(preg_match('/^[a-z]+$/i', $prenom) == false)
+  // {
+  //   $erreur = "Le prenom doit etre composé de lettres seulement"; // Si prenom n'est pas en lettre --> erreur
+  // }
+  // Gestion des dates du formulaire
+
   else if($age == "")
   {
     $erreur = "L'age doit etre rempli";
   }
-  /*
-  else if(strtotime($age) >= strtotime(date("m-d-Y"))   $today - $ageDate < $dateNull)
+  else if(date_create($age) >= $today ) // Si la date rentrée est supérieur à celle d'aujourd'hui
   {
     $erreur = "L'age ne doit pas être superieur à la date d'aujourd'hui";
   }
-  */
 
-  else if($tel == "")
+
+  else if($telephone == "")
   {
     $erreur = "Le telephone doit etre rempli et correct";
   }
@@ -92,7 +111,7 @@ if($action== "suivant" && $etape == "base")
   {
     $erreur = "Le telephone doit être au format indiqué";
   }
-  else if(preg_match('/^[0-9]+$/i', $tel) == false)
+  else if(preg_match('/^[0-9]+$/i', $telephone) == false)
   {
     $erreur = "Le telephone doit etre composé de chiffre";
   }
@@ -100,10 +119,10 @@ if($action== "suivant" && $etape == "base")
   {
     $erreur = "La ville doit etre rempli";  // Si ville est vide --> erreur
   }
-  else if(preg_match('/^[a-z]+$/i', $ville) == false)
-  {
-    $erreur = "La ville doit etre composé de lettres seulement"; // Si ville n'est pas en lettre --> erreur
-  }
+  // else if(preg_match('/^[a-z]+$/i', $ville) == false)
+  // {
+  //   $erreur = "La ville doit etre composé de lettres seulement"; // Si ville n'est pas en lettre --> erreur
+  // }
   else{
     $etape = (isset($_POST['etape'])) ? $_POST['etape']: 'base';
   }
@@ -162,7 +181,6 @@ if($etape== "envoyer")
 
 // Gestion suivant
 if ($erreur == "" && $action == "suivant"){
-  $etape = ($etape == "base") ? "competences": "preferences";
 
   // Push des donnés dans la session puis quand fini dans la base
   if ($etape == "base"){
@@ -170,11 +188,17 @@ if ($erreur == "" && $action == "suivant"){
     $_SESSION["utilisateur"]->setNom($nom);
     $_SESSION["utilisateur"]->setPrenom($prenom);
     // Cacul d'age
-    $today   = new DateTime('today');
-    $age = $age->diff($today)->y;
+    $age = date_create($age)->diff($today)->y;
+
+    // $dateOfBirth = "17-10-1985";
+    // $today = date("Y-m-d");
+    // $diff = date_diff(date_create($dateOfBirth), date_create($today));
+
     // A FAIRE
+    //$_SESSION["utilisateur"]->setMail("changement de mail");
     $_SESSION["utilisateur"]->setAge($age);
     $_SESSION["utilisateur"]->setVille($ville);
+    $_SESSION["utilisateur"]->setTelephone($telephone);
     $_SESSION["utilisateur"]->setPays($pays);
     session_write_close();
   } else if ($etape == "competences") {
@@ -186,6 +210,7 @@ if ($erreur == "" && $action == "suivant"){
     $competence->setLangageAcquis($languageAquis);
     $_SESSION["utilisateur"]->setCompetenceAcquis($competence);
     session_write_close();
+
   } else if ($etape == "preferences") {
     session_start();
     $renseignement = $_SESSION["utilisateur"]->getRenseignement();
@@ -194,11 +219,22 @@ if ($erreur == "" && $action == "suivant"){
     $renseignement->setSecteur($secteur);
     $renseignement->setPoste($poste);
     $renseignement->setTypeEntreprise($typeEntreprise);
+    $_SESSION["utilisateur"]->setPreference($renseignement);
+    $_SESSION["utilisateur"]->setEtape(1);
 
+    session_write_close();
 
     // FAIRE LE PUSH DE DONNES EN BASE ICI
-    session_write_close();
+    DAO::get()->updateCandidat($_SESSION["utilisateur"]);
+
+    // Redirection sur la page principale
+    header('Location: main.ctrl.php');
+    $erreur = "Marche pas ";
   }
+
+  // Gestion du Statuts de l'étape
+  $etape = ($etape == "base") ? "competences": "preferences";
+
 }
 
 //Gestion précédent
@@ -224,7 +260,7 @@ if ($erreur == "" && $etape == "preferences"){
 
 $view = new View();
 $view->assign('erreur',$erreur);
-$view->assign('pays',$pays);
+$view->assign('pays',$listepays );
 $view->assign('action',$action);
 $view->assign('etape',$etape);
 //$view->assign('candidat',$_SESSION["utilisateur"]);

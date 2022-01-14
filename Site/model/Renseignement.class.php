@@ -13,7 +13,7 @@ class Renseignement {
 
 
   // Contructeur
-  function __construct(int $id,bool $travEtranger, string $secteur, string $typeContrat, string $poste, string $typeEntreprise) {
+  function __construct(int $id,bool $travEtranger = false, string $secteur = '', string $typeContrat = '', string $poste = '', string $typeEntreprise = '') {
     $this->id = $id;
     $this->travEtranger = $travEtranger;
     $this->secteur = $secteur;

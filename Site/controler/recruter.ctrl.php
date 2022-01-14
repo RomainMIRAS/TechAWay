@@ -1,16 +1,28 @@
 <?php
-
+include_once(__DIR__.'/../model/connectionMail.php');
 include_once(__DIR__."/../framework/view.class.php");
+
+///////////////////////////////////////////////////////////////////////////////
+// Partie Récupération des Variables
+///////////////////////////////////////////////////////////////////////////////
 
 
 $nom = (isset($_POST['nom'])) ? $_POST['nom']:"";
 $prenom = (isset($_POST['prenom'])) ? $_POST['prenom']:"";
 $mail = (isset($_POST['email'])) ? $_POST['email']:"";
 $nomEntreprise = (isset($_POST['nomEntreprise'])) ? $_POST['nomEntreprise']:"";
+$message = (isset($_POST['message'])) ? $_POST['message']:"";
+
 
 
 $erreur = "";
 $action = (isset($_POST['action'])) ? $_POST['action']: '';
+
+
+///////////////////////////////////////////////////////////////////////////////
+// Partie Gestion des erreurs
+///////////////////////////////////////////////////////////////////////////////
+
 
 if($action == "confirmation" )
 {
@@ -37,34 +49,60 @@ else if($nomEntreprise == "" )
     {
       $erreur = "Le nom de l'entreprise doit etre rempli";
     }
+
+else if($message == "" )
+    {
+      $erreur = "Le message ne doit pas être vide";
+    }
+
 }
 
-if ($erreur == ""){
-  $erreur = "Le mail se partenariat a été envoyé !";
-  $message =
+
+///////////////////////////////////////////////////////////////////////////////
+// Envoie du Mail
+///////////////////////////////////////////////////////////////////////////////
+
+if ($erreur == "" && $action == "confirmation"){
+
+  $body =
   "Vous avez reçu une demande de partenariat !\r\n
   \r\n----------------------
   Prénom : $prenom \r\n
   Nom : $nom \r\n
   Mail : $mail \r\n
   Nom de l'entreprise : $nomEntreprise \r\n
+  Message : $message
+  ---------------------
+
+  Aller nous voir sur
+  techaway.tk/
+
   ----------------------
   ";
 
-  // Dans le cas où nos lignes comportent plus de 70 caractères, nous les coupons en utilisant wordwrap()
-  $message = wordwrap($message, 70, "\r\n");
-  $headers = "From: $mail" . "\r\n" .
-       'Reply-To: Demande de partenariat' . "\r\n" .
-       'X-Mailer: PHP/' . phpversion();
-  // Envoi du mail
-  mail('techawayteam13@gmail.com', "Demande de Partenariat - $nomEntreprise", $message,$headers);
+//Send mail using gmail
+$result = smtpmailer('techawayteam13@gmail.com', $mail, $nom,"Demande de Partenariat - $nomEntreprise",$body);
+
+
+if (true != $result){
+	// erreur -- traiter l'erreur
+  $erreur = "Le mail n'a pas pu être envoyé - $error";
+} else {
+  $erreur = "Le mail se partenariat a été envoyé !";
 }
+
+
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// Partie View
+///////////////////////////////////////////////////////////////////////////////
+
 
 
 $view = new View();
 
 $view->assign('erreur',$erreur);
-$view->assign('action',$action);
 $view->display("recruter.view.php");
 
 ?>

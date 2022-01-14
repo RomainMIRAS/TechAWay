@@ -38,20 +38,21 @@
             <form class="form" action="formulaire.ctrl.php" method="post">
               <h1>Formulaire</h1>
               <!-- Saisie des informations du candidat -->
-              <label for="nom">Nom</label>
+              <label for="nom">Nom *</label>
               <input id="nom" type="text" name="nom" placeholder="Entrez votre nom" >
-              <label for="prenom">Prénom</label>
+              <label for="prenom">Prénom *</label>
               <input id="prenom" type="text" name="prenom" placeholder="Entrez votre prénom" >
-              <label for="age">Date de naissance</label>
+              <label for="age">Date de naissance *</label>
               <input id="age" type="date" name="age" >
-              <label for="tel">Téléphone</label>
+              <label for="tel">Téléphone *</label>
               <!-- type tel -> seul les chiffres sont autorisé -->
               <input id="tel" type="tel" name="tel" placeholder="+33 6 01 02 03 04" >
 
 
               <!-- Section du pays parmis la liste des pays europeens -->
-              <label for="pays">Pays</label>
+              <label for="pays">Pays *</label>
               <select name="pays">
+                <option value="">--Veuillez choisir un pays--</option>
                   <?php foreach ($pays as $key): ?>
                     <?php if ($key=="France"): ?>
                       <option value="<?php echo"$key" ?>" selected><?php echo"$key" ?></option>
@@ -61,12 +62,13 @@
                   <?php endforeach; ?>
               </select>
 
-              <label for="ville">Ville</label>
+              <label for="ville">Ville *</label>
               <input id="ville" type="text" name="ville" >
 
               <output><?=$erreur?></output>
               <button type="submit" name="action" value="suivant">Confirmation</button>
               <input type="hidden" name="etape" value="base">
+              <span class="asterisque">* : Champ obligatoire</span>
               </form>
           </section>
 
@@ -78,23 +80,42 @@
               <h1>Formulaire</h1>
               <!-- Saisie des competences du candidat -->
               <label for="nvEtude">Niveau d'etudes</label>
-              <select name="pays">
-                      <option value="<?php echo"bac+1" ?>" selected>Bac +1</option>
-                      <option value="<?php echo"bac+2" ?>" >Bac +1</option>
-                      <option value="<?php echo"bac+3" ?>" >Bac +3</option>
-                      <option value="<?php echo"bac+4" ?>" >Bac +4</option>
-                      <option value="<?php echo"bac+5" ?>" >Bac +5</option>
-                      <option value="<?php echo"bac+6" ?>" >Bac +6</option>
-                      <option value="<?php echo"bac+7" ?>" >Bac +7</option>
-                      <option value="<?php echo"bac+8" ?>" >Bac +8</option>
+              <select name="nvEtude">
+                      <option value="bac" selected>Bac</option>
+                      <option value="bac+1" >Bac +1</option>
+                      <option value="bac+2" >Bac +2</option>
+                      <option value="bac+3" >Bac +3</option>
+                      <option value="bac+4" >Bac +4</option>
+                      <option value="bac+5" >Bac +5</option>
+                      <option value="bac+6" >Bac +6</option>
+                      <option value="bac+7" >Bac +7</option>
+                      <option value="bac+8" >Bac +8</option>
               </select>
-              <label for="langueParle">Langues parlé</label>
-              <input id="langueParle" type="text" name="langueParle" placeholder="ex :Francais,Anglais" >
-              <label for="languageAquis">Languages aquis</label>
-              <input id="languageAquis" type="text" name="languageAquis" placeholder="ex :C++,Java,PHP" >
+              <label for="langueParle[]">Langue(s) parlée(s)</label>
+                <div class="list-check"> <!-- Liste des langues -->
+                  <input type="checkbox" name="langueParle[]" value="francais" selected>Français</option>
+                  <input type="checkbox" name="langueParle[]" value="anglais" >Anglais</option>
+                  <input type="checkbox" name="langueParle[]" value="espagnole" >Espagnol</option>
+                  <input type="checkbox" name="langueParle[]" value="italien" >Italien</option>
+                  <input type="checkbox" name="langueParle[]" value="allemand">Allemand</option>
+                  <input type="checkbox" name="langueParle[]" value="albanais">Albanais</option>
+                </div>
+              <label for="languageAquis[]">Language(s) infomatique connu(s)</label>
+              <div class="list-check"> <!-- Liste des langages -->
+                <input type="checkbox" name="languageAquis[]" value="php" selected>PHP</option>
+                <input type="checkbox" name="languageAquis[]" value="hmtl/css" >HTML/CSS</option>
+                <input type="checkbox" name="languageAquis[]" value="c" >C#, C ou C++</option>
+                <input type="checkbox" name="languageAquis[]" value="python" >Python</option>
+                <input type="checkbox" name="languageAquis[]" value="perl">PERL</option>
+                <input type="checkbox" name="languageAquis[]" value="java">Java</option>
+                <input type="checkbox" name="languageAquis[]" value="ruby">Ruby</option>
+                <input type="checkbox" name="languageAquis[]" value="swift">Swift</option>
+                <input type="checkbox" name="languageAquis[]" value="julia">Julia</option>
+                <input type="checkbox" name="languageAquis[]" value="scala">Scala</option>
+              </div>
               <form action ="formulaire.ctrl.php" method="post">
               <output><?=$erreur?></output>
-              <button type="submit" name="action" value="precedent">Precedent</button>
+              <button type="submit" name="action" value="precedent">Précédent</button>
               <button type="submit" name="action" value="suivant">Suivant</button>
               <input type="hidden" name="etape" value="competences">
               </form>
@@ -108,10 +129,12 @@
               <!-- Saisie des preferences du candidat -->
 
               <label for="travEtranger">Travail à l'etranger</label>
-              <input type="radio" name="travEtranger" value=true>
-              <label for="oui">Oui</label>
-              <input type="radio" name="travEtranger" value=false>
-              <label for="oui">Non</label>
+              <div class="list-radio">
+                <input type="radio" name="travEtranger" value=true>
+                <label for="oui">Oui</label>
+                <input type="radio" name="travEtranger" value=false>
+                <label for="oui">Non</label>
+              </div>
 
 
 
@@ -125,27 +148,32 @@
               <label for="secteur">Secteur de travail</label>
               <select name="secteur" >
                   <option value="">--Veuillez choisir une option--</option>
-                  <option value="cdi">Secteur 1</option>
-                  <option value="cdd">Secteur 2</option>
+                  <option value="Informatique">Informatique</option>
+                  <option value="Autre">Autre</option>
               </select>
 
               <label for="poste">Poste</label>
               <select name="poste" >
                   <option value="">--Veuillez choisir une option--</option>
-                  <option value="cdi">Poste 1</option>
-                  <option value="cdd">Poste 2</option>
+                  <option value="Développeur">Développeur</option>
+                  <option value="Développeur de jeux video">Développeur de jeux video</option>
+                  <option value="Front-end développeur">Front-end développeur</option>
+                  <option value="Back-end développeur">Back-end développeur</option>
+                  <option value="Full stack  développeur">Full stack  développeur</option>
               </select>
 
               <label for="typeEntreprise">Type d'entreprise</label>
               <select name="typeEntreprise" >
                   <option value="">--Veuillez choisir une option--</option>
-                  <option value="cdi">Start-Up</option>
-                  <option value="cdd">Multinational</option>
+                  <option value="Microentreprise">Microentreprise</option>
+                  <option value="Petite entreprise">Petite entreprise</option>
+                  <option value="Moyenne entreprise">Moyenne entreprise</option>
+                  <option value="Grande entreprise">Grande entreprise</option>
               </select>
               <output><?=$erreur?></output>
               <form action ="formulaire.ctrl.php" method="post">
-              <button type="submit" name="action" value="precedent">Precedent</button>
-              <button type="submit" name="action" value="confirmation">Envoyer</button>
+              <button type="submit" name="action" value="precedent">Précédent</button>
+              <button type="submit" name="action" value="suivant">Envoyer</button>
               <input type="hidden" name="etape" value="preferences">
               </form>
           </section>

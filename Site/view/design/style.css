@@ -1,8 +1,11 @@
 :root {
   --color-blue1: #0036d9;
+  --color-blue2: #0036d94b;
   --color-yellow1: #fac120;
   --color-white: white;
   --color-black: black;
+  --color-grey: #B9B8D8;
+
 
   --font-raleway: 'Raleway';
 }
@@ -103,24 +106,29 @@ nav>ul{
   transform: scale(1.9);
 }
 
-/*#btn-compte img {
-  border-radius: 100%;
-  transition: all .2s ease-in-out;
+#navResp {
+  display: none;
 }
 
-/*#btn-compte:hover img {
-  transform: scale(1.05);
-}*/
+#navResp ul form {
+  align-items: center;
+}
 
 /**************************************************************
 * MAIN
 **************************************************************/
 
 main {
-  height: 100%;
-  padding: 20px;
   display: flex;
   flex-direction: column;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+.asterisque {
+  color: var(--color-black);
+  font-size: 12px;
+  margin-top: 10px;
 }
 
 h1 {
@@ -179,6 +187,17 @@ svg {
 	text-align: center;
 }
 
+.phone1{
+  animation:2s hovering infinite alternate ease-in-out;
+}
+.phone2{
+  animation:2s hovering infinite alternate ease-in-out;
+  animation-delay: 0.5s;
+}
+#g1583{
+  animation:2s scaling infinite alternate ease-in-out;
+  animation-delay: 0.5s;
+}
 /*#svg1 svg{
 	width: 800px;
   height: 600px;
@@ -191,6 +210,22 @@ svg {
 	text-align: center;
 }*/
 
+@keyframes hovering{
+  0%{
+    transform: translateY(0px);
+  }
+  100%{
+    transform: translateY(15px);
+  }
+}
+@keyframes scaling{
+  0%{
+    transform: scale(1);
+  }
+  100%{
+    transform: scale(0.94);
+  }
+}
 /**************************************************************
 * MENU COMPTE
 **************************************************************/
@@ -250,7 +285,7 @@ svg {
   font-variant: small-caps;
   padding-top: 0px;
   padding-bottom: 10px;
-  color: #B9B8D8;
+  color: var(--color-grey);
 }
 
 #btn-logout {
@@ -293,12 +328,31 @@ output{
   color: var(--color-blue1);
 }
 
-.form input, select {
+.form input, select, textarea {
   padding: 12px 20px;
   margin: 10px 0;
-  border: 1px solid #B9B8D8;
+  border: 1px solid var(--color-grey);
   outline: none;
   border-radius: 5px;
+}
+
+input[type="checkbox"] {
+  margin: 10px;
+}
+
+input[type="radio"] {
+  margin: 5px;
+}
+
+textarea {
+  min-width: 200px;
+  max-width: 500px;
+  min-height: 200px;
+  max-height: 800px;
+}
+
+.form input:disabled {
+  opacity: 60%;
 }
 
 select {
@@ -415,13 +469,11 @@ button:hover {
 .section-profil {
   align-items: center;
   flex-direction: column;
-  margin-bottom: 20px;
 }
 
-.section-profil .form {
-  overflow-y: auto;
-  height: 500px;
-  padding-inline: 10px;
+.section-profil:nth-child(1) {
+  padding-top: 20px;
+  margin-bottom: 20px;
 }
 
 #container-profil {
@@ -433,59 +485,68 @@ button:hover {
   border-radius: 100%;
   width: 100px;
   height: 100px;
-  cursor: pointer;
   transition: all .2s ease-in-out;
 }
 
-#img-profil:hover {
-  opacity: 40%;
+.btn-menu-profil {
+  color: var(--color-grey);
+  border: 1px solid var(--color-grey);
+  font-weight: initial;
 }
 
+.btn-menu-profil:hover, .btn-menu-profil:focus {
+  color: var(--color-black);
+  border: 1px solid var(--color-black);
+  background-color: transparent;
+}
 
 /**************************************************************
-* Recruter
+* RECRUTER
 **************************************************************/
 #section1{
   display: flex;
   flex-direction: column;
   text-align: center;
-  
+
 }
 
 #article1{
   display:flex;
   justify-content: center;
   align-items: center;
-  background-color:#7094FF;
 }
 #article2{
   display:flex;
   justify-content: center;
   align-items: center;
-  background-color:#FCD873;
 }
 
 #section2{
-  justify-content: center;
-  background-color: #7094FF;
+  display: flex;
+  flex-direction: column;
+  align-items:center;
 }
 
 /**************************************************************
 * TROUVERUNJOB
 **************************************************************/
-#mainTrouverUnJob {
 
+#mainTrouverUnJob {
   height: 100%;
   padding: 0;
   display: flex;
   flex-direction: column;
+}
 
+#mainTrouverUnJob #section1 {
+  margin-top: 20px;
 }
 
 #sectionTUJ{
   display: flex;
   flex-direction: row;
   justify-content: center;
+  margin-bottom: 20px;
 }
 
 #sectionTUJ section{
@@ -513,23 +574,145 @@ button:hover {
 }
 
 /**************************************************************
-* TABLEAU DE BORD 
+* TABLEAU DE BORD
 **************************************************************/
 
+#tableau-bord {
+  flex-direction: column;
+}
+
+#tableau-bord h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
 table {
-  font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 100%;
+  border-radius: 15px;
 }
 
 td, th {
   border: 1px solid #dddddd;
   text-align: left;
-  padding: 8px;
+  padding: 5px;
+  font-size: 14px;
+  cursor: initial;
+}
+
+.sup form button, sup button {
+  border: none;
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+}
+
+.sup form button:hover, .sup button:hover {
+  background-color: transparent;
+  color: var(--color-black);
+}
+
+.sup form button i, .sup button i {
+  color: var(--color-black);
+  cursor: pointer;
+}
+
+.editBtn {
+  padding: 0;
+  margin: 0;
+  border: none;
 }
 
 tr:nth-child(even) {
-  background-color: #dddddd;
+  background-color: #dddddd;;
+}
+
+tr:nth-child(1):hover {
+  background-color: var(--color-white);
+}
+
+tr:hover {
+  background-color: var(--color-blue2);
+}
+
+tr:hover td {
+  color: var(--color-white);
+}
+
+.nav-options-board button {
+  margin-left: 0;
+  margin-right: 5px;
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: initial;
+  padding: 3px 12px;
+  font-size: 14px;
+  border: 1px solid var(--color-blue1);
+}
+
+.deleteMessage {
+  color: red;
+  font-size: 13px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.addNewSection {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  border-radius: 15px;
+  background-color: var(--color-white);
+  padding: 10px;
+}
+
+.addNewSection button {
+  margin: 0;
+  border: none;
+  font-size: 14px;
+  width: max-content;
+  margin-inline: auto;
+}
+
+.addNewSection button:hover {
+  background-color: transparent;
+  color: var(--color-blue1);
+  text-decoration: underline;
+}
+
+.addNewSection form {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+}
+
+.addNewSection form input, .addNewSection form select, .addNewSection form textarea {
+  padding: 5px 15px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border: 1px solid var(--color-grey);
+  outline: none;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.addNewSection form button {
+  margin: 0;
+  border: 1px solid var(--color-blue1);
+  font-size: 14px;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.addNewSection form button:hover {
+  background-color: var(--color-blue1);
+  color: var(--color-white);
+  text-decoration: none;
 }
 
 /**************************************************************
@@ -566,6 +749,10 @@ footer ul li a:hover {
 
   body, html, main {
     min-height: 100%;
+  }
+
+  main {
+    padding: 20px;
   }
 
   nav {
@@ -605,6 +792,41 @@ footer ul li a:hover {
 
   #section-accueil-1 div:first-child form {
     justify-content: center;
+  }
+
+  #article1 {
+    flex-direction: column;
+  }
+
+  #article2 {
+    flex-direction: column-reverse;
+  }
+
+  #signature{
+    text-decoration: none;
+    color: black;
+  }
+
+  #navResp {
+    background-color: var(--color-white);
+    justify-content: center;
+    justify-self: center;
+    display: flex;
+  }
+
+  #btn-profil-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .btn-menu-profil {
+    margin-bottom: 5px;
+  }
+
+  #menu-drop {
+    top: 30%;
+    right: 20%;
+    z-index: 100;
   }
 
 }

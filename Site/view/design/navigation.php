@@ -8,11 +8,11 @@ session_start();
  ?>
 <nav>
     <ul>
-        <li><a href="main.ctrl.php"><img id="logo" src="../view/design/img/logo.png" ></a></li>
+        <li class="navbarAnimate"><a href="main.ctrl.php"><img id="logo" src="../view/design/img/logo.png" ></a></li>
         <div>
-          <li><a href="recruter.ctrl.php">Recruter</a></li>
-          <li><a href="trouverUnJob.ctrl.php">Trouver un job</a></li>
-          <li><a href="parrainer.ctrl.php">Parrainer</a></li>
+          <li class="navbarAnimate"><a href="recruter.ctrl.php">Recruter</a></li>
+          <li class="navbarAnimate"><a href="trouverUnJob.ctrl.php">Trouver un job</a></li>
+          <li class="navbarAnimate"><a href="parrainer.ctrl.php">Parrainer</a></li>
         </div>
     </ul>
 
@@ -20,14 +20,14 @@ session_start();
 
       <?php if (!isset($_SESSION['utilisateur'])): //Si pas connecté?>
       <form action="../controler/authentification.ctrl.php" method="post" id="nav-log">
-        <li><button id="signup" type="submit" name="action" value="signup">S'inscrire</button></li>
-        <li><button id="login" type="submit" name="action" value="login">S'identifier</button></li>
+        <li class="navbarAnimate"><button id="signup" type="submit" name="action" value="signup">S'inscrire</button></li>
+        <li class="navbarAnimate"><button id="login" type="submit" name="action" value="login">S'identifier</button></li>
       </form>
       <?php else: ?>
         <script src="../framework/jquery-3.6.0.min.js"></script>
 
         <div id="btn-compte">
-          <img src="../view/design/img/profil.jpg" alt="">
+          <img src="../view/design/img/profil.png" alt="">
         </div>
 
         <div id="menu-drop">
@@ -43,7 +43,7 @@ session_start();
                 <?php if ($_SESSION['utilisateur']->getEtape()>=1) : ?> <!-- si le candidat en n'est pas à l'étape 1 au minimum il ne peut pas voir son profil car il doit le compléter -->
                   <li><a href="../controler/profil.ctrl.php"><i class="fa fa-user"></i>Mon profil</a></li>
                 <?php endif; ?>
-                <?php if ($_SESSION['utilisateur']->getEtape()==0) : ?>
+                <?php if ($_SESSION['utilisateur']->getEtape()>=0) : ?>
                   <li><a href="../controler/recrutement-candidat.ctrl.php"><i class="fa fa-level-up" aria-hidden="true"></i>Mon Recrutement</a></li>
                 <?php endif; ?>
                 <?php if ($_SESSION['utilisateur']->getEtape()>=1) : ?>
