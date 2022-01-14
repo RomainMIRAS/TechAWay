@@ -682,7 +682,7 @@ tr:hover td {
   font-size: 14px;
 }
 
-.addNewSection form input, select, textarea {
+.addNewSection form input, .addNewSection form select, .addNewSection form textarea {
   padding: 5px 15px;
   margin-top: 5px;
   margin-bottom: 10px;
