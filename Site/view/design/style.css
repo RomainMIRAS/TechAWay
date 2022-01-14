@@ -817,6 +817,7 @@ footer ul li a:hover {
   #menu-drop {
     top: 30%;
     right: 20%;
+    z-index: 100;
   }
 
 }
