@@ -88,6 +88,8 @@ $entrepriseVille = $_POST['entrepriseVille'] ?? '';
 
 if ($ajouterOffreBtn=='ajouterOffre') {
     if ($offreName!='' && $idEntrepriseOffre!='') {
+        $competenceOffre = new Competence(-2,);
+        $renseignementOffre = new Renseignement(-2,);
         //$db->creeOffre($idEntrepriseOffre , new Renseignement(), new Competence(), $offreName);
     } else {
         $erreur = "Les champs * sont obligatoires.";
