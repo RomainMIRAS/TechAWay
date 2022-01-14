@@ -44,7 +44,7 @@ session_start();
                   <li><a href="../controler/profil.ctrl.php"><i class="fa fa-user"></i>Mon profil</a></li>
                 <?php endif; ?>
                 <?php if ($_SESSION['utilisateur']->getEtape()>=0) : ?>
-                  <li><a href="../controler/recrutement-candidat.ctrl.php"><i class="fa fa-level-up" aria-hidden="true"></i>Mon Recrutement</a></li>
+                  <li><a href="../controler/recrutement-candidat.ctrl.php"><i class="fa fa-level-up" aria-hidden="true"></i>Mon Recrutement<?php $tt = $_SESSION['utilisateur']->getEtape(); echo "$tt"; ?></a></li>
                 <?php endif; ?>
                 <?php if ($_SESSION['utilisateur']->getEtape()>=1) : ?>
                   <li><a href="#"><i class="fa fa-envelope"></i>Ma messagerie</a></li>
