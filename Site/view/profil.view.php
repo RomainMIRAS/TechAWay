@@ -41,9 +41,9 @@
             <button id="btn-rens" class="btn-menu-profil">Mes renseignements</button>
             <button id="btn-comp" class="btn-menu-profil">Mes compétences</button>
             <button id="btn-pref" class="btn-menu-profil">Mes préférences</button>
-            <?php if ($candidat->getEtape() >= 2): ?>
+            <!-- <?php if ($candidat->getEtape() >= 2): ?>
             <button id="btn-docs" class="btn-menu-profil">Mon offre</button>
-            <?php endif; ?>
+            <?php endif; ?> -->
           </div>
         <?php endif; ?>
       </section>
@@ -234,7 +234,7 @@
               $("#btn-rens").css("border", "1px solid var(--color-grey)");
             });
 
-            /* si bouton 'mes documents' est cliqué  */
+            /* si bouton 'mes documents' est cliqué  
             $("#btn-docs").click(function() {
               $("#form-rens").hide();
               $("#form-comp").hide();
@@ -242,7 +242,7 @@
               $("#form-pref").hide();
               $("#btn-docs").css("color","var(--color-grey)");
               $("#btn-docs").css("border", "1px solid var(--color-grey)");
-            });
+            });*/
 
           });
         </script>
