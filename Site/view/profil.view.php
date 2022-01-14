@@ -41,9 +41,9 @@
             <button id="btn-rens" class="btn-menu-profil">Mes renseignements</button>
             <button id="btn-comp" class="btn-menu-profil">Mes compétences</button>
             <button id="btn-pref" class="btn-menu-profil">Mes préférences</button>
-            <?php if ($candidat->getEtape() >= 2): ?>
+            <!-- <?php if ($candidat->getEtape() >= 2): ?>
             <button id="btn-docs" class="btn-menu-profil">Mon offre</button>
-            <?php endif; ?>
+            <?php endif; ?> -->
           </div>
         <?php endif; ?>
       </section>
@@ -176,14 +176,9 @@
 
           <!-- Formulaire de documents -->
           <form action="" class="form" id="form-docs">
-            <label for="">Nom</label>
-            <input type="text" value="<?= $candidat->getNom() ?>" disabled>
-            <label for="">Prénom</label>
-            <input type="text" value="<?= $candidat->getPrenom() ?>" disabled>
-            <label for="">Adresse mail</label>
-            <input type="text" value="<?= $candidat->getMail() ?>" disabled>
-            <button type="submit">Enregistrer</button>
-            <span class="asterisque">* : ces entrées ne sont pas modifiable directement. Veuillez contacter l'équipe de Tech A Way.</span>
+            <?= $candidat->getLienLM() ?>
+            <button type="submit">Abandonner l'offre</button>
+            
           </form>
         <?php endif; ?>
 
@@ -239,7 +234,7 @@
               $("#btn-rens").css("border", "1px solid var(--color-grey)");
             });
 
-            /* si bouton 'mes documents' est cliqué  */
+            /* si bouton 'mes documents' est cliqué  
             $("#btn-docs").click(function() {
               $("#form-rens").hide();
               $("#form-comp").hide();
@@ -247,7 +242,7 @@
               $("#form-pref").hide();
               $("#btn-docs").css("color","var(--color-grey)");
               $("#btn-docs").css("border", "1px solid var(--color-grey)");
-            });
+            });*/
 
           });
         </script>
