@@ -231,6 +231,50 @@
                 <input type="checkbox" name="languageAquis[]" value="julia">Julia</option>
                 <input type="checkbox" name="languageAquis[]" value="scala">Scala</option>
               </div>
+
+              <label for="travEtranger">Travail à l'etranger</label>
+              <div class="list-radio">
+                <input type="radio" name="travEtranger" value=true>
+                <label for="oui">Oui</label>
+                <input type="radio" name="travEtranger" value=false>
+                <label for="oui">Non</label>
+              </div>
+
+
+
+              <label for="typeContrat">Type de contrat</label>
+              <select name="typeContrat" >
+                  <option value="">--Veuillez choisir une option--</option>
+                  <option value="cdi">CDI</option>
+                  <option value="cdd">CDD</option>
+              </select>
+
+              <label for="secteur">Secteur de travail</label>
+              <select name="secteur" >
+                  <option value="">--Veuillez choisir une option--</option>
+                  <option value="Informatique">Informatique</option>
+                  <option value="Autre">Autre</option>
+              </select>
+
+              <label for="poste">Poste</label>
+              <select name="poste" >
+                  <option value="">--Veuillez choisir une option--</option>
+                  <option value="Développeur">Développeur</option>
+                  <option value="Développeur de jeux video">Développeur de jeux video</option>
+                  <option value="Front-end développeur">Front-end développeur</option>
+                  <option value="Back-end développeur">Back-end développeur</option>
+                  <option value="Full stack  développeur">Full stack  développeur</option>
+              </select>
+
+              <label for="typeEntreprise">Type d'entreprise</label>
+              <select name="typeEntreprise" >
+                  <option value="">--Veuillez choisir une option--</option>
+                  <option value="Microentreprise">Microentreprise</option>
+                  <option value="Petite entreprise">Petite entreprise</option>
+                  <option value="Moyenne entreprise">Moyenne entreprise</option>
+                  <option value="Grande entreprise">Grande entreprise</option>
+              </select>
+
               <form action ="formulaire.ctrl.php" method="post">
               <output><?=$erreur?></output>
               <button type="submit" name="action" value="precedent">Précédent</button>
