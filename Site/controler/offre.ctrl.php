@@ -42,7 +42,7 @@ session_start();
 $candidat = $_SESSION['utilisateur'];
 session_write_close();
 
-$offre = $db->getOffre($candidat->getLienLM())->getId();
+$offre = $db->getOffre($candidat->getLienLM());
 
 echo "$offre";
 $view = new View();
