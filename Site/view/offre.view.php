@@ -39,7 +39,7 @@
 
     <?php $date = $offre->getDateOffre(); 
     $nom = $offre->getNomOffre(); 
-
+    echo "$nom";
 
     //Paramètre en lien avec l'entreprise
     $nomEntreprise = $offre->getEntreprise()->getNom(); 
@@ -62,8 +62,8 @@
     
     
     ?>
-     <h2>Information<?echo "$nom" ?>  générale : <h2/>
-<p>L'offre <?echo "$nom" ?> à été crée le <?echo "$date" ?></p>
+     <h2>Information<?php echo "$nom"; ?>  générale : <h2/>
+<p>L'offre <?php echo "$nom"; ?> à été crée le <?php echo "$date"; ?></p>
 
 
      <!--<ol>
