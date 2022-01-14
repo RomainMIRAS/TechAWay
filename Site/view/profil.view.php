@@ -35,8 +35,8 @@
 
         <img id="img-profil" src="../view/design/img/profil.png" alt="">
 
-        <?php if (is_a($_SESSION['utilisateur'],"Candidat")): ?> <!-- si l'utilisateur est un candidat -->
-          <p>Vous êtes à l'étape n°<?= $_SESSION['utilisateur']->getEtape() ?></p>
+        <?php if (is_a($candidat,"Candidat")): ?> <!-- si l'utilisateur est un candidat -->
+          <p>Vous êtes à l'étape n°<?= $candidat->getEtape() ?></p>
           <div id="btn-profil-container">
             <button id="btn-rens" class="btn-menu-profil">Mes renseignements</button>
             <button id="btn-comp" class="btn-menu-profil">Mes compétences</button>
@@ -49,40 +49,40 @@
         <!-- Formulaire de renseignements -->
         <form action="" class="form" id="form-rens">
           <label for="">Nom *</label>
-          <input type="text" value="<?= $_SESSION['utilisateur']->getNom() ?>" disabled>
+          <input type="text" value="<?= $candidat->getNom() ?>" disabled>
           <label for="">Prénom *</label>
-          <input type="text" value="<?= $_SESSION['utilisateur']->getPrenom() ?>" disabled>
+          <input type="text" value="<?= $candidat->getPrenom() ?>" disabled>
           <label for="">Adresse mail *</label>
-          <input type="text" value="<?= $_SESSION['utilisateur']->getMail() ?>" disabled>
+          <input type="text" value="<?= $candidat->getMail() ?>" disabled>
           <label for="">Téléphone *</label>
-          <input type="text" value="<?= $_SESSION['utilisateur']->getTelephone() ?>" disabled>
-          <?php if (is_a($_SESSION['utilisateur'],"Candidat")): ?>
+          <input type="text" value="<?= $candidat->getTelephone() ?>" disabled>
+          <?php if (is_a($candidat,"Candidat")): ?>
             <label for="">Pays *</label>
-            <input type="text" value="<?= $_SESSION['utilisateur']->getPays() ?>" disabled>
+            <input type="text" value="<?= $candidat->getPays() ?>" disabled>
           <?php endif; ?>
-          <?php if (is_a($_SESSION['utilisateur'],"Candidat")): ?>
+          <?php if (is_a($candidat,"Candidat")): ?>
             <label for="">Ville *</label>
-            <input type="text" value="<?= $_SESSION['utilisateur']->getVille() ?>" disabled>
+            <input type="text" value="<?= $candidat->getVille() ?>" disabled>
           <?php endif; ?>
-          <?php if (is_a($_SESSION['utilisateur'],"Candidat")): ?>
+          <?php if (is_a($candidat,"Candidat")): ?>
             <label for="">Date de création *</label>
-            <input type="text" value="<?= $_SESSION['utilisateur']->getDateCreation() ?>" disabled>
+            <input type="text" value="<?= $candidat->getDateCreation() ?>" disabled>
           <?php endif; ?>
           <button type="submit">Enregistrer</button>
           <span class="asterisque">* : ces entrées ne sont pas modifiable directement. Veuillez contacter l'équipe de Tech A Way.</span>
         </form>
 
         <!-- Formulaire de compétences -->
-        <?php if (is_a($_SESSION['utilisateur'],"Candidat")): ?> <!-- formulaire qui concerne uniquement le candidat -->
+        <?php if (is_a($candidat,"Candidat")): ?> <!-- formulaire qui concerne uniquement le candidat -->
           <form action="profil.ctrl.php" method="POST" class="form" id="form-comp">
 
             <label for="">Niveau d'études *</label>
-            <input type="text" value="<?= $_SESSION['utilisateur']->getCompetenceAcquis()->getNvEtude() ?>" disabled>
+            <input type="text" value="<?= $candidat->getCompetenceAcquis()->getNvEtude() ?>" disabled>
 
             <label for="">Langue(s) parlée(s)</label>
             <div class="list-check"> <!-- Liste des langues -->
               <?php foreach($langues as $l): ?>
-                <?php if (in_array(strtolower($l),$_SESSION['utilisateur']->getCompetenceAcquis()->getLangeParle())): ?>
+                <?php if (in_array(strtolower($l),$candidat->getCompetenceAcquis()->getLangeParle())): ?>
                   <input type="checkbox" name="langueParle[]" value="<?php echo strtolower($l) ?>" checked><?php echo ucfirst($l) ?></option>
                 <?php else: ?> 
                   <input type="checkbox" name="langueParle[]" value="<?php echo strtolower($l) ?>"><?php echo ucfirst($l) ?></option>
@@ -110,13 +110,13 @@
 
             <label for="">Travailler à l'étranger ?</label>
             <div class="list-radio">
-              <?php if ($_SESSION['utilisateur']->getRenseignement()->getTravEtranger()==true): ?>
+              <?php if ($candidat->getRenseignement()->getTravEtranger()==true): ?>
                 <input type="radio" name="travEtranger" value=true checked>
               <?php else: ?>
                 <input type="radio" name="travEtranger" value=true>
               <?php endif; ?>
               <label for="oui">Oui</label>
-              <?php if ($_SESSION['utilisateur']->getRenseignement()->getTravEtranger()==false): ?>
+              <?php if ($candidat->getRenseignement()->getTravEtranger()==false): ?>
                 <input type="radio" name="travEtranger" value=false checked>
               <?php else: ?>
                 <input type="radio" name="travEtranger" value=false>
@@ -127,7 +127,7 @@
             <label for="">Secteur(s) d'activité(s)</label>
             <select name="secteur" >
               <?php foreach($secteurs as $s): ?>
-                <?php if ($s==$_SESSION['utilisateur']->getRenseignement()->getSecteur()): ?>
+                <?php if ($s==$candidat->getRenseignement()->getSecteur()): ?>
                 <option value="<?= $s ?>" selected><?= $s ?></option>
                 <?php else: ?>
                 <option value="<?= $s ?>"><?= $s ?></option>
@@ -138,7 +138,7 @@
             <label for="">Contrat recherché</label>
             <select name="typeContrat" >
             <?php foreach($contrats as $c): ?>
-                <?php if ($c==$_SESSION['utilisateur']->getRenseignement()->getTypeContrat()): ?>
+                <?php if ($c==$candidat->getRenseignement()->getTypeContrat()): ?>
                 <option value="<?= $c ?>" selected><?php echo strtoupper($c) ?></option>
                 <?php else: ?>
                 <option value="<?= $c ?>"><?php echo strtoupper($c) ?></option>
@@ -149,7 +149,7 @@
             <label for="">Poste recherché</label>
             <select name="poste" >
             <?php foreach($postes as $p): ?>
-                <?php if ($p==$_SESSION['utilisateur']->getRenseignement()->getPoste()): ?>
+                <?php if ($p==$candidat->getRenseignement()->getPoste()): ?>
                 <option value="<?= $p ?>" selected><?php echo ucfirst($p) ?></option>
                 <?php else: ?>
                 <option value="<?= $p ?>"><?php echo ucfirst($p) ?></option>
@@ -160,7 +160,7 @@
             <label for="">Type d'entreprise recherché</label>
             <select name="typeEntreprise" >
             <?php foreach($entreprises as $e): ?>
-                <?php if ($e==$_SESSION['utilisateur']->getRenseignement()->getTypeEntreprise()): ?>
+                <?php if ($e==$candidat->getRenseignement()->getTypeEntreprise()): ?>
                 <option value="<?= $e ?>" selected><?php echo ucfirst($e) ?></option>
                 <?php else: ?>
                 <option value="<?= $e ?>"><?php echo ucfirst($e) ?></option>
@@ -175,11 +175,11 @@
           <!-- Formulaire de documents -->
           <form action="" class="form" id="form-docs">
             <label for="">Nom</label>
-            <input type="text" value="<?= $_SESSION['utilisateur']->getNom() ?>" disabled>
+            <input type="text" value="<?= $candidat->getNom() ?>" disabled>
             <label for="">Prénom</label>
-            <input type="text" value="<?= $_SESSION['utilisateur']->getPrenom() ?>" disabled>
+            <input type="text" value="<?= $candidat->getPrenom() ?>" disabled>
             <label for="">Adresse mail</label>
-            <input type="text" value="<?= $_SESSION['utilisateur']->getMail() ?>" disabled>
+            <input type="text" value="<?= $candidat->getMail() ?>" disabled>
             <button type="submit">Enregistrer</button>
             <span class="asterisque">* : ces entrées ne sont pas modifiable directement. Veuillez contacter l'équipe de Tech A Way.</span>
           </form>
