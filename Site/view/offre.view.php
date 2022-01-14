@@ -1,6 +1,7 @@
 
 <?php
     include_once(__DIR__."/../model/Offre.class.php");
+    include_once(__DIR__."/../model/DAO.class.php");
 ?>
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
