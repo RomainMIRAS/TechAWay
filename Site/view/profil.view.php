@@ -148,9 +148,16 @@
                 <?php endif; ?>
               <?php endforeach; ?>
             </select>
-            <input type="text" value="<?= $_SESSION['utilisateur']->getRenseignement()->getPoste() ?>">
             <label for="">Type d'entreprise recherché</label>
-            <input type="text" value="<?= $_SESSION['utilisateur']->getRenseignement()->getTypeEntreprise() ?>">
+            <select name="poste" >
+            <?php foreach($entreprises as $e): ?>
+                <?php if ($e==$_SESSION['utilisateur']->getRenseignement()->getTypeEntreprise()): ?>
+                <option value="<?= $e ?>" selected><?php echo ucfirst($e) ?></option>
+                <?php else: ?>
+                <option value="<?= $e ?>"><?php echo ucfirst($e) ?></option>
+                <?php endif; ?>
+              <?php endforeach; ?>
+            </select>
             <button type="submit">Enregistrer</button>
             <span class="asterisque">* : ces entrées ne sont pas modifiable directement. Veuillez contacter l'équipe de Tech A Way.</span>
           </form>
