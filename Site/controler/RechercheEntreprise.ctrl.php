@@ -208,8 +208,8 @@ $it++;
 }
 
 
-$offreAAjouter = $_POST['offreAADD'] ?? '';
-$action = $_POST['actionFaire'] ?? '';
+$offreAAjouter = $_POST['offreAAdd'] ?? '';
+$action = $_POST['candidatAction'] ?? '';
 
 if ($action=='ajouteY') {
     $candidatMessage = "L'offre $offreAAjouter a bien été ajouté.";
