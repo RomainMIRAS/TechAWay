@@ -56,12 +56,19 @@
     }
     a{
         text-decoration: none;
-        border-radius: 10px;
+        border-radius: 4px;
         border: 1px solid #0036d9;
-        padding:5px;
+        padding:10px;
         margin:0;
         color:#0036d9;
         text-transform: uppercase;
+        transition: 0.2s all ease-in;
+
+    }
+    a:hover{
+        background-color:#0036d9;
+        color:white;
+        transition: 0.2s all ease-in;
     }
     a:focus{
         color:#0036d9;
@@ -277,7 +284,7 @@
         </g>
     </svg>
 
-    <a href="Site/controler/main.ctrl.php">Retour</a>
+    <a href="javascript:history.go(-1)">Retour</a>
 
 </body>
 
