@@ -213,12 +213,10 @@ $candidatAction = $_POST['candidatAction'] ?? '';
 $message = '';
 
 if ($candidatAction=='ajouteY') {
-    $candidat->setLienLM($candidat->getLienLM() + "-" + $offreAAjouter);
+    //$candidat->setLienLM($candidat->getLienLM() + "-" + $offreAAjouter);
     $message = "L'offre $offreAAjouter a bien été ajouté.";
     header("Location: RechercheEntreprise.ctrl.php");
 }
-$uwu = $candidat->getLienLM();
-echo "$uwu";
 
 $view->assign('message',$message);
 $view->assign('listeOffreMatch',$offresMatch);
