@@ -74,9 +74,11 @@
 
         <!-- Formulaire de compétences -->
         <?php if (is_a($_SESSION['utilisateur'],"Candidat")): ?> <!-- formulaire qui concerne uniquement le candidat -->
-          <form action="" class="form" id="form-comp">
+          <form action="profil.ctrl.php" method="POST" class="form" id="form-comp">
+
             <label for="">Niveau d'études *</label>
             <input type="text" value="<?= $_SESSION['utilisateur']->getCompetenceAcquis()->getNvEtude() ?>" disabled>
+
             <label for="">Langue(s) parlée(s)</label>
             <div class="list-check"> <!-- Liste des langues -->
               <?php foreach($langues as $l): ?>
@@ -87,6 +89,7 @@
                 <?php endif; ?>
               <?php endforeach; ?>
             </div>
+
             <label for="">Langage(s) informatique(s)</label>
             <div class="list-check"> <!-- Liste des langages -->
               <?php foreach($langages as $l): ?>
@@ -97,12 +100,14 @@
                 <?php endif; ?>
               <?php endforeach; ?>
             </div>
+
             <button type="submit" name="btnComp" value="saveComp">Enregistrer</button>
             <span class="asterisque">* : ces entrées ne sont pas modifiable directement. Veuillez contacter l'équipe de Tech A Way.</span>
           </form>
 
           <!-- Formulaire de preferences -->
-          <form action="" class="form" id="form-pref">
+          <form action="profil.ctrl.php" method="POST" class="form" id="form-pref">
+
             <label for="">Travailler à l'étranger ?</label>
             <div class="list-radio">
               <?php if ($_SESSION['utilisateur']->getRenseignement()->getTravEtranger()==true): ?>
@@ -118,6 +123,7 @@
               <?php endif; ?>
               <label for="oui">Non</label>
             </div>
+
             <label for="">Secteur(s) d'activité(s)</label>
             <select name="secteur" >
               <?php foreach($secteurs as $s): ?>
@@ -128,6 +134,7 @@
                 <?php endif; ?>
               <?php endforeach; ?>
             </select>
+
             <label for="">Contrat recherché</label>
             <select name="typeContrat" >
             <?php foreach($contrats as $c): ?>
@@ -138,6 +145,7 @@
                 <?php endif; ?>
               <?php endforeach; ?>
             </select>
+
             <label for="">Poste recherché</label>
             <select name="poste" >
             <?php foreach($postes as $p): ?>
@@ -148,6 +156,7 @@
                 <?php endif; ?>
               <?php endforeach; ?>
             </select>
+
             <label for="">Type d'entreprise recherché</label>
             <select name="typeEntreprise" >
             <?php foreach($entreprises as $e): ?>
@@ -158,6 +167,7 @@
                 <?php endif; ?>
               <?php endforeach; ?>
             </select>
+            
             <button type="submit" name="btnPref" value="savePref">Enregistrer</button>
             <span class="asterisque">* : ces entrées ne sont pas modifiable directement. Veuillez contacter l'équipe de Tech A Way.</span>
           </form>
