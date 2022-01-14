@@ -47,7 +47,6 @@ $nbOffres = $db->nombreOffres();
 $scoresMatch = array();
 $typeEntreprise = array(1 => "Microentreprise",2 => "Petite entreprise",3 => "Moyenne entreprise",4 => "Grande entreprise");
 
-echo "$typeEntreprise[1]";
 
 foreach($offres as $o){
     $scoreMatch = 0;
@@ -146,8 +145,9 @@ foreach($offres as $o){
         $scoreMatch = $scoreMatch - 100;
     }
 
-
-
+foreach ($typeEntreprise as $aa) {
+echo "$aa"
+}
     //type entreprise
     if ($renseiOffre->getTypeEntreprise() == $renseiCandid->getTypeEntreprise()) {
         $scoreMatch = $scoreMatch + 6;
