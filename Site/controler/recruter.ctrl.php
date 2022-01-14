@@ -1,41 +1,5 @@
-git <?php
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-
-require '/var/www/html/PHPMailer/src/Exception.php';
-require '/var/www/html/PHPMailer/src/PHPMailer.php';
-require '/var/www/html/PHPMailer/src/SMTP.php';
-
-define('GMailUSER', 'techawayteam13@gmail.com'); // utilisateur Gmail
-define('GMailPWD', 'projetteam13'); // Mot de passe Gmail
-
-
-function smtpmailer($to, $from, $from_name, $subject, $body) {
-    global $error;
-    $mail = new PHPMailer();  // create a new object
-    $mail->IsSMTP(); // enable SMTP
-    $mail->SMTPDebug = 0;  // debugging: 1 = errors and messages, 2 = messages only
-    $mail->SMTPAuth = true;  // authentication enabled
-    $mail->SMTPSecure = 'tls'; // secure transfer enabled REQUIRED for GMail
-    $mail->SMTPAutoTLS = false;
-    $mail->Host = 'smtp.gmail.com';
-    $mail->Port = 587;
-
-    $mail->Username = GMailUSER;
-    $mail->Password = GMailPWD;
-    $mail->SetFrom($from, $from_name);
-    $mail->Subject = $subject;
-    $mail->Body = $body;
-    $mail->AddAddress($to);
-    if(!$mail->send()) {
-        $error = 'Mail error: '.$mail->ErrorInfo;
-        return false;
-    } else {
-        return true;
-    }
-}
-
-
+<?php
+include_once(__DIR__."/connectionMail.php");
 include_once(__DIR__."/../framework/view.class.php");
 
 
