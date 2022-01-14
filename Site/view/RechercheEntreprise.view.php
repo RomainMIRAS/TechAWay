@@ -1,4 +1,6 @@
-
+<?php
+    include_once(__DIR__."/../model/Offre.class.php");
+?>
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
   <head>
@@ -30,65 +32,44 @@
     <?php include_once('../view/design/navigation.php'); ?>
 
     <!-- MAIN ---------------------------------------------------------------------------------->
-    <main id = "mainRecruter">
+    <main>
 
-      <section id="section1"> <!-- section Accueil -->
-        <div>
-          <h1>Découvrez Tech A Way</h1>
-          <p>Tech a Way est un cabinet de recrutement spécialisé dans le domaine de la tech en full remote et partout en Europe</p>
-          <h2>L'expertise du recrutement dans le domaine de la tech avec des recuteurs qui vous accompagne jusqu'à l'embauche</h2>
-        </div>
+      <section id="tableau-bord"> <!-- Tous les candidats inscrits -->
 
-        <article id = "article1">
-        <div id="svg1">
-          <?php include_once("../view/design/svg/p5.svg") ?>
-        </div>
-
-        <div>
-          <h2>ENTREPRISES PARTENAIRES</h2>
-          <h3>Trouvez les candidats qu'il vous faut</h3>
-          <p>Tech a Way vous donne accès à des candidats qui correspondent à 100% à vos attentes. 
-            Expliquez-nous toutes les spécificités du poste et on vous trouvera le ou la candidate dont vous avez besoin !</p>
-        </div>
-
-        </article>
+        <h2><span style="font-size: 12px">Offre(s) triée selon vos préférences</span></h2>
+        <table>  <!-- Tableau des candidats -->
+            <tr>
+                <th>Nom de l'offre</th>
+                <th>Date de l'offre</th>
+                <th>Secteur</th>
+                <th>Poste</th>
+                <th>Nom entreprise</th>
+                <th>Telephone contact</th>
+            </tr>
+            <?php foreach($listeOffre as $c): ?> <!-- pour chaque candidat -->
+                <?php if ($c!=false): ?>
+                    <tr> <!-- affichage du nom, prenom, mail...etc du candidat -->
+                        <td><?= $c->getNomOffre() ?></td>
+                        <td><?= $c->getDateOffre() ?></td>
+                        <td><?= $c->getDetailOffre()->getSecteur() ?></td>
+                        <td><?= $c->getDetailOffre()->getPoste() ?></td>
+                        <td><?= $c->getEntreprise()->getNom() ?></td>
+                        <td><?= $c->getEntreprise()->getTelephone() ?></td>
+                        <td class="sup">
+                          <button class="editBtn"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                        </td>
+                        <td class="sup">
+                          <form action="tableau.ctrl.php" method="POST">
+                            <input type="hidden" class="candidatAction" name="candidatAction" value="deleteN">
+                            <input type="hidden" name="candidatToDelete" value="<?= $c->getMail() ?>">
+                            <button type="submit" class="candidatDeleteBtn"><i class="fa fa-times" aria-hidden="true"></i></button>
+                          </form>
+                        </td>
+                    </tr>
+                <?php endif; ?>
+            <?php endforeach; ?>
+        </table>
         
-        <article id = "article2">
-        <div>
-          <h2>Candidater avec NOUS</h2>
-          <ul>
-            <li>Une expertise dans le recrutement Tech</li>
-            <li>Un gain de temps considérable</li>
-            <li>Un accès à de nouveaux profils Tech</li>
-          </ul>
-          
-          
-        </div>
-
-        <div id="svg1">
-          <?php include_once("../view/design/svg/p1 var 1.svg") ?>
-        </div>
-        </article>
-        
-</section>
-
-      <section id = "section2" >
-      <form class="form" action="recruter.ctrl.php" method="post" style="padding-bottom: 193px;">
-            <h1>DES BESOINS EN RECRUTEMENT TECH ? ÉCHANGE AVEC NOUS !</h1>
-            <label for="nom">Nom</label>
-            <input id="nom" type="text" name="nom" placeholder="Nom" >
-            <label for="prenom">Prenom</label>
-            <input id="prenom" type="text" name="prenom" placeholder="Prenom" >
-            <label for="email">Adresse E-mail</label>
-            <input id="email" type="text" name="email" placeholder="Entrez votre adresse e-mail" >
-            <label for="nomEntreprise">Nom de l'entreprise</label>
-            <input id="postactu" type="text" name="postactu" placeholder="Votre Poste Actuel" >
-            <form action ="recruter.ctrl.php" method="post">
-            <output><?=$erreur?></output>
-            
-            <button type="submit" name="action" value="confirmation">Confirmation</button>
-          </form>
-
       </section>
 
     </main>
@@ -97,5 +78,9 @@
     <?php include_once('../view/design/footer.php'); ?>
 
 
+
   </body>
+
+  
+
 </html>
