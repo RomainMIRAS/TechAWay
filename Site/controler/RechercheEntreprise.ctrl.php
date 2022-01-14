@@ -203,7 +203,7 @@ $view = new View();
 $it = 0;
 $offresMatch = array();
 foreach ($offres as $lo) {
-array_push($offresMatch,$scoresMatch[it] => $lo);
+$offresMatch += [$scoresMatch[$it] => $lo];
 $it++;
 }
 
