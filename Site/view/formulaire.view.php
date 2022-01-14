@@ -130,10 +130,10 @@
 
               <label for="travEtranger">Travail à l'etranger</label>
               <div class="list-radio">
-                <label for="oui">Oui</label>
                 <input type="radio" name="travEtranger" value=true>
-                <label for="oui">Non</label>
+                <label for="oui">Oui</label>
                 <input type="radio" name="travEtranger" value=false>
+                <label for="oui">Non</label>
               </div>
 
 
@@ -172,7 +172,7 @@
               </select>
               <output><?=$erreur?></output>
               <form action ="formulaire.ctrl.php" method="post">
-              <button type="submit" name="action" value="precedent">Precedent</button>
+              <button type="submit" name="action" value="precedent">Précédent</button>
               <button type="submit" name="action" value="suivant">Envoyer</button>
               <input type="hidden" name="etape" value="preferences">
               </form>
