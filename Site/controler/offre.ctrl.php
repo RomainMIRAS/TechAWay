@@ -29,7 +29,7 @@ if (!isset($_SESSION['utilisateur'])) header('Location: authentification.ctrl.ph
 if (!is_a($_SESSION['utilisateur'],"Candidat")) header('Location: main.ctrl.php');
 
 // Si il a déjà rempli le formulaire
-if ($_SESSION['utilisateur']->getEtape() != 2) header('Location: recrutement-candidat.ctrl.php');
+if ($_SESSION['utilisateur']->getEtape() != 2) header('Location: profile.ctrl.php');
 
 session_write_close();
 
