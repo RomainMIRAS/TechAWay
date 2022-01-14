@@ -79,7 +79,7 @@ $typeContrat = (isset($_POST['typeContrat'])) ? $_POST['typeContrat']:"";
 $secteur = (isset($_POST['secteur'])) ? $_POST['secteur']:"";
 $poste = (isset($_POST['poste'])) ? $_POST['poste']:"";
 $typeEntreprise = (isset($_POST['typeEntreprise'])) ? $_POST['typeEntreprise']:"";
-var_dump(travEtranger);
+var_dump($travEtranger);
 if ($btnPref=='savePref') {
   $renseignement = $candidat->getRenseignement();
   $renseignement->setTravEtranger($travEtranger);
