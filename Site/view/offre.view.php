@@ -39,7 +39,6 @@
 
     <?php $date = $offre->getDateOffre(); 
     $nom = $offre->getNomOffre(); 
-    echo "$nom";
 
     //Paramètre en lien avec l'entreprise
     $nomEntreprise = $offre->getEntreprise()->getNom(); 
@@ -62,15 +61,37 @@
     
     
     ?>
-     <h2>Information<?php echo "$nom"; ?>  générale : <h2/>
-<p>L'offre <?php echo "$nom"; ?> à été crée le <?php echo "$date"; ?></p>
+     <h2>Information générale : <h2/>
+<p>L'offre se nomme <?php echo "$nom"; ?> et à été crée le <?php echo "$date"; ?>.</p>
 
 
-     <!--<ol>
-     <li><?echo "$date" ?></li>
-     <li><?echo "$nom" ?></li>
-     
-     </ol>-->
+</br>
+<h2>Information sur l'entreprise qui à crée l'offre : <h2/>
+     <ol>
+      <li>Nom : <?php echo "$nomEntreprise"; ?></li>
+      <li>Mail : <?php echo "$mailEntreprise"; ?></li>
+      <li>Telephone : <?php echo "$telephoneEntreprise"; ?></li>
+      <li>Ville : <?php echo "$villeEntreprise"; ?></li>
+      <li>Pays : <?php echo "$paysEntreprise"; ?></li>
+      <li>Taille de l'entreprise : <?php echo "$typeEntreprise"; ?></li>
+     </ol>
+
+     </br>
+<h2>Information sur les renseignement diverse : <h2/>
+     <ol>
+      <li>Accepte les candidat étranger ? : <?php echo "$travailleEtranger"; ?></li>
+      <li>Secteur de l'emploie : <?php echo "$secteur"; ?></li>
+      <li>Type de contrat : <?php echo "$typeContrat"; ?></li>
+      <li>Poste visé : <?php echo "$poste"; ?></li>
+     </ol>
+
+     </br>
+<h2>Information sur les compétences attendue : <h2/>
+     <ol>
+      <li>Niveau d'étude attendue : <?php echo "$niveauEtude"; ?></li>
+      <li>Langue à maitriser : <?php echo "$langue"; ?></li>
+      <li>Langage informatique à connaître : <?php echo "$langage"; ?></li>
+     </ol>
       
       
       
