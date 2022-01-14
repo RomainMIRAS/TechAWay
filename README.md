@@ -44,6 +44,11 @@ Il a un mini CRM ou il peut :
 
 Vous pouvez envoyer des email pour demander de partenariat -> https://techaway.tk/Site/controler/recruter.ctrl.php
 
+### Cote Serveur : 
+
+Erreur 403 redirige vers la page d'accueil du site <br>
+Erreur 404 redirige vers une page costomiser d'erreur <br>
+
 ## Pour les profs : 
 
 ### Login d'Admin (Coach)
@@ -59,10 +64,6 @@ Si vous voulez une connection a notre server virtuel et acceder a la base de don
 envoyer une cle ssh public a altin (**altin.rrahmani@etu.univ-grenoble-alpes.fr**) pour qu'il puisse vous cree un user.<br>
 
 
-### Cote Serveur : 
-
-Erreur 403 redirige vers la page d'accueil du site <br>
-Erreur 404 redirige vers une page costomiser d'erreur <br>
 
 
 
