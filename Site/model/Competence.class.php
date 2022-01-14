@@ -30,7 +30,7 @@ class Competence {
     return $this->nvEtude;
   }
 
-  function getLangeParle() : array {
+  function getlangeParle() : array {
     return $this->langeParle;
   }
 
@@ -42,7 +42,7 @@ class Competence {
     $this->nvEtude = $nvEtude;
   }
 
-  function setLangeParle(array $langeParle) : void {
+  function setlangeParle(array $langeParle) : void {
     $this->langeParle = $langeParle;
   }
 

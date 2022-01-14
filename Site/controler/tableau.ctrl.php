@@ -11,6 +11,23 @@ include_once(__DIR__."/../model/Candidat.class.php");
 include_once(__DIR__."/../model/Coach.class.php");
 
 
+///////////////////////////////////////////////////////////////////////////////
+// Protection Contre Erreurs
+///////////////////////////////////////////////////////////////////////////////
+
+// Si l'étape et déjà passer ou qu'il est un coach!
+session_start();
+
+// Si pas connecter
+if (!isset($_SESSION['utilisateur'])) header('Location: main.ctrl.php');
+
+// Si utilisateur n'est pas un coach
+if (!is_a($_SESSION['utilisateur'],"Coach")) header('Location: main.ctrl.php');
+
+session_write_close();
+
+
+
 /* Création de la vue *************************************************************************/
 $view = new View();
 
@@ -28,7 +45,7 @@ $ajouterOffreBtn = $_POST['ajouterOffreBtn'] ?? '';
 $listePays = array('Allemagne','Autriche','Andorre','Belgique','Boznie Herzegovine','Bulgarie','Chypre','Croatie','Danemark','Espagne','Estonie','Finlande','France','Gibraltar','Grece','Hongrie','Irlande','Islande','italie','Lettonie','Liechtenstein','Lituanie','Luxembourg','Malte','Monaco','Norvege','Pays Bas','Pays de Galle','Pologne','Portugal','Republique Tcheque','Roumanie','Royaume Uni','Russie','Slovaquie','Slovenie','Suede','Suisse','Ukraine','Vatican');
 
 /* Instance de la base de données *************************************************************/
-$db = DAO::get(); // on récupère l'unique instance 
+$db = DAO::get(); // on récupère l'unique instance
 
 
 /* Listes des Candidats, Entreprises et Offres ************************************************/

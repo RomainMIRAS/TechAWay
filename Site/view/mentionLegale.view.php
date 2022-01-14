@@ -7,6 +7,7 @@
     <title>Mention Legale</title>
 </head>
 <body>
+  <a href="javascript:history.go(-1)">Retour</a>
     <p>
 Tech A Way - SAS <br>
 65 rue de Turbigo <br>

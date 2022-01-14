@@ -55,7 +55,16 @@ HTML
 
 */
 
+$langues = array('français','anglais','espagnol','italien','allemand','albanais');
+$langages = array('php','html/css','c','python','perl','java','ruby','swift','julia','scala');
+$secteurs = array('Informatique',"Autre");
+$contrats = array('cdi','cdd');
+
 // Passage des paramètres
+$view->assign("langues",$langues);
+$view->assign("langages",$langages);
+$view->assign("secteurs",$secteurs);
+$view->assign("contrats",$contrats);
 
 // Charge la vue
 $view->display("profil.view.php");

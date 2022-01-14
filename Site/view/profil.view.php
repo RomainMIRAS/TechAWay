@@ -79,25 +79,23 @@
             <input type="text" value="<?= $_SESSION['utilisateur']->getCompetenceAcquis()->getNvEtude() ?>" disabled>
             <label for="">Langue(s) parlée(s)</label>
             <div class="list-check"> <!-- Liste des langues -->
-              <input type="checkbox" name="langueParle[]" value="francais" selected>Français</option>
-              <input type="checkbox" name="langueParle[]" value="anglais" >Anglais</option>
-              <input type="checkbox" name="langueParle[]" value="espagnole" >Espagnol</option>
-              <input type="checkbox" name="langueParle[]" value="italien" >Italien</option>
-              <input type="checkbox" name="langueParle[]" value="allemand">Allemand</option>
-              <input type="checkbox" name="langueParle[]" value="albanais">Albanais</option>
+              <?php foreach($langues as $l): ?>
+                <?php if (in_array($l,$_SESSION['utilisateur']->getCompetenceAcquis()->getLangeParle())): ?>
+                  <input type="checkbox" name="langueParle[]" value="<?php echo strtolower($l) ?>" checked><?php echo ucfirst($l) ?></option>
+                <?php else: ?> 
+                  <input type="checkbox" name="langueParle[]" value="<?php echo strtolower($l) ?>"><?php echo ucfirst($l) ?></option>
+                <?php endif; ?>
+              <?php endforeach; ?>
             </div>
             <label for="">Langage(s) informatique(s)</label>
             <div class="list-check"> <!-- Liste des langages -->
-              <input type="checkbox" name="languageAquis[]" value="php" selected>PHP</option>
-              <input type="checkbox" name="languageAquis[]" value="hmtl/css" >HTML/CSS</option>
-              <input type="checkbox" name="languageAquis[]" value="c" >C#, C ou C++</option>
-              <input type="checkbox" name="languageAquis[]" value="python" >Python</option>
-              <input type="checkbox" name="languageAquis[]" value="perl">PERL</option>
-              <input type="checkbox" name="languageAquis[]" value="java">Java</option>
-              <input type="checkbox" name="languageAquis[]" value="ruby">Ruby</option>
-              <input type="checkbox" name="languageAquis[]" value="swift">Swift</option>
-              <input type="checkbox" name="languageAquis[]" value="julia">Julia</option>
-              <input type="checkbox" name="languageAquis[]" value="scala">Scala</option>
+              <?php foreach($langages as $l): ?>
+                <?php if (in_array($l,$_SESSION['utilisateur']->getCompetenceAcquis()->getLangageAcquis())): ?>
+                  <input type="checkbox" name="languageAquis[]" value="<?php echo strtolower($l) ?>" checked><?php echo ucfirst($l) ?></option>
+                <?php else: ?> 
+                  <input type="checkbox" name="languageAquis[]" value="<?php echo strtolower($l) ?>"><?php echo ucfirst($l) ?></option>
+                <?php endif; ?>
+              <?php endforeach; ?>
             </div>
             <button type="submit">Enregistrer</button>
             <span class="asterisque">* : ces entrées ne sont pas modifiable directement. Veuillez contacter l'équipe de Tech A Way.</span>
@@ -107,19 +105,39 @@
           <form action="" class="form" id="form-pref">
             <label for="">Travailler à l'étranger ?</label>
             <div class="list-radio">
-              <input type="radio" name="travEtranger" value=true>
+              <?php if ($_SESSION['utilisateur']->getRenseignement()->getTravEtranger()==true): ?>
+                <input type="radio" name="travEtranger" value=true checked>
+              <?php else: ?>
+                <input type="radio" name="travEtranger" value=true>
+              <?php endif; ?>
               <label for="oui">Oui</label>
-              <input type="radio" name="travEtranger" value=false>
+              <?php if ($_SESSION['utilisateur']->getRenseignement()->getTravEtranger()==false): ?>
+                <input type="radio" name="travEtranger" value=false checked>
+              <?php else: ?>
+                <input type="radio" name="travEtranger" value=false>
+              <?php endif; ?>
               <label for="oui">Non</label>
             </div>
             <label for="">Secteur(s) d'activité(s)</label>
             <select name="secteur" >
-                <option value="">--Veuillez choisir une option--</option>
-                <option value="Informatique">Informatique</option>
-                <option value="Autre">Autre</option>
+              <?php foreach($secteurs as $s): ?>
+                <?php if ($s==$_SESSION['utilisateur']->getRenseignement()->getSecteur()): ?>
+                <option value="<?= $s ?>" selected><?= $s ?></option>
+                <?php else: ?>
+                <option value="<?= $s ?>"><?= $s ?></option>
+                <?php endif; ?>
+              <?php endforeach; ?>
             </select>
             <label for="">Contrat recherché</label>
-            <input type="text" value="<?= $_SESSION['utilisateur']->getRenseignement()->getTypeContrat() ?>">
+            <select name="contrat" >
+            <?php foreach($contrats as $c): ?>
+                <?php if ($c==$_SESSION['utilisateur']->getRenseignement()->getTypeContrat()): ?>
+                <option value="<?= $c ?>" selected><?php echo strtoupper($c) ?></option>
+                <?php else: ?>
+                <option value="<?= $c ?>"><?php echo strtoupper($c) ?></option>
+                <?php endif; ?>
+              <?php endforeach; ?>
+            </select>
             <label for="">Poste recherché</label>
             <input type="text" value="<?= $_SESSION['utilisateur']->getRenseignement()->getPoste() ?>">
             <label for="">Type d'entreprise recherché</label>

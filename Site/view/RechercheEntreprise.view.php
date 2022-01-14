@@ -45,27 +45,21 @@
                 <th>Poste</th>
                 <th>Nom entreprise</th>
                 <th>Telephone contact</th>
+                <th>Score de match</th>
             </tr>
-            <?php foreach($listeOffre as $c): ?> <!-- pour chaque candidat -->
-                <?php if ($c!=false): ?>
+            <?php ksort($listeOffreMatch) ?>
+            <?php foreach (array_keys($listeOffreMatch) as $key) : ?> <!-- pour chaque candidat -->
+                <?php if ($key!=false): ?>
                     <tr> <!-- affichage du nom, prenom, mail...etc du candidat -->
-                        <td><?= $c->getNomOffre() ?></td>
-                        <td><?= $c->getDateOffre() ?></td>
-                        <td><?= $c->getDetailOffre()->getSecteur() ?></td>
-                        <td><?= $c->getDetailOffre()->getPoste() ?></td>
-                        <td><?= $c->getEntreprise()->getNom() ?></td>
-                        <td><?= $c->getEntreprise()->getTelephone() ?></td>
-                        <td class="sup">
-                          <button class="editBtn"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
-                        </td>
-                        <td class="sup">
-                          <form action="tableau.ctrl.php" method="POST">
-                            <input type="hidden" class="candidatAction" name="candidatAction" value="deleteN">
-                            <input type="hidden" name="candidatToDelete" value="<?= $c->getMail() ?>">
-                            <button type="submit" class="candidatDeleteBtn"><i class="fa fa-times" aria-hidden="true"></i></button>
-                          </form>
-                        </td>
+                        <td><?= $listeOffreMatch[$key]->getNomOffre() ?></td>
+                        <td><?= $listeOffreMatch[$key]->getDateOffre() ?></td>
+                        <td><?= $listeOffreMatch[$key]->getDetailOffre()->getSecteur() ?></td>
+                        <td><?= $listeOffreMatch[$key]->getDetailOffre()->getPoste() ?></td>
+                        <td><?= $listeOffreMatch[$key]->getEntreprise()->getNom() ?></td>
+                        <td><?= $listeOffreMatch[$key]->getEntreprise()->getTelephone() ?></td>
+                        <td><?= round((($key+473)*100)/(616),2) ?>%</td>
                     </tr>
+                    
                 <?php endif; ?>
             <?php endforeach; ?>
         </table>
