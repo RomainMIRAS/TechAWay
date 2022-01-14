@@ -144,7 +144,8 @@ foreach($offres as $o){
     } else {
         $scoreMatch = $scoreMatch - 100;
     }
-
+$typeOffre;
+$typeCandid;
 foreach (array_keys($typeEntreprise) as $key) {
     if ($typeEntreprise[$key] == $renseiOffre->getTypeEntreprise()) {
         $typeOffre = $key;
