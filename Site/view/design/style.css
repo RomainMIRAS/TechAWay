@@ -814,4 +814,9 @@ footer ul li a:hover {
     margin-bottom: 5px;
   }
 
+  #menu-drop {
+    top: 30%;
+    right: 20%;
+  }
+
 }
