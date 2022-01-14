@@ -94,7 +94,10 @@
       <ol>
       <?php foreach ($langue as $la) {echo "<li>$la</li>";} ?>
       </ol></li>
-      <li>Langage informatique à connaître : <?php echo "$langage"; ?></li>
+      <li>Langage informatique à connaître : 
+      <ol>
+      <?php foreach ($langage as $la) {echo "<li>$la</li>";} ?>
+      </ol></li>
      </ol>
       
       
