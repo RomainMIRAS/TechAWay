@@ -46,6 +46,18 @@ $offre = $db->getOffre($candidat->getLienLM());
 
 $view = new View();
 
+
+$action = $_POST['action'] ?? '';
+$message = '';
+
+if ($candidatAction=='supprY') {
+    $lienLM = $candidat->setLienLM('');
+        $candidat->setEtape($candidat->getEtape() - 1);
+        $db->updateCandidat($candidat);
+        header("Location: offre.ctrl.php");
+}
+
+
 $view->assign('offre',$offre);
 $view->display("offre.view.php");
 

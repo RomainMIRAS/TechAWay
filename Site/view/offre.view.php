@@ -99,7 +99,7 @@
       
       <form action="offre.ctrl.php" method="POST">
                             <input type="hidden" class="candidatAction" name="candidatAction" value="ajouteN">
-                            <button type="submit" class="candidatDeleteBtn"><i class="fa fa-check-circle-o" aria-hidden="true"></i></button>
+                            <button type="submit" class="candidatDeleteBtn">Abandonner l'offre</button>
                           </form>
       
     </main>
