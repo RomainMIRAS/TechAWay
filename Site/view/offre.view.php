@@ -66,7 +66,6 @@
 <p>L'offre se nomme <?php echo "$nom"; ?> et à été crée le <?php echo "$date"; ?>.</p>
 
 
-</br>
 <h2>Information sur l'entreprise qui à crée l'offre : <h2/>
      <ol>
       <li>Nom : <?php echo "$nomEntreprise"; ?></li>
@@ -77,7 +76,6 @@
       <li>Taille de l'entreprise : <?php echo "$typeEntreprise"; ?></li>
      </ol>
 
-     </br>
 <h2>Information sur les renseignement diverse : <h2/>
      <ol>
       <li>Accepte les candidat étranger ? : <?php echo "$travailleEtranger"; ?></li>
@@ -86,7 +84,6 @@
       <li>Poste visé : <?php echo "$poste"; ?></li>
      </ol>
 
-     </br>
 <h2>Information sur les compétences attendue : <h2/>
      <ol>
       <li>Niveau d'étude attendue : <?php echo "$niveauEtude"; ?></li>
