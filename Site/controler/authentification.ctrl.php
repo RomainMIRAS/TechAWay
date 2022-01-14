@@ -44,7 +44,7 @@ function seConnecter($email,$password){
   //$_SESSION['utilisateur'] = DAO::get()->getCoachOuCandidat($email,$password);
   // Ferme la session
   session_write_close();
-  header('Location: main.ctrl.php');
+  header('Location: recrutement-candidat.ctrl.php');
 }
 
 

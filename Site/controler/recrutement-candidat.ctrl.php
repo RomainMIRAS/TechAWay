@@ -6,6 +6,19 @@ include_once(__DIR__."/../model/Candidat.class.php");
 // Ce controleur permet de sélectionner le bon controleur à utiliser selon
 // L'état du recrutement du candidat
 
+///////////////////////////////////////////////////////////////////////////////
+// Protection Contre Erreurs
+///////////////////////////////////////////////////////////////////////////////
+
+session_start();
+// Si pas déja connecté => Ne pas afficher cette page :D !
+if (!isset($_SESSION['utilisateur'])) header('Location: main.ctrl.php');
+
+
+// Si c'est un coach
+if (is_a($_SESSION['utilisateur'],"Coach")) header('Location: tableau.ctrl.php');
+
+session_write_close();
 
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -13,8 +26,7 @@ include_once(__DIR__."/../model/Candidat.class.php");
 ///////////////////////////////////////////////////////////////////////////////
 
 session_start();
-//Gestion Erreur si utilisateur pas connecté
-if (!isset($_SESSION['utilisateur'])) header('Location: main.ctrl.php');
+
 
 // Etape du formulaire
 if ($_SESSION['utilisateur']->getEtape() == 0){ // Etape du formulaire
