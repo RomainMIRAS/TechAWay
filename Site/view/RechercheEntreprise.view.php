@@ -57,7 +57,7 @@
                         <td><?= $listeOffreMatch[$key]->getDetailOffre()->getPoste() ?></td>
                         <td><?= $listeOffreMatch[$key]->getEntreprise()->getNom() ?></td>
                         <td><?= $listeOffreMatch[$key]->getEntreprise()->getTelephone() ?></td>
-                        <td><?= round((($key+473)*100)/(616),2) ?>%</td>
+                        <td><?= round((($key+473)*100)/(616)) ?>%</td>
                     </tr>
                     
                 <?php endif; ?>
