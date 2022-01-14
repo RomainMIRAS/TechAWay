@@ -211,11 +211,18 @@ $candidatAction = 't';
 $offreAAjouter = $_POST['offreAAdd'] ?? '';
 $candidatAction = $_POST['candidatAction'] ?? '';
 $message = '';
+$nomOffre = $db->getOffre($offreAAjouter)->getNomOffre();
+
 
 if ($candidatAction=='ajouteY') {
-    $candidat->setLienLM($candidat->getLienLM() . "-" . $offreAAjouter);
-    $db->updateCandidat($candidat);
-    $message = "L'offre $offreAAjouter a bien été ajouté.";
+    if ($candidat->getLienLM() == '') {
+        $candidat->setLienLM($offreAAjouter);
+        $db->updateCandidat($candidat);
+        $message = "Vous avez bien postuler à l'offre $nomOffre.";
+    } else {
+
+    }
+    
     header("Location: RechercheEntreprise.ctrl.php");
 }
 
