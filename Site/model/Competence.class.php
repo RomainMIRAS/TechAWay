@@ -5,14 +5,14 @@
 class Competence {
   private int $id;                      //Identifiant compétence
   private string $nvEtude;              //Niveau étude
-  private array $langueParle = array();            //Lange parlé
+  private array $langeParle = array();            //Lange parlé
   private array $langageAcquis = array();         //Langage informatique parlé
 
   // Contructeur
-  function __construct(int $id,string $nvEtude = '', string $langueParle = "", string $langageAcquis = "") {
+  function __construct(int $id,string $nvEtude = '', string $langeParle = "", string $langageAcquis = "") {
     $this->id = $id;
     $this->nvEtude = $nvEtude;
-    $this->langueParle = $this->conversionStringArray($langueParle);
+    $this->langeParle = $this->conversionStringArray($langeParle);
     $this->langageAcquis = $this->conversionStringArray($langageAcquis);
   }
 
@@ -30,8 +30,8 @@ class Competence {
     return $this->nvEtude;
   }
 
-  function getlangueParle() : array {
-    return $this->langueParle;
+  function getlangeParle() : array {
+    return $this->langeParle;
   }
 
   function getLangageAcquis() : array {
@@ -42,8 +42,8 @@ class Competence {
     $this->nvEtude = $nvEtude;
   }
 
-  function setlangueParle(array $langueParle) : void {
-    $this->langueParle = $langueParle;
+  function setlangeParle(array $langeParle) : void {
+    $this->langeParle = $langeParle;
   }
 
   function setLangageAcquis(array $langageAcquis) : void {
