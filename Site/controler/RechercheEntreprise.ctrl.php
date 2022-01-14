@@ -210,12 +210,14 @@ $it++;
 
 $offreAAjouter = $_POST['offreAAdd'] ?? '';
 $action = $_POST['candidatAction'] ?? '';
+$message = '';
 
 if ($action=='ajouteY') {
-    $candidatMessage = "L'offre $offreAAjouter a bien été ajouté.";
+    $message = "L'offre $offreAAdd a bien été ajouté.";
+    header("Location: RechercheEntreprise.ctrl.php");
 }
 
-
+$view->assign('message',$message);
 $view->assign('listeOffreMatch',$offresMatch);
 $view->display("RechercheEntreprise.view.php");
 

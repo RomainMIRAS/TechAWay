@@ -73,6 +73,7 @@
                 <?php endif; ?>
             <?php endforeach; ?>
         </table>
+        <span class="deleteMessage"><?= $message ?></span>
       </section>
     </main>
 
