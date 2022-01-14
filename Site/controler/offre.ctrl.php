@@ -43,8 +43,8 @@ $candidat = $_SESSION['utilisateur'];
 session_write_close();
 //$int = (int)$candidat->getLienLM();
 echo "-" . $candidat->getLienLM() . "-";
-//$offre = "";
-$offre = $db->getOffre($candidat->getLienLM());
+$offre = "";
+//$offre = $db->getOffre($candidat->getLienLM());
 
 $view = new View();
 
