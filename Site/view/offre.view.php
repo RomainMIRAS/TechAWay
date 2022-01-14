@@ -62,7 +62,7 @@
     
     
     ?>
-     <h2>Information générale : <h2/>
+     <h2>Information<?echo "$nom" ?>  générale : <h2/>
 <p>L'offre <?echo "$nom" ?> à été crée le <?echo "$date" ?></p>
 
 
