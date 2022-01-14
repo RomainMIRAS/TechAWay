@@ -221,8 +221,6 @@ if ($candidatAction=='ajouteY') {
         $message = "Vous avez bien postuler à l'offre $nomOffre.";
     } else {
         $message = "Impossible d'ajouter l'offre $nomOffre car vous en avez déjà une.";
-        $candidat->setEtape($candidat->getEtape() + 1);
-        //$db->updateCandidat($candidat);
     }
     
 }

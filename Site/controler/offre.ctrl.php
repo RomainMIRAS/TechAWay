@@ -54,6 +54,7 @@ if ($action=='supprY') {
         
         $candidat->setEtape(1);
         $db->updateCandidat($candidat);
+        header("Location: recrutement-candidat.ctrl.php");
 }
 
 $view->assign('offre',$offre);
