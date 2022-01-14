@@ -33,7 +33,7 @@
 
     <!-- MAIN ---------------------------------------------------------------------------------->
     <main>
-  <?php echo "$offre->getId()"; ?>
+  <?php $test = $offre->getId(); echo "$test"; ?>
      <!-- <h2><?php $offre->getNomOffre()?><h2/> -->
       
       
