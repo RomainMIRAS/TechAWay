@@ -52,6 +52,7 @@
               <!-- Section du pays parmis la liste des pays europeens -->
               <label for="pays">Pays *</label>
               <select name="pays">
+                <option value="">--Veuillez choisir un pays--</option>
                   <?php foreach ($pays as $key): ?>
                     <?php if ($key=="France"): ?>
                       <option value="<?php echo"$key" ?>" selected><?php echo"$key" ?></option>
