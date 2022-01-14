@@ -39,7 +39,7 @@ session_write_close();
 ///////////////////////////////////////////////////////////////////////////////
 
 session_start();
-$candidat = $_SESSION['utilisateur'];
+$candidat = $db->getCandidat($_SESSION['utilisateur']->getMail());
 session_write_close();
 
 $offres = $db->getOffres();
@@ -219,6 +219,7 @@ if ($candidatAction=='ajouteY') {
         $candidat->setEtape($candidat->getEtape() + 1);
         $db->updateCandidat($candidat);
         $message = "Vous avez bien postuler à l'offre $nomOffre.";
+        header("Location: recrutement-candidat.ctrl.php");
     } else {
         $message = "Impossible d'ajouter l'offre $nomOffre car vous en avez déjà une.";
     }
