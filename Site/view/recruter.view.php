@@ -39,7 +39,7 @@
             <h1>Entreprises partenaires</h1>
             <h2>Trouvez LES candidats qu'il vous faut</h2>
             <p>Tech A Way vous donne accès à des candidats qui correspondent à 100% à vos attentes.
-              Expliquez-nous toutes les spécificités du poste et on vous trouvera le ou la candidate dont vous avez besoin !</p>
+              Expliquez-nous toutes les spécificités du poste et on vous trouvera le ou la candidate dont vous avez besoin</p>
           </div>
 
           <div id="svg1">
