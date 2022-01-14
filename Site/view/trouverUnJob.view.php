@@ -65,19 +65,19 @@
 
         </article>
 
-    </section>
+      </section>
 
-    <section id = "sectionTUJ" >
-        <section>
-            <article>
-                <h2>Commencez dès maintenant !</h2>
-                <form action="../controler/authentification.ctrl.php" method="post">                
-                    <button id="signup" type="submit" name="action" value="signup">S'inscrire</button>
-                </form>
-            </article>
-        </section>
-        
-    </section>
+      <section id = "sectionTUJ" >
+          <section>
+              <article>
+                  <h2>Commencez dès maintenant !</h2>
+                  <form action="../controler/authentification.ctrl.php" method="post">                
+                      <button id="signup" type="submit" name="action" value="signup">S'inscrire</button>
+                  </form>
+              </article>
+          </section>
+          
+      </section>
 
     </main>
 

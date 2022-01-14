@@ -212,10 +212,11 @@ if ($erreur == "" && $action == "suivant"){
   } else if ($etape == "competences") {
     session_start();
     $competence = $_SESSION["utilisateur"]->getCompetenceAcquis();
-
+    var_dump($competence);
     $competence->setNvEtude($nvEtude);
     $competence->setLangeParle($langueParle);
     $competence->setLangageAcquis($languageAquis);
+    var_dump($competence);
     $_SESSION["utilisateur"]->setCompetenceAcquis($competence);
     session_write_close();
 

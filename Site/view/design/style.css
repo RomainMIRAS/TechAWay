@@ -506,7 +506,7 @@ button:hover {
 #section1{
   display: flex;
   flex-direction: column;
-  text-align: center;
+  text-align: justify;
 
 }
 
@@ -514,11 +514,13 @@ button:hover {
   display:flex;
   justify-content: center;
   align-items: center;
+  margin:0 7.5%;
 }
 #article2{
   display:flex;
   justify-content: center;
   align-items: center;
+  margin:0 7.5%;
 }
 
 #section2{
@@ -555,7 +557,6 @@ button:hover {
   justify-content: center;
   text-align: center;
 }
-
 #sectionTUJ section article #signup{
   border: 2px solid var(--color-blue1);
   margin-left: 0;
