@@ -36,10 +36,10 @@ if($action == "confirmation" )
   }
   else if($mailCandidat == "" )
   {
-    $erreur = "Le mail doit etre rempli";
+    $erreur = "Le mail candidat doit etre rempli";
   }
   else if (!filter_var($mailCandidat, FILTER_VALIDATE_EMAIL)){ // Si email valide
-    $erreur = "Adresse mail non valide.";
+    $erreur = "Adresse mail candidat non valide.";
   }
   // Si Tel candidat pas remplie
   else if($telCandidat == "" )
@@ -63,10 +63,10 @@ if($action == "confirmation" )
   }
   else if($mailParrain == "" )
   {
-    $erreur = "Le mail doit etre rempli";
+    $erreur = "Le mail parrain doit etre rempli";
   }
   else if (!filter_var($mailParrain, FILTER_VALIDATE_EMAIL)){ // Si email valide
-    $erreur = "Adresse mail non valide.";
+    $erreur = "Adresse mail parrain non valide.";
   }
   // Si Tel candidat pas remplie
   else if($telParrain == "" )
