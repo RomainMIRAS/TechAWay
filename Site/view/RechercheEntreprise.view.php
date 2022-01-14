@@ -84,7 +84,6 @@
 
   </body>
 
-
   <script src="../framework/jquery-3.6.0.min.js"></script>
   <script>
     $(window).ready(function() {
@@ -97,6 +96,50 @@
         }
       });
 
+      $(".entrepriseDeleteBtn").click(function() { /* Affichage d'une fenêtre de confirmation pour la suppression d'une entreprise */
+        if (confirm("Etes-vous sûr de vouloir supprimer cette entreprise ?")) {
+          $(".entrepriseAction").val("deleteY");
+        } else {
+          $(".entrepriseAction").val("deleteN");
+        }
+      });
+
+      $(".offreDeleteBtn").click(function() { /* Affichage d'une fenêtre de confirmation pour la suppression d'une offre */
+        if (confirm("Etes-vous sûr de vouloir supprimer cette offre ?")) {
+          $(".offreAction").val("deleteY");
+        } else {
+          $(".offreAction").val("deleteN");
+        }
+      });
+
+      /* Modifier candidat */
+      $(".editCandidatSection").hide();
+      $(".editBtn").click(function() {
+        $(".editCandidatSection").show();
+      });
+      $(".editCandidatClose").click(function() {
+        $(".editCandidatSection").hide();
+      });
+
+      /* Ajouter entreprise */
+      $("#addEntrepriseSection").hide();
+      $("#addEntrepriseBtn").click(function() {
+        $("#addEntrepriseSection").show();
+      });
+      $("#addEntrepriseClose").click(function() {
+        $("#addEntrepriseSection").hide();
+      });
+
+      /* Ajouter offre */
+      $("#addOffreSection").hide();
+      $("#addOffreBtn").click(function() {
+        $("#addOffreSection").show();
+      });
+      $("#addOffreClose").click(function() {
+        $("#addOffreSection").hide();
+      });
+
+    });
   </script>
   
 
