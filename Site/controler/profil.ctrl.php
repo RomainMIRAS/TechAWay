@@ -68,8 +68,8 @@ $btnComp = $_POST['btnComp'] ?? '';
 if ($btnComp=='saveComp') { /* Ne fonctionne pas */
   echo "ok";
   $competence = $_SESSION["utilisateur"]->getCompetenceAcquis();
-  $competence->setLangeParle($languesParle);
-  $competence->setLangageAcquis($langagesAcquis);
+  $competence->setLangeParle($langueParle);
+  $competence->setLangageAcquis($languageAquis);
   $_SESSION["utilisateur"]->setCompetenceAcquis($competence);
   $db->updateCandidat($_SESSION['utilisateur']);
   header("Location: profil.ctrl.php");
