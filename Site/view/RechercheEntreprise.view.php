@@ -36,7 +36,7 @@
 
       <section id="tableau-bord"> <!-- Tous les candidats inscrits -->
 
-        <h2>Candidats <span style="font-size: 12px"><?= $nbCandidats?> candidat(s) enregistré(s)</span></h2>
+        <h2><span style="font-size: 12px">Offre(s) triée selon vos préférences</span></h2>
         <table>  <!-- Tableau des candidats -->
             <tr>
                 <th>Nom de l'offre</th>
@@ -46,7 +46,7 @@
                 <th>Nom entreprise</th>
                 <th>Telephone contact</th>
             </tr>
-            <?php foreach($offres as $c): ?> <!-- pour chaque candidat -->
+            <?php foreach($listeOffre as $c): ?> <!-- pour chaque candidat -->
                 <?php if ($c!=false): ?>
                     <tr> <!-- affichage du nom, prenom, mail...etc du candidat -->
                         <td><?= $c->getNom() ?></td>
