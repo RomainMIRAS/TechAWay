@@ -1,34 +1,24 @@
-<?php
-//
 
-// Partie principale
+<?php
 
 // Inclusion du framework
 include_once(__DIR__."/../framework/view.class.php");
-
-// Inclusion du modèle
-//include_once(__DIR__."/../model/DAO.class.php");
 
 
 ////////////////////////////////////////////////////////////////////////////
 // Gestion de la session utilisateur
 ////////////////////////////////////////////////////////////////////////////
 
-// Destruction de Session
+// Gestion de la déconnection de l'utilisateur
 if (isset($_POST['logout'])){
   session_start();
   session_destroy();
 }
 
-
-
 ////////////////////////////////////////////////////////////////////////////
 // Construction de la vue
 ////////////////////////////////////////////////////////////////////////////
 $view = new View();
-
-// Passe les paramètres à la vue
-// A Faire
 
 // Charge la vue
 $view->display("accueil.view.php")
