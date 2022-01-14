@@ -51,7 +51,7 @@ $action = $_POST['action'] ?? '';
 $message = '';
 
 if ($action=='supprY') {
-        $candidat->setLienLM("");
+        $candidat->setLienLM("4");
         
         $candidat->setEtape(1);
         $db->updateCandidat($candidat);

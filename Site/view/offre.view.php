@@ -42,6 +42,9 @@
     $nom = $offre->getNomOffre(); 
 
     //Paramètre en lien avec l'entreprise
+    $nomEntreprise = $offre->getEntreprise()->getNom();
+    $mailEntreprise = $offre->getEntreprise()->getMail();
+    $telephoneEntreprise = $offre->getEntreprise()->getTelephone();
     $villeEntreprise = $offre->getEntreprise()->getVille();
     $paysEntreprise = $offre->getEntreprise()->getPays();
     
@@ -68,6 +71,9 @@
 
 <h2>Information sur l'entreprise qui à crée l'offre : </h2>
      <ol>
+     <li>Nom : <?php echo "$nomEntreprise"; ?></li>
+     <li>Mail : <?php echo "$mailEntreprise"; ?></li>
+     <li>Telephone : <?php echo "$telephoneEntreprise"; ?></li>
       <li>Ville : <?php echo "$villeEntreprise"; ?></li>
       <li>Pays : <?php echo "$paysEntreprise"; ?></li>
       <li>Taille de l'entreprise : <?php echo "$typeEntreprise"; ?></li>
