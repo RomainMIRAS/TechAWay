@@ -1,10 +1,10 @@
 <?php
-
+// Inclusion du framework
 include_once(__DIR__."/../framework/view.class.php");
 include_once(__DIR__.'/../model/connectionMail.php');
 
 ///////////////////////////////////////////////////////////////////////////////
-// Partie Récupération des Variables
+// Declaration et Affectation des variables
 ///////////////////////////////////////////////////////////////////////////////
 
 $nomCandidat = (isset($_POST['nomCandidat'])) ? $_POST['nomCandidat']:"";
@@ -36,10 +36,10 @@ if($action == "confirmation" )
   }
   else if($mailCandidat == "" )
   {
-    $erreur = "Le mail doit etre rempli";
+    $erreur = "Le mail candidat doit etre rempli";
   }
   else if (!filter_var($mailCandidat, FILTER_VALIDATE_EMAIL)){ // Si email valide
-    $erreur = "Adresse mail non valide.";
+    $erreur = "Adresse mail candidat non valide.";
   }
   // Si Tel candidat pas remplie
   else if($telCandidat == "" )
@@ -63,10 +63,10 @@ if($action == "confirmation" )
   }
   else if($mailParrain == "" )
   {
-    $erreur = "Le mail doit etre rempli";
+    $erreur = "Le mail parrain doit etre rempli";
   }
   else if (!filter_var($mailParrain, FILTER_VALIDATE_EMAIL)){ // Si email valide
-    $erreur = "Adresse mail non valide.";
+    $erreur = "Adresse mail parrain non valide.";
   }
   // Si Tel candidat pas remplie
   else if($telParrain == "" )
@@ -124,10 +124,12 @@ if (true != $result){
 
 }
 
-///////////////////////////////////////////////////////////////////////////////
-// Partie View
-///////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+// Construction de la vue
+////////////////////////////////////////////////////////////////////////////
 $view = new View();
+
+// Charge la vue
 $view->assign('erreur',$erreur);
 $view->display("parrainer.view.php");
 

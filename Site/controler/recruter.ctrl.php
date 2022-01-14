@@ -76,7 +76,7 @@ if ($erreur == "" && $action == "confirmation"){
 
   Aller nous voir sur
   techaway.tk/
-  
+
   ----------------------
   ";
 
@@ -103,7 +103,6 @@ if (true != $result){
 $view = new View();
 
 $view->assign('erreur',$erreur);
-$view->assign('action',$action);
 $view->display("recruter.view.php");
 
 ?>

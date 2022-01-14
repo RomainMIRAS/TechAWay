@@ -208,14 +208,18 @@ $it++;
 }
 
 
-$offreAAjouter = $_POST['offreAADD'] ?? '';
-$action = $_POST['actionFaire'] ?? '';
+$offreAAjouter = $_POST['offreAAdd'] ?? '';
+$action = $_POST['candidatAction'] ?? '';
+$message = '';
 
-if ($action=='ajouteX') {
-    $candidatMessage = "L'offre $offreAAjouter a bien été ajouté.";
+
+
+if ($action=='ajouteY') {
+    $message = "L'offre $offreAAjouter a bien été ajouté.";
+    header("Location: RechercheEntreprise.ctrl.php");
 }
-
-
+echo "$message";
+$view->assign('message',$message);
 $view->assign('listeOffreMatch',$offresMatch);
 $view->display("RechercheEntreprise.view.php");
 
