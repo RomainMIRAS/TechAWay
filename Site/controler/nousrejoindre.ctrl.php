@@ -78,7 +78,7 @@ if($action == "confirmation" )
 
 else if($message == "" )
     {
-      $erreur = "Le nom de l'entreprise doit etre rempli";
+      $erreur = "Le message ne doit pas être vide";
     }
 
 }
