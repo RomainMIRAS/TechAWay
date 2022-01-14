@@ -87,30 +87,29 @@
         <div class="nav-options-board">
           <button id="addEntrepriseBtn">Ajouter une entreprise</button>
         </div>
-        <div class="backgroundSection">
-          <div id="addEntrepriseSection" class="addNewSection"> <!-- Ajouter une entreprise -->
-            <button id="addEntrepriseClose">Fermer</button>
-            <h3>Ajouter une entreprise</h3>
-            <form action="tableau.ctrl.php" method="POST">
-              <label for="nom">Nom *</label>
-              <input type="text" name="entrepriseName" placeholder="Entrez le nom de l'entreprise" >
-              <label for="mail">Adresse E-mail *</label>
-              <input type="mail" name="entrepriseMail" placeholder="Entrez l' adresse mail de l'entreprise" >
-              <label for="tel">Téléphone</label>
-              <input type="mail" name="entrepriseTel" placeholder="Entrez le téléphone de l'entreprise" >
-              <label for="tel">Pays *</label>
-              <select name="entreprisePays" id="">
-                <?php foreach($listePays as $pays): ?>
-                  <option value="<?= $pays ?>"><?= $pays ?></option>
-                <?php endforeach; ?>
-              </select>
-              <label for="ville">Ville</label>
-              <input type="text" name="entrepriseVille" placeholder="Entrez la ville l'entreprise" >
-              <button type="submit" name="ajouterEntrepriseBtn" value="ajouterEntreprise">Ajouter</button>
-            </form>
-            <span class="erreur"></span>
-            <span class="asterisque">* : Champ obligatoire</span>
-          </div>
+        <div id="addEntrepriseSection" class="addNewSection"> <!-- Ajouter une entreprise -->
+          <button id="addEntrepriseClose">Fermer</button>
+          <h3>Ajouter une entreprise</h3>
+          <form action="tableau.ctrl.php" method="POST">
+            <label for="nom">Nom *</label>
+            <input type="text" name="entrepriseName" placeholder="Entrez le nom de l'entreprise" >
+            <label for="mail">Adresse E-mail *</label>
+            <input type="mail" name="entrepriseMail" placeholder="Entrez l' adresse mail de l'entreprise" >
+            <label for="tel">Téléphone</label>
+            <input type="mail" name="entrepriseTel" placeholder="Entrez le téléphone de l'entreprise" >
+            <label for="tel">Pays *</label>
+            <select name="entreprisePays" id="">
+              <?php foreach($listePays as $pays): ?>
+                <option value="<?= $pays ?>"><?= $pays ?></option>
+              <?php endforeach; ?>
+            </select>
+            <label for="ville">Ville</label>
+            <input type="text" name="entrepriseVille" placeholder="Entrez la ville l'entreprise" >
+            <button type="submit" name="ajouterEntrepriseBtn" value="ajouterEntreprise">Ajouter</button>
+          </form>
+          <span class="erreur"></span>
+          <span class="asterisque">* : Champ obligatoire</span>
+        </div>
         <table>  <!-- Tableau des entreprises -->
             <tr>
                 <th>Nom</th>
@@ -149,63 +148,61 @@
         <div class="nav-options-board">
           <button id="addOffreBtn">Ajouter une offre</button>
         </div>
-        <div class="backgroundSection">
-          <div id="addOffreSection" class="addNewSection"> <!-- Ajouter une offre -->
-            <button id="addOffreClose">Fermer</button>
-            <h3>Ajouter une offre</h3>
-            <form action="tableau.ctrl.php" method="POST">
-              <label for="nom">Nom *</label>
-              <input type="text" name="offreName" placeholder="Entrez le nom de l'offre" >
-              <label for="">Entreprise *</label>
-              <select name="idEntrepriseOffre" id="">
-                <?php foreach($entreprises as $e): ?>
-                  <option value="<?= $e->getId() ?>"><?= $e->getNom() ?></option>
-                <?php endforeach; ?>
+        <div id="addOffreSection" class="addNewSection"> <!-- Ajouter une offre -->
+          <button id="addOffreClose">Fermer</button>
+          <h3>Ajouter une offre</h3>
+          <form action="tableau.ctrl.php" method="POST">
+            <label for="nom">Nom *</label>
+            <input type="text" name="offreName" placeholder="Entrez le nom de l'offre" >
+            <label for="">Entreprise *</label>
+            <select name="idEntrepriseOffre" id="">
+              <?php foreach($entreprises as $e): ?>
+                <option value="<?= $e->getId() ?>"><?= $e->getNom() ?></option>
+              <?php endforeach; ?>
+            </select>
+            <label for="nvEtude">Niveau d'etudes</label>
+              <select name="nvEtude">
+                      <option value="bac" selected>Bac</option>
+                      <option value="bac+1" >Bac +1</option>
+                      <option value="bac+2" >Bac +2</option>
+                      <option value="bac+3" >Bac +3</option>
+                      <option value="bac+4" >Bac +4</option>
+                      <option value="bac+5" >Bac +5</option>
+                      <option value="bac+6" >Bac +6</option>
+                      <option value="bac+7" >Bac +7</option>
+                      <option value="bac+8" >Bac +8</option>
               </select>
-              <label for="nvEtude">Niveau d'etudes</label>
-                <select name="nvEtude">
-                        <option value="bac" selected>Bac</option>
-                        <option value="bac+1" >Bac +1</option>
-                        <option value="bac+2" >Bac +2</option>
-                        <option value="bac+3" >Bac +3</option>
-                        <option value="bac+4" >Bac +4</option>
-                        <option value="bac+5" >Bac +5</option>
-                        <option value="bac+6" >Bac +6</option>
-                        <option value="bac+7" >Bac +7</option>
-                        <option value="bac+8" >Bac +8</option>
-                </select>
-                <label for="langueParle[]">Langue(s) parlée(s)</label>
-                  <div class="list-check"> <!-- Liste des langues -->
-                    <input type="checkbox" name="langueParle[]" value="francais" selected>Français</option>
-                    <input type="checkbox" name="langueParle[]" value="anglais" >Anglais</option>
-                    <input type="checkbox" name="langueParle[]" value="espagnole" >Espagnol</option>
-                    <input type="checkbox" name="langueParle[]" value="italien" >Italien</option>
-                    <input type="checkbox" name="langueParle[]" value="allemand">Allemand</option>
-                    <input type="checkbox" name="langueParle[]" value="albanais">Albanais</option>
-                  </div>
-                <label for="languageAquis[]">Language(s) infomatique connu(s)</label>
-                <div class="list-check"> <!-- Liste des langages -->
-                  <input type="checkbox" name="languageAquis[]" value="php" selected>PHP</option>
-                  <input type="checkbox" name="languageAquis[]" value="hmtl/css" >HTML/CSS</option>
-                  <input type="checkbox" name="languageAquis[]" value="c" >C#, C ou C++</option>
-                  <input type="checkbox" name="languageAquis[]" value="python" >Python</option>
-                  <input type="checkbox" name="languageAquis[]" value="perl">PERL</option>
-                  <input type="checkbox" name="languageAquis[]" value="java">Java</option>
-                  <input type="checkbox" name="languageAquis[]" value="ruby">Ruby</option>
-                  <input type="checkbox" name="languageAquis[]" value="swift">Swift</option>
-                  <input type="checkbox" name="languageAquis[]" value="julia">Julia</option>
-                  <input type="checkbox" name="languageAquis[]" value="scala">Scala</option>
+              <label for="langueParle[]">Langue(s) parlée(s)</label>
+                <div class="list-check"> <!-- Liste des langues -->
+                  <input type="checkbox" name="langueParle[]" value="francais" selected>Français</option>
+                  <input type="checkbox" name="langueParle[]" value="anglais" >Anglais</option>
+                  <input type="checkbox" name="langueParle[]" value="espagnole" >Espagnol</option>
+                  <input type="checkbox" name="langueParle[]" value="italien" >Italien</option>
+                  <input type="checkbox" name="langueParle[]" value="allemand">Allemand</option>
+                  <input type="checkbox" name="langueParle[]" value="albanais">Albanais</option>
                 </div>
-                <form action ="formulaire.ctrl.php" method="post">
-                <output><?=$erreur?></output>
-                <button type="submit" name="action" value="precedent">Précédent</button>
-                <button type="submit" name="action" value="suivant">Suivant</button>
-                <input type="hidden" name="etape" value="competences">
-              <button type="submit" name="ajouterOffreBtn" value="ajouterOffre">Ajouter</button>
-            </form>
-            <span class="erreur"></span>
-            <span class="asterisque">* : Champ obligatoire</span>
-          </div>
+              <label for="languageAquis[]">Language(s) infomatique connu(s)</label>
+              <div class="list-check"> <!-- Liste des langages -->
+                <input type="checkbox" name="languageAquis[]" value="php" selected>PHP</option>
+                <input type="checkbox" name="languageAquis[]" value="hmtl/css" >HTML/CSS</option>
+                <input type="checkbox" name="languageAquis[]" value="c" >C#, C ou C++</option>
+                <input type="checkbox" name="languageAquis[]" value="python" >Python</option>
+                <input type="checkbox" name="languageAquis[]" value="perl">PERL</option>
+                <input type="checkbox" name="languageAquis[]" value="java">Java</option>
+                <input type="checkbox" name="languageAquis[]" value="ruby">Ruby</option>
+                <input type="checkbox" name="languageAquis[]" value="swift">Swift</option>
+                <input type="checkbox" name="languageAquis[]" value="julia">Julia</option>
+                <input type="checkbox" name="languageAquis[]" value="scala">Scala</option>
+              </div>
+              <form action ="formulaire.ctrl.php" method="post">
+              <output><?=$erreur?></output>
+              <button type="submit" name="action" value="precedent">Précédent</button>
+              <button type="submit" name="action" value="suivant">Suivant</button>
+              <input type="hidden" name="etape" value="competences">
+            <button type="submit" name="ajouterOffreBtn" value="ajouterOffre">Ajouter</button>
+          </form>
+          <span class="erreur"></span>
+          <span class="asterisque">* : Champ obligatoire</span>
         </div>
         <table>  <!-- Tableau des offres -->
             <tr>
