@@ -201,6 +201,7 @@ foreach (array_keys($typeEntreprise) as $key) {
 $view = new View();
 
 $it = 0;
+$offresMatch = array();
 foreach ($offres as $lo) {
 array_push($offresMatch,$scoresMatch[it] => $lo);
 $it++;
