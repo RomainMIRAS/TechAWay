@@ -217,6 +217,8 @@ if ($candidatAction=='ajouteY') {
     $message = "L'offre $offreAAjouter a bien été ajouté.";
     header("Location: RechercheEntreprise.ctrl.php");
 }
+$uwu = $candidat->getLienLM();
+echo "$uwu";
 
 $view->assign('message',$message);
 $view->assign('listeOffreMatch',$offresMatch);
