@@ -43,9 +43,9 @@
                 <th>Secteur</th>
                 <th>Poste</th>
                 <th>Pays de l'entreprise</th>
-                <th>Telephone contact</th>
-                <th>Mail contact</th>
                 <th>Accepte les étrangers</th>
+                <th>Mail contact</th>
+                <th>Score de match</th>
                 <th>Postuler</th>
             </tr>
             <?php krsort($listeOffreMatch) ?>
