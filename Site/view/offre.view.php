@@ -84,12 +84,12 @@
               <li>Langue(s) à maitriser : 
               <ul>
               <i class="fa fa-arrow-right" aria-hidden="true"></i>
-              <?php foreach ($langue as $la) {echo "<li>$la</li>";} ?>
+              <?php foreach ($langue as $la) {echo "<span class='info'><li>$la</li></span>";} ?>
               </ul></li>
               <li>Langage(s) informatique à connaître : 
               <ul>
               <i class="fa fa-arrow-right" aria-hidden="true"></i>
-              <?php foreach ($langage as $la) {echo "<li>$la</li>";} ?>
+              <?php foreach ($langage as $la) {echo "<span class='info'><li>$la</li></span>";} ?>
               </ul></li>
             </ol>
               
