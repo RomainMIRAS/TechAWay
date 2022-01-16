@@ -65,7 +65,7 @@
 <p>L'offre se nomme <?php echo "$nom"; ?> et à été crée le <?php echo "$date"; ?>.</p>
 
 <h2>Information sur les renseignement diverse : </h2>
-     <ol>
+     <ol style="list-style: inside;">
       <li>L'entreprise se situe en : <?php echo "$pays"; ?></li>
       <li>Accepte les candidat étranger ? : <?php if ($travailleEtranger) { echo "Oui";} else {echo "Non";} ?></li>
       <li>Secteur de l'emploie : <?php echo "$secteur"; ?></li>
@@ -74,14 +74,14 @@
      </ol>
 
 <h2>Information sur les compétences attendue : </h2>
-     <ol>
+     <ol style="list-style: inside;">
       <li>Niveau d'étude attendue : <?php echo "$niveauEtude"; ?></li>
       <li>Langue à maitriser : 
-      <ol style="list-style: none;">
+      <ol style="list-style: inside;">
       <?php foreach ($langue as $la) {echo "<li>$la</li>";} ?>
       </ol></li>
       <li>Langage informatique à connaître : 
-      <ol>
+      <ol style="list-style: inside;">
       <?php foreach ($langage as $la) {echo "<li>$la</li>";} ?>
       </ol></li>
      </ol>
