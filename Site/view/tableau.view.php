@@ -63,7 +63,7 @@
                         <td><?= $c->getEtape() ?></td>
                         <td><?= $c->getVille() ?></td>
                         <td><?= $c->getPays() ?></td>
-                        <td><?= $c->getLienLM() ?></td>
+                        <td><a href="#<?= $c->getLienLM() ?>"><?= $c->getLienLM() ?></a></td>
                         <td><?= $c->getDateCreation() ?></td>
                         <td class="sup">
                           <button class="editBtn"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
@@ -135,7 +135,7 @@
             <?php foreach($offres as $o): ?> <!-- pour chaque candidat -->
                 <?php if ($o!=false): ?>
                     <tr> <!-- affichage du nom, prenom, mail...etc du candidat -->
-                        <td><?= $o->getId() ?></td>
+                        <td id="<?= $o->getId() ?>"><?= $o->getId() ?></td>
                         <td><?= $o->getNomOffre() ?></td>
                         <td><?= $o->getEntreprise()->getNom() ?></td>
                         <td><?= $o->getDateOffre() ?></td>
