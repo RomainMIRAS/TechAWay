@@ -13,13 +13,12 @@ try{
 
 
 try {
-  $dao = new DAO(); // Instancie l'objet DAO
 
 
   //Test de la récupération d'un coach
   print("Accès à un coach : <br>");
   $expected = new Coach('adresse-coach@gmail.com', 'motdepassecoach'); // Coach attendue
-  $value = $dao->getCoach('adresse-coach@gmail.com'); // On prend le coach d'id 966
+  $value = $db->getCoach('adresse-coach@gmail.com'); // On prend le coach d'id 966
 
 
 
@@ -73,7 +72,7 @@ if ($expected->getAge() == $value->getAge()) {
                           throw new Exception("Lecture Age du coach N°966 incorrecte");
                         }
 
-if ($dao->verifierLogin('adresse-coach@gmail.com', 'motdepassecoach')) {
+if ($db->verifierLogin('adresse-coach@gmail.com', 'motdepassecoach')) {
                             printf("Mot de passe OK <br>");
                           } else {
                             printf("Adresse mail not OK, otenue : %s; attendu : %s", $expected->getAge(), $value->getAge());
