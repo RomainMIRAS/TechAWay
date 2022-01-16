@@ -16,7 +16,7 @@ try{
 try {
   //Test de la récupération d'un compétence
   print("Accès à un compétence : <br>");
-  int $id,string $nvEtude = '', string $langeParle = "", string $langageAcquis = ""
+  
   $expected = new Competence(26, 'bac+3', 'anglais, francais', 'c,c++,python'); // competence attendue
   $value = $db->getCompetence(4); // On prend la competence d'id 26 (ici 4 est le lien et non l'id)
 
