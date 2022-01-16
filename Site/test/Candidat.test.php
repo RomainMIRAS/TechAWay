@@ -13,17 +13,16 @@ try{
 
 
 try {
-  $dao = new DAO(); // Instancie l'objet DAO
 
 
   //Test de la récupération d'un candidat
   print("Accès à un candidat : <br>");
   $compet = new Competence(0);
   $rensei = new Renseignement(0);
-  $expected = new Candidat('candidatTest@gmail.com', 'candidatTest', 'Test', 'Test', '0', '0606060606', '', '', 1, 'France', 'Grenoble', '01-01-2022', $compet, $rensei); // Candidat attendue
+  $expected = new Candidat('candidatTest@gmail.com', 'candidatTest', 'Test', 'Test', 0, '0606060606', '', '', 1, 'France', 'Grenoble', '01-01-2022', $compet, $rensei); // Candidat attendue
 
 
-  $value = $dao->getCandidat('candidatTest@gmail.com'); // On prend le candidat
+  $value = $db->getCandidat('candidatTest@gmail.com'); // On prend le candidat
 
 
 //On test toutes les fonctions
