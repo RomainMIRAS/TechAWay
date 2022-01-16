@@ -14,14 +14,13 @@ try{
 
 
 try {
-  $dao = new DAO(); // Instancie l'objet DAO
 
 
   //Test de la récupération d'un compétence
   print("Accès à une offre : <br>");
   
   $expected = new Offre('IUT 2', 'Anglais, Francais, Russian', 'C++,Java,Css,HTML,Javascript'); // competence attendue
-  $value = $dao->getOffre(4); // On prend la competence d'id 4
+  $value = $db->getOffre(4); // On prend la competence d'id 4
 
 
               if ($expected->getId() == $value->getId()) {
