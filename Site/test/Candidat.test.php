@@ -15,10 +15,9 @@ try{
 try {
   $dao = new DAO(); // Instancie l'objet DAO
 
-
   //Test de la récupération d'un candidat
   print("Accès à un candidat : <br>");
-  $expected = new Candidat('adresse-candidat@gmail.com', 'motdepassecandidat'); // Candidat attendue
+  $expected = new Candidat('candidatTest@gmail.com', 'candidatTest', 'Test', 'Test', '01-01-2022', '0606060606', '', '', 1, 'France', 'Grenoble', '01-01-2022', NULL, NULL); // Candidat attendue
 
 
   $value = $dao->getCandidat('adresse-candidat@gmail.com'); // On prend le candidat d'id 966
