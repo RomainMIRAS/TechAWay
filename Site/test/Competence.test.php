@@ -41,9 +41,9 @@ try {
 
 
 //conversionStringArray
-//conversionArrayString
+//
 
-if ($expected->getlangeParle() == $value->getlangeParle()) {
+if ($db->conversionArrayString($expected->getlangeParle()) == $db->conversionArrayString($value->getlangeParle())) {
                     printf("Langue parler OK <br>");
                     
                         } else {
