@@ -25,6 +25,8 @@ try {
 
   $value = $dao->getCandidat('candidatTest@gmail.com'); // On prend le candidat
 
+  echo '<pre>' . var_export($value, true) . '</pre>';
+
 
 //On test toutes les fonctions
 if ($expected->getPays() == $value->getPays()) {
