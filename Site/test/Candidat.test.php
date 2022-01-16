@@ -125,7 +125,7 @@ if ($db->verifierLogin('adresse-candidat@gmail.com', 'motdepassecandidat')) { //
 
                           printf("<br>Tout est OK ! ");
 
-  } catch (Exception $e) {
+  } catch (Exception $e) {//si il y a erreur on affiche le message d'erreur correspondant
   print("\n*** Erreur ***\n");
   print("Erreur : ".$e->getMessage()."\n");
 }

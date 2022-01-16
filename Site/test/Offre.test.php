@@ -20,14 +20,14 @@ try{
 try {
 
 
-  //Test de la récupération d'un compétence
+  //Test de la récupération d'une offre
   print("Accès à une offre : <br>");
   
   $entre = $db->getEntreprise(2);
   $compet = $db->getCompetence(2);
   $rensei = $db->getRenseignement(2);
-  $expected = new Offre(2, 'Front-End Developer', '2022-01-08', $entre, $compet, $rensei); // competence attendue
-  $value = $db->getOffre(2); // On prend la competence d'id 4
+  $expected = new Offre(2, 'Front-End Developer', '2022-01-08', $entre, $compet, $rensei); // offre attendue
+  $value = $db->getOffre(2); // offre témoin
 
 
 //On test toutes les fonctions en comparant les résultats obtenue de ceux attendue
@@ -78,7 +78,7 @@ if ($expected->getDetailOffre() == $value->getDetailOffre()) {
                             throw new Exception("Lecture Entreprise de la offre N°2 incorrecte");
                           }
 printf("<br>Tout est OK ! ");
-  } catch (Exception $e) {
+  } catch (Exception $e) { //si il y a erreur on affiche le message d'erreur correspondant
   print("\n*** Erreur ***\n");
   print("Erreur : ".$e->getMessage()."\n");
 }

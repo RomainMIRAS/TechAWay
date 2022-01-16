@@ -21,12 +21,12 @@ try{
 try {
 
 
-  //Test de la récupération d'un candidat
-  print("Accès à une entreprise : <br>");
+  //Test de la récupération d'un renseignement
+  print("Accès à un renseignement : <br>");
 
 
-  $expected = new Renseignement(14, true, 'programmation', 'CDI', 'développeur', 'Corp'); // Candidat attendue
-  $value = $db->getRenseignement(2); // On prend le candidat
+  $expected = new Renseignement(14, true, 'programmation', 'CDI', 'développeur', 'Corp'); // renseignement attendue
+  $value = $db->getRenseignement(2); // renseignement témoin
 
 
 //On test toutes les fonctions en comparant les résultats obtenue de ceux attendue
@@ -80,7 +80,7 @@ if ($expected->getTypeEntreprise() == $value->getTypeEntreprise()) {
                 }
 
 printf("<br>Tout est OK ! ");
-  } catch (Exception $e) {
+  } catch (Exception $e) {//si il y a erreur on affiche le message d'erreur correspondant
   print("\n*** Erreur ***\n");
   print("Erreur : ".$e->getMessage()."\n");
 }

@@ -21,12 +21,12 @@ try{
 try {
 
 
-  //Test de la récupération d'un candidat
+  //Test de la récupération d'une entreprise
   print("Accès à une entreprise : <br>");
-  $expected = new Entreprise(2, 'DevCorp', 'devCorp@corp.com', '0721322542', 'France', 'Paris'); // Candidat attendue
+  $expected = new Entreprise(2, 'DevCorp', 'devCorp@corp.com', '0721322542', 'France', 'Paris'); // entreprise attendue
 
 
-  $value = $db->getEntreprise(2); // On prend le candidat
+  $value = $db->getEntreprise(2); // entreprise témoin
 
 //On test toutes les fonctions en comparant les résultats obtenue de ceux attendue
 if ($expected->getId() == $value->getId()) {
@@ -79,7 +79,7 @@ if ($expected->getMail() == $value->getMail()) {
                 }
 printf("<br>Tout est OK ! ");
 
-  } catch (Exception $e) {
+  } catch (Exception $e) {//si il y a erreur on affiche le message d'erreur correspondant
   print("\n*** Erreur ***\n");
   print("Erreur : ".$e->getMessage()."\n");
 }

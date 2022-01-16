@@ -18,11 +18,11 @@ try{
 
 
 try {
-  //Test de la récupération d'un compétence
+  //Test de la récupération d'une compétence
   print("Accès à un compétence : <br>");
   
   $expected = new Competence(26, 'bac+3', 'anglais,francais', 'c,c++,python'); // competence attendue
-  $value = $db->getCompetence(4); // On prend la competence d'id 26 (ici 4 est le lien et non l'id)
+  $value = $db->getCompetence(4); // competence témoin
 
 
 //On test toutes les fonctions en comparant les résultats obtenue de ceux attendue
@@ -84,7 +84,7 @@ if ($expected->getLangageAcquis() == $value->getLangageAcquis()) {
                           }
                           printf("<br>Tout est OK ! ");
 
-  } catch (Exception $e) {
+  } catch (Exception $e) {//si il y a erreur on affiche le message d'erreur correspondant
   print("\n*** Erreur ***\n");
   print("Erreur : ".$e->getMessage()."\n");
 }
