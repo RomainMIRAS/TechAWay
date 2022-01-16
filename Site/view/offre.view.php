@@ -47,6 +47,7 @@
 
       //Info en lien avec les renseignement
       $pays = $offre->getEntreprise()->getPays();
+      $ville = $offre->getEntreprise()->getVille();
       $travailleEtranger = $offre->getDetailOffre()->getTravEtranger();
       $secteur = $offre->getDetailOffre()->getSecteur();
       $typeContrat = $offre->getDetailOffre()->getTypeContrat();
@@ -64,25 +65,25 @@
       <div class="offre">
         <!-- On affiche toutes les infos sur l'offre -->
         <h2><?php echo "$nom"; ?></h2>
-        <p>Date de création : <?php echo "$date"; ?></p>
+        <span class="asterisque">Date de création : <?php echo "$date"; ?></span>
 
-        <h2>Information sur les renseignement diverse : </h2>
+        <h2>Informations utiles</h2>
             <ol style="list-style: inside;">
-              <li>L'entreprise se situe en : <?php echo "$pays"; ?></li>
+              <li>Lieu : <?php echo "$ville"; ?>, <?php echo "$pays"; ?></li>
               <li>Accepte les candidat étranger ? : <?php if ($travailleEtranger) { echo "Oui";} else {echo "Non";} ?></li>
-              <li>Secteur de l'emploie : <?php echo "$secteur"; ?></li>
-              <li>Type de contrat : <?php echo "$typeContrat"; ?></li>
-              <li>Poste visé : <?php echo "$poste"; ?></li>
+              <li>Secteur : <?php echo "$secteur"; ?></li>
+              <li>Contrat : <?php echo "$typeContrat"; ?></li>
+              <li>Poste : <?php echo "$poste"; ?></li>
             </ol>
 
-        <h2>Information sur les compétences attendue : </h2>
+        <h2>Compétences attendues</h2>
             <ol style="list-style: inside;">
-              <li>Niveau d'étude attendue : <?php echo "$niveauEtude"; ?></li>
-              <li>Langue à maitriser : 
+              <li>Niveau d'étude : <?php echo "$niveauEtude"; ?></li>
+              <li>Langue(s) à maitriser : 
               <ol>
               <?php foreach ($langue as $la) {echo "<li>$la</li>";} ?>
               </ol></li>
-              <li>Langage informatique à connaître : 
+              <li>Langage(s) informatique à connaître : 
               <ol>
               <?php foreach ($langage as $la) {echo "<li>$la</li>";} ?>
               </ol></li>
