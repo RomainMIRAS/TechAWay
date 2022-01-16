@@ -472,8 +472,19 @@ button:hover {
   display: flex;
   flex-direction: column;
   padding: 20px;
-  border: 2px solid var(--color-blue1);
+  border: 2px solid var(--color-black);
   border-radius: 15px;
+}
+
+.offre h2:nth-child(1) {
+  margin: 0;
+  font-size: 32px;
+  color: var(--color-black);
+}
+
+.offre h2 {
+  color: var(--color-blue2);
+  margin-bottom: 10px;
 }
 
 
