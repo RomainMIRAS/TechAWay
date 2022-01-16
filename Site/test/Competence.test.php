@@ -26,7 +26,7 @@ try {
                 
                     } else {
                       printf("Id compétence not OK, otenue : %s; attendu : %s", $expected->getId(), $value->getId());
-                      throw new Exception("Lecture Id compétence de la competence N°4 incorrecte");
+                      throw new Exception("<br>Lecture Id compétence de la competence N°4 incorrecte");
                     }
 
                     
@@ -35,7 +35,7 @@ try {
                   
                       } else {
                         printf("Niveau d'étude not OK, otenue : %s; attendu : %s", $expected->getNvEtude(), $value->getNvEtude());
-                        throw new Exception("Lecture Niveau d'étude de la competence N°4 incorrecte");
+                        throw new Exception("<br>Lecture Niveau d'étude de la competence N°4 incorrecte");
                       }
 
 
@@ -70,7 +70,7 @@ if ($expected->getLangageAcquis() == $value->getLangageAcquis()) {
                               printf("- ");
                               printf("%s", $ll);
                             }
-                            throw new Exception("Lecture Langage de la competence N°4 incorrecte");
+                            throw new Exception("<br>Lecture Langage de la competence N°4 incorrecte");
                           }
 
   } catch (Exception $e) {
