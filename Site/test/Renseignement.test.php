@@ -21,7 +21,7 @@ try {
   print("Accès à une entreprise : <br>");
 
 
-  $expected = new Renseignement(14, false, 'programmation', 'CDI', 'développeur', 'Corp'); // Candidat attendue
+  $expected = new Renseignement(14, true, 'programmation', 'CDI', 'développeur', 'Corp'); // Candidat attendue
   $value = $db->getRenseignement(2); // On prend le candidat
 
 
