@@ -39,25 +39,29 @@ session_write_close();
 ///////////////////////////////////////////////////////////////////////////////
 
 session_start();
-$candidat = $db->getCandidat($_SESSION['utilisateur']->getMail());
+$candidat = $db->getCandidat($_SESSION['utilisateur']->getMail()); //On récupère le candidat connecter
 session_write_close();
 
-$offres = $db->getOffres();
-$nbOffres = $db->nombreOffres();
-$typeOffre = 0;
-$typeCandid = 0;
+$offres = $db->getOffres(); //On récupère les offres
 
-$scoresMatch = array();
-$typeEntreprise = array(1 => "Microentreprise",2 => "Petite entreprise",3 => "Moyenne entreprise",4 => "Grande entreprise");
-$niveauEtude = array(1 => "bac",2 => "bac+1",3 => "bac+2",4 => "bac+3",5 => "bac+4",6 => "bac+5",7 => "bac+6",8 => "bac+7",9 => "bac+8");
 
-foreach($offres as $o){
-    $scoreMatch = 0;
+$scoresMatch = array(); //Le tableau du score de match de chaque offre
+
+
+
+foreach($offres as $o){ //On calcule le score de match pour chaque offre
+
+    $scoreMatch = 0; // 0 par défaut pour le score
+
+    //On récupère les compétence et renseignement 
     $competOffre = $o->getCompetenceRecherche();
     $renseiOffre = $o->getDetailOffre();
     $competCandid = $candidat->getCompetenceAcquis();
     $renseiCandid = $candidat->getRenseignement();
 
+
+
+//On vas ajouter ou enlever des points au score de match pour chaque attributs
 
     //Langue parlé
     foreach ($competOffre->getLangeParle() as $lo) {
@@ -90,18 +94,18 @@ foreach($offres as $o){
         $langeEstParler = false;
     }
 
-foreach (array_keys($niveauEtude) as $key) {
-
-    if ($niveauEtude[$key] == $competCandid->getNvEtude()) {
-        $nivCandid = $key;
-    }
-    if ($niveauEtude[$key] == $competOffre->getNvEtude()) {
-        $nivOffre = $key;
-    }
-}
-
 
     //Niveau d'étude
+    $niveauEtude = array(1 => "bac",2 => "bac+1",3 => "bac+2",4 => "bac+3",5 => "bac+4",6 => "bac+5",7 => "bac+6",8 => "bac+7",9 => "bac+8");
+    foreach (array_keys($niveauEtude) as $key) {
+        if ($niveauEtude[$key] == $competCandid->getNvEtude()) {
+            $nivCandid = $key;
+        }
+        if ($niveauEtude[$key] == $competOffre->getNvEtude()) {
+            $nivOffre = $key;
+        }
+    }
+
     if ($nivCandid == $nivOffre) {
         $scoreMatch = $scoreMatch + 6;
     } else if ($nivOffre < $nivCandid) {
@@ -112,7 +116,7 @@ foreach (array_keys($niveauEtude) as $key) {
 
 
 
-//Poste
+    //Poste
     if ($renseiOffre->getPoste() == $renseiCandid->getPoste()) {
         $scoreMatch = $scoreMatch + 6;
     } else {
@@ -122,7 +126,7 @@ foreach (array_keys($niveauEtude) as $key) {
 
 
 
-    //Etranger
+    //Pays / travail étranger
     $paysOffre = $o->getEntreprise()->getPays();
     $paysCandid = $candidat->getPays();
 
@@ -156,6 +160,8 @@ foreach (array_keys($niveauEtude) as $key) {
         }
     }
 
+
+
     //Type de contrat
     if ($renseiOffre->getTypeContrat() == $renseiCandid->getTypeContrat()) {
         $scoreMatch = $scoreMatch + 6;
@@ -171,17 +177,21 @@ foreach (array_keys($niveauEtude) as $key) {
         $scoreMatch = $scoreMatch - 100;
     }
 
-foreach (array_keys($typeEntreprise) as $key) {
 
-    if ($typeEntreprise[$key] == $renseiOffre->getTypeEntreprise()) {
-        $typeOffre = $key;
-    }
-    if ($typeEntreprise[$key] == $renseiCandid->getTypeEntreprise()) {
-        $typeCandid = $key;
-    }
-}
+    //Type d'entreprise
+    $typeOffre = 0;
+    $typeCandid = 0;
+    $typeEntreprise = array(1 => "Microentreprise",2 => "Petite entreprise",3 => "Moyenne entreprise",4 => "Grande entreprise");
+    foreach (array_keys($typeEntreprise) as $key) {
 
-    //type entreprise
+        if ($typeEntreprise[$key] == $renseiOffre->getTypeEntreprise()) {
+            $typeOffre = $key;
+        }
+        if ($typeEntreprise[$key] == $renseiCandid->getTypeEntreprise()) {
+            $typeCandid = $key;
+        }
+    }
+    
     if ($typeOffre == $typeCandid) {
         $scoreMatch = $scoreMatch + 6;
     } else if ($typeOffre < $typeCandid) {
@@ -200,6 +210,8 @@ foreach (array_keys($typeEntreprise) as $key) {
 
 $view = new View();
 
+
+//On associe chaque offre à son score de match avec le candidat
 $it = 0;
 $offresMatch = array();
 foreach ($offres as $lo) {
@@ -207,30 +219,29 @@ $offresMatch += [$scoresMatch[$it] => $lo];
 $it++;
 }
 
-$candidatAction = 't';
+//Quand on essaie de choissir une offre
 $offreAAjouter = $_POST['offreAAdd'] ?? '';
-$candidatAction = $_POST['candidatAction'] ?? '';
+$action = $_POST['action'] ?? '';
 $message = '';
 
-if ($candidatAction=='ajouteY') {
+if ($action=='ajouteY') { //Si il choissi d'ajouter l'offre
     $nomOffre = $db->getOffre($offreAAjouter)->getNomOffre();
-    if ($candidat->getLienLM() == '') {
+    if ($candidat->getLienLM() == '') { //Si il n'a encore aucune offre
         $candidat->setLienLM($offreAAjouter);
         $candidat->setEtape($candidat->getEtape() + 1);
-        $db->updateCandidat($candidat);
-        $message = "Vous avez bien postuler à l'offre $nomOffre.";
+        $db->updateCandidat($candidat); //On ajoute l'offre et on actualise son profile
         header("Location: recrutement-candidat.ctrl.php");
-    } else {
+    } else { //Si il annule le choix
         $message = "Impossible d'ajouter l'offre $nomOffre car vous en avez déjà une.";
     }
-    
 }
+
+// Charge la vue
 
 $view->assign('message',$message);
 $view->assign('listeOffreMatch',$offresMatch);
 $view->display("RechercheEntreprise.view.php");
 
 
-// Fin du code à ajouter ]]
 
 ?>

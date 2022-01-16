@@ -62,7 +62,7 @@
                         <td><?= round((($key+473)*100)/(616)) ?>%</td>
                         <td class="sup">
                           <form action="RechercheEntreprise.ctrl.php" method="POST">
-                            <input type="hidden" class="candidatAction" name="candidatAction" value="ajouteN">
+                            <input type="hidden" class="action" name="action" value="ajouteN">
                             <input type="hidden" name="offreAAdd" value="<?= $listeOffreMatch[$key]->getId() ?>">
                             <button type="submit" class="candidatDeleteBtn"><i class="fa fa-check-circle-o" aria-hidden="true"></i></button>
                           </form>
@@ -89,9 +89,9 @@
 
       $(".candidatDeleteBtn").click(function() { /* Affichage d'une fenêtre de confirmation pour la suppression d'un candidat */
         if (confirm("Etes-vous sûr de vouloir ajouter cette offre ?")) {
-          $(".candidatAction").val("ajouteY");
+          $(".action").val("ajouteY");
         } else {
-          $(".candidatAction").val("ajouteN");
+          $(".action").val("ajouteN");
         }
       });
 
