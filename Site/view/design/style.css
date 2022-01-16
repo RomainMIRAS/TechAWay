@@ -500,6 +500,11 @@ button:hover {
   text-align: left;
 }
 
+.offre ol {
+  list-style: none;
+  text-align: left;
+}
+
 
 /**************************************************************
 * PROFIL

@@ -68,7 +68,7 @@
         <span class="asterisque">Date de création : <?php echo "$date"; ?></span>
 
         <h2>Informations</h2>
-            <ol style="list-style: inside;">
+            <ol>
               <li>Lieu : <?php echo "$ville"; ?>, <?php echo "$pays"; ?></li>
               <li>Accepte les candidat étranger ? : <?php if ($travailleEtranger) { echo "Oui";} else {echo "Non";} ?></li>
               <li>Secteur : <?php echo "$secteur"; ?></li>
@@ -77,7 +77,7 @@
             </ol>
 
         <h2>Compétences</h2>
-            <ol style="list-style: inside;">
+            <ol>
               <li>Niveau d'étude : <?php echo "$niveauEtude"; ?></li>
               <li>Langue(s) à maitriser : 
               <ol>
