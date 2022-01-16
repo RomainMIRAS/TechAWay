@@ -23,7 +23,7 @@ try {
   $compet = $db->getCompetence(2);
   $rensei = $db->getRenseignement(2);
   $expected = new Offre(2, 'Front-End Developer', '2022-01-08', $entre, $compet, $rensei); // competence attendue
-  $value = $db->getOffre(4); // On prend la competence d'id 4
+  $value = $db->getOffre(2); // On prend la competence d'id 4
 
 
               if ($expected->getId() == $value->getId()) {
