@@ -36,7 +36,7 @@
     <!-- MAIN ---------------------------------------------------------------------------------->
     <main>
 
-      <h2>Vous avez postulé à l'offre suivante</h2>
+      <h1>Mon offre</h1>
 
 
     <?php //On récupère toutes les infos sur l'offre
