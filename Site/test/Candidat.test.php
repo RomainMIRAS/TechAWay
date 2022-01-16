@@ -23,7 +23,7 @@ try {
   $expected = new Candidat('candidatTest@gmail.com', 'candidatTest', 'Test', 'Test', '0', '0606060606', '', '', 1, 'France', 'Grenoble', '01-01-2022', $compet, $rensei); // Candidat attendue
 
 
-  $value = $dao->getCandidat('adresse-candidat@gmail.com'); // On prend le candidat d'id 966
+  $value = $dao->getCandidat('candidatTest@gmail.com'); // On prend le candidat d'id 966
 
 if ($expected->getPays() == $value->getPays()) {
   printf("Pays OK <br>");
