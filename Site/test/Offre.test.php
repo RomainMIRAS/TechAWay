@@ -18,7 +18,7 @@ try {
 
   //Test de la récupération d'un compétence
   print("Accès à une offre : <br>");
-(int $id , string $nom = '',string $mail = '', string $telephone = '', string $pays = '', string $ville = '')
+  
   $entre = $db->getEntreprise(2);
   $compet = $db->getCompetence(24);
   $rensei = $db->getRenseignement(14);
