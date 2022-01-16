@@ -18,7 +18,6 @@ try {
   print("Accès à un compétence : <br>");
   
   $expected = new Competence(4, 'IUT 2', 'Anglais, Francais, Russian', 'C++,Java,Css,HTML,Javascript'); // competence attendue
-  printf("%S <br>", $expected->getNvEtude);
   $value = $db->getCompetence(4); // On prend la competence d'id 4
 
 
