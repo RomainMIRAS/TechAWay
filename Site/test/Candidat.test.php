@@ -109,7 +109,7 @@ if ($expected->getAge() == $value->getAge()) {
                         }
 
 
-if ($dao->verifierLogin('adresse-candidat@gmail.com', 'motdepassecandidat')) {
+if ($db->verifierLogin('adresse-candidat@gmail.com', 'motdepassecandidat')) {
                             printf("Mot de passe OK <br>");
                           } else {
                             printf("Age not OK, otenue : %s; attendu : %s", $expected->getAge(), $value->getAge());
