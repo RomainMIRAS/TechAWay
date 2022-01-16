@@ -20,8 +20,8 @@ try {
   print("Accès à une offre : <br>");
   
   $entre = $db->getEntreprise(2);
-  $compet = $db->getCompetence(24);
-  $rensei = $db->getRenseignement(14);
+  $compet = $db->getCompetence(2);
+  $rensei = $db->getRenseignement(2);
   $expected = new Offre(2, 'Front-End Developer', '2022-01-08', $entre, $compet, $rensei); // competence attendue
   $value = $db->getOffre(4); // On prend la competence d'id 4
 
