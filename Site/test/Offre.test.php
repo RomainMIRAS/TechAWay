@@ -65,13 +65,6 @@ if ($expected->getDetailOffre() == $value->getDetailOffre()) {
                             throw new Exception("Lecture Langage de la competence N°4 incorrecte");
                           }
 
-                          if ($expected->getCandidats() == $value->getCandidats()) {
-                      printf("Langage  OK <br>");
-                        }else {
-                            printf("Langage not OK, otenue : %s; attendu : %s", $expected->getCandidats(), $value->getCandidats());
-                            throw new Exception("Lecture Langage de la competence N°4 incorrecte");
-                          }
-
                           if ($expected->getEntreprise() == $value->getEntreprise()) {
                       printf("Langage  OK <br>");
                         }else {
