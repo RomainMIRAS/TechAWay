@@ -39,10 +39,16 @@ try {
                       }
 
 
+
+//conversionStringArray
+//conversionArrayString
+
 if ($expected->getlangeParle() == $value->getlangeParle()) {
                     printf("Langue parler OK <br>");
                     
                         } else {
+                          printf("%s", $expected->getlangeParle());
+                          printf("%s", $value->getlangeParle());
                           printf("Langue not OK : <br> otenue : ");
                             foreach($value->getlangeParle() as $ll) {
                               printf("- ");
