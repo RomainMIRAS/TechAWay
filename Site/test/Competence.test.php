@@ -1,4 +1,8 @@
 <?php
+////////////////////////////////////////////////////////////////////
+//Test de la classe Competence
+////////////////////////////////////////////////////////////////////
+
 require_once(__DIR__.'/../model/DAO.class.php');
 require_once(__DIR__.'/../model/Competence.class.php');
 
@@ -20,6 +24,8 @@ try {
   $expected = new Competence(26, 'bac+3', 'anglais,francais', 'c,c++,python'); // competence attendue
   $value = $db->getCompetence(4); // On prend la competence d'id 26 (ici 4 est le lien et non l'id)
 
+
+//On test toutes les fonctions en comparant les résultats obtenue de ceux attendue
 
               if ($expected->getId() == $value->getId()) {
                 printf("Id compétence OK <br>");
@@ -76,6 +82,7 @@ if ($expected->getLangageAcquis() == $value->getLangageAcquis()) {
                             }
                             throw new Exception("<br>Lecture Langage de la competence N°4 incorrecte");
                           }
+                          printf("<br>Tout est OK ! ");
 
   } catch (Exception $e) {
   print("\n*** Erreur ***\n");

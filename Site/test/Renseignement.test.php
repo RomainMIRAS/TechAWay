@@ -1,6 +1,10 @@
 
 
 <?php
+////////////////////////////////////////////////////////////////////
+//Test de la classe Renseignement
+////////////////////////////////////////////////////////////////////
+
 require_once(__DIR__.'/../model/DAO.class.php');
 
 try{
@@ -25,7 +29,7 @@ try {
   $value = $db->getRenseignement(2); // On prend le candidat
 
 
-//On test toutes les fonctions
+//On test toutes les fonctions en comparant les résultats obtenue de ceux attendue
 if ($expected->getId() == $value->getId()) {
   printf("Pays OK <br>");
 } else {
@@ -75,7 +79,7 @@ if ($expected->getTypeEntreprise() == $value->getTypeEntreprise()) {
                   throw new Exception("Lecture Nom du candidat N°966 incorrecte");
                 }
 
-
+printf("<br>Tout est OK ! ");
   } catch (Exception $e) {
   print("\n*** Erreur ***\n");
   print("Erreur : ".$e->getMessage()."\n");

@@ -1,5 +1,10 @@
 
 <?php
+
+////////////////////////////////////////////////////////////////////
+//Test de la classe Entreprise
+////////////////////////////////////////////////////////////////////
+
 require_once(__DIR__.'/../model/DAO.class.php');
 
 try{
@@ -23,12 +28,12 @@ try {
 
   $value = $db->getEntreprise(2); // On prend le candidat
 
-//On test toutes les fonctions
+//On test toutes les fonctions en comparant les résultats obtenue de ceux attendue
 if ($expected->getId() == $value->getId()) {
   printf("Pays OK <br>");
 } else {
   printf("Pays not OK, otenue : %s; attendu : %s", $expected->getId(), $value->getId());
-  throw new Exception("Lecture Pays du candidat N°966 incorrecte");
+  throw new Exception("Lecture Id de l'entreprise d'id 2 incorrecte");
 }
 
 
@@ -37,7 +42,7 @@ if ($expected->getNom() == $value->getNom()) {
     
   } else {
     printf("Ville not OK, otenue : %s; attendu : %s", $expected->getNom(), $value->getNom());
-    throw new Exception("Lecture Ville du candidat N°966 incorrecte");
+    throw new Exception("Lecture Id de l'entreprise d'id 2 incorrecte");
   }
 
 if ($expected->getVille() == $value->getVille()) {
@@ -45,7 +50,7 @@ if ($expected->getVille() == $value->getVille()) {
       
     } else {
       printf("LienCv not OK, otenue : %s; attendu : %s", $expected->getVille(), $value->getVille());
-      throw new Exception("Lecture LienCv du candidat N°966 incorrecte");
+      throw new Exception("Lecture Id de l'entreprise d'id 2 incorrecte");
     }
 
 
@@ -54,7 +59,7 @@ if ($expected->getPays() == $value->getPays()) {
                 
               } else {
           printf("LienLM not OK, otenue : %s; attendu : %s", $expected->getPays(), $value->getPays());
-          throw new Exception("Lecture LienLM du candidat N°966 incorrecte");
+          throw new Exception("Lecture Id de l'entreprise d'id 2 incorrecte");
         }
 
 if ($expected->getTelephone() == $value->getTelephone()) {
@@ -62,7 +67,7 @@ if ($expected->getTelephone() == $value->getTelephone()) {
         
       } else {
         printf("Etape not OK, otenue : %s; attendu : %s", $expected->getTelephone(), $value->getTelephone());
-        throw new Exception("Lecture Etape du candidat N°966 incorrecte");
+        throw new Exception("Lecture Id de l'entreprise d'id 2 incorrecte");
       }
 
 if ($expected->getMail() == $value->getMail()) {
@@ -70,9 +75,9 @@ if ($expected->getMail() == $value->getMail()) {
                   
                 } else {
                   printf("Nom not OK, otenue : %s; attendu : %s", $expected->getMail(), $value->getMail());
-                  throw new Exception("Lecture Nom du candidat N°966 incorrecte");
+                  throw new Exception("Lecture Id de l'entreprise d'id 2 incorrecte");
                 }
-
+printf("<br>Tout est OK ! ");
 
   } catch (Exception $e) {
   print("\n*** Erreur ***\n");

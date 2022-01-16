@@ -1,5 +1,9 @@
 
 <?php
+////////////////////////////////////////////////////////////////////
+//Test de la classe Offre
+////////////////////////////////////////////////////////////////////
+
 require_once(__DIR__.'/../model/DAO.class.php');
 
 try{
@@ -25,6 +29,8 @@ try {
   $expected = new Offre(2, 'Front-End Developer', '2022-01-08', $entre, $compet, $rensei); // competence attendue
   $value = $db->getOffre(2); // On prend la competence d'id 4
 
+
+//On test toutes les fonctions en comparant les résultats obtenue de ceux attendue
 
               if ($expected->getId() == $value->getId()) {
                 printf("Id compétence OK <br>");
@@ -71,7 +77,7 @@ if ($expected->getDetailOffre() == $value->getDetailOffre()) {
                             printf("Langage not OK, otenue : %s; attendu : %s", $expected->getEntreprise(), $value->getEntreprise());
                             throw new Exception("Lecture Langage de la competence N°4 incorrecte");
                           }
-
+printf("<br>Tout est OK ! ");
   } catch (Exception $e) {
   print("\n*** Erreur ***\n");
   print("Erreur : ".$e->getMessage()."\n");
