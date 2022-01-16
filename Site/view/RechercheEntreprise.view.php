@@ -57,7 +57,7 @@
                         <td><h3><?= $listeOffreMatch[$key]->getDetailOffre()->getSecteur() ?></h3></td>
                         <td><h3><?= $listeOffreMatch[$key]->getDetailOffre()->getPoste() ?></h3></td>
                         <td><h3><?= $listeOffreMatch[$key]->getEntreprise()->getPays() ?></h3></td>
-                        <td><h3><?= if ($listeOffreMatch[$key]->getDetailOffre()->getTravEtranger()) { echo "oui";} else { echo "non";} ?></h3></td>
+                        <td><h3><?php if ($listeOffreMatch[$key]->getDetailOffre()->getTravEtranger()) { echo "oui";} else { echo "non";} ?></h3></td>
                         <td><h3><?= $listeOffreMatch[$key]->getEntreprise()->getMail() ?></h3></td>
                         <td><h3><?= round((($key+473)*100)/(616)) ?>%</h3></td>
                         <td class="sup">
