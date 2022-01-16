@@ -64,7 +64,7 @@
                           <form action="RechercheEntreprise.ctrl.php" method="POST">
                             <input type="hidden" class="action" name="action" value="ajouteN">
                             <input type="hidden" name="offreAAdd" value="<?= $listeOffreMatch[$key]->getId() ?>">
-                            <button type="submit" class="candidatDeleteBtn"><i class="fa fa-check-circle-o" aria-hidden="true"></i></button>
+                            <button type="submit" class="postuler"><i class="fa fa-check-circle-o" aria-hidden="true"></i></button>
                           </form>
                         </td>
                     </tr>
@@ -87,55 +87,12 @@
   <script>
     $(window).ready(function() {
 
-      $(".candidatDeleteBtn").click(function() { /* Affichage d'une fenêtre de confirmation pour la suppression d'un candidat */
+      $(".postuler").click(function() { /* Affichage d'une fenêtre de confirmation pour valider la postulation */
         if (confirm("Etes-vous sûr de vouloir ajouter cette offre ?")) {
           $(".action").val("ajouteY");
         } else {
           $(".action").val("ajouteN");
         }
-      });
-
-      $(".entrepriseDeleteBtn").click(function() { /* Affichage d'une fenêtre de confirmation pour la suppression d'une entreprise */
-        if (confirm("Etes-vous sûr de vouloir supprimer cette entreprise ?")) {
-          $(".entrepriseAction").val("deleteY");
-        } else {
-          $(".entrepriseAction").val("deleteN");
-        }
-      });
-
-      $(".offreDeleteBtn").click(function() { /* Affichage d'une fenêtre de confirmation pour la suppression d'une offre */
-        if (confirm("Etes-vous sûr de vouloir supprimer cette offre ?")) {
-          $(".offreAction").val("deleteY");
-        } else {
-          $(".offreAction").val("deleteN");
-        }
-      });
-
-      /* Modifier candidat */
-      $(".editCandidatSection").hide();
-      $(".editBtn").click(function() {
-        $(".editCandidatSection").show();
-      });
-      $(".editCandidatClose").click(function() {
-        $(".editCandidatSection").hide();
-      });
-
-      /* Ajouter entreprise */
-      $("#addEntrepriseSection").hide();
-      $("#addEntrepriseBtn").click(function() {
-        $("#addEntrepriseSection").show();
-      });
-      $("#addEntrepriseClose").click(function() {
-        $("#addEntrepriseSection").hide();
-      });
-
-      /* Ajouter offre */
-      $("#addOffreSection").hide();
-      $("#addOffreBtn").click(function() {
-        $("#addOffreSection").show();
-      });
-      $("#addOffreClose").click(function() {
-        $("#addOffreSection").hide();
       });
 
     });
