@@ -26,7 +26,7 @@ try {
                 printf("Id compétence OK <br>");
                 
                     } else {
-                      printf("Id compétence not OK, otenue : %s; attendu : %s", $expected->getMail(), $value->getMail());
+                      printf("Id compétence not OK, otenue : %s; attendu : %s", $expected->getId(), $value->getId());
                       throw new Exception("Lecture Id compétence de la competence N°4 incorrecte");
                     }
 
@@ -35,7 +35,7 @@ try {
                   printf("Niveau d'étude OK <br>");
                   
                       } else {
-                        printf("Niveau d'étude not OK, otenue : %s; attendu : %s", $expected->getTelephone(), $value->getTelephone());
+                        printf("Niveau d'étude not OK, otenue : %s; attendu : %s", $expected->getNvEtude(), $value->getNvEtude());
                         throw new Exception("Lecture Niveau d'étude de la competence N°4 incorrecte");
                       }
 
@@ -44,7 +44,7 @@ if ($expected->langeParle() == $value->langeParle()) {
                     printf("Langue parler OK <br>");
                     
                         } else {
-                          printf("Langue not OK, otenue : %s; attendu : %s", $expected->getAge(), $value->getAge());
+                          printf("Langue not OK, otenue : %s; attendu : %s", $expected->langeParle(), $value->langeParle());
                           throw new Exception("Lecture Langue de la competence N°4 incorrecte");
                         }
 
