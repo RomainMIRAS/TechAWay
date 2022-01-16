@@ -506,6 +506,9 @@ button:hover {
   padding-left: 10px;
 }
 
+.info {
+  font-weight: 600;
+}
 
 /**************************************************************
 * PROFIL

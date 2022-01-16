@@ -69,11 +69,11 @@
 
         <h2>Informations</h2>
             <ol>
-              <li>Lieu : <?php echo "$ville"; ?>, <?php echo "$pays"; ?></li>
-              <li>Accepte les candidat étranger ? : <?php if ($travailleEtranger) { echo "Oui";} else {echo "Non";} ?></li>
-              <li>Secteur : <?php echo "$secteur"; ?></li>
-              <li>Contrat : <?php echo "$typeContrat"; ?></li>
-              <li>Poste : <?php echo "$poste"; ?></li>
+              <li>Lieu : <span class="info"><?php echo "$ville"; ?>, <?php echo "$pays"; ?></span></li>
+              <li>Accepte les candidat étranger ? : <span><?php if ($travailleEtranger) { echo "Oui";} else {echo "Non";} ?></span></li>
+              <li>Secteur : <span class="info"><?php echo "$secteur"; ?></span></li>
+              <li>Contrat : <span class="info"><?php echo "$typeContrat"; ?></span></li>
+              <li>Poste : <span class="info"><?php echo "$poste"; ?></span></li>
             </ol>
 
         <h2>Compétences</h2>
