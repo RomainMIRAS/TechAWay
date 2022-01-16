@@ -48,7 +48,7 @@ if ($expected->getlangeParle() == $value->getlangeParle()) {
                               printf("- ");
                               printf("%s", $ll);
                             }
-                            printf("\nattendue : ");
+                            printf("<br>attendue : ");
                             foreach($expected->getlangeParle() as $ll) {
                               printf("- ");
                               printf("%s", $ll);
@@ -65,7 +65,7 @@ if ($expected->getLangageAcquis() == $value->getLangageAcquis()) {
                               printf("- ");
                               printf("%s", $ll);
                             }
-                            printf("attendue : ");
+                            printf("<br>attendue : ");
                             foreach($expected->getLangageAcquis() as $ll) {
                               printf("- ");
                               printf("%s", $ll);
