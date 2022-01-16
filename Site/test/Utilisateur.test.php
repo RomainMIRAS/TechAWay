@@ -1,4 +1,3 @@
-
 <?php
 require_once(__DIR__.'/../model/DAO.class.php');
 
@@ -16,76 +15,65 @@ try{
 try {
 
 
-  //Test de la récupération d'un utilisateur
-  print("Accès à un utilisateur : <br>");
-  $expected = new Utilisateur('candidatTest@gmail.com', 'candidatTest', 'Test', 'Test', 0, '0606060606', '2022-01-14'); // Utilisateur attendue
-  $value = $db->getUtilisateur('candidatTest@gmail.com'); // On prend l'utilisateur d'id 968
+  //Test de la récupération d'un candidat
+  print("Accès à un candidat : <br>");
+  $compet = new Competence(0);
+  $rensei = new Renseignement(0);
+  $expected = new Candidat('candidatTest@gmail.com', 'candidatTest', 'Test', 'Test', 0, '0606060606', '', '', 1, 'France', 'Grenoble', '01-01-2022', $compet, $rensei); // Candidat attendue
 
 
+  $value = $db->getCandidat('candidatTest@gmail.com'); // On prend le candidat
 
 
-
-              if ($expected->getLienPhoto() == $value->getLienPhoto()) {
-                printf("LienPhoto OK <br>");
-                
-              } else {
-          printf("LienPhoto not OK, otenue : %s; attendu : %s", $expected->getLienPhoto(), $value->getLienPhoto());
-          throw new Exception("Lecture LienPhoto du coach N°966 incorrecte");
-        }
-
-
+//On test toutes les fonctions
 if ($expected->getNom() == $value->getNom()) {
-                  printf("Nom OK <br>");
-                  
-                } else {
-                  printf("Nom not OK, otenue : %s; attendu : %s", $expected->getNom(), $value->getNom());
-                  throw new Exception("Lecture Nom du coach N°966 incorrecte");
-                }
+  printf("Pays OK <br>");
+} else {
+  printf("Pays not OK, otenue : %s; attendu : %s", $expected->getNom(), $value->getNom());
+  throw new Exception("Lecture Pays du candidat N°966 incorrecte");
+}
+
 
 if ($expected->getPrenom() == $value->getPrenom()) {
-                    printf("Prenom OK <br>");
-                    
-                  } else {
-                    printf("Prenom not OK, otenue : %s; attendu : %s", $expected->getPrenom(), $value->getPrenom());
-                    throw new Exception("Lecture Prenom du coach N°966 incorrecte");
-                  }
+    printf("Ville OK <br>");
+    
+  } else {
+    printf("Ville not OK, otenue : %s; attendu : %s", $expected->getPrenom(), $value->getPrenom());
+    throw new Exception("Lecture Ville du candidat N°966 incorrecte");
+  }
 
-
-
-        if ($expected->getMail() == $value->getMail()) {
-                      printf("Mail OK <br>");
-                      
-                    } else {
-                      printf("Mail not OK, otenue : %s; attendu : %s", $expected->getMail(), $value->getMail());
-                      throw new Exception("Lecture Mail du coach N°966 incorrecte");
-                    }
+if ($expected->getPassword() == $value->getPassword()) {
+      printf("LienCv OK <br>");
+      
+    } else {
+      printf("LienCv not OK, otenue : %s; attendu : %s", $expected->getPassword(), $value->getPassword());
+      throw new Exception("Lecture LienCv du candidat N°966 incorrecte");
+    }
 
 
 if ($expected->getTelephone() == $value->getTelephone()) {
-                        printf("Telephone OK <br>");
-                        
-                      } else {
-                        printf("Telephone not OK, otenue : %s; attendu : %s", $expected->getTelephone(), $value->getTelephone());
-                        throw new Exception("Lecture Telephone du coach N°966 incorrecte");
-                      }
-
+          printf("LienLM OK <br>");
+                
+              } else {
+          printf("LienLM not OK, otenue : %s; attendu : %s", $expected->getTelephone(), $value->getTelephone());
+          throw new Exception("Lecture LienLM du candidat N°966 incorrecte");
+        }
 
 if ($expected->getAge() == $value->getAge()) {
-                          printf("Age OK <br>");
-                          
-                        } else {
-                          printf("Age not OK, otenue : %s; attendu : %s", $expected->getAge(), $value->getAge());
-                          throw new Exception("Lecture Age du coach N°966 incorrecte");
-                        }
+        printf("Etape OK <br>");
+        
+      } else {
+        printf("Etape not OK, otenue : %s; attendu : %s", $expected->getAge(), $value->getAge());
+        throw new Exception("Lecture Etape du candidat N°966 incorrecte");
+      }
 
-
-if ($dao->verifierLogin('adresse-coach@gmail.com', 'motdepassecoach')) {
-                            printf("Mot de passe OK <br>");
-                            printf("Tout OK <br>");
-                          } else {
-                            printf("Adresse mail not OK, otenue : %s; attendu : %s", $expected->getAge(), $value->getAge());
-                            throw new Exception("Lecture Age du coach N°966 incorrecte");
-                          }
+if ($expected->getDateCreation() == $value->getDateCreation()) {
+                  printf("Nom OK <br>");
+                  
+                } else {
+                  printf("Nom not OK, otenue : %s; attendu : %s", $expected->getDateCreation(), $value->getDateCreation());
+                  throw new Exception("Lecture Nom du candidat N°966 incorrecte");
+                }
 
 
   } catch (Exception $e) {
