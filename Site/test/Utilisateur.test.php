@@ -42,14 +42,6 @@ if ($expected->getPrenom() == $value->getPrenom()) {
     throw new Exception("Lecture Ville du candidat N°966 incorrecte");
   }
 
-if ($expected->getPassword() == $value->getPassword()) {
-      printf("LienCv OK <br>");
-      
-    } else {
-      printf("LienCv not OK, otenue : %s; attendu : %s", $expected->getPassword(), $value->getPassword());
-      throw new Exception("Lecture LienCv du candidat N°966 incorrecte");
-    }
-
 
 if ($expected->getTelephone() == $value->getTelephone()) {
           printf("LienLM OK <br>");
