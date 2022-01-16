@@ -471,10 +471,15 @@ button:hover {
 .offre {
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: 20px 40px;
   border-radius: 15px;
   background-color: var(--color-blue2);
   box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  text-align: center;
+}
+
+.offre form {
+  justify-content: center;
 }
 
 .offre h2:nth-child(1) {
