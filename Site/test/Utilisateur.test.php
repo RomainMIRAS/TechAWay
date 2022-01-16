@@ -19,7 +19,7 @@ try {
   print("Accès à un candidat : <br>");
   $compet = new Competence(0);
   $rensei = new Renseignement(0);
-  $expected = new Candidat('candidatTest@gmail.com', 'candidatTest', 'Test', 'Test', 0, '0606060606', '', '', 1, 'France', 'Grenoble', '01-01-2022', $compet, $rensei); // Candidat attendue
+  $expected = new Candidat('candidatTest@gmail.com', 'candidatTest', 'Test', 'Test', 0, '0606060606', '', '', 1, 'France', 'Grenoble', '2022-01-16', $compet, $rensei); // Candidat attendue
 
 
   $value = $db->getCandidat('candidatTest@gmail.com'); // On prend le candidat
