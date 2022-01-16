@@ -35,61 +35,64 @@
 
     <!-- MAIN ---------------------------------------------------------------------------------->
     <main>
-    <h1>Voici les informations sur l'offre à laquelle vous avez postulé<h1/>
+
+      <h1>Vous avez postulé à l'offre suivante</h1>
 
 
     <?php //On récupère toutes les infos sur l'offre
 
-    //Info générale
-    $date = $offre->getDateOffre(); 
-    $nom = $offre->getNomOffre(); 
+      //Info générale
+      $date = $offre->getDateOffre(); 
+      $nom = $offre->getNomOffre(); 
 
-    //Info en lien avec les renseignement
-    $pays = $offre->getEntreprise()->getPays();
-    $travailleEtranger = $offre->getDetailOffre()->getTravEtranger();
-    $secteur = $offre->getDetailOffre()->getSecteur();
-    $typeContrat = $offre->getDetailOffre()->getTypeContrat();
-    $poste = $offre->getDetailOffre()->getPoste();
-    $typeEntreprise = $offre->getDetailOffre()->getTypeEntreprise();
-    
-    //Info en lien avec les competence
-    $niveauEtude = $offre->getCompetenceRecherche()->getNvEtude();
-    $langue = $offre->getCompetenceRecherche()->getlangeParle();
-    $langage = $offre->getCompetenceRecherche()->getLangageAcquis();
+      //Info en lien avec les renseignement
+      $pays = $offre->getEntreprise()->getPays();
+      $travailleEtranger = $offre->getDetailOffre()->getTravEtranger();
+      $secteur = $offre->getDetailOffre()->getSecteur();
+      $typeContrat = $offre->getDetailOffre()->getTypeContrat();
+      $poste = $offre->getDetailOffre()->getPoste();
+      $typeEntreprise = $offre->getDetailOffre()->getTypeEntreprise();
+      
+      //Info en lien avec les competence
+      $niveauEtude = $offre->getCompetenceRecherche()->getNvEtude();
+      $langue = $offre->getCompetenceRecherche()->getlangeParle();
+      $langage = $offre->getCompetenceRecherche()->getLangageAcquis();
     ?>
     
 
                           
-                          <!-- On affiche toutes les infos sur l'offre -->
-<h2>Information générale : </h2>
-<p>L'offre se nomme <?php echo "$nom"; ?> et à été crée le <?php echo "$date"; ?>.</p>
+      <div class="offre">
+        <!-- On affiche toutes les infos sur l'offre -->
+        <h2><?php echo "$nom"; ?></h2>
+        <p>Date de création : <?php echo "$date"; ?></p>
 
-<h2>Information sur les renseignement diverse : </h2>
-     <ol style="list-style: inside;">
-      <li>L'entreprise se situe en : <?php echo "$pays"; ?></li>
-      <li>Accepte les candidat étranger ? : <?php if ($travailleEtranger) { echo "Oui";} else {echo "Non";} ?></li>
-      <li>Secteur de l'emploie : <?php echo "$secteur"; ?></li>
-      <li>Type de contrat : <?php echo "$typeContrat"; ?></li>
-      <li>Poste visé : <?php echo "$poste"; ?></li>
-     </ol>
+        <h2>Information sur les renseignement diverse : </h2>
+            <ol style="list-style: inside;">
+              <li>L'entreprise se situe en : <?php echo "$pays"; ?></li>
+              <li>Accepte les candidat étranger ? : <?php if ($travailleEtranger) { echo "Oui";} else {echo "Non";} ?></li>
+              <li>Secteur de l'emploie : <?php echo "$secteur"; ?></li>
+              <li>Type de contrat : <?php echo "$typeContrat"; ?></li>
+              <li>Poste visé : <?php echo "$poste"; ?></li>
+            </ol>
 
-<h2>Information sur les compétences attendue : </h2>
-     <ol style="list-style: inside;">
-      <li>Niveau d'étude attendue : <?php echo "$niveauEtude"; ?></li>
-      <li>Langue à maitriser : 
-      <ol>
-      <?php foreach ($langue as $la) {echo "<li>$la</li>";} ?>
-      </ol></li>
-      <li>Langage informatique à connaître : 
-      <ol>
-      <?php foreach ($langage as $la) {echo "<li>$la</li>";} ?>
-      </ol></li>
-     </ol>
-      
-      <form action="offre.ctrl.php" method="POST">
-         <input type="hidden" class="action" name="action" value="supprN">
-         <button type="submit" class="candidatDeleteBtn">Abandonner l'offre</button>
-      </form>
+        <h2>Information sur les compétences attendue : </h2>
+            <ol style="list-style: inside;">
+              <li>Niveau d'étude attendue : <?php echo "$niveauEtude"; ?></li>
+              <li>Langue à maitriser : 
+              <ol>
+              <?php foreach ($langue as $la) {echo "<li>$la</li>";} ?>
+              </ol></li>
+              <li>Langage informatique à connaître : 
+              <ol>
+              <?php foreach ($langage as $la) {echo "<li>$la</li>";} ?>
+              </ol></li>
+            </ol>
+              
+        <form action="offre.ctrl.php" method="POST">
+          <input type="hidden" class="action" name="action" value="supprN">
+          <button type="submit" class="candidatDeleteBtn">Abandonner l'offre</button>
+        </form>
+      </div>
       
     </main>
 
@@ -109,10 +112,11 @@
         if (confirm("Etes-vous sûr de vouloir abandonner cette offre ?")) {
           $(".action").val("supprY");
         } else {
-          $(".action").val("supprN");
+            $(".action").val("supprN");
         }
       });
-      });
+
+    });
 
   </script>
 </html>
