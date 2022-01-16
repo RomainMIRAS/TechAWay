@@ -30,52 +30,52 @@ try {
 
 //On test toutes les fonctions en comparant les résultats obtenue de ceux attendue
 if ($expected->getId() == $value->getId()) {
-  printf("Pays OK <br>");
+  printf("Id OK <br>");
 } else {
-  printf("Pays not OK, otenue : %s; attendu : %s", $expected->getId(), $value->getId());
+  printf("Id not OK, otenue : %s; attendu : %s", $expected->getId(), $value->getId());
   throw new Exception("Lecture Id de l'entreprise d'id 2 incorrecte");
 }
 
 
 if ($expected->getNom() == $value->getNom()) {
-    printf("Ville OK <br>");
+    printf("Nom OK <br>");
     
   } else {
-    printf("Ville not OK, otenue : %s; attendu : %s", $expected->getNom(), $value->getNom());
-    throw new Exception("Lecture Id de l'entreprise d'id 2 incorrecte");
+    printf("Nom not OK, otenue : %s; attendu : %s", $expected->getNom(), $value->getNom());
+    throw new Exception("Lecture Nom de l'entreprise d'id 2 incorrecte");
   }
 
 if ($expected->getVille() == $value->getVille()) {
-      printf("LienCv OK <br>");
+      printf("Ville OK <br>");
       
     } else {
-      printf("LienCv not OK, otenue : %s; attendu : %s", $expected->getVille(), $value->getVille());
-      throw new Exception("Lecture Id de l'entreprise d'id 2 incorrecte");
+      printf("Ville not OK, otenue : %s; attendu : %s", $expected->getVille(), $value->getVille());
+      throw new Exception("Lecture Ville de l'entreprise d'id 2 incorrecte");
     }
 
 
 if ($expected->getPays() == $value->getPays()) {
-          printf("LienLM OK <br>");
+          printf("Pays OK <br>");
                 
               } else {
-          printf("LienLM not OK, otenue : %s; attendu : %s", $expected->getPays(), $value->getPays());
-          throw new Exception("Lecture Id de l'entreprise d'id 2 incorrecte");
+          printf("Pays not OK, otenue : %s; attendu : %s", $expected->getPays(), $value->getPays());
+          throw new Exception("Lecture Pays de l'entreprise d'id 2 incorrecte");
         }
 
 if ($expected->getTelephone() == $value->getTelephone()) {
-        printf("Etape OK <br>");
+        printf("Telephone OK <br>");
         
       } else {
-        printf("Etape not OK, otenue : %s; attendu : %s", $expected->getTelephone(), $value->getTelephone());
-        throw new Exception("Lecture Id de l'entreprise d'id 2 incorrecte");
+        printf("Telephone not OK, otenue : %s; attendu : %s", $expected->getTelephone(), $value->getTelephone());
+        throw new Exception("Lecture Telephone de l'entreprise d'id 2 incorrecte");
       }
 
 if ($expected->getMail() == $value->getMail()) {
-                  printf("Nom OK <br>");
+                  printf("Mail OK <br>");
                   
                 } else {
-                  printf("Nom not OK, otenue : %s; attendu : %s", $expected->getMail(), $value->getMail());
-                  throw new Exception("Lecture Id de l'entreprise d'id 2 incorrecte");
+                  printf("Mail not OK, otenue : %s; attendu : %s", $expected->getMail(), $value->getMail());
+                  throw new Exception("Lecture Mail de l'entreprise d'id 2 incorrecte");
                 }
 printf("<br>Tout est OK ! ");
 
