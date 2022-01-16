@@ -17,11 +17,10 @@ try {
 
   //Test de la récupération d'un coach
   print("Accès à un coach : <br>");
-  $expected = new Coach('adresse-coach@gmail.com', 'motdepassecoach'); // Coach attendue
+  $expected = new Coach('adresse-coach@gmail.com', 'motdepassecoach', 'Michel','Jean','0712131415',35,''); // Coach attendue
   $value = $db->getCoach('adresse-coach@gmail.com'); // On prend le coach d'id 966
 
   echo '<pre>' . var_export($value, true) . '</pre>';
-
 
 
 
