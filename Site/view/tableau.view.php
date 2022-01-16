@@ -48,8 +48,7 @@
                 <th>Etape</th>
                 <th>Ville</th>
                 <th>Pays</th>
-                <th>Lien CV</th>
-                <th>Lien Lettre</th>
+                <th>N° offre</th>
                 <th>Date de création</th>
                 <th>Modifier</th>
                 <th>Supprimer</th>
@@ -64,7 +63,6 @@
                         <td><?= $c->getEtape() ?></td>
                         <td><?= $c->getVille() ?></td>
                         <td><?= $c->getPays() ?></td>
-                        <td><?= $c->getLienCv() ?></td>
                         <td><?= $c->getLienLM() ?></td>
                         <td><?= $c->getDateCreation() ?></td>
                         <td class="sup">
@@ -127,6 +125,7 @@
         </div>
         <table>  <!-- Tableau des offres -->
             <tr>
+                <th>N° offre</th>
                 <th>Nom</th>
                 <th>Entreprise</th>
                 <th>Date</th>
@@ -136,6 +135,7 @@
             <?php foreach($offres as $o): ?> <!-- pour chaque candidat -->
                 <?php if ($o!=false): ?>
                     <tr> <!-- affichage du nom, prenom, mail...etc du candidat -->
+                        <td><?= $o->getId() ?></td>
                         <td><?= $o->getNomOffre() ?></td>
                         <td><?= $o->getEntreprise()->getNom() ?></td>
                         <td><?= $o->getDateOffre() ?></td>
