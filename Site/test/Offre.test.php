@@ -18,8 +18,11 @@ try {
 
   //Test de la récupération d'un compétence
   print("Accès à une offre : <br>");
-  
-  $expected = new Offre('IUT 2', 'Anglais, Francais, Russian', 'C++,Java,Css,HTML,Javascript'); // competence attendue
+(int $id , string $nom = '',string $mail = '', string $telephone = '', string $pays = '', string $ville = '')
+  $entre = $db->getEntreprise(2);
+  $compet = $db->getCompetence(24);
+  $rensei = $db->getRenseignement(14);
+  $expected = new Offre(2, 'Front-End Developer', '2022-01-08', $entre, $compet, $rensei); // competence attendue
   $value = $db->getOffre(4); // On prend la competence d'id 4
 
 
