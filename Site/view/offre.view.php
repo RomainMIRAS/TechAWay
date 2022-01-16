@@ -36,7 +36,7 @@
     <!-- MAIN ---------------------------------------------------------------------------------->
     <main>
 
-      <h1>Vous avez postulé à l'offre suivante</h1>
+      <h2>Vous avez postulé à l'offre suivante</h2>
 
 
     <?php //On récupère toutes les infos sur l'offre
@@ -67,7 +67,7 @@
         <h2><?php echo "$nom"; ?></h2>
         <span class="asterisque">Date de création : <?php echo "$date"; ?></span>
 
-        <h2>Informations utiles</h2>
+        <h2>Informations</h2>
             <ol style="list-style: inside;">
               <li>Lieu : <?php echo "$ville"; ?>, <?php echo "$pays"; ?></li>
               <li>Accepte les candidat étranger ? : <?php if ($travailleEtranger) { echo "Oui";} else {echo "Non";} ?></li>
@@ -76,7 +76,7 @@
               <li>Poste : <?php echo "$poste"; ?></li>
             </ol>
 
-        <h2>Compétences attendues</h2>
+        <h2>Compétences</h2>
             <ol style="list-style: inside;">
               <li>Niveau d'étude : <?php echo "$niveauEtude"; ?></li>
               <li>Langue(s) à maitriser : 
