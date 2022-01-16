@@ -10,10 +10,10 @@
   <a href="javascript:history.go(-1)">Retour</a>
     <p>
 Tech A Way - SAS <br>
-65 rue de Turbigo <br>bool in /var/www/html/Site/controler/recrutement-candidat.ctrl.php:34 Stack trace: #0 {main} thrown in /var/www/html/Site/controler/recrutement-candidat.ctrl.php on line 34
+65 rue de Turbigo <br>
 75003 Paris <br>
 Tél: 33+770923228 <br>
-Directeur Tech A Way: Baptiste Arbonel ,Nicolas Delarue.<br>
+Directeur Tech A Way: Baptiste Arbonel, Nicolas Delarue.<br>
 <br> <br> <br>
 
 
@@ -21,11 +21,11 @@ Directeur Tech A Way: Baptiste Arbonel ,Nicolas Delarue.<br>
 
 <h4>Accès des internautes</h4> <br>
 
-Tout internaute visitant le site web https://www.TechAWay.jobs/ consent posséder les moyens d’accès à l’internet et déclare être responsable de ses actions et communications qui seront effectuées sur cette plateforme. <br>
+Tout internaute visitant le site web https://www.techaway.tk/ consent posséder les moyens d’accès à l’internet et déclare être responsable de ses actions et communications qui seront effectuées sur cette plateforme. <br>
 
 
 
-Tout internaute déclare respecter les droits d’auteurs et l’utilisation légale des données fournies sur ce site web. Tout le contenu de ce site est soumis aux droits d’auteurs et toute utilisation d'un extrait du contenu est autorisée à condition de mentionner l’indication «Cabinet de conseil en recrutement Clémentine, extrait du domaine https://www.TechAway.jobs/» ou de communiquer un lien vers le contenu original de ce site web. <br>
+Tout internaute déclare respecter les droits d’auteurs et l’utilisation légale des données fournies sur ce site web. Tout le contenu de ce site est soumis aux droits d’auteurs et toute utilisation d'un extrait du contenu est autorisée à condition de mentionner l’indication «Cabinet de conseil en recrutement Clémentine, extrait du domaine https://www.techaway.tk/» ou de communiquer un lien vers le contenu original de ce site web. <br>
 
 
 
@@ -33,7 +33,7 @@ Tout internaute déposant sa « candidature » ou un « projet entreprise » à 
 
 
 
-<h4>Droits de développement et d’activité du site web www.TechAway.jobs/</h4>
+<h4>Droits de développement et d’activité du site web https://www.techaway.tk/</h4>
 
  <br>
 
@@ -41,7 +41,7 @@ Tout internaute déposant sa « candidature » ou un « projet entreprise » à 
 
 
 
-Le nom de domaine https://www.TechAway.jobs/ a déposé une déclaration officielle auprès de la Commission Nationale de l’Informatique et des Libertés (www.cnil.fr CNIL) pour justifier d’une collecte de données conforme aux autorisations légales concernant son activité. <br> <br>
+Le nom de domaine https://www.techaway.tk/ a déposé une déclaration officielle auprès de la Commission Nationale de l’Informatique et des Libertés (www.cnil.fr CNIL) pour justifier d’une collecte de données conforme aux autorisations légales concernant son activité. <br> <br>
 
 
 

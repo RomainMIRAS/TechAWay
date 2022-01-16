@@ -43,8 +43,8 @@
             <input id="email" type="text" name="email" placeholder="Entrez votre adresse e-mail" >
             <label for="password">Mot de passe</label>
             <input id="password" type="password" name="password" placeholder="Mot de passe" >
-            <output><?=$erreur?></output>
             <button type="submit" name="confirmation" value="oui">Confirmation</button>
+            <output><?=$erreur?></output>
             <input type="hidden" name="action" value="<?= $action ?>">
           </form>
 
@@ -55,15 +55,15 @@
             <h1>S'inscrire</h1>
             <label for="email">Adresse E-mail</label>
             <input id="email" type="text" name="email" placeholder="Entrez votre adresse e-mail" >
-            <label for="password">Mot de passe</label>
+            <label for="password">Mot de passe *</label>
             <input id="password" type="password" name="password" placeholder="Mot de passe" >
-            <label for="checkpassword">Confirmation du mot de passe</label>
+            <label for="checkpassword">Confirmation du mot de passe *</label>
             <input id="checkpassword" type="password" name="checkpassword" placeholder="Mot de passe" >
-            <output><?=$erreur?></output>
             <button type="submit" name="confirmation" value="oui">Confirmation</button>
+            <output><?=$erreur?></output>
             <input type="hidden" name="action" value="<?= $action ?>">
+            <span class="asterisque">* : le mot de passe doit contenir au minimum 8 caractères.</span>
           </form>
-
         <?php endif; ?>
 
         <div id="svg2">

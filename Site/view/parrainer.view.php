@@ -31,75 +31,59 @@
     <!-- MAIN ---------------------------------------------------------------------------------->
     <main>
           <section class="section-accueil" id="section-parrainer">
-
+          <div>
+            <h1>Parrainer</h1>
+            <p>
+              Une personne de ton entourage est à l’écoute d’opportunités ?<br>
+              Tu souhaites nous mettre en relation ?<br>Cela nous semble normal de te remercier !<br><br>
+              Touche 600€ si la personne parrainée est recrutée chez un de nos partenaires.
+            </p>
+            <h2>Parrainer quelqu'un</h2>
             <form class="form" method="post">
 
-              <h1>Parrainer</h1>
-              <p>
-                Une personne de ton entourage est à l’écoute d’opportunités ?<br>
-                Tu souhaites nous mettre en relation ?<br>Cela nous semble normal de te remercier !<br><br>
-                Touche 600€ si la personne parrainée est recrutée chez un de nos partenaires.
-              </p>
-              <h2>Parrainer quelqu'un</h2>
-
               <div id="coord-can-par">
-                <!-- Saisie des infos du parrain -->
-                <div id="coord-parrain">
-                  <h3>Coordonnées du parrain</h3>
-                  <label for="nomParrain">Nom / Prénom</label>
-                  <input id="nomParrain" type="text" name="nomParrain" placeholder="Nom et prénom du parrain">
-                  <label for="mailParrain">Adresse mail</label>
-                  <input id="mailParrain" type="mail" name="mailParrain" placeholder="Adresse mail du parrain">
-                  <label for="telParrain">Téléphone</label>
-                  <!-- type tel -> seul les chiffres sont autorisé -->
-                  <input id="telParrain" type="tel" name="telParrain" placeholder="+33 6 01 02 03 04" >
-                  <div>
-                    <a id="btn-suivant">Suivant</a>
-                  </div>
 
+              <!-- Saisie des infos du parrain -->
+              <div id="coord-parrain">
+                <h3>Coordonnées du parrain</h3>
+                <label for="nomParrain">Nom / Prénom *</label>
+                <input id="nomParrain" type="text" name="nomParrain" placeholder="Nom et prénom du parrain">
+                <label for="mailParrain">Adresse E-mail *</label>
+                <input id="mailParrain" type="mail" name="mailParrain" placeholder="Adresse mail du parrain">
+                <label for="telParrain">Téléphone *</label>
+                <!-- type tel -> seul les chiffres sont autorisé -->
+                <input id="telParrain" type="tel" name="telParrain" placeholder="+33 6 01 02 03 04" >
+                <div style="height: 35px;">
+                  <a id="btn-suivant">Suivant</a>
                 </div>
-
-                <!-- Saisie des infos du candidat -->
-                <div id="coord-candidat">
-                <h3>Coordonnées du candidat</h3>
-                  <label for="nomCandidat">Nom / Prénom</label>
-                  <input id="nomCandidat" type="text" name="nomCandidat" placeholder="Nom et prénom du candidat" >
-                  <label for="mailCandidat">Adresse mail</label>
-                  <input id="mailCandidat" type="mail" name="mailCandidat" placeholder="Adresse mail du candidat">
-                  <label for="telCandidat">Téléphone</label>
-                  <!-- type tel -> seul les chiffres sont autorisé -->
-                  <input id="telCandidat" type="tel" name="telCandidat" placeholder="+33 6 01 02 03 04" >
-                  <div>
-                    <a id="btn-precedent">Précédent</a>
-                    <button id="btn-envoyer" type="submit" name="action" value="confirmation">Envoyer</button>
-                  </div>
-                </div>
-
-
+                <span class="asterisque">* : les champs * doivent être rempli.</span>
               </div>
 
-              <script src="../framework/jquery-3.6.0.min.js"></script>
-              <script>
-                $(window).ready(function(){
-                  $("#coord-parrain").show();
-                  $("#coord-candidat").hide();
-                  $("#btn-suivant").click(function(){
-                    $("#coord-candidat").show();
-                    $("#coord-parrain").hide();
-                  });
-                  $("#btn-precedent").click(function(){
-                    $("#coord-parrain").show();
-                    $("#coord-candidat").hide();
-                  });
-                });
-              </script>
-              <form action ="formulaire.ctrl.php" method="post">
-                <output><?=$erreur?></output>
-              </form>
-
-              <div>
-                <?php include_once("../view/design/svg/p2.svg") ?>
+              <!-- Saisie des infos du candidat -->
+              <div id="coord-candidat">
+              <h3>Coordonnées du candidat</h3>
+                <label for="nomCandidat">Nom / Prénom *</label>
+                <input id="nomCandidat" type="text" name="nomCandidat" placeholder="Nom et prénom du candidat" >
+                <label for="mailCandidat">Adresse E-mail *</label>
+                <input id="mailCandidat" type="mail" name="mailCandidat" placeholder="Adresse mail du candidat">
+                <label for="telCandidat">Téléphone *</label>
+                <!-- type tel -> seul les chiffres sont autorisé -->
+                <input id="telCandidat" type="tel" name="telCandidat" placeholder="+33 6 01 02 03 04" >
+                <form action ="formulaire.ctrl.php" method="post">
+                  <output><?=$erreur?></output>
+                </form>
+                <div style="height: 35px;">
+                  <a id="btn-precedent">Précédent</a>
+                  <button id="btn-envoyer" type="submit" name="action" value="confirmation">Envoyer</button>
+                </div>
+                <span class="asterisque">* : les champs * doivent être rempli.</span>
               </div>
+            </div>
+          </div>
+          
+          <div>
+            <?php include_once("../view/design/svg/p2.svg") ?>
+          </div>
 
           </section>
     </main>
@@ -109,4 +93,19 @@
 
 
   </body>
+  <script src="../framework/jquery-3.6.0.min.js"></script>
+  <script>
+    $(window).ready(function(){
+      $("#coord-parrain").show();
+      $("#coord-candidat").hide();
+      $("#btn-suivant").click(function(){
+        $("#coord-candidat").show();
+        $("#coord-parrain").hide();
+      });
+      $("#btn-precedent").click(function(){
+        $("#coord-parrain").show();
+        $("#coord-candidat").hide();
+      });
+     });
+  </script>
 </html>

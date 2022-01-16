@@ -131,6 +131,12 @@ main {
   margin-top: 10px;
 }
 
+output {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
 h1 {
   margin-top: 0;
 }
@@ -419,20 +425,15 @@ button:hover {
 #coord-can-par a{
   background-color: transparent;
   color: var(--color-blue1);
-  border: 2px solid var(--color-blue1);
-  border-radius: 5px;
   transition: all .2s ease-in-out;
   cursor: pointer;
-  padding: 5px 15px;
-  font-size: 18px;
-  font-weight: 500;
-  width: 100px;
-  text-align: center;
+  margin: 0;
+  padding: 0;
+  align-self: center;
 }
 
 #coord-can-par a:hover{
-  background-color: var(--color-blue1);
-  color: var(--color-white);
+  text-decoration: underline;
 }
 
 #coord-can-par div div{
@@ -442,8 +443,7 @@ button:hover {
 }
 
 #btn-envoyer{
-  width: 100px;
-  height: 33px;
+  width: max-content;
 }
 #btn-envoyer,#btn-suivant,#btn-precedent{
   margin: 0;
@@ -817,6 +817,22 @@ footer ul li a:hover {
 
   #section-accueil-1 div:first-child form {
     justify-content: center;
+  }
+
+  #section1 {
+    text-align: center;
+  }
+
+  #article1 div {
+    width: auto;
+  }
+
+  h2 {
+    text-align: center;
+  }
+
+  #section-parrainer form {
+    text-align: center;
   }
 
   #article1 {
