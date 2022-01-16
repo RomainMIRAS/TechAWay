@@ -66,8 +66,7 @@
         <!-- On affiche toutes les infos sur l'offre -->
         <h2><?php echo "$nom"; ?></h2>
         <span class="asterisque">Date de création : <?php echo "$date"; ?></span>
-
-        <h3>Statut : <p>en attente d'une réponse de l'entreprise.</p></h3>
+        <span class="asterisque">Statut : en attente d'une réponse de l'entreprise.</span>
 
         <h2>Informations</h2>
             <ol>
