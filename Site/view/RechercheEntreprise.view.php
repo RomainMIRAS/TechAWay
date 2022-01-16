@@ -33,10 +33,10 @@
     <!-- MAIN ---------------------------------------------------------------------------------->
     <main>
 
-      <section id="tableau-bord"> <!-- Tous les candidats inscrits -->
+      <section id="tableau-bord">
 
-        <h2><span style="font-size: 12px">Offre(s) triée selon vos préférences</span></h2>
-        <table>  <!-- Tableau des candidats -->
+        <h1>Offre(s) triée selon vos préférences</h1>
+        <table>  <!-- Tableau des offres -->
             <tr>
                 <th>Nom de l'offre</th>
                 <th>Date de l'offre</th>
