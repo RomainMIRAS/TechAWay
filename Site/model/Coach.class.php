@@ -31,7 +31,7 @@ class Coach extends Utilisateur {
     $this->discussions = $discussions;
   }
 
-  function addDiscussions(Discussions $discussion) : void {
+  function addDiscussions(array $discussion) : void {
     array_push($this->discussions,$discussion);
   }
 
