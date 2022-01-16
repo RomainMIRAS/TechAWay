@@ -43,7 +43,7 @@ if ($expected->langeParle() == $value->langeParle()) {
                     printf("Langue parler OK <br>");
                     
                         } else {
-                          printf("Langue not OK, otenue : %s; attendu : %s", $expected->langeParle(), $value->langeParle());
+                          printf("Langue not OK, otenue : %s; attendu : %s", $expected->getlangeParle(), $value->getlangeParle());
                           throw new Exception("Lecture Langue de la competence N°4 incorrecte");
                         }
 
