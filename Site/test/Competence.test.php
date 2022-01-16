@@ -53,11 +53,11 @@ if ($expected->getLangageAcquis() == $value->getLangageAcquis()) {
                         }else {
                             printf("Langage not OK, otenue : ");
                             foreach($value->getLangageAcquis() as $ll) {
-                              print("%s", $ll);
+                              printf("%s", $ll);
                             }
                             printf("attendue : ");
                             foreach($expected->getLangageAcquis() as $ll) {
-                              print("%s", $ll);
+                              printf("%s", $ll);
                             }
                             throw new Exception("Lecture Langage de la competence N°4 incorrecte");
                           }
