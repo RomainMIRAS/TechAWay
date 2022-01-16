@@ -14,13 +14,12 @@ try{
 
 
 try {
-  $dao = new DAO(); // Instancie l'objet DAO
 
 
   //Test de la récupération d'un utilisateur
   print("Accès à un utilisateur : <br>");
   $expected = new Utilisateur('adresse-coach@gmail.com', 'motdepassecoach'); // Utilisateur attendue
-  $value = $dao->getUtilisateur('adresse-coach@gmail.com'); // On prend l'utilisateur d'id 968
+  $value = $db->getUtilisateur('adresse-coach@gmail.com'); // On prend l'utilisateur d'id 968
 
 
 
