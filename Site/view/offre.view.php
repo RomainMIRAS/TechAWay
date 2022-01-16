@@ -83,10 +83,12 @@
               <li>Niveau d'étude : <span class="info"><?php echo "$niveauEtude"; ?></span></li>
               <li>Langue(s) à maitriser : 
               <ul>
+              <i class="fa fa-arrow-right" aria-hidden="true"></i>
               <?php foreach ($langue as $la) {echo "<li>$la</li>";} ?>
               </ul></li>
               <li>Langage(s) informatique à connaître : 
               <ul>
+              <i class="fa fa-arrow-right" aria-hidden="true"></i>
               <?php foreach ($langage as $la) {echo "<li>$la</li>";} ?>
               </ul></li>
             </ol>
