@@ -77,7 +77,7 @@
      <ol>
       <li>Niveau d'étude attendue : <?php echo "$niveauEtude"; ?></li>
       <li>Langue à maitriser : 
-      <ol list-style = "none">
+      <ol style="list-style: none;">
       <?php foreach ($langue as $la) {echo "<li>$la</li>";} ?>
       </ol></li>
       <li>Langage informatique à connaître : 
