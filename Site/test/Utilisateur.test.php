@@ -18,8 +18,11 @@ try {
 
   //Test de la récupération d'un utilisateur
   print("Accès à un utilisateur : <br>");
-  $expected = new Utilisateur('adresse-coach@gmail.com', 'motdepassecoach'); // Utilisateur attendue
-  $value = $db->getUtilisateur('adresse-coach@gmail.com'); // On prend l'utilisateur d'id 968
+
+  (string $mail, string $password,string $nom ='', string $prenom='', int $age = 0, string $telephone='', string $dateCreation = '')
+
+  $expected = new Utilisateur('candidatTest@gmail.com', 'candidatTest', 'Test', 'Test', 0, '0606060606', '2022-01-14'); // Utilisateur attendue
+  $value = $db->getUtilisateur('candidatTest@gmail.com'); // On prend l'utilisateur d'id 968
 
 
 
