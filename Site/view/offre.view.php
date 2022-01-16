@@ -65,7 +65,7 @@
 <p>L'offre se nomme <?php echo "$nom"; ?> et à été crée le <?php echo "$date"; ?>.</p>
 
 <h2>Information sur les renseignement diverse : </h2>
-     <ol>
+     <ol list-style: inside;>
       <li>L'entreprise se situe en : <?php echo "$pays"; ?></li>
       <li>Accepte les candidat étranger ? : <?php echo "$travailleEtranger"; ?></li>
       <li>Secteur de l'emploie : <?php echo "$secteur"; ?></li>
