@@ -70,7 +70,7 @@
         <h2>Informations</h2>
             <ol>
               <li>Lieu : <span class="info"><?php echo "$ville"; ?>, <?php echo "$pays"; ?></span></li>
-              <li>Accepte les candidat étranger ? : <span><?php if ($travailleEtranger) { echo "Oui";} else {echo "Non";} ?></span></li>
+              <li>Accepte les candidat étranger ? : <span class="info"><?php if ($travailleEtranger) { echo "Oui";} else {echo "Non";} ?></span></li>
               <li>Secteur : <span class="info"><?php echo "$secteur"; ?></span></li>
               <li>Contrat : <span class="info"><?php echo "$typeContrat"; ?></span></li>
               <li>Poste : <span class="info"><?php echo "$poste"; ?></span></li>
@@ -78,15 +78,15 @@
 
         <h2>Compétences</h2>
             <ol>
-              <li>Niveau d'étude : <?php echo "$niveauEtude"; ?></li>
+              <li>Niveau d'étude : <span class="info"><?php echo "$niveauEtude"; ?></span></li>
               <li>Langue(s) à maitriser : 
-              <ol>
+              <ul>
               <?php foreach ($langue as $la) {echo "<li>$la</li>";} ?>
-              </ol></li>
+              </ul></li>
               <li>Langage(s) informatique à connaître : 
-              <ol>
+              <ul>
               <?php foreach ($langage as $la) {echo "<li>$la</li>";} ?>
-              </ol></li>
+              </ul></li>
             </ol>
               
         <form action="offre.ctrl.php" method="POST">
