@@ -1,32 +1,32 @@
 <?php
-require_once(__DIR__.'/../model/DAO.class.php');
+require_once(__DIR__ . '/../model/DAO.class.php');
 
 
-try{
+try {
   $db = DAO::get();
-  
+
   //Test de la methode getEmails de DAO
   $liste = $db->getEmails();
   echo '<pre>' . var_export($liste, true) . '</pre>';
 
   //Test de Creation d'utilisateur;
   echo "Creation d'utilisateur : adresse-candidat@gmail.com:motdepassecandidat:  (doit retourner un erreur car il existe deja)";
-  $test = $db->createUtilisateur("adresse-11candidat@gmail.com","motdepassecandidat");
+  $test = $db->createUtilisateur("adresse-11candidat@gmail.com", "motdepassecandidat");
 
-  if ($test){
+  if ($test) {
     echo "</br>Utilisateur Cree :</br>";
-  }else{
+  } else {
     echo "</br>Erreur Utilisateur existe deja";
   }
 
   echo '<hr>';
 
   echo "Creation d'utilisateur : adresse-candidat@gmail.com:motdepassecandidat:  (doit retourner un erreur car il existe deja)";
-  $test = $db->createUtilisateur("adresse-candidat2@gmail.com","motdepassecandidat");
+  $test = $db->createUtilisateur("adresse-candidat2@gmail.com", "motdepassecandidat");
 
-  if ($test){
+  if ($test) {
     echo "</br>Utilisateur Cree :</br>";
-  }else{
+  } else {
     echo "</br>Erreur Utilisateur existe deja";
   }
 
@@ -34,41 +34,41 @@ try{
 
   //Test de la methode VeriferLogin, C'est qui permet de se Login.
   echo "</br>Verification de Login : adresse-candidat@gmail.com:motdepassecandidat  : (doit etre correcte)";
-  $testLogin = $db->verifierLogin("adresse-candidat@gmail.com","motdepassecandidat");
-  if ($testLogin){
+  $testLogin = $db->verifierLogin("adresse-candidat@gmail.com", "motdepassecandidat");
+  if ($testLogin) {
     echo "</br>Login Correcte</br>";
-  }else{
+  } else {
     echo "</br>Login incorrecte</br>";
   }
 
   echo '<hr>';
 
   echo "</br>Verification de Login : adresse-candidat@gmail.com:motdepassecandidat2  : (doit etre incorrecte car mdp different)";
-  $testLogin = $db->verifierLogin("adresse-candidat@gmail.com","motdepassecandidat2");
-  if ($testLogin){
+  $testLogin = $db->verifierLogin("adresse-candidat@gmail.com", "motdepassecandidat2");
+  if ($testLogin) {
     echo "</br>Login Correcte</br>";
-  }else{
+  } else {
     echo "</br>Login incorrecte</br>";
   }
 
   echo '<hr>';
 
   echo "</br>Verification de Login : adresse-candidat2@gmail.com:motdepassecandidat  : (doit etre incorrecte car email inexistant)";
-  $testLogin = $db->verifierLogin("adresse-candidat2@gmail.com","motdepassecandidat");
-  if ($testLogin){
+  $testLogin = $db->verifierLogin("adresse-candidat2@gmail.com", "motdepassecandidat");
+  if ($testLogin) {
     echo "</br>Login Correcte</br>";
-  }else{
+  } else {
     echo "</br>Login incorrecte</br>";
   }
 
   echo '<hr>';
-  
+
   //verification de la methode getCoach() il return un Coach s'il existe, faux sinon
   echo "</br>getCoach(adressemail) : adresse-coach@gmail.com  : (doit retourner type Coach)";
   $testLogin = $db->getCoach("adresse-coach@gmail.com");
-  if ($testLogin){
+  if ($testLogin) {
     echo '<pre>' . var_export($testLogin, true) . '</pre>';
-  }else{
+  } else {
     echo "</br>False ";
   }
 
@@ -77,9 +77,9 @@ try{
   //verification de la methode getCandidat() il return un Candidat s'il existe, faux sinon
   echo "</br>getCandidat(adressemail) : adresse-candidat@gmail.com  : (doit retourner type Candidat)";
   $us = $db->getCandidat("adresse-candidat@gmail.com");
-  if ($us){
+  if ($us) {
     echo '<pre>' . var_export($us, true) . '</pre>';
-  }else{
+  } else {
     echo "</br>False ";
   }
 
@@ -90,9 +90,9 @@ try{
 
   echo "</br>updateCandidat(Candidat \$candidat) :update le candidat donner avec ses valeurs";
   $testLogin = $db->updateCandidat($us);
-  if ($testLogin){
+  if ($testLogin) {
     echo '<pre>' . var_export($testLogin, true) . '</pre>';
-  }else{
+  } else {
     echo "</br>False ";
   }
 
@@ -101,9 +101,9 @@ try{
   //verification de la methode getCandidat() il return un Candidat s'il existe, faux sinon
   echo "</br>getCandidats() : doit retourner tout les candidats de type Candidat";
   $testLogin = $db->getCandidats();
-  if ($testLogin){
+  if ($testLogin) {
     echo '<pre>' . var_export($testLogin, true) . '</pre>';
-  }else{
+  } else {
     echo "</br>False ";
   }
 
@@ -112,20 +112,20 @@ try{
   echo '<pre>' . var_export($liste, true) . '</pre>';
   echo "</br>deleteCandidat(adresse-11candidat@gmail.com) : returns True";
   $testLogin = $db->deleteCandidat('adresse-11candidat@gmail.com');
-  if ($testLogin){
+  if ($testLogin) {
     echo '<pre>' . var_export($testLogin, true) . '</pre>';
     $liste = $db->getEmails();
     echo '<pre>' . var_export($liste, true) . '</pre>';
-  }else{
+  } else {
     echo "</br>False ";
   }
 
   echo '<hr>';
   echo "</br>nombreCandidats() :  doit returner le nombre de candidats sur la base de donnees ";
   $testLogin = $db->nombreCandidats();
-  if ($testLogin){
+  if ($testLogin) {
     echo '<pre>' . var_export($testLogin, true) . '</pre>';
-  }else{
+  } else {
     echo "</br>False ";
   }
   echo '<hr>';
@@ -133,9 +133,9 @@ try{
   //test si on retourne bien tout les candidats
   echo "</br>getCompetence(adressemail) : adresse-candidat@gmail.com doit retourner type Competence de l'utilisateur d'adressemail adresse-candidat@gmail.com";
   $testLogin = $db->getCompetence("adresse-candidat@gmail.com");
-  if ($testLogin){
+  if ($testLogin) {
     echo '<pre>' . var_export($testLogin, true) . '</pre>';
-  }else{
+  } else {
     echo "</br>False ";
   }
 
@@ -143,9 +143,9 @@ try{
 
   echo "</br>getRenseignement(adressemail) : adresse-candidat@gmail.com doit retourner type Renseignement de l'utilisateur d'adressemail adresse-candidat@gmail.com";
   $testLogin = $db->getRenseignement("adresse-candidat@gmail.com");
-  if ($testLogin){
+  if ($testLogin) {
     echo '<pre>' . var_export($testLogin, true) . '</pre>';
-  }else{
+  } else {
     echo "</br>False ";
   }
 
@@ -153,9 +153,9 @@ try{
 
   echo "</br>getEntreprise(idEntreprise) :  1  : doit retourner type Entreprise de id 1";
   $en = $db->getEntreprise(3);
-  if ($en){
+  if ($en) {
     echo '<pre>' . var_export($en, true) . '</pre>';
-  }else{
+  } else {
     echo "</br>False ";
   }
   echo '<hr>';
@@ -164,17 +164,17 @@ try{
 
   echo "</br>updateEntreprise(Entreprise \$entreprise) :  update l'entreprise donne avec les nouvelles valeurs";
   $testLogin = $db->updateEntreprise($en);
-  if ($testLogin){
+  if ($testLogin) {
     echo '<pre>' . var_export($testLogin, true) . '</pre>';
-  }else{
+  } else {
     echo "</br>False ";
   }
   echo '<hr>';
   echo "</br>creeEntreprise('entreprise@mail.com')  : doit retourner true";
-  $entreprise = $db->creeEntreprise('entreprise@mail.com', 'NomEntrePriseB','07 07 07 07 07','France','Paris');
-  if ($entreprise){
+  $entreprise = $db->creeEntreprise('entreprise@mail.com', 'NomEntrePriseB', '07 07 07 07 07', 'France', 'Paris');
+  if ($entreprise) {
     echo '<pre>' . var_export($entreprise, true) . '</pre>';
-  }else{
+  } else {
     echo "</br>False ";
   }
 
@@ -182,9 +182,9 @@ try{
 
   echo "</br>deleteEntreprise('entreprise@mail.com') :  returns True";
   $testLogin = $db->deleteEntreprise($entreprise);
-  if ($testLogin){
+  if ($testLogin) {
     echo '<pre>' . var_export($testLogin, true) . '</pre>';
-  }else{
+  } else {
     echo "</br>False ";
   }
 
@@ -192,19 +192,19 @@ try{
 
   echo "</br>getEntreprises() :  doit retourner toutes les entreprises de type Offre ";
   $testLogin = $db->getEntreprises();
-  if ($testLogin){
+  if ($testLogin) {
     echo '<pre>' . var_export($testLogin, true) . '</pre>';
-  }else{
+  } else {
     echo "</br>False ";
   }
-  
+
   echo '<hr>';
 
   echo "</br>nombreEntreprises() :  doit le numero d'entreprises sur la base de donnees ";
   $testLogin = $db->nombreEntreprises();
-  if ($testLogin){
+  if ($testLogin) {
     echo '<pre>' . var_export($testLogin, true) . '</pre>';
-  }else{
+  } else {
     echo "</br>False ";
   }
 
@@ -212,9 +212,9 @@ try{
 
   echo "</br>getOffre(4) :  4  : doit retourner type Offre de id 4";
   $off = $db->getOffre(4);
-  if ($off){
+  if ($off) {
     echo '<pre>' . var_export($off, true) . '</pre>';
-  }else{
+  } else {
     echo "</br>False ";
   }
 
@@ -225,25 +225,25 @@ try{
 
   echo "</br>updateOffre(Offre \$offre) : update le offre donnee avec les bonnes";
   $testLogin = $db->updateOffre($off);
-  if ($testLogin){
+  if ($testLogin) {
     echo '<pre>' . var_export($testLogin, true) . '</pre>';
-  }else{
+  } else {
     echo "</br>False ";
   }
 
   echo '<hr>';
 
-  $langP = array("anglais","francais");
-  $langA = array("react","angular","scss","sass","javascript");  
-  $rens = new Renseignement(-2,true, 'web-dev', 'CDI', 'Dynamic Websites,3d animation', 'Grande');
-  $comp = new Competence(-2,'bac+3', 'anglais,francais', 'react,angular,scss,sass');
+  $langP = array("anglais", "francais");
+  $langA = array("react", "angular", "scss", "sass", "javascript");
+  $rens = new Renseignement(-2, true, 'web-dev', 'CDI', 'Dynamic Websites,3d animation', 'Grande');
+  $comp = new Competence(-2, 'bac+3', 'anglais,francais', 'react,angular,scss,sass');
 
   echo $rens->getTravEtranger();
   echo "</br>creeOffre(idEntreprise, Rensegnement,Competence,nomOffre)  : doit retourner true";
-  $offre = $db->creeOffre(3,$rens,$comp,"Back-End - WebApp");
-  if ($offre){
+  $offre = $db->creeOffre(3, $rens, $comp, "Back-End - WebApp");
+  if ($offre) {
     echo '<pre>' . var_export($offre, true) . '</pre>';
-  }else{
+  } else {
     echo "</br>False ";
   }
 
@@ -251,9 +251,9 @@ try{
 
   echo "</br>deleteOffre(idOffre) :  returns True";
   $testLogin = $db->deleteOffre($offre);
-  if ($testLogin){
+  if ($testLogin) {
     echo '<pre>' . var_export($testLogin, true) . '</pre>';
-  }else{
+  } else {
     echo "</br>False ";
   }
 
@@ -261,18 +261,18 @@ try{
 
   echo "</br>getOffres() :  doit retourner toutes les offres de type Offre ";
   $testLogin = $db->getOffres();
-  if ($testLogin){
+  if ($testLogin) {
     echo '<pre>' . var_export($testLogin, true) . '</pre>';
-  }else{
+  } else {
     echo "</br>False ";
   }
   echo '<hr>';
 
   echo "</br>nombreOffres() :  doit returner le nombre d'offres sur la base de donnees ";
   $testLogin = $db->nombreOffres();
-  if ($testLogin){
+  if ($testLogin) {
     echo '<pre>' . var_export($testLogin, true) . '</pre>';
-  }else{
+  } else {
     echo "</br>False ";
   }
   echo '<hr>';
@@ -283,10 +283,7 @@ try{
 
   echo '<pre>' . var_export($liste, true) . '</pre>';
   echo "</br>";
-}catch (Exception $e) {
+} catch (Exception $e) {
   print("\n*** Erreur ***\n");
-  print("Erreur : ".$e->getMessage()."\n");
+  print("Erreur : " . $e->getMessage() . "\n");
 }
-
-
- ?>

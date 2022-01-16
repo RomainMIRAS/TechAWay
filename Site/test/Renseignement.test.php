@@ -5,14 +5,14 @@
 //Test de la classe Renseignement
 ////////////////////////////////////////////////////////////////////
 
-require_once(__DIR__.'/../model/DAO.class.php');
+require_once(__DIR__ . '/../model/DAO.class.php');
 
-try{
-  $db = DAO::get();//138.68.96.182
+try {
+  $db = DAO::get(); //138.68.96.182
 
-}catch (Exception $e) {
+} catch (Exception $e) {
   print("\n*** Erreur ***\n");
-  print("Erreur : ".$e->getMessage()."\n");
+  print("Erreur : " . $e->getMessage() . "\n");
 }
 
 
@@ -29,63 +29,58 @@ try {
   $value = $db->getRenseignement(2); // renseignement témoin
 
 
-//On test toutes les fonctions en comparant les résultats obtenue de ceux attendue
-if ($expected->getId() == $value->getId()) {
-  printf("Id OK <br>");
-} else {
-  printf("Id not OK, otenue : %s; attendu : %s", $expected->getId(), $value->getId());
-  throw new Exception("Lecture Id du renseignement N°2 incorrecte");
-}
+  //On test toutes les fonctions en comparant les résultats obtenue de ceux attendue
+  if ($expected->getId() == $value->getId()) {
+    printf("Id OK <br>");
+  } else {
+    printf("Id not OK, otenue : %s; attendu : %s", $expected->getId(), $value->getId());
+    throw new Exception("Lecture Id du renseignement N°2 incorrecte");
+  }
 
 
-if ($expected->getTravEtranger() == $value->getTravEtranger()) {
+  if ($expected->getTravEtranger() == $value->getTravEtranger()) {
     printf("TravEtranger OK <br>");
-    
   } else {
     printf("TravEtranger not OK, otenue : %s; attendu : %s", $expected->getTravEtranger(), $value->getTravEtranger());
     throw new Exception("Lecture TravEtranger du renseignement N°2 incorrecte");
   }
 
-if ($expected->getSecteur() == $value->getSecteur()) {
-      printf("Secteur OK <br>");
-      
-    } else {
-      printf("Secteur not OK, otenue : %s; attendu : %s", $expected->getSecteur(), $value->getSecteur());
-      throw new Exception("Lecture Secteur du renseignement N°2 incorrecte");
-    }
+  if ($expected->getSecteur() == $value->getSecteur()) {
+    printf("Secteur OK <br>");
+  } else {
+    printf("Secteur not OK, otenue : %s; attendu : %s", $expected->getSecteur(), $value->getSecteur());
+    throw new Exception("Lecture Secteur du renseignement N°2 incorrecte");
+  }
 
 
-if ($expected->getTypeContrat() == $value->getTypeContrat()) {
-          printf("TypeContrat OK <br>");
-                
-              } else {
-          printf("TypeContrat not OK, otenue : %s; attendu : %s", $expected->getTypeContrat(), $value->getTypeContrat());
-          throw new Exception("Lecture TypeContrat du renseignement N°2 incorrecte");
-        }
+  if ($expected->getTypeContrat() == $value->getTypeContrat()) {
+    printf("TypeContrat OK <br>");
+  } else {
+    printf("TypeContrat not OK, otenue : %s; attendu : %s", $expected->getTypeContrat(), $value->getTypeContrat());
+    throw new Exception("Lecture TypeContrat du renseignement N°2 incorrecte");
+  }
 
-if ($expected->getPoste() == $value->getPoste()) {
-        printf("Poste OK <br>");
-        
-      } else {
-        printf("Poste not OK, otenue : %s; attendu : %s", $expected->getPoste(), $value->getPoste());
-        throw new Exception("Poste Id du renseignement N°2 incorrecte");
-      }
+  if ($expected->getPoste() == $value->getPoste()) {
+    printf("Poste OK <br>");
+  } else {
+    printf("Poste not OK, otenue : %s; attendu : %s", $expected->getPoste(), $value->getPoste());
+    throw new Exception("Poste Id du renseignement N°2 incorrecte");
+  }
 
-if ($expected->getTypeEntreprise() == $value->getTypeEntreprise()) {
-                  printf("TypeEntreprise OK <br>");
-                  
-                } else {
-                  printf("TypeEntreprise not OK, otenue : %s; attendu : %s", $expected->getTypeEntreprise(), $value->getTypeEntreprise());
-                  throw new Exception("Lecture TypeEntreprise du renseignement N°2 incorrecte");
-                }
+  if ($expected->getTypeEntreprise() == $value->getTypeEntreprise()) {
+    printf("TypeEntreprise OK <br>");
+  } else {
+    printf("TypeEntreprise not OK, otenue : %s; attendu : %s", $expected->getTypeEntreprise(), $value->getTypeEntreprise());
+    throw new Exception("Lecture TypeEntreprise du renseignement N°2 incorrecte");
+  }
 
-printf("<br>Tout est OK ! ");
-  } catch (Exception $e) {//si il y a erreur on affiche le message d'erreur correspondant
+  printf("<br>Tout est OK ! ");
+} catch (Exception $e) { //si il y a erreur on affiche le message d'erreur correspondant
   print("\n*** Erreur ***\n");
-  print("Erreur : ".$e->getMessage()."\n");
+  print("Erreur : " . $e->getMessage() . "\n");
 }
 
 
 
 
- ?>
+?>
