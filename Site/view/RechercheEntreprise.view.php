@@ -35,7 +35,7 @@
 
       <section id="tableau-bord">
 
-        <h1>Offre(s) triée selon vos préférences</h1>
+        <h1>Offre(s) triée(s) selon vos préférences</h1>
         <table>  <!-- Tableau des offres -->
             <tr>
                 <th><h2>Nom de l'offre</h2></th>
@@ -44,7 +44,7 @@
                 <th><h2>Poste</h2></th>
                 <th><h2>Pays de l'entreprise</h2></th>
                 <th><h2>Accepte les étrangers</h2></th>
-                <th><h2>Mail contact</h2></th>
+                <th><h2>Type de contrat</h2></th>
                 <th><h2>Score de match</h2></th>
                 <th><h2>Postuler</h2></th>
             </tr>
@@ -58,7 +58,7 @@
                         <td><h3><?= $listeOffreMatch[$key]->getDetailOffre()->getPoste() ?></h3></td>
                         <td><h3><?= $listeOffreMatch[$key]->getEntreprise()->getPays() ?></h3></td>
                         <td><h3><?php if ($listeOffreMatch[$key]->getDetailOffre()->getTravEtranger()) { echo "oui";} else { echo "non";} ?></h3></td>
-                        <td><h3><?= $listeOffreMatch[$key]->getEntreprise()->getMail() ?></h3></td>
+                        <td><h3><?= $listeOffreMatch[$key]->getDetailOffre()->getTypeContrat() ?></h3></td>
                         <td><h3><?= round((($key+473)*100)/(616)) ?>%</h3></td>
                         <td class="sup">
                           <form action="RechercheEntreprise.ctrl.php" method="POST">
