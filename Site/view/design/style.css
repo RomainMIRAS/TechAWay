@@ -477,7 +477,6 @@ button:hover {
   box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
   text-align: center;
   width: max-content;
-  margin-inline: auto;
 }
 
 .offre form {
@@ -488,11 +487,17 @@ button:hover {
   margin: 0;
   font-size: 32px;
   color: var(--color-black);
+  text-align: center;
+}
+
+.offre .asterisque {
+  text-align: center;
 }
 
 .offre h2 {
   color: var(--color-blue2);
   margin-bottom: 10px;
+  text-align: left;
 }
 
 
