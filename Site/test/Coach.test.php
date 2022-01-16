@@ -20,10 +20,6 @@ try {
   $expected = new Coach('adresse-coach@gmail.com', 'motdepassecoach', 'Michel','Jean','0712131415',35,''); // Coach attendue
   $value = $db->getCoach('adresse-coach@gmail.com'); // On prend le coach d'id 966
 
-  echo '<pre>' . var_export($value, true) . '</pre>';
-
-
-
               if ($expected->getLienPhoto() == $value->getLienPhoto()) {
                 printf("LienPhoto OK <br>");
                 
