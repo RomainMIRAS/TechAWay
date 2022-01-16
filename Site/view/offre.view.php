@@ -65,26 +65,26 @@
 <p>L'offre se nomme <?php echo "$nom"; ?> et à été crée le <?php echo "$date"; ?>.</p>
 
 <h2>Information sur les renseignement diverse : </h2>
-     <ol>
+     <ul>
       <li>L'entreprise se situe en : <?php echo "$pays"; ?></li>
       <li>Accepte les candidat étranger ? : <?php echo "$travailleEtranger"; ?></li>
       <li>Secteur de l'emploie : <?php echo "$secteur"; ?></li>
       <li>Type de contrat : <?php echo "$typeContrat"; ?></li>
       <li>Poste visé : <?php echo "$poste"; ?></li>
-     </ol>
+     </ul>
 
 <h2>Information sur les compétences attendue : </h2>
-     <ol>
+     <ul>
       <li>Niveau d'étude attendue : <?php echo "$niveauEtude"; ?></li>
       <li>Langue à maitriser : 
-      <ol>
+      <ul>
       <?php foreach ($langue as $la) {echo "<li>$la</li>";} ?>
-      </ol></li>
+      </ul></li>
       <li>Langage informatique à connaître : 
-      <ol>
+      <ul>
       <?php foreach ($langage as $la) {echo "<li>$la</li>";} ?>
-      </ol></li>
-     </ol>
+      </ul></li>
+     </ul>
       
       <form action="offre.ctrl.php" method="POST">
          <input type="hidden" class="action" name="action" value="supprN">
