@@ -39,7 +39,7 @@ try {
                       }
 
 
-if ($expected->langeParle() == $value->langeParle()) {
+if ($expected->getlangeParle() == $value->getlangeParle()) {
                     printf("Langue parler OK <br>");
                     
                         } else {
