@@ -15,6 +15,10 @@ include_once(__DIR__."/../model/Candidat.class.php");
 
 $db = DAO::get(); // on récupère l'unique instance
 
+session_start();
+$candidat = $db->getCandidat($_SESSION['utilisateur']->getMail()); //On récupère le candidat
+session_write_close();
+
 ///////////////////////////////////////////////////////////////////////////////
 // Protection Contre Erreurs
 ///////////////////////////////////////////////////////////////////////////////
@@ -29,7 +33,7 @@ if (!isset($_SESSION['utilisateur'])) header('Location: authentification.ctrl.ph
 if (!is_a($_SESSION['utilisateur'],"Candidat")) header('Location: main.ctrl.php');
 
 // Si il a déjà rempli le formulaire
-if ($_SESSION['utilisateur']->getEtape() != 2) header('Location: recrutement-candidat.ctrl.php');
+if ($candidat->getEtape() != 2) header('Location: recrutement-candidat.ctrl.php');
 
 session_write_close();
 
@@ -38,9 +42,7 @@ session_write_close();
 // Déclaration de variable
 ///////////////////////////////////////////////////////////////////////////////
 
-session_start();
-$candidat = $db->getCandidat($_SESSION['utilisateur']->getMail());
-session_write_close();
+
 $offre = $db->getOffre($candidat->getLienLM());
 
 $view = new View();
