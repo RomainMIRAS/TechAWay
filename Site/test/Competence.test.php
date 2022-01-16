@@ -17,7 +17,7 @@ try {
   //Test de la récupération d'un compétence
   print("Accès à un compétence : <br>");
   
-  $expected = new Competence(26, 'bac+3', 'anglais, francais', 'c,c++,python'); // competence attendue
+  $expected = new Competence(26, 'bac+3', 'anglais,francais', 'c,c++,python'); // competence attendue
   $value = $db->getCompetence(4); // On prend la competence d'id 26 (ici 4 est le lien et non l'id)
 
 
@@ -47,8 +47,6 @@ if ($db->conversionArrayString($expected->getlangeParle()) == $db->conversionArr
                     printf("Langue parler OK <br>");
                     
                         } else {
-                          printf("%s", $db->conversionArrayString($expected->getlangeParle()));
-                          printf("%s", $db->conversionArrayString($value->getlangeParle()));
                           printf("Langue not OK : <br> otenue : ");
                             foreach($value->getlangeParle() as $ll) {
                               printf("- ");
