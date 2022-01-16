@@ -52,7 +52,7 @@
             <?php foreach (array_keys($listeOffreMatch) as $key) : ?> <!-- pour chaque candidat -->
                 <?php if ($key!=false): ?>
                     <tr> <!-- affichage du nom, prenom, mail...etc du candidat -->
-                        <td><h2><?= $listeOffreMatch[$key]->getNomOffre() ?></h2></td>
+                        <td><h3><?= $listeOffreMatch[$key]->getNomOffre() ?></h3></td>
                         <td><?= $listeOffreMatch[$key]->getDateOffre() ?></td>
                         <td><?= $listeOffreMatch[$key]->getDetailOffre()->getSecteur() ?></td>
                         <td><?= $listeOffreMatch[$key]->getDetailOffre()->getPoste() ?></td>
