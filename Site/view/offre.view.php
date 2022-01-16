@@ -77,13 +77,13 @@
      <ol>
       <li>Niveau d'étude attendue : <?php echo "$niveauEtude"; ?></li>
       <li>Langue à maitriser : 
-      <ul>
+      <ol>
       <?php foreach ($langue as $la) {echo "<li>$la</li>";} ?>
-      </ul></li>
+      </ol></li>
       <li>Langage informatique à connaître : 
-      <ul>
+      <ol>
       <?php foreach ($langage as $la) {echo "<li>$la</li>";} ?>
-      </ul></li>
+      </ol></li>
      </ol>
       
       <form action="offre.ctrl.php" method="POST">
