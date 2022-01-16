@@ -52,14 +52,14 @@
             <?php foreach (array_keys($listeOffreMatch) as $key) : ?> <!-- pour chaque candidat -->
                 <?php if ($key!=false): ?>
                     <tr> <!-- affichage du nom, prenom, mail...etc du candidat -->
-                        <td><h3><?= $listeOffreMatch[$key]->getNomOffre() ?></h3></td>
-                        <td><?= $listeOffreMatch[$key]->getDateOffre() ?></td>
-                        <td><?= $listeOffreMatch[$key]->getDetailOffre()->getSecteur() ?></td>
-                        <td><?= $listeOffreMatch[$key]->getDetailOffre()->getPoste() ?></td>
-                        <td><?= $listeOffreMatch[$key]->getEntreprise()->getNom() ?></td>
-                        <td><?= $listeOffreMatch[$key]->getEntreprise()->getTelephone() ?></td>
-                        <td><?= $listeOffreMatch[$key]->getEntreprise()->getMail() ?></td>
-                        <td><?= round((($key+473)*100)/(616)) ?>%</td>
+                        <td><h2><?= $listeOffreMatch[$key]->getNomOffre() ?></h2></td>
+                        <td><h3><?= $listeOffreMatch[$key]->getDateOffre() ?></h3></td>
+                        <td><h3><?= $listeOffreMatch[$key]->getDetailOffre()->getSecteur() ?></h3></td>
+                        <td><h3><?= $listeOffreMatch[$key]->getDetailOffre()->getPoste() ?></h3></td>
+                        <td><h3><?= $listeOffreMatch[$key]->getEntreprise()->getNom() ?></h3></td>
+                        <td><h3><?= $listeOffreMatch[$key]->getEntreprise()->getTelephone() ?></h3></td>
+                        <td><h3><?= $listeOffreMatch[$key]->getEntreprise()->getMail() ?></h3></td>
+                        <td><h3><?= round((($key+473)*100)/(616)) ?>%</h3></td>
                         <td class="sup">
                           <form action="RechercheEntreprise.ctrl.php" method="POST">
                             <input type="hidden" class="action" name="action" value="ajouteN">
