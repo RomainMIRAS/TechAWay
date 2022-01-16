@@ -42,22 +42,22 @@
                 <th>Date de l'offre</th>
                 <th>Secteur</th>
                 <th>Poste</th>
-                <th>Nom entreprise</th>
+                <th>Pays de l'entreprise</th>
                 <th>Telephone contact</th>
                 <th>Mail contact</th>
-                <th>Score de match</th>
+                <th>Accepte les étrangers</th>
                 <th>Postuler</th>
             </tr>
             <?php krsort($listeOffreMatch) ?>
-            <?php foreach (array_keys($listeOffreMatch) as $key) : ?> <!-- pour chaque candidat -->
+            <?php foreach (array_keys($listeOffreMatch) as $key) : ?> <!-- pour chaque offre -->
                 <?php if ($key!=false): ?>
-                    <tr> <!-- affichage du nom, prenom, mail...etc du candidat -->
+                    <tr> <!-- affichage du nom, date, secteur...etc de l'offre -->
                         <td><h2><?= $listeOffreMatch[$key]->getNomOffre() ?></h2></td>
                         <td><h3><?= $listeOffreMatch[$key]->getDateOffre() ?></h3></td>
                         <td><h3><?= $listeOffreMatch[$key]->getDetailOffre()->getSecteur() ?></h3></td>
                         <td><h3><?= $listeOffreMatch[$key]->getDetailOffre()->getPoste() ?></h3></td>
-                        <td><h3><?= $listeOffreMatch[$key]->getEntreprise()->getNom() ?></h3></td>
-                        <td><h3><?= $listeOffreMatch[$key]->getEntreprise()->getTelephone() ?></h3></td>
+                        <td><h3><?= $listeOffreMatch[$key]->getEntreprise()->getPays() ?></h3></td>
+                        <td><h3><?= $listeOffreMatch[$key]->getDetailOffre()->getTravEtranger() ?></h3></td>
                         <td><h3><?= $listeOffreMatch[$key]->getEntreprise()->getMail() ?></h3></td>
                         <td><h3><?= round((($key+473)*100)/(616)) ?>%</h3></td>
                         <td class="sup">
