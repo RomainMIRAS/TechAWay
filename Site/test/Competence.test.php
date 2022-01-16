@@ -1,4 +1,8 @@
 <?php
+////////////////////////////////////////////////////////////////////
+//Test de la classe Competence
+////////////////////////////////////////////////////////////////////
+
 require_once(__DIR__.'/../model/DAO.class.php');
 require_once(__DIR__.'/../model/Competence.class.php');
 
@@ -14,23 +18,21 @@ try{
 
 
 try {
-  $dao = new DAO(); // Instancie l'objet DAO
-
-
-  //Test de la récupération d'un compétence
+  //Test de la récupération d'une compétence
   print("Accès à un compétence : <br>");
   
-  $expected = new Competence(4, 'IUT 2', 'Anglais, Francais, Russian', 'C++,Java,Css,HTML,Javascript'); // competence attendue
-  printf("%S <br>", $expected->getNvEtude);
-  $value = $dao->getCompetence(4); // On prend la competence d'id 4
+  $expected = new Competence(26, 'bac+3', 'anglais,francais', 'c,c++,python'); // competence attendue
+  $value = $db->getCompetence(4); // competence témoin
 
+
+//On test toutes les fonctions en comparant les résultats obtenue de ceux attendue
 
               if ($expected->getId() == $value->getId()) {
                 printf("Id compétence OK <br>");
                 
                     } else {
-                      printf("Id compétence not OK, otenue : %s; attendu : %s", $expected->getMail(), $value->getMail());
-                      throw new Exception("Lecture Id compétence de la competence N°4 incorrecte");
+                      printf("Id compétence not OK, otenue : %s; attendu : %s", $expected->getId(), $value->getId());
+                      throw new Exception("<br>Lecture Id compétence de la competence N°4 incorrecte");
                     }
 
                     
@@ -38,28 +40,51 @@ try {
                   printf("Niveau d'étude OK <br>");
                   
                       } else {
-                        printf("Niveau d'étude not OK, otenue : %s; attendu : %s", $expected->getTelephone(), $value->getTelephone());
-                        throw new Exception("Lecture Niveau d'étude de la competence N°4 incorrecte");
+                        printf("Niveau d'étude not OK, otenue : %s; attendu : %s", $expected->getNvEtude(), $value->getNvEtude());
+                        throw new Exception("<br>Lecture Niveau d'étude de la competence N°4 incorrecte");
                       }
 
 
-if ($expected->langeParle() == $value->langeParle()) {
+
+//conversionStringArray
+//
+
+if ($db->conversionArrayString($expected->getlangeParle()) == $db->conversionArrayString($value->getlangeParle())) {
                     printf("Langue parler OK <br>");
                     
                         } else {
-                          printf("Langue not OK, otenue : %s; attendu : %s", $expected->getAge(), $value->getAge());
-                          throw new Exception("Lecture Langue de la competence N°4 incorrecte");
+                          printf("Langue not OK : <br> otenue : ");
+                            foreach($value->getlangeParle() as $ll) {
+                              printf("- ");
+                              printf("%s", $ll);
+                            }
+                            printf("<br>attendue : ");
+                            foreach($expected->getlangeParle() as $ll) {
+                              printf("- ");
+                              printf("%s", $ll);
+                            }
+                          throw new Exception("<br>Lecture Langue de la competence N°4 incorrecte");
                         }
 
 
 if ($expected->getLangageAcquis() == $value->getLangageAcquis()) {
                       printf("Langage  OK <br>");
                         }else {
-                            printf("Langage not OK, otenue : %s; attendu : %s", $expected->getLangageAcquis(), $value->getLangageAcquis());
-                            throw new Exception("Lecture Langage de la competence N°4 incorrecte");
+                            printf("Langage not OK, otenue : ");
+                            foreach($value->getLangageAcquis() as $ll) {
+                              printf("- ");
+                              printf("%s", $ll);
+                            }
+                            printf("<br>attendue : ");
+                            foreach($expected->getLangageAcquis() as $ll) {
+                              printf("- ");
+                              printf("%s", $ll);
+                            }
+                            throw new Exception("<br>Lecture Langage de la competence N°4 incorrecte");
                           }
+                          printf("<br>Tout est OK ! ");
 
-  } catch (Exception $e) {
+  } catch (Exception $e) {//si il y a erreur on affiche le message d'erreur correspondant
   print("\n*** Erreur ***\n");
   print("Erreur : ".$e->getMessage()."\n");
 }

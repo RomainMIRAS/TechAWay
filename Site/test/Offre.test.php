@@ -1,5 +1,9 @@
 
 <?php
+////////////////////////////////////////////////////////////////////
+//Test de la classe Offre
+////////////////////////////////////////////////////////////////////
+
 require_once(__DIR__.'/../model/DAO.class.php');
 
 try{
@@ -14,49 +18,67 @@ try{
 
 
 try {
-  $dao = new DAO(); // Instancie l'objet DAO
 
 
-  //Test de la récupération d'un compétence
+  //Test de la récupération d'une offre
   print("Accès à une offre : <br>");
   
-  $expected = new Offre('IUT 2', 'Anglais, Francais, Russian', 'C++,Java,Css,HTML,Javascript'); // competence attendue
-  $value = $dao->getOffre(4); // On prend la competence d'id 4
+  $entre = $db->getEntreprise(2);
+  $compet = $db->getCompetence(2);
+  $rensei = $db->getRenseignement(2);
+  $expected = new Offre(2, 'Front-End Developer', '2022-01-08', $entre, $compet, $rensei); // offre attendue
+  $value = $db->getOffre(2); // offre témoin
 
+
+//On test toutes les fonctions en comparant les résultats obtenue de ceux attendue
 
               if ($expected->getId() == $value->getId()) {
-                printf("Id compétence OK <br>");
+                printf("Id offre OK <br>");
                 
                     } else {
-                      printf("Id compétence not OK, otenue : %s; attendu : %s", $expected->getMail(), $value->getMail());
-                      throw new Exception("Lecture Id compétence de la competence N°4 incorrecte");
+                      printf("Id offre not OK, otenue : %s; attendu : %s", $expected->getId(), $value->getId());
+                      throw new Exception("Lecture Id de la offre N°2 incorrecte");
                     }
 
-                    if ($expected->langeParle() == $value->langeParle()) {
-                    printf("Langue parler OK <br>");
+                    if ($expected->getNomOffre() == $value->getNomOffre()) {
+                    printf("Nom OK <br>");
                     
                         } else {
-                          printf("Langue not OK, otenue : %s; attendu : %s", $expected->getAge(), $value->getAge());
-                          throw new Exception("Lecture Langue de la competence N°4 incorrecte");
+                          printf("Nom not OK, otenue : %s; attendu : %s", $expected->getNomOffre(), $value->getNomOffre());
+                          throw new Exception("Lecture Nom de la offre N°2 incorrecte");
                         }
 
                         
-if ($expected->getNvEtude() == $value->getNvEtude()) {
-                  printf("Niveau d'étude OK <br>");
+if ($expected->getDateOffre() == $value->getDateOffre()) {
+                  printf("Date OK <br>");
                   
                       } else {
-                        printf("Niveau d'étude not OK, otenue : %s; attendu : %s", $expected->getTelephone(), $value->getTelephone());
-                        throw new Exception("Lecture Niveau d'étude de la competence N°4 incorrecte");
+                        printf("Date not OK, otenue : %s; attendu : %s", $expected->getDateOffre(), $value->getDateOffre());
+                        throw new Exception("Lecture Date de la offre N°2 incorrecte");
                       }
 
-if ($expected->getLangageAcquis() == $value->getLangageAcquis()) {
-                      printf("Langage  OK <br>");
+if ($expected->getDetailOffre() == $value->getDetailOffre()) {
+                      printf("DetailOffre  OK <br>");
                         }else {
-                            printf("Langage not OK, otenue : %s; attendu : %s", $expected->getLangageAcquis(), $value->getLangageAcquis());
-                            throw new Exception("Lecture Langage de la competence N°4 incorrecte");
+                            printf("DetailOffre not OK, otenue : %s; attendu : %s", $expected->getDetailOffre(), $value->getDetailOffre());
+                            throw new Exception("Lecture DetailOffre de la offre N°2 incorrecte");
                           }
 
-  } catch (Exception $e) {
+                          if ($expected->getCompetenceRecherche() == $value->getCompetenceRecherche()) {
+                      printf("CompetenceRecherche  OK <br>");
+                        }else {
+                            printf("CompetenceRecherche not OK, otenue : %s; attendu : %s", $expected->getCompetenceRecherche(), $value->getCompetenceRecherche());
+                            throw new Exception("Lecture CompetenceRecherche de la offre N°2 incorrecte");
+                          }
+
+                          if ($expected->getEntreprise() == $value->getEntreprise()) {
+                      printf("Entreprise  OK <br>");
+                        }else {
+                            printf("Entreprise not OK, otenue : %s; attendu : %s", $expected->getEntreprise(), $value->getEntreprise());
+                            throw new Exception("Lecture Entreprise de la offre N°2 incorrecte");
+                          }
+printf("<br>Tout est OK ! ");
+  } catch (Exception $e) { //si il y a erreur on affiche le message d'erreur correspondant
   print("\n*** Erreur ***\n");
   print("Erreur : ".$e->getMessage()."\n");
 }
