@@ -52,7 +52,7 @@
             <?php foreach (array_keys($listeOffreMatch) as $key) : ?> <!-- pour chaque offre -->
                 <?php if ($key!=false): ?>
                     <tr> <!-- affichage du nom, date, secteur...etc de l'offre -->
-                        <td><h1><?= $listeOffreMatch[$key]->getNomOffre() ?></h1></td>
+                        <td><h2><?= $listeOffreMatch[$key]->getNomOffre() ?></h2></td>
                         <td><h3><?= $listeOffreMatch[$key]->getDateOffre() ?></h3></td>
                         <td><h3><?= $listeOffreMatch[$key]->getDetailOffre()->getSecteur() ?></h3></td>
                         <td><h3><?= $listeOffreMatch[$key]->getDetailOffre()->getPoste() ?></h3></td>
