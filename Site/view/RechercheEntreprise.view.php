@@ -38,15 +38,15 @@
         <h1>Offre(s) triée selon vos préférences</h1>
         <table>  <!-- Tableau des offres -->
             <tr>
-                <th><h1>Nom de l'offre</h1></th>
-                <th>Date de l'offre</th>
-                <th>Secteur</th>
-                <th>Poste</th>
-                <th>Pays de l'entreprise</th>
-                <th>Accepte les étrangers</th>
-                <th>Mail contact</th>
-                <th>Score de match</th>
-                <th>Postuler</th>
+                <th><h2>Nom de l'offre</h2></th>
+                <th><h2>Date de l'offre</h2></th>
+                <th><h2>Secteur</h2></th>
+                <th><h2>Poste</h2></th>
+                <th><h2>Pays de l'entreprise</h2></th>
+                <th><h2>Accepte les étrangers</h2></th>
+                <th><h2>Mail contact</h2></th>
+                <th><h2>Score de match</h2></th>
+                <th><h2>Postuler</h2></th>
             </tr>
             <?php krsort($listeOffreMatch) ?>
             <?php foreach (array_keys($listeOffreMatch) as $key) : ?> <!-- pour chaque offre -->
