@@ -77,11 +77,11 @@
      <ol style="list-style: inside;">
       <li>Niveau d'étude attendue : <?php echo "$niveauEtude"; ?></li>
       <li>Langue à maitriser : 
-      <ol style="list-style: inside;">
+      <ol>
       <?php foreach ($langue as $la) {echo "<li>$la</li>";} ?>
       </ol></li>
       <li>Langage informatique à connaître : 
-      <ol style="list-style: inside;">
+      <ol>
       <?php foreach ($langage as $la) {echo "<li>$la</li>";} ?>
       </ol></li>
      </ol>
