@@ -32,7 +32,7 @@ if (!isset($_SESSION['utilisateur'])) header('Location: authentification.ctrl.ph
 // Si utilisateur est un coach
 if (!is_a($_SESSION['utilisateur'],"Candidat")) header('Location: main.ctrl.php');
 
-// Si il a déjà rempli le formulaire
+// Si il a pas encore choissi une offre
 if ($candidat->getEtape() != 2) header('Location: recrutement-candidat.ctrl.php');
 
 session_write_close();
@@ -43,25 +43,30 @@ session_write_close();
 ///////////////////////////////////////////////////////////////////////////////
 
 
-$offre = $db->getOffre($candidat->getLienLM());
+$offre = $db->getOffre($candidat->getLienLM()); //On récupère l'offre à laquelle le candidat à postuler
+
+///////////////////////////////////////////////////////////////////////////////
+// Partie View
+///////////////////////////////////////////////////////////////////////////////
 
 $view = new View();
 
-$action = 't';
+
+//On gère l'abandon d'une offre
 $action = $_POST['action'] ?? '';
 $message = '';
-if ($action=='supprY') {
+if ($action=='supprY') { //Si il veut la supprimer
         $candidat->setLienLM("");
         
         $candidat->setEtape(1);
-        $db->updateCandidat($candidat);
-        header("Location: recrutement-candidat.ctrl.php");
+        $db->updateCandidat($candidat); //On supprime et on actualise le candidat
+        header("Location: recrutement-candidat.ctrl.php"); // on redirige vers la selection d'une offre
 }
 
+// Charge la vue
 $view->assign('offre',$offre);
 $view->display("offre.view.php");
 
-// Fin du code à ajouter ]]
 
 ?>
 

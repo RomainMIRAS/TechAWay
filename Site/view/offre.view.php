@@ -38,49 +38,35 @@
     <h1>Voici les informations sur l'offre à laquelle vous avez postulé<h1/>
 
 
-    <?php $date = $offre->getDateOffre(); 
+    <?php //On récupère toutes les infos sur l'offre
+
+    //Info générale
+    $date = $offre->getDateOffre(); 
     $nom = $offre->getNomOffre(); 
 
-    //Paramètre en lien avec l'entreprise
-    $nomEntreprise = $offre->getEntreprise()->getNom();
-    $mailEntreprise = $offre->getEntreprise()->getMail();
-    $telephoneEntreprise = $offre->getEntreprise()->getTelephone();
-    $villeEntreprise = $offre->getEntreprise()->getVille();
-    $paysEntreprise = $offre->getEntreprise()->getPays();
-    
-    //Paramètre en lien avec les renseignement
+    //Info en lien avec les renseignement
+    $pays = $offre->getEntreprise()->getPays();
     $travailleEtranger = $offre->getDetailOffre()->getTravEtranger();
     $secteur = $offre->getDetailOffre()->getSecteur();
     $typeContrat = $offre->getDetailOffre()->getTypeContrat();
     $poste = $offre->getDetailOffre()->getPoste();
     $typeEntreprise = $offre->getDetailOffre()->getTypeEntreprise();
     
-    //Paramètre en lien avec les competence
+    //Info en lien avec les competence
     $niveauEtude = $offre->getCompetenceRecherche()->getNvEtude();
     $langue = $offre->getCompetenceRecherche()->getlangeParle();
     $langage = $offre->getCompetenceRecherche()->getLangageAcquis();
-    
-    
     ?>
     
 
                           
-     <h2>Information générale : </h2>
+                          <!-- On affiche toutes les infos sur l'offre -->
+<h2>Information générale : </h2>
 <p>L'offre se nomme <?php echo "$nom"; ?> et à été crée le <?php echo "$date"; ?>.</p>
-
-
-<h2>Information sur l'entreprise qui à crée l'offre : </h2>
-     <ol>
-     <li>Nom : <?php echo "$nomEntreprise"; ?></li>
-     <li>Mail : <?php echo "$mailEntreprise"; ?></li>
-     <li>Telephone : <?php echo "$telephoneEntreprise"; ?></li>
-      <li>Ville : <?php echo "$villeEntreprise"; ?></li>
-      <li>Pays : <?php echo "$paysEntreprise"; ?></li>
-      <li>Taille de l'entreprise : <?php echo "$typeEntreprise"; ?></li>
-     </ol>
 
 <h2>Information sur les renseignement diverse : </h2>
      <ol>
+      <li>L'entreprise se situe en : <?php echo "$pays"; ?></li>
       <li>Accepte les candidat étranger ? : <?php echo "$travailleEtranger"; ?></li>
       <li>Secteur de l'emploie : <?php echo "$secteur"; ?></li>
       <li>Type de contrat : <?php echo "$typeContrat"; ?></li>
@@ -101,9 +87,9 @@
      </ol>
       
       <form action="offre.ctrl.php" method="POST">
-                            <input type="hidden" class="action" name="action" value="supprN">
-                            <button type="submit" class="candidatDeleteBtn">Abandonner l'offre</button>
-                          </form>
+         <input type="hidden" class="action" name="action" value="supprN">
+         <button type="submit" class="candidatDeleteBtn">Abandonner l'offre</button>
+      </form>
       
     </main>
 
@@ -113,61 +99,20 @@
 
 
   </body>
+
+  
   <script src="../framework/jquery-3.6.0.min.js"></script>
   <script>
     $(window).ready(function() {
 
-      $(".candidatDeleteBtn").click(function() { /* Affichage d'une fenêtre de confirmation pour la suppression d'un candidat */
+      $(".candidatDeleteBtn").click(function() { /* Affichage d'une fenêtre de confirmation pour l'abandon d'une offre */
         if (confirm("Etes-vous sûr de vouloir abandonner cette offre ?")) {
           $(".action").val("supprY");
         } else {
           $(".action").val("supprN");
         }
       });
-
-      $(".entrepriseDeleteBtn").click(function() { /* Affichage d'une fenêtre de confirmation pour la suppression d'une entreprise */
-        if (confirm("Etes-vous sûr de vouloir supprimer cette entreprise ?")) {
-          $(".entrepriseAction").val("deleteY");
-        } else {
-          $(".entrepriseAction").val("deleteN");
-        }
       });
 
-      $(".offreDeleteBtn").click(function() { /* Affichage d'une fenêtre de confirmation pour la suppression d'une offre */
-        if (confirm("Etes-vous sûr de vouloir supprimer cette offre ?")) {
-          $(".offreAction").val("deleteY");
-        } else {
-          $(".offreAction").val("deleteN");
-        }
-      });
-
-      /* Modifier candidat */
-      $(".editCandidatSection").hide();
-      $(".editBtn").click(function() {
-        $(".editCandidatSection").show();
-      });
-      $(".editCandidatClose").click(function() {
-        $(".editCandidatSection").hide();
-      });
-
-      /* Ajouter entreprise */
-      $("#addEntrepriseSection").hide();
-      $("#addEntrepriseBtn").click(function() {
-        $("#addEntrepriseSection").show();
-      });
-      $("#addEntrepriseClose").click(function() {
-        $("#addEntrepriseSection").hide();
-      });
-
-      /* Ajouter offre */
-      $("#addOffreSection").hide();
-      $("#addOffreBtn").click(function() {
-        $("#addOffreSection").show();
-      });
-      $("#addOffreClose").click(function() {
-        $("#addOffreSection").hide();
-      });
-
-    });
   </script>
 </html>
