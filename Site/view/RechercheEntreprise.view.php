@@ -38,7 +38,7 @@
         <h1>Offre(s) triée selon vos préférences</h1>
         <table>  <!-- Tableau des offres -->
             <tr>
-                <th>Nom de l'offre</th>
+                <th><h1>Nom de l'offre</h1></th>
                 <th>Date de l'offre</th>
                 <th>Secteur</th>
                 <th>Poste</th>
