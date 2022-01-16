@@ -66,18 +66,18 @@
 
 <h2>Information sur les renseignement diverse : </h2>
      <ol>
-      <li>L'entreprise se situe en : <?php echo "$pays</br>"; ?></li>
+      <li>L'entreprise se situe en : <?php echo "$pays"; ?></li>
       <li>Accepte les candidat étranger ? : <?php if ($travailleEtranger) { echo "Oui";} else {echo "Non";} ?></li>
-      <li>Secteur de l'emploie : <?php echo "$secteur</br>"; ?></li>
-      <li>Type de contrat : <?php echo "$typeContrat</br>"; ?></li>
-      <li>Poste visé : <?php echo "$poste</br>"; ?></li>
+      <li>Secteur de l'emploie : <?php echo "$secteur"; ?></li>
+      <li>Type de contrat : <?php echo "$typeContrat"; ?></li>
+      <li>Poste visé : <?php echo "$poste"; ?></li>
      </ol>
 
 <h2>Information sur les compétences attendue : </h2>
      <ol>
       <li>Niveau d'étude attendue : <?php echo "$niveauEtude"; ?></li>
       <li>Langue à maitriser : 
-      <ol>
+      <ol list-style = "none">
       <?php foreach ($langue as $la) {echo "<li>$la</li>";} ?>
       </ol></li>
       <li>Langage informatique à connaître : 
