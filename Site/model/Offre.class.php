@@ -22,6 +22,8 @@ class Offre {
     //$this->candidats = null;
   }
 
+
+//Tout les getter pour recupérer les attributs
   function getId() : int {
     return $this->id;
   }
@@ -51,7 +53,7 @@ class Offre {
   }
 
 
-
+//Tout les setter pour recupérer les attributs
   function setNomOffre(string $nomOffre) : void {
     $this->nomOffre = $nomOffre;
   }

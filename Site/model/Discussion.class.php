@@ -17,6 +17,7 @@ class Discussion {
     $this->messages = null;
   }
 
+//Tout les getter pour recupérer les attributs
   function getId() : int {
     return $this->id;
   }
@@ -35,7 +36,7 @@ class Discussion {
 
 
 
-
+//Tout les setter pour recupérer les attributs
   function setDateDiscussion(string $dateDiscussion) : void {
     $this->dateDiscussion = $dateDiscussion;
   }

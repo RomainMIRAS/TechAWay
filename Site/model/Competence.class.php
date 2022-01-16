@@ -16,12 +16,13 @@ class Competence {
     $this->langageAcquis = $this->conversionStringArray($langageAcquis);
   }
 
+//fonction utilitaire pour transformer une chaine de caractère en tableau en séparant à chaque virgule
   function conversionStringArray(string $chaine){
     $arrayChaine = explode(",",$chaine);
     return $arrayChaine;
   }
 
-
+//Tout les getter pour recupérer les attributs
   function getId() : int {
     return $this->id;
   }
@@ -38,6 +39,8 @@ class Competence {
     return $this->langageAcquis;
   }
 
+
+//Tout les setter pour recupérer les attributs
   function setNvEtude(string $nvEtude) : void {
     $this->nvEtude = $nvEtude;
   }

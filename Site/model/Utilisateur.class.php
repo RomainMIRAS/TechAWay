@@ -20,6 +20,8 @@ abstract class Utilisateur {
     $this->age = $age;
     $this->dateCreation = $dateCreation;
   }
+
+  //Tout les getter pour recupérer les attributs
   function getNom() : string {
     return $this->nom;
   }
@@ -50,7 +52,7 @@ abstract class Utilisateur {
 
 
 
-
+//Tout les setter pour recupérer les attributs
   function setNom(string $nom) : void {
     $this->nom = $nom;
   }

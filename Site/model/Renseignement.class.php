@@ -22,6 +22,8 @@ class Renseignement {
     $this->typeEntreprise = $typeEntreprise;
   }
 
+
+//Tout les getter pour recupérer les attributs
   function getId() : int {
     return $this->id;
   }
@@ -47,6 +49,8 @@ class Renseignement {
   }
 
 
+
+//Tout les setter pour recupérer les attributs
   function setTravEtranger(bool $travEtranger) : void {
     $this->travEtranger = $travEtranger;
   }

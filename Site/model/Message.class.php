@@ -13,6 +13,8 @@ class Message {
     $this->discussion = $discussion;
   }
 
+
+//Tout les getter pour recupérer les attributs
   function getId() : int {
     return $this->id;
   }
@@ -31,7 +33,7 @@ class Message {
 
 
 
-
+//Tout les setter pour recupérer les attributs
   function setContenuMessage(string $contenuMessage) : void {
     $this->contenuMessage = $contenuMessage;
   }

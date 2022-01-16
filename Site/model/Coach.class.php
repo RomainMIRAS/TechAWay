@@ -9,9 +9,10 @@ class Coach extends Utilisateur {
   function __construct(string $mail, string $password,string $nom='', string $prenom='', string $telephone='', int $age=0, string $lienPhoto='',string $dateCreation='') {
     parent::__construct($mail, $password, $nom, $prenom, $age, $telephone,$dateCreation);
     $this->lienPhoto = $lienPhoto;
-    //$this->discussions = null;
   }
 
+
+//Tout les getter pour recupérer les attributs
   function getLienPhoto() : string {
     return $this->lienPhoto;
   }
@@ -21,7 +22,7 @@ class Coach extends Utilisateur {
   }
 
 
-
+//Tout les setter pour recupérer les attributs
   function setLienPhoto(string $lienPhoto) : void {
     $this->lienPhoto = $lienPhoto;
   }

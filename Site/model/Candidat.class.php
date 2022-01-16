@@ -15,7 +15,6 @@ class Candidat extends Utilisateur {
   private array $discussions;           //discussions auquelle participe le candidat
 
   // Contructeur
-  // Revoir Constructeur
 function __construct( string $mail, string $password,string $nom='', 
                       string $prenom='', int $age=0, string $telephone='', 
                       string $lienCV='', string $lienLM='', int $etape = 0, 
@@ -32,6 +31,8 @@ function __construct( string $mail, string $password,string $nom='',
     // $this->discussions = null;
   }
 
+
+//Tout les getter pour recupérer les attributs
   function getPays() : string {
     return $this->pays;
   }
@@ -65,6 +66,8 @@ function __construct( string $mail, string $password,string $nom='',
   }
 
 
+
+//Tout les setter pour recupérer les attributs
   function setPays(string $pays) : void {
     $this->pays = $pays;
   }

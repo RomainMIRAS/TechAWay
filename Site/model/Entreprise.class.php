@@ -21,6 +21,8 @@ class Entreprise {
     //$this->offres = null;
   }
 
+
+//Tout les getter pour recupérer les attributs
   function getId() : int {
     return $this->id;
   }
@@ -50,7 +52,7 @@ class Entreprise {
   }
 
 
-
+//Tout les setter pour recupérer les attributs
   function setNom(string $nom) : void {
     $this->nom = $nom;
   }
