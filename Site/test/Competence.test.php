@@ -17,8 +17,8 @@ try {
   //Test de la récupération d'un compétence
   print("Accès à un compétence : <br>");
   
-  $expected = new Competence(4, 'IUT 2', 'Anglais, Francais, Russian', 'C++,Java,Css,HTML,Javascript'); // competence attendue
-  $value = $db->getCompetence(4); // On prend la competence d'id 4
+  $expected = new Competence(26, 'IUT 2', 'Anglais, Francais, Russian', 'C++,Java,Css,HTML,Javascript'); // competence attendue
+  $value = $db->getCompetence(4); // On prend la competence d'id 26 (ici 4 est le lien et non l'id)
 
 
               if ($expected->getId() == $value->getId()) {
