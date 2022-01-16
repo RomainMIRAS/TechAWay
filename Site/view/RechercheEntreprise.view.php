@@ -48,7 +48,7 @@
                 <th><h2>Score de match</h2></th>
                 <th><h2>Postuler</h2></th>
             </tr>
-            <?php krsort($listeOffreMatch) ?>
+            <?php krsort($listeOffreMatch) ?> <!-- On trie les offres par score décroissant -->
             <?php foreach (array_keys($listeOffreMatch) as $key) : ?> <!-- pour chaque offre -->
                 <?php if ($key!=false): ?>
                     <tr> <!-- affichage du nom, date, secteur...etc de l'offre -->
