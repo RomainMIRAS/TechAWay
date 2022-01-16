@@ -48,7 +48,7 @@ if ($expected->getlangeParle() == $value->getlangeParle()) {
                               printf("- ");
                               printf("%s", $ll);
                             }
-                            printf("attendue : ");
+                            printf("\nattendue : ");
                             foreach($expected->getlangeParle() as $ll) {
                               printf("- ");
                               printf("%s", $ll);
