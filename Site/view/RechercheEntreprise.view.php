@@ -38,28 +38,28 @@
         <h1>Offre(s) triée(s) selon vos préférences</h1>
         <table>  <!-- Tableau des offres -->
             <tr>
-                <th><h2>Nom de l'offre</h2></th>
-                <th><h2>Date de l'offre</h2></th>
-                <th><h2>Secteur</h2></th>
-                <th><h2>Poste</h2></th>
-                <th><h2>Pays de l'entreprise</h2></th>
-                <th><h2>Accepte les étrangers</h2></th>
-                <th><h2>Type de contrat</h2></th>
-                <th><h2>Score de match</h2></th>
-                <th><h2>Postuler</h2></th>
+                <th>Nom de l'offre</th>
+                <th>Date de l'offre</th>
+                <th>Secteur</th>
+                <th>Poste</th>
+                <th>Pays de l'entreprise</th>
+                <th>Accepte les étrangers</th>
+                <th>Type de contrat</th>
+                <th>Score de match</th>
+                <th>Postuler</th>
             </tr>
             <?php krsort($listeOffreMatch) ?> <!-- On trie les offres par score décroissant -->
             <?php foreach (array_keys($listeOffreMatch) as $key) : ?> <!-- pour chaque offre -->
                 <?php if ($key!=false): ?>
                     <tr> <!-- affichage du nom, date, secteur...etc de l'offre -->
-                        <td><h2><?= $listeOffreMatch[$key]->getNomOffre() ?></h2></td>
-                        <td><h3><?= $listeOffreMatch[$key]->getDateOffre() ?></h3></td>
-                        <td><h3><?= $listeOffreMatch[$key]->getDetailOffre()->getSecteur() ?></h3></td>
-                        <td><h3><?= $listeOffreMatch[$key]->getDetailOffre()->getPoste() ?></h3></td>
-                        <td><h3><?= $listeOffreMatch[$key]->getEntreprise()->getPays() ?></h3></td>
-                        <td><h3><?php if ($listeOffreMatch[$key]->getDetailOffre()->getTravEtranger()) { echo "oui";} else { echo "non";} ?></h3></td>
-                        <td><h3><?= $listeOffreMatch[$key]->getDetailOffre()->getTypeContrat() ?></h3></td>
-                        <td><h3><?= round((($key+473)*100)/(616)) ?>%</h3></td>
+                        <td><?= $listeOffreMatch[$key]->getNomOffre() ?></td>
+                        <td><?= $listeOffreMatch[$key]->getDateOffre() ?></td>
+                        <td><?= $listeOffreMatch[$key]->getDetailOffre()->getSecteur() ?></td>
+                        <td><?= $listeOffreMatch[$key]->getDetailOffre()->getPoste() ?></td>
+                        <td><?= $listeOffreMatch[$key]->getEntreprise()->getPays() ?></td>
+                        <td><?php if ($listeOffreMatch[$key]->getDetailOffre()->getTravEtranger()) { echo "oui";} else { echo "non";} ?></td>
+                        <td><?= $listeOffreMatch[$key]->getDetailOffre()->getTypeContrat() ?></td>
+                        <td><?= round((($key+473)*100)/(616)) ?>%</td>
                         <td class="sup">
                           <form action="RechercheEntreprise.ctrl.php" method="POST">
                             <input type="hidden" class="action" name="action" value="ajouteN">
