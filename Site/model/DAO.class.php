@@ -122,7 +122,7 @@ class DAO {
 
 			$res = @pg_query($this->db, $r);
 
-			$req = pg_fetch_all($res);
+			$req = @pg_fetch_all($res);
 
 			if($res){
 				return intval($req[0]['currval']); //returne le id de l'offre cree
@@ -173,10 +173,10 @@ class DAO {
 		*/
 
 		try {
-		$req = pg_query($this->db,"SELECT adresseMail FROM UTILISATEUR");
+		$req = @pg_query($this->db,"SELECT adresseMail FROM UTILISATEUR");
 		// Affiche en clair l'erreur PDO si la requête ne peut pas s'exécuter
 
-		$table = pg_fetch_all($req);
+		$table = @pg_fetch_all($req);
 
 		$listeMail = array();
 		foreach ($table as $mail) {
@@ -205,7 +205,7 @@ class DAO {
 		//Requette SQL
 		$r = "SELECT password FROM utilisateur where adressemail='$mail';";
 
-		$q = pg_query($this->db, $r);
+		$q = @pg_query($this->db, $r);
 
 		$res = pg_fetch_row($q);
 
@@ -233,18 +233,18 @@ class DAO {
 			Fonction Qui retourne un Coach de adresse mail donnee ou false si il n'existe pas
 		*/
 		try {
-			$req = pg_query($this->db,"SELECT * from utilisateur where idutilisateur in (Select idCoach from coach) AND adressemail='$mail'");
+			$req = @pg_query($this->db,"SELECT * from utilisateur where idutilisateur in (Select idCoach from coach) AND adressemail='$mail'");
 		
-			$coachbf = pg_fetch_all($req);
+			$coachbf = @pg_fetch_all($req);
 
 
 			if (empty($coachbf)) {
 				return false;
 			}else{
 
-				$req = pg_query($this->db,"SELECT * FROM coach WHERE idcoach=". intVal($coachbf[0]['idutilisateur']) ."");
+				$req = @pg_query($this->db,"SELECT * FROM coach WHERE idcoach=". intVal($coachbf[0]['idutilisateur']) ."");
 
-				$coachUti = pg_fetch_all($req);
+				$coachUti = @pg_fetch_all($req);
 
 				$age = $coachbf[0]['age'];
 				$coach = new Coach(
@@ -274,17 +274,17 @@ class DAO {
 			Fonction Qui retourne un Candidat de adresse mail donnee ou false si il n'existe pas
 		*/
 		try {
-			$req = pg_query($this->db,"SELECT * from utilisateur where idutilisateur in (Select idcandidat from candidat) AND adressemail='$mail'");
+			$req = @pg_query($this->db,"SELECT * from utilisateur where idutilisateur in (Select idcandidat from candidat) AND adressemail='$mail'");
 		
-			$candidatbf = pg_fetch_all($req);
+			$candidatbf = @pg_fetch_all($req);
 
 
 			if (empty($candidatbf)) {
 				return false;
 			}else{
 
-				$req = pg_query($this->db,"SELECT * FROM candidat WHERE idcandidat=". intVal($candidatbf[0]['idutilisateur']) ."");
-				$candidatUti = pg_fetch_all($req);
+				$req = @pg_query($this->db,"SELECT * FROM candidat WHERE idcandidat=". intVal($candidatbf[0]['idutilisateur']) ."");
+				$candidatUti = @pg_fetch_all($req);
 
 				$compCand = $this->getCompetence($mail);
 				$rensCand = $this->getRenseignement($mail);
@@ -329,9 +329,9 @@ class DAO {
 		*/
 		
 		try {
-			$req = pg_query($this->db,"SELECT adressemail from utilisateur where idutilisateur in (select idcandidat from candidat)");
+			$req = @pg_query($this->db,"SELECT adressemail from utilisateur where idutilisateur in (select idcandidat from candidat)");
 		
-			$candidatsReq = pg_fetch_all($req);
+			$candidatsReq = @pg_fetch_all($req);
 
 			if (empty($candidatsReq)) {
 				return false;
@@ -362,9 +362,9 @@ class DAO {
 		*/
 
 		try {
-			$req = pg_query($this->db,"SELECT * from competence where link='$link'");
+			$req = @pg_query($this->db,"SELECT * from competence where link='$link'");
 		
-			$competenceRes = pg_fetch_all($req);
+			$competenceRes = @pg_fetch_all($req);
 
 			if (empty($competenceRes)) {
 				return false;
@@ -398,9 +398,9 @@ class DAO {
 				3) False si elle n'existe pas
 		*/
 		try {
-			$req = pg_query($this->db,"SELECT * from renseignement where link='$link'");
+			$req = @pg_query($this->db,"SELECT * from renseignement where link='$link'");
 		
-			$renseignementRes = pg_fetch_all($req);
+			$renseignementRes = @pg_fetch_all($req);
 
 			if (empty($renseignementRes)) {
 				return false;
@@ -433,9 +433,9 @@ class DAO {
 		*/
 
 		try {
-			$req = pg_query($this->db,"SELECT * from entreprise where identreprise=$id");
+			$req = @pg_query($this->db,"SELECT * from entreprise where identreprise=$id");
 		
-			$entrepriseRes = pg_fetch_all($req);
+			$entrepriseRes = @pg_fetch_all($req);
 
 			if (empty($entrepriseRes)) {
 				return false;
@@ -468,9 +468,9 @@ class DAO {
 		*/
 
 		try {
-			$req = pg_query($this->db,"SELECT idEntreprise from entreprise");
+			$req = @pg_query($this->db,"SELECT idEntreprise from entreprise");
 		
-			$entrepriseReq = pg_fetch_all($req);
+			$entrepriseReq = @pg_fetch_all($req);
 
 			if (empty($entrepriseReq)) {
 				return false;
@@ -498,9 +498,9 @@ class DAO {
 						 returne False sinon
 		*/
 		try {
-			$req = pg_query($this->db,"SELECT * from offre where idoffre=$id");
+			$req = @pg_query($this->db,"SELECT * from offre where idoffre=$id");
 		
-			$offreRes = pg_fetch_all($req);
+			$offreRes = @pg_fetch_all($req);
 
 			if (empty($offreRes)) {
 				return false;
@@ -536,9 +536,9 @@ class DAO {
 			Fonction Qui retourne l'ensemble des Offres
 		*/
 		try {
-			$req = pg_query($this->db,"SELECT idoffre from offre");
+			$req = @pg_query($this->db,"SELECT idoffre from offre");
 		
-			$offresReq = pg_fetch_all($req);
+			$offresReq = @pg_fetch_all($req);
 
 			if (empty($offresReq)) {
 				return false;
@@ -564,9 +564,9 @@ class DAO {
 			Fonction Qui retourne les nombre d'entreprises dans la base de donnees
 		*/
 		try {
-			$req = pg_query($this->db,"SELECT count(*) from entreprise");
+			$req = @pg_query($this->db,"SELECT count(*) from entreprise");
 		
-			$nombreReq = pg_fetch_all($req);
+			$nombreReq = @pg_fetch_all($req);
 
 			if (empty($nombreReq)) {
 				return false;
@@ -587,9 +587,9 @@ class DAO {
 			Fonction Qui retourne les nombre des Candidats dans la base de donnees
 		*/
 		try {
-			$req = pg_query($this->db,"SELECT count(*) from candidat");
+			$req = @pg_query($this->db,"SELECT count(*) from candidat");
 		
-			$nombreReq = pg_fetch_all($req);
+			$nombreReq = @pg_fetch_all($req);
 
 			if (empty($nombreReq)) {
 				return false;
@@ -610,9 +610,9 @@ class DAO {
 			Fonction Qui retourne le nombre des Offres dans la base de donnees
 		*/
 		try {
-			$req = pg_query($this->db,"SELECT count(*) from offre");
+			$req = @pg_query($this->db,"SELECT count(*) from offre");
 		
-			$nombreReq = pg_fetch_all($req);
+			$nombreReq = @pg_fetch_all($req);
 
 			if (empty($nombreReq)) {
 				return false;
@@ -683,7 +683,7 @@ class DAO {
 				tyeentreprise = '{$candidat->getRenseignement()->getTypeEntreprise()}'
 			where idrenseignement = {$candidat->getRenseignement()->getId()}";
 
-			$res = pg_query($this->db, $r);
+			$res = @pg_query($this->db, $r);
 
 			if($res){
 				return true;
@@ -732,7 +732,7 @@ class DAO {
 				tyeentreprise = '{$offre->getDetailOffre()->getTypeEntreprise()}'
 			where idrenseignement = {$offre->getDetailOffre()->getId()}";
 
-			$res = pg_query($this->db, $r);
+			$res = @pg_query($this->db, $r);
 
 			if($res){
 				return true;
@@ -761,7 +761,7 @@ class DAO {
 				ville = '{$entreprise->getVille()}'
 			where identreprise = {$entreprise->getId()}";
 
-			$res = pg_query($this->db, $r);
+			$res = @pg_query($this->db, $r);
 
 			if($res){
 				return true;
