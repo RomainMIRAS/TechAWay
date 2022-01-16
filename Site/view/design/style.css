@@ -503,6 +503,7 @@ button:hover {
 .offre ol {
   list-style: none;
   text-align: left;
+  padding-left: 10px;
 }
 
 
