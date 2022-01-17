@@ -28,7 +28,7 @@ try {
   $value = new Candidat('candidatParfait@gmail.com', 'candidatParfait', 'Juste', 'Parfait', 22, '0606060606', '', '', 1, 'France', 'Grenoble', '01-01-2022', $compet, $rensei); // Candidat attendue
 
 
-  $expected = $db->getCandidat('candidatTest@gmail.com'); // valeur témoins
+  $expected = $db->getCandidat('candidatParfait@gmail.com'); // valeur témoins
 
 
   //On test toutes les fonctions en comparant les résultats obtenue de ceux attendue
