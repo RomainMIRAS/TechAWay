@@ -64,7 +64,28 @@ Si vous voulez une connection a notre server virtuel et acceder a la base de don
 envoyer une cle ssh public a altin (**altin.rrahmani@etu.univ-grenoble-alpes.fr**) pour qu'il puisse vous cree un user.<br>
 
 
+## Tests unitaire :
 
+#### Classe Candidat :
+https://www.techaway.tk/Site/test/Candidat.test.php <br>
+
+#### Classe Coach :
+https://www.techaway.tk/Site/test/Coach.test.php <br>
+
+#### Classe Competences :
+https://www.techaway.tk/Site/test/Competence.test.php <br>
+
+#### Classe DAO :
+https://www.techaway.tk/Site/test/DAO.test.php <br>
+
+#### Classe Entreprise :
+https://www.techaway.tk/Site/test/Entreprise.test.php <br>
+
+#### Classe Offre :
+https://www.techaway.tk/Site/test/Offre.test.php <br>
+
+#### Classe Renseignement :
+https://www.techaway.tk/Site/test/Renseignement.test.php <br>
 
 
 
