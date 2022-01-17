@@ -93,9 +93,9 @@
               </select>
               <label for="langueParle[]">Langue(s) parlée(s)</label>
                 <div class="list-check"> <!-- Liste des langues -->
-                  <input type="checkbox" name="langueParle[]" value="francais" selected>Français</option>
+                  <input type="checkbox" name="langueParle[]" value="français" selected>Français</option>
                   <input type="checkbox" name="langueParle[]" value="anglais" >Anglais</option>
-                  <input type="checkbox" name="langueParle[]" value="espagnole" >Espagnol</option>
+                  <input type="checkbox" name="langueParle[]" value="espagnol" >Espagnol</option>
                   <input type="checkbox" name="langueParle[]" value="italien" >Italien</option>
                   <input type="checkbox" name="langueParle[]" value="allemand">Allemand</option>
                   <input type="checkbox" name="langueParle[]" value="albanais">Albanais</option>
@@ -103,7 +103,7 @@
               <label for="languageAquis[]">Language(s) infomatique connu(s)</label>
               <div class="list-check"> <!-- Liste des langages -->
                 <input type="checkbox" name="languageAquis[]" value="php" selected>PHP</option>
-                <input type="checkbox" name="languageAquis[]" value="hmtl/css" >HTML/CSS</option>
+                <input type="checkbox" name="languageAquis[]" value="html/css" >HTML/CSS</option>
                 <input type="checkbox" name="languageAquis[]" value="c" >C#, C ou C++</option>
                 <input type="checkbox" name="languageAquis[]" value="python" >Python</option>
                 <input type="checkbox" name="languageAquis[]" value="perl">PERL</option>
