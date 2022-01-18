@@ -51,14 +51,6 @@ Erreur 404 redirige vers une page costomiser d'erreur <br>
 
 ## Pour les profs : 
 
-### Login d'Admin (Coach)
-Voici des login d'un coach que vous pouvez utiliser.
-
-**Adresse Mail** : adresse-coach@gmail.com <br>
-**Mot de Passe** : motdepassecoach <br>
-
-**ATTENTION LES LOGIN VONT ETRE SUPPRIMER APRES L'EVALUATION POUR DES RAISON DE SECURITE**
-
 ### Se connecter dans la BDD :
 Si vous voulez une connection a notre server virtuel et acceder a la base de donnee,
 envoyer une cle ssh public a altin (**altin.rrahmani@etu.univ-grenoble-alpes.fr**) pour qu'il puisse vous cree un user.<br>
