@@ -18,11 +18,22 @@ function first(){
             gsap.fromTo("#theLogo", {
                 x:0,y:0
             },
-            {
-                x: "33.5%",y:"-35vh",duration:1.5,ease: "power1.inOut"
+            {   // 33.5    -35vh
+                x: "15%",y:"-33vh",duration:1.5,ease: "power1.inOut"
             });
             gsap.fromTo("#title", {opacity: 0, y : -150,}, {opacity: 1,y : 0});
             gsap.fromTo("#slogan", {opacity: 0, x : -300,}, {opacity: 1,x : 0, stagger :0.2});
+            gsap.fromTo("#svg1", {opacity: 0, scale : 0.8}, {opacity: 1,scale : 1, stagger :0.2});
+            gsap.fromTo(".animateSvg", {opacity: 0, scale : 0.8}, {opacity: 1,scale : 1, stagger :0.2});
+            gsap.fromTo(".animateSvg1", {opacity: 0, scale : 0.8,}, {opacity: 1,scale : 1, stagger :0.2});
+            gsap.fromTo(".animateSvg2", {opacity: 0, scale : 0.8,}, {opacity: 1,scale : 1, stagger :0.2});
+            
         }
     });
+
+}
+
+// Lien vidéo yt
+document.getElementById("path98").onclick=function() {
+    window.open("https://www.youtube.com/watch?v=TA_yrPnGzBc",'_blank');
 }

@@ -34,6 +34,10 @@
             The success way to work away
         </h3>
     </div>
+    <main>
+        <div id="svg1"><?php include("../Site/view/design/svg/p1 var 1.svg"); ?></div>
+        <div><?php include("../Site/view/design/svg/p3.svg"); ?></div>
+    </main>
 </body>
 <script src="gsap.min.js"></script>
 <script src="animate.js"></script>

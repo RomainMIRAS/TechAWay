@@ -34,7 +34,7 @@ body,html{
 }
 #eye{
     transform-origin: calc(63.76%)  calc(30.06%);
-    animation: eyeMovement 2s infinite alternate-reverse;
+    animation: eyeMovement 3s infinite alternate-reverse;
     cursor: pointer;
 }
 #nav{
@@ -53,6 +53,29 @@ h3{
     margin:-30px 0 0 35px;
     font-weight:10;
     font-size:50px;
+}
+#svg1 {
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    width: max-content;
+}
+#svg1 svg {
+    width: 800px;
+}
+.phone1{
+    animation:2s hovering infinite alternate ease-in-out;
+}
+.phone2{
+    animation:2s hovering infinite alternate ease-in-out;
+    animation-delay: 0.5s;
+}
+#g1583{
+    animation:2s scaling infinite alternate ease-in-out;
+    animation-delay: 0.5s;
+}
+#path94, #path98 {
+    cursor: pointer;
 }
 @keyframes hovering{
     0%{
