@@ -21,7 +21,7 @@ function first(){
             {
                 x: "33.5%",y:"-35vh",duration:1.5,ease: "power1.inOut"
             });
-            gsap.fromTo("#title", {opacity: 0, y : -150,}, {opacity: 1,y : 0, stagger :0.2});
+            gsap.fromTo("#title", {opacity: 0, y : -150,}, {opacity: 1,y : 0});
             gsap.fromTo("#slogan", {opacity: 0, x : -300,}, {opacity: 1,x : 0, stagger :0.2});
         }
     });
