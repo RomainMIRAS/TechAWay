@@ -97,27 +97,27 @@ h3{
 
 #key-words p:nth-child(2) { /* accompagnement */
     top: 55%;
-    right: 8%;
+    right: 5%;
 }
 
 #key-words p:nth-child(3) { /* profilage */
     top: 80%;
-    right: 20%;
+    right: 15%;
 }
 
 #key-words p:nth-child(4) { /* réussite */
     top: 80%;
-    right: 75%;
+    right: 85%;
 }
 
 #key-words p:nth-child(5) { /* confiance */
-    top: 35%;
+    top: 30%;
     right: 25%;
 }
 
-#key-words p:nth-child(6) {
-    top: 55%;
-    right: 90%;
+#key-words p:nth-child(6) { /* sérieux */
+    top: 60%;
+    right: 80%;
 }
 
 @keyframes hovering{
