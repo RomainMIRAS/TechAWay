@@ -36,7 +36,14 @@
     </div>
     <main>
         <div id="svg1"><?php include("../Site/view/design/svg/p1 var 1.svg"); ?></div>
-        <div><?php include("../Site/view/design/svg/p3.svg"); ?></div>
+        <div id="key-words">
+            <p>Travail en distanciel</p>
+            <p>Accompagnement</p>
+            <p>Profilage</p>
+            <p>Réussite</p>
+            <p>Confiance</p>
+            <p>Sérieux</p>
+        </div>
     </main>
 </body>
 <script src="gsap.min.js"></script>
