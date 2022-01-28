@@ -86,34 +86,34 @@ h3{
     font-size: 30px;
 }
 
-#key-words p:nth-child(1) {
+#key-words p:nth-child(1) { /* travail en distanciel */
     top: 40%;
     right: 78%;
 }
 
-#key-words p:nth-child(2) {
-    top: 60%;
-    right: 10%;
+#key-words p:nth-child(2) { /* accompagnement */
+    top: 55%;
+    right: 8%;
 }
 
-#key-words p:nth-child(3) {
-    top: 90%;
+#key-words p:nth-child(3) { /* profilage */
+    top: 80%;
     right: 20%;
 }
 
-#key-words p:nth-child(4) {
+#key-words p:nth-child(4) { /* réussite */
     top: 80%;
     right: 75%;
 }
 
-#key-words p:nth-child(5) {
-    top: 40%;
-    right: 30%;
+#key-words p:nth-child(5) { /* confiance */
+    top: 35%;
+    right: 25%;
 }
 
-#key-words:nth-child(6) {
-    top: 10%;
-    right: 10%;
+#key-words p:nth-child(6) {
+    top: 55%;
+    right: 90%;
 }
 
 @keyframes hovering{
