@@ -27,8 +27,8 @@ body,html{
 #logo{
     width: 100vw;
     height: 100vh;
-    transform-origin:calc(63.76% - 12px)  calc(30.06% - 36px);
-    transform:scale(7);
+    transform-origin:calc(63.76% - 5px)  calc(30.06% - 30px);
+    transform:scale(6);
     padding: 0;
     margin: 0;
     overflow: visible;

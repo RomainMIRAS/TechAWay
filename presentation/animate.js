@@ -2,7 +2,7 @@
 function first(){
     //gsap.fromTo(".animateSvg", {opacity: 0, scale : 0.8}, {opacity: 1,scale : 1, stagger :0.2});
     gsap.fromTo("#logo", { 
-        scale : 7
+        scale : 6
     }, 
     {
         scale: 1,duration:1.5,stagger:2
