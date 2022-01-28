@@ -78,6 +78,7 @@ h3{
 }
 #path94, #path98 {
     cursor: pointer;
+    z-index: 9;
 }
 
 #key-words p {
@@ -86,7 +87,7 @@ h3{
 }
 
 #key-words p:nth-child(1) {
-    top: 50%;
+    top: 40%;
     right: 78%;
 }
 
