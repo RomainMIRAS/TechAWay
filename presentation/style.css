@@ -88,6 +88,7 @@ h3{
 #key-words p {
     position: absolute;
     font-size: 25px;
+    opacity: 0;
 }
 
 #key-words p:nth-child(1) { /* travail en distanciel */
@@ -147,16 +148,13 @@ h3{
 
 @keyframes wordsAnimation {
     0% {
-        opacity: 0;
+        transform: scale(.95);
     }
-    33% {
-        opacity: .5;
-    }
-    66% {
-        opacity: .2;
+    50% {
+        transform: scale(1.05);
     }
     100% {
-        opacity: 1;
+        transform: scale(1);
     }
 }
 

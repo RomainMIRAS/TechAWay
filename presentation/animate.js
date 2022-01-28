@@ -27,7 +27,9 @@ function first(){
             gsap.fromTo(".animateSvg", {opacity: 0, scale : 0.8}, {opacity: 1,scale : 1, stagger :0.2});
             gsap.fromTo(".animateSvg1", {opacity: 0, scale : 0.8,}, {opacity: 1,scale : 1, stagger :0.2});
             gsap.fromTo(".animateSvg2", {opacity: 0, scale : 0.8,}, {opacity: 1,scale : 1, stagger :0.2});
-            gsap.fromTo(".words", {opacity: 0, scale : 0.8,}, {opacity: 1,scale : 1,duration:3, stagger :0.2});
+            gsap.fromTo(".words", {y: -50,opacity:0}, {y:0, opacity:1,duration:2, stagger :0.5,onComplete(){
+
+            }});
         }
     });
 
