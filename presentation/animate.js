@@ -15,7 +15,7 @@ function first(){
         width: "200px",height: "200px",duration:1.5, ease: "power3.inOut", 
         onComplete(){
             document.getElementById('logo').style.animation = "hovering 1s infinite alternate";
-            gsap.fromTo("#logo", {
+            gsap.fromTo("#theLogo", {
                 x:0,y:0
             },
             {   // 33.5    -35vh
