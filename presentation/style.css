@@ -47,6 +47,11 @@ h1{
     font-weight:1000;
     font-size:110px;
     opacity:0;
+    user-select: none; /* supported by Chrome and Opera */
+   -webkit-user-select: none; /* Safari */
+   -khtml-user-select: none; /* Konqueror HTML */
+   -moz-user-select: none; /* Firefox */
+   -ms-user-select: none; /* Internet Explorer/Edge */
 }
 h3{
     opacity: 0;
@@ -54,6 +59,11 @@ h3{
     margin:-20px 0 0 25px;
     font-weight:10;
     font-size:30px;
+    user-select: none; /* supported by Chrome and Opera */
+   -webkit-user-select: none; /* Safari */
+   -khtml-user-select: none; /* Konqueror HTML */
+   -moz-user-select: none; /* Firefox */
+   -ms-user-select: none; /* Internet Explorer/Edge */
 }
 #svg1 {
     margin: 0;
@@ -89,6 +99,11 @@ h3{
     position: absolute;
     font-size: 25px;
     opacity: 0;
+    user-select: none; /* supported by Chrome and Opera */
+   -webkit-user-select: none; /* Safari */
+   -khtml-user-select: none; /* Konqueror HTML */
+   -moz-user-select: none; /* Firefox */
+   -ms-user-select: none; /* Internet Explorer/Edge */
 }
 
 #key-words p:nth-child(1) { /* travail en distanciel */
@@ -157,6 +172,33 @@ section{
         transform: translateX(-50%) translateY(5px);
     }
 }
+
+#path44, #path52, #path46, #path48, #path50, #path54, #path56 {
+    animation: 1s anim44 infinite alternate ease-in-out;
+}
+
+#path350, #path352, #path354, #path356 {
+    animation: 2s anim350 infinite alternate ease-in-out;
+}
+
+@keyframes anim44 {
+    0% {
+        transform: translateX(0px);
+    }
+    100% {
+        transform: translateX(5px);
+    }
+}
+
+@keyframes anim350 {
+    0% {
+        transform: translateX(0px) translateY(0px);
+    }
+    100% {
+        transform: translateX(-10px) translateY(-10px);
+    }
+}
+
 @keyframes wordsAnimation {
     0% {
         transform: scale(.95);
