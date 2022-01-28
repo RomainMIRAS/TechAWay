@@ -82,27 +82,27 @@ h3{
     position: absolute;
 }
 
-#key-words:nth-child(1) {
+#key-words p:nth-child(1) {
     top: 10%;
     right: 10%;
 }
 
-#key-words:nth-child(2) {
+#key-words p:nth-child(2) {
     top: 10%;
     right: 10%;
 }
 
-#key-words:nth-child(3) {
+#key-words p:nth-child(3) {
     top: 10%;
     right: 10%;
 }
 
-#key-words:nth-child(4) {
+#key-words p:nth-child(4) {
     top: 10%;
     right: 10%;
 }
 
-#key-words:nth-child(5) {
+#key-words p:nth-child(5) {
     top: 10%;
     right: 10%;
 }
