@@ -61,15 +61,14 @@ h3{
     opacity: 0;
     width: max-content;
     margin:auto;
-    width: 600px;
-    height: 500px;
+    width: 800px;
+    height: 768px;
     display: flex;
     align-items: center;
 }
 #svg1 svg {
     width: 800px;
 }
-
 .phone1{
     animation:2s hovering infinite alternate ease-in-out;
 }
@@ -89,48 +88,52 @@ h3{
 #key-words p {
     position: absolute;
     font-size: 25px;
-    animation: 2s wordsAnimation infinite alternate ease-in-out;
 }
 
 #key-words p:nth-child(1) { /* travail en distanciel */
     top: 40%;
     right: 78%;
+    animation: 2s wordsAnimation infinite alternate ease-in-out;
 }
 
 #key-words p:nth-child(2) { /* accompagnement */
     top: 55%;
     right: 5%;
+    animation: 2s wordsAnimation infinite alternate ease-in-out;
+    animation-delay: .5s;
 }
 
 #key-words p:nth-child(3) { /* profilage */
     top: 80%;
     right: 15%;
+    animation: 2s wordsAnimation infinite alternate ease-in-out;
+    animation-delay: 1s;
 }
 
 #key-words p:nth-child(4) { /* réussite */
     top: 80%;
     right: 85%;
+    animation: 2s wordsAnimation infinite alternate ease-in-out;
+    animation-delay: 1.5s;
 }
 
 #key-words p:nth-child(5) { /* confiance */
     top: 30%;
     right: 25%;
+    animation: 2s wordsAnimation infinite alternate ease-in-out;
+    animation-delay: 2s;
 }
 
 #key-words p:nth-child(6) { /* sérieux */
     top: 60%;
     right: 80%;
-}
-#g1583{
-    animation: hovering 1s alternate-reverse infinite;
+    animation: 2s wordsAnimation infinite alternate ease-in-out;
+    animation-delay: 2.5s;
 }
 
 @keyframes wordsAnimation {
     0% {
         opacity: 0;
-    }
-    50% {
-        opacity: 0.5;
     }
     100% {
         opacity: 1;
