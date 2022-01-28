@@ -174,7 +174,7 @@ section{
 }
 
 #path44, #path52, #path46, #path48, #path50, #path54, #path56 {
-    animation: 1s anim44 infinite alternate ease-in-out;
+    animation: 1.5s anim44 infinite alternate ease-in-out;
 }
 
 #path350, #path352, #path354, #path356 {
@@ -211,12 +211,20 @@ section{
     }
 }
 
-@keyframes hovering{
+@keyframes hovering2{
     0%{
         transform:scale(var(--scale))  translateY(0);
     }
     100%{
         transform:scale(var(--scale)) translateY(6px);
+    }
+}
+@keyframes hovering{
+    0%{
+        transform:scale(var(--scale))  translateY(0);
+    }
+    100%{
+        transform:scale(var(--scale)) translateY(15px);
     }
 }
 @keyframes eyeMovement{

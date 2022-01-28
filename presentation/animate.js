@@ -13,7 +13,7 @@ function first(){
     {
         width: "200px",height: "200px",duration:1.5, ease: "power3.inOut", 
         onComplete(){
-            document.getElementById('logo').style.animation = "hovering 1s infinite alternate";
+            document.getElementById('logo').style.animation = "hovering2 1s infinite alternate";
             gsap.fromTo("#theLogo", {
                 x:0,y:0
             },
