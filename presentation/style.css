@@ -216,7 +216,7 @@ section{
         transform:scale(var(--scale))  translateY(0);
     }
     100%{
-        transform:scale(var(--scale)) translateY(15px);
+        transform:scale(var(--scale)) translateY(6px);
     }
 }
 @keyframes eyeMovement{
