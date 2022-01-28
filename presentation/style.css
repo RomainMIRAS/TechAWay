@@ -61,6 +61,10 @@ h3{
     opacity: 0;
     width: max-content;
     margin:auto;
+    width: 800px;
+    height: 768px;
+    display: flex;
+    align-items: center;
 }
 #svg1 svg {
     width: 800px;
