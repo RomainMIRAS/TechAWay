@@ -120,7 +120,9 @@ h3{
     top: 60%;
     right: 80%;
 }
-
+#g1583{
+    animation: hovering 1s alternate-reverse infinite;
+}
 @keyframes hovering{
     0%{
         transform:scale(var(--scale))  translateY(0);
