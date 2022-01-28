@@ -151,6 +151,9 @@ h3{
     animation: 1s anim44 infinite alternate ease-in-out;
 }
 
+#path350, #path352, #path354, #path356 {
+    animation: 2s anim350 infinite alternate ease-in-out;
+}
 
 @keyframes anim44 {
     0% {
@@ -158,6 +161,15 @@ h3{
     }
     100% {
         transform: translateX(5px);
+    }
+}
+
+@keyframes anim350 {
+    0% {
+        transform: translateX(0px) translateY(0px);
+    }
+    100% {
+        transform: translateX(-10px) translateY(-10px);
     }
 }
 
