@@ -34,7 +34,7 @@
             The success way to work away
         </h3>
     </div>
-    <main>
+    <main >
         <div id="svg1"><?php include("../Site/view/design/svg/p1 var 1.svg"); ?></div>
         <div id="key-words">
             <p>Travail en distanciel</p>
