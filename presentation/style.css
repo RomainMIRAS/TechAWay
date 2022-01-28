@@ -77,6 +77,41 @@ h3{
 #path94, #path98 {
     cursor: pointer;
 }
+
+#key-words p {
+    position: absolute;
+}
+
+#key-words:nth-child(1) {
+    top: 10%;
+    right: 10%;
+}
+
+#key-words:nth-child(2) {
+    top: 10%;
+    right: 10%;
+}
+
+#key-words:nth-child(3) {
+    top: 10%;
+    right: 10%;
+}
+
+#key-words:nth-child(4) {
+    top: 10%;
+    right: 10%;
+}
+
+#key-words:nth-child(5) {
+    top: 10%;
+    right: 10%;
+}
+
+#key-words:nth-child(6) {
+    top: 10%;
+    right: 10%;
+}
+
 @keyframes hovering{
     0%{
         transform:scale(var(--scale))  translateY(0);
