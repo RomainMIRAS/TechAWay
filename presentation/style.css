@@ -78,35 +78,37 @@ h3{
 }
 #path94, #path98 {
     cursor: pointer;
+    z-index: 9;
 }
 
 #key-words p {
     position: absolute;
+    font-size: 30px;
 }
 
-#key-words:nth-child(1) {
-    top: 10%;
+#key-words p:nth-child(1) {
+    top: 40%;
+    right: 78%;
+}
+
+#key-words p:nth-child(2) {
+    top: 60%;
     right: 10%;
 }
 
-#key-words:nth-child(2) {
-    top: 10%;
-    right: 10%;
+#key-words p:nth-child(3) {
+    top: 90%;
+    right: 20%;
 }
 
-#key-words:nth-child(3) {
-    top: 10%;
-    right: 10%;
+#key-words p:nth-child(4) {
+    top: 80%;
+    right: 75%;
 }
 
-#key-words:nth-child(4) {
-    top: 10%;
-    right: 10%;
-}
-
-#key-words:nth-child(5) {
-    top: 10%;
-    right: 10%;
+#key-words p:nth-child(5) {
+    top: 40%;
+    right: 30%;
 }
 
 #key-words:nth-child(6) {
