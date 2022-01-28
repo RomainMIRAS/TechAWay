@@ -142,7 +142,7 @@ h3{
         transform: translateX(0px);
     }
     100% {
-        transform: translateX(3px);
+        transform: translateX(5px);
     }
 }
 
