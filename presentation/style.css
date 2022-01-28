@@ -61,14 +61,15 @@ h3{
     opacity: 0;
     width: max-content;
     margin:auto;
-    width: 800px;
-    height: 768px;
+    width: 600px;
+    height: 500px;
     display: flex;
     align-items: center;
 }
 #svg1 svg {
     width: 800px;
 }
+
 .phone1{
     animation:2s hovering infinite alternate ease-in-out;
 }
