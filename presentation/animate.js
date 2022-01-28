@@ -34,7 +34,10 @@ function first(){
     });
 
 }
-
+function scrollPage(){
+    let element = document.querySelector("#vid");
+    element.scrollIntoView({ behavior: 'smooth', block: 'end',duration:20});
+}
 // Lien vidéo yt
 document.getElementById("path98").onclick=function() {
     window.open("https://www.youtube.com/watch?v=TA_yrPnGzBc",'_blank');
