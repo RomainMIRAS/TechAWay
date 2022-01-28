@@ -1,4 +1,3 @@
-
 function first(){
     //gsap.fromTo(".animateSvg", {opacity: 0, scale : 0.8}, {opacity: 1,scale : 1, stagger :0.2});
     gsap.fromTo("#logo", { 
@@ -19,7 +18,7 @@ function first(){
                 x:0,y:0
             },
             {   // 33.5    -35vh
-                x: "15%",y:"-33vh",duration:1.5,ease: "power1.inOut"
+                x: "38%",y:"-33vh",duration:1.5,ease: "power1.inOut"
             });
             gsap.fromTo("#title", {opacity: 0, y : -150,}, {opacity: 1,y : 0});
             gsap.fromTo("#slogan", {opacity: 0, x : -300,}, {opacity: 1,x : 0, stagger :0.2});
