@@ -131,6 +131,20 @@ h3{
     animation-delay: 2.5s;
 }
 
+#path44 {
+    animation: 2s anim44 infinite alternate ease-in-out;
+}
+
+
+@keyframes anim44 {
+    0% {
+        transform: translateX(0px);
+    }
+    100% {
+        transform: translateX(3px);
+    }
+}
+
 @keyframes wordsAnimation {
     0% {
         opacity: 0;
